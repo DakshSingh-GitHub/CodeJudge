@@ -1,20 +1,24 @@
 from flask import Flask, request, jsonify
-from runner import run_code
+from runner import run_code_multiple
 
 app = Flask(__name__)
 
-@app.route('/submit', methods=['POST'])
-def Submit():
-    data = request.json
-    code = data.get("code", "")
-    user_input = data.get("input", "")
-    expected_output = data.get("expected_output", "")
 
-    if not code:
-        return jsonify({ "error": "no code provided" })
-    
-    result = run_code(code, user_input, expected_output)
+@app.route("/submit", methods=["POST"])
+def submit():
+    data = request.get_json(force=True)
+
+    code = data.get("code", "")
+    test_cases = data.get("test_cases", [])
+
+    if not code: 
+        return jsonify({"error": "No code provided"}), 400
+
+    if not test_cases:
+        return jsonify({"error": "No test cases provided"}), 400
+
+    result = run_code_multiple(code, test_cases)
     return jsonify(result)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
