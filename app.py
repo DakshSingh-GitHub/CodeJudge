@@ -13,10 +13,14 @@ def submit():
     data = request.get_json(force=True)
 
     code = data.get("code", "")
+    mode = data.get("mode", "")
     test_cases = data.get("test_cases", [])
 
     if not code: 
         return jsonify({"error": "No code provided"}), 400
+    
+    if not mode:
+        return jsonify({"error": "No mode provided"}), 400
 
     if not test_cases:
         return jsonify({"error": "No test cases provided"}), 400
