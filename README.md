@@ -83,10 +83,10 @@ This roadmap tracks the evolution of the **Mini Online Judge**, from a simple ex
 
 ### 🟠 Phase 2 — Test Case Handling (Planned)
 
-⬜ Support multiple test cases per submission  
-⬜ Stop execution on first failed test case  
+✅ Support multiple test cases per submission  
+✅ Stop execution on first failed test case  
 ⬜ Return detailed per-test-case results  
-⬜ Handle edge cases (extra spaces, newlines)  
+✅ Handle edge cases (extra spaces, newlines)  
 
 ---
 
