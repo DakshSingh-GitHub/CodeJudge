@@ -1,9 +1,11 @@
 import json
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 from runner import run_code_multiple
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 PROBLEMS_DIR = "problems"
 
@@ -41,12 +43,7 @@ def validate_problem(problem: dict):
                     errors.append(f"{tc_type}[{idx}] must contain 'input' and 'output'")
 
     return errors
-
-
-@app.route("/")
-def index():
-    return render_template("index.html")
-
+    
 
 @app.route("/submit", methods=["POST"])
 def submit():
@@ -141,6 +138,37 @@ def ListProblems():
         "count": len(problems),
         "problems": problems
     })
+
+@app.route('/problems/<problem_id>')
+def getProblem(problem_id):
+    problem_path = os.path.join(PROBLEMS_DIR, f"{problem_id}.json")
+
+    if not os.path.exists(problem_path):
+        return jsonify({"error": "Problem not found"})
+    try:
+        with open(problem_path, "r") as f:
+            problem = json.load(f)
+    except json.JSONDecodeError:
+        return jsonify({"error": "Invalid JSON format in problem file"}), 500
+    except Exception:
+        return jsonify({"error": "Failed to load problem"}), 500
+
+    response = {
+        "id": problem.get("id"),
+        "title": problem.get("title"),
+        "description": problem.get("description")
+    }
+
+    if "input_format" in problem:
+        response["input_format"] = problem["input_format"]
+
+    if "output_format" in problem:
+        response["output_format"] = problem["output_format"]
+
+    if "constraints" in problem:
+        response["constraints"] = problem["constraints"]
+
+    return jsonify(response)
 
 
 
