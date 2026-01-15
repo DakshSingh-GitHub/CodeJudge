@@ -1,0 +1,21 @@
+{
+  "id": "simple_array_sum",
+  "title": "Simple Array Sum",
+  "description": "Given a list of space-separated integers, calculate their sum.",
+  "input_format": "A single line of space-separated integers.",
+  "output_format": "The sum of the integers.",
+  "constraints": {
+    "list_elements": "-1000 <= element <= 1000",
+    "list_length": "1 <= length <= 100"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "1 2 3 4 5", "output": "15" },
+    { "input": "10 20 30", "output": "60" }
+  ],
+  "hidden_test_cases": [
+    { "input": "-1 -2 -3", "output": "-6" },
+    { "input": "0 0 0 0", "output": "0" }
+  ]
+}

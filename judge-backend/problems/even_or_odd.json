@@ -1,0 +1,21 @@
+{
+  "id": "even_or_odd",
+  "title": "Even or Odd",
+  "description": "Given an integer N, determine if it is even or odd.",
+  "input_format": "A single integer N",
+  "output_format": "Print 'Even' if N is even, 'Odd' otherwise.",
+  "constraints": {
+    "N": "1 <= N <= 1000000000"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "2", "output": "Even" },
+    { "input": "7", "output": "Odd" }
+  ],
+  "hidden_test_cases": [
+    { "input": "100", "output": "Even" },
+    { "input": "999", "output": "Odd" },
+    { "input": "0", "output": "Even" }
+  ]
+}

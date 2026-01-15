@@ -1,0 +1,20 @@
+{
+  "id": "reverse_string",
+  "title": "Reverse a String",
+  "description": "Given a string S, print the reversed string.",
+  "input_format": "A single string S.",
+  "output_format": "The reversed string.",
+  "constraints": {
+    "S": "1 <= length(S) <= 1000"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "hello", "output": "olleh" },
+    { "input": "world", "output": "dlrow" }
+  ],
+  "hidden_test_cases": [
+    { "input": "madam", "output": "madam" },
+    { "input": "A man a plan a canal Panama", "output": "amanaP lanac a nalp a nam A" }
+  ]
+}

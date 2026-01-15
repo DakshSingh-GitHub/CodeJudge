@@ -1,0 +1,21 @@
+{
+  "id": "find_the_maximum",
+  "title": "Find the Maximum",
+  "description": "Given a list of space-separated integers, find the maximum value.",
+  "input_format": "A single line of space-separated integers.",
+  "output_format": "The maximum integer from the list.",
+  "constraints": {
+    "list_elements": "-1000 <= element <= 1000",
+    "list_length": "1 <= length <= 100"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "1 5 2 9 3", "output": "9" },
+    { "input": "-1 -5 -2", "output": "-1" }
+  ],
+  "hidden_test_cases": [
+    { "input": "10 20 30 40 50", "output": "50" },
+    { "input": "-10 0 10", "output": "10" }
+  ]
+}

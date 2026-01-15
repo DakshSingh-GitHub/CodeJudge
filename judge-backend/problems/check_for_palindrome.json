@@ -1,0 +1,20 @@
+{
+  "id": "check_for_palindrome",
+  "title": "Check for Palindrome",
+  "description": "Given a string S, check if it is a palindrome (reads the same forwards and backwards). The check should be case-insensitive.",
+  "input_format": "A single string S.",
+  "output_format": "Print 'Palindrome' if it is, 'Not a Palindrome' otherwise.",
+  "constraints": {
+    "S": "1 <= length(S) <= 1000"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "madam", "output": "Palindrome" },
+    { "input": "hello", "output": "Not a Palindrome" }
+  ],
+  "hidden_test_cases": [
+    { "input": "Racecar", "output": "Palindrome" },
+    { "input": "No lemon, no melon", "output": "Palindrome" }
+  ]
+}

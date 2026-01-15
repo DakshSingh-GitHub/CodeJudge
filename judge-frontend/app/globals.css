@@ -17,6 +17,31 @@
     --background: #111827; /* gray-900 */
     --foreground: #f9fafb; /* gray-50 */
   }
+
+  /* For Webkit browsers (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #2d3748; /* dark gray */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #4a5568; /* darker gray */
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #718096; /* even darker gray on hover */
+  }
+
+  /* For Firefox */
+  html {
+    scrollbar-color: #4a5568 #2d3748; /* thumb color track color */
+    scrollbar-width: thin;
+  }
 }
 
 body {

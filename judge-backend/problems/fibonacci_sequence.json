@@ -1,0 +1,21 @@
+{
+  "id": "fibonacci_sequence",
+  "title": "Fibonacci Sequence",
+  "description": "Calculate the Nth term of the Fibonacci sequence (starting with F(0)=0 and F(1)=1).",
+  "input_format": "A single integer N.",
+  "output_format": "The Nth Fibonacci number.",
+  "constraints": {
+    "N": "0 <= N <= 30"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "2", "output": "1" },
+    { "input": "5", "output": "5" }
+  ],
+  "hidden_test_cases": [
+    { "input": "0", "output": "0" },
+    { "input": "10", "output": "55" },
+    { "input": "20", "output": "6765" }
+  ]
+}

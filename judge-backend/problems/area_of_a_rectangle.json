@@ -1,0 +1,21 @@
+{
+  "id": "area_of_a_rectangle",
+  "title": "Area of a Rectangle",
+  "description": "Given the length and width of a rectangle, calculate its area.",
+  "input_format": "Two space-separated integers, length and width.",
+  "output_format": "The area of the rectangle.",
+  "constraints": {
+    "length": "1 <= length <= 1000",
+    "width": "1 <= width <= 1000"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "5 10", "output": "50" },
+    { "input": "3 7", "output": "21" }
+  ],
+  "hidden_test_cases": [
+    { "input": "100 100", "output": "10000" },
+    { "input": "1 1", "output": "1" }
+  ]
+}
