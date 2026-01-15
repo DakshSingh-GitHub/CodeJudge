@@ -16,7 +16,10 @@ export default function ProblemSelector({ onSelect }: { onSelect: (id: string) =
             })
     })
     return (
-        <select onChange={(e) => onSelect(e.target.value)}>
+        <select
+            className="block w-full p-2 border border-gray-300 rounded-md"
+            onChange={(e) => onSelect(e.target.value)}
+        >
             <option value="">Select a problem</option>
             {problems.map(p => (
                 <option key={p.id} value={p.id}>
