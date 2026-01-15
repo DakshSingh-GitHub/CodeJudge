@@ -1,0 +1,32 @@
+{
+    "id": "count_vowels",
+    "title": "Count Vowels",
+    "description": "Count the number of vowels (a, e, i, o, u) in a given string S. The string may contain uppercase and lowercase letters.",
+    "input_format": "A single string S.",
+    "output_format": "The count of vowels in S.",
+    "constraints": {
+        "length of S": "1 <= length <= 1000"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "Hello World",
+            "output": "3"
+        },
+        {
+            "input": "Programming",
+            "output": "3"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "rhythm",
+            "output": "0"
+        },
+        {
+            "input": "AEIOUaeiou",
+            "output": "10"
+        }
+    ]
+}

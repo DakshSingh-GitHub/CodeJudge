@@ -1,0 +1,32 @@
+{
+    "id": "string_permutations",
+    "title": "All Permutations of a String",
+    "description": "Print all permutations of a given string S. The output should be sorted lexicographically.",
+    "input_format": "A single string S.",
+    "output_format": "All permutations of S, separated by newlines.",
+    "constraints": {
+        "length of S": "1 <= length <= 6"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "ABC",
+            "output": "ABC\nACB\nBAC\nBCA\nCAB\nCBA"
+        },
+        {
+            "input": "AB",
+            "output": "AB\nBA"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "A",
+            "output": "A"
+        },
+        {
+            "input": "ABA",
+            "output": "AAB\nAAB\nABA\nABA\nBAA\nBAA"
+        }
+    ]
+}

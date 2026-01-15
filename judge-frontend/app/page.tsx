@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { getProblemById } from "./lib/api";
+import { getProblemById, submitCode } from "./lib/api";
 import ProblemList from "./components/ProblemList";
 import ProblemViewer from "./components/ProblemViewer";
 import CodeEditor from "./components/CodeEditor";
 
-const DEFAULT_CODE = "#Write your code here"
+const DEFAULT_CODE = "#Write your code here";
 
 export default function Home() {
     const [problem, setProblem] = useState(null);
@@ -18,6 +18,22 @@ export default function Home() {
     const [isDraggingHorizontal, setIsDraggingHorizontal] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const containerRef = useRef<HTMLDivElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [result, setResult] = useState<any>(null);
+
+    async function handleSubmit() {
+        if (!selectedProblemId || !code.trim()) return;
+        try {
+            setIsSubmitting(true);
+            setResult(null);
+            const response = await submitCode(selectedProblemId, code);
+            setResult(response);
+        } catch (error: any) {
+            setResult({ error: error.message });
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
 
     async function handleSelect(id: string) {
         setSelectedProblemId(id);
@@ -27,6 +43,8 @@ export default function Home() {
         }
         const data = await getProblemById(id);
         setProblem(data);
+        setCode(DEFAULT_CODE);
+        setResult(null);
     }
 
     // Handle sidebar horizontal resize
@@ -63,11 +81,14 @@ export default function Home() {
         const handleMouseMove = (e: MouseEvent) => {
             if (!isDraggingHorizontal || !containerRef.current) return;
 
-            const contentArea = containerRef.current.querySelector('[data-content-area]');
+            const contentArea = containerRef.current.querySelector(
+                "[data-content-area]"
+            );
             if (!contentArea) return;
 
             const contentRect = contentArea.getBoundingClientRect();
-            const newWidth = ((e.clientX - contentRect.left) / contentRect.width) * 100;
+            const newWidth =
+                ((e.clientX - contentRect.left) / contentRect.width) * 100;
 
             // Constrain width between 30% and 70%
             if (newWidth >= 30 && newWidth <= 70) {
@@ -106,12 +127,25 @@ export default function Home() {
                     </div>
                 </header>
 
-                <div ref={containerRef} className={`flex flex-1 overflow-hidden gap-4 p-4 ${isDraggingSidebar || isDraggingHorizontal ? 'select-none' : ''}`}>
+                <div
+                    ref={containerRef}
+                    className={`flex flex-1 overflow-hidden gap-4 p-4 ${
+                        isDraggingSidebar || isDraggingHorizontal
+                            ? "select-none"
+                            : ""
+                    }`}
+                >
                     {/* Left Sidebar - Problem List */}
                     {isSidebarOpen && (
                         <>
-                            <aside style={{ width: `${sidebarWidth}px` }} className="overflow-hidden flex-shrink-0">
-                                <ProblemList onSelect={handleSelect} selectedId={selectedProblemId} />
+                            <aside
+                                style={{ width: `${sidebarWidth}px` }}
+                                className="overflow-hidden flex-shrink-0"
+                            >
+                                <ProblemList
+                                    onSelect={handleSelect}
+                                    selectedId={selectedProblemId}
+                                />
                             </aside>
 
                             {/* Draggable Divider - Sidebar */}
@@ -126,23 +160,57 @@ export default function Home() {
                     )}
 
                     {/* Main Content Area */}
-                    <div data-content-area className="flex-1 overflow-hidden flex flex-row gap-4">
+                    <div
+                        data-content-area
+                        className="flex-1 overflow-hidden flex flex-row gap-4"
+                    >
                         {/* Problem Selector and Viewer */}
-                        <div style={{ flex: `1 1 ${problemViewerWidth}%` }} className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col">
+                        <div
+                            style={{ flex: `1 1 ${problemViewerWidth}%` }}
+                            className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col"
+                        >
                             <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
-                                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">Problem</h2>
+                                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
+                                    Problem
+                                </h2>
                                 <button
-                                    onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                                    onClick={() =>
+                                        setIsSidebarOpen(!isSidebarOpen)
+                                    }
                                     className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
-                                    title={isSidebarOpen ? "Hide sidebar" : "Show sidebar"}
+                                    title={
+                                        isSidebarOpen
+                                            ? "Hide sidebar"
+                                            : "Show sidebar"
+                                    }
                                 >
                                     {isSidebarOpen ? (
-                                        <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                        <svg
+                                            className="w-5 h-5 text-gray-700 dark:text-gray-300"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M15 19l-7-7 7-7"
+                                            />
                                         </svg>
                                     ) : (
-                                        <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                        <svg
+                                            className="w-5 h-5 text-gray-700 dark:text-gray-300"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M9 5l7 7-7 7"
+                                            />
                                         </svg>
                                     )}
                                 </button>
@@ -164,8 +232,63 @@ export default function Home() {
                         />
 
                         {/* Code Editor */}
-                        <div style={{ flex: `1 1 ${100 - problemViewerWidth}%` }} className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-3 overflow-hidden">
-                            <CodeEditor code={code} setCode={setCode} isDisabled={problem === null} />
+                        <div
+                            style={{ flex: `1 1 ${100 - problemViewerWidth}%` }}
+                            className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-3 overflow-hidden"
+                        >
+                            <div className="h-[84%] w-full">
+                                <CodeEditor
+                                    code={code}
+                                    setCode={setCode}
+                                    isDisabled={
+                                        !selectedProblemId || isSubmitting
+                                    }
+                                />
+                            </div>
+                            <div className="flex flex-row w-full justify-between items-stretch px-2 gap-3">
+                                <button
+                                    onClick={handleSubmit}
+                                    disabled={
+                                        isSubmitting || !selectedProblemId
+                                    }
+                                    className={`mt-4 px-6 py-2 rounded-lg font-semibold w-1/4 justify-center items-center transition
+                                    ${
+                                        isSubmitting
+                                            ? "bg-gray-500 cursor-not-allowed"
+                                            : "bg-indigo-600 hover:bg-indigo-700"
+                                    }
+                                    text-white`}
+                                >
+                                    {isSubmitting ? "Judging..." : "Submit"}
+                                </button>
+                                <div className="w-3/4">
+                                    <div className="mt-4 p-4 rounded-lg bg-gray-900 text-gray-100">
+                                        {!result ? (
+                                            <p className="text-gray-400 italic text-center">
+                                                😊 Happy coding! Think
+                                                carefully, see results after
+                                                submission. ⚠️Don't add Prompts to Input⚠️
+                                            </p>
+                                        ) : result.error ? (
+                                            <p className="text-red-400">
+                                                ❌ {result.error}
+                                            </p>
+                                        ) : (
+                                            <>
+                                                <p className="text-lg font-semibold">
+                                                    Verdict:{" "}
+                                                    {result.final_status}
+                                                </p>
+                                                <p className="text-sm mt-1">
+                                                    Passed{" "}
+                                                    {result.summary.passed} /{" "}
+                                                    {result.summary.total} tests
+                                                </p>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

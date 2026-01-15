@@ -1,0 +1,32 @@
+{
+    "id": "longest_common_subsequence",
+    "title": "Longest Common Subsequence",
+    "description": "Given two strings text1 and text2, return the length of their longest common subsequence. If there is no common subsequence, return 0.",
+    "input_format": "Two lines containing the strings text1 and text2.",
+    "output_format": "Length of LCS.",
+    "constraints": {
+        "Length": "1 <= len(text1), len(text2) <= 1000"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "abcde\nace",
+            "output": "3"
+        },
+        {
+            "input": "abc\nabc",
+            "output": "3"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "abc\ndef",
+            "output": "0"
+        },
+        {
+            "input": "ezupkr\nubmrapg",
+            "output": "2"
+        }
+    ]
+}

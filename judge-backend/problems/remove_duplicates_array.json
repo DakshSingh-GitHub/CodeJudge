@@ -1,0 +1,32 @@
+{
+    "id": "remove_duplicates_array",
+    "title": "Remove Duplicates from Array",
+    "description": "Given a sorted array of N integers, remove the duplicates in-place such that each element appears only once and return the new length. (Actually just print the unique elements for this problem).",
+    "input_format": "First line: Integer N. Second line: N space-separated integers (sorted).",
+    "output_format": "Space-separated unique elements.",
+    "constraints": {
+        "N": "1 <= N <= 1000"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "5\n1 1 2 2 3",
+            "output": "1 2 3"
+        },
+        {
+            "input": "3\n10 20 30",
+            "output": "10 20 30"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "4\n1 1 1 1",
+            "output": "1"
+        },
+        {
+            "input": "6\n-2 -2 -1 0 1 1",
+            "output": "-2 -1 0 1"
+        }
+    ]
+}

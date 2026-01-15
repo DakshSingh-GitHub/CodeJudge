@@ -1,0 +1,33 @@
+{
+    "id": "coin_change",
+    "title": "Coin Change",
+    "description": "You are given an integer array coins representing coins of different denominations and an integer amount representing a total amount of money. Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.",
+    "input_format": "First line: coins array. Second line: amount.",
+    "output_format": "Minimum coins required or -1.",
+    "constraints": {
+        "coins.length": "1 <= coins.length <= 12",
+        "amount": "0 <= amount <= 10^4"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "1 2 5\n11",
+            "output": "3"
+        },
+        {
+            "input": "2\n3",
+            "output": "-1"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "1\n0",
+            "output": "0"
+        },
+        {
+            "input": "186 419 83 408\n6249",
+            "output": "20"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "id": "lcm_two_numbers",
+    "title": "LCM of Two Numbers",
+    "description": "Calculate the Least Common Multiple (LCM) of two integers A and B.",
+    "input_format": "Two space-separated integers A and B.",
+    "output_format": "The LCM of A and B.",
+    "constraints": {
+        "A": "1 <= A <= 10^4",
+        "B": "1 <= B <= 10^4"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "4 6",
+            "output": "12"
+        },
+        {
+            "input": "5 10",
+            "output": "10"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "7 3",
+            "output": "21"
+        },
+        {
+            "input": "12 15",
+            "output": "60"
+        }
+    ]
+}

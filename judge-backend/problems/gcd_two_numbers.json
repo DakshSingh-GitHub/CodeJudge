@@ -1,0 +1,33 @@
+{
+    "id": "gcd_two_numbers",
+    "title": "GCD of Two Numbers",
+    "description": "Calculate the Greatest Common Divisor (GCD) of two integers A and B.",
+    "input_format": "Two space-separated integers A and B.",
+    "output_format": "The GCD of A and B.",
+    "constraints": {
+        "A": "1 <= A <= 10^9",
+        "B": "1 <= B <= 10^9"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "12 18",
+            "output": "6"
+        },
+        {
+            "input": "5 10",
+            "output": "5"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "100 100",
+            "output": "100"
+        },
+        {
+            "input": "17 19",
+            "output": "1"
+        }
+    ]
+}

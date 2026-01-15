@@ -1,0 +1,20 @@
+{
+  "id": "prime_number_check",
+  "title": "Prime Number Check",
+  "description": "Determine if a given integer N is a prime number.",
+  "input_format": "A single integer N.",
+  "output_format": "Print 'Yes' if N is prime, otherwise print 'No'.",
+  "constraints": {
+    "N": "1 <= N <= 10^9"
+  },
+  "judge_mode": "FIRST_FAIL",
+  "time_limit": 1,
+  "sample_test_cases": [
+    { "input": "7", "output": "Yes" },
+    { "input": "10", "output": "No" }
+  ],
+  "hidden_test_cases": [
+    { "input": "97", "output": "Yes" },
+    { "input": "1", "output": "No" }
+  ]
+}

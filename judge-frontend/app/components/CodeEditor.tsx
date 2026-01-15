@@ -24,7 +24,7 @@ export default function CodeEditor({ code, setCode, isDisabled = false }: CodeEd
                 value={code}
                 onChange={(value) => setCode(value || "")}
                 options={{
-                    fontSize: 16,
+                    fontSize: 18,
                     minimap: { enabled: true },
                     scrollBeyondLastLine: false,
                     automaticLayout: true,

@@ -1,0 +1,33 @@
+{
+    "id": "second_largest_element",
+    "title": "Second Largest Element",
+    "description": "Find the second largest element in an array of N integers.",
+    "input_format": "First line: Integer N. Second line: N space-separated integers.",
+    "output_format": "The second largest element.",
+    "constraints": {
+        "N": "2 <= N <= 1000",
+        "Array Elements": "-10^9 <= A[i] <= 10^9"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "5\n10 20 4 45 99",
+            "output": "45"
+        },
+        {
+            "input": "6\n1 2 3 4 5 6",
+            "output": "5"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "3\n10 10 5",
+            "output": "5"
+        },
+        {
+            "input": "2\n-1 -2",
+            "output": "-2"
+        }
+    ]
+}

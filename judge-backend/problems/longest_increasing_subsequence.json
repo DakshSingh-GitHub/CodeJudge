@@ -1,0 +1,33 @@
+{
+    "id": "longest_increasing_subsequence",
+    "title": "Longest Increasing Subsequence",
+    "description": "Given an integer array nums, return the length of the longest strictly increasing subsequence.",
+    "input_format": "First line: Integer N. Second line: N space-separated integers.",
+    "output_format": "The length of the LIS.",
+    "constraints": {
+        "N": "1 <= N <= 2500",
+        "nums[i]": "-10^4 <= nums[i] <= 10^4"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 2,
+    "sample_test_cases": [
+        {
+            "input": "6\n10 9 2 5 3 7",
+            "output": "3"
+        },
+        {
+            "input": "6\n0 1 0 3 2 3",
+            "output": "4"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "7\n7 7 7 7 7 7 7",
+            "output": "1"
+        },
+        {
+            "input": "1\n5",
+            "output": "1"
+        }
+    ]
+}

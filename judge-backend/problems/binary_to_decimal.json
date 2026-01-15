@@ -1,0 +1,32 @@
+{
+    "id": "binary_to_decimal",
+    "title": "Binary to Decimal",
+    "description": "Convert a binary number given as a string to its decimal equivalent.",
+    "input_format": "A binary string S.",
+    "output_format": "The decimal representation of S.",
+    "constraints": {
+        "length of S": "1 <= length <= 30"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "101",
+            "output": "5"
+        },
+        {
+            "input": "1111",
+            "output": "15"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "10000",
+            "output": "16"
+        },
+        {
+            "input": "0",
+            "output": "0"
+        }
+    ]
+}

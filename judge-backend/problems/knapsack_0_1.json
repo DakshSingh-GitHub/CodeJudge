@@ -1,0 +1,33 @@
+{
+    "id": "knapsack_0_1",
+    "title": "Knapsack 0/1",
+    "description": "Given weights and values of N items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack.",
+    "input_format": "First line: N and W. Second line: N values. Third line: N weights.",
+    "output_format": "Maximum value possible.",
+    "constraints": {
+        "N": "1 <= N <= 100",
+        "W": "1 <= W <= 1000"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "3 4\n1 2 3\n4 5 1",
+            "output": "3"
+        },
+        {
+            "input": "3 30\n60 100 120\n10 20 30",
+            "output": "220"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "2 10\n10 20\n11 12",
+            "output": "0"
+        },
+        {
+            "input": "1 10\n100\n10",
+            "output": "100"
+        }
+    ]
+}

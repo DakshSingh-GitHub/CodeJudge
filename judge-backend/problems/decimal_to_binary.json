@@ -1,0 +1,32 @@
+{
+    "id": "decimal_to_binary",
+    "title": "Decimal to Binary",
+    "description": "Convert a decimal number N to its binary string representation.",
+    "input_format": "A single integer N.",
+    "output_format": "The binary string of N.",
+    "constraints": {
+        "N": "0 <= N <= 10^9"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "5",
+            "output": "101"
+        },
+        {
+            "input": "15",
+            "output": "1111"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "16",
+            "output": "10000"
+        },
+        {
+            "input": "0",
+            "output": "0"
+        }
+    ]
+}
