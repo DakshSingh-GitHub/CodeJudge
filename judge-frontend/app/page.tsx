@@ -4,9 +4,13 @@ import { useState } from "react";
 import { getProblemById } from "./lib/api";
 import ProblemSelector from "./components/ProblemSelector";
 import ProblemViewer from "./components/ProblemViewer";
+import CodeEditor from "./components/CodeEditor";
+
+const DEFAULT_CODE = "#Write your code here"
 
 export default function Home() {
     const [problem, setProblem] = useState(null);
+    const [code, setCode] = useState(DEFAULT_CODE);
 
     async function handleSelect(id: string) {
         if (!id) {
@@ -38,12 +42,8 @@ export default function Home() {
                             <ProblemViewer problem={problem} />
                         </div>
                     </div>
-                    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6">
-                        <div className="w-full h-full rounded-lg bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
-                            <p className="text-gray-500 dark:text-gray-400">
-                                Your future code editor.
-                            </p>
-                        </div>
+                    <div className="bg-white dark:bg-gray-800 shadow-lg rounded-xl p-3">
+                        <CodeEditor code={code} setCode={setCode} isDisabled={problem === null} />
                     </div>
                 </div>
             </main>

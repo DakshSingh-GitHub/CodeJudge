@@ -63,7 +63,7 @@ def submit():
         return jsonify({"error": "Problem not found"})
     
     try:
-        with open(problem_path, "r") as f:
+        with open(problem_path, "r", encoding="utf-8") as f:
             problem = json.load(f)
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format in problem file"}), 500
@@ -122,7 +122,7 @@ def ListProblems():
             continue
         problem_path = os.path.join(PROBLEMS_DIR, filename)
         try:
-            with open(problem_path, "r") as f:
+            with open(problem_path, "r", encoding="utf-8") as f:
                 problem = json.load(f)
         except Exception: 
             continue
@@ -146,7 +146,7 @@ def getProblem(problem_id):
     if not os.path.exists(problem_path):
         return jsonify({"error": "Problem not found"})
     try:
-        with open(problem_path, "r") as f:
+        with open(problem_path, "r", encoding="utf-8") as f:
             problem = json.load(f)
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON format in problem file"}), 500

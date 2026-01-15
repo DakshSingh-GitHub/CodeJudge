@@ -32,7 +32,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
             </h2>
 
             <div className="prose prose-lg dark:prose-invert max-w-none">
-                <p>{problem.description}</p>
+                {problem.description}
             </div>
 
             {problem.input_format && (
@@ -65,11 +65,9 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                     <pre className="mt-1 p-4 bg-gray-100 dark:bg-gray-900 rounded-md text-sm text-gray-800 dark:text-gray-200 overflow-x-auto">
                         <code>
                             {problem.constraints && typeof problem.constraints === 'object' ? (
-                                Object.entries(problem.constraints).map(([key, value], i) => (
-                                    <div key={i}>
-                                        <strong>{key}:</strong> {String(value)}
-                                    </div>
-                                ))
+                                Object.entries(problem.constraints)
+                                    .map(([key, value]) => `${key}: ${String(value)}`)
+                                    .join('\n')
                             ) : (
                                 problem.constraints
                             )}
