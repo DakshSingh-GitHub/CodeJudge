@@ -129,11 +129,10 @@ export default function Home() {
 
                 <div
                     ref={containerRef}
-                    className={`flex flex-1 overflow-hidden gap-4 p-4 ${
-                        isDraggingSidebar || isDraggingHorizontal
+                    className={`flex flex-1 overflow-hidden gap-4 p-4 ${isDraggingSidebar || isDraggingHorizontal
                             ? "select-none"
                             : ""
-                    }`}
+                        }`}
                 >
                     {/* Left Sidebar - Problem List */}
                     {isSidebarOpen && (
@@ -252,11 +251,10 @@ export default function Home() {
                                         isSubmitting || !selectedProblemId
                                     }
                                     className={`mt-4 px-6 py-2 rounded-lg font-semibold w-1/4 justify-center items-center transition
-                                    ${
-                                        isSubmitting
+                                    ${isSubmitting
                                             ? "bg-gray-500 cursor-not-allowed"
                                             : "bg-indigo-600 hover:bg-indigo-700"
-                                    }
+                                        }
                                     text-white`}
                                 >
                                     {isSubmitting ? "Judging..." : "Submit"}
@@ -277,7 +275,7 @@ export default function Home() {
                                             <>
                                                 <p className="text-lg font-semibold">
                                                     Verdict:{" "}
-                                                    {result.final_status}
+                                                    {result.final_status} ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
                                                 </p>
                                                 <p className="text-sm mt-1">
                                                     Passed{" "}

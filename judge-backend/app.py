@@ -103,6 +103,7 @@ def submit():
     return jsonify({
         "problem_id": problem_id,
         "final_status": result["final_status"],
+        "total_duration": result["total_duration"],
         "summary": result["summary"],
         "test_case_results": visible_results
     })

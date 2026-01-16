@@ -1,6 +1,7 @@
 import subprocess
 import tempfile
 import os
+import time
 
 TIME_LIMIT = 2  # seconds
 
@@ -32,6 +33,7 @@ def run_code_multiple(code, test_cases, mode="ALL"):
     final_status = "Accepted"
 
     try:
+        start_time = time.time()
         for index, tc in enumerate(test_cases, start=1):
             user_input = tc.get("input", "")
             expected_output = tc.get("output", "")
@@ -91,9 +93,13 @@ def run_code_multiple(code, test_cases, mode="ALL"):
                 if mode == "FIRST_FAIL":
                     break
 
+        end_time = time.time()
+        total_duration = end_time - start_time
+
         return {
             "final_status": final_status,
             "mode": mode,
+            "total_duration": total_duration,
             "summary": {
                 "passed": passed_count,
                 "total": len(test_cases)
