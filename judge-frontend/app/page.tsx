@@ -276,10 +276,24 @@ export default function Home() {
                                             </p>
                                         ) : (
                                             <>
-                                                <p className="text-lg font-semibold">
+                                                <div className="text-lg font-semibold flex items-center gap-2">
                                                     Verdict:{" "}
-                                                    {result.final_status} ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
-                                                </p>
+                                                    <span className={result.final_status === "Accepted" ? "text-green-400" : "text-red-400"}>
+                                                        {result.final_status}
+                                                    </span>
+                                                    {result.final_status === "Accepted" ? (
+                                                        <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    ) : (
+                                                        <svg className="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                                                        </svg>
+                                                    )}
+                                                    <span>
+                                                        ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
+                                                    </span>
+                                                </div>
                                                 <p className="text-sm mt-1">
                                                     Passed{" "}
                                                     {result.summary.passed} /{" "}

@@ -1,9 +1,9 @@
 {
     "id": "prime_number_check",
     "title": "Prime Number Check",
-    "description": "Determine if a given integer N is a prime number.",
+    "description": "A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers. In other words, a prime number has exactly two distinct positive divisors: 1 and itself. In this problem, you are given an integer `N`. Your task is to determine whether `N` is a prime number.",
     "input_format": "A single integer N.",
-    "output_format": "Print 'Yes' if N is prime, otherwise print 'No'.",
+    "output_format": "Output a single line containing 'Yes' if `N` is a prime number, or 'No' if it is not. The output should be case-sensitive.",
     "constraints": {
         "N": "1 <= N <= 10^9"
     },
@@ -158,6 +158,258 @@
         },
         {
             "input": "120",
+            "output": "No"
+        },
+        {
+            "input": "267",
+            "output": "No"
+        },
+        {
+            "input": "53",
+            "output": "Yes"
+        },
+        {
+            "input": "72",
+            "output": "No"
+        },
+        {
+            "input": "54",
+            "output": "No"
+        },
+        {
+            "input": "87",
+            "output": "No"
+        },
+        {
+            "input": "401",
+            "output": "Yes"
+        },
+        {
+            "input": "91",
+            "output": "No"
+        },
+        {
+            "input": "305",
+            "output": "No"
+        },
+        {
+            "input": "334",
+            "output": "No"
+        },
+        {
+            "input": "178",
+            "output": "No"
+        },
+        {
+            "input": "310",
+            "output": "No"
+        },
+        {
+            "input": "205",
+            "output": "No"
+        },
+        {
+            "input": "207",
+            "output": "No"
+        },
+        {
+            "input": "299",
+            "output": "No"
+        },
+        {
+            "input": "296",
+            "output": "No"
+        },
+        {
+            "input": "490",
+            "output": "No"
+        },
+        {
+            "input": "105",
+            "output": "No"
+        },
+        {
+            "input": "384",
+            "output": "No"
+        },
+        {
+            "input": "292",
+            "output": "No"
+        },
+        {
+            "input": "262",
+            "output": "No"
+        },
+        {
+            "input": "120",
+            "output": "No"
+        },
+        {
+            "input": "470",
+            "output": "No"
+        },
+        {
+            "input": "422",
+            "output": "No"
+        },
+        {
+            "input": "321",
+            "output": "No"
+        },
+        {
+            "input": "430",
+            "output": "No"
+        },
+        {
+            "input": "438",
+            "output": "No"
+        },
+        {
+            "input": "228",
+            "output": "No"
+        },
+        {
+            "input": "67",
+            "output": "Yes"
+        },
+        {
+            "input": "215",
+            "output": "No"
+        },
+        {
+            "input": "193",
+            "output": "Yes"
+        },
+        {
+            "input": "257",
+            "output": "Yes"
+        },
+        {
+            "input": "209",
+            "output": "No"
+        },
+        {
+            "input": "428",
+            "output": "No"
+        },
+        {
+            "input": "256",
+            "output": "No"
+        },
+        {
+            "input": "31",
+            "output": "Yes"
+        },
+        {
+            "input": "479",
+            "output": "Yes"
+        },
+        {
+            "input": "440",
+            "output": "No"
+        },
+        {
+            "input": "225",
+            "output": "No"
+        },
+        {
+            "input": "90",
+            "output": "No"
+        },
+        {
+            "input": "181",
+            "output": "Yes"
+        },
+        {
+            "input": "118",
+            "output": "No"
+        },
+        {
+            "input": "53",
+            "output": "Yes"
+        },
+        {
+            "input": "60",
+            "output": "No"
+        },
+        {
+            "input": "59",
+            "output": "Yes"
+        },
+        {
+            "input": "116",
+            "output": "No"
+        },
+        {
+            "input": "279",
+            "output": "No"
+        },
+        {
+            "input": "150",
+            "output": "No"
+        },
+        {
+            "input": "261",
+            "output": "No"
+        },
+        {
+            "input": "220",
+            "output": "No"
+        },
+        {
+            "input": "163",
+            "output": "Yes"
+        },
+        {
+            "input": "172",
+            "output": "No"
+        },
+        {
+            "input": "117",
+            "output": "No"
+        },
+        {
+            "input": "415",
+            "output": "No"
+        },
+        {
+            "input": "430",
+            "output": "No"
+        },
+        {
+            "input": "132",
+            "output": "No"
+        },
+        {
+            "input": "41",
+            "output": "Yes"
+        },
+        {
+            "input": "102",
+            "output": "No"
+        },
+        {
+            "input": "407",
+            "output": "No"
+        },
+        {
+            "input": "34",
+            "output": "No"
+        },
+        {
+            "input": "259",
+            "output": "No"
+        },
+        {
+            "input": "255",
+            "output": "No"
+        },
+        {
+            "input": "219",
+            "output": "No"
+        },
+        {
+            "input": "452",
             "output": "No"
         }
     ]

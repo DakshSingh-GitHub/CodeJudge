@@ -73,7 +73,7 @@ def solve_fibonacci_sequence():
 def solve_find_the_maximum():
     n = random.randint(1, 20)
     arr = [random.randint(-1000, 1000) for _ in range(n)]
-    return f"{n}\n{' '.join(map(str, arr))}", str(max(arr))
+    return f"{' '.join(map(str, arr))}", str(max(arr))
 
 def solve_gcd_two_numbers():
     a = random.randint(1, 1000)
@@ -97,7 +97,7 @@ def solve_knapsack_0_1():
                        knapSack(W, wt, val, n-1)) 
     
     res = knapSack(w_cap, weights, values, n)
-    return f"{n} {w_cap}\n{' '.join(map(str, weights))}\n{' '.join(map(str, values))}", str(res)
+    return f"{w_cap}\n{' '.join(map(str, values))}\n{' '.join(map(str, weights))}", str(res)
 
 def solve_lcm_two_numbers():
     a = random.randint(1, 100)
@@ -129,7 +129,7 @@ def solve_longest_increasing_subsequence():
             if arr[i] > arr[j] and lis[i] < lis[j] + 1: 
                 lis[i] = lis[j]+1
     
-    return f"{n}\n{' '.join(map(str, arr))}", str(max(lis))
+    return f"{' '.join(map(str, arr))}", str(max(lis))
 
 def solve_matrix_addition():
     rows = random.randint(2, 5)
@@ -171,7 +171,7 @@ def solve_remove_duplicates_array():
     # Based on similar problems, likely prints unique array. 
     # Let's provide output as printed array space separated.
     # Wait, need to check if input is sorted? The generator makes sorted.
-    return f"{n}\n{' '.join(map(str, arr))}", " ".join(map(str, unique))
+    return f"{' '.join(map(str, arr))}", " ".join(map(str, unique))
 
 def solve_reverse_string():
     s = "".join(random.choices("abcdefg", k=random.randint(3, 15)))
@@ -184,12 +184,12 @@ def solve_second_largest_element():
     random.shuffle(arr)
     arr_sorted = sorted(arr)
     res = arr_sorted[-2]
-    return f"{len(arr)}\n{' '.join(map(str, arr))}", str(res)
+    return f"{' '.join(map(str, arr))}", str(res)
 
 def solve_simple_array_sum():
     n = random.randint(3, 20)
     arr = [random.randint(1, 100) for _ in range(n)]
-    return f"{n}\n{' '.join(map(str, arr))}", str(sum(arr))
+    return f"{' '.join(map(str, arr))}", str(sum(arr))
 
 def solve_string_permutations():
     s = "".join(random.choices("ABC", k=random.randint(2, 3))) # Keep len small for perms
@@ -209,7 +209,7 @@ def solve_trapping_rain_water():
     n = random.randint(5, 15)
     heights = [random.randint(0, 5) for _ in range(n)]
     
-    if not heights: return f"{n}\n", "0"
+    if not heights: return f"", "0"
     
     l, r = 0, n - 1
     leftMax, rightMax = heights[l], heights[r]
@@ -224,7 +224,7 @@ def solve_trapping_rain_water():
             rightMax = max(rightMax, heights[r])
             res += rightMax - heights[r]
             
-    return f"{n}\n{' '.join(map(str, heights))}", str(res)
+    return f"{' '.join(map(str, heights))}", str(res)
 
 SOLVERS = {
     "area_of_a_rectangle": solve_area_of_a_rectangle,
@@ -275,7 +275,7 @@ def main():
             
             solver = SOLVERS[problem_id]
             new_cases = []
-            for _ in range(33):
+            for _ in range(63):
                 inp, outp = solver()
                 new_cases.append({"input": inp, "output": outp})
             

@@ -1,9 +1,9 @@
 {
     "id": "sum_of_digits",
     "title": "Sum of Digits",
-    "description": "Calculate the sum of digits of a given integer N.",
+    "description": "The sum of digits problem requires you to separate each digit of a number and add them together. For example, for the number 123, the sum is 1 + 2 + 3 = 6. In this problem, you are given a non-negative integer `N`. Your task is to calculate the sum of its individual digits.",
     "input_format": "A single integer N.",
-    "output_format": "The sum of the digits of N.",
+    "output_format": "Output a single integer representing the sum of the digits of `N`.",
     "constraints": {
         "N": "0 <= N <= 10^18"
     },
@@ -159,6 +159,258 @@
         {
             "input": "8275",
             "output": "22"
+        },
+        {
+            "input": "7455",
+            "output": "21"
+        },
+        {
+            "input": "1127",
+            "output": "11"
+        },
+        {
+            "input": "2706",
+            "output": "15"
+        },
+        {
+            "input": "6847",
+            "output": "25"
+        },
+        {
+            "input": "8759",
+            "output": "29"
+        },
+        {
+            "input": "5634",
+            "output": "18"
+        },
+        {
+            "input": "1861",
+            "output": "16"
+        },
+        {
+            "input": "8487",
+            "output": "27"
+        },
+        {
+            "input": "1854",
+            "output": "18"
+        },
+        {
+            "input": "9532",
+            "output": "19"
+        },
+        {
+            "input": "9208",
+            "output": "19"
+        },
+        {
+            "input": "450",
+            "output": "9"
+        },
+        {
+            "input": "108",
+            "output": "9"
+        },
+        {
+            "input": "6190",
+            "output": "16"
+        },
+        {
+            "input": "7690",
+            "output": "22"
+        },
+        {
+            "input": "1280",
+            "output": "11"
+        },
+        {
+            "input": "9392",
+            "output": "23"
+        },
+        {
+            "input": "4842",
+            "output": "18"
+        },
+        {
+            "input": "7375",
+            "output": "22"
+        },
+        {
+            "input": "4383",
+            "output": "18"
+        },
+        {
+            "input": "8309",
+            "output": "20"
+        },
+        {
+            "input": "2852",
+            "output": "17"
+        },
+        {
+            "input": "3033",
+            "output": "9"
+        },
+        {
+            "input": "2043",
+            "output": "9"
+        },
+        {
+            "input": "7346",
+            "output": "20"
+        },
+        {
+            "input": "4329",
+            "output": "18"
+        },
+        {
+            "input": "2607",
+            "output": "15"
+        },
+        {
+            "input": "2429",
+            "output": "17"
+        },
+        {
+            "input": "3176",
+            "output": "17"
+        },
+        {
+            "input": "2536",
+            "output": "16"
+        },
+        {
+            "input": "2437",
+            "output": "16"
+        },
+        {
+            "input": "3302",
+            "output": "8"
+        },
+        {
+            "input": "9252",
+            "output": "18"
+        },
+        {
+            "input": "2601",
+            "output": "9"
+        },
+        {
+            "input": "3106",
+            "output": "10"
+        },
+        {
+            "input": "654",
+            "output": "15"
+        },
+        {
+            "input": "1180",
+            "output": "10"
+        },
+        {
+            "input": "3722",
+            "output": "14"
+        },
+        {
+            "input": "5880",
+            "output": "21"
+        },
+        {
+            "input": "2439",
+            "output": "18"
+        },
+        {
+            "input": "7530",
+            "output": "15"
+        },
+        {
+            "input": "651",
+            "output": "12"
+        },
+        {
+            "input": "4207",
+            "output": "13"
+        },
+        {
+            "input": "5045",
+            "output": "14"
+        },
+        {
+            "input": "8312",
+            "output": "14"
+        },
+        {
+            "input": "2887",
+            "output": "25"
+        },
+        {
+            "input": "7902",
+            "output": "18"
+        },
+        {
+            "input": "2424",
+            "output": "12"
+        },
+        {
+            "input": "4114",
+            "output": "10"
+        },
+        {
+            "input": "6422",
+            "output": "14"
+        },
+        {
+            "input": "2298",
+            "output": "21"
+        },
+        {
+            "input": "9361",
+            "output": "19"
+        },
+        {
+            "input": "3916",
+            "output": "19"
+        },
+        {
+            "input": "4564",
+            "output": "19"
+        },
+        {
+            "input": "4595",
+            "output": "23"
+        },
+        {
+            "input": "8478",
+            "output": "27"
+        },
+        {
+            "input": "7124",
+            "output": "14"
+        },
+        {
+            "input": "308",
+            "output": "11"
+        },
+        {
+            "input": "4776",
+            "output": "24"
+        },
+        {
+            "input": "9808",
+            "output": "25"
+        },
+        {
+            "input": "6832",
+            "output": "19"
+        },
+        {
+            "input": "3247",
+            "output": "16"
+        },
+        {
+            "input": "631",
+            "output": "10"
         }
     ]
 }

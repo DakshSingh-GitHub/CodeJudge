@@ -169,6 +169,9 @@ def getProblem(problem_id):
     if "constraints" in problem:
         response["constraints"] = problem["constraints"]
 
+    if "sample_test_cases" in problem:
+        response["sample_test_cases"] = problem["sample_test_cases"]
+
     return jsonify(response)
 
 

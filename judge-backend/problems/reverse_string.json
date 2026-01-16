@@ -1,9 +1,9 @@
 {
     "id": "reverse_string",
     "title": "Reverse a String",
-    "description": "Given a string S, print the reversed string.",
+    "description": "Reversing a string involves arranging its characters in the opposite order. For example, 'hello' becomes 'olleh'. In this problem, you are given a string `S`. Your task is to generate and output the reversed version of this string.",
     "input_format": "A single string S.",
-    "output_format": "The reversed string.",
+    "output_format": "Output a single string representing the reversed version of the input string `S`.",
     "constraints": {
         "S": "1 <= length(S) <= 1000"
     },
@@ -159,6 +159,258 @@
         {
             "input": "efa",
             "output": "afe"
+        },
+        {
+            "input": "abce",
+            "output": "ecba"
+        },
+        {
+            "input": "fbebcc",
+            "output": "ccbebf"
+        },
+        {
+            "input": "abcdbdgcea",
+            "output": "aecgdbdcba"
+        },
+        {
+            "input": "bddaa",
+            "output": "aaddb"
+        },
+        {
+            "input": "bbafgfa",
+            "output": "afgfabb"
+        },
+        {
+            "input": "fedabaddf",
+            "output": "fddabadef"
+        },
+        {
+            "input": "gbeaeeedbbacfcb",
+            "output": "bcfcabbdeeeaebg"
+        },
+        {
+            "input": "efgedcebacceea",
+            "output": "aeeccabecdegfe"
+        },
+        {
+            "input": "fdf",
+            "output": "fdf"
+        },
+        {
+            "input": "fgbdcee",
+            "output": "eecdbgf"
+        },
+        {
+            "input": "gaefedddef",
+            "output": "fedddefeag"
+        },
+        {
+            "input": "ddgffcdageadbcg",
+            "output": "gcbdaegadcffgdd"
+        },
+        {
+            "input": "bbgfbcfabfeec",
+            "output": "ceefbafcbfgbb"
+        },
+        {
+            "input": "gdddbgdgbbebab",
+            "output": "babebbgdgbdddg"
+        },
+        {
+            "input": "fgabdbccfabcea",
+            "output": "aecbafccbdbagf"
+        },
+        {
+            "input": "gdebcgagcdccbb",
+            "output": "bbccdcgagcbedg"
+        },
+        {
+            "input": "aegadae",
+            "output": "eadagea"
+        },
+        {
+            "input": "fcdcdcgd",
+            "output": "dgcdcdcf"
+        },
+        {
+            "input": "fafffebaaad",
+            "output": "daaabefffaf"
+        },
+        {
+            "input": "gbaebe",
+            "output": "ebeabg"
+        },
+        {
+            "input": "bggbdfb",
+            "output": "bfdbggb"
+        },
+        {
+            "input": "gcegbaef",
+            "output": "feabgecg"
+        },
+        {
+            "input": "daebbeg",
+            "output": "gebbead"
+        },
+        {
+            "input": "gbeeeddde",
+            "output": "edddeeebg"
+        },
+        {
+            "input": "cgbbfffccgggg",
+            "output": "ggggccfffbbgc"
+        },
+        {
+            "input": "dgdafccgbbdffge",
+            "output": "egffdbbgccfadgd"
+        },
+        {
+            "input": "aebdfcabfgagb",
+            "output": "bgagfbacfdbea"
+        },
+        {
+            "input": "cgbcbdbgdefcag",
+            "output": "gacfedgbdbcbgc"
+        },
+        {
+            "input": "efg",
+            "output": "gfe"
+        },
+        {
+            "input": "abafg",
+            "output": "gfaba"
+        },
+        {
+            "input": "effbg",
+            "output": "gbffe"
+        },
+        {
+            "input": "gbeaffedac",
+            "output": "cadeffaebg"
+        },
+        {
+            "input": "gdbbacgacddecfg",
+            "output": "gfceddcagcabbdg"
+        },
+        {
+            "input": "beedecdeggaaff",
+            "output": "ffaaggedcedeeb"
+        },
+        {
+            "input": "dagaeca",
+            "output": "aceagad"
+        },
+        {
+            "input": "abaebdc",
+            "output": "cdbeaba"
+        },
+        {
+            "input": "dbcedce",
+            "output": "ecdecbd"
+        },
+        {
+            "input": "dbb",
+            "output": "bbd"
+        },
+        {
+            "input": "efcdaeb",
+            "output": "beadcfe"
+        },
+        {
+            "input": "gecfc",
+            "output": "cfceg"
+        },
+        {
+            "input": "eefgdfddag",
+            "output": "gaddfdgfee"
+        },
+        {
+            "input": "gfafdgaf",
+            "output": "fagdfafg"
+        },
+        {
+            "input": "gdagefg",
+            "output": "gfegadg"
+        },
+        {
+            "input": "bfefbdcede",
+            "output": "edecdbfefb"
+        },
+        {
+            "input": "bdggcbc",
+            "output": "cbcggdb"
+        },
+        {
+            "input": "cdcedcagbebgdf",
+            "output": "fdgbebgacdecdc"
+        },
+        {
+            "input": "cce",
+            "output": "ecc"
+        },
+        {
+            "input": "acffeefgbgg",
+            "output": "ggbgfeeffca"
+        },
+        {
+            "input": "afgbdaa",
+            "output": "aadbgfa"
+        },
+        {
+            "input": "abd",
+            "output": "dba"
+        },
+        {
+            "input": "cebbg",
+            "output": "gbbec"
+        },
+        {
+            "input": "efaccdbaaabda",
+            "output": "adbaaabdccafe"
+        },
+        {
+            "input": "cabfbfcca",
+            "output": "accfbfbac"
+        },
+        {
+            "input": "fdgbf",
+            "output": "fbgdf"
+        },
+        {
+            "input": "edaebgb",
+            "output": "bgbeade"
+        },
+        {
+            "input": "cecdgdadd",
+            "output": "ddadgdcec"
+        },
+        {
+            "input": "fceccgbcbg",
+            "output": "gbcbgccecf"
+        },
+        {
+            "input": "gdafaeebc",
+            "output": "cbeeafadg"
+        },
+        {
+            "input": "fbbagfedacb",
+            "output": "bcadefgabbf"
+        },
+        {
+            "input": "gafecafdc",
+            "output": "cdfacefag"
+        },
+        {
+            "input": "ggbg",
+            "output": "gbgg"
+        },
+        {
+            "input": "fcfefae",
+            "output": "eafefcf"
+        },
+        {
+            "input": "fcegebfbdggcdg",
+            "output": "gdcggdbfbegecf"
         }
     ]
 }

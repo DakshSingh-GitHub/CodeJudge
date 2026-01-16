@@ -1,9 +1,9 @@
 {
     "id": "lcm_two_numbers",
     "title": "LCM of Two Numbers",
-    "description": "Calculate the Least Common Multiple (LCM) of two integers A and B.",
+    "description": "The Least Common Multiple (LCM) of two integers is the smallest positive integer that is perfectly divisible by both integers. In this problem, you are given two integers `A` and `B`. Your task is to calculate their Least Common Multiple.",
     "input_format": "Two space-separated integers A and B.",
-    "output_format": "The LCM of A and B.",
+    "output_format": "Output a single integer representing the Least Common Multiple (LCM) of `A` and `B`.",
     "constraints": {
         "A": "1 <= A <= 10^4",
         "B": "1 <= B <= 10^4"
@@ -160,6 +160,258 @@
         {
             "input": "17 66",
             "output": "1122"
+        },
+        {
+            "input": "30 1",
+            "output": "30"
+        },
+        {
+            "input": "66 38",
+            "output": "1254"
+        },
+        {
+            "input": "88 76",
+            "output": "1672"
+        },
+        {
+            "input": "81 16",
+            "output": "1296"
+        },
+        {
+            "input": "100 12",
+            "output": "300"
+        },
+        {
+            "input": "55 22",
+            "output": "110"
+        },
+        {
+            "input": "3 94",
+            "output": "282"
+        },
+        {
+            "input": "50 36",
+            "output": "900"
+        },
+        {
+            "input": "4 49",
+            "output": "196"
+        },
+        {
+            "input": "92 18",
+            "output": "828"
+        },
+        {
+            "input": "48 31",
+            "output": "1488"
+        },
+        {
+            "input": "16 7",
+            "output": "112"
+        },
+        {
+            "input": "87 14",
+            "output": "1218"
+        },
+        {
+            "input": "73 92",
+            "output": "6716"
+        },
+        {
+            "input": "33 94",
+            "output": "3102"
+        },
+        {
+            "input": "18 55",
+            "output": "990"
+        },
+        {
+            "input": "40 57",
+            "output": "2280"
+        },
+        {
+            "input": "48 76",
+            "output": "912"
+        },
+        {
+            "input": "58 34",
+            "output": "986"
+        },
+        {
+            "input": "49 59",
+            "output": "2891"
+        },
+        {
+            "input": "95 84",
+            "output": "7980"
+        },
+        {
+            "input": "28 13",
+            "output": "364"
+        },
+        {
+            "input": "56 7",
+            "output": "56"
+        },
+        {
+            "input": "92 37",
+            "output": "3404"
+        },
+        {
+            "input": "49 83",
+            "output": "4067"
+        },
+        {
+            "input": "10 46",
+            "output": "230"
+        },
+        {
+            "input": "63 86",
+            "output": "5418"
+        },
+        {
+            "input": "29 31",
+            "output": "899"
+        },
+        {
+            "input": "92 32",
+            "output": "736"
+        },
+        {
+            "input": "35 23",
+            "output": "805"
+        },
+        {
+            "input": "97 34",
+            "output": "3298"
+        },
+        {
+            "input": "23 45",
+            "output": "1035"
+        },
+        {
+            "input": "54 42",
+            "output": "378"
+        },
+        {
+            "input": "80 84",
+            "output": "1680"
+        },
+        {
+            "input": "68 85",
+            "output": "340"
+        },
+        {
+            "input": "85 87",
+            "output": "7395"
+        },
+        {
+            "input": "8 69",
+            "output": "552"
+        },
+        {
+            "input": "17 82",
+            "output": "1394"
+        },
+        {
+            "input": "45 75",
+            "output": "225"
+        },
+        {
+            "input": "7 17",
+            "output": "119"
+        },
+        {
+            "input": "92 63",
+            "output": "5796"
+        },
+        {
+            "input": "91 98",
+            "output": "1274"
+        },
+        {
+            "input": "55 25",
+            "output": "275"
+        },
+        {
+            "input": "34 66",
+            "output": "1122"
+        },
+        {
+            "input": "15 82",
+            "output": "1230"
+        },
+        {
+            "input": "95 17",
+            "output": "1615"
+        },
+        {
+            "input": "8 31",
+            "output": "248"
+        },
+        {
+            "input": "81 32",
+            "output": "2592"
+        },
+        {
+            "input": "13 44",
+            "output": "572"
+        },
+        {
+            "input": "50 2",
+            "output": "50"
+        },
+        {
+            "input": "96 12",
+            "output": "96"
+        },
+        {
+            "input": "41 49",
+            "output": "2009"
+        },
+        {
+            "input": "38 28",
+            "output": "532"
+        },
+        {
+            "input": "5 20",
+            "output": "20"
+        },
+        {
+            "input": "25 67",
+            "output": "1675"
+        },
+        {
+            "input": "85 61",
+            "output": "5185"
+        },
+        {
+            "input": "13 23",
+            "output": "299"
+        },
+        {
+            "input": "11 37",
+            "output": "407"
+        },
+        {
+            "input": "22 35",
+            "output": "770"
+        },
+        {
+            "input": "40 2",
+            "output": "40"
+        },
+        {
+            "input": "1 80",
+            "output": "80"
+        },
+        {
+            "input": "63 47",
+            "output": "2961"
+        },
+        {
+            "input": "22 25",
+            "output": "550"
         }
     ]
 }

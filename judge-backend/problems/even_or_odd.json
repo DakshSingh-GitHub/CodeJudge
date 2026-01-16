@@ -1,9 +1,9 @@
 {
     "id": "even_or_odd",
     "title": "Even or Odd",
-    "description": "Given an integer N, determine if it is even or odd.",
+    "description": "An even number is an integer that is divisible by 2 with no remainder, while an odd number is an integer that leaves a remainder of 1 when divided by 2. In this problem, you are given an integer `N`. Your task is to determine whether `N` is an even number or an odd number.",
     "input_format": "A single integer N",
-    "output_format": "Print 'Even' if N is even, 'Odd' otherwise.",
+    "output_format": "Output a single line with the string 'Even' if the number `N` is even, or 'Odd' if the number `N` is odd. The output should be case-sensitive.",
     "constraints": {
         "N": "1 <= N <= 1000000000"
     },
@@ -162,6 +162,258 @@
         },
         {
             "input": "70945",
+            "output": "Odd"
+        },
+        {
+            "input": "96974",
+            "output": "Even"
+        },
+        {
+            "input": "74628",
+            "output": "Even"
+        },
+        {
+            "input": "97606",
+            "output": "Even"
+        },
+        {
+            "input": "92051",
+            "output": "Odd"
+        },
+        {
+            "input": "78803",
+            "output": "Odd"
+        },
+        {
+            "input": "90582",
+            "output": "Even"
+        },
+        {
+            "input": "46911",
+            "output": "Odd"
+        },
+        {
+            "input": "9245",
+            "output": "Odd"
+        },
+        {
+            "input": "44648",
+            "output": "Even"
+        },
+        {
+            "input": "88668",
+            "output": "Even"
+        },
+        {
+            "input": "5586",
+            "output": "Even"
+        },
+        {
+            "input": "7890",
+            "output": "Even"
+        },
+        {
+            "input": "35392",
+            "output": "Even"
+        },
+        {
+            "input": "24038",
+            "output": "Even"
+        },
+        {
+            "input": "21852",
+            "output": "Even"
+        },
+        {
+            "input": "63451",
+            "output": "Odd"
+        },
+        {
+            "input": "99369",
+            "output": "Odd"
+        },
+        {
+            "input": "12799",
+            "output": "Odd"
+        },
+        {
+            "input": "61033",
+            "output": "Odd"
+        },
+        {
+            "input": "29146",
+            "output": "Even"
+        },
+        {
+            "input": "15169",
+            "output": "Odd"
+        },
+        {
+            "input": "12163",
+            "output": "Odd"
+        },
+        {
+            "input": "89960",
+            "output": "Even"
+        },
+        {
+            "input": "15070",
+            "output": "Even"
+        },
+        {
+            "input": "91841",
+            "output": "Odd"
+        },
+        {
+            "input": "74640",
+            "output": "Even"
+        },
+        {
+            "input": "93464",
+            "output": "Even"
+        },
+        {
+            "input": "46623",
+            "output": "Odd"
+        },
+        {
+            "input": "61361",
+            "output": "Odd"
+        },
+        {
+            "input": "6674",
+            "output": "Even"
+        },
+        {
+            "input": "42451",
+            "output": "Odd"
+        },
+        {
+            "input": "56695",
+            "output": "Odd"
+        },
+        {
+            "input": "24591",
+            "output": "Odd"
+        },
+        {
+            "input": "75796",
+            "output": "Even"
+        },
+        {
+            "input": "2278",
+            "output": "Even"
+        },
+        {
+            "input": "87404",
+            "output": "Even"
+        },
+        {
+            "input": "12753",
+            "output": "Odd"
+        },
+        {
+            "input": "29039",
+            "output": "Odd"
+        },
+        {
+            "input": "83729",
+            "output": "Odd"
+        },
+        {
+            "input": "89484",
+            "output": "Even"
+        },
+        {
+            "input": "91270",
+            "output": "Even"
+        },
+        {
+            "input": "99826",
+            "output": "Even"
+        },
+        {
+            "input": "32940",
+            "output": "Even"
+        },
+        {
+            "input": "1036",
+            "output": "Even"
+        },
+        {
+            "input": "87874",
+            "output": "Even"
+        },
+        {
+            "input": "37114",
+            "output": "Even"
+        },
+        {
+            "input": "5949",
+            "output": "Odd"
+        },
+        {
+            "input": "57060",
+            "output": "Even"
+        },
+        {
+            "input": "68293",
+            "output": "Odd"
+        },
+        {
+            "input": "79171",
+            "output": "Odd"
+        },
+        {
+            "input": "78757",
+            "output": "Odd"
+        },
+        {
+            "input": "50396",
+            "output": "Even"
+        },
+        {
+            "input": "98827",
+            "output": "Odd"
+        },
+        {
+            "input": "57819",
+            "output": "Odd"
+        },
+        {
+            "input": "38633",
+            "output": "Odd"
+        },
+        {
+            "input": "3290",
+            "output": "Even"
+        },
+        {
+            "input": "83181",
+            "output": "Odd"
+        },
+        {
+            "input": "90241",
+            "output": "Odd"
+        },
+        {
+            "input": "84551",
+            "output": "Odd"
+        },
+        {
+            "input": "93193",
+            "output": "Odd"
+        },
+        {
+            "input": "29066",
+            "output": "Even"
+        },
+        {
+            "input": "99352",
+            "output": "Even"
+        },
+        {
+            "input": "24257",
             "output": "Odd"
         }
     ]

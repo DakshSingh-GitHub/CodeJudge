@@ -1,9 +1,9 @@
 {
     "id": "sum_of_doubles",
     "title": "Sum of Doubles",
-    "description": "Given an integer N, print 2 \u00d7 N.",
+    "description": "This is a straightforward problem. You are given an integer `N`. Your task is to calculate the double of this number, which is equivalent to multiplying the number by 2 or adding the number to itself.",
     "input_format": "A single integer N",
-    "output_format": "A single integer",
+    "output_format": "Output a single integer which is the result of `2 * N`.",
     "constraints": {
         "N": "1 \u2264 N \u2264 10\u2079"
     },
@@ -159,6 +159,258 @@
         {
             "input": "376",
             "output": "752"
+        },
+        {
+            "input": "370",
+            "output": "740"
+        },
+        {
+            "input": "602",
+            "output": "1204"
+        },
+        {
+            "input": "739",
+            "output": "1478"
+        },
+        {
+            "input": "816",
+            "output": "1632"
+        },
+        {
+            "input": "566",
+            "output": "1132"
+        },
+        {
+            "input": "206",
+            "output": "412"
+        },
+        {
+            "input": "722",
+            "output": "1444"
+        },
+        {
+            "input": "432",
+            "output": "864"
+        },
+        {
+            "input": "784",
+            "output": "1568"
+        },
+        {
+            "input": "148",
+            "output": "296"
+        },
+        {
+            "input": "39",
+            "output": "78"
+        },
+        {
+            "input": "713",
+            "output": "1426"
+        },
+        {
+            "input": "879",
+            "output": "1758"
+        },
+        {
+            "input": "190",
+            "output": "380"
+        },
+        {
+            "input": "588",
+            "output": "1176"
+        },
+        {
+            "input": "283",
+            "output": "566"
+        },
+        {
+            "input": "144",
+            "output": "288"
+        },
+        {
+            "input": "27",
+            "output": "54"
+        },
+        {
+            "input": "643",
+            "output": "1286"
+        },
+        {
+            "input": "447",
+            "output": "894"
+        },
+        {
+            "input": "156",
+            "output": "312"
+        },
+        {
+            "input": "216",
+            "output": "432"
+        },
+        {
+            "input": "91",
+            "output": "182"
+        },
+        {
+            "input": "502",
+            "output": "1004"
+        },
+        {
+            "input": "559",
+            "output": "1118"
+        },
+        {
+            "input": "617",
+            "output": "1234"
+        },
+        {
+            "input": "493",
+            "output": "986"
+        },
+        {
+            "input": "92",
+            "output": "184"
+        },
+        {
+            "input": "62",
+            "output": "124"
+        },
+        {
+            "input": "942",
+            "output": "1884"
+        },
+        {
+            "input": "250",
+            "output": "500"
+        },
+        {
+            "input": "841",
+            "output": "1682"
+        },
+        {
+            "input": "831",
+            "output": "1662"
+        },
+        {
+            "input": "692",
+            "output": "1384"
+        },
+        {
+            "input": "277",
+            "output": "554"
+        },
+        {
+            "input": "303",
+            "output": "606"
+        },
+        {
+            "input": "309",
+            "output": "618"
+        },
+        {
+            "input": "231",
+            "output": "462"
+        },
+        {
+            "input": "694",
+            "output": "1388"
+        },
+        {
+            "input": "746",
+            "output": "1492"
+        },
+        {
+            "input": "221",
+            "output": "442"
+        },
+        {
+            "input": "411",
+            "output": "822"
+        },
+        {
+            "input": "113",
+            "output": "226"
+        },
+        {
+            "input": "910",
+            "output": "1820"
+        },
+        {
+            "input": "746",
+            "output": "1492"
+        },
+        {
+            "input": "920",
+            "output": "1840"
+        },
+        {
+            "input": "453",
+            "output": "906"
+        },
+        {
+            "input": "929",
+            "output": "1858"
+        },
+        {
+            "input": "238",
+            "output": "476"
+        },
+        {
+            "input": "342",
+            "output": "684"
+        },
+        {
+            "input": "913",
+            "output": "1826"
+        },
+        {
+            "input": "506",
+            "output": "1012"
+        },
+        {
+            "input": "213",
+            "output": "426"
+        },
+        {
+            "input": "775",
+            "output": "1550"
+        },
+        {
+            "input": "940",
+            "output": "1880"
+        },
+        {
+            "input": "607",
+            "output": "1214"
+        },
+        {
+            "input": "362",
+            "output": "724"
+        },
+        {
+            "input": "958",
+            "output": "1916"
+        },
+        {
+            "input": "79",
+            "output": "158"
+        },
+        {
+            "input": "427",
+            "output": "854"
+        },
+        {
+            "input": "528",
+            "output": "1056"
+        },
+        {
+            "input": "137",
+            "output": "274"
+        },
+        {
+            "input": "870",
+            "output": "1740"
         }
     ]
 }

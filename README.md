@@ -1,126 +1,80 @@
-# code-judge
+# ⚖️ Welcome to Code Judge! 🚀
 
-# ⚖️ Mini Online Judge (Flask Backend)
+Hey there, fellow coder! 👋 Welcome to **Code Judge**, your very own pocket-sized Online Judge! Think of it like a mini Codeforces, but super easy to play with and learn from. 🎈
 
-> A lightweight **Online Code Judge** built using **Flask** that executes user-submitted Python code, evaluates it against test cases, and returns verdicts — just like Codeforces, but pocket-sized 😎
-
----
-
-## ✨ Features
-
-✅ Execute **Python code submissions**  
-✅ Accept **custom input (stdin)**  
-✅ Compare output with **expected output**  
-✅ Verdict system:
-- 🟢 **AC** — Accepted  
-- 🔴 **WA** — Wrong Answer  
-- ⚠️ **RE** — Runtime Error  
-- ⏱ **TLE** — Time Limit Exceeded  
-
-✅ Execution time limits  
-✅ Clean **REST API**  
-✅ JSON-based request/response  
-✅ Beginner-friendly but **system-level logic**
+Built with love using **Flask** 🌶 and **Next.js** ⚛️, this little judge lets you submit Python code, runs it against secret test cases, and gives you that sweet, sweet verdict! 🟢
 
 ---
 
-## 🧠 How It Works (High Level)
+## ✨ Super Cool Features
 
-1. User sends Python code via API
-2. Code is written to a **temporary file**
-3. Code is executed using `subprocess`
-4. Input is piped through `stdin`
-5. Output is captured from `stdout`
-6. Output is compared with expected output
-7. Judge returns a **verdict**
-
-> ⚠️ Code execution is sandboxed only at a basic level (timeouts).  
-> Advanced isolation (Docker, seccomp) is planned.
-
----
-
-## 🛠 Tech Stack
-
-- 🐍 **Python**
-- 🌶 **Flask**
-- ⚙️ `subprocess`
-- 📄 `tempfile`
-- 🧪 Postman (for API testing)
+- 🐍 **Python Power**: Submit your Python solutions and see them fly!
+- 📥 **Custom Stdin**: Test your code with any input you like.
+- 🎯 **Smart Evaluation**: We compare your output against the truth with precision.
+- 🚦 **Verdict System**:
+  - 🟢 **AC (Accepted)** — You nailed it! Boom! 💥
+  - 🔴 **WA (Wrong Answer)** — Almost there! Keep trying! 💪
+  - ⚠️ **RE (Runtime Error)** — Oops! Something went "pop"! 🎈
+  - ⏱ **TLE (Time Limit Exceeded)** — Your code took a scenic route! 🏎
+- ⚡️ **Light & Dark Mode**: Code in style, day or night! 🌓
+- 📏 **Draggable UI**: Resize the viewer and editor exactly how you like it.
 
 ---
 
-## 🧭 Project Roadmap
+## 🧠 The Magic Behind the Curtain
 
-This roadmap tracks the evolution of the **Mini Online Judge**, from a simple execution engine to a secure, scalable judging system.
-
----
-
-### 🟢 Phase 0 — Core Foundations (Completed)
-
-✅ Initialize Flask backend  
-✅ Create REST API endpoint (`POST /submit`)  
-✅ Accept user-submitted Python code  
-✅ Execute code using `subprocess`  
-✅ Capture `stdout` and `stderr`  
-✅ Handle runtime errors (RE)  
-✅ Enforce execution timeout (TLE)  
-✅ Return structured JSON responses  
+Ever wondered how a judge works? It's like a tiny robot 🤖 doing this:
+1. **Grabs** your code from the API.
+2. **Writes** it into a safe little temporary file.
+3. **Runs** it in a special subprocess with your input.
+4. **Catches** the output (and any errors!).
+5. **Compares** it to the correct answer.
+6. **Delivers** your shiny verdict! 🏆
 
 ---
 
-### 🟡 Phase 1 — Input, Output & Verdict System (Completed)
+## 🛠 Our Toasty Tech Stack
 
-✅ Accept custom input via `stdin`  
-✅ Capture program output  
-✅ Compare actual output with expected output  
-✅ AC (Accepted) verdict  
-✅ WA (Wrong Answer) verdict  
-✅ RE (Runtime Error) verdict  
-✅ TLE (Time Limit Exceeded) verdict  
-✅ Trim and normalize outputs before comparison  
+- **Backend**: Python 🐍 + Flask 🌶
+- **Frontend**: Next.js ⚛️ + TypeScript 📘 + Tailwind CSS 🎨
+- **Editor**: Monaco Editor (The same one in VS Code! 💻)
 
 ---
 
-### 🟠 Phase 2 — Test Case Handling (Planned)
+## 🚀 Getting Started
 
-✅ Support multiple test cases per submission  
-✅ Stop execution on first failed test case  
-⬜ Return detailed per-test-case results  
-✅ Handle edge cases (extra spaces, newlines)  
+Ready to dive in? Here’s how to get the party started on your local machine! 🎈
 
----
+### 🌶 1. Fire up the Backend
+```bash
+cd judge-backend
+python app.py
+```
+*Your judge is now waiting for submissions at `http://127.0.0.1:5000`!*
 
-### 🔵 Phase 3 — Problem Definitions (Planned)
-
-⬜ Store problems as JSON files  
-⬜ Include problem metadata (name, description, constraints)  
-⬜ Support sample test cases  
-⬜ Add hidden test cases  
-⬜ Implement custom checker logic  
-
----
-
-### 🔐 Phase 4 — Security & Isolation (Planned)
-
-⬜ Restrict dangerous Python built-ins  
-⬜ Enforce memory limits  
-⬜ Sandbox execution using Docker  
-⬜ Prevent file system access  
-⬜ Harden against infinite loops  
+### ⚛️ 2. Boot up the Frontend
+```bash
+cd judge-frontend
+npm install  # (First time only!)
+npm run dev
+```
+*Open `http://localhost:3000` and start coding!* 🎊
 
 ---
 
-### 🌐 Phase 5 — Platform Features (Stretch Goals)
+## 🧭 The Road Ahead (Our Roadmap)
 
-⬜ User authentication  
-⬜ Submission history  
-⬜ Language support (Java)  
-⬜ Leaderboard  
-⬜ Deployment  
+We're constantly growing! Here's what's cooking:
+- 🟢 **Phase 0 & 1**: Core foundations & Verdicts (Done! 🎉)
+- 🟡 **Phase 2**: Handling multiple test cases (Working on it! 🛠)
+- 🔵 **Phase 3**: Better problem definitions (Planned! 📐)
+- 🔐 **Phase 4**: Super secure sandboxing with Docker (Soon! 🐳)
+- 🌐 **Phase 5**: Submissions history & User accounts (The dream! ✨)
 
 ---
 
-### 📊 Progress Summary
+### 🙌 Join the Fun!
+Got questions? Suggestions? Just want to say hi? We're happy to have you here! Happy coding! 🌈✨
 
-✅ **16 tasks completed**  
-🚧 **Project actively under development**
+---
+*Made with ❤️ for the coding community.*

@@ -1,9 +1,9 @@
 {
     "id": "decimal_to_binary",
     "title": "Decimal to Binary",
-    "description": "Convert a decimal number N to its binary string representation.",
+    "description": "A decimal number is a base-10 number, while a binary number is a base-2 number consisting only of the digits 0 and 1. In this problem, you are given a non-negative integer `N`. Your task is to convert this decimal number into its binary string representation. For example, the decimal number 5 is represented as '101' in binary.",
     "input_format": "A single integer N.",
-    "output_format": "The binary string of N.",
+    "output_format": "Output a single string representing the binary equivalent of the given decimal integer `N`.",
     "constraints": {
         "N": "0 <= N <= 10^9"
     },
@@ -159,6 +159,258 @@
         {
             "input": "2039",
             "output": "11111110111"
+        },
+        {
+            "input": "4776",
+            "output": "1001010101000"
+        },
+        {
+            "input": "2785",
+            "output": "101011100001"
+        },
+        {
+            "input": "6060",
+            "output": "1011110101100"
+        },
+        {
+            "input": "2199",
+            "output": "100010010111"
+        },
+        {
+            "input": "1685",
+            "output": "11010010101"
+        },
+        {
+            "input": "1975",
+            "output": "11110110111"
+        },
+        {
+            "input": "2099",
+            "output": "100000110011"
+        },
+        {
+            "input": "8618",
+            "output": "10000110101010"
+        },
+        {
+            "input": "2319",
+            "output": "100100001111"
+        },
+        {
+            "input": "5243",
+            "output": "1010001111011"
+        },
+        {
+            "input": "3407",
+            "output": "110101001111"
+        },
+        {
+            "input": "8830",
+            "output": "10001001111110"
+        },
+        {
+            "input": "8765",
+            "output": "10001000111101"
+        },
+        {
+            "input": "5052",
+            "output": "1001110111100"
+        },
+        {
+            "input": "9576",
+            "output": "10010101101000"
+        },
+        {
+            "input": "4488",
+            "output": "1000110001000"
+        },
+        {
+            "input": "3696",
+            "output": "111001110000"
+        },
+        {
+            "input": "1660",
+            "output": "11001111100"
+        },
+        {
+            "input": "8510",
+            "output": "10000100111110"
+        },
+        {
+            "input": "5643",
+            "output": "1011000001011"
+        },
+        {
+            "input": "3540",
+            "output": "110111010100"
+        },
+        {
+            "input": "4610",
+            "output": "1001000000010"
+        },
+        {
+            "input": "464",
+            "output": "111010000"
+        },
+        {
+            "input": "7458",
+            "output": "1110100100010"
+        },
+        {
+            "input": "1450",
+            "output": "10110101010"
+        },
+        {
+            "input": "9887",
+            "output": "10011010011111"
+        },
+        {
+            "input": "753",
+            "output": "1011110001"
+        },
+        {
+            "input": "9616",
+            "output": "10010110010000"
+        },
+        {
+            "input": "8185",
+            "output": "1111111111001"
+        },
+        {
+            "input": "8018",
+            "output": "1111101010010"
+        },
+        {
+            "input": "9142",
+            "output": "10001110110110"
+        },
+        {
+            "input": "1609",
+            "output": "11001001001"
+        },
+        {
+            "input": "3067",
+            "output": "101111111011"
+        },
+        {
+            "input": "3923",
+            "output": "111101010011"
+        },
+        {
+            "input": "8735",
+            "output": "10001000011111"
+        },
+        {
+            "input": "5998",
+            "output": "1011101101110"
+        },
+        {
+            "input": "8812",
+            "output": "10001001101100"
+        },
+        {
+            "input": "3312",
+            "output": "110011110000"
+        },
+        {
+            "input": "8469",
+            "output": "10000100010101"
+        },
+        {
+            "input": "6326",
+            "output": "1100010110110"
+        },
+        {
+            "input": "3969",
+            "output": "111110000001"
+        },
+        {
+            "input": "921",
+            "output": "1110011001"
+        },
+        {
+            "input": "5837",
+            "output": "1011011001101"
+        },
+        {
+            "input": "2329",
+            "output": "100100011001"
+        },
+        {
+            "input": "5619",
+            "output": "1010111110011"
+        },
+        {
+            "input": "3389",
+            "output": "110100111101"
+        },
+        {
+            "input": "1289",
+            "output": "10100001001"
+        },
+        {
+            "input": "3208",
+            "output": "110010001000"
+        },
+        {
+            "input": "7658",
+            "output": "1110111101010"
+        },
+        {
+            "input": "2157",
+            "output": "100001101101"
+        },
+        {
+            "input": "7203",
+            "output": "1110000100011"
+        },
+        {
+            "input": "6086",
+            "output": "1011111000110"
+        },
+        {
+            "input": "8036",
+            "output": "1111101100100"
+        },
+        {
+            "input": "6783",
+            "output": "1101001111111"
+        },
+        {
+            "input": "1708",
+            "output": "11010101100"
+        },
+        {
+            "input": "3710",
+            "output": "111001111110"
+        },
+        {
+            "input": "6854",
+            "output": "1101011000110"
+        },
+        {
+            "input": "3097",
+            "output": "110000011001"
+        },
+        {
+            "input": "1090",
+            "output": "10001000010"
+        },
+        {
+            "input": "3067",
+            "output": "101111111011"
+        },
+        {
+            "input": "1495",
+            "output": "10111010111"
+        },
+        {
+            "input": "7748",
+            "output": "1111001000100"
+        },
+        {
+            "input": "4635",
+            "output": "1001000011011"
         }
     ]
 }

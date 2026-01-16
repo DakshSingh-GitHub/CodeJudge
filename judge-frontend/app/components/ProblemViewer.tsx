@@ -3,6 +3,7 @@ interface Problem {
     description: string;
     input_format?: string;
     output_format?: string;
+    sample_test_cases?: Array<{ input: string; output: string }>;
     constraints?: Record<string, unknown>;
 }
 
@@ -54,6 +55,20 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                     <p className="text-gray-600 dark:text-gray-300">
                         {problem.output_format}
                     </p>
+                </div>
+            )}
+
+            {problem.sample_test_cases && problem.sample_test_cases.length > 0 && (
+                <div className="space-y-2">
+                    <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
+                        Example
+                    </h4>
+                    <div className="p-4 bg-gray-100 dark:bg-gray-900 rounded-md text-sm text-gray-800 dark:text-gray-200 overflow-x-auto font-mono">
+                        <p className="font-bold mb-1 text-gray-700 dark:text-gray-300">Input:</p>
+                        <pre className="mb-4 whitespace-pre-wrap">{problem.sample_test_cases[0].input}</pre>
+                        <p className="font-bold mb-1 text-gray-700 dark:text-gray-300">Output:</p>
+                        <pre className="whitespace-pre-wrap">{problem.sample_test_cases[0].output}</pre>
+                    </div>
                 </div>
             )}
 

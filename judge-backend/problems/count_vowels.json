@@ -1,9 +1,9 @@
 {
     "id": "count_vowels",
     "title": "Count Vowels",
-    "description": "Count the number of vowels (a, e, i, o, u) in a given string S. The string may contain uppercase and lowercase letters.",
+    "description": "Vowels are the letters 'a', 'e', 'i', 'o', and 'u'. In this problem, you are provided with a string `S` which may contain both uppercase and lowercase English letters. Your task is to iterate through the string and count the total number of vowels present. Remember that the check should be case-insensitive, meaning 'A' and 'a' both count as vowels.",
     "input_format": "A single string S.",
-    "output_format": "The count of vowels in S.",
+    "output_format": "Output a single integer representing the total count of vowels found in the input string `S`.",
     "constraints": {
         "length of S": "1 <= length <= 1000"
     },
@@ -159,6 +159,258 @@
         {
             "input": "hVFsWNALSidgmHbguEmcuJRzRMxsqEcybUyaotbtQdsEfpPfY",
             "output": "10"
+        },
+        {
+            "input": "RAIQFRhgztHqWZmgCTNjyOvcTBCzhJEBIYotjCTCrPASa",
+            "output": "8"
+        },
+        {
+            "input": "iTMhbpEXUPRvJqrFBp",
+            "output": "3"
+        },
+        {
+            "input": "vKHvLYbPINFfTjtJOtkxCLFWETzWqmXOvTjqegBbtUnDNWH",
+            "output": "6"
+        },
+        {
+            "input": "euNASNuKNcjRhvFWqRXyCPSuONPBkGwDhirGDKReGSCLaGQe",
+            "output": "10"
+        },
+        {
+            "input": "mkZaSkUrwcbwncppvYHMeLXBgtdWuepAOcuZdU",
+            "output": "9"
+        },
+        {
+            "input": "cVIrLHXpTPBQcDhuKwVcvgIdKouQzHVapxqlfdW",
+            "output": "6"
+        },
+        {
+            "input": "FnMkhGxEHCwQWupYuLdKgmMbTvbgZgqbbetjIT",
+            "output": "5"
+        },
+        {
+            "input": "gYrwazcWioCFIOyHZEcjCHLyOQsKwEZMpbXgYagrcCLgBdWvt",
+            "output": "9"
+        },
+        {
+            "input": "rYHvRMhFtuQbXHBmcjNoTMlAAa",
+            "output": "5"
+        },
+        {
+            "input": "iTcyDwiVLeoyZkvxgcEOINwEmiaSx",
+            "output": "10"
+        },
+        {
+            "input": "LVmelzYJstUnaA",
+            "output": "4"
+        },
+        {
+            "input": "fsHOsCHyIsBazEEMWTwQsGAdZRThuVX",
+            "output": "7"
+        },
+        {
+            "input": "XAvPQpbMfrphYjgJUAswKsmMeMWGcXLdSjkXV",
+            "output": "4"
+        },
+        {
+            "input": "HMkUeSMwxMvRrMawFuwzuxEzDWccdyFkxQptpQucv",
+            "output": "7"
+        },
+        {
+            "input": "HKkdQhnJKxBcsUckZgiBKSdsYKTzSAzQyPsaWhj",
+            "output": "4"
+        },
+        {
+            "input": "ZvnxZPmVHKmzwvNialMqKMfQhFEbHErmvvKHbJLyxtJMatND",
+            "output": "5"
+        },
+        {
+            "input": "OjMrdTGrwmkJukWBTbcacigHYIUzwhFNULByvaHWWFlxlTm",
+            "output": "8"
+        },
+        {
+            "input": "dGNATOfRhKuwnttAIAwrMlYBrcQmWwqzaFQ",
+            "output": "7"
+        },
+        {
+            "input": "CqhNrvqfMKpXUwkzpXzHoEBPgkxBGMcWfPYBLq",
+            "output": "3"
+        },
+        {
+            "input": "zjybjUovQOCBseJwlDsIq",
+            "output": "5"
+        },
+        {
+            "input": "VHzgdFsMPEaPWeSVYfqjABMrnw",
+            "output": "4"
+        },
+        {
+            "input": "MoFTeeThtVKdvB",
+            "output": "3"
+        },
+        {
+            "input": "xJOcjzHqLfAaEcdGdysqyYBtzXABDtEDlh",
+            "output": "6"
+        },
+        {
+            "input": "ZkrQMlWALMzOUJsMpipAdExLYfQDnfID",
+            "output": "7"
+        },
+        {
+            "input": "KnWrJKUCMNzZhutOcPzEYYIuLzkHJfIHaaBpmBqQdgKteWvE",
+            "output": "11"
+        },
+        {
+            "input": "jgrXNRGjyGQAuJYGQDs",
+            "output": "2"
+        },
+        {
+            "input": "LFSUtkFjBvLjLs",
+            "output": "1"
+        },
+        {
+            "input": "xiuNwZBFBuLPI",
+            "output": "4"
+        },
+        {
+            "input": "dloCVaRWbwrnSfwTefvnynOgksQoH",
+            "output": "5"
+        },
+        {
+            "input": "PpPqbfEmKzWYitNvKxtJaHZwFJZyQdlVspPEtXKEI",
+            "output": "6"
+        },
+        {
+            "input": "qgsUjFMFKxBHqopxpoVvAhEvfnFcmFF",
+            "output": "5"
+        },
+        {
+            "input": "nrVKtHwoiQXPZXqESlPx",
+            "output": "3"
+        },
+        {
+            "input": "svZBzERAEZxYVZfNsPSi",
+            "output": "4"
+        },
+        {
+            "input": "BGIGOAHjYaHPXeXhAtSaotOwDbCabBkvLt",
+            "output": "10"
+        },
+        {
+            "input": "GrEHplwNUgLJdNynEXAKBQIpJoFR",
+            "output": "6"
+        },
+        {
+            "input": "TNKLhoBOgTNkoMuSABKcVAkdAyhkDdeXBPGghMoNhRxCv",
+            "output": "9"
+        },
+        {
+            "input": "UdQwBKWdNEQdHyuTSNrYBOTXjouegeghfQeQLjCeiCEjRHj",
+            "output": "12"
+        },
+        {
+            "input": "WgKBfxbTSBtHqdAuRSspVZpGZQulypbaCQHgqu",
+            "output": "5"
+        },
+        {
+            "input": "HAcRmQtoeVEEKQKwmDbrslTddoQQneojSFblHglWeTeeDoMpTc",
+            "output": "12"
+        },
+        {
+            "input": "SApLLrYbOuPjRuyKVmUopFMLHyWjIaZPYFOrz",
+            "output": "9"
+        },
+        {
+            "input": "lKzoVhTAjjosnqXYiO",
+            "output": "5"
+        },
+        {
+            "input": "rNDqgezydEF",
+            "output": "2"
+        },
+        {
+            "input": "DaDyyFkbwKuvL",
+            "output": "2"
+        },
+        {
+            "input": "ncfikVjFBoKeVeDxFkkgNMMmyNmMq",
+            "output": "4"
+        },
+        {
+            "input": "issiLYlQmfXQspgyNknpXueNmVVz",
+            "output": "4"
+        },
+        {
+            "input": "zLYVtuNrwhjRNaoAdqlTe",
+            "output": "5"
+        },
+        {
+            "input": "PQGnGAuRMvqaEgEQOysKtiIjGLouUGVZCCSdvGAOZ",
+            "output": "13"
+        },
+        {
+            "input": "YGBldDAOAlLuBwlXSVOhsDxHFsKj",
+            "output": "5"
+        },
+        {
+            "input": "wLAoyBbMewSEksifUsGOgknBtBQuenugBsXBVr",
+            "output": "10"
+        },
+        {
+            "input": "nlgxpduyiHtnWjOsWYAcGazMtjeAFHcQqSSNOVzqnqo",
+            "output": "9"
+        },
+        {
+            "input": "QnWSxVgpleWesFufzXVeXPVgGyRsyveYBQRwrALAEI",
+            "output": "9"
+        },
+        {
+            "input": "agBhJVpEQrPUgYLfFkHMhBGus",
+            "output": "4"
+        },
+        {
+            "input": "DlmvDQDCAN",
+            "output": "1"
+        },
+        {
+            "input": "LYiGqLWnwoNfMKLGAfIyKEvKvNDpQfNlPBahTgupMsnlHqyRRL",
+            "output": "7"
+        },
+        {
+            "input": "jzywgZEZpLhURrmicrVDnCZTye",
+            "output": "4"
+        },
+        {
+            "input": "uVvLphdQWtSvMVFVaTAOrKFx",
+            "output": "4"
+        },
+        {
+            "input": "HYoAXZhmEBysSEnoEjdLbvfWQlVch",
+            "output": "6"
+        },
+        {
+            "input": "KWvnyDCcntggGHin",
+            "output": "1"
+        },
+        {
+            "input": "oTiVbobnKsYkHUUZcRxdDiwQVuadSn",
+            "output": "8"
+        },
+        {
+            "input": "NDcQTSSJLVxwTPGGvbYFKqrPo",
+            "output": "1"
+        },
+        {
+            "input": "iXzhwJzoMPXjZNGDAbtIdY",
+            "output": "4"
+        },
+        {
+            "input": "UxfNjCGHVusurYdXdyTeMBMdxlYpgESnHRcfWy",
+            "output": "5"
+        },
+        {
+            "input": "SiKejKarhXU",
+            "output": "4"
         }
     ]
 }
