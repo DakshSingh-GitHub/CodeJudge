@@ -6,6 +6,67 @@ import psutil
 from concurrent.futures import ThreadPoolExecutor
 
 TIME_LIMIT = 2  # seconds
+ENABLE_OPTIMIZATION = False # Set to False to disable threading/persistent workers
+
+def run_single_test_case_sequential(index, tc, code_str, time_limit):
+    # This is the old, slower way (one process per test case)
+    import tempfile
+    user_input = tc.get("input", "")
+    expected_output = tc.get("output", "")
+
+    with tempfile.NamedTemporaryFile(suffix=".py", delete=False, mode="w") as temp:
+        temp.write(code_str)
+        filename = temp.name
+
+    try:
+        result = subprocess.run(
+            ["python", filename],
+            input=user_input,
+            capture_output=True,
+            text=True,
+            timeout=time_limit
+        )
+        
+        if result.returncode != 0:
+            return {
+                "test_case": index,
+                "status": "Runtime Error",
+                "error": result.stderr
+            }
+
+        actual_output = normalize_output(result.stdout)
+        expected_output = normalize_output(expected_output)
+
+        if actual_output == expected_output:
+            return {
+                "test_case": index,
+                "status": "Accepted",
+                "actual_output": actual_output,
+                "expected_output": expected_output
+            }
+        else:
+            return {
+                "test_case": index,
+                "status": "Wrong Answer",
+                "actual_output": actual_output,
+                "expected_output": expected_output
+            }
+
+    except subprocess.TimeoutExpired:
+        return {
+            "test_case": index,
+            "status": "Time Limit Exceeded",
+            "error": "Time Limit Exceeded"
+        }
+    except Exception as e:
+        return {
+            "test_case": index,
+            "status": "Internal Error",
+            "error": str(e)
+        }
+    finally:
+        if os.path.exists(filename):
+            os.remove(filename)
 
 def normalize_output(output: str) -> str:
     lines = output.strip().splitlines()
@@ -238,6 +299,42 @@ class JudgeWorker:
 def run_code_multiple(code, test_cases, mode="ALL"):
     mode = (mode or "ALL").upper()
     
+    if not ENABLE_OPTIMIZATION:
+        # SLOW SEQUENTIAL MODE
+        start_time = time.time()
+        results = []
+        passed_count = 0
+        
+        for index, tc in enumerate(test_cases, start=1):
+            res = run_single_test_case_sequential(index, tc, code, TIME_LIMIT)
+            results.append(res)
+            if res["status"] == "Accepted":
+                passed_count += 1
+            if mode == "FIRST_FAIL" and res["status"] != "Accepted":
+                break
+        
+        end_time = time.time()
+        
+        # In FIRST_FAIL, we already broke, so we just return what we have
+        final_status = "Accepted"
+        if results:
+            for r in results:
+                if r["status"] != "Accepted":
+                    final_status = r["status"]
+                    break
+
+        return {
+            "final_status": final_status,
+            "mode": mode,
+            "total_duration": end_time - start_time,
+            "summary": {
+                "passed": passed_count,
+                "total": len(test_cases)
+            },
+            "test_case_results": results
+        }
+
+    # FAST OPTIMIZED MODE (Original logic continues...)
     # Create a pool of workers
     # Optimal number = CPU count? Or slightly more?
     # Since they are reusing processes, mapped into thread pool.

@@ -4,7 +4,7 @@ import os
 import math
 from itertools import permutations
 
-PROBLEMS_DIR = "judge-backend/problems"
+PROBLEMS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 def solve_area_of_a_rectangle():
     l = random.randint(1, 1000)
@@ -192,9 +192,39 @@ def solve_simple_array_sum():
     return f"{' '.join(map(str, arr))}", str(sum(arr))
 
 def solve_string_permutations():
-    s = "".join(random.choices("ABC", k=random.randint(2, 3))) # Keep len small for perms
+    # Length 6-7 to allow for >1000 permutations
+    length = random.randint(4, 7)
+    s = "".join(random.choices("ABCDE", k=length))
+    # For large strings, printing ALL permutations is huge output. 
+    # But this is a "hard" problem? 
+    # Usually printing all perms of len 7 (5040 lines) is a bit much for ONE test case if we have 1000 test cases.
+    # Total lines = 5000 * 1000 = 5 million lines output. 
+    # Maybe restrictive?
+    # Let's keep length modest (4-6).
+    length = random.randint(3, 6)
+    s = "".join(random.choices("ABC", k=length))
     perms = sorted(list(set("".join(p) for p in permutations(s))))
     return s, "\n".join(perms)
+
+def solve_knapsack_0_1():
+    n = random.randint(5, 12) # Increased slightly
+    w_cap = random.randint(10, 80)
+    weights = [random.randint(1, 15) for _ in range(n)]
+    values = [random.randint(1, 100) for _ in range(n)]
+    
+    # Recursive solution matches standard problem
+    # Memoization needed for larger N? N=12 is fine (2^12 = 4096)
+    def knapSack(W, wt, val, n): 
+        if n == 0 or W == 0: 
+            return 0
+        if (wt[n-1] > W): 
+            return knapSack(W, wt, val, n-1) 
+        else: 
+            return max(val[n-1] + knapSack(W-wt[n-1], wt, val, n-1), 
+                       knapSack(W, wt, val, n-1)) 
+    
+    res = knapSack(w_cap, weights, values, n)
+    return f"{w_cap}\n{' '.join(map(str, values))}\n{' '.join(map(str, weights))}", str(res)
 
 def solve_sum_of_digits():
     n = random.randint(10, 10000)
@@ -254,12 +284,24 @@ SOLVERS = {
     "trapping_rain_water": solve_trapping_rain_water,
 }
 
+HARD_PROBLEMS = {
+    "coin_change", 
+    "knapsack_0_1", 
+    "longest_common_subsequence", 
+    "longest_increasing_subsequence", 
+    "matrix_addition", 
+    "string_permutations", 
+    "trapping_rain_water"
+}
+
 def main():
     if not os.path.exists(PROBLEMS_DIR):
         print(f"Error: {PROBLEMS_DIR} does not exist.")
         return
 
-    for filename in os.listdir(PROBLEMS_DIR):
+    files = os.listdir(PROBLEMS_DIR)
+    
+    for filename in files:
         if not filename.endswith(".json"):
             continue
         
@@ -274,23 +316,35 @@ def main():
                 continue
             
             solver = SOLVERS[problem_id]
+            
+            # Determine count
+            target_count = 1000 if problem_id in HARD_PROBLEMS else 500
+            
+            print(f"Generating {target_count} cases for {filename}...")
+            
             new_cases = []
-            for _ in range(100):
+            seen_inputs = set()
+            
+            attempts = 0
+            while len(new_cases) < target_count and attempts < target_count * 5:
+                attempts += 1
                 inp, outp = solver()
+                if inp in seen_inputs:
+                    continue
+                seen_inputs.add(inp)
                 new_cases.append({"input": inp, "output": outp})
             
-            if "hidden_test_cases" not in data:
-                data["hidden_test_cases"] = []
-            
-            data["hidden_test_cases"].extend(new_cases)
+            # Overwrite hidden_test_cases
+            data["hidden_test_cases"] = new_cases
             
             with open(file_path, "w", encoding="utf-8") as f:
-                json.dump(data, f, indent=4) # Use indent for readability
+                json.dump(data, f, indent=4) 
             
-            print(f"Added 100 test cases to {filename}")
+            print(f"Saved {len(new_cases)} cases to {filename}")
             
         except Exception as e:
             print(f"Failed to process {filename}: {e}")
 
 if __name__ == "__main__":
     main()
+
