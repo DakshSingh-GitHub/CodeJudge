@@ -1,12 +1,14 @@
-
 s = input()
+if s:
+    test_s = s.split(" ")
+    nums = [int(x) for x in test_s]
+else:
+    nums = []
 
-def checkPalindrome(string: str):
-    processed_string = ''.join(char for char in string if char.isalnum()).lower()
-    rev = processed_string[::-1]
-    if rev == processed_string:
-        print("Palindrome")
-    else:
-        print("Not a Palindrome")
+def removeDuplicates(arr:list) -> list:
+    out = list(dict.fromkeys(arr))
+    return out
 
-checkPalindrome(s)
+unique_nums = removeDuplicates(nums)
+if unique_nums:
+    print(*unique_nums, sep=' ')
