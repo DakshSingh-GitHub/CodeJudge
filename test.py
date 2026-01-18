@@ -12,3 +12,6 @@ def removeDuplicates(arr:list) -> list:
 unique_nums = removeDuplicates(nums)
 if unique_nums:
     print(*unique_nums, sep=' ')
+
+
+# PythonAnywhere gnomeuser001 pass dakshdtlz564
