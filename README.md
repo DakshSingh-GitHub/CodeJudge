@@ -90,5 +90,5 @@ To test the application:
 4. The frontend will communicate with the local backend at `http://localhost:5000`
 
 ALTERNATE: (FOR WINDOWS 10+)
-1. Clone the backend repository / Or extract the `judge-backend_s.zip` file.
+1. Clone the backend repository / Or download the `judge-backend_s.zip` file only
 2. run script.ps1
