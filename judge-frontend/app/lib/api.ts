@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://judge-backend-fastapi.vercel.app";
 
 export async function getProblems() {
     const res = await fetch(`${BASE_URL}/problems`);
