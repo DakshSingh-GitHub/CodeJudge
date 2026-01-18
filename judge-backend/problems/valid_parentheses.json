@@ -1,2011 +1,2023 @@
 {
-    "id": "prime_number_check",
-    "title": "Prime Number Check",
-    "description": "A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers. In other words, a prime number has exactly two distinct positive divisors: 1 and itself. In this problem, you are given an integer `N`. Your task is to determine whether `N` is a prime number.",
-    "input_format": "A single integer N.",
-    "output_format": "Output a single line containing 'Yes' if `N` is a prime number, or 'No' if it is not. The output should be case-sensitive.",
+    "id": "valid_parentheses",
+    "title": "Valid Parentheses",
+    "description": "Check if a given string of parentheses is valid. A string is valid if every opening parenthesis has a corresponding closing parenthesis in the correct order. Output 'Yes' or 'No'.",
+    "input_format": "A string of characters '(' and ')'.",
+    "output_format": "'Yes' or 'No'.",
     "constraints": {
-        "N": "1 <= N <= 10^9"
+        "length": "0 <= length <= 100"
     },
     "judge_mode": "FIRST_FAIL",
     "time_limit": 1,
     "sample_test_cases": [
         {
-            "input": "7",
+            "input": "(())()",
             "output": "Yes"
         },
         {
-            "input": "10",
+            "input": "(()))",
             "output": "No"
         }
     ],
     "hidden_test_cases": [
         {
-            "input": "21",
-            "output": "No"
+            "input": "()",
+            "output": "Yes"
         },
         {
-            "input": "312",
-            "output": "No"
+            "input": "((()))",
+            "output": "Yes"
         },
         {
-            "input": "427",
+            "input": ")())()(((",
             "output": "No"
         },
         {
-            "input": "403",
+            "input": "()()()())",
             "output": "No"
-        },
-        {
-            "input": "311",
-            "output": "Yes"
         },
         {
-            "input": "459",
+            "input": ")()())(",
             "output": "No"
         },
         {
-            "input": "49",
+            "input": "(()(",
             "output": "No"
         },
         {
-            "input": "415",
+            "input": "))(()()",
             "output": "No"
         },
         {
-            "input": "163",
-            "output": "Yes"
-        },
-        {
-            "input": "485",
+            "input": "()()((",
             "output": "No"
         },
         {
-            "input": "242",
+            "input": ")(",
             "output": "No"
         },
         {
-            "input": "487",
+            "input": "(()())",
             "output": "Yes"
         },
         {
-            "input": "122",
+            "input": ")))",
             "output": "No"
         },
         {
-            "input": "456",
+            "input": "())",
             "output": "No"
         },
         {
-            "input": "209",
+            "input": "()())(",
             "output": "No"
         },
         {
-            "input": "161",
-            "output": "No"
-        },
-        {
-            "input": "443",
+            "input": "(())",
             "output": "Yes"
         },
         {
-            "input": "411",
+            "input": ")(()(",
             "output": "No"
         },
         {
-            "input": "213",
-            "output": "No"
+            "input": "((()))(())",
+            "output": "Yes"
         },
         {
-            "input": "104",
+            "input": ")()(()(",
             "output": "No"
         },
         {
-            "input": "103",
+            "input": "(()(()))",
             "output": "Yes"
         },
         {
-            "input": "127",
+            "input": "((((()))))",
             "output": "Yes"
         },
         {
-            "input": "168",
-            "output": "No"
+            "input": "()(())()()",
+            "output": "Yes"
         },
         {
-            "input": "100",
+            "input": "(()(()()",
             "output": "No"
         },
         {
-            "input": "370",
+            "input": "((((((())(",
             "output": "No"
         },
         {
-            "input": "125",
-            "output": "No"
+            "input": "((()()))()",
+            "output": "Yes"
         },
         {
-            "input": "20",
+            "input": "(()))(",
             "output": "No"
         },
         {
-            "input": "458",
+            "input": "))",
             "output": "No"
         },
         {
-            "input": "345",
+            "input": ")(())",
             "output": "No"
         },
         {
-            "input": "481",
+            "input": ")(()",
             "output": "No"
         },
         {
-            "input": "140",
+            "input": "())(",
             "output": "No"
         },
         {
-            "input": "457",
+            "input": "()(())()",
             "output": "Yes"
         },
         {
-            "input": "413",
-            "output": "No"
+            "input": "(())()",
+            "output": "Yes"
         },
         {
-            "input": "379",
+            "input": "(((())))",
             "output": "Yes"
         },
         {
-            "input": "298",
+            "input": "((()))()",
+            "output": "Yes"
+        },
+        {
+            "input": "(()(())",
             "output": "No"
         },
         {
-            "input": "219",
+            "input": "())())((",
             "output": "No"
         },
         {
-            "input": "184",
+            "input": "()((",
             "output": "No"
         },
         {
-            "input": "18",
+            "input": "())())(())",
             "output": "No"
         },
         {
-            "input": "465",
+            "input": "()(()))",
             "output": "No"
         },
         {
-            "input": "97",
+            "input": ")))()((",
+            "output": "No"
+        },
+        {
+            "input": "(()()())",
             "output": "Yes"
         },
         {
-            "input": "170",
+            "input": "(())))",
             "output": "No"
         },
         {
-            "input": "472",
-            "output": "No"
+            "input": "(()(())())",
+            "output": "Yes"
         },
         {
-            "input": "220",
+            "input": "))())((((",
             "output": "No"
         },
         {
-            "input": "159",
+            "input": ")))(((()(",
             "output": "No"
         },
         {
-            "input": "120",
+            "input": "))()))",
             "output": "No"
         },
         {
-            "input": "470",
+            "input": "())(()",
             "output": "No"
         },
         {
-            "input": "377",
-            "output": "No"
+            "input": "()()()",
+            "output": "Yes"
         },
         {
-            "input": "138",
-            "output": "No"
+            "input": "(())()()()",
+            "output": "Yes"
         },
         {
-            "input": "420",
-            "output": "No"
+            "input": "()()",
+            "output": "Yes"
         },
         {
-            "input": "33",
+            "input": "(((()(",
             "output": "No"
         },
         {
-            "input": "276",
-            "output": "No"
+            "input": "()(())",
+            "output": "Yes"
         },
         {
-            "input": "147",
+            "input": "))()((()()",
             "output": "No"
         },
         {
-            "input": "387",
+            "input": "))))))()",
             "output": "No"
+        },
+        {
+            "input": "(((()())))",
+            "output": "Yes"
         },
         {
-            "input": "240",
+            "input": "((()",
             "output": "No"
         },
         {
-            "input": "438",
+            "input": "()(()(()(",
             "output": "No"
         },
         {
-            "input": "363",
+            "input": ")())((",
             "output": "No"
         },
         {
-            "input": "408",
+            "input": "()))",
             "output": "No"
         },
         {
-            "input": "154",
+            "input": "((()((",
             "output": "No"
         },
         {
-            "input": "326",
+            "input": ")())(())(",
             "output": "No"
         },
         {
-            "input": "34",
+            "input": "(((()",
             "output": "No"
         },
         {
-            "input": "490",
+            "input": "))))())",
             "output": "No"
         },
         {
-            "input": "229",
+            "input": "(((())()))",
             "output": "Yes"
         },
         {
-            "input": "395",
+            "input": ")())(",
             "output": "No"
         },
         {
-            "input": "410",
+            "input": "))(()))()",
             "output": "No"
         },
         {
-            "input": "61",
+            "input": "((()))()()",
             "output": "Yes"
         },
         {
-            "input": "368",
-            "output": "No"
+            "input": "((())())",
+            "output": "Yes"
         },
         {
-            "input": "259",
+            "input": "())(((()((",
             "output": "No"
         },
         {
-            "input": "495",
+            "input": "(((()))",
             "output": "No"
         },
         {
-            "input": "400",
+            "input": ")(((())",
             "output": "No"
         },
         {
-            "input": "440",
-            "output": "No"
+            "input": "()()(())",
+            "output": "Yes"
         },
         {
-            "input": "489",
+            "input": "(())(",
             "output": "No"
         },
         {
-            "input": "95",
+            "input": "())()))(",
             "output": "No"
         },
         {
-            "input": "371",
+            "input": "(()",
             "output": "No"
         },
         {
-            "input": "165",
-            "output": "No"
+            "input": "()((()))",
+            "output": "Yes"
         },
         {
-            "input": "143",
-            "output": "No"
+            "input": "(()()()())",
+            "output": "Yes"
         },
         {
-            "input": "40",
-            "output": "No"
+            "input": "((()()))",
+            "output": "Yes"
         },
         {
-            "input": "58",
+            "input": "()))(",
             "output": "No"
         },
         {
-            "input": "330",
+            "input": "((()()))(",
             "output": "No"
         },
         {
-            "input": "205",
+            "input": ")()()(((",
             "output": "No"
         },
         {
-            "input": "278",
+            "input": "(((",
             "output": "No"
         },
         {
-            "input": "81",
+            "input": ")((()))))",
             "output": "No"
         },
         {
-            "input": "38",
+            "input": "))(())()",
             "output": "No"
         },
         {
-            "input": "164",
+            "input": "()())))))",
             "output": "No"
         },
         {
-            "input": "131",
-            "output": "Yes"
+            "input": "))())(()(",
+            "output": "No"
         },
         {
-            "input": "86",
+            "input": ")()",
             "output": "No"
         },
         {
-            "input": "461",
+            "input": "((()())())",
             "output": "Yes"
         },
         {
-            "input": "71",
+            "input": "()(()())()",
             "output": "Yes"
         },
         {
-            "input": "228",
+            "input": ")()(()))",
             "output": "No"
         },
         {
-            "input": "344",
+            "input": "(((((((()",
             "output": "No"
         },
         {
-            "input": "482",
+            "input": "(())())))(",
             "output": "No"
         },
         {
-            "input": "70",
+            "input": "(())())",
             "output": "No"
         },
         {
-            "input": "6",
+            "input": ")()())()",
             "output": "No"
         },
         {
-            "input": "318",
+            "input": "()))(()))",
             "output": "No"
         },
         {
-            "input": "160",
+            "input": "()(",
             "output": "No"
         },
         {
-            "input": "117",
+            "input": ")())",
             "output": "No"
         },
         {
-            "input": "123",
+            "input": "))(()((",
             "output": "No"
         },
         {
-            "input": "436",
+            "input": "(())(())()",
+            "output": "Yes"
+        },
+        {
+            "input": "))(())",
             "output": "No"
         },
         {
-            "input": "157",
-            "output": "Yes"
+            "input": ")()((",
+            "output": "No"
         },
         {
-            "input": "181",
+            "input": "((())(()))",
             "output": "Yes"
         },
         {
-            "input": "9",
+            "input": "((((()",
             "output": "No"
         },
         {
-            "input": "145",
+            "input": "))(",
             "output": "No"
         },
         {
-            "input": "292",
+            "input": "(((()((((",
             "output": "No"
         },
         {
-            "input": "236",
+            "input": "((((()))((",
             "output": "No"
+        },
+        {
+            "input": "(((()))())",
+            "output": "Yes"
+        },
+        {
+            "input": "(()((())))",
+            "output": "Yes"
         },
         {
-            "input": "392",
+            "input": "((()(())))",
+            "output": "Yes"
+        },
+        {
+            "input": "())((((",
             "output": "No"
         },
         {
-            "input": "405",
+            "input": "())()",
             "output": "No"
         },
         {
-            "input": "290",
+            "input": "))()))()",
             "output": "No"
         },
         {
-            "input": "233",
+            "input": "(()(()))()",
             "output": "Yes"
         },
         {
-            "input": "271",
-            "output": "Yes"
+            "input": "((",
+            "output": "No"
         },
         {
-            "input": "193",
-            "output": "Yes"
+            "input": ")))())",
+            "output": "No"
         },
         {
-            "input": "297",
+            "input": "()()))(",
             "output": "No"
         },
         {
-            "input": "389",
-            "output": "Yes"
+            "input": ")())(())((",
+            "output": "No"
         },
         {
-            "input": "421",
+            "input": "()(()())",
             "output": "Yes"
         },
         {
-            "input": "382",
+            "input": "))()(",
             "output": "No"
         },
         {
-            "input": "24",
+            "input": ")))()",
             "output": "No"
         },
         {
-            "input": "307",
-            "output": "Yes"
+            "input": "(((()((",
+            "output": "No"
         },
         {
-            "input": "107",
-            "output": "Yes"
+            "input": ")(((()))",
+            "output": "No"
         },
         {
-            "input": "375",
+            "input": ")))))(())",
             "output": "No"
         },
         {
-            "input": "466",
+            "input": ")()(()))(",
             "output": "No"
         },
         {
-            "input": "225",
+            "input": ")(()()((",
             "output": "No"
         },
         {
-            "input": "180",
+            "input": ")()(",
             "output": "No"
         },
         {
-            "input": "335",
+            "input": ")(())()((",
             "output": "No"
         },
         {
-            "input": "295",
+            "input": ")((())(",
             "output": "No"
         },
         {
-            "input": "409",
-            "output": "Yes"
+            "input": "()(((",
+            "output": "No"
         },
         {
-            "input": "283",
-            "output": "Yes"
+            "input": "))()(()(((",
+            "output": "No"
         },
         {
-            "input": "128",
+            "input": ")))(()((()",
             "output": "No"
         },
         {
-            "input": "176",
+            "input": "))(((()()(",
             "output": "No"
         },
         {
-            "input": "367",
+            "input": ")))(",
+            "output": "No"
+        },
+        {
+            "input": "()(((())))",
             "output": "Yes"
         },
         {
-            "input": "286",
+            "input": "))(()())(",
             "output": "No"
         },
         {
-            "input": "294",
+            "input": "(())))))",
             "output": "No"
         },
         {
-            "input": "207",
+            "input": "()(()(()",
             "output": "No"
         },
         {
-            "input": "444",
+            "input": "))))",
             "output": "No"
         },
         {
-            "input": "42",
+            "input": "))()())",
             "output": "No"
         },
         {
-            "input": "483",
-            "output": "No"
+            "input": "(())(())",
+            "output": "Yes"
         },
         {
-            "input": "156",
+            "input": ")(()()()((",
             "output": "No"
         },
         {
-            "input": "258",
+            "input": ")))(())(",
             "output": "No"
         },
         {
-            "input": "279",
+            "input": ")((((())",
             "output": "No"
         },
         {
-            "input": "305",
+            "input": ")))((()())",
             "output": "No"
         },
         {
-            "input": "397",
+            "input": "()((()()))",
             "output": "Yes"
         },
         {
-            "input": "431",
+            "input": "()(())(())",
             "output": "Yes"
         },
         {
-            "input": "361",
+            "input": ")))()))",
             "output": "No"
         },
         {
-            "input": "32",
+            "input": ")(()))",
             "output": "No"
         },
         {
-            "input": "133",
+            "input": ")()))))(",
             "output": "No"
         },
         {
-            "input": "270",
-            "output": "No"
+            "input": "()((()))()",
+            "output": "Yes"
         },
         {
-            "input": "314",
+            "input": "))))()",
             "output": "No"
         },
         {
-            "input": "68",
+            "input": ")())(((",
             "output": "No"
         },
         {
-            "input": "451",
+            "input": "()((())",
             "output": "No"
         },
         {
-            "input": "422",
+            "input": ")()))))()",
             "output": "No"
         },
         {
-            "input": "433",
-            "output": "Yes"
-        },
-        {
-            "input": "50",
+            "input": "()))(()(((",
             "output": "No"
         },
         {
-            "input": "255",
+            "input": ")((",
             "output": "No"
         },
         {
-            "input": "65",
+            "input": "))(()(((",
             "output": "No"
         },
         {
-            "input": "153",
+            "input": ")()(())((",
             "output": "No"
         },
         {
-            "input": "296",
+            "input": "(((())",
             "output": "No"
         },
         {
-            "input": "93",
+            "input": "))())((",
             "output": "No"
         },
         {
-            "input": "67",
+            "input": "()()((()))",
             "output": "Yes"
         },
         {
-            "input": "434",
+            "input": "()(()((",
             "output": "No"
         },
         {
-            "input": "139",
-            "output": "Yes"
+            "input": ")()())()(",
+            "output": "No"
         },
         {
-            "input": "274",
+            "input": "))))(",
             "output": "No"
         },
         {
-            "input": "262",
+            "input": "))(((((((",
             "output": "No"
         },
         {
-            "input": "348",
+            "input": "(()()(()",
             "output": "No"
         },
         {
-            "input": "26",
+            "input": ")(()()",
             "output": "No"
         },
         {
-            "input": "109",
+            "input": "((())()())",
             "output": "Yes"
         },
         {
-            "input": "412",
-            "output": "No"
+            "input": "(())()()",
+            "output": "Yes"
         },
         {
-            "input": "118",
+            "input": "()())",
             "output": "No"
         },
         {
-            "input": "183",
+            "input": "(())(((((",
             "output": "No"
         },
         {
-            "input": "245",
+            "input": ")((())",
             "output": "No"
         },
         {
-            "input": "243",
-            "output": "No"
+            "input": "(()()(()))",
+            "output": "Yes"
         },
         {
-            "input": "252",
+            "input": ")()))",
             "output": "No"
         },
         {
-            "input": "313",
+            "input": "(()())()()",
             "output": "Yes"
         },
         {
-            "input": "266",
+            "input": "()((()()",
             "output": "No"
         },
         {
-            "input": "356",
+            "input": ")))))",
             "output": "No"
         },
         {
-            "input": "280",
+            "input": "()))(()",
             "output": "No"
         },
         {
-            "input": "197",
-            "output": "Yes"
+            "input": ")()))(()",
+            "output": "No"
         },
         {
-            "input": "249",
+            "input": "((())((",
             "output": "No"
         },
         {
-            "input": "217",
-            "output": "No"
+            "input": "((())())()",
+            "output": "Yes"
         },
         {
-            "input": "454",
+            "input": "))()",
             "output": "No"
         },
         {
-            "input": "87",
+            "input": "(()))",
             "output": "No"
         },
         {
-            "input": "468",
+            "input": ")((()(",
             "output": "No"
         },
         {
-            "input": "88",
+            "input": "()()(",
             "output": "No"
         },
         {
-            "input": "12",
+            "input": "())))()))",
             "output": "No"
         },
         {
-            "input": "380",
+            "input": "())()()()",
             "output": "No"
         },
         {
-            "input": "31",
-            "output": "Yes"
+            "input": "())()))())",
+            "output": "No"
         },
         {
-            "input": "320",
+            "input": "((()())",
             "output": "No"
         },
         {
-            "input": "381",
+            "input": ")))))(",
             "output": "No"
         },
         {
-            "input": "172",
+            "input": "())))",
             "output": "No"
         },
         {
-            "input": "430",
+            "input": "()))())",
             "output": "No"
         },
         {
-            "input": "394",
+            "input": "((())",
             "output": "No"
         },
         {
-            "input": "285",
+            "input": "(((((())()",
             "output": "No"
         },
         {
-            "input": "250",
+            "input": "()))))(()",
             "output": "No"
         },
         {
-            "input": "323",
+            "input": ")))()()(",
             "output": "No"
         },
         {
-            "input": "3",
-            "output": "Yes"
+            "input": "(()))))",
+            "output": "No"
         },
         {
-            "input": "99",
+            "input": "((((",
             "output": "No"
         },
         {
-            "input": "186",
+            "input": ")((()",
             "output": "No"
+        },
+        {
+            "input": "()()()(())",
+            "output": "Yes"
         },
         {
-            "input": "441",
+            "input": ")(()())(()",
             "output": "No"
         },
         {
-            "input": "275",
+            "input": ")(())()()(",
             "output": "No"
         },
         {
-            "input": "435",
+            "input": ")()))))((",
             "output": "No"
         },
         {
-            "input": "191",
+            "input": "()()()()()",
             "output": "Yes"
         },
         {
-            "input": "386",
+            "input": ")(((",
             "output": "No"
         },
         {
-            "input": "189",
+            "input": "))(()",
             "output": "No"
         },
         {
-            "input": "260",
+            "input": "))(()(",
             "output": "No"
         },
         {
-            "input": "396",
+            "input": ")))(((",
             "output": "No"
         },
         {
-            "input": "105",
+            "input": "((()))(((",
             "output": "No"
-        },
-        {
-            "input": "269",
-            "output": "Yes"
         },
         {
-            "input": "288",
+            "input": "()(()()(",
             "output": "No"
         },
         {
-            "input": "261",
+            "input": "))))(()(",
             "output": "No"
         },
         {
-            "input": "289",
+            "input": ")(((((((",
             "output": "No"
         },
         {
-            "input": "358",
+            "input": "()()))()",
             "output": "No"
         },
         {
-            "input": "212",
+            "input": "()((()(",
             "output": "No"
         },
         {
-            "input": "343",
+            "input": ")(())))(",
             "output": "No"
         },
         {
-            "input": "450",
+            "input": "())()(())(",
             "output": "No"
         },
         {
-            "input": "496",
+            "input": ")()((((((",
             "output": "No"
-        },
-        {
-            "input": "149",
-            "output": "Yes"
         },
         {
-            "input": "309",
+            "input": "))(((())()",
             "output": "No"
         },
         {
-            "input": "96",
+            "input": "))()()()(",
             "output": "No"
         },
         {
-            "input": "200",
+            "input": ")(())(",
             "output": "No"
         },
         {
-            "input": "486",
+            "input": "((())))))(",
             "output": "No"
         },
         {
-            "input": "347",
-            "output": "Yes"
+            "input": ")(((()()(",
+            "output": "No"
         },
         {
-            "input": "69",
+            "input": "(()((((",
             "output": "No"
         },
         {
-            "input": "376",
+            "input": "((()())))",
             "output": "No"
         },
         {
-            "input": "218",
+            "input": ")())(()))",
             "output": "No"
         },
         {
-            "input": "115",
+            "input": ")((())())",
             "output": "No"
         },
         {
-            "input": "190",
+            "input": "(())(((",
             "output": "No"
         },
         {
-            "input": "203",
+            "input": "))((",
             "output": "No"
         },
         {
-            "input": "141",
+            "input": ")()))()",
             "output": "No"
         },
         {
-            "input": "464",
+            "input": "))))))((",
             "output": "No"
         },
         {
-            "input": "77",
+            "input": "()())((",
             "output": "No"
         },
         {
-            "input": "273",
+            "input": "()(())(",
             "output": "No"
         },
         {
-            "input": "227",
+            "input": "()()()()",
             "output": "Yes"
         },
         {
-            "input": "214",
+            "input": "()(((())",
             "output": "No"
         },
         {
-            "input": "448",
+            "input": "(()()())((",
             "output": "No"
         },
         {
-            "input": "341",
+            "input": "())()))",
             "output": "No"
         },
         {
-            "input": "48",
-            "output": "No"
+            "input": "((()()()))",
+            "output": "Yes"
         },
         {
-            "input": "338",
-            "output": "No"
+            "input": "(((())))()",
+            "output": "Yes"
         },
         {
-            "input": "493",
+            "input": "()()())))(",
             "output": "No"
         },
         {
-            "input": "428",
+            "input": ")())())",
             "output": "No"
         },
         {
-            "input": "195",
+            "input": "))((())()(",
             "output": "No"
         },
         {
-            "input": "425",
+            "input": "))())())",
             "output": "No"
         },
         {
-            "input": "112",
+            "input": "(()((((()",
             "output": "No"
         },
         {
-            "input": "354",
+            "input": "(()())(",
             "output": "No"
         },
         {
-            "input": "391",
+            "input": ")()))(",
             "output": "No"
         },
         {
-            "input": "224",
+            "input": "))()()",
             "output": "No"
         },
         {
-            "input": "234",
-            "output": "No"
+            "input": "(()())(())",
+            "output": "Yes"
         },
         {
-            "input": "15",
+            "input": ")()))(((((",
             "output": "No"
         },
         {
-            "input": "178",
+            "input": "(((()()())",
             "output": "No"
         },
         {
-            "input": "235",
+            "input": "(())(()",
             "output": "No"
         },
         {
-            "input": "162",
+            "input": "((())()))(",
             "output": "No"
         },
         {
-            "input": "75",
+            "input": ")()(()())",
             "output": "No"
         },
         {
-            "input": "437",
+            "input": ")(((()((",
             "output": "No"
-        },
-        {
-            "input": "223",
-            "output": "Yes"
         },
         {
-            "input": "322",
+            "input": "()(())((",
             "output": "No"
         },
         {
-            "input": "423",
+            "input": "(()()))(",
             "output": "No"
         },
         {
-            "input": "319",
+            "input": "(())))())(",
             "output": "No"
         },
         {
-            "input": "119",
+            "input": "))((((((((",
             "output": "No"
         },
         {
-            "input": "369",
+            "input": "((((((()))",
             "output": "No"
         },
         {
-            "input": "36",
+            "input": ")))))())))",
             "output": "No"
         },
         {
-            "input": "44",
+            "input": ")(()(()",
             "output": "No"
         },
         {
-            "input": "257",
-            "output": "Yes"
+            "input": "()(((()()",
+            "output": "No"
         },
         {
-            "input": "460",
+            "input": "())((",
             "output": "No"
         },
         {
-            "input": "151",
-            "output": "Yes"
+            "input": "))))(())((",
+            "output": "No"
         },
         {
-            "input": "47",
-            "output": "Yes"
+            "input": "()()))))",
+            "output": "No"
         },
         {
-            "input": "331",
-            "output": "Yes"
+            "input": ")((((",
+            "output": "No"
         },
         {
-            "input": "333",
+            "input": ")(()))))()",
             "output": "No"
         },
         {
-            "input": "56",
+            "input": ")(()()()",
             "output": "No"
         },
         {
-            "input": "30",
+            "input": "(()))()",
             "output": "No"
         },
         {
-            "input": "321",
+            "input": "))())(",
             "output": "No"
         },
         {
-            "input": "231",
+            "input": "()(()",
             "output": "No"
         },
         {
-            "input": "45",
+            "input": "))()))(",
             "output": "No"
         },
         {
-            "input": "418",
+            "input": "()()()((",
             "output": "No"
         },
         {
-            "input": "477",
+            "input": "(((((())",
             "output": "No"
         },
         {
-            "input": "29",
-            "output": "Yes"
+            "input": "((()(()",
+            "output": "No"
         },
         {
-            "input": "57",
+            "input": ")))))(((",
             "output": "No"
         },
         {
-            "input": "22",
+            "input": "))())",
             "output": "No"
         },
         {
-            "input": "232",
+            "input": "()(((()",
             "output": "No"
         },
         {
-            "input": "208",
+            "input": "(((((",
             "output": "No"
         },
         {
-            "input": "167",
+            "input": "(())(()())",
             "output": "Yes"
         },
         {
-            "input": "74",
+            "input": "((((())",
             "output": "No"
         },
         {
-            "input": "300",
+            "input": ")))()(",
             "output": "No"
         },
         {
-            "input": "324",
+            "input": ")))())(((",
             "output": "No"
         },
         {
-            "input": "106",
+            "input": "(()()((",
             "output": "No"
         },
         {
-            "input": "108",
+            "input": ")))(())",
             "output": "No"
         },
         {
-            "input": "374",
+            "input": "())((())()",
             "output": "No"
         },
         {
-            "input": "137",
-            "output": "Yes"
+            "input": ")))())))",
+            "output": "No"
         },
         {
-            "input": "94",
+            "input": "))()())))",
             "output": "No"
         },
         {
-            "input": "241",
-            "output": "Yes"
+            "input": "(()()))))",
+            "output": "No"
+        },
+        {
+            "input": "((()))))))",
+            "output": "No"
         },
         {
-            "input": "79",
+            "input": "(())((()))",
             "output": "Yes"
         },
         {
-            "input": "268",
+            "input": "()((((",
             "output": "No"
         },
         {
-            "input": "325",
+            "input": "((()(",
             "output": "No"
         },
         {
-            "input": "64",
+            "input": "))((((",
             "output": "No"
         },
         {
-            "input": "192",
+            "input": "())(())(()",
             "output": "No"
         },
         {
-            "input": "13",
-            "output": "Yes"
+            "input": ")()))()((",
+            "output": "No"
         },
         {
-            "input": "215",
+            "input": "()))()",
             "output": "No"
         },
         {
-            "input": "349",
-            "output": "Yes"
+            "input": "(()()()()",
+            "output": "No"
         },
         {
-            "input": "135",
+            "input": "))((()",
             "output": "No"
         },
         {
-            "input": "41",
-            "output": "Yes"
+            "input": "(((((()",
+            "output": "No"
         },
         {
-            "input": "226",
+            "input": "))(((",
             "output": "No"
         },
         {
-            "input": "136",
+            "input": "))(())))",
             "output": "No"
         },
         {
-            "input": "364",
+            "input": "()((((((()",
             "output": "No"
         },
         {
-            "input": "281",
-            "output": "Yes"
+            "input": "((()((()",
+            "output": "No"
         },
         {
-            "input": "8",
+            "input": ")()()))((",
             "output": "No"
         },
         {
-            "input": "54",
+            "input": "(()((()))",
             "output": "No"
         },
         {
-            "input": "484",
+            "input": "))()))(((",
             "output": "No"
         },
         {
-            "input": "155",
+            "input": ")((())()",
             "output": "No"
         },
         {
-            "input": "39",
+            "input": "()()(()",
             "output": "No"
         },
         {
-            "input": "222",
+            "input": ")((())))(",
             "output": "No"
         },
         {
-            "input": "179",
+            "input": "(()())()",
             "output": "Yes"
         },
         {
-            "input": "399",
+            "input": ")()))((()",
             "output": "No"
         },
         {
-            "input": "475",
+            "input": "()())))()(",
             "output": "No"
         },
         {
-            "input": "357",
+            "input": ")()()",
             "output": "No"
         },
         {
-            "input": "35",
+            "input": ")))))))",
             "output": "No"
         },
         {
-            "input": "480",
+            "input": "())(()((((",
             "output": "No"
         },
         {
-            "input": "494",
+            "input": ")))(()(",
             "output": "No"
         },
         {
-            "input": "304",
+            "input": "()()(()(",
             "output": "No"
-        },
-        {
-            "input": "499",
-            "output": "Yes"
         },
         {
-            "input": "23",
-            "output": "Yes"
+            "input": ")(()()(((",
+            "output": "No"
         },
         {
-            "input": "113",
-            "output": "Yes"
+            "input": ")())))(()",
+            "output": "No"
         },
         {
-            "input": "429",
+            "input": "())))())(",
             "output": "No"
         },
         {
-            "input": "398",
+            "input": "()))())())",
             "output": "No"
         },
         {
-            "input": "362",
+            "input": "())(((",
             "output": "No"
         },
         {
-            "input": "210",
+            "input": "))))(()()(",
             "output": "No"
         },
         {
-            "input": "315",
+            "input": "())()(((",
             "output": "No"
         },
         {
-            "input": "28",
+            "input": ")())))",
             "output": "No"
         },
         {
-            "input": "83",
-            "output": "Yes"
+            "input": "()))(()((",
+            "output": "No"
         },
         {
-            "input": "351",
+            "input": ")()()()((",
             "output": "No"
         },
         {
-            "input": "85",
+            "input": "(()()(",
             "output": "No"
         },
         {
-            "input": "317",
-            "output": "Yes"
+            "input": ")()((()(",
+            "output": "No"
         },
         {
-            "input": "11",
-            "output": "Yes"
+            "input": "((()((())",
+            "output": "No"
         },
         {
-            "input": "355",
+            "input": "))((()(()(",
             "output": "No"
         },
         {
-            "input": "101",
+            "input": "()((())())",
             "output": "Yes"
         },
         {
-            "input": "293",
-            "output": "Yes"
+            "input": "(()))))(",
+            "output": "No"
         },
         {
-            "input": "4",
+            "input": ")(((((()",
             "output": "No"
         },
         {
-            "input": "372",
+            "input": ")())))(()(",
             "output": "No"
         },
         {
-            "input": "453",
+            "input": "))))((",
             "output": "No"
         },
         {
-            "input": "121",
+            "input": "())()(",
             "output": "No"
         },
         {
-            "input": "126",
+            "input": "()))((",
             "output": "No"
         },
         {
-            "input": "221",
+            "input": "(())((",
             "output": "No"
+        },
+        {
+            "input": "()()(())()",
+            "output": "Yes"
         },
         {
-            "input": "476",
+            "input": "()()))",
             "output": "No"
         },
         {
-            "input": "287",
+            "input": ")(()()())(",
             "output": "No"
         },
         {
-            "input": "43",
-            "output": "Yes"
+            "input": "))))))(()(",
+            "output": "No"
         },
         {
-            "input": "340",
+            "input": ")((())((((",
             "output": "No"
         },
         {
-            "input": "188",
+            "input": "())(())",
             "output": "No"
         },
         {
-            "input": "116",
+            "input": "((()()()",
             "output": "No"
         },
         {
-            "input": "16",
+            "input": "))))((()",
             "output": "No"
         },
         {
-            "input": "277",
-            "output": "Yes"
+            "input": "(((())))))",
+            "output": "No"
         },
         {
-            "input": "206",
+            "input": "))())))))(",
             "output": "No"
         },
         {
-            "input": "199",
-            "output": "Yes"
+            "input": "(()))))(()",
+            "output": "No"
         },
         {
-            "input": "175",
+            "input": ")))((())((",
             "output": "No"
         },
         {
-            "input": "282",
+            "input": ")(()))()",
             "output": "No"
         },
         {
-            "input": "327",
+            "input": ")(())())",
             "output": "No"
         },
         {
-            "input": "230",
+            "input": ")))()))())",
             "output": "No"
         },
         {
-            "input": "373",
-            "output": "Yes"
+            "input": "((((()())",
+            "output": "No"
         },
         {
-            "input": "416",
+            "input": ")()(()((()",
             "output": "No"
         },
         {
-            "input": "426",
+            "input": ")()()((",
             "output": "No"
         },
         {
-            "input": "393",
+            "input": "(()()))((",
             "output": "No"
         },
         {
-            "input": "332",
+            "input": "(()))((()",
             "output": "No"
         },
         {
-            "input": "244",
+            "input": "))(())(",
             "output": "No"
         },
         {
-            "input": "55",
+            "input": "))))()(((",
             "output": "No"
         },
         {
-            "input": "73",
-            "output": "Yes"
+            "input": "((())))(()",
+            "output": "No"
         },
         {
-            "input": "174",
+            "input": ")(()((())",
             "output": "No"
         },
         {
-            "input": "90",
+            "input": ")((((((",
             "output": "No"
         },
         {
-            "input": "328",
+            "input": ")((())((",
             "output": "No"
         },
         {
-            "input": "265",
+            "input": "(((((())(",
             "output": "No"
         },
         {
-            "input": "124",
+            "input": "(()))))((",
             "output": "No"
         },
         {
-            "input": "27",
+            "input": ")())()",
             "output": "No"
         },
         {
-            "input": "152",
+            "input": "())))(",
             "output": "No"
         },
         {
-            "input": "253",
+            "input": ")(())((",
             "output": "No"
         },
         {
-            "input": "59",
-            "output": "Yes"
+            "input": "(()()()",
+            "output": "No"
         },
         {
-            "input": "196",
+            "input": "())((())",
             "output": "No"
         },
         {
-            "input": "329",
+            "input": ")(()(()(()",
             "output": "No"
         },
         {
-            "input": "432",
+            "input": "())()))))(",
             "output": "No"
         },
         {
-            "input": "446",
+            "input": ")()()(",
             "output": "No"
         },
         {
-            "input": "491",
-            "output": "Yes"
+            "input": ")))(((()",
+            "output": "No"
         },
         {
-            "input": "102",
+            "input": ")()()()",
             "output": "No"
         },
         {
-            "input": "366",
+            "input": "())()()(",
             "output": "No"
         },
         {
-            "input": "500",
+            "input": ")((()))(",
             "output": "No"
         },
         {
-            "input": "46",
+            "input": ")))))()()(",
             "output": "No"
         },
         {
-            "input": "256",
+            "input": "(()(((",
             "output": "No"
         },
         {
-            "input": "2",
-            "output": "Yes"
+            "input": "()))(()(",
+            "output": "No"
         },
         {
-            "input": "264",
+            "input": ")))()(())",
             "output": "No"
         },
         {
-            "input": "246",
+            "input": "((()(((((",
             "output": "No"
         },
         {
-            "input": "211",
-            "output": "Yes"
+            "input": "())()(()))",
+            "output": "No"
         },
         {
-            "input": "497",
+            "input": ")(())()",
             "output": "No"
         },
         {
-            "input": "449",
-            "output": "Yes"
+            "input": "(((()()()(",
+            "output": "No"
         },
         {
-            "input": "473",
+            "input": ")())(()(((",
             "output": "No"
         },
         {
-            "input": "92",
+            "input": "(()((()(",
             "output": "No"
         },
         {
-            "input": "291",
+            "input": "()())()(",
             "output": "No"
         },
         {
-            "input": "424",
+            "input": "()))())()",
             "output": "No"
         },
         {
-            "input": "198",
+            "input": "(())())(",
             "output": "No"
         },
         {
-            "input": "439",
-            "output": "Yes"
+            "input": ")(()))()((",
+            "output": "No"
         },
         {
-            "input": "401",
-            "output": "Yes"
+            "input": "())))))()",
+            "output": "No"
         },
         {
-            "input": "469",
+            "input": "(()))())",
             "output": "No"
         },
         {
-            "input": "91",
+            "input": "))((()))(",
             "output": "No"
         },
         {
-            "input": "248",
+            "input": ")((())(()",
             "output": "No"
         },
         {
-            "input": "267",
+            "input": ")))(()",
             "output": "No"
         },
         {
-            "input": "384",
+            "input": "((((()(()",
             "output": "No"
         },
         {
-            "input": "171",
+            "input": "))(((()))",
             "output": "No"
         },
         {
-            "input": "299",
+            "input": ")()))()())",
             "output": "No"
         },
         {
-            "input": "402",
+            "input": ")))(()(()(",
             "output": "No"
         },
         {
-            "input": "110",
+            "input": "(()))((",
             "output": "No"
         },
         {
-            "input": "388",
+            "input": "(()((()((",
             "output": "No"
         },
         {
-            "input": "84",
+            "input": ")(()(((",
             "output": "No"
         },
         {
-            "input": "251",
-            "output": "Yes"
+            "input": "))(()))",
+            "output": "No"
         },
         {
-            "input": "14",
+            "input": "(()((",
             "output": "No"
         },
         {
-            "input": "471",
+            "input": "()()()((()",
             "output": "No"
+        },
+        {
+            "input": "(())()(())",
+            "output": "Yes"
         },
         {
-            "input": "334",
+            "input": ")))((",
             "output": "No"
         },
         {
-            "input": "365",
+            "input": "(()(((()",
             "output": "No"
         },
         {
-            "input": "177",
+            "input": ")())()(",
             "output": "No"
         },
         {
-            "input": "492",
+            "input": "(()))(()))",
             "output": "No"
         },
         {
-            "input": "19",
+            "input": "()(()(()))",
             "output": "Yes"
         },
         {
-            "input": "78",
+            "input": "()))())(((",
             "output": "No"
         },
         {
-            "input": "237",
+            "input": ")))())()(",
             "output": "No"
         },
         {
-            "input": "204",
+            "input": "()())()))",
             "output": "No"
         },
         {
-            "input": "150",
+            "input": "(()))(()",
             "output": "No"
         },
         {
-            "input": "488",
+            "input": "())))()(((",
             "output": "No"
         },
         {
-            "input": "130",
+            "input": ")()()))",
             "output": "No"
         },
         {
-            "input": "442",
+            "input": "())(()))((",
             "output": "No"
         },
         {
-            "input": "134",
+            "input": ")()())",
             "output": "No"
-        },
-        {
-            "input": "17",
-            "output": "Yes"
         },
         {
-            "input": "7",
-            "output": "Yes"
+            "input": ")((()(()",
+            "output": "No"
         },
         {
-            "input": "455",
+            "input": ")((((()",
             "output": "No"
         },
         {
-            "input": "98",
+            "input": ")))()()",
             "output": "No"
         },
         {
-            "input": "452",
+            "input": ")()()()))(",
             "output": "No"
         },
         {
-            "input": "414",
+            "input": "())()))(((",
             "output": "No"
         },
         {
-            "input": "301",
+            "input": "))()))())",
             "output": "No"
         },
         {
-            "input": "60",
+            "input": "))()((()((",
             "output": "No"
         },
         {
-            "input": "417",
+            "input": "))()()(((",
             "output": "No"
         },
         {
-            "input": "383",
-            "output": "Yes"
+            "input": "))())))(",
+            "output": "No"
         },
         {
-            "input": "148",
+            "input": ")())(())",
             "output": "No"
         },
         {
-            "input": "407",
+            "input": "((()()(",
             "output": "No"
         },
         {
-            "input": "89",
-            "output": "Yes"
+            "input": ")(((()(",
+            "output": "No"
         },
         {
-            "input": "478",
+            "input": ")(()))))((",
             "output": "No"
         },
         {
-            "input": "308",
+            "input": "(()(())(",
             "output": "No"
         },
         {
-            "input": "352",
+            "input": "()()(()((",
             "output": "No"
         },
         {
-            "input": "76",
+            "input": "((()))(",
             "output": "No"
         },
         {
-            "input": "10",
+            "input": "))()(())(",
             "output": "No"
         },
         {
-            "input": "185",
+            "input": "(((()()(((",
             "output": "No"
         },
         {
-            "input": "419",
-            "output": "Yes"
+            "input": "(((((()))",
+            "output": "No"
         },
         {
-            "input": "263",
-            "output": "Yes"
+            "input": "(()()))()",
+            "output": "No"
         },
         {
-            "input": "378",
+            "input": ")))((()()(",
             "output": "No"
         },
         {
-            "input": "272",
+            "input": ")()((()((",
             "output": "No"
         },
         {
-            "input": "37",
-            "output": "Yes"
+            "input": "(()()(()(",
+            "output": "No"
         },
         {
-            "input": "474",
+            "input": ")()(((",
             "output": "No"
         },
         {
-            "input": "360",
+            "input": ")))((())(",
             "output": "No"
         },
         {
-            "input": "202",
+            "input": "()))))(",
             "output": "No"
         },
         {
-            "input": "498",
+            "input": "(()()))(()",
             "output": "No"
         },
         {
-            "input": "339",
+            "input": "()()())((",
             "output": "No"
         },
         {
-            "input": "284",
+            "input": "))(((()",
             "output": "No"
         },
         {
-            "input": "173",
-            "output": "Yes"
+            "input": "))())(((",
+            "output": "No"
         },
         {
-            "input": "239",
-            "output": "Yes"
+            "input": "()(()((())",
+            "output": "No"
         },
         {
-            "input": "114",
+            "input": ")))(((())",
             "output": "No"
         },
         {
-            "input": "53",
-            "output": "Yes"
+            "input": "(()))()(",
+            "output": "No"
         },
         {
-            "input": "194",
+            "input": ")))))())",
             "output": "No"
         },
         {
-            "input": "350",
+            "input": "()()(()(((",
             "output": "No"
         },
         {
-            "input": "247",
+            "input": ")())))(())",
             "output": "No"
         },
         {
-            "input": "404",
+            "input": ")()(((()",
             "output": "No"
         },
         {
-            "input": "303",
+            "input": ")))((((((",
             "output": "No"
         },
         {
-            "input": "306",
+            "input": "())))())((",
             "output": "No"
         },
         {
-            "input": "336",
+            "input": "())((())))",
             "output": "No"
         },
         {
-            "input": "25",
+            "input": ")))())((",
             "output": "No"
         },
         {
-            "input": "359",
-            "output": "Yes"
+            "input": "())()(()((",
+            "output": "No"
         },
         {
-            "input": "390",
+            "input": "()()))((",
             "output": "No"
         },
         {
-            "input": "447",
+            "input": ")()))))",
             "output": "No"
         },
         {
-            "input": "445",
+            "input": "(((())(",
             "output": "No"
         },
         {
-            "input": "316",
+            "input": ")))(()()((",
             "output": "No"
         },
         {
-            "input": "146",
+            "input": "()))((()",
             "output": "No"
         },
         {
-            "input": "166",
+            "input": ")))((((",
             "output": "No"
         },
         {
-            "input": "51",
+            "input": ")(()(())))",
             "output": "No"
         },
         {
-            "input": "201",
+            "input": "())((())(",
             "output": "No"
         },
         {
-            "input": "142",
+            "input": "(())((((",
             "output": "No"
         },
         {
-            "input": "82",
+            "input": "())(((()",
             "output": "No"
         },
         {
-            "input": "238",
+            "input": "))(())(()",
             "output": "No"
         },
         {
-            "input": "52",
+            "input": ")))())(()(",
             "output": "No"
         },
         {
-            "input": "254",
+            "input": "))((()(",
             "output": "No"
         },
         {
-            "input": "80",
+            "input": "((((())((",
             "output": "No"
         },
         {
-            "input": "5",
-            "output": "Yes"
+            "input": "))(()()(((",
+            "output": "No"
         },
         {
-            "input": "385",
+            "input": ")((()((",
             "output": "No"
         },
         {
-            "input": "302",
+            "input": ")())()))((",
             "output": "No"
         },
         {
-            "input": "462",
+            "input": ")(()())(",
             "output": "No"
         },
         {
-            "input": "216",
+            "input": ")((()()())",
             "output": "No"
         },
         {
-            "input": "62",
+            "input": "()))())((",
             "output": "No"
         },
         {
-            "input": "182",
+            "input": "()((((((((",
             "output": "No"
         },
         {
-            "input": "129",
+            "input": "))(())((",
             "output": "No"
         },
         {
-            "input": "144",
+            "input": "()))(()())",
             "output": "No"
         },
         {
-            "input": "158",
+            "input": "))))()()(",
             "output": "No"
         },
         {
-            "input": "72",
+            "input": "))()(()",
             "output": "No"
         },
         {
-            "input": "406",
+            "input": ")))()))()",
             "output": "No"
         },
         {
-            "input": "132",
+            "input": ")()))()()(",
             "output": "No"
         },
         {
-            "input": "479",
-            "output": "Yes"
+            "input": "())()()())",
+            "output": "No"
         },
         {
-            "input": "342",
+            "input": "((())))",
             "output": "No"
         },
         {
-            "input": "353",
-            "output": "Yes"
+            "input": ")))((()((",
+            "output": "No"
         },
         {
-            "input": "310",
+            "input": ")()(()",
             "output": "No"
         },
         {
-            "input": "463",
-            "output": "Yes"
+            "input": "()()())()(",
+            "output": "No"
         },
         {
-            "input": "111",
+            "input": "()()((((",
             "output": "No"
         },
         {
-            "input": "169",
+            "input": ")()())(()",
             "output": "No"
         },
         {
-            "input": "63",
+            "input": "())(((((",
             "output": "No"
         },
         {
-            "input": "187",
+            "input": "()(()((()",
             "output": "No"
         },
         {
-            "input": "346",
+            "input": "(()(((((",
             "output": "No"
         },
         {
-            "input": "66",
+            "input": "))))()))",
             "output": "No"
         }
     ]

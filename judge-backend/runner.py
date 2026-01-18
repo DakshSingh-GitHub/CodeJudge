@@ -6,7 +6,7 @@ import psutil
 from concurrent.futures import ThreadPoolExecutor
 
 TIME_LIMIT = 2  # seconds
-ENABLE_OPTIMIZATION = False # Set to False to disable threading/persistent workers
+ENABLE_OPTIMIZATION = True # Set to False to disable threading/persistent workers
 
 def run_single_test_case_sequential(index, tc, code_str, time_limit):
     # This is the old, slower way (one process per test case)
@@ -88,17 +88,13 @@ class JudgeWorker:
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
-            bufsize=1 # Line buffered
+            bufsize=1
         )
-        # Initialize with code
         init_msg = json.dumps({"type": "init", "code": self.code})
         self.process.stdin.write(init_msg + "\n")
         self.process.stdin.flush()
         
-        # Wait for ready signal
         try:
-            # We need a safeguard here in case worker crashes on init
-            # But normally we just read line
             resp_line = self.process.stdout.readline()
             if not resp_line:
                 raise RuntimeError("Worker exited unexpectedly during initialization")
@@ -153,7 +149,7 @@ class JudgeWorker:
         while True:
             if time.time() - start_t > timeout:
                 self.kill()
-                self.start_worker() # Restart for next guy
+                self.start_worker()
                 return {
                     "test_case": case_id,
                     "status": "Time Limit Exceeded",
@@ -217,11 +213,8 @@ class JudgeWorker:
              # Revised plan for stability:
              # We use `run_in_executor` to wait for line?
              pass
-        except:
+        except:  # noqa: E722
             pass
-
-        # To keep it simple and effective for the user's request (optimizing valid cases mostly):
-        # We will use a separate thread *per request* to read the line, and wait on that thread with timeout.
         
         result_container = {}
         def read_response():
@@ -229,7 +222,7 @@ class JudgeWorker:
                 line = self.process.stdout.readline()
                 if line:
                     result_container['data'] = json.loads(line)
-            except:
+            except:  # noqa: E722
                 pass
 
         import threading
@@ -250,7 +243,6 @@ class JudgeWorker:
             }
         
         if 'data' not in result_container:
-            # Process probably died or closed stream
             self.start_worker()
             return {
                 "test_case": case_id,
@@ -261,12 +253,10 @@ class JudgeWorker:
         resp = result_container['data']
         
         if resp['status'] == 'done':
-            # Check correctness
             actual = normalize_output(resp['output'])
-            # We don't have expected output here? 
-            # Wait, we need to pass expected output or verify it here.
+            # We don't have expected output here
             # The method signature is `run_case(self, case_id, user_input, timeout)`
-            # We return output and let the caller verify?
+            # We return output and let the caller verify
             # Previous `run_single_test_case` did verification.
             return {
                 "test_case": case_id,
@@ -286,13 +276,11 @@ class JudgeWorker:
     def kill(self):
         if self.process:
             try:
-                # self.process.kill() is not enough strictly for windows sometimes if sub-sub-process?
-                # But here it is simple python process.
                 parent = psutil.Process(self.process.pid)
                 for child in parent.children(recursive=True):
                     child.kill()
                 parent.kill()
-            except:
+            except:  # noqa: E722
                 pass
             self.process = None
 
@@ -315,7 +303,6 @@ def run_code_multiple(code, test_cases, mode="ALL"):
         
         end_time = time.time()
         
-        # In FIRST_FAIL, we already broke, so we just return what we have
         final_status = "Accepted"
         if results:
             for r in results:
@@ -333,11 +320,6 @@ def run_code_multiple(code, test_cases, mode="ALL"):
             },
             "test_case_results": results
         }
-
-    # FAST OPTIMIZED MODE (Original logic continues...)
-    # Create a pool of workers
-    # Optimal number = CPU count? Or slightly more?
-    # Since they are reusing processes, mapped into thread pool.
     
     num_workers = min(os.cpu_count() or 4, len(test_cases))
     # Cap at 8 to avoid memory explosion if many heavy workers
@@ -346,22 +328,16 @@ def run_code_multiple(code, test_cases, mode="ALL"):
     worker_script = os.path.join(os.path.dirname(__file__), "runner_worker.py")
     
     # Initialize workers
-    workers = []
-    # We want a thread-safe queue of workers? 
-    # Actually, simpler: Use ThreadPoolExecutor to manage the *tasks*, 
-    # and each thread claims a worker from a Queue?
+    workers = []  # noqa: F841
     import queue
     worker_queue = queue.Queue()
     
-    try:
-        # Pre-start workers
-        # STARTUP is the slow part, so we do it in parallel too?
-        # Yes.
+    try: # Parallel worker initialization
         def create_worker():
             try:
                 w = JudgeWorker(worker_script, code)
                 return w
-            except Exception as e:
+            except Exception:
                 return None
 
         with ThreadPoolExecutor(max_workers=num_workers) as starter:
@@ -399,8 +375,6 @@ def run_code_multiple(code, test_cases, mode="ALL"):
             try:
                 # Run execution
                 res = worker.run_case(index, tc.get("input", ""), TIME_LIMIT)
-                
-                # Verification logic moved here
                 expected = normalize_output(tc.get("output", ""))
                 
                 if res["status"] == "Time Limit Exceeded":
@@ -408,10 +382,8 @@ def run_code_multiple(code, test_cases, mode="ALL"):
                 elif res["status"] == "Runtime Error":
                      pass
                 elif res.get("error"):
-                    # Worker returned "done" but with an error (Runtime Error during exec)
                     res["status"] = "Runtime Error"
                 else:
-                    # Successful run, check output
                     if res["actual_output"] == expected:
                         res["status"] = "Accepted"
                     else:
@@ -438,7 +410,6 @@ def run_code_multiple(code, test_cases, mode="ALL"):
         end_time = time.time()
         total_duration = end_time - start_time
         
-        # Cleanup workers
         while not worker_queue.empty():
             w = worker_queue.get()
             w.kill()
@@ -476,6 +447,6 @@ def run_code_multiple(code, test_cases, mode="ALL"):
             try:
                 w = worker_queue.get_nowait()
                 w.kill()
-            except:
+            except:  # noqa: E722
                 pass
         raise e

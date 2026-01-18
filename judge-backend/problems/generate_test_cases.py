@@ -256,6 +256,215 @@ def solve_trapping_rain_water():
             
     return f"{' '.join(map(str, heights))}", str(res)
 
+def solve_square_of_a_number():
+    n = random.randint(1, 1000)
+    return str(n), str(n * n)
+
+def solve_cube_of_a_number():
+    n = random.randint(1, 100)
+    return str(n), str(n * n * n)
+
+def solve_leap_year_check():
+    year = random.randint(1800, 2400)
+    is_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+    return str(year), "Yes" if is_leap else "No"
+
+def solve_count_consonants():
+    s = "".join(random.choices("abcdefghijklmnopqrstuvwxyz", k=random.randint(5, 20)))
+    vowels = "aeiou"
+    count = sum(1 for char in s if char.lower() not in vowels and char.isalpha())
+    return s, str(count)
+
+def solve_string_length():
+    s = "".join(random.choices("abcdefghijklmnopqrstuvwxyz", k=random.randint(1, 50)))
+    return s, str(len(s))
+
+def solve_is_anagram():
+    s1 = "".join(random.choices("abcde", k=random.randint(3, 8)))
+    if random.choice([True, False]):
+        s2 = "".join(random.sample(s1, len(s1)))
+    else:
+        s2 = "".join(random.choices("abcde", k=len(s1)))
+    return f"{s1}\n{s2}", "Yes" if sorted(s1) == sorted(s2) else "No"
+
+def solve_sum_of_n_natural_numbers():
+    n = random.randint(1, 1000)
+    return str(n), str(n * (n + 1) // 2)
+
+def solve_is_perfect_square():
+    if random.choice([True, False]):
+        n = random.randint(1, 100)**2
+    else:
+        n = random.randint(1, 10000)
+    root = int(math.sqrt(n))
+    return str(n), "Yes" if root * root == n else "No"
+
+def solve_is_armstrong_number():
+    if random.choice([True, False]):
+        # Hardcode some armstrong numbers or small range
+        n = random.choice([153, 370, 371, 407, 1634, 8208, 9474])
+    else:
+        n = random.randint(100, 1000)
+    digits = [int(d) for d in str(n)]
+    power = len(digits)
+    is_armstrong = sum(d**power for d in digits) == n
+    return str(n), "Yes" if is_armstrong else "No"
+
+def solve_smallest_element_in_array():
+    n = random.randint(3, 20)
+    arr = [random.randint(-1000, 1000) for _ in range(n)]
+    return " ".join(map(str, arr)), str(min(arr))
+
+def solve_sum_of_even_in_range():
+    a = random.randint(1, 100)
+    b = random.randint(a, 200)
+    res = sum(x for x in range(a, b + 1) if x % 2 == 0)
+    return f"{a} {b}", str(res)
+
+def solve_sum_of_odd_in_range():
+    a = random.randint(1, 100)
+    b = random.randint(a, 200)
+    res = sum(x for x in range(a, b + 1) if x % 2 != 0)
+    return f"{a} {b}", str(res)
+
+def solve_reverse_an_array():
+    n = random.randint(3, 15)
+    arr = [random.randint(1, 100) for _ in range(n)]
+    return " ".join(map(str, arr)), " ".join(map(str, arr[::-1]))
+
+def solve_is_array_sorted():
+    n = random.randint(3, 10)
+    arr = [random.randint(1, 50) for _ in range(n)]
+    if random.choice([True, False]):
+        arr.sort()
+    return " ".join(map(str, arr)), "Yes" if arr == sorted(arr) else "No"
+
+def solve_missing_number():
+    n = random.randint(3, 15)
+    arr = list(range(1, n + 1))
+    missing = random.choice(arr)
+    arr.remove(missing)
+    random.shuffle(arr)
+    return f"{n}\n" + " ".join(map(str, arr)), str(missing)
+
+def solve_count_set_bits():
+    n = random.randint(0, 10000)
+    return str(n), str(bin(n).count('1'))
+
+def solve_power_of_two():
+    if random.choice([True, False]):
+        n = 2**random.randint(0, 30)
+    else:
+        n = random.randint(1, 10**9)
+    is_power = n > 0 and (n & (n - 1)) == 0
+    return str(n), "Yes" if is_power else "No"
+
+def solve_pascals_triangle_row():
+    n = random.randint(0, 20)
+    row = [1]
+    for i in range(n):
+        row.append(row[i] * (n - i) // (i + 1))
+    return str(n), " ".join(map(str, row))
+
+def solve_valid_parentheses():
+    def generate(length):
+        if length == 0: return ""
+        if random.choice([True, False]):
+            inner = generate(length - 1)
+            return "(" + inner + ")"
+        else:
+            split = random.randint(0, length - 1)
+            return generate(split) + generate(length - split)
+            
+    if random.choice([True, False]):
+        s = generate(random.randint(1, 5))
+    else:
+        s = "".join(random.choices("()", k=random.randint(2, 10)))
+        
+    stack = []
+    mapping = {")": "("}
+    is_valid = True
+    if not s: is_valid = True
+    else:
+        for char in s:
+            if char in mapping:
+                top = stack.pop() if stack else '#'
+                if mapping[char] != top:
+                    is_valid = False
+                    break
+            else:
+                stack.append(char)
+        if stack: is_valid = False
+            
+    return s, "Yes" if is_valid else "No"
+
+def solve_best_time_to_buy_and_sell_stock():
+    n = random.randint(2, 20)
+    prices = [random.randint(1, 100) for _ in range(n)]
+    min_price = float('inf')
+    max_profit = 0
+    for p in prices:
+        min_price = min(min_price, p)
+        max_profit = max(max_profit, p - min_price)
+    return " ".join(map(str, prices)), str(max_profit)
+
+def solve_majority_element():
+    n = random.randint(3, 15)
+    majority = random.randint(1, 100)
+    arr = [majority] * (n // 2 + 1)
+    arr += [random.randint(1, 100) for _ in range(n - len(arr))]
+    random.shuffle(arr)
+    return " ".join(map(str, arr)), str(majority)
+
+def solve_climbing_stairs():
+    n = random.randint(1, 30)
+    if n <= 2: res = n
+    else:
+        a, b = 1, 2
+        for _ in range(3, n + 1):
+            a, b = b, a + b
+        res = b
+    return str(n), str(res)
+
+def solve_house_robber():
+    n = random.randint(1, 20)
+    nums = [random.randint(0, 100) for _ in range(n)]
+    if not nums: res = 0
+    elif len(nums) == 1: res = nums[0]
+    else:
+        prev2, prev1 = 0, 0
+        for x in nums:
+            prev2, prev1 = prev1, max(prev1, prev2 + x)
+        res = prev1
+    return " ".join(map(str, nums)), str(res)
+
+def solve_edit_distance():
+    word1 = "".join(random.choices("abc", k=random.randint(3, 8)))
+    word2 = "".join(random.choices("abc", k=random.randint(3, 8)))
+    m, n = len(word1), len(word2)
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    for i in range(m + 1):
+        for j in range(n + 1):
+            if i == 0: dp[i][j] = j
+            elif j == 0: dp[i][j] = i
+            elif word1[i-1] == word2[j-1]: dp[i][j] = dp[i - 1][j - 1]
+            else:
+                dp[i][j] = 1 + min(dp[i - 1][j], dp[i][j - 1], dp[i - 1][j - 1])
+    return f"{word1}\n{word2}", str(dp[m][n])
+
+def solve_matrix_multiplication():
+    r1, c1 = random.randint(2, 4), random.randint(2, 4)
+    r2, c2 = c1, random.randint(2, 4)
+    m1 = [[random.randint(1, 5) for _ in range(c1)] for _ in range(r1)]
+    m2 = [[random.randint(1, 5) for _ in range(c2)] for _ in range(r2)]
+    res = [[sum(m1[i][k] * m2[k][j] for k in range(c1)) for j in range(c2)] for i in range(r1)]
+    
+    inp = f"{r1} {c1} {r2} {c2}\n"
+    inp += "\n".join(" ".join(map(str, row)) for row in m1) + "\n"
+    inp += "\n".join(" ".join(map(str, row)) for row in m2)
+    outp = "\n".join(" ".join(map(str, row)) for row in res)
+    return inp, outp
+
 SOLVERS = {
     "area_of_a_rectangle": solve_area_of_a_rectangle,
     "binary_to_decimal": solve_binary_to_decimal,
@@ -282,6 +491,31 @@ SOLVERS = {
     "sum_of_digits": solve_sum_of_digits,
     "sum_of_doubles": solve_sum_of_doubles,
     "trapping_rain_water": solve_trapping_rain_water,
+    "square_of_a_number": solve_square_of_a_number,
+    "cube_of_a_number": solve_cube_of_a_number,
+    "leap_year_check": solve_leap_year_check,
+    "count_consonants": solve_count_consonants,
+    "string_length": solve_string_length,
+    "is_anagram": solve_is_anagram,
+    "sum_of_n_natural_numbers": solve_sum_of_n_natural_numbers,
+    "is_perfect_square": solve_is_perfect_square,
+    "is_armstrong_number": solve_is_armstrong_number,
+    "smallest_element_in_array": solve_smallest_element_in_array,
+    "sum_of_even_in_range": solve_sum_of_even_in_range,
+    "sum_of_odd_in_range": solve_sum_of_odd_in_range,
+    "reverse_an_array": solve_reverse_an_array,
+    "is_array_sorted": solve_is_array_sorted,
+    "missing_number": solve_missing_number,
+    "count_set_bits": solve_count_set_bits,
+    "power_of_two": solve_power_of_two,
+    "pascals_triangle_row": solve_pascals_triangle_row,
+    "valid_parentheses": solve_valid_parentheses,
+    "best_time_to_buy_and_sell_stock": solve_best_time_to_buy_and_sell_stock,
+    "majority_element": solve_majority_element,
+    "climbing_stairs": solve_climbing_stairs,
+    "house_robber": solve_house_robber,
+    "edit_distance": solve_edit_distance,
+    "matrix_multiplication": solve_matrix_multiplication,
 }
 
 HARD_PROBLEMS = {
@@ -291,7 +525,9 @@ HARD_PROBLEMS = {
     "longest_increasing_subsequence", 
     "matrix_addition", 
     "string_permutations", 
-    "trapping_rain_water"
+    "trapping_rain_water",
+    "edit_distance",
+    "matrix_multiplication"
 }
 
 def main():

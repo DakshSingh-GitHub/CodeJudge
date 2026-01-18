@@ -1,0 +1,2024 @@
+{
+    "id": "is_array_sorted",
+    "title": "Is Array Sorted",
+    "description": "Check if a given array is sorted in non-decreasing order. Output 'Yes' or 'No'.",
+    "input_format": "Space-separated integers representing the array elements.",
+    "output_format": "'Yes' or 'No'.",
+    "constraints": {
+        "Array size": "1 <= N <= 100"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "1 2 3 4 5",
+            "output": "Yes"
+        },
+        {
+            "input": "5 1 2 3 4",
+            "output": "No"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "3 22 26 27 20 35 28 40 41",
+            "output": "No"
+        },
+        {
+            "input": "6 9 25 32 44",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 12 14 22 23 37 38",
+            "output": "Yes"
+        },
+        {
+            "input": "15 7 25 29 21 26 23",
+            "output": "No"
+        },
+        {
+            "input": "9 39 2 23 29 11 30 17 21 19",
+            "output": "No"
+        },
+        {
+            "input": "8 13 23 35 35 40 48 49",
+            "output": "Yes"
+        },
+        {
+            "input": "43 46 45 23 49",
+            "output": "No"
+        },
+        {
+            "input": "29 10 37 20 24 20 5 2",
+            "output": "No"
+        },
+        {
+            "input": "9 6 18 49 39 27 45",
+            "output": "No"
+        },
+        {
+            "input": "4 9 12 17 18 22 30 48 49 50",
+            "output": "Yes"
+        },
+        {
+            "input": "15 31 33 37 39 40 43",
+            "output": "Yes"
+        },
+        {
+            "input": "11 35 46 5 48 15",
+            "output": "No"
+        },
+        {
+            "input": "6 12 24 35 45 48 50",
+            "output": "Yes"
+        },
+        {
+            "input": "45 24 35 34 24",
+            "output": "No"
+        },
+        {
+            "input": "48 25 34 12 19 46 22 11 26",
+            "output": "No"
+        },
+        {
+            "input": "35 43 1 20 48",
+            "output": "No"
+        },
+        {
+            "input": "3 17 24 28 30 30 44 47",
+            "output": "Yes"
+        },
+        {
+            "input": "30 47 11 2 23 31 50 11 18 43",
+            "output": "No"
+        },
+        {
+            "input": "7 28 43 50",
+            "output": "Yes"
+        },
+        {
+            "input": "29 14 23",
+            "output": "No"
+        },
+        {
+            "input": "3 11 22 37 45",
+            "output": "Yes"
+        },
+        {
+            "input": "5 14 21 25 32 44",
+            "output": "Yes"
+        },
+        {
+            "input": "3 6 9 11 15 27",
+            "output": "Yes"
+        },
+        {
+            "input": "18 5 13 5 37 25 4 33",
+            "output": "No"
+        },
+        {
+            "input": "6 22 25 27 30 33",
+            "output": "Yes"
+        },
+        {
+            "input": "4 17 22 24",
+            "output": "Yes"
+        },
+        {
+            "input": "13 22 29 32 38 45 47",
+            "output": "Yes"
+        },
+        {
+            "input": "48 26 35 19 23 14",
+            "output": "No"
+        },
+        {
+            "input": "33 25 29",
+            "output": "No"
+        },
+        {
+            "input": "7 9 37 38 43 47 47 47",
+            "output": "Yes"
+        },
+        {
+            "input": "24 27 24",
+            "output": "No"
+        },
+        {
+            "input": "8 42 48 21",
+            "output": "No"
+        },
+        {
+            "input": "6 6 11 11 14 21 25 31 37",
+            "output": "Yes"
+        },
+        {
+            "input": "2 8 30 41 46",
+            "output": "Yes"
+        },
+        {
+            "input": "12 17 30 37 38 39 40 46 48 50",
+            "output": "Yes"
+        },
+        {
+            "input": "27 7 28 36",
+            "output": "No"
+        },
+        {
+            "input": "14 21 5 48 15 10 17 14",
+            "output": "No"
+        },
+        {
+            "input": "45 19 2 13 49 48 13 12 47 30",
+            "output": "No"
+        },
+        {
+            "input": "46 45 13 4 19",
+            "output": "No"
+        },
+        {
+            "input": "1 4 42 44",
+            "output": "Yes"
+        },
+        {
+            "input": "6 35 16 8 49 26 21 45",
+            "output": "No"
+        },
+        {
+            "input": "21 11 30 4 43 36 17",
+            "output": "No"
+        },
+        {
+            "input": "9 23 26 27 45",
+            "output": "Yes"
+        },
+        {
+            "input": "15 17 32 35 39",
+            "output": "Yes"
+        },
+        {
+            "input": "38 39 23 29 42",
+            "output": "No"
+        },
+        {
+            "input": "28 25 23 12 16 34 45",
+            "output": "No"
+        },
+        {
+            "input": "48 41 5 18 1 29 46 35 21 34",
+            "output": "No"
+        },
+        {
+            "input": "7 8 13 16 16 21 21 21",
+            "output": "Yes"
+        },
+        {
+            "input": "23 10 27 29 33",
+            "output": "No"
+        },
+        {
+            "input": "28 9 43",
+            "output": "No"
+        },
+        {
+            "input": "42 44 4 7 39",
+            "output": "No"
+        },
+        {
+            "input": "37 23 10",
+            "output": "No"
+        },
+        {
+            "input": "8 9 11 12 20 26 31 34 50",
+            "output": "Yes"
+        },
+        {
+            "input": "19 22 23 25 25 29 30 39 39 42",
+            "output": "Yes"
+        },
+        {
+            "input": "1 48 24 3 20 42 1",
+            "output": "No"
+        },
+        {
+            "input": "1 11 17 24 25 34 35 37",
+            "output": "Yes"
+        },
+        {
+            "input": "13 6 34 3 49 37 28 47",
+            "output": "No"
+        },
+        {
+            "input": "37 11 35 14 29 12",
+            "output": "No"
+        },
+        {
+            "input": "32 48 36",
+            "output": "No"
+        },
+        {
+            "input": "39 42 46",
+            "output": "Yes"
+        },
+        {
+            "input": "47 17 47 39 16 39 33 22 39 33",
+            "output": "No"
+        },
+        {
+            "input": "18 27 30 50",
+            "output": "Yes"
+        },
+        {
+            "input": "28 44 15",
+            "output": "No"
+        },
+        {
+            "input": "1 26 29 30 41",
+            "output": "Yes"
+        },
+        {
+            "input": "6 11 18 26 27 44",
+            "output": "Yes"
+        },
+        {
+            "input": "39 26 44 19 5 26 38",
+            "output": "No"
+        },
+        {
+            "input": "32 34 37 38 38 47",
+            "output": "Yes"
+        },
+        {
+            "input": "1 10 13 22 31 46 47",
+            "output": "Yes"
+        },
+        {
+            "input": "3 28 30 36",
+            "output": "Yes"
+        },
+        {
+            "input": "48 19 14 39 9 23",
+            "output": "No"
+        },
+        {
+            "input": "10 18 35 47 33 1",
+            "output": "No"
+        },
+        {
+            "input": "17 20 28 29 32 42",
+            "output": "Yes"
+        },
+        {
+            "input": "15 21 30 32 32 41 45 47",
+            "output": "Yes"
+        },
+        {
+            "input": "43 38 39 17 19 16",
+            "output": "No"
+        },
+        {
+            "input": "6 13 18 21 23 25 47 49",
+            "output": "Yes"
+        },
+        {
+            "input": "10 25 35 42 42",
+            "output": "Yes"
+        },
+        {
+            "input": "7 9 17 17 30 37 41 49",
+            "output": "Yes"
+        },
+        {
+            "input": "29 39 42",
+            "output": "Yes"
+        },
+        {
+            "input": "1 8 25 29 35",
+            "output": "Yes"
+        },
+        {
+            "input": "39 26 12 33 26 50 23 4",
+            "output": "No"
+        },
+        {
+            "input": "25 10 6 4 32 17 37 3",
+            "output": "No"
+        },
+        {
+            "input": "11 28 47 9 48",
+            "output": "No"
+        },
+        {
+            "input": "2 8 19 30 40 42 49",
+            "output": "Yes"
+        },
+        {
+            "input": "10 16 20 29 30 31",
+            "output": "Yes"
+        },
+        {
+            "input": "12 42 50 50 32 12 18",
+            "output": "No"
+        },
+        {
+            "input": "31 38 40",
+            "output": "Yes"
+        },
+        {
+            "input": "19 40 19 16 15 11",
+            "output": "No"
+        },
+        {
+            "input": "36 28 4 44 34 4 3",
+            "output": "No"
+        },
+        {
+            "input": "10 12 19 19 27 29 30 45",
+            "output": "Yes"
+        },
+        {
+            "input": "36 33 8 10 35",
+            "output": "No"
+        },
+        {
+            "input": "30 28 50 13 30 15 50 3 34",
+            "output": "No"
+        },
+        {
+            "input": "13 14 27 30",
+            "output": "Yes"
+        },
+        {
+            "input": "10 15 28 48",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 7 20 22 29 32 34 40",
+            "output": "Yes"
+        },
+        {
+            "input": "14 17 20 25 26 30 35 40 44 48",
+            "output": "Yes"
+        },
+        {
+            "input": "5 28 45",
+            "output": "Yes"
+        },
+        {
+            "input": "38 40 13 11 1 25 14",
+            "output": "No"
+        },
+        {
+            "input": "12 3 18 49 7 25 19",
+            "output": "No"
+        },
+        {
+            "input": "43 31 48 11",
+            "output": "No"
+        },
+        {
+            "input": "29 6 22 48",
+            "output": "No"
+        },
+        {
+            "input": "1 9 32",
+            "output": "Yes"
+        },
+        {
+            "input": "2 21 25 36",
+            "output": "Yes"
+        },
+        {
+            "input": "2 10 22 25 28 32 46 47",
+            "output": "Yes"
+        },
+        {
+            "input": "3 11 20 34 36 45 50",
+            "output": "Yes"
+        },
+        {
+            "input": "3 7 17 19 41",
+            "output": "Yes"
+        },
+        {
+            "input": "27 5 39",
+            "output": "No"
+        },
+        {
+            "input": "9 25 26 45",
+            "output": "Yes"
+        },
+        {
+            "input": "8 20 20 23 46",
+            "output": "Yes"
+        },
+        {
+            "input": "1 10 12 24 25 35 45",
+            "output": "Yes"
+        },
+        {
+            "input": "7 16 30 49 50",
+            "output": "Yes"
+        },
+        {
+            "input": "28 35 44",
+            "output": "Yes"
+        },
+        {
+            "input": "49 25 32 10 6 32 24 27 45",
+            "output": "No"
+        },
+        {
+            "input": "1 1 13 15 17 29 32 35 38",
+            "output": "Yes"
+        },
+        {
+            "input": "4 9 15 26 27 46",
+            "output": "Yes"
+        },
+        {
+            "input": "17 20 27 36 41",
+            "output": "Yes"
+        },
+        {
+            "input": "6 25 49 6 20 1",
+            "output": "No"
+        },
+        {
+            "input": "43 42 40 43 38 5 24 39 28 10",
+            "output": "No"
+        },
+        {
+            "input": "1 10 13 34 36 48",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 14 32 32 34 42 42 46",
+            "output": "Yes"
+        },
+        {
+            "input": "14 50 31 24 3 27 38",
+            "output": "No"
+        },
+        {
+            "input": "13 15 37",
+            "output": "Yes"
+        },
+        {
+            "input": "4 40 38 44 38 5 17",
+            "output": "No"
+        },
+        {
+            "input": "6 25 31 37 44 44",
+            "output": "Yes"
+        },
+        {
+            "input": "41 11 5",
+            "output": "No"
+        },
+        {
+            "input": "11 35 43",
+            "output": "Yes"
+        },
+        {
+            "input": "12 19 23 31 36 47",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 9 17 20 21 26 30 43",
+            "output": "Yes"
+        },
+        {
+            "input": "14 20 28",
+            "output": "Yes"
+        },
+        {
+            "input": "1 4 5 33 38 43 43 47",
+            "output": "Yes"
+        },
+        {
+            "input": "5 7 8 12 22 33 34 40 42",
+            "output": "Yes"
+        },
+        {
+            "input": "44 7 35 2",
+            "output": "No"
+        },
+        {
+            "input": "4 14 22 27 37 41 49",
+            "output": "Yes"
+        },
+        {
+            "input": "14 14 15 17 18 36 49",
+            "output": "Yes"
+        },
+        {
+            "input": "5 6 10 24 26",
+            "output": "Yes"
+        },
+        {
+            "input": "48 22 3 9 3 37 8 28 30",
+            "output": "No"
+        },
+        {
+            "input": "2 15 50",
+            "output": "Yes"
+        },
+        {
+            "input": "3 33 33 34 35 45",
+            "output": "Yes"
+        },
+        {
+            "input": "40 2 31 50",
+            "output": "No"
+        },
+        {
+            "input": "1 13 25 27 31 32 37 37 38 46",
+            "output": "Yes"
+        },
+        {
+            "input": "9 22 31 38 2",
+            "output": "No"
+        },
+        {
+            "input": "28 48 32 35 27 18",
+            "output": "No"
+        },
+        {
+            "input": "4 13 23 24 25 43",
+            "output": "Yes"
+        },
+        {
+            "input": "29 12 46 32 46 13 16 28 25 31",
+            "output": "No"
+        },
+        {
+            "input": "31 32 32 34 36 39 40 44 48",
+            "output": "Yes"
+        },
+        {
+            "input": "5 49 27 24 43 13 45 11",
+            "output": "No"
+        },
+        {
+            "input": "3 8 13 26 30 30 42",
+            "output": "Yes"
+        },
+        {
+            "input": "14 27 8 40 43 4",
+            "output": "No"
+        },
+        {
+            "input": "3 4 17 29 35 41 41 47 48 49",
+            "output": "Yes"
+        },
+        {
+            "input": "17 15 1 1 2",
+            "output": "No"
+        },
+        {
+            "input": "45 9 44 3 41",
+            "output": "No"
+        },
+        {
+            "input": "27 26 21 5 24 19 49 22 37",
+            "output": "No"
+        },
+        {
+            "input": "16 18 44",
+            "output": "Yes"
+        },
+        {
+            "input": "2 20 32",
+            "output": "Yes"
+        },
+        {
+            "input": "20 32 46 37 39 30 3 35",
+            "output": "No"
+        },
+        {
+            "input": "6 11 36",
+            "output": "Yes"
+        },
+        {
+            "input": "10 21 30 33 35 42 49",
+            "output": "Yes"
+        },
+        {
+            "input": "40 11 20 30 48 13 12",
+            "output": "No"
+        },
+        {
+            "input": "11 29 29 31 36",
+            "output": "Yes"
+        },
+        {
+            "input": "3 23 31",
+            "output": "Yes"
+        },
+        {
+            "input": "7 13 5 34 50 18 19",
+            "output": "No"
+        },
+        {
+            "input": "41 2 25",
+            "output": "No"
+        },
+        {
+            "input": "7 7 20 36 40 48",
+            "output": "Yes"
+        },
+        {
+            "input": "9 19 25 27 30 34 35 39 49",
+            "output": "Yes"
+        },
+        {
+            "input": "37 26 29 45 23 18 5",
+            "output": "No"
+        },
+        {
+            "input": "21 20 30 46 20 45 11",
+            "output": "No"
+        },
+        {
+            "input": "18 29 1 11 50 47",
+            "output": "No"
+        },
+        {
+            "input": "43 33 19 1 9 43 39",
+            "output": "No"
+        },
+        {
+            "input": "43 49 23 50 33 22 6 31 20 46",
+            "output": "No"
+        },
+        {
+            "input": "3 9 14 42 32 22 30 3 24 48",
+            "output": "No"
+        },
+        {
+            "input": "1 15 32 39 41",
+            "output": "Yes"
+        },
+        {
+            "input": "50 14 48 38 13 10 35",
+            "output": "No"
+        },
+        {
+            "input": "17 48 38",
+            "output": "No"
+        },
+        {
+            "input": "6 17 50 46",
+            "output": "No"
+        },
+        {
+            "input": "5 9 10 32 45",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 10 12 21 24 28 43 44 49",
+            "output": "Yes"
+        },
+        {
+            "input": "8 11 13 20 26",
+            "output": "Yes"
+        },
+        {
+            "input": "38 49 17 19 25 21 40 38",
+            "output": "No"
+        },
+        {
+            "input": "48 35 27 33 19 32 13 38",
+            "output": "No"
+        },
+        {
+            "input": "4 25 28 31 36 50 50",
+            "output": "Yes"
+        },
+        {
+            "input": "41 4 19",
+            "output": "No"
+        },
+        {
+            "input": "5 28 30 45 46",
+            "output": "Yes"
+        },
+        {
+            "input": "12 18 20 23 25 27 29 41 44 45",
+            "output": "Yes"
+        },
+        {
+            "input": "2 8 26 28 33 42 46",
+            "output": "Yes"
+        },
+        {
+            "input": "23 35 38 29 23 12 47 37",
+            "output": "No"
+        },
+        {
+            "input": "50 15 27 28 47",
+            "output": "No"
+        },
+        {
+            "input": "1 3 13 16 19 19 23 23 33",
+            "output": "Yes"
+        },
+        {
+            "input": "1 5 5 6 9 11 16 22 38",
+            "output": "Yes"
+        },
+        {
+            "input": "38 9 42 39 35",
+            "output": "No"
+        },
+        {
+            "input": "2 13 14 19 34 35 38 42 48",
+            "output": "Yes"
+        },
+        {
+            "input": "21 45 20",
+            "output": "No"
+        },
+        {
+            "input": "9 11 17 28 33 35 38 45 50",
+            "output": "Yes"
+        },
+        {
+            "input": "31 39 23 24 36 48 16 39",
+            "output": "No"
+        },
+        {
+            "input": "9 9 19 20 46 50",
+            "output": "Yes"
+        },
+        {
+            "input": "6 12 23 41 45",
+            "output": "Yes"
+        },
+        {
+            "input": "16 4 21 18 16 7",
+            "output": "No"
+        },
+        {
+            "input": "6 46 30 36 3 44 46 38",
+            "output": "No"
+        },
+        {
+            "input": "13 29 40 48",
+            "output": "Yes"
+        },
+        {
+            "input": "50 13 2 8 37 48 26 28 10",
+            "output": "No"
+        },
+        {
+            "input": "26 20 33 33 10 6 36 13 41 35",
+            "output": "No"
+        },
+        {
+            "input": "49 46 8",
+            "output": "No"
+        },
+        {
+            "input": "3 16 18",
+            "output": "Yes"
+        },
+        {
+            "input": "4 37 29 30 15 14",
+            "output": "No"
+        },
+        {
+            "input": "14 18 27 29 43 46 48",
+            "output": "Yes"
+        },
+        {
+            "input": "5 15 15 21 38 41 46",
+            "output": "Yes"
+        },
+        {
+            "input": "21 37 47 3 36 12 38 28",
+            "output": "No"
+        },
+        {
+            "input": "6 8 17 23 23 32 34 40 43 48",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 27 30",
+            "output": "Yes"
+        },
+        {
+            "input": "7 13 16 22 33 39 47 49",
+            "output": "Yes"
+        },
+        {
+            "input": "1 4 27 30 30 32 37 40 41 47",
+            "output": "Yes"
+        },
+        {
+            "input": "4 15 16 34 41 45 46",
+            "output": "Yes"
+        },
+        {
+            "input": "8 9 14 17 18 24 30 33 38",
+            "output": "Yes"
+        },
+        {
+            "input": "36 28 2 41 24 50",
+            "output": "No"
+        },
+        {
+            "input": "11 11 31 37 50",
+            "output": "Yes"
+        },
+        {
+            "input": "20 25 24 42 9 6 43 44",
+            "output": "No"
+        },
+        {
+            "input": "24 28 30 30 31 39 40",
+            "output": "Yes"
+        },
+        {
+            "input": "1 5 20 26 47",
+            "output": "Yes"
+        },
+        {
+            "input": "22 2 43 8 21 37 21",
+            "output": "No"
+        },
+        {
+            "input": "22 3 42 36 1",
+            "output": "No"
+        },
+        {
+            "input": "4 23 33 33 35 37 37 43 44 49",
+            "output": "Yes"
+        },
+        {
+            "input": "45 13 49 48 32 13 35 21 32",
+            "output": "No"
+        },
+        {
+            "input": "3 9 13 14 17 18 24 36 44 48",
+            "output": "Yes"
+        },
+        {
+            "input": "45 14 17 50 25 31 4 19 13 37",
+            "output": "No"
+        },
+        {
+            "input": "41 44 26 28",
+            "output": "No"
+        },
+        {
+            "input": "40 45 31 35 33 24 37 29 26 41",
+            "output": "No"
+        },
+        {
+            "input": "33 18 41 34 10 1 27",
+            "output": "No"
+        },
+        {
+            "input": "28 23 40",
+            "output": "No"
+        },
+        {
+            "input": "4 27 28 46 49",
+            "output": "Yes"
+        },
+        {
+            "input": "13 16 18 19 22 26 30 40 47 49",
+            "output": "Yes"
+        },
+        {
+            "input": "23 24 25 26 40 40 50",
+            "output": "Yes"
+        },
+        {
+            "input": "16 20 49",
+            "output": "Yes"
+        },
+        {
+            "input": "13 8 16 32 42",
+            "output": "No"
+        },
+        {
+            "input": "11 13 18 23 27 31 33 49",
+            "output": "Yes"
+        },
+        {
+            "input": "21 50 35 23 16",
+            "output": "No"
+        },
+        {
+            "input": "4 8 17 21 29 30 43",
+            "output": "Yes"
+        },
+        {
+            "input": "2 33 11 33 13 31 47 33 28",
+            "output": "No"
+        },
+        {
+            "input": "6 25 25 26 45",
+            "output": "Yes"
+        },
+        {
+            "input": "12 17 24",
+            "output": "Yes"
+        },
+        {
+            "input": "14 23 25 31 31 35 38 48 49",
+            "output": "Yes"
+        },
+        {
+            "input": "10 43 24",
+            "output": "No"
+        },
+        {
+            "input": "43 37 31 43 1 38 20",
+            "output": "No"
+        },
+        {
+            "input": "18 43 16 43 1",
+            "output": "No"
+        },
+        {
+            "input": "26 21 28 2 39 46 34 15 7 26",
+            "output": "No"
+        },
+        {
+            "input": "8 20 20 22 31 33 41 44",
+            "output": "Yes"
+        },
+        {
+            "input": "10 12 20 22",
+            "output": "Yes"
+        },
+        {
+            "input": "36 10 15 19 30 4 19 20",
+            "output": "No"
+        },
+        {
+            "input": "9 22 38 38 47",
+            "output": "Yes"
+        },
+        {
+            "input": "13 20 35 36 37 38 50",
+            "output": "Yes"
+        },
+        {
+            "input": "9 19 46",
+            "output": "Yes"
+        },
+        {
+            "input": "11 38 47",
+            "output": "Yes"
+        },
+        {
+            "input": "22 18 50",
+            "output": "No"
+        },
+        {
+            "input": "1 18 25 27 28 37",
+            "output": "Yes"
+        },
+        {
+            "input": "32 4 45 16 5 29 34",
+            "output": "No"
+        },
+        {
+            "input": "15 7 29 13 28 45 9",
+            "output": "No"
+        },
+        {
+            "input": "48 10 43 28 20",
+            "output": "No"
+        },
+        {
+            "input": "11 13 32 33 36 39 44 45 49",
+            "output": "Yes"
+        },
+        {
+            "input": "12 15 16 22 29 32 46",
+            "output": "Yes"
+        },
+        {
+            "input": "25 10 50 13 36 8 4 32 2 33",
+            "output": "No"
+        },
+        {
+            "input": "12 26 16 6 15 12 50 12",
+            "output": "No"
+        },
+        {
+            "input": "13 18 27 36 12",
+            "output": "No"
+        },
+        {
+            "input": "38 5 47 1 34 1",
+            "output": "No"
+        },
+        {
+            "input": "11 13 15 21 28 29 36 41 50",
+            "output": "Yes"
+        },
+        {
+            "input": "39 9 15 12 13 42 48 12 17 6",
+            "output": "No"
+        },
+        {
+            "input": "29 49 31 6 2 31",
+            "output": "No"
+        },
+        {
+            "input": "15 29 24 17 36 37 17 49 3",
+            "output": "No"
+        },
+        {
+            "input": "3 18 19 23 32 33 36 37 50",
+            "output": "Yes"
+        },
+        {
+            "input": "7 9 13 13 18 23 23 44 49",
+            "output": "Yes"
+        },
+        {
+            "input": "9 35 25",
+            "output": "No"
+        },
+        {
+            "input": "9 17 21 22 43",
+            "output": "Yes"
+        },
+        {
+            "input": "18 12 22 26 32 39 13 6",
+            "output": "No"
+        },
+        {
+            "input": "4 26 37",
+            "output": "Yes"
+        },
+        {
+            "input": "40 21 29 17 42 34 4 11",
+            "output": "No"
+        },
+        {
+            "input": "3 28 31 38 44 44 45 48",
+            "output": "Yes"
+        },
+        {
+            "input": "31 12 44 24 44 2 23",
+            "output": "No"
+        },
+        {
+            "input": "8 12 12 34 38 45 49 50",
+            "output": "Yes"
+        },
+        {
+            "input": "15 20 30 48",
+            "output": "Yes"
+        },
+        {
+            "input": "34 17 14",
+            "output": "No"
+        },
+        {
+            "input": "2 5 9 13 22 24 30 33 39 46",
+            "output": "Yes"
+        },
+        {
+            "input": "6 14 48 38",
+            "output": "No"
+        },
+        {
+            "input": "3 9 19 39 41 50",
+            "output": "Yes"
+        },
+        {
+            "input": "1 6 17 25 26 37 41 43 46 50",
+            "output": "Yes"
+        },
+        {
+            "input": "13 29 50 48 36 38 46",
+            "output": "No"
+        },
+        {
+            "input": "4 8 33 46",
+            "output": "Yes"
+        },
+        {
+            "input": "5 46 46 50",
+            "output": "Yes"
+        },
+        {
+            "input": "11 12 18 18 23 25 35 36 37 49",
+            "output": "Yes"
+        },
+        {
+            "input": "3 12 13 16 41 48",
+            "output": "Yes"
+        },
+        {
+            "input": "7 11 12 15 30 34 38 39",
+            "output": "Yes"
+        },
+        {
+            "input": "43 29 4 17 2 37 22 41 28 13",
+            "output": "No"
+        },
+        {
+            "input": "14 16 20 21 21 30 33",
+            "output": "Yes"
+        },
+        {
+            "input": "8 21 29 44 50",
+            "output": "Yes"
+        },
+        {
+            "input": "23 47 34 27 50",
+            "output": "No"
+        },
+        {
+            "input": "12 18 37 47",
+            "output": "Yes"
+        },
+        {
+            "input": "4 11 22 31 44 48",
+            "output": "Yes"
+        },
+        {
+            "input": "30 36 47",
+            "output": "Yes"
+        },
+        {
+            "input": "12 15 25 47",
+            "output": "Yes"
+        },
+        {
+            "input": "37 35 19 41 4 48",
+            "output": "No"
+        },
+        {
+            "input": "2 8 8 22 24 34 34 43 46",
+            "output": "Yes"
+        },
+        {
+            "input": "7 17 28 34 35 40 42 49 50",
+            "output": "Yes"
+        },
+        {
+            "input": "20 31 43 45 47",
+            "output": "Yes"
+        },
+        {
+            "input": "1 8 9 16 16 16 19 42",
+            "output": "Yes"
+        },
+        {
+            "input": "30 19 37 31 40",
+            "output": "No"
+        },
+        {
+            "input": "1 3 7 16 16 21 34 41 46",
+            "output": "Yes"
+        },
+        {
+            "input": "10 21 24 37 38 45 46 47",
+            "output": "Yes"
+        },
+        {
+            "input": "22 7 15 49 39 15 20 37 5",
+            "output": "No"
+        },
+        {
+            "input": "7 40 12 28 25 47 17 29",
+            "output": "No"
+        },
+        {
+            "input": "50 21 31 40 28 29 22 6 31 12",
+            "output": "No"
+        },
+        {
+            "input": "30 34 24 32 39 43",
+            "output": "No"
+        },
+        {
+            "input": "25 8 32 49 40 28",
+            "output": "No"
+        },
+        {
+            "input": "7 9 11 14 17",
+            "output": "Yes"
+        },
+        {
+            "input": "6 7 9 18 22 33 36 39 39 49",
+            "output": "Yes"
+        },
+        {
+            "input": "32 33 11 5",
+            "output": "No"
+        },
+        {
+            "input": "11 22 6",
+            "output": "No"
+        },
+        {
+            "input": "8 21 26 39 39 42 44 47 48 49",
+            "output": "Yes"
+        },
+        {
+            "input": "20 42 40",
+            "output": "No"
+        },
+        {
+            "input": "1 22 24 27 36 44 45 45",
+            "output": "Yes"
+        },
+        {
+            "input": "43 3 42 34",
+            "output": "No"
+        },
+        {
+            "input": "12 18 24 29 37 41 48",
+            "output": "Yes"
+        },
+        {
+            "input": "4 24 25 48",
+            "output": "Yes"
+        },
+        {
+            "input": "22 22 35 35",
+            "output": "Yes"
+        },
+        {
+            "input": "22 27 36 38 46",
+            "output": "Yes"
+        },
+        {
+            "input": "28 37 43",
+            "output": "Yes"
+        },
+        {
+            "input": "1 9 31",
+            "output": "Yes"
+        },
+        {
+            "input": "11 12 18 19 24 31 34 49",
+            "output": "Yes"
+        },
+        {
+            "input": "2 4 4 20 41",
+            "output": "Yes"
+        },
+        {
+            "input": "7 23 20 25",
+            "output": "No"
+        },
+        {
+            "input": "38 14 11 31 4 4",
+            "output": "No"
+        },
+        {
+            "input": "13 8 35 50 9 50 1",
+            "output": "No"
+        },
+        {
+            "input": "28 16 25 47 25",
+            "output": "No"
+        },
+        {
+            "input": "13 8 28 6 1 35 11 1 24",
+            "output": "No"
+        },
+        {
+            "input": "3 15 41",
+            "output": "Yes"
+        },
+        {
+            "input": "12 24 36 9 4",
+            "output": "No"
+        },
+        {
+            "input": "3 12 28 28 34 35 45",
+            "output": "Yes"
+        },
+        {
+            "input": "9 9 14 24 29 30 37 41 47 49",
+            "output": "Yes"
+        },
+        {
+            "input": "20 21 50",
+            "output": "Yes"
+        },
+        {
+            "input": "14 25 44",
+            "output": "Yes"
+        },
+        {
+            "input": "5 16 21 35 38 40 42 46",
+            "output": "Yes"
+        },
+        {
+            "input": "4 6 11 18 20 26 27 36",
+            "output": "Yes"
+        },
+        {
+            "input": "48 6 33 20 37 23 11 26",
+            "output": "No"
+        },
+        {
+            "input": "4 40 2 43 24 12",
+            "output": "No"
+        },
+        {
+            "input": "9 11 15 28 50",
+            "output": "Yes"
+        },
+        {
+            "input": "6 44 48",
+            "output": "Yes"
+        },
+        {
+            "input": "39 42 26",
+            "output": "No"
+        },
+        {
+            "input": "9 46 31 6 43 12",
+            "output": "No"
+        },
+        {
+            "input": "34 11 3 25 7",
+            "output": "No"
+        },
+        {
+            "input": "4 5 7 8 18 23 23 32 39 42",
+            "output": "Yes"
+        },
+        {
+            "input": "15 26 27 40 40 44 47 48",
+            "output": "Yes"
+        },
+        {
+            "input": "33 44 14 49",
+            "output": "No"
+        },
+        {
+            "input": "7 7 9 21 22 32 35 36 37 48",
+            "output": "Yes"
+        },
+        {
+            "input": "48 5 24",
+            "output": "No"
+        },
+        {
+            "input": "28 50 48 37 8 11 19 13 32",
+            "output": "No"
+        },
+        {
+            "input": "5 12 23 36 47",
+            "output": "Yes"
+        },
+        {
+            "input": "6 8 8 12 16 37 46 46 50",
+            "output": "Yes"
+        },
+        {
+            "input": "23 26 39",
+            "output": "Yes"
+        },
+        {
+            "input": "2 9 11 27 31 41",
+            "output": "Yes"
+        },
+        {
+            "input": "4 13 17 20 27 27 41 42",
+            "output": "Yes"
+        },
+        {
+            "input": "19 15 43 6 37 40 27 16",
+            "output": "No"
+        },
+        {
+            "input": "13 21 42",
+            "output": "Yes"
+        },
+        {
+            "input": "8 8 13 13 22 38 42",
+            "output": "Yes"
+        },
+        {
+            "input": "36 44 44",
+            "output": "Yes"
+        },
+        {
+            "input": "3 5 11 45",
+            "output": "Yes"
+        },
+        {
+            "input": "7 15 15 43",
+            "output": "Yes"
+        },
+        {
+            "input": "1 5 10 14 16 25 30 37 42 46",
+            "output": "Yes"
+        },
+        {
+            "input": "4 47 3 39 25 19 8 35",
+            "output": "No"
+        },
+        {
+            "input": "11 35 29 25 47 31 29 49",
+            "output": "No"
+        },
+        {
+            "input": "8 50 16 26 44",
+            "output": "No"
+        },
+        {
+            "input": "47 7 41",
+            "output": "No"
+        },
+        {
+            "input": "1 3 6 8 9 10 13 32 45 47",
+            "output": "Yes"
+        },
+        {
+            "input": "15 27 27 3 36 11 19",
+            "output": "No"
+        },
+        {
+            "input": "11 15 10 37 10 21 28 17 28",
+            "output": "No"
+        },
+        {
+            "input": "38 21 2 22 28 10 35",
+            "output": "No"
+        },
+        {
+            "input": "15 46 19 15 28 13 36 41",
+            "output": "No"
+        },
+        {
+            "input": "14 23 24 30 47 48",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 30 31 44 45 49",
+            "output": "Yes"
+        },
+        {
+            "input": "18 7 30 19 13 31 31",
+            "output": "No"
+        },
+        {
+            "input": "48 21 40 20 15",
+            "output": "No"
+        },
+        {
+            "input": "15 21 24",
+            "output": "Yes"
+        },
+        {
+            "input": "18 43 39 34 22 33 3 18",
+            "output": "No"
+        },
+        {
+            "input": "20 33 43 46 49",
+            "output": "Yes"
+        },
+        {
+            "input": "3 10 2 31 29 1 44",
+            "output": "No"
+        },
+        {
+            "input": "26 16 22 42",
+            "output": "No"
+        },
+        {
+            "input": "28 23 29 34 15 44",
+            "output": "No"
+        },
+        {
+            "input": "6 5 42 25 32 24",
+            "output": "No"
+        },
+        {
+            "input": "8 19 20 24 29 32 32 47 50",
+            "output": "Yes"
+        },
+        {
+            "input": "2 4 36 30 50 49 21 17",
+            "output": "No"
+        },
+        {
+            "input": "7 9 15 4 21 14 26",
+            "output": "No"
+        },
+        {
+            "input": "27 34 47",
+            "output": "Yes"
+        },
+        {
+            "input": "32 9 13 48 35 27 11",
+            "output": "No"
+        },
+        {
+            "input": "1 1 26 28 33 48",
+            "output": "Yes"
+        },
+        {
+            "input": "28 20 19 39 40 10 12 15",
+            "output": "No"
+        },
+        {
+            "input": "25 2 7 45 9 36 23 7",
+            "output": "No"
+        },
+        {
+            "input": "41 29 15 33",
+            "output": "No"
+        },
+        {
+            "input": "49 41 43 36 47 40 23 49 29",
+            "output": "No"
+        },
+        {
+            "input": "2 12 45 6",
+            "output": "No"
+        },
+        {
+            "input": "5 7 8 12 16 26 27 38 44",
+            "output": "Yes"
+        },
+        {
+            "input": "24 12 28 8 25 10 26 26",
+            "output": "No"
+        },
+        {
+            "input": "29 34 44",
+            "output": "Yes"
+        },
+        {
+            "input": "11 19 25 41 46 47",
+            "output": "Yes"
+        },
+        {
+            "input": "19 23 14 37 9",
+            "output": "No"
+        },
+        {
+            "input": "2 13 26 49",
+            "output": "Yes"
+        },
+        {
+            "input": "2 5 10 29 17",
+            "output": "No"
+        },
+        {
+            "input": "6 13 14 19 20 36 36 39 43",
+            "output": "Yes"
+        },
+        {
+            "input": "18 45 46 15 27 18 19",
+            "output": "No"
+        },
+        {
+            "input": "5 30 15 16 13 28",
+            "output": "No"
+        },
+        {
+            "input": "47 29 27",
+            "output": "No"
+        },
+        {
+            "input": "4 19 28 35 37 42",
+            "output": "Yes"
+        },
+        {
+            "input": "38 20 1 34 15 39 17 32 41 6",
+            "output": "No"
+        },
+        {
+            "input": "29 11 44 3 22 31 33",
+            "output": "No"
+        },
+        {
+            "input": "2 5 17 37 38 45",
+            "output": "Yes"
+        },
+        {
+            "input": "2 4 5 5 25 28 37 39 42 42",
+            "output": "Yes"
+        },
+        {
+            "input": "20 33 47 50",
+            "output": "Yes"
+        },
+        {
+            "input": "25 27 33 47",
+            "output": "Yes"
+        },
+        {
+            "input": "5 37 10 15 47 30 29 24 44",
+            "output": "No"
+        },
+        {
+            "input": "36 34 7 46 49",
+            "output": "No"
+        },
+        {
+            "input": "14 15 21 27 30 34 34 38 45",
+            "output": "Yes"
+        },
+        {
+            "input": "50 7 1 16 29 42 24 31 35",
+            "output": "No"
+        },
+        {
+            "input": "1 49 21 14",
+            "output": "No"
+        },
+        {
+            "input": "4 10 29 33 34 41 43 46",
+            "output": "Yes"
+        },
+        {
+            "input": "2 9 10 11 11 20 27 49",
+            "output": "Yes"
+        },
+        {
+            "input": "37 18 35 29",
+            "output": "No"
+        },
+        {
+            "input": "11 14 20 35 35 39 46",
+            "output": "Yes"
+        },
+        {
+            "input": "37 28 24 16",
+            "output": "No"
+        },
+        {
+            "input": "44 19 16 37 1",
+            "output": "No"
+        },
+        {
+            "input": "6 7 9 19 26 29 34 34 36 49",
+            "output": "Yes"
+        },
+        {
+            "input": "3 30 37 48",
+            "output": "Yes"
+        },
+        {
+            "input": "7 8 18 21 21 34 40",
+            "output": "Yes"
+        },
+        {
+            "input": "34 10 12 25 1",
+            "output": "No"
+        },
+        {
+            "input": "11 25 32 50",
+            "output": "Yes"
+        },
+        {
+            "input": "49 4 42 3 45 50",
+            "output": "No"
+        },
+        {
+            "input": "25 14 21 27 23 21 39",
+            "output": "No"
+        },
+        {
+            "input": "2 11 41 45",
+            "output": "Yes"
+        },
+        {
+            "input": "49 33 17 44 28 39",
+            "output": "No"
+        },
+        {
+            "input": "8 21 31 32 33 39 41 48 49",
+            "output": "Yes"
+        },
+        {
+            "input": "21 31 5 42",
+            "output": "No"
+        },
+        {
+            "input": "5 43 29 40 29 42 10",
+            "output": "No"
+        },
+        {
+            "input": "13 24 1 41 34 8 11 19 28",
+            "output": "No"
+        },
+        {
+            "input": "11 17 38 20 11 27",
+            "output": "No"
+        },
+        {
+            "input": "2 5 9 11 12 26 34 44",
+            "output": "Yes"
+        },
+        {
+            "input": "2 8 13 33 39 50",
+            "output": "Yes"
+        },
+        {
+            "input": "40 22 9 17 48 34 8 18",
+            "output": "No"
+        },
+        {
+            "input": "36 50 27 24",
+            "output": "No"
+        },
+        {
+            "input": "6 8 47 48",
+            "output": "Yes"
+        },
+        {
+            "input": "6 45 48 30 35 1",
+            "output": "No"
+        },
+        {
+            "input": "11 28 14 18 27 30 3",
+            "output": "No"
+        },
+        {
+            "input": "4 41 43 50",
+            "output": "Yes"
+        },
+        {
+            "input": "5 7 25 48",
+            "output": "Yes"
+        },
+        {
+            "input": "35 42 35 13 21",
+            "output": "No"
+        },
+        {
+            "input": "40 13 34 26 6 26 31 26 13 36",
+            "output": "No"
+        },
+        {
+            "input": "3 22 24 30 32 38 46",
+            "output": "Yes"
+        },
+        {
+            "input": "11 16 8 19 36 17",
+            "output": "No"
+        },
+        {
+            "input": "46 43 13 5 46 40 37 47 21",
+            "output": "No"
+        },
+        {
+            "input": "46 10 6 32 10 15 17",
+            "output": "No"
+        },
+        {
+            "input": "44 36 20 46",
+            "output": "No"
+        },
+        {
+            "input": "10 12 14 20 35 36 37 47",
+            "output": "Yes"
+        },
+        {
+            "input": "3 5 13 14 15 40 41",
+            "output": "Yes"
+        },
+        {
+            "input": "22 12 17 19",
+            "output": "No"
+        },
+        {
+            "input": "2 2 14 15 27 37 39 40 45 47",
+            "output": "Yes"
+        },
+        {
+            "input": "2 23 32 32 33 40",
+            "output": "Yes"
+        },
+        {
+            "input": "13 34 35 36 47",
+            "output": "Yes"
+        },
+        {
+            "input": "3 4 7 18 18 19 22 45",
+            "output": "Yes"
+        },
+        {
+            "input": "38 36 16 29 2",
+            "output": "No"
+        },
+        {
+            "input": "42 25 20 45 44 9",
+            "output": "No"
+        },
+        {
+            "input": "48 35 38 14 10 12 20 45 49",
+            "output": "No"
+        },
+        {
+            "input": "10 20 21 27 29 33 41 43 48",
+            "output": "Yes"
+        },
+        {
+            "input": "4 19 5 36 34 50 15 27 30 46",
+            "output": "No"
+        },
+        {
+            "input": "1 1 9 19 40 41",
+            "output": "Yes"
+        },
+        {
+            "input": "23 15 34 48 2 20",
+            "output": "No"
+        },
+        {
+            "input": "15 2 3 49 25 8 2 2",
+            "output": "No"
+        },
+        {
+            "input": "8 14 26",
+            "output": "Yes"
+        },
+        {
+            "input": "9 29 32",
+            "output": "Yes"
+        },
+        {
+            "input": "2 14 23 23 24 27 29 36 38",
+            "output": "Yes"
+        },
+        {
+            "input": "2 16 49 30 27 36",
+            "output": "No"
+        },
+        {
+            "input": "32 9 27 2 21 10",
+            "output": "No"
+        },
+        {
+            "input": "25 30 34 38 40",
+            "output": "Yes"
+        },
+        {
+            "input": "3 11 12 22 22 23 31 37 49",
+            "output": "Yes"
+        },
+        {
+            "input": "13 37 6 41 16",
+            "output": "No"
+        },
+        {
+            "input": "19 6 7 28 3 45 42 29",
+            "output": "No"
+        },
+        {
+            "input": "33 37 15 39 43 10 27 31",
+            "output": "No"
+        },
+        {
+            "input": "11 14 44",
+            "output": "Yes"
+        },
+        {
+            "input": "49 33 46 14 13 20 43 21",
+            "output": "No"
+        },
+        {
+            "input": "48 46 45",
+            "output": "No"
+        },
+        {
+            "input": "2 35 45",
+            "output": "Yes"
+        },
+        {
+            "input": "24 39 27",
+            "output": "No"
+        },
+        {
+            "input": "5 27 31 34",
+            "output": "Yes"
+        },
+        {
+            "input": "17 45 15 37 5 11 14 18 21 25",
+            "output": "No"
+        },
+        {
+            "input": "5 15 25",
+            "output": "Yes"
+        },
+        {
+            "input": "6 12 25 33 48",
+            "output": "Yes"
+        },
+        {
+            "input": "47 9 14",
+            "output": "No"
+        },
+        {
+            "input": "1 3 13 16 19 30 33 34 37 48",
+            "output": "Yes"
+        },
+        {
+            "input": "38 6 38 45 42 39 6",
+            "output": "No"
+        },
+        {
+            "input": "1 4 11 11 16 23 32 33 40 43",
+            "output": "Yes"
+        },
+        {
+            "input": "9 10 13 17 29 31 37 41",
+            "output": "Yes"
+        },
+        {
+            "input": "4 8 19 34 35 38 39 44 46",
+            "output": "Yes"
+        },
+        {
+            "input": "50 29 46 28 40 26 29 29 32",
+            "output": "No"
+        },
+        {
+            "input": "3 10 11 26 26 32 43 45",
+            "output": "Yes"
+        },
+        {
+            "input": "27 48 21 31 49 15 35 39",
+            "output": "No"
+        },
+        {
+            "input": "2 3 9 9 20 21 34 38 39 42",
+            "output": "Yes"
+        },
+        {
+            "input": "19 11 21 8",
+            "output": "No"
+        },
+        {
+            "input": "6 21 22 24 25 28 48 48 50",
+            "output": "Yes"
+        },
+        {
+            "input": "4 30 1 47 19 8 34",
+            "output": "No"
+        },
+        {
+            "input": "15 43 45 11 36 31 30 14 34",
+            "output": "No"
+        },
+        {
+            "input": "5 23 25 40 47",
+            "output": "Yes"
+        }
+    ]
+}
