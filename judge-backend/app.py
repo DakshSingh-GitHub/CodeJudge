@@ -8,6 +8,10 @@ app = Flask(__name__)
 CORS(app)
 
 PROBLEMS_DIR = "problems"
+@app.route("/")
+def home():
+    return "Hello from Flask on Vercel!"
+
 
 def validate_problem(problem: dict):
     errors = []
