@@ -85,10 +85,11 @@ This project uses a locally hosted backend for code execution.
 
 To test the application:
 1. Clone the backend repository / Or extract the `judge-backend.zip` file.
-2. Run the Flask server locally
+2. Run the Flask server locally fron judge-backend
 3. Open the deployed frontend
 4. The frontend will communicate with the local backend at `http://localhost:5000`
 
 ALTERNATE: (FOR WINDOWS 10+)
-1. Clone the backend repository / Or download the `judge-backend_s.zip` file only
-2. run script.ps1
+1. Clone the backend repository / Or download the `judge-backend_s.zip` file and script.ps1 file only
+2. Downloads folder (or wherever you downloaded it), Open in powershell, run Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass (allows script.ps1 to run for current session.
+3. run .\script.ps1
