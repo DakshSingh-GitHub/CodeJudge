@@ -1,4 +1,5 @@
 const BASE_URL = "http://localhost:5000";
+// const BASE_URL = "https://code-judge-7oox.vercel.app";
 
 export async function getProblems() {
     const res = await fetch(`${BASE_URL}/problems`);
