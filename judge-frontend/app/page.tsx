@@ -14,15 +14,20 @@ export default function Home() {
     const [problem, setProblem] = useState(null);
     const [selectedProblemId, setSelectedProblemId] = useState<string>("");
     const [code, setCode] = useState(DEFAULT_CODE);
-    const [sidebarWidth, setSidebarWidth] = useState(320); // Initial width in pixels
-    const [problemViewerWidth, setProblemViewerWidth] = useState(50); // Width as percentage
-    const [isDraggingSidebar, setIsDraggingSidebar] = useState(false);
-    const [isDraggingHorizontal, setIsDraggingHorizontal] = useState(false);
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [result, setResult] = useState<any>(null);
     const [activeTab, setActiveTab] = useState<"editor" | "submissions">("editor");
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsSidebarOpen(window.innerWidth >= 768);
+        };
+        checkScreenSize();
+        window.addEventListener("resize", checkScreenSize);
+        return () => window.removeEventListener("resize", checkScreenSize);
+    }, []);
 
     async function handleSubmit() {
         if (!selectedProblemId || !code.trim()) return;
@@ -50,69 +55,6 @@ export default function Home() {
         setResult(null);
     }
 
-    // Handle sidebar horizontal resize
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!isDraggingSidebar || !containerRef.current) return;
-
-            const containerRect = containerRef.current.getBoundingClientRect();
-            const newWidth = e.clientX - containerRect.left;
-
-            // Constrain width between 250px and 600px
-            if (newWidth >= 250 && newWidth <= 600) {
-                setSidebarWidth(newWidth);
-            }
-        };
-
-        const handleMouseUp = () => {
-            setIsDraggingSidebar(false);
-        };
-
-        if (isDraggingSidebar) {
-            document.addEventListener("mousemove", handleMouseMove);
-            document.addEventListener("mouseup", handleMouseUp);
-        }
-
-        return () => {
-            document.removeEventListener("mousemove", handleMouseMove);
-            document.removeEventListener("mouseup", handleMouseUp);
-        };
-    }, [isDraggingSidebar]);
-
-    // Handle vertical resize between problem viewer and code editor
-    useEffect(() => {
-        const handleMouseMove = (e: MouseEvent) => {
-            if (!isDraggingHorizontal || !containerRef.current) return;
-
-            const contentArea = containerRef.current.querySelector(
-                "[data-content-area]"
-            );
-            if (!contentArea) return;
-
-            const contentRect = contentArea.getBoundingClientRect();
-            const newWidth =
-                ((e.clientX - contentRect.left) / contentRect.width) * 100;
-
-            // Constrain width between 30% and 70%
-            if (newWidth >= 30 && newWidth <= 70) {
-                setProblemViewerWidth(newWidth);
-            }
-        };
-
-        const handleMouseUp = () => {
-            setIsDraggingHorizontal(false);
-        };
-
-        if (isDraggingHorizontal) {
-            document.addEventListener("mousemove", handleMouseMove);
-            document.addEventListener("mouseup", handleMouseUp);
-        }
-
-        return () => {
-            document.removeEventListener("mousemove", handleMouseMove);
-            document.removeEventListener("mouseup", handleMouseUp);
-        };
-    }, [isDraggingHorizontal]);
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50">
@@ -127,23 +69,64 @@ export default function Home() {
                                 Select a problem and start coding!
                             </p>
                         </div>
-                        <ThemeToggle />
+                        <div className="flex items-center gap-4">
+                            <button
+                                onClick={() =>
+                                    setIsSidebarOpen(!isSidebarOpen)
+                                }
+                                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+                                title={
+                                    isSidebarOpen
+                                        ? "Hide sidebar"
+                                        : "Show sidebar"
+                                }
+                            >
+                                {isSidebarOpen ? (
+                                    <svg
+                                        className="w-5 h-5 text-gray-700 dark:text-gray-300"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M6 18L18 6M6 6l12 12"
+                                        ></path>
+                                    </svg>
+                                ) : (
+                                    <svg
+                                        className="w-5 h-5 text-gray-700 dark:text-gray-300"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        ></path>
+                                    </svg>
+                                )}
+                            </button>
+                            <ThemeToggle />
+                        </div>
                     </div>
                 </header>
 
                 <div
                     ref={containerRef}
-                    className={`flex flex-1 overflow-hidden gap-4 p-4 ${isDraggingSidebar || isDraggingHorizontal
-                        ? "select-none"
-                        : ""
-                        }`}
+                    className={`flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4`}
                 >
                     {/* Left Sidebar - Problem List */}
                     {isSidebarOpen && (
                         <>
                             <aside
-                                style={{ width: `${sidebarWidth}px` }}
-                                className="overflow-hidden flex-shrink-0"
+                                className="overflow-hidden flex-shrink-0 w-full md:w-80"
                             >
                                 <ProblemList
                                     onSelect={handleSelect}
@@ -153,11 +136,7 @@ export default function Home() {
 
                             {/* Draggable Divider - Sidebar */}
                             <div
-                                onMouseDown={(e) => {
-                                    e.preventDefault();
-                                    setIsDraggingSidebar(true);
-                                }}
-                                className="w-1 bg-gray-300 dark:bg-gray-600 hover:bg-indigo-500 dark:hover:bg-indigo-400 cursor-col-resize transition-colors duration-200 flex-shrink-0 select-none"
+                                className="hidden md:block w-1 bg-gray-300 dark:bg-gray-600"
                             />
                         </>
                     )}
@@ -165,58 +144,16 @@ export default function Home() {
                     {/* Main Content Area */}
                     <div
                         data-content-area
-                        className="flex-1 overflow-hidden flex flex-row gap-4"
+                        className="flex-1 overflow-hidden flex flex-col lg:flex-row gap-4"
                     >
                         {/* Problem Selector and Viewer */}
                         <div
-                            style={{ flex: `1 1 ${problemViewerWidth}%` }}
-                            className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col"
+                            className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col lg:w-1/2"
                         >
                             <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
                                 <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
                                     Problem
                                 </h2>
-                                <button
-                                    onClick={() =>
-                                        setIsSidebarOpen(!isSidebarOpen)
-                                    }
-                                    className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
-                                    title={
-                                        isSidebarOpen
-                                            ? "Hide sidebar"
-                                            : "Show sidebar"
-                                    }
-                                >
-                                    {isSidebarOpen ? (
-                                        <svg
-                                            className="w-5 h-5 text-gray-700 dark:text-gray-300"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M15 19l-7-7 7-7"
-                                            />
-                                        </svg>
-                                    ) : (
-                                        <svg
-                                            className="w-5 h-5 text-gray-700 dark:text-gray-300"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            viewBox="0 0 24 24"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth={2}
-                                                d="M9 5l7 7-7 7"
-                                            />
-                                        </svg>
-                                    )}
-                                </button>
                             </div>
                             <div className="flex-1 overflow-y-auto p-6">
                                 <div className="mt-8">
@@ -227,16 +164,11 @@ export default function Home() {
 
                         {/* Draggable Divider - Vertical */}
                         <div
-                            onMouseDown={(e) => {
-                                e.preventDefault();
-                                setIsDraggingHorizontal(true);
-                            }}
-                            className="w-1 bg-gray-300 dark:bg-gray-600 hover:bg-indigo-500 dark:hover:bg-indigo-400 cursor-col-resize transition-colors duration-200 flex-shrink-0 select-none"
+                            className="hidden lg:block w-1 bg-gray-300 dark:bg-gray-600"
                         />
 
                         <div
-                            style={{ flex: `1 1 ${100 - problemViewerWidth}%` }}
-                            className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl flex flex-col overflow-hidden"
+                            className="min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl flex flex-col overflow-hidden lg:w-1/2"
                         >
                             {/* Tabs Header */}
                             <div className="flex border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50">
@@ -272,13 +204,13 @@ export default function Home() {
                                                 }
                                             />
                                         </div>
-                                        <div className="flex-1 min-h-[100px] max-h-[150px] flex flex-row w-full justify-between items-stretch gap-4 shrink-0">
+                                        <div className="flex-1 min-h-[100px] max-h-[250px] flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
                                             <button
                                                 onClick={handleSubmit}
                                                 disabled={
                                                     isSubmitting || !selectedProblemId
                                                 }
-                                                className={`px-6 py-2 rounded-xl font-semibold w-1/4 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg
+                                                className={`px-6 py-2 rounded-xl font-semibold w-full md:w-1/4 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg
                                                 ${isSubmitting
                                                         ? "bg-gray-500 cursor-not-allowed"
                                                         : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
@@ -287,7 +219,7 @@ export default function Home() {
                                             >
                                                 {isSubmitting ? "Judging..." : "Submit"}
                                             </button>
-                                            <div className="w-3/4 h-full">
+                                            <div className="w-full md:w-3/4 h-full">
                                                 <div className="p-5 rounded-xl bg-gray-900 text-gray-100 h-full overflow-y-auto border border-gray-700 shadow-2xl custom-scrollbar transition-all duration-300">
                                                     {!result ? (
                                                         <div className="flex flex-col items-center justify-center h-full space-y-2">

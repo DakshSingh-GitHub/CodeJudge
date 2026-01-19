@@ -1,6 +1,7 @@
 "use client";
 
 import Editor from "@monaco-editor/react";
+import { useState, useEffect } from "react";
 
 interface CodeEditorProps {
     code: string;
@@ -9,6 +10,17 @@ interface CodeEditorProps {
 }
 
 export default function CodeEditor({ code, setCode, isDisabled = false }: CodeEditorProps) {
+    const [showMinimap, setShowMinimap] = useState(false);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setShowMinimap(window.innerWidth >= 768);
+        };
+        checkScreenSize();
+        window.addEventListener("resize", checkScreenSize);
+        return () => window.removeEventListener("resize", checkScreenSize);
+    }, []);
+
     return (
         <div className={`h-full w-full rounded-xl overflow-hidden relative ${isDisabled ? 'opacity-60' : ''}`}>
              {isDisabled && (
@@ -25,7 +37,7 @@ export default function CodeEditor({ code, setCode, isDisabled = false }: CodeEd
                 onChange={(value) => setCode(value || "")}
                 options={{
                     fontSize: 16,
-                    minimap: { enabled: true },
+                    minimap: { enabled: showMinimap },
                     scrollBeyondLastLine: false,
                     automaticLayout: true,
                     readOnly: isDisabled
