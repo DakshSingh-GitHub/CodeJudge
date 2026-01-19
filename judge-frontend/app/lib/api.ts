@@ -1,4 +1,4 @@
-const BASE_URL = "http://code-judge-5fgd.vercel.app";
+const BASE_URL = "https://code-judge-5fgd.vercel.app";
 
 export async function getProblems() {
     const res = await fetch(`${BASE_URL}/problems`);
