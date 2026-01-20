@@ -32,7 +32,6 @@ export default function CodeEditor({ code, setCode, isDisabled = false }: CodeEd
                 height="100%"
                 defaultLanguage="python"
                 theme="vs-dark"
-                
                 value={code}
                 onChange={(value) => setCode(value || "")}
                 options={{
@@ -40,10 +39,11 @@ export default function CodeEditor({ code, setCode, isDisabled = false }: CodeEd
                     minimap: { enabled: showMinimap },
                     scrollBeyondLastLine: false,
                     automaticLayout: true,
-                    readOnly: isDisabled
+                    readOnly: isDisabled,
+                    cursorBlinking: "expand",
+                    fontFamily: "Jetbrains Mono, sans-serif, Arial"
                 }}
             />
         </div>
     );
 }
-

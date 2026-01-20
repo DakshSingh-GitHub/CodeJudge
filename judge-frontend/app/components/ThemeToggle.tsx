@@ -40,7 +40,7 @@ export default function ThemeToggle() {
                 }`}
         >
             <motion.div
-                className="flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md text-sm"
+                className="flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md text-sm select-none"
                 layout
                 transition={{ type: "spring", stiffness: 700, damping: 30 }}
                 style={{
