@@ -6,6 +6,14 @@ Built with love using **Flask** 🌶 and **Next.js** ⚛️, this little judge l
 
 ---
 
+## 📸 Screenshots
+
+| General UI | Code Editor & Problem | Submission Result |
+| :---: | :---: | :---: |
+| ![General UI](screenshots/general_ui.png) | ![Code Problem](screenshots/code_problem.png) | ![Saved Result](screenshots/saved_result.png) |
+
+---
+
 ## ✨ Super Cool Features
 
 - 🐍 **Python Power**: Submit your Python solutions and see them fly!
@@ -18,6 +26,9 @@ Built with love using **Flask** 🌶 and **Next.js** ⚛️, this little judge l
   - ⏱ **TLE (Time Limit Exceeded)** — Your code took a scenic route! 🏎
 - ⚡️ **Light & Dark Mode**: Code in style, day or night! 🌓
 - 📏 **Draggable UI**: Resize the viewer and editor exactly how you like it.
+
+## ⭐ Super Cool features Pocket edition
+ - 💿 **Response Storage**: Uses Localstorage of a browser to store (takes less than 10MB for submissions, for roughly 6200 submissions)
 
 ---
 
@@ -35,7 +46,7 @@ Ever wondered how a judge works? It's like a tiny robot 🤖 doing this:
 
 ## 🛠 Our Toasty Tech Stack
 
-- **Backend**: Python 🐍 + Flask 🌶
+- **Backend**: Python 🐍 + FastAPI 🌶
 - **Frontend**: Next.js ⚛️ + TypeScript 📘 + Tailwind CSS 🎨
 - **Editor**: Monaco Editor (The same one in VS Code! 💻)
 
@@ -78,18 +89,3 @@ Got questions? Suggestions? Just want to say hi? We're happy to have you here! H
 
 ---
 *Made with ❤️ for the coding community.*
-
-## Running the Project (Local Backend Required) / Pardon for this inconvinience
-
-This project uses a locally hosted backend for code execution.
-
-To test the application:
-1. Clone the backend repository / Or extract the `judge-backend.zip` file.
-2. Run the Flask server locally fron judge-backend
-3. Open the deployed frontend
-4. The frontend will communicate with the local backend at `http://localhost:5000`
-
-ALTERNATE: (FOR WINDOWS 10+)
-1. Clone the backend repository / Or download the `judge-backend_s.zip` file and script.ps1 file only
-2. Downloads folder (or wherever you downloaded it), Open in powershell, run Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass (allows script.ps1 to run for current session.
-3. run .\script.ps1

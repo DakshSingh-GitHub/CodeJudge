@@ -46,3 +46,4 @@ export default function CodeEditor({ code, setCode, isDisabled = false }: CodeEd
         </div>
     );
 }
+

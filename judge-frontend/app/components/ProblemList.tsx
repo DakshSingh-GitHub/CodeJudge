@@ -3,10 +3,7 @@
 import { useEffect, useState } from "react";
 import { getProblems } from "../lib/api";
 
-interface Problem {
-    id: string;
-    title: string;
-}
+import { Problem } from "../lib/types";
 
 interface ProblemListProps {
     onSelect: (id: string) => void;
@@ -59,11 +56,10 @@ export default function ProblemList({ onSelect, selectedId }: ProblemListProps) 
                             <li key={problem.id}>
                                 <button
                                     onClick={() => onSelect(problem.id)}
-                                    className={`w-full text-left px-4 py-3 transition-colors duration-200 ${
-                                        selectedId === problem.id
+                                    className={`w-full text-left px-4 py-3 transition-colors duration-200 ${selectedId === problem.id
                                             ? "bg-indigo-50 dark:bg-indigo-900 border-l-4 border-indigo-600 dark:border-indigo-400 text-indigo-900 dark:text-indigo-50 font-medium"
                                             : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
-                                    }`}
+                                        }`}
                                 >
                                     <span className="block truncate">
                                         {problem.title}

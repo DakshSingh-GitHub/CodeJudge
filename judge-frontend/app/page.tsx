@@ -6,12 +6,15 @@ import ProblemList from "./components/ProblemList";
 import ProblemViewer from "./components/ProblemViewer";
 import CodeEditor from "./components/CodeEditor";
 import ThemeToggle from "./components/ThemeToggle";
+import PastSubmissions from "./components/PastSubmissions";
+import { saveSubmission, getSubmissionsByProblemId, Submission } from "./lib/storage";
+import { Problem } from "./lib/types";
 
 const DEFAULT_CODE = "#Write your code here";
 const TITLE = "Code Judge";
 
 export default function Home() {
-    const [problem, setProblem] = useState(null);
+    const [problem, setProblem] = useState<Problem | null>(null);
     const [selectedProblemId, setSelectedProblemId] = useState<string>("");
     const [code, setCode] = useState(DEFAULT_CODE);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,6 +22,7 @@ export default function Home() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [result, setResult] = useState<any>(null);
     const [activeTab, setActiveTab] = useState<"editor" | "submissions">("editor");
+    const [pastSubmissions, setPastSubmissions] = useState<Submission[]>([]);
 
     useEffect(() => {
         const checkScreenSize = () => {
@@ -36,6 +40,19 @@ export default function Home() {
             setResult(null);
             const response = await submitCode(selectedProblemId, code);
             setResult(response);
+
+            // Save to localStorage
+            saveSubmission({
+                problemId: selectedProblemId,
+                problemTitle: problem?.title || "Unknown Problem",
+                code: code,
+                final_status: response.final_status,
+                summary: response.summary,
+                total_duration: response.total_duration,
+            });
+
+            // Update local state if we are on the current problem
+            setPastSubmissions(getSubmissionsByProblemId(selectedProblemId));
         } catch (error: any) {
             setResult({ error: error.message });
         } finally {
@@ -47,12 +64,14 @@ export default function Home() {
         setSelectedProblemId(id);
         if (!id) {
             setProblem(null);
+            setPastSubmissions([]);
             return;
         }
         const data = await getProblemById(id);
         setProblem(data);
         setCode(DEFAULT_CODE);
         setResult(null);
+        setPastSubmissions(getSubmissionsByProblemId(id));
     }
 
 
@@ -303,16 +322,14 @@ export default function Home() {
                                         </div>
                                     </>
                                 ) : (
-                                    <div className="flex-1 flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 space-y-4">
-                                        <div className="p-4 rounded-full bg-gray-100 dark:bg-gray-700">
-                                            <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                        </div>
-                                        <div className="text-center">
-                                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">No Submissions Yet</h3>
-                                            <p className="mt-2 max-w-xs">Past submissions logic will be implemented here soon. Keep coding!</p>
-                                        </div>
+                                    <div className="flex-1 overflow-y-auto">
+                                        <PastSubmissions
+                                            submissions={pastSubmissions}
+                                            onLoadCode={(savedCode) => {
+                                                setCode(savedCode);
+                                                setActiveTab("editor");
+                                            }}
+                                        />
                                     </div>
                                 )}
                             </div>
