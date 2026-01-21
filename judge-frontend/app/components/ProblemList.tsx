@@ -10,12 +10,13 @@ interface ProblemListProps {
     onSelect: (id: string) => void;
     selectedId?: string;
     setIsSidebarOpen?: (open: boolean) => void;
+    searchQuery: string;
+    setSearchQuery: (query: string) => void;
 }
 
-export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen }: ProblemListProps) {
+export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, searchQuery, setSearchQuery }: ProblemListProps) {
     const [problems, setProblems] = useState<Problem[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [searchQuery, setSearchQuery] = useState("");
 
     useEffect(() => {
         getProblems().then((data) => {
@@ -77,6 +78,7 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen }: 
                     </motion.div>
                 ) : (
                     <motion.ul
+                        key={filteredProblems.length}
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"

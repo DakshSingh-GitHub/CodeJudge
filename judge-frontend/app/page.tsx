@@ -15,6 +15,7 @@ const DEFAULT_CODE = "#Write your code here";
 const TITLE = "Code Judge";
 
 export default function Home() {
+	// State Variable Declarations
     const [problem, setProblem] = useState<Problem | null>(null);
     const [selectedProblemId, setSelectedProblemId] = useState<string>("");
     const [code, setCode] = useState(DEFAULT_CODE);
@@ -25,6 +26,7 @@ export default function Home() {
     const [result, setResult] = useState<any>(null);
     const [activeTab, setActiveTab] = useState<"editor" | "submissions">("editor");
     const [pastSubmissions, setPastSubmissions] = useState<Submission[]>([]);
+    const [searchQuery, setSearchQuery] = useState("");
 
     const [isMobile, setIsMobile] = useState(false);
     const [mobileTab, setMobileTab] = useState<"problem" | "code" | "submissions">("problem");
@@ -39,8 +41,8 @@ export default function Home() {
         setIsMounted(true);
         const checkScreenSize = () => {
             const width = window.innerWidth;
-            setIsMobile(width < 768);
-            setIsSidebarOpen(width >= 1024); // Desktop sidebar
+            setIsMobile(width <= 1024);
+            setIsSidebarOpen(width > 1024); // Desktop sidebar
         };
         checkScreenSize();
         window.addEventListener("resize", checkScreenSize);
@@ -88,6 +90,7 @@ export default function Home() {
 
     async function handleSelect(id: string) {
         setSelectedProblemId(id);
+        setSearchQuery("");
         if (!id) {
             setProblem(null);
             setPastSubmissions([]);
@@ -123,6 +126,10 @@ export default function Home() {
                 setPastSubmissions(prev => [newSubmission, ...prev.slice(0, 49)]);
             }
         } catch (error: any) {
+            if (error.name === 'AbortError' || (error.message && error.message.toLowerCase().includes('cancel'))) {
+                console.warn('Submission request was canceled.');
+                return; // Do not show an error for cancellations
+            }
             setResult({ error: error.message || "Something went wrong" });
         } finally {
             setIsSubmitting(false);
@@ -227,6 +234,8 @@ export default function Home() {
                                                 onSelect={handleSelect}
                                                 selectedId={selectedProblemId}
                                                 setIsSidebarOpen={setIsSidebarOpen}
+                                                searchQuery={searchQuery}
+                                                setSearchQuery={setSearchQuery}
                                             />
                                         </aside>
 
