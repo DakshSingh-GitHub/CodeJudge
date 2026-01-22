@@ -1,6 +1,6 @@
 "use client";
 
-import { Submission } from "../lib/storage";
+import { Submission } from "../../lib/storage";
 
 interface PastSubmissionsProps {
     submissions: Submission[];
