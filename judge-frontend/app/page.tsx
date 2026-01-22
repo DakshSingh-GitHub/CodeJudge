@@ -264,7 +264,7 @@ export default function Home() {
                                         className="flex flex-col md:flex-row h-full"
                                     >
                                         <aside
-                                            className="overflow-y-auto md:overflow-hidden flex-shrink-0 w-full max-h-[60vh] md:max-h-none pr-0 md:pr-4"
+                                            className="overflow-y-auto md:overflow-hidden shrink-0 w-full max-h-[60vh] md:max-h-none pr-0 md:pr-4"
                                             style={{ width: isMobile ? "100%" : `${sidebarWidth}px` }}
                                         >
                                             <ProblemList
@@ -326,7 +326,7 @@ export default function Home() {
 
                                 {/* Problem Selector and Viewer */}
                                 <div
-                                    className={`flex-1 min-h-[400px] md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
+                                    className={`flex-1 min-h-100 md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
                                         }`}
                                     style={{ flex: isMobile ? "none" : mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "80%" : "auto" }}
                                 >
@@ -349,7 +349,7 @@ export default function Home() {
                                 />
 
                                 <div
-                                    className={`flex-1 min-h-[400px] md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl flex flex-col overflow-hidden ${isMobile && mobileTab === "problem" ? "hidden" : "flex"
+                                    className={`flex-1 min-h-100 md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl flex flex-col overflow-hidden ${isMobile && mobileTab === "problem" ? "hidden" : "flex"
                                         }`}
                                     style={{ flex: isMobile ? "none" : 100 - mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "80%" : "auto" }}
                                 >
@@ -378,7 +378,7 @@ export default function Home() {
                                     <div className="flex-1 min-h-0 p-4 flex flex-col gap-4">
                                         {/* Editor and Result Area - Kept mounted to avoid state loss and 'Canceled' errors */}
                                         <div className={`flex-1 min-h-0 flex flex-col gap-4 ${(activeTab === "editor" && !isMobile) || (isMobile && mobileTab === "code") ? "flex" : "hidden"}`}>
-                                            <div className={`${isMobile ? "h-[350px]" : "flex-1"} min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner`}>
+                                            <div className={`${isMobile ? "h-87.5" : "flex-1"} min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner`}>
                                                 <CodeEditor
                                                     code={code}
                                                     setCode={setCode}
@@ -388,7 +388,7 @@ export default function Home() {
                                                     isDark={isDark}
                                                 />
                                             </div>
-                                            <div className="flex-none min-h-[65px] max-h-[180px] flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
+                                            <div className="flex-none min-h-16.25 max-h-45 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
                                                 <button
                                                     onClick={handleSubmit}
                                                     disabled={

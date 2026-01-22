@@ -3,6 +3,8 @@
 import Editor, { OnMount } from "@monaco-editor/react";
 import { useState, useEffect, useRef } from "react";
 
+import LanguageSelector from "./LanguageSelector";
+
 interface CodeEditorProps {
     code: string;
     setCode: (code: string) => void;
@@ -10,7 +12,12 @@ interface CodeEditorProps {
     isDark?: boolean;
 }
 
-export default function CodeEditor({ code, setCode, isDisabled = false, isDark = false }: CodeEditorProps) {
+export default function CodeEditor({
+    code,
+    setCode,
+    isDisabled = false,
+    isDark = false,
+}: CodeEditorProps) {
     const [showMinimap, setShowMinimap] = useState(false);
     const editorRef = useRef<any>(null);
     const [fontSize, setFontSize] = useState(15);
@@ -26,9 +33,9 @@ export default function CodeEditor({ code, setCode, isDisabled = false, isDark =
 
     const handleEditorDidMount: OnMount = (editor) => {
         editorRef.current = editor;
-    }
+    };
 
-    const handleInsert = (char: string) => {
+        const handleInsert = (char: string) => {
         if (!editorRef.current) return;
         const editor = editorRef.current;
         const position = editor.getPosition();
@@ -47,31 +54,44 @@ export default function CodeEditor({ code, setCode, isDisabled = false, isDark =
     };
 
     const Toolbar = () => (
-        <div className="bg-gray-100 dark:bg-gray-800 p-1 flex items-center gap-2 text-gray-900 dark:text-white text-sm px-2">
-            {['(', ')', ',', '_'].map(char => (
-                <button
-                    key={char}
-                    onClick={() => handleInsert(char)}
-                    className="px-3 py-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded"
-                >
-                    {char}
-                </button>
-            ))}
-            <div className="flex items-center gap-2 ml-auto">
-                <label htmlFor="font-size" style={{ fontSize:10 }}>Font Size</label>
-                <div className="relative">
-                    <select
-                        id="font-size"
-                        value={fontSize}
-                        onChange={(e) => setFontSize(parseInt(e.target.value, 10))}
-                        className="appearance-none w-24 bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 pl-4 pr-8 py-1 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 text-gray-900 dark:text-white"
-                    >
-                        {[12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24].map(size => (
-                            <option key={size} value={size} className="bg-white dark:bg-gray-800">{size}px</option>
-                        ))}
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
-                        <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+        <div className="bg-gray-900 border-t border-gray-700 p-1 md:p-2 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-4 text-gray-300 text-sm px-4">
+            <div className="flex items-center gap-4">
+                <span className="font-semibold text-md text-gray-400">Editor Settings</span>
+            </div>
+            <div className="flex items-center gap-2 md:gap-4">
+                <LanguageSelector />
+                <div className="flex items-center gap-2">
+                    <label htmlFor="font-size" className="text-xs font-medium">Font Size</label>
+                    <div className="relative">
+                        <select
+                            id="font-size"
+                            value={fontSize}
+                            onChange={(e) =>
+                                setFontSize(parseInt(e.target.value, 10))
+                            }
+                            className="appearance-none w-24 bg-gray-800 border border-gray-600 hover:border-gray-500 pl-3 pr-8 py-1 rounded-md text-xs focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-blue-500 text-white"
+                        >
+                            {[
+                                12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
+                            ].map((size) => (
+                                <option
+                                    key={size}
+                                    value={size}
+                                    className="bg-gray-800"
+                                >
+                                    {size}px
+                                </option>
+                            ))}
+                        </select>
+                        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-400">
+                            <svg
+                                className="fill-current h-4 w-4"
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20"
+                            >
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,13 +99,17 @@ export default function CodeEditor({ code, setCode, isDisabled = false, isDark =
     );
 
     return (
-        <div className={`h-full w-full rounded-xl overflow-hidden relative flex flex-col bg-gray-800 ${isDisabled ? 'opacity-60' : ''}`}>
-             {isDisabled && (
+        <div
+            className={`h-full w-full rounded-xl overflow-hidden relative flex flex-col bg-gray-800 ${isDisabled ? "opacity-60" : ""}`}
+        >
+            {isDisabled && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-gray-900 bg-opacity-50 cursor-not-allowed">
-                    <p className="text-white text-lg font-semibold">Select a problem to start coding</p>
+                    <p className="text-white text-lg font-semibold">
+                        Select a problem to start coding
+                    </p>
                 </div>
             )}
-            <div className="flex-grow h-0">
+            <div className="grow h-0">
                 <Editor
                     height="100%"
                     defaultLanguage="python"
