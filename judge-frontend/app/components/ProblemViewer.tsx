@@ -27,63 +27,114 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
             ) : (
                 <motion.div
                     key={problem.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        },
+                        exit: { opacity: 0 }
+                    }}
                     className="space-y-6"
                 >
-                    <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">
+                    <motion.h2
+                        variants={{
+                            hidden: { opacity: 0, y: 10 },
+                            visible: { opacity: 1, y: 0 }
+                        }}
+                        className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-50 dark:to-gray-400"
+                    >
                         {problem.title}
-                    </h2>
+                    </motion.h2>
 
-                    <div className="prose prose-lg dark:prose-invert max-w-none">
+                    <motion.div
+                        variants={{
+                            hidden: { opacity: 0, y: 10 },
+                            visible: { opacity: 1, y: 0 }
+                        }}
+                        className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
+                    >
                         {problem.description}
-                    </div>
+                    </motion.div>
 
                     {problem.input_format && (
-                        <div className="space-y-2">
-                            <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: 10 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            className="space-y-2 group"
+                        >
+                            <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
                                 Input Format
                             </h4>
-                            <p className="text-gray-600 dark:text-gray-300">
+                            <p className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all">
                                 {problem.input_format}
                             </p>
-                        </div>
+                        </motion.div>
                     )}
 
                     {problem.output_format && (
-                        <div className="space-y-2">
-                            <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: 10 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            className="space-y-2 group"
+                        >
+                            <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
                                 Output Format
                             </h4>
-                            <p className="text-gray-600 dark:text-gray-300">
+                            <p className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all">
                                 {problem.output_format}
                             </p>
-                        </div>
+                        </motion.div>
                     )}
 
                     {problem.sample_test_cases && problem.sample_test_cases.length > 0 && (
-                        <div className="space-y-2">
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: 10 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            className="space-y-2"
+                        >
                             <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
                                 Example
                             </h4>
-                            <div className="p-4 bg-gray-100 dark:bg-gray-900 rounded-md text-sm text-gray-800 dark:text-gray-200 overflow-x-auto font-mono">
-                                <p className="font-bold mb-1 text-gray-700 dark:text-gray-300">Input:</p>
-                                <pre className="mb-4 whitespace-pre-wrap">{problem.sample_test_cases[0].input}</pre>
-                                <p className="font-bold mb-1 text-gray-700 dark:text-gray-300">Output:</p>
-                                <pre className="whitespace-pre-wrap">{problem.sample_test_cases[0].output}</pre>
+                            <div className="p-4 bg-gray-100 dark:bg-gray-900 rounded-xl text-sm text-gray-800 dark:text-gray-200 overflow-x-auto font-mono border border-gray-200 dark:border-gray-700 shadow-inner">
+                                <div className="flex flex-col md:flex-row gap-4">
+                                    <div className="flex-1">
+                                        <p className="font-bold mb-1 text-indigo-600 dark:text-indigo-400 uppercase text-xs tracking-wider">Input:</p>
+                                        <pre className="whitespace-pre-wrap">{problem.sample_test_cases[0].input}</pre>
+                                    </div>
+                                    <div className="flex-1">
+                                        <p className="font-bold mb-1 text-emerald-600 dark:text-emerald-400 uppercase text-xs tracking-wider">Output:</p>
+                                        <pre className="whitespace-pre-wrap">{problem.sample_test_cases[0].output}</pre>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </motion.div>
                     )}
 
                     {problem.constraints && (
-                        <div className="space-y-2">
+                        <motion.div
+                            variants={{
+                                hidden: { opacity: 0, y: 10 },
+                                visible: { opacity: 1, y: 0 }
+                            }}
+                            className="space-y-2"
+                        >
                             <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
                                 Constraints
                             </h4>
-                            <pre className="mt-1 p-4 bg-gray-100 dark:bg-gray-900 rounded-md text-sm text-gray-800 dark:text-gray-200 overflow-x-auto">
-                                <code>
+                            <pre className="mt-1 p-4 bg-gray-100 dark:bg-gray-900 rounded-xl text-sm text-gray-800 dark:text-gray-200 overflow-x-auto border border-gray-200 dark:border-gray-700">
+                                <code className="font-mono">
                                     {problem.constraints && typeof problem.constraints === 'object' ? (
                                         Object.entries(problem.constraints)
                                             .map(([key, value]) => `${key}: ${String(value)}`)
@@ -93,7 +144,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                                     )}
                                 </code>
                             </pre>
-                        </div>
+                        </motion.div>
                     )}
                 </motion.div>
             )}

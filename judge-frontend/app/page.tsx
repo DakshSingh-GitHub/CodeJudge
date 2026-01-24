@@ -146,17 +146,42 @@ export default function Home() {
 
 
     return (
-        <div className="flex-1 flex flex-col min-h-0 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50">
+        <div className="flex-1 flex flex-col min-h-0 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 relative overflow-hidden">
+            {/* Ambient Background Glows */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
 
             {!isMounted ? (
-                <div className="flex-1 flex items-center justify-center bg-white dark:bg-gray-900">
-                    <div className="text-xl font-bold animate-pulse text-indigo-600">Loading {TITLE}...</div>
+                <div className="flex-1 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50">
+                    <motion.div
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                            duration: 0.5,
+                            repeat: Infinity,
+                            repeatType: "reverse"
+                        }}
+                        className="text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
+                    >
+                        {TITLE}
+                    </motion.div>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        animate={{ width: "200px" }}
+                        className="h-1 bg-indigo-600 dark:bg-indigo-400 rounded-full mt-4 overflow-hidden"
+                    >
+                        <motion.div
+                            animate={{ x: ["-100%", "100%"] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                            className="w-full h-full bg-white/30"
+                        />
+                    </motion.div>
                 </div>
             ) : (
                 <>
                     <div
                         ref={containerRef}
-                        className={`flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4`}
+                        className={`flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4 relative z-10`}
                     >
                         {/* Left Sidebar - Problem List */}
                         <AnimatePresence>
@@ -346,14 +371,16 @@ export default function Home() {
                                                             >
                                                                 <div className="text-xl font-bold flex items-center gap-3">
                                                                     Verdict:{" "}
-                                                                    <span
-                                                                        className={`px-3 py-1 rounded-lg text-sm uppercase tracking-wider ${result.final_status === "Accepted"
-                                                                            ? "bg-green-500/20 text-green-400"
-                                                                            : "bg-red-500/20 text-red-400"
+                                                                    <motion.span
+                                                                        initial={{ scale: 0.8, filter: "blur(4px)" }}
+                                                                        animate={{ scale: 1, filter: "blur(0px)" }}
+                                                                        className={`px-3 py-1 rounded-lg text-sm uppercase tracking-wider font-black shadow-sm ${result.final_status === "Accepted"
+                                                                            ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                                                                            : "bg-red-500/20 text-red-400 border border-red-500/30"
                                                                             }`}
                                                                     >
                                                                         {result.final_status}
-                                                                    </span>
+                                                                    </motion.span>
                                                                     {result.final_status === "Accepted" ? (
                                                                         <motion.div
                                                                             initial={{ scale: 0 }}

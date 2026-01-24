@@ -70,9 +70,9 @@ export default function NavDropdown() {
                             {routes.map((route) => (
                                 <motion.button
                                     key={route.path}
-                                    whileHover={{ x: 5, backgroundColor: "rgba(99, 102, 241, 0.1)" }}
+                                    whileHover={{ x: 0, backgroundColor: "rgba(99, 102, 241, 0.1)" }}
                                     onClick={() => handleNavigate(route.path)}
-                                    className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${pathname === route.path
+                                    className={`w-full my-2 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 ${pathname === route.path
                                         ? "bg-indigo-50 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400"
                                         : "text-gray-600 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400"
                                         }`}

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getProblems } from "../lib/api";
 
@@ -29,19 +29,29 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
         problem.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.05
+                staggerChildren: 0.08,
+                delayChildren: 0.1
             }
         }
     };
 
-    const itemVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { opacity: 1, x: 0 }
+    const itemVariants: Variants = {
+        hidden: { opacity: 0, x: -10, y: 5 },
+        visible: {
+            opacity: 1,
+            x: 0,
+            y: 0,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12
+            }
+        }
     };
 
     return (
