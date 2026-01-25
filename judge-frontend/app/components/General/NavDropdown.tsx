@@ -12,7 +12,7 @@ export default function NavDropdown() {
 
     const routes = [
         { name: "Code Judge", path: "/", icon: "⚖️", subtext: "Select a problem and start solving!" },
-        { name: "Code IDE", path: "/code", icon: "💻", subtext: "Think and Build!" }
+        { name: "Code IDE", path: "/code-test", icon: "💻", subtext: "Think and Build!" }
     ];
 
     const currentRoute = routes.find(r => r.path === pathname) || routes[0];
@@ -43,7 +43,7 @@ export default function NavDropdown() {
                 className="flex items-center gap-3 px-4 py-2 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-all duration-300 group"
             >
                 <span className="text-xl">{currentRoute.icon}</span>
-                <span className="text-lg md:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
+                <span className="text-lg md:text-xl font-bold bg-clip-text text-transparent bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400">
                     {currentRoute.name}
                 </span>
                 <motion.svg
