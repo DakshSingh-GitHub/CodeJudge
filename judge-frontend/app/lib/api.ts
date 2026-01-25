@@ -36,7 +36,7 @@ export async function getProblemById(id: string) {
 	return data;
 }
 
-export async function submitCode(problemId: string, code: string) {
+export async function submitCode(problemId: string, code: string, testOnly: boolean = false) {
 	const res = await fetch(`${BASE_URL}/submit`, {
 		method: "POST",
 		headers: {
@@ -45,6 +45,7 @@ export async function submitCode(problemId: string, code: string) {
 		body: JSON.stringify({
 			problem_id: problemId,
 			code: code,
+			test_only: testOnly,
 		})
 	});
 

@@ -111,6 +111,41 @@ export default function Home() {
         setPastSubmissions(getSubmissionsByProblemId(id));
     }
 
+    async function handleTest() {
+        if (!selectedProblemId || !problem) return;
+
+        setIsSubmitting(true);
+        setResult(null);
+
+        try {
+            const data = await submitCode(selectedProblemId, code, true); // testOnly = true
+
+            // Fallback: If backend is old and didn't filter hidden test cases, filter them here
+            const sampleCount = problem.sample_test_cases?.length || 0;
+            if (data.test_case_results && data.test_case_results.length > sampleCount && sampleCount > 0) {
+                const sampleResults = data.test_case_results.slice(0, sampleCount);
+                const passedCount = sampleResults.filter((r: any) => r.status === "Accepted").length;
+
+                data.summary = {
+                    passed: passedCount,
+                    total: sampleCount
+                };
+                data.test_case_results = sampleResults;
+                data.final_status = passedCount === sampleCount ? "Accepted" : "Failed";
+            }
+
+            setResult(data);
+        } catch (error: any) {
+            if (error.name === 'AbortError' || (error.message && error.message.toLowerCase().includes('cancel'))) {
+                console.warn('Test request was canceled.');
+                return;
+            }
+            setResult({ error: error.message || "Something went wrong" });
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
+
     async function handleSubmit() {
         if (!selectedProblemId || !problem) return;
 
@@ -325,20 +360,36 @@ export default function Home() {
                                         </div>
                                         <div className="flex-none min-h-16.25 max-h-45 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
 
-                                            <button
-                                                onClick={handleSubmit}
-                                                disabled={
-                                                    isSubmitting || !selectedProblemId
-                                                }
-                                                className={`px-6 py-1.5 rounded-xl font-semibold w-full md:w-1/4 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
-                                            ${isSubmitting
-                                                        ? "bg-gray-500 cursor-not-allowed"
-                                                        : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
+                                            <div className="flex flex-col w-full md:w-1/4 gap-2">
+                                                <button
+                                                    onClick={handleSubmit}
+                                                    disabled={
+                                                        isSubmitting || !selectedProblemId
                                                     }
-                                            text-white`}
-                                            >
-                                                {isSubmitting ? "Judging..." : "Submit"}
-                                            </button>
+                                                    className={`px-6 py-1.5 rounded-xl font-semibold w-full flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
+                                                ${isSubmitting
+                                                            ? "bg-gray-500 cursor-not-allowed"
+                                                            : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
+                                                        }
+                                                text-white`}
+                                                >
+                                                    {isSubmitting ? "Judging..." : "Submit"}
+                                                </button>
+                                                <button
+                                                    onClick={handleTest}
+                                                    disabled={
+                                                        isSubmitting || !selectedProblemId
+                                                    }
+                                                    className={`px-6 py-1.5 rounded-xl font-semibold w-full flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
+                                                ${isSubmitting
+                                                            ? "bg-gray-500 cursor-not-allowed"
+                                                            : "bg-emerald-600 hover:bg-emerald-700 active:scale-95"
+                                                        }
+                                                text-white`}
+                                                >
+                                                    {isSubmitting ? "Testing..." : "Test"}
+                                                </button>
+                                            </div>
                                             <div className="w-full md:w-3/4 h-full">
                                                 <div className="p-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 h-full overflow-y-auto border border-gray-200 dark:border-gray-700 shadow-2xl custom-scrollbar transition-all duration-300">
                                                     <AnimatePresence mode="wait">

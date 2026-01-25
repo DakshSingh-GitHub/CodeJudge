@@ -40,6 +40,7 @@ class ProblemDetail(ProblemBase):
 class SubmitRequest(BaseModel):
     problem_id: str
     code: str
+    test_only: Optional[bool] = False
 
 class TestCaseResult(BaseModel):
     test_case: int
@@ -173,7 +174,12 @@ def submit(request_data: SubmitRequest):
     judge_mode = problem.get("judge_mode", "ALL")
     sample_tcs = problem.get("sample_test_cases", [])
     hidden_tcs = problem.get("hidden_test_cases", [])
-    test_cases = sample_tcs + hidden_tcs
+    
+    if request_data.test_only:
+        test_cases = sample_tcs
+        judge_mode = "ALL" # Force ALL mode for testing samples
+    else:
+        test_cases = sample_tcs + hidden_tcs
 
     result = run_code_multiple(
         code=code,
