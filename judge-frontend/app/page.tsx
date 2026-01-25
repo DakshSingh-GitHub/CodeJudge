@@ -213,7 +213,7 @@ export default function Home() {
                                     {/* Draggable Divider - Sidebar */}
                                     <div
                                         onMouseDown={handleMouseDownSidebar}
-                                        className="hidden md:block w-1.5 bg-transparent hover:bg-indigo-500/30 cursor-col-resize mx-0.5 transition-colors duration-200 self-stretch rounded-full"
+                                        className="hidden md:block w-1.5 bg-transparent hover:bg-indigo-500/30 cursor-col-resize mx-0.5 ml-2 transition-colors duration-200 self-stretch rounded-full"
                                     />
                                 </motion.div>
                             )}
