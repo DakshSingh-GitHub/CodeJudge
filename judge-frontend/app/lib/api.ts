@@ -1,7 +1,7 @@
 import { getCachedProblems, setCachedProblems, getCachedProblemById, setCachedProblemById } from "./cache";
 
 const LOCAL_URL = "http://localhost:5000";
-const REMOTE_URL = "https://code-judge-5fgd.vercel.app";
+const REMOTE_URL = "https://code-judge-6fm6.vercel.app";
 
 let resolvedBaseUrl: string | null = null;
 
