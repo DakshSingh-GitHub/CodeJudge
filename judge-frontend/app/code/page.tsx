@@ -22,7 +22,45 @@ export default function CodeTestPage() {
 
     useEffect(() => {
         setIsMounted(true);
+        const savedCode = sessionStorage.getItem("code-ide-code");
+        if (savedCode) {
+            setCode(savedCode);
+        }
+        const savedInput = sessionStorage.getItem("code-ide-input");
+        if (savedInput) {
+            setInput(savedInput);
+        }
+        const savedOutput = sessionStorage.getItem("code-ide-output");
+        if (savedOutput) {
+            try {
+                setOutput(JSON.parse(savedOutput));
+            } catch (e) {
+                console.error("Failed to parse saved output", e);
+            }
+        }
     }, []);
+
+    useEffect(() => {
+        if (isMounted) {
+            sessionStorage.setItem("code-ide-code", code);
+        }
+    }, [code, isMounted]);
+
+    useEffect(() => {
+        if (isMounted) {
+            sessionStorage.setItem("code-ide-input", input);
+        }
+    }, [input, isMounted]);
+
+    useEffect(() => {
+        if (isMounted) {
+            if (output) {
+                sessionStorage.setItem("code-ide-output", JSON.stringify(output));
+            } else {
+                sessionStorage.removeItem("code-ide-output");
+            }
+        }
+    }, [output, isMounted]);
 
     const handleRun = async () => {
         if (isLoading) return;
@@ -41,6 +79,13 @@ export default function CodeTestPage() {
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const handleReset = () => {
+        setInput("");
+        setOutput(null);
+        sessionStorage.removeItem("code-ide-input");
+        sessionStorage.removeItem("code-ide-output");
     };
 
     if (!isMounted) return null;
@@ -73,23 +118,35 @@ export default function CodeTestPage() {
                             </div>
                         </div>
 
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={handleRun}
-                            disabled={isLoading}
-                            className={`flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-bold transition-all shadow-lg ${isLoading
+                        <div className="flex items-center gap-3">
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={handleReset}
+                                disabled={isLoading}
+                                className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 disabled:opacity-50"
+                            >
+                                Reset
+                            </motion.button>
+
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                onClick={handleRun}
+                                disabled={isLoading}
+                                className={`flex items-center gap-2 px-6 py-2 rounded-xl text-sm font-bold transition-all shadow-lg ${isLoading
                                     ? "bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed"
                                     : "bg-linear-to-r from-indigo-500 to-purple-600 text-white hover:shadow-indigo-500/25"
-                                }`}
-                        >
-                            {isLoading ? (
-                                <Loader2 className="w-4 h-4 animate-spin" />
-                            ) : (
-                                <Play className="w-4 h-4 fill-current" />
-                            )}
-                            {isLoading ? "Running..." : "Run"}
-                        </motion.button>
+                                    }`}
+                            >
+                                {isLoading ? (
+                                    <Loader2 className="w-4 h-4 animate-spin" />
+                                ) : (
+                                    <Play className="w-4 h-4 fill-current" />
+                                )}
+                                {isLoading ? "Running..." : "Run"}
+                            </motion.button>
+                        </div>
                     </div>
                     <div className="flex-1 min-h-0 relative">
                         <CodeEditor
@@ -143,8 +200,8 @@ export default function CodeTestPage() {
                                         </span>
                                     </div>
                                     <div className={`flex items-center gap-1.5 px-3 py-1 rounded-full border ${output.status === "Success"
-                                            ? "bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400"
-                                            : "bg-red-500/10 border-red-500/20 text-red-600 dark:text-red-400"
+                                        ? "bg-green-500/10 border-green-500/20 text-green-600 dark:text-green-400"
+                                        : "bg-red-500/10 border-red-500/20 text-red-600 dark:text-red-400"
                                         }`}>
                                         {output.status === "Success" ? <CheckCircle2 className="w-3 h-3" /> : <AlertCircle className="w-3 h-3" />}
                                         <span className="text-[10px] font-black uppercase tracking-wider">{output.status}</span>

@@ -12,7 +12,7 @@ export default function NavDropdown() {
 
     const routes = [
         { name: "Code Judge", path: "/", icon: "⚖️", subtext: "Select a problem and start solving!" },
-        { name: "Code IDE", path: "/code-test", icon: "💻", subtext: "Think and Build!" }
+        { name: "Code IDE", path: "/code", icon: "💻", subtext: "Think and Build!" }
     ];
 
     const currentRoute = routes.find(r => r.path === pathname) || routes[0];
