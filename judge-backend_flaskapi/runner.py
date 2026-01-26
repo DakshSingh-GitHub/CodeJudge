@@ -68,6 +68,59 @@ def run_single_test_case_sequential(index, tc, code_str, time_limit):
         if os.path.exists(filename):
             os.remove(filename)
 
+def run_code_once(code: str, user_input: str, time_limit: int = TIME_LIMIT):
+    """Executes code once in isolation and returns stdout, stderr, status, and duration."""
+    import tempfile
+    
+    with tempfile.NamedTemporaryFile(suffix=".py", delete=False, mode="w") as temp:
+        temp.write(code)
+        filename = temp.name
+
+    start_t = time.time()
+    try:
+        result = subprocess.run(
+            ["python", filename],
+            input=user_input,
+            capture_output=True,
+            text=True,
+            timeout=time_limit
+        )
+        
+        duration = time.time() - start_t
+        
+        if result.returncode != 0:
+            return {
+                "stdout": result.stdout,
+                "stderr": result.stderr,
+                "status": "Runtime Error",
+                "duration": duration
+            }
+
+        return {
+            "stdout": result.stdout,
+            "stderr": None,
+            "status": "Success",
+            "duration": duration
+        }
+
+    except subprocess.TimeoutExpired:
+        return {
+            "stdout": "",
+            "stderr": "Time Limit Exceeded",
+            "status": "Time Limit Exceeded",
+            "duration": time.time() - start_t
+        }
+    except Exception as e:
+        return {
+            "stdout": "",
+            "stderr": str(e),
+            "status": "Internal Error",
+            "duration": time.time() - start_t
+        }
+    finally:
+        if os.path.exists(filename):
+            os.remove(filename)
+
 def normalize_output(output: str) -> str:
     lines = output.strip().splitlines()
     normalized_lines = [" ".join(line.split()) for line in lines]

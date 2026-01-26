@@ -4,7 +4,7 @@ from typing import List, Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from runner import run_code_multiple
+from runner import run_code_multiple, run_code_once
 
 app = FastAPI(title="Judge Backend", description="FastAPI migration of the Code Judge backend")
 
@@ -224,28 +224,13 @@ def run_code_endpoint(request_data: RunRequest):
     if not code:
         raise HTTPException(status_code=400, detail="No code provided")
 
-    # Reuse run_code_multiple with a single dummy test case
-    dummy_tc = {"input": user_input, "output": ""}
-    
-    result = run_code_multiple(
+    # Use run_code_once for direct execution
+    result = run_code_once(
         code=code,
-        test_cases=[dummy_tc],
-        mode="ALL"
+        user_input=user_input
     )
 
-    tc_res = result["test_case_results"][0]
-    
-    # For a general run, "Accepted" or "Wrong Answer" both mean the code executed successfully
-    status = tc_res["status"]
-    if status in ["Accepted", "Wrong Answer"]:
-        status = "Success"
-    
-    return {
-        "stdout": tc_res.get("actual_output", ""),
-        "stderr": tc_res.get("error"),
-        "status": status,
-        "duration": tc_res.get("duration", 0.0)
-    }
+    return result
 
 if __name__ == "__main__":
     import uvicorn

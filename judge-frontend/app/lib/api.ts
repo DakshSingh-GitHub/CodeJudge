@@ -56,3 +56,23 @@ export async function submitCode(problemId: string, code: string, testOnly: bool
 
 	return res.json();
 }
+
+export async function runCode(code: string, input: string = "") {
+	const res = await fetch(`${BASE_URL}/run`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({
+			code: code,
+			input: input,
+		})
+	});
+
+	if (!res.ok) {
+		const err = await res.json();
+		throw new Error(err.error || "Execution failed");
+	}
+
+	return res.json();
+}
