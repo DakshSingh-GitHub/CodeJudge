@@ -21,455 +21,15 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "5788",
-            "output": "No"
-        },
-        {
-            "input": "6400",
-            "output": "Yes"
-        },
-        {
-            "input": "5796",
-            "output": "No"
-        },
-        {
-            "input": "4900",
-            "output": "Yes"
-        },
-        {
-            "input": "2809",
-            "output": "Yes"
-        },
-        {
-            "input": "4509",
-            "output": "No"
-        },
-        {
-            "input": "9",
-            "output": "Yes"
-        },
-        {
-            "input": "1869",
-            "output": "No"
-        },
-        {
-            "input": "6560",
-            "output": "No"
-        },
-        {
-            "input": "8464",
-            "output": "Yes"
-        },
-        {
-            "input": "2849",
-            "output": "No"
-        },
-        {
-            "input": "8811",
-            "output": "No"
-        },
-        {
-            "input": "2300",
-            "output": "No"
-        },
-        {
-            "input": "9409",
-            "output": "Yes"
-        },
-        {
-            "input": "196",
-            "output": "Yes"
-        },
-        {
-            "input": "3364",
-            "output": "Yes"
-        },
-        {
-            "input": "2208",
-            "output": "No"
-        },
-        {
-            "input": "8298",
-            "output": "No"
-        },
-        {
-            "input": "2196",
-            "output": "No"
-        },
-        {
-            "input": "3481",
-            "output": "Yes"
-        },
-        {
-            "input": "4",
-            "output": "Yes"
-        },
-        {
-            "input": "517",
-            "output": "No"
-        },
-        {
-            "input": "529",
-            "output": "Yes"
-        },
-        {
-            "input": "9604",
-            "output": "Yes"
-        },
-        {
-            "input": "1052",
-            "output": "No"
-        },
-        {
-            "input": "4096",
-            "output": "Yes"
-        },
-        {
-            "input": "1089",
-            "output": "Yes"
-        },
-        {
-            "input": "8649",
-            "output": "Yes"
-        },
-        {
-            "input": "4303",
-            "output": "No"
-        },
-        {
-            "input": "7904",
-            "output": "No"
-        },
-        {
-            "input": "361",
-            "output": "Yes"
-        },
-        {
-            "input": "1936",
-            "output": "Yes"
-        },
-        {
-            "input": "484",
-            "output": "Yes"
-        },
-        {
-            "input": "729",
-            "output": "Yes"
-        },
-        {
-            "input": "8450",
-            "output": "No"
-        },
-        {
-            "input": "7991",
-            "output": "No"
-        },
-        {
-            "input": "1450",
-            "output": "No"
-        },
-        {
-            "input": "2116",
-            "output": "Yes"
-        },
-        {
-            "input": "8085",
-            "output": "No"
-        },
-        {
-            "input": "4542",
-            "output": "No"
-        },
-        {
-            "input": "2601",
-            "output": "Yes"
-        },
-        {
-            "input": "6889",
-            "output": "Yes"
-        },
-        {
-            "input": "6630",
-            "output": "No"
-        },
-        {
-            "input": "3483",
-            "output": "No"
-        },
-        {
-            "input": "3721",
-            "output": "Yes"
-        },
-        {
-            "input": "3696",
-            "output": "No"
-        },
-        {
-            "input": "3828",
-            "output": "No"
-        },
-        {
-            "input": "3235",
-            "output": "No"
-        },
-        {
-            "input": "7760",
-            "output": "No"
-        },
-        {
-            "input": "37",
-            "output": "No"
-        },
-        {
-            "input": "1296",
-            "output": "Yes"
-        },
-        {
-            "input": "7569",
-            "output": "Yes"
-        },
-        {
-            "input": "5625",
-            "output": "Yes"
-        },
-        {
-            "input": "9090",
-            "output": "No"
-        },
-        {
-            "input": "324",
-            "output": "Yes"
-        },
-        {
-            "input": "1438",
-            "output": "No"
-        },
-        {
-            "input": "2401",
-            "output": "Yes"
-        },
-        {
-            "input": "1961",
-            "output": "No"
-        },
-        {
-            "input": "9216",
-            "output": "Yes"
-        },
-        {
-            "input": "4225",
-            "output": "Yes"
-        },
-        {
-            "input": "3345",
-            "output": "No"
-        },
-        {
-            "input": "8117",
-            "output": "No"
-        },
-        {
-            "input": "6744",
-            "output": "No"
-        },
-        {
-            "input": "6084",
-            "output": "Yes"
-        },
-        {
-            "input": "7058",
-            "output": "No"
-        },
-        {
-            "input": "25",
-            "output": "Yes"
-        },
-        {
-            "input": "3844",
-            "output": "Yes"
-        },
-        {
-            "input": "2500",
-            "output": "Yes"
-        },
-        {
-            "input": "7267",
-            "output": "No"
-        },
-        {
-            "input": "8463",
-            "output": "No"
-        },
-        {
-            "input": "9345",
-            "output": "No"
-        },
-        {
-            "input": "8865",
-            "output": "No"
-        },
-        {
-            "input": "1024",
-            "output": "Yes"
-        },
-        {
-            "input": "5580",
-            "output": "No"
-        },
-        {
-            "input": "8836",
-            "output": "Yes"
-        },
-        {
-            "input": "4038",
-            "output": "No"
-        },
-        {
-            "input": "5476",
-            "output": "Yes"
-        },
-        {
-            "input": "8864",
-            "output": "No"
-        },
-        {
-            "input": "8733",
-            "output": "No"
-        },
-        {
-            "input": "8975",
-            "output": "No"
-        },
-        {
-            "input": "1",
-            "output": "Yes"
-        },
-        {
-            "input": "1369",
-            "output": "Yes"
-        },
-        {
-            "input": "9125",
-            "output": "No"
-        },
-        {
-            "input": "64",
-            "output": "Yes"
-        },
-        {
-            "input": "5929",
-            "output": "Yes"
-        },
-        {
-            "input": "4831",
-            "output": "No"
-        },
-        {
-            "input": "10000",
-            "output": "Yes"
-        },
-        {
-            "input": "6241",
-            "output": "Yes"
-        },
-        {
-            "input": "7123",
-            "output": "No"
-        },
-        {
-            "input": "8698",
-            "output": "No"
-        },
-        {
-            "input": "1444",
-            "output": "Yes"
-        },
-        {
-            "input": "4714",
-            "output": "No"
-        },
-        {
-            "input": "3936",
-            "output": "No"
-        },
-        {
-            "input": "9170",
-            "output": "No"
-        },
-        {
-            "input": "4005",
-            "output": "No"
-        },
-        {
-            "input": "2177",
-            "output": "No"
-        },
-        {
-            "input": "2153",
-            "output": "No"
-        },
-        {
-            "input": "9025",
-            "output": "Yes"
-        },
-        {
-            "input": "3653",
-            "output": "No"
-        },
-        {
-            "input": "4624",
-            "output": "Yes"
-        },
-        {
-            "input": "3289",
-            "output": "No"
-        },
-        {
-            "input": "691",
-            "output": "No"
-        },
-        {
-            "input": "9782",
-            "output": "No"
-        },
-        {
-            "input": "3347",
-            "output": "No"
-        },
-        {
-            "input": "9745",
-            "output": "No"
-        },
-        {
             "input": "676",
             "output": "Yes"
         },
         {
-            "input": "242",
+            "input": "8075",
             "output": "No"
         },
         {
-            "input": "9643",
-            "output": "No"
-        },
-        {
-            "input": "8063",
-            "output": "No"
-        },
-        {
-            "input": "961",
-            "output": "Yes"
-        },
-        {
-            "input": "3620",
-            "output": "No"
-        },
-        {
-            "input": "9670",
-            "output": "No"
-        },
-        {
-            "input": "6708",
+            "input": "9741",
             "output": "No"
         },
         {
@@ -477,563 +37,19 @@
             "output": "Yes"
         },
         {
-            "input": "9337",
+            "input": "7504",
             "output": "No"
         },
         {
-            "input": "841",
+            "input": "1793",
+            "output": "No"
+        },
+        {
+            "input": "9409",
             "output": "Yes"
         },
         {
-            "input": "169",
-            "output": "Yes"
-        },
-        {
-            "input": "3387",
-            "output": "No"
-        },
-        {
-            "input": "6333",
-            "output": "No"
-        },
-        {
-            "input": "8973",
-            "output": "No"
-        },
-        {
-            "input": "596",
-            "output": "No"
-        },
-        {
-            "input": "6784",
-            "output": "No"
-        },
-        {
-            "input": "1156",
-            "output": "Yes"
-        },
-        {
-            "input": "1176",
-            "output": "No"
-        },
-        {
-            "input": "2304",
-            "output": "Yes"
-        },
-        {
-            "input": "7225",
-            "output": "Yes"
-        },
-        {
-            "input": "5329",
-            "output": "Yes"
-        },
-        {
-            "input": "5357",
-            "output": "No"
-        },
-        {
-            "input": "5142",
-            "output": "No"
-        },
-        {
-            "input": "8820",
-            "output": "No"
-        },
-        {
-            "input": "6724",
-            "output": "Yes"
-        },
-        {
-            "input": "5776",
-            "output": "Yes"
-        },
-        {
-            "input": "1592",
-            "output": "No"
-        },
-        {
-            "input": "7699",
-            "output": "No"
-        },
-        {
-            "input": "4179",
-            "output": "No"
-        },
-        {
-            "input": "7695",
-            "output": "No"
-        },
-        {
-            "input": "2916",
-            "output": "Yes"
-        },
-        {
-            "input": "6607",
-            "output": "No"
-        },
-        {
-            "input": "8100",
-            "output": "Yes"
-        },
-        {
-            "input": "5435",
-            "output": "No"
-        },
-        {
-            "input": "7921",
-            "output": "Yes"
-        },
-        {
-            "input": "8281",
-            "output": "Yes"
-        },
-        {
-            "input": "4829",
-            "output": "No"
-        },
-        {
-            "input": "3436",
-            "output": "No"
-        },
-        {
-            "input": "9049",
-            "output": "No"
-        },
-        {
-            "input": "9744",
-            "output": "No"
-        },
-        {
-            "input": "3249",
-            "output": "Yes"
-        },
-        {
-            "input": "7573",
-            "output": "No"
-        },
-        {
-            "input": "9694",
-            "output": "No"
-        },
-        {
-            "input": "2025",
-            "output": "Yes"
-        },
-        {
-            "input": "5184",
-            "output": "Yes"
-        },
-        {
-            "input": "5769",
-            "output": "No"
-        },
-        {
-            "input": "400",
-            "output": "Yes"
-        },
-        {
-            "input": "6548",
-            "output": "No"
-        },
-        {
-            "input": "5041",
-            "output": "Yes"
-        },
-        {
-            "input": "8506",
-            "output": "No"
-        },
-        {
-            "input": "256",
-            "output": "Yes"
-        },
-        {
-            "input": "2209",
-            "output": "Yes"
-        },
-        {
-            "input": "1670",
-            "output": "No"
-        },
-        {
-            "input": "7837",
-            "output": "No"
-        },
-        {
-            "input": "4892",
-            "output": "No"
-        },
-        {
-            "input": "9964",
-            "output": "No"
-        },
-        {
-            "input": "8582",
-            "output": "No"
-        },
-        {
-            "input": "1717",
-            "output": "No"
-        },
-        {
-            "input": "4370",
-            "output": "No"
-        },
-        {
-            "input": "81",
-            "output": "Yes"
-        },
-        {
-            "input": "7897",
-            "output": "No"
-        },
-        {
-            "input": "3195",
-            "output": "No"
-        },
-        {
-            "input": "7396",
-            "output": "Yes"
-        },
-        {
-            "input": "6021",
-            "output": "No"
-        },
-        {
-            "input": "2746",
-            "output": "No"
-        },
-        {
-            "input": "3136",
-            "output": "Yes"
-        },
-        {
-            "input": "2823",
-            "output": "No"
-        },
-        {
-            "input": "9421",
-            "output": "No"
-        },
-        {
-            "input": "6637",
-            "output": "No"
-        },
-        {
-            "input": "8732",
-            "output": "No"
-        },
-        {
-            "input": "7056",
-            "output": "Yes"
-        },
-        {
-            "input": "9801",
-            "output": "Yes"
-        },
-        {
-            "input": "2492",
-            "output": "No"
-        },
-        {
-            "input": "4653",
-            "output": "No"
-        },
-        {
-            "input": "2082",
-            "output": "No"
-        },
-        {
-            "input": "5818",
-            "output": "No"
-        },
-        {
-            "input": "947",
-            "output": "No"
-        },
-        {
-            "input": "289",
-            "output": "Yes"
-        },
-        {
-            "input": "1764",
-            "output": "Yes"
-        },
-        {
-            "input": "335",
-            "output": "No"
-        },
-        {
-            "input": "4761",
-            "output": "Yes"
-        },
-        {
-            "input": "2822",
-            "output": "No"
-        },
-        {
-            "input": "379",
-            "output": "No"
-        },
-        {
-            "input": "7919",
-            "output": "No"
-        },
-        {
-            "input": "5942",
-            "output": "No"
-        },
-        {
-            "input": "3441",
-            "output": "No"
-        },
-        {
-            "input": "4815",
-            "output": "No"
-        },
-        {
-            "input": "1834",
-            "output": "No"
-        },
-        {
-            "input": "441",
-            "output": "Yes"
-        },
-        {
-            "input": "7300",
-            "output": "No"
-        },
-        {
-            "input": "1681",
-            "output": "Yes"
-        },
-        {
-            "input": "9731",
-            "output": "No"
-        },
-        {
-            "input": "8137",
-            "output": "No"
-        },
-        {
-            "input": "6025",
-            "output": "No"
-        },
-        {
-            "input": "5422",
-            "output": "No"
-        },
-        {
-            "input": "4292",
-            "output": "No"
-        },
-        {
-            "input": "3025",
-            "output": "Yes"
-        },
-        {
-            "input": "6338",
-            "output": "No"
-        },
-        {
-            "input": "1521",
-            "output": "Yes"
-        },
-        {
-            "input": "78",
-            "output": "No"
-        },
-        {
-            "input": "9198",
-            "output": "No"
-        },
-        {
-            "input": "798",
-            "output": "No"
-        },
-        {
-            "input": "4238",
-            "output": "No"
-        },
-        {
-            "input": "5437",
-            "output": "No"
-        },
-        {
-            "input": "5741",
-            "output": "No"
-        },
-        {
-            "input": "7606",
-            "output": "No"
-        },
-        {
-            "input": "9849",
-            "output": "No"
-        },
-        {
-            "input": "784",
-            "output": "Yes"
-        },
-        {
-            "input": "5157",
-            "output": "No"
-        },
-        {
-            "input": "4591",
-            "output": "No"
-        },
-        {
-            "input": "7972",
-            "output": "No"
-        },
-        {
-            "input": "7269",
-            "output": "No"
-        },
-        {
-            "input": "1643",
-            "output": "No"
-        },
-        {
-            "input": "5026",
-            "output": "No"
-        },
-        {
-            "input": "8040",
-            "output": "No"
-        },
-        {
-            "input": "7679",
-            "output": "No"
-        },
-        {
-            "input": "9480",
-            "output": "No"
-        },
-        {
-            "input": "7349",
-            "output": "No"
-        },
-        {
-            "input": "9664",
-            "output": "No"
-        },
-        {
-            "input": "2355",
-            "output": "No"
-        },
-        {
-            "input": "9153",
-            "output": "No"
-        },
-        {
-            "input": "3842",
-            "output": "No"
-        },
-        {
-            "input": "1303",
-            "output": "No"
-        },
-        {
-            "input": "9040",
-            "output": "No"
-        },
-        {
-            "input": "1849",
-            "output": "Yes"
-        },
-        {
-            "input": "2820",
-            "output": "No"
-        },
-        {
-            "input": "8508",
-            "output": "No"
-        },
-        {
-            "input": "2804",
-            "output": "No"
-        },
-        {
-            "input": "144",
-            "output": "Yes"
-        },
-        {
-            "input": "2801",
-            "output": "No"
-        },
-        {
-            "input": "5224",
-            "output": "No"
-        },
-        {
-            "input": "3969",
-            "output": "Yes"
-        },
-        {
-            "input": "7539",
-            "output": "No"
-        },
-        {
-            "input": "7406",
-            "output": "No"
-        },
-        {
-            "input": "5292",
-            "output": "No"
-        },
-        {
-            "input": "1128",
-            "output": "No"
-        },
-        {
-            "input": "4720",
-            "output": "No"
-        },
-        {
-            "input": "9743",
-            "output": "No"
-        },
-        {
-            "input": "3600",
-            "output": "Yes"
-        },
-        {
-            "input": "9581",
-            "output": "No"
-        },
-        {
-            "input": "8086",
-            "output": "No"
-        },
-        {
-            "input": "8845",
-            "output": "No"
-        },
-        {
-            "input": "1129",
-            "output": "No"
-        },
-        {
-            "input": "2237",
-            "output": "No"
-        },
-        {
-            "input": "4078",
-            "output": "No"
-        },
-        {
-            "input": "5003",
-            "output": "No"
-        },
-        {
-            "input": "2968",
-            "output": "No"
-        },
-        {
-            "input": "4704",
+            "input": "3719",
             "output": "No"
         },
         {
@@ -1041,15 +57,255 @@
             "output": "Yes"
         },
         {
-            "input": "3580",
+            "input": "4422",
             "output": "No"
         },
         {
-            "input": "4356",
+            "input": "2704",
             "output": "Yes"
         },
         {
-            "input": "6353",
+            "input": "784",
+            "output": "Yes"
+        },
+        {
+            "input": "6293",
+            "output": "No"
+        },
+        {
+            "input": "400",
+            "output": "Yes"
+        },
+        {
+            "input": "6144",
+            "output": "No"
+        },
+        {
+            "input": "7056",
+            "output": "Yes"
+        },
+        {
+            "input": "4489",
+            "output": "Yes"
+        },
+        {
+            "input": "841",
+            "output": "Yes"
+        },
+        {
+            "input": "2116",
+            "output": "Yes"
+        },
+        {
+            "input": "7821",
+            "output": "No"
+        },
+        {
+            "input": "1724",
+            "output": "No"
+        },
+        {
+            "input": "289",
+            "output": "Yes"
+        },
+        {
+            "input": "9710",
+            "output": "No"
+        },
+        {
+            "input": "4624",
+            "output": "Yes"
+        },
+        {
+            "input": "3481",
+            "output": "Yes"
+        },
+        {
+            "input": "8685",
+            "output": "No"
+        },
+        {
+            "input": "3447",
+            "output": "No"
+        },
+        {
+            "input": "5184",
+            "output": "Yes"
+        },
+        {
+            "input": "4830",
+            "output": "No"
+        },
+        {
+            "input": "1156",
+            "output": "Yes"
+        },
+        {
+            "input": "2893",
+            "output": "No"
+        },
+        {
+            "input": "1089",
+            "output": "Yes"
+        },
+        {
+            "input": "6042",
+            "output": "No"
+        },
+        {
+            "input": "7377",
+            "output": "No"
+        },
+        {
+            "input": "144",
+            "output": "Yes"
+        },
+        {
+            "input": "5476",
+            "output": "Yes"
+        },
+        {
+            "input": "7441",
+            "output": "No"
+        },
+        {
+            "input": "3600",
+            "output": "Yes"
+        },
+        {
+            "input": "5417",
+            "output": "No"
+        },
+        {
+            "input": "9801",
+            "output": "Yes"
+        },
+        {
+            "input": "8239",
+            "output": "No"
+        },
+        {
+            "input": "6542",
+            "output": "No"
+        },
+        {
+            "input": "6084",
+            "output": "Yes"
+        },
+        {
+            "input": "7569",
+            "output": "Yes"
+        },
+        {
+            "input": "64",
+            "output": "Yes"
+        },
+        {
+            "input": "8873",
+            "output": "No"
+        },
+        {
+            "input": "2401",
+            "output": "Yes"
+        },
+        {
+            "input": "9565",
+            "output": "No"
+        },
+        {
+            "input": "7225",
+            "output": "Yes"
+        },
+        {
+            "input": "1444",
+            "output": "Yes"
+        },
+        {
+            "input": "9916",
+            "output": "No"
+        },
+        {
+            "input": "6388",
+            "output": "No"
+        },
+        {
+            "input": "3844",
+            "output": "Yes"
+        },
+        {
+            "input": "1936",
+            "output": "Yes"
+        },
+        {
+            "input": "6241",
+            "output": "Yes"
+        },
+        {
+            "input": "5415",
+            "output": "No"
+        },
+        {
+            "input": "4520",
+            "output": "No"
+        },
+        {
+            "input": "1764",
+            "output": "Yes"
+        },
+        {
+            "input": "4871",
+            "output": "No"
+        },
+        {
+            "input": "256",
+            "output": "Yes"
+        },
+        {
+            "input": "5331",
+            "output": "No"
+        },
+        {
+            "input": "8281",
+            "output": "Yes"
+        },
+        {
+            "input": "1225",
+            "output": "Yes"
+        },
+        {
+            "input": "9170",
+            "output": "No"
+        },
+        {
+            "input": "1937",
+            "output": "No"
+        },
+        {
+            "input": "8700",
+            "output": "No"
+        },
+        {
+            "input": "8571",
+            "output": "No"
+        },
+        {
+            "input": "6758",
+            "output": "No"
+        },
+        {
+            "input": "9216",
+            "output": "Yes"
+        },
+        {
+            "input": "4009",
+            "output": "No"
+        },
+        {
+            "input": "6889",
+            "output": "Yes"
+        },
+        {
+            "input": "8469",
             "output": "No"
         },
         {
@@ -1057,167 +313,39 @@
             "output": "Yes"
         },
         {
-            "input": "3503",
+            "input": "9549",
             "output": "No"
         },
         {
-            "input": "1244",
+            "input": "9092",
             "output": "No"
         },
         {
-            "input": "5936",
+            "input": "4016",
             "output": "No"
         },
         {
-            "input": "6102",
+            "input": "1909",
             "output": "No"
         },
         {
-            "input": "9024",
+            "input": "5062",
             "output": "No"
         },
         {
-            "input": "69",
+            "input": "3762",
             "output": "No"
         },
         {
-            "input": "3388",
-            "output": "No"
-        },
-        {
-            "input": "785",
-            "output": "No"
-        },
-        {
-            "input": "6698",
-            "output": "No"
-        },
-        {
-            "input": "685",
-            "output": "No"
-        },
-        {
-            "input": "9720",
-            "output": "No"
-        },
-        {
-            "input": "9015",
-            "output": "No"
-        },
-        {
-            "input": "2577",
-            "output": "No"
-        },
-        {
-            "input": "121",
+            "input": "2601",
             "output": "Yes"
         },
         {
-            "input": "246",
+            "input": "5875",
             "output": "No"
         },
         {
-            "input": "7836",
-            "output": "No"
-        },
-        {
-            "input": "8757",
-            "output": "No"
-        },
-        {
-            "input": "5838",
-            "output": "No"
-        },
-        {
-            "input": "7305",
-            "output": "No"
-        },
-        {
-            "input": "2113",
-            "output": "No"
-        },
-        {
-            "input": "1656",
-            "output": "No"
-        },
-        {
-            "input": "6866",
-            "output": "No"
-        },
-        {
-            "input": "7373",
-            "output": "No"
-        },
-        {
-            "input": "9346",
-            "output": "No"
-        },
-        {
-            "input": "4489",
-            "output": "Yes"
-        },
-        {
-            "input": "7871",
-            "output": "No"
-        },
-        {
-            "input": "6052",
-            "output": "No"
-        },
-        {
-            "input": "3732",
-            "output": "No"
-        },
-        {
-            "input": "16",
-            "output": "Yes"
-        },
-        {
-            "input": "8033",
-            "output": "No"
-        },
-        {
-            "input": "1367",
-            "output": "No"
-        },
-        {
-            "input": "6546",
-            "output": "No"
-        },
-        {
-            "input": "1225",
-            "output": "Yes"
-        },
-        {
-            "input": "302",
-            "output": "No"
-        },
-        {
-            "input": "3313",
-            "output": "No"
-        },
-        {
-            "input": "9927",
-            "output": "No"
-        },
-        {
-            "input": "764",
-            "output": "No"
-        },
-        {
-            "input": "1479",
-            "output": "No"
-        },
-        {
-            "input": "8297",
-            "output": "No"
-        },
-        {
-            "input": "8098",
-            "output": "No"
-        },
-        {
-            "input": "6878",
+            "input": "5120",
             "output": "No"
         },
         {
@@ -1225,403 +353,27 @@
             "output": "Yes"
         },
         {
-            "input": "2706",
-            "output": "No"
-        },
-        {
-            "input": "5327",
-            "output": "No"
-        },
-        {
-            "input": "9351",
-            "output": "No"
-        },
-        {
-            "input": "7555",
-            "output": "No"
-        },
-        {
-            "input": "4767",
-            "output": "No"
-        },
-        {
-            "input": "7238",
-            "output": "No"
-        },
-        {
-            "input": "3071",
-            "output": "No"
-        },
-        {
-            "input": "6511",
-            "output": "No"
-        },
-        {
-            "input": "6520",
-            "output": "No"
-        },
-        {
-            "input": "4393",
-            "output": "No"
-        },
-        {
-            "input": "5973",
-            "output": "No"
-        },
-        {
-            "input": "512",
-            "output": "No"
-        },
-        {
-            "input": "6252",
-            "output": "No"
-        },
-        {
-            "input": "454",
-            "output": "No"
-        },
-        {
-            "input": "4256",
-            "output": "No"
-        },
-        {
-            "input": "1032",
-            "output": "No"
-        },
-        {
-            "input": "6150",
-            "output": "No"
-        },
-        {
-            "input": "2223",
-            "output": "No"
-        },
-        {
-            "input": "2913",
-            "output": "No"
-        },
-        {
-            "input": "1666",
-            "output": "No"
-        },
-        {
-            "input": "7525",
-            "output": "No"
-        },
-        {
-            "input": "9268",
-            "output": "No"
-        },
-        {
-            "input": "6860",
-            "output": "No"
-        },
-        {
-            "input": "5846",
-            "output": "No"
-        },
-        {
-            "input": "9793",
-            "output": "No"
-        },
-        {
-            "input": "9082",
-            "output": "No"
-        },
-        {
-            "input": "100",
+            "input": "1024",
             "output": "Yes"
         },
         {
-            "input": "3720",
+            "input": "7108",
             "output": "No"
         },
         {
-            "input": "1578",
-            "output": "No"
-        },
-        {
-            "input": "9560",
-            "output": "No"
-        },
-        {
-            "input": "1861",
-            "output": "No"
-        },
-        {
-            "input": "8726",
-            "output": "No"
-        },
-        {
-            "input": "636",
-            "output": "No"
-        },
-        {
-            "input": "6953",
-            "output": "No"
-        },
-        {
-            "input": "8736",
-            "output": "No"
-        },
-        {
-            "input": "6732",
-            "output": "No"
-        },
-        {
-            "input": "4390",
-            "output": "No"
-        },
-        {
-            "input": "7744",
+            "input": "3364",
             "output": "Yes"
         },
         {
-            "input": "2615",
+            "input": "1763",
             "output": "No"
         },
         {
-            "input": "8911",
-            "output": "No"
-        },
-        {
-            "input": "2489",
-            "output": "No"
-        },
-        {
-            "input": "7797",
-            "output": "No"
-        },
-        {
-            "input": "195",
-            "output": "No"
-        },
-        {
-            "input": "8141",
-            "output": "No"
-        },
-        {
-            "input": "1674",
-            "output": "No"
-        },
-        {
-            "input": "7775",
-            "output": "No"
-        },
-        {
-            "input": "1329",
-            "output": "No"
-        },
-        {
-            "input": "5309",
-            "output": "No"
-        },
-        {
-            "input": "830",
-            "output": "No"
-        },
-        {
-            "input": "7380",
-            "output": "No"
-        },
-        {
-            "input": "7867",
-            "output": "No"
-        },
-        {
-            "input": "6816",
-            "output": "No"
-        },
-        {
-            "input": "7586",
-            "output": "No"
-        },
-        {
-            "input": "8245",
-            "output": "No"
-        },
-        {
-            "input": "5128",
-            "output": "No"
-        },
-        {
-            "input": "1172",
-            "output": "No"
-        },
-        {
-            "input": "1606",
-            "output": "No"
-        },
-        {
-            "input": "1091",
-            "output": "No"
-        },
-        {
-            "input": "4666",
-            "output": "No"
-        },
-        {
-            "input": "2629",
-            "output": "No"
-        },
-        {
-            "input": "1436",
-            "output": "No"
-        },
-        {
-            "input": "5214",
-            "output": "No"
-        },
-        {
-            "input": "1137",
-            "output": "No"
-        },
-        {
-            "input": "801",
-            "output": "No"
-        },
-        {
-            "input": "225",
+            "input": "3136",
             "output": "Yes"
         },
         {
-            "input": "8615",
-            "output": "No"
-        },
-        {
-            "input": "1413",
-            "output": "No"
-        },
-        {
-            "input": "6773",
-            "output": "No"
-        },
-        {
-            "input": "8966",
-            "output": "No"
-        },
-        {
-            "input": "4017",
-            "output": "No"
-        },
-        {
-            "input": "2140",
-            "output": "No"
-        },
-        {
-            "input": "7195",
-            "output": "No"
-        },
-        {
-            "input": "6295",
-            "output": "No"
-        },
-        {
-            "input": "677",
-            "output": "No"
-        },
-        {
-            "input": "5146",
-            "output": "No"
-        },
-        {
-            "input": "4195",
-            "output": "No"
-        },
-        {
-            "input": "4008",
-            "output": "No"
-        },
-        {
-            "input": "5126",
-            "output": "No"
-        },
-        {
-            "input": "1083",
-            "output": "No"
-        },
-        {
-            "input": "576",
-            "output": "Yes"
-        },
-        {
-            "input": "1453",
-            "output": "No"
-        },
-        {
-            "input": "6287",
-            "output": "No"
-        },
-        {
-            "input": "1850",
-            "output": "No"
-        },
-        {
-            "input": "174",
-            "output": "No"
-        },
-        {
-            "input": "2707",
-            "output": "No"
-        },
-        {
-            "input": "5468",
-            "output": "No"
-        },
-        {
-            "input": "2660",
-            "output": "No"
-        },
-        {
-            "input": "4453",
-            "output": "No"
-        },
-        {
-            "input": "2625",
-            "output": "No"
-        },
-        {
-            "input": "6525",
-            "output": "No"
-        },
-        {
-            "input": "9148",
-            "output": "No"
-        },
-        {
-            "input": "9053",
-            "output": "No"
-        },
-        {
-            "input": "5176",
-            "output": "No"
-        },
-        {
-            "input": "3255",
-            "output": "No"
-        },
-        {
-            "input": "4260",
-            "output": "No"
-        },
-        {
-            "input": "2501",
-            "output": "No"
-        },
-        {
-            "input": "1923",
-            "output": "No"
-        },
-        {
-            "input": "943",
-            "output": "No"
-        },
-        {
-            "input": "6793",
-            "output": "No"
-        },
-        {
-            "input": "3403",
+            "input": "4896",
             "output": "No"
         },
         {
@@ -1629,35 +381,155 @@
             "output": "No"
         },
         {
-            "input": "2447",
+            "input": "6613",
             "output": "No"
         },
         {
-            "input": "8115",
+            "input": "9875",
             "output": "No"
         },
         {
-            "input": "446",
+            "input": "576",
+            "output": "Yes"
+        },
+        {
+            "input": "6724",
+            "output": "Yes"
+        },
+        {
+            "input": "9580",
             "output": "No"
         },
         {
-            "input": "2983",
+            "input": "3547",
             "output": "No"
         },
         {
-            "input": "752",
+            "input": "6385",
             "output": "No"
         },
         {
-            "input": "8274",
+            "input": "484",
+            "output": "Yes"
+        },
+        {
+            "input": "225",
+            "output": "Yes"
+        },
+        {
+            "input": "7827",
             "output": "No"
         },
         {
-            "input": "6703",
+            "input": "8151",
             "output": "No"
         },
         {
-            "input": "675",
+            "input": "1296",
+            "output": "Yes"
+        },
+        {
+            "input": "121",
+            "output": "Yes"
+        },
+        {
+            "input": "1849",
+            "output": "Yes"
+        },
+        {
+            "input": "9660",
+            "output": "No"
+        },
+        {
+            "input": "10000",
+            "output": "Yes"
+        },
+        {
+            "input": "8464",
+            "output": "Yes"
+        },
+        {
+            "input": "3624",
+            "output": "No"
+        },
+        {
+            "input": "4",
+            "output": "Yes"
+        },
+        {
+            "input": "2026",
+            "output": "No"
+        },
+        {
+            "input": "1521",
+            "output": "Yes"
+        },
+        {
+            "input": "5057",
+            "output": "No"
+        },
+        {
+            "input": "1067",
+            "output": "No"
+        },
+        {
+            "input": "6284",
+            "output": "No"
+        },
+        {
+            "input": "5015",
+            "output": "No"
+        },
+        {
+            "input": "9025",
+            "output": "Yes"
+        },
+        {
+            "input": "8671",
+            "output": "No"
+        },
+        {
+            "input": "1369",
+            "output": "Yes"
+        },
+        {
+            "input": "8759",
+            "output": "No"
+        },
+        {
+            "input": "6802",
+            "output": "No"
+        },
+        {
+            "input": "6179",
+            "output": "No"
+        },
+        {
+            "input": "8100",
+            "output": "Yes"
+        },
+        {
+            "input": "2916",
+            "output": "Yes"
+        },
+        {
+            "input": "6400",
+            "output": "Yes"
+        },
+        {
+            "input": "87",
+            "output": "No"
+        },
+        {
+            "input": "9372",
+            "output": "No"
+        },
+        {
+            "input": "7031",
+            "output": "No"
+        },
+        {
+            "input": "7876",
             "output": "No"
         },
         {
@@ -1665,95 +537,791 @@
             "output": "Yes"
         },
         {
-            "input": "5123",
+            "input": "3249",
+            "output": "Yes"
+        },
+        {
+            "input": "4650",
             "output": "No"
         },
         {
-            "input": "6441",
+            "input": "7312",
             "output": "No"
         },
         {
-            "input": "7782",
+            "input": "8183",
             "output": "No"
         },
         {
-            "input": "318",
+            "input": "757",
             "output": "No"
         },
         {
-            "input": "6922",
+            "input": "391",
             "output": "No"
         },
         {
-            "input": "1778",
+            "input": "7356",
             "output": "No"
         },
         {
-            "input": "9722",
+            "input": "9667",
             "output": "No"
         },
         {
-            "input": "9316",
+            "input": "9137",
             "output": "No"
         },
         {
-            "input": "5040",
+            "input": "9124",
             "output": "No"
         },
         {
-            "input": "2506",
+            "input": "3520",
             "output": "No"
         },
         {
-            "input": "2964",
+            "input": "6809",
             "output": "No"
         },
         {
-            "input": "4885",
+            "input": "6579",
             "output": "No"
         },
         {
-            "input": "2699",
+            "input": "2524",
             "output": "No"
         },
         {
-            "input": "914",
+            "input": "2309",
             "output": "No"
         },
         {
-            "input": "1524",
+            "input": "7223",
             "output": "No"
         },
         {
-            "input": "9766",
+            "input": "7976",
             "output": "No"
         },
         {
-            "input": "2664",
+            "input": "6557",
             "output": "No"
         },
         {
-            "input": "6394",
+            "input": "5551",
             "output": "No"
         },
         {
-            "input": "3110",
+            "input": "1063",
             "output": "No"
         },
         {
-            "input": "325",
+            "input": "2809",
+            "output": "Yes"
+        },
+        {
+            "input": "5115",
             "output": "No"
         },
         {
-            "input": "627",
+            "input": "242",
             "output": "No"
         },
         {
-            "input": "1336",
+            "input": "8795",
             "output": "No"
         },
         {
-            "input": "4388",
+            "input": "4761",
+            "output": "Yes"
+        },
+        {
+            "input": "6529",
+            "output": "No"
+        },
+        {
+            "input": "5078",
+            "output": "No"
+        },
+        {
+            "input": "25",
+            "output": "Yes"
+        },
+        {
+            "input": "1061",
+            "output": "No"
+        },
+        {
+            "input": "7396",
+            "output": "Yes"
+        },
+        {
+            "input": "2976",
+            "output": "No"
+        },
+        {
+            "input": "4662",
+            "output": "No"
+        },
+        {
+            "input": "9280",
+            "output": "No"
+        },
+        {
+            "input": "7978",
+            "output": "No"
+        },
+        {
+            "input": "862",
+            "output": "No"
+        },
+        {
+            "input": "4949",
+            "output": "No"
+        },
+        {
+            "input": "4225",
+            "output": "Yes"
+        },
+        {
+            "input": "4182",
+            "output": "No"
+        },
+        {
+            "input": "529",
+            "output": "Yes"
+        },
+        {
+            "input": "5107",
+            "output": "No"
+        },
+        {
+            "input": "5840",
+            "output": "No"
+        },
+        {
+            "input": "5462",
+            "output": "No"
+        },
+        {
+            "input": "5579",
+            "output": "No"
+        },
+        {
+            "input": "1558",
+            "output": "No"
+        },
+        {
+            "input": "2500",
+            "output": "Yes"
+        },
+        {
+            "input": "9822",
+            "output": "No"
+        },
+        {
+            "input": "7348",
+            "output": "No"
+        },
+        {
+            "input": "2929",
+            "output": "No"
+        },
+        {
+            "input": "324",
+            "output": "Yes"
+        },
+        {
+            "input": "9836",
+            "output": "No"
+        },
+        {
+            "input": "8006",
+            "output": "No"
+        },
+        {
+            "input": "2656",
+            "output": "No"
+        },
+        {
+            "input": "1681",
+            "output": "Yes"
+        },
+        {
+            "input": "4170",
+            "output": "No"
+        },
+        {
+            "input": "6226",
+            "output": "No"
+        },
+        {
+            "input": "3460",
+            "output": "No"
+        },
+        {
+            "input": "3066",
+            "output": "No"
+        },
+        {
+            "input": "2960",
+            "output": "No"
+        },
+        {
+            "input": "16",
+            "output": "Yes"
+        },
+        {
+            "input": "7960",
+            "output": "No"
+        },
+        {
+            "input": "7304",
+            "output": "No"
+        },
+        {
+            "input": "2644",
+            "output": "No"
+        },
+        {
+            "input": "3897",
+            "output": "No"
+        },
+        {
+            "input": "5929",
+            "output": "Yes"
+        },
+        {
+            "input": "470",
+            "output": "No"
+        },
+        {
+            "input": "2755",
+            "output": "No"
+        },
+        {
+            "input": "3771",
+            "output": "No"
+        },
+        {
+            "input": "365",
+            "output": "No"
+        },
+        {
+            "input": "2254",
+            "output": "No"
+        },
+        {
+            "input": "2304",
+            "output": "Yes"
+        },
+        {
+            "input": "2364",
+            "output": "No"
+        },
+        {
+            "input": "5625",
+            "output": "Yes"
+        },
+        {
+            "input": "81",
+            "output": "Yes"
+        },
+        {
+            "input": "5756",
+            "output": "No"
+        },
+        {
+            "input": "2564",
+            "output": "No"
+        },
+        {
+            "input": "7357",
+            "output": "No"
+        },
+        {
+            "input": "1600",
+            "output": "Yes"
+        },
+        {
+            "input": "6924",
+            "output": "No"
+        },
+        {
+            "input": "9604",
+            "output": "Yes"
+        },
+        {
+            "input": "4548",
+            "output": "No"
+        },
+        {
+            "input": "3645",
+            "output": "No"
+        },
+        {
+            "input": "2073",
+            "output": "No"
+        },
+        {
+            "input": "9377",
+            "output": "No"
+        },
+        {
+            "input": "7603",
+            "output": "No"
+        },
+        {
+            "input": "441",
+            "output": "Yes"
+        },
+        {
+            "input": "3915",
+            "output": "No"
+        },
+        {
+            "input": "3318",
+            "output": "No"
+        },
+        {
+            "input": "684",
+            "output": "No"
+        },
+        {
+            "input": "1477",
+            "output": "No"
+        },
+        {
+            "input": "961",
+            "output": "Yes"
+        },
+        {
+            "input": "3025",
+            "output": "Yes"
+        },
+        {
+            "input": "7089",
+            "output": "No"
+        },
+        {
+            "input": "1162",
+            "output": "No"
+        },
+        {
+            "input": "3969",
+            "output": "Yes"
+        },
+        {
+            "input": "3757",
+            "output": "No"
+        },
+        {
+            "input": "9517",
+            "output": "No"
+        },
+        {
+            "input": "3837",
+            "output": "No"
+        },
+        {
+            "input": "7744",
+            "output": "Yes"
+        },
+        {
+            "input": "9234",
+            "output": "No"
+        },
+        {
+            "input": "5329",
+            "output": "Yes"
+        },
+        {
+            "input": "9237",
+            "output": "No"
+        },
+        {
+            "input": "4356",
+            "output": "Yes"
+        },
+        {
+            "input": "818",
+            "output": "No"
+        },
+        {
+            "input": "8288",
+            "output": "No"
+        },
+        {
+            "input": "3321",
+            "output": "No"
+        },
+        {
+            "input": "4360",
+            "output": "No"
+        },
+        {
+            "input": "5595",
+            "output": "No"
+        },
+        {
+            "input": "8116",
+            "output": "No"
+        },
+        {
+            "input": "996",
+            "output": "No"
+        },
+        {
+            "input": "2025",
+            "output": "Yes"
+        },
+        {
+            "input": "5129",
+            "output": "No"
+        },
+        {
+            "input": "7818",
+            "output": "No"
+        },
+        {
+            "input": "1869",
+            "output": "No"
+        },
+        {
+            "input": "527",
+            "output": "No"
+        },
+        {
+            "input": "1880",
+            "output": "No"
+        },
+        {
+            "input": "5320",
+            "output": "No"
+        },
+        {
+            "input": "8658",
+            "output": "No"
+        },
+        {
+            "input": "2209",
+            "output": "Yes"
+        },
+        {
+            "input": "6553",
+            "output": "No"
+        },
+        {
+            "input": "3359",
+            "output": "No"
+        },
+        {
+            "input": "2663",
+            "output": "No"
+        },
+        {
+            "input": "6562",
+            "output": "No"
+        },
+        {
+            "input": "2898",
+            "output": "No"
+        },
+        {
+            "input": "5394",
+            "output": "No"
+        },
+        {
+            "input": "1613",
+            "output": "No"
+        },
+        {
+            "input": "5776",
+            "output": "Yes"
+        },
+        {
+            "input": "352",
+            "output": "No"
+        },
+        {
+            "input": "5692",
+            "output": "No"
+        },
+        {
+            "input": "1510",
+            "output": "No"
+        },
+        {
+            "input": "6886",
+            "output": "No"
+        },
+        {
+            "input": "9718",
+            "output": "No"
+        },
+        {
+            "input": "4621",
+            "output": "No"
+        },
+        {
+            "input": "6201",
+            "output": "No"
+        },
+        {
+            "input": "7344",
+            "output": "No"
+        },
+        {
+            "input": "1707",
+            "output": "No"
+        },
+        {
+            "input": "9808",
+            "output": "No"
+        },
+        {
+            "input": "208",
+            "output": "No"
+        },
+        {
+            "input": "4335",
+            "output": "No"
+        },
+        {
+            "input": "9026",
+            "output": "No"
+        },
+        {
+            "input": "9",
+            "output": "Yes"
+        },
+        {
+            "input": "6702",
+            "output": "No"
+        },
+        {
+            "input": "570",
+            "output": "No"
+        },
+        {
+            "input": "4052",
+            "output": "No"
+        },
+        {
+            "input": "7079",
+            "output": "No"
+        },
+        {
+            "input": "3942",
+            "output": "No"
+        },
+        {
+            "input": "8653",
+            "output": "No"
+        },
+        {
+            "input": "4138",
+            "output": "No"
+        },
+        {
+            "input": "3716",
+            "output": "No"
+        },
+        {
+            "input": "8244",
+            "output": "No"
+        },
+        {
+            "input": "4096",
+            "output": "Yes"
+        },
+        {
+            "input": "1",
+            "output": "Yes"
+        },
+        {
+            "input": "4678",
+            "output": "No"
+        },
+        {
+            "input": "1716",
+            "output": "No"
+        },
+        {
+            "input": "2797",
+            "output": "No"
+        },
+        {
+            "input": "7981",
+            "output": "No"
+        },
+        {
+            "input": "169",
+            "output": "Yes"
+        },
+        {
+            "input": "476",
+            "output": "No"
+        },
+        {
+            "input": "3776",
+            "output": "No"
+        },
+        {
+            "input": "9202",
+            "output": "No"
+        },
+        {
+            "input": "791",
+            "output": "No"
+        },
+        {
+            "input": "2370",
+            "output": "No"
+        },
+        {
+            "input": "245",
+            "output": "No"
+        },
+        {
+            "input": "9143",
+            "output": "No"
+        },
+        {
+            "input": "304",
+            "output": "No"
+        },
+        {
+            "input": "4921",
+            "output": "No"
+        },
+        {
+            "input": "4900",
+            "output": "Yes"
+        },
+        {
+            "input": "4674",
+            "output": "No"
+        },
+        {
+            "input": "7861",
+            "output": "No"
+        },
+        {
+            "input": "7842",
+            "output": "No"
+        },
+        {
+            "input": "572",
+            "output": "No"
+        },
+        {
+            "input": "9015",
+            "output": "No"
+        },
+        {
+            "input": "6649",
+            "output": "No"
+        },
+        {
+            "input": "6016",
+            "output": "No"
+        },
+        {
+            "input": "7179",
+            "output": "No"
+        },
+        {
+            "input": "8580",
+            "output": "No"
+        },
+        {
+            "input": "5041",
+            "output": "Yes"
+        },
+        {
+            "input": "1630",
+            "output": "No"
+        },
+        {
+            "input": "8329",
+            "output": "No"
+        },
+        {
+            "input": "3721",
+            "output": "Yes"
+        },
+        {
+            "input": "3807",
+            "output": "No"
+        },
+        {
+            "input": "7831",
+            "output": "No"
+        },
+        {
+            "input": "2349",
+            "output": "No"
+        },
+        {
+            "input": "5360",
+            "output": "No"
+        },
+        {
+            "input": "8408",
+            "output": "No"
+        },
+        {
+            "input": "4930",
+            "output": "No"
+        },
+        {
+            "input": "536",
+            "output": "No"
+        },
+        {
+            "input": "9065",
+            "output": "No"
+        },
+        {
+            "input": "8770",
+            "output": "No"
+        },
+        {
+            "input": "8836",
+            "output": "Yes"
+        },
+        {
+            "input": "4171",
+            "output": "No"
+        },
+        {
+            "input": "196",
+            "output": "Yes"
+        },
+        {
+            "input": "4177",
+            "output": "No"
+        },
+        {
+            "input": "7391",
+            "output": "No"
+        },
+        {
+            "input": "4891",
+            "output": "No"
+        },
+        {
+            "input": "2749",
+            "output": "No"
+        },
+        {
+            "input": "4237",
+            "output": "No"
+        },
+        {
+            "input": "7756",
             "output": "No"
         },
         {
@@ -1761,227 +1329,175 @@
             "output": "No"
         },
         {
-            "input": "8823",
+            "input": "7921",
+            "output": "Yes"
+        },
+        {
+            "input": "2866",
             "output": "No"
         },
         {
-            "input": "824",
+            "input": "4126",
             "output": "No"
         },
         {
-            "input": "8072",
+            "input": "290",
             "output": "No"
         },
         {
-            "input": "1505",
+            "input": "7351",
             "output": "No"
         },
         {
-            "input": "1585",
+            "input": "4638",
             "output": "No"
         },
         {
-            "input": "3521",
+            "input": "3130",
             "output": "No"
         },
         {
-            "input": "1259",
+            "input": "875",
             "output": "No"
         },
         {
-            "input": "3673",
+            "input": "6866",
             "output": "No"
         },
         {
-            "input": "8523",
+            "input": "3490",
             "output": "No"
         },
         {
-            "input": "9023",
+            "input": "6898",
             "output": "No"
         },
         {
-            "input": "5814",
+            "input": "306",
             "output": "No"
         },
         {
-            "input": "5070",
+            "input": "1398",
             "output": "No"
         },
         {
-            "input": "505",
+            "input": "9275",
             "output": "No"
         },
         {
-            "input": "7135",
+            "input": "4113",
             "output": "No"
         },
         {
-            "input": "3602",
+            "input": "6588",
             "output": "No"
         },
         {
-            "input": "4912",
+            "input": "3303",
             "output": "No"
         },
         {
-            "input": "5440",
+            "input": "4563",
             "output": "No"
         },
         {
-            "input": "879",
+            "input": "466",
             "output": "No"
         },
         {
-            "input": "85",
+            "input": "7006",
             "output": "No"
         },
         {
-            "input": "7639",
+            "input": "9977",
             "output": "No"
         },
         {
-            "input": "6090",
+            "input": "3394",
             "output": "No"
         },
         {
-            "input": "2873",
+            "input": "1193",
             "output": "No"
         },
         {
-            "input": "1533",
+            "input": "4097",
             "output": "No"
         },
         {
-            "input": "1108",
+            "input": "8366",
             "output": "No"
         },
         {
-            "input": "9149",
+            "input": "7169",
             "output": "No"
         },
         {
-            "input": "9645",
+            "input": "3610",
             "output": "No"
         },
         {
-            "input": "2572",
+            "input": "2264",
             "output": "No"
         },
         {
-            "input": "963",
+            "input": "4060",
             "output": "No"
         },
         {
-            "input": "5872",
+            "input": "3556",
             "output": "No"
         },
         {
-            "input": "7178",
+            "input": "8649",
+            "output": "Yes"
+        },
+        {
+            "input": "151",
             "output": "No"
         },
         {
-            "input": "2493",
+            "input": "7708",
             "output": "No"
         },
         {
-            "input": "9101",
+            "input": "1460",
             "output": "No"
         },
         {
-            "input": "8344",
+            "input": "2179",
             "output": "No"
         },
         {
-            "input": "8405",
+            "input": "1563",
             "output": "No"
         },
         {
-            "input": "8199",
+            "input": "259",
             "output": "No"
         },
         {
-            "input": "7530",
+            "input": "1016",
             "output": "No"
         },
         {
-            "input": "2340",
+            "input": "9181",
             "output": "No"
         },
         {
-            "input": "3672",
+            "input": "6423",
             "output": "No"
         },
         {
-            "input": "4283",
+            "input": "2332",
             "output": "No"
         },
         {
-            "input": "2299",
+            "input": "8800",
             "output": "No"
         },
         {
-            "input": "467",
-            "output": "No"
-        },
-        {
-            "input": "3596",
-            "output": "No"
-        },
-        {
-            "input": "1338",
-            "output": "No"
-        },
-        {
-            "input": "5470",
-            "output": "No"
-        },
-        {
-            "input": "209",
-            "output": "No"
-        },
-        {
-            "input": "8912",
-            "output": "No"
-        },
-        {
-            "input": "1267",
-            "output": "No"
-        },
-        {
-            "input": "9240",
-            "output": "No"
-        },
-        {
-            "input": "5283",
-            "output": "No"
-        },
-        {
-            "input": "9111",
-            "output": "No"
-        },
-        {
-            "input": "9434",
-            "output": "No"
-        },
-        {
-            "input": "4661",
-            "output": "No"
-        },
-        {
-            "input": "4479",
-            "output": "No"
-        },
-        {
-            "input": "595",
-            "output": "No"
-        },
-        {
-            "input": "7516",
-            "output": "No"
-        },
-        {
-            "input": "6224",
+            "input": "3244",
             "output": "No"
         },
         {
@@ -1989,35 +1505,519 @@
             "output": "No"
         },
         {
-            "input": "4243",
+            "input": "9445",
             "output": "No"
         },
         {
-            "input": "5185",
+            "input": "3022",
             "output": "No"
         },
         {
-            "input": "4519",
+            "input": "4964",
             "output": "No"
         },
         {
-            "input": "2293",
+            "input": "4939",
             "output": "No"
         },
         {
-            "input": "8301",
+            "input": "4090",
             "output": "No"
         },
         {
-            "input": "8106",
+            "input": "4410",
             "output": "No"
         },
         {
-            "input": "650",
+            "input": "729",
+            "output": "Yes"
+        },
+        {
+            "input": "2481",
             "output": "No"
         },
         {
-            "input": "9760",
+            "input": "6069",
+            "output": "No"
+        },
+        {
+            "input": "1101",
+            "output": "No"
+        },
+        {
+            "input": "9845",
+            "output": "No"
+        },
+        {
+            "input": "3471",
+            "output": "No"
+        },
+        {
+            "input": "1746",
+            "output": "No"
+        },
+        {
+            "input": "3796",
+            "output": "No"
+        },
+        {
+            "input": "2829",
+            "output": "No"
+        },
+        {
+            "input": "8650",
+            "output": "No"
+        },
+        {
+            "input": "5566",
+            "output": "No"
+        },
+        {
+            "input": "1478",
+            "output": "No"
+        },
+        {
+            "input": "6349",
+            "output": "No"
+        },
+        {
+            "input": "6340",
+            "output": "No"
+        },
+        {
+            "input": "4743",
+            "output": "No"
+        },
+        {
+            "input": "2921",
+            "output": "No"
+        },
+        {
+            "input": "5667",
+            "output": "No"
+        },
+        {
+            "input": "3001",
+            "output": "No"
+        },
+        {
+            "input": "9262",
+            "output": "No"
+        },
+        {
+            "input": "4402",
+            "output": "No"
+        },
+        {
+            "input": "6425",
+            "output": "No"
+        },
+        {
+            "input": "3116",
+            "output": "No"
+        },
+        {
+            "input": "5608",
+            "output": "No"
+        },
+        {
+            "input": "7542",
+            "output": "No"
+        },
+        {
+            "input": "44",
+            "output": "No"
+        },
+        {
+            "input": "4066",
+            "output": "No"
+        },
+        {
+            "input": "361",
+            "output": "Yes"
+        },
+        {
+            "input": "9356",
+            "output": "No"
+        },
+        {
+            "input": "8531",
+            "output": "No"
+        },
+        {
+            "input": "7724",
+            "output": "No"
+        },
+        {
+            "input": "3860",
+            "output": "No"
+        },
+        {
+            "input": "2600",
+            "output": "No"
+        },
+        {
+            "input": "9105",
+            "output": "No"
+        },
+        {
+            "input": "6806",
+            "output": "No"
+        },
+        {
+            "input": "1631",
+            "output": "No"
+        },
+        {
+            "input": "1271",
+            "output": "No"
+        },
+        {
+            "input": "5977",
+            "output": "No"
+        },
+        {
+            "input": "1102",
+            "output": "No"
+        },
+        {
+            "input": "5749",
+            "output": "No"
+        },
+        {
+            "input": "211",
+            "output": "No"
+        },
+        {
+            "input": "9566",
+            "output": "No"
+        },
+        {
+            "input": "1607",
+            "output": "No"
+        },
+        {
+            "input": "9108",
+            "output": "No"
+        },
+        {
+            "input": "381",
+            "output": "No"
+        },
+        {
+            "input": "3032",
+            "output": "No"
+        },
+        {
+            "input": "794",
+            "output": "No"
+        },
+        {
+            "input": "7733",
+            "output": "No"
+        },
+        {
+            "input": "2022",
+            "output": "No"
+        },
+        {
+            "input": "4272",
+            "output": "No"
+        },
+        {
+            "input": "2259",
+            "output": "No"
+        },
+        {
+            "input": "4698",
+            "output": "No"
+        },
+        {
+            "input": "3444",
+            "output": "No"
+        },
+        {
+            "input": "9320",
+            "output": "No"
+        },
+        {
+            "input": "825",
+            "output": "No"
+        },
+        {
+            "input": "1070",
+            "output": "No"
+        },
+        {
+            "input": "6990",
+            "output": "No"
+        },
+        {
+            "input": "5241",
+            "output": "No"
+        },
+        {
+            "input": "497",
+            "output": "No"
+        },
+        {
+            "input": "1569",
+            "output": "No"
+        },
+        {
+            "input": "162",
+            "output": "No"
+        },
+        {
+            "input": "6105",
+            "output": "No"
+        },
+        {
+            "input": "3204",
+            "output": "No"
+        },
+        {
+            "input": "5284",
+            "output": "No"
+        },
+        {
+            "input": "9792",
+            "output": "No"
+        },
+        {
+            "input": "4026",
+            "output": "No"
+        },
+        {
+            "input": "4534",
+            "output": "No"
+        },
+        {
+            "input": "7771",
+            "output": "No"
+        },
+        {
+            "input": "6842",
+            "output": "No"
+        },
+        {
+            "input": "5372",
+            "output": "No"
+        },
+        {
+            "input": "33",
+            "output": "No"
+        },
+        {
+            "input": "3859",
+            "output": "No"
+        },
+        {
+            "input": "8834",
+            "output": "No"
+        },
+        {
+            "input": "8848",
+            "output": "No"
+        },
+        {
+            "input": "7682",
+            "output": "No"
+        },
+        {
+            "input": "1708",
+            "output": "No"
+        },
+        {
+            "input": "5389",
+            "output": "No"
+        },
+        {
+            "input": "7281",
+            "output": "No"
+        },
+        {
+            "input": "3786",
+            "output": "No"
+        },
+        {
+            "input": "2311",
+            "output": "No"
+        },
+        {
+            "input": "3850",
+            "output": "No"
+        },
+        {
+            "input": "795",
+            "output": "No"
+        },
+        {
+            "input": "4405",
+            "output": "No"
+        },
+        {
+            "input": "3297",
+            "output": "No"
+        },
+        {
+            "input": "8355",
+            "output": "No"
+        },
+        {
+            "input": "3215",
+            "output": "No"
+        },
+        {
+            "input": "100",
+            "output": "Yes"
+        },
+        {
+            "input": "516",
+            "output": "No"
+        },
+        {
+            "input": "6890",
+            "output": "No"
+        },
+        {
+            "input": "5060",
+            "output": "No"
+        },
+        {
+            "input": "614",
+            "output": "No"
+        },
+        {
+            "input": "3861",
+            "output": "No"
+        },
+        {
+            "input": "1372",
+            "output": "No"
+        },
+        {
+            "input": "8928",
+            "output": "No"
+        },
+        {
+            "input": "3790",
+            "output": "No"
+        },
+        {
+            "input": "5699",
+            "output": "No"
+        },
+        {
+            "input": "2430",
+            "output": "No"
+        },
+        {
+            "input": "9134",
+            "output": "No"
+        },
+        {
+            "input": "9769",
+            "output": "No"
+        },
+        {
+            "input": "7298",
+            "output": "No"
+        },
+        {
+            "input": "1459",
+            "output": "No"
+        },
+        {
+            "input": "4415",
+            "output": "No"
+        },
+        {
+            "input": "108",
+            "output": "No"
+        },
+        {
+            "input": "5254",
+            "output": "No"
+        },
+        {
+            "input": "9980",
+            "output": "No"
+        },
+        {
+            "input": "8980",
+            "output": "No"
+        },
+        {
+            "input": "5798",
+            "output": "No"
+        },
+        {
+            "input": "9669",
+            "output": "No"
+        },
+        {
+            "input": "1432",
+            "output": "No"
+        },
+        {
+            "input": "6746",
+            "output": "No"
+        },
+        {
+            "input": "8111",
+            "output": "No"
+        },
+        {
+            "input": "5180",
+            "output": "No"
+        },
+        {
+            "input": "428",
+            "output": "No"
+        },
+        {
+            "input": "6847",
+            "output": "No"
+        },
+        {
+            "input": "5530",
+            "output": "No"
+        },
+        {
+            "input": "7577",
+            "output": "No"
+        },
+        {
+            "input": "8628",
+            "output": "No"
+        },
+        {
+            "input": "3366",
+            "output": "No"
+        },
+        {
+            "input": "4157",
+            "output": "No"
+        },
+        {
+            "input": "4477",
+            "output": "No"
+        },
+        {
+            "input": "7923",
+            "output": "No"
+        },
+        {
+            "input": "7619",
+            "output": "No"
+        },
+        {
+            "input": "9163",
+            "output": "No"
+        },
+        {
+            "input": "2793",
             "output": "No"
         }
     ]

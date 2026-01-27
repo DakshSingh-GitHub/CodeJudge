@@ -1,6 +1,6 @@
-if (-not (Test-Path -Path "./judge_backend_s" -PathType Container)) {
-    Write-Host "Directory ./judge_backend_s not found. Expanding archive..."
-    Expand-Archive -Path "judge-backend_s.zip" -DestinationPath "./judge_backend_s"
+if (-not (Test-Path -Path "./judge-backend-fastapi" -PathType Container)) {
+    Write-Host "Directory ./judge-backend-fastapi not found. Expanding archive..."
+    Expand-Archive -Path "judge-backend-fastapi.zip" -DestinationPath "./judge-backend-fastapi"
 }
-cd judge_backend_s/judge-backend
+cd judge-backend-fastapi/judge-backend
 python app.py

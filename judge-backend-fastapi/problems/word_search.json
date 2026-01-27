@@ -1,0 +1,4021 @@
+{
+    "id": "word_search",
+    "title": "Word Search",
+    "description": "Given an m x n grid of characters board and a string word, return 'Yes' if word exists in the grid, or 'No' otherwise. The word can be constructed from letters of sequentially adjacent cells, where adjacent cells are horizontally or vertically neighboring. The same letter cell may not be used more than once.",
+    "input_format": "Rows and columns count (m n) on the first line, followed by the grid characters line by line, and the target word on the last line.",
+    "output_format": "'Yes' or 'No'.",
+    "constraints": {
+        "m, n": "1 <= m, n <= 6",
+        "word_len": "1 <= length <= 15"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "3 4\nA B C E\nS F C S\nA D E E\nABCCED",
+            "output": "Yes"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "3 3\nB A C\nA B C\nC A C\nBBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nA A A\nC C A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB C B\nA B A\nCABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA B B\nA B C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB A A\nA C C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nB C A\nC B A\nABAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nB B B\nC C B\nCABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nA C C\nA A B\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nA A B\nB C A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nB A A\nB A C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB C C\nC C A\nBCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nB A B\nC A C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC A A\nB A A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC C A\nC B C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB A A\nC A B\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nA B C\nA A B\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B A\nB A C\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC C B\nB B A\nBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA A A\nB C B\nABBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nC A A\nC A B\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA A A\nB A B\nABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nA A C\nA B A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nB C C\nA A A\nCABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nA C C\nA A A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nC A A\nB B B\nABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nC B C\nA A A\nABAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nA A A\nC A A\nCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B C\nC C B\nBCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nA B A\nA B A\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB B A\nC B A\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nB B C\nA B A\nAABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nB B A\nB B A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA C A\nA B B\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB A C\nA A A\nACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nC A A\nB A A\nAACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB C B\nB A A\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA B B\nB B C\nACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA B B\nB B A\nBACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nC A A\nA B C\nACBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nC C B\nA C C\nAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA B C\nA A A\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB A B\nC A B\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nC B A\nB A A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB A C\nC A C\nBBCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB C C\nC B C\nBCAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nB B A\nB C C\nBACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nB B C\nB B A\nAABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nC C C\nA C A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB A C\nB B A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA A C\nA A B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB B B\nA A C\nBBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nB A A\nA A C\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nA C C\nA C C\nAABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nC C C\nB A B\nBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nB B C\nA B B\nCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nA A B\nB C B\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB A C\nA A A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC C C\nB B B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA C C\nB B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA C A\nA A C\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB B C\nC A C\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nC B A\nB A C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nC C A\nC B C\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB A B\nA C B\nBACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA A B\nA C B\nABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nA C B\nB C B\nAAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nA B A\nC B B\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nA B B\nB B B\nCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B C\nB C B\nCCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nC B B\nC B B\nBACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nB C B\nB B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC B A\nA B B\nBCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nC A A\nB B A\nCBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB C B\nA B A\nCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nC A C\nA C C\nAAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB A C\nC C C\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB C B\nC C C\nBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA C B\nC C A\nBCAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nC B C\nC C B\nAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nA A B\nB C C\nBCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA C A\nC A C\nCCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nA B B\nC A B\nBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nB B C\nC B A\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB C A\nC B C\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA B C\nC C A\nCBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nC A A\nA C C\nACBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nC C A\nA A C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nC B C\nB C C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nB A A\nC A A\nCABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nB B C\nC A B\nBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA A B\nC A B\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB C B\nB C A\nBACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nA C A\nA B A\nBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC B A\nA A A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nC A A\nA A C\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nB B B\nC B A\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC A A\nB A B\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nA A A\nA C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nB A C\nB C A\nABBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nC A A\nB B A\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB C B\nA A A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA A A\nC A B\nABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA A B\nB B C\nCCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nA B C\nB B C\nBCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA B C\nA A B\nAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB B A\nB C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nB B B\nA C B\nBACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nB C C\nA B C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nC A A\nC B C\nCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA B B\nB C A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB C C\nC B C\nCBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nA C A\nC C C\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB A C\nC B C\nBABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nB C A\nA C C\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nA B C\nC B A\nAABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA C A\nA B A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nB B A\nB A B\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nA B C\nB B B\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nB C B\nB B A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA C A\nA B B\nBCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nC C A\nA A B\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nB B A\nC B A\nCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nC A A\nA C C\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nC B A\nA A A\nCBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nC B B\nB A C\nCBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC B A\nC C B\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nA A B\nA B B\nBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nA A A\nB A C\nABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nA A C\nA B A\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA C C\nA B B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA C A\nA B B\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nA B C\nB A A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC B A\nA A A\nABCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA C C\nA B B\nBCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA C A\nA A A\nAABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC B A\nB C A\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB B C\nA B B\nCBAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nB A B\nB A B\nBABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nC C B\nB B B\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC C B\nA B B\nAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nC A A\nC B B\nBBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nB A C\nC B A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nC C B\nB A A\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nB C A\nA C A\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA A B\nC B B\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA A C\nC B C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nC C B\nC A B\nAAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nB C C\nC A C\nBACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB A C\nB A B\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB B B\nC A A\nAAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB B B\nB A A\nACBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nC B B\nA C B\nBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB B A\nB C B\nBBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nA C A\nA C B\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB B A\nC C C\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nA B C\nA B B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nA B A\nA B C\nACCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nC A B\nB B A\nBBCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA B B\nC B B\nCACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nA B C\nA B A\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB C B\nB C A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nB B B\nB A A\nAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nA B A\nB A C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nC B B\nB A B\nCCAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA B A\nC A C\nCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nC B B\nB A A\nBBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB B B\nA A A\nBCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nB A A\nA B A\nCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nB C A\nC A C\nAABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA B A\nA B B\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC B C\nA A C\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA C B\nC B B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB A C\nC A B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA B C\nA C B\nCABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA B B\nC C A\nCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nB C C\nA B B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nB A A\nC A C\nABAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA C B\nB C A\nABBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nB C B\nB A C\nABAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nC C C\nA C B\nBAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B A\nB B B\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nC B C\nA A B\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB B C\nC A C\nAAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA A B\nB B B\nBCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nC B B\nA A A\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nB C A\nC C A\nAABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nA C B\nC C B\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nC A B\nA C B\nBCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB C A\nC B A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nA C C\nB C B\nBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nA B B\nB B C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nC B C\nA C A\nCBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nC C C\nA C C\nABAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nB C A\nB A A\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nC B B\nB A A\nAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nC B B\nC B B\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC B A\nA C A\nCBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nB B C\nC B A\nAACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nB A C\nB C B\nBAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nB A A\nC C C\nABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nC A C\nB C C\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nA A C\nB A A\nCBAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nC A C\nC B B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB A B\nC C B\nABBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nB B B\nA A A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB B A\nC A C\nCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nB A C\nB A B\nACBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB B B\nA A B\nCBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC A A\nB A B\nCAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB C B\nA A A\nCCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nB C A\nC C A\nBCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nC C C\nB B C\nACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nC B A\nB A C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC C C\nB C A\nAAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nB A B\nB B C\nACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nA C B\nB C B\nAABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB A A\nA A B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB B C\nC A C\nCCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nB C B\nC C C\nABBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB A B\nC A C\nBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA A B\nA B C\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nC A A\nA A A\nCBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nC B C\nA C A\nABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nC B C\nA A A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA B A\nB B C\nBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nC C C\nA A B\nABBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB B B\nC B B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC B B\nB B C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nC C C\nB C A\nACBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA C B\nB B A\nCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nA C C\nB B C\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nA B B\nC B C\nCBAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nA B B\nB A B\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nB B A\nC B A\nBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA C B\nA A C\nBCBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nB C B\nA A B\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB B C\nA C A\nABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nA C C\nC C A\nACBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B A\nB C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nB B C\nA C A\nBCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nC A C\nA B A\nBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nB B C\nB C C\nCBAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nB B A\nC B B\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA B C\nB A B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nC C B\nA A A\nBBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nC B A\nC C A\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nC B B\nA B B\nBCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA B B\nC A A\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nB A B\nB A B\nAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB C C\nC C C\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nC A C\nA B C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nA C C\nC B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB B C\nB A A\nAACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nC A A\nB C C\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nA A C\nC C C\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nA B A\nB C A\nABBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nB A C\nB C C\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nB A A\nC B A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC B A\nC B B\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA C C\nA B C\nBAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA A C\nA A C\nACBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nB C B\nB A B\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB A C\nA B A\nACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB B C\nB A C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB B B\nB A B\nBAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB A B\nA A A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nA B A\nC B A\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nA B C\nA B A\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC A C\nB A C\nBCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nB C B\nC C B\nCCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nA A C\nB C C\nCCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nA B C\nB C B\nBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nC B C\nC B C\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB C A\nB A A\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC C B\nC A C\nBAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nC C B\nC B C\nBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nB A C\nB B B\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nC C C\nB B B\nCBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nB C C\nA C C\nABAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nA B A\nC B C\nCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nB C C\nA B C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB B B\nB A A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nA B A\nB A C\nCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nB A B\nA C B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA B A\nC B A\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nA C A\nB B B\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC C C\nB A A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA A C\nA C C\nCAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA C C\nA B A\nBAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC C B\nC C B\nBBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC C C\nC C A\nAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nC C B\nB B C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nA A B\nC B C\nBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC A C\nB A C\nABBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nC C C\nB A C\nAAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nC B A\nA A A\nBBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nC C A\nC A B\nCAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nC C A\nB C A\nACBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B B\nB C A\nACCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nA B B\nB A B\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nB C C\nA B B\nACBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC A C\nA B C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nA B A\nA C A\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nB A A\nC C A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nA A B\nB B B\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA A C\nC B A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA B B\nA B B\nCBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC B B\nB C C\nBAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nB C A\nA C C\nBABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nB C C\nA C C\nACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nC B C\nC C A\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nA C C\nC A C\nCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nC C A\nA C C\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA C A\nC B B\nBABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nB C B\nC C B\nBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC C A\nB A B\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB A A\nB A C\nAAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nC A A\nB C A\nAAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nA B C\nC A A\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC A B\nA B B\nBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC C A\nA C A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA C B\nB A A\nCCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA A B\nC A A\nABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nB C B\nC C B\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA A C\nA B B\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nB C C\nC C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB A B\nA A C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nC C B\nB B C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nB C C\nC A B\nBBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nC A C\nA A A\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nB B B\nB A B\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC B B\nA B A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA C B\nB A C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nA B A\nC C B\nABBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nB A C\nC C A\nCABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB B C\nA C C\nCCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nA C B\nA C C\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB A B\nA C C\nCCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nA C B\nB B C\nAAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB A B\nB A A\nABAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nB B C\nB B C\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nC C A\nB C B\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nC A C\nB B C\nBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC C A\nA B B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nB A C\nC C B\nCABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nC A C\nB B B\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nA C A\nA A A\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nA C C\nA C A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nC A C\nC A C\nACBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nB B A\nC A C\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nB B A\nC B A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA A B\nA B B\nAAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA C A\nA C B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB C A\nC B C\nACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nA C A\nB A A\nBAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nA B B\nC A B\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA A A\nC A A\nCCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA C C\nC B B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nC B C\nB A C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB C A\nC A A\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nC C B\nC B B\nCCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB A B\nA B C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB C C\nB A C\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nB C A\nC B C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nB A C\nC B B\nCABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB A C\nB C B\nCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB C C\nC B A\nBBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB A C\nB C B\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nB B C\nC A C\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nC C B\nA A C\nBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nC A C\nB B B\nBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA C B\nB C A\nBCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA C C\nC A B\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nA A C\nB B B\nABBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC B A\nA B C\nAAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB C B\nC A A\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC C C\nA B C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB C B\nB C B\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nA C C\nA C C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nA B B\nC C A\nBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC C C\nC B C\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nC A A\nC A C\nCACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nA A C\nB C C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB C C\nA C A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA B A\nB B C\nCBAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nA B B\nA C B\nCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB C C\nB C A\nBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA A C\nA A A\nBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nA C A\nC C A\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB B C\nA C A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC C B\nA A A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nA C B\nA A A\nABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nB A C\nB C A\nAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nB A C\nA B B\nABCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC A B\nA A A\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nB A C\nC B C\nCBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nB B B\nB A C\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nB B A\nB C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA B C\nA B A\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC C B\nA A B\nAABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nA B A\nA C C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nA C B\nB A A\nCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nB B A\nC B B\nAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB B A\nA A C\nBACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nC A A\nA B B\nCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nA B B\nB B C\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nB B B\nC B B\nCBAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nB C C\nA C A\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC B B\nC A B\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nC C B\nC A B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nA C A\nB A B\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nB B A\nC B C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC B A\nB C B\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA C B\nA C C\nACBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB C A\nB A B\nCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC A A\nC B A\nACCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nB C B\nC A C\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nB C B\nC B B\nBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB B C\nA A C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC B C\nB B B\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nC A C\nA B A\nCCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC A B\nC C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB C B\nC B A\nBABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB C A\nC A B\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC B A\nC A C\nABAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC C A\nB A C\nBAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nB A B\nA B C\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA A C\nB A B\nAAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC C A\nC A A\nCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB B C\nC A B\nACCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nA C A\nC A A\nBCAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nC A A\nA A A\nBAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC A A\nA A A\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC A C\nA B A\nCBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B C\nB A C\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nB C B\nB B A\nCBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nA C C\nC A A\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC B B\nA C C\nBABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA C C\nA A C\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nC A A\nC B A\nCBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nC B A\nA A A\nABBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nC B B\nC B C\nCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA A C\nC A C\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nB B A\nB B C\nBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nC B A\nA A C\nBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA A B\nC A B\nACCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nC A C\nA C C\nCBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA C A\nB B B\nABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nA B C\nB A B\nBCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC C A\nC C C\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nC A B\nC A B\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nB A A\nC A A\nCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC B C\nB B C\nBAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nC C B\nC A B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nB B C\nA A A\nAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nC A C\nC B B\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nA B C\nA A C\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA C C\nC A C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nC B B\nA C B\nBABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nC C C\nC C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nC C B\nB A C\nCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nB C B\nA A B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA C B\nB B A\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nB C C\nC A C\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nC C C\nB A C\nAAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nC C B\nB C B\nCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nB A B\nA A A\nCCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nB B C\nC C A\nAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nA A B\nA A A\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA B B\nA A A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nC A B\nA B B\nBABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB B B\nB C B\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nA B A\nA A C\nCBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nB B C\nB B B\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nC A C\nC C A\nCCCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC A B\nB B C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nB B B\nA C B\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nB B A\nB B C\nBCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nC B A\nC C A\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nB A C\nC A C\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC B A\nC A B\nBCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nB C B\nB A A\nCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nC A B\nB A B\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB B C\nC B C\nBACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nB B C\nC A C\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA C C\nB A B\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nB A B\nB B A\nACAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nC B B\nC A A\nACBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nC C B\nA B A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC B B\nA B B\nBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nA B C\nB A B\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA C B\nA A A\nCBAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nC B C\nA C B\nBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nA C B\nC B A\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC A A\nC C C\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nC C A\nB B C\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nB C C\nA A C\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA B C\nC A A\nCACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB C B\nC C C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nC C B\nB A B\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA C C\nA A A\nACCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nA B B\nA B B\nCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nA A C\nB A C\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nC A C\nA C C\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA A C\nA C B\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB C C\nA C C\nAACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC A B\nB C A\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB B B\nC C C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA B B\nA C C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nC A C\nC B C\nBABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nB B B\nC B A\nABBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC C C\nB A B\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC B B\nB A C\nAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB B C\nC C C\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB A C\nA C B\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nC B A\nC C C\nABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nC C A\nC A B\nBABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nB C B\nC A C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nC C C\nC B A\nCBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nC A C\nC C A\nACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nA B B\nB A C\nCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nC A C\nA A C\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nB C C\nB B B\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA B C\nB C C\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA C C\nC C A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA A B\nC B C\nCCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nA A B\nA A A\nBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA C B\nC B C\nBACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA A B\nB B A\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC C C\nB C C\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nB C B\nA B A\nABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nC B B\nA C C\nBAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nB B C\nC B B\nCABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nC A A\nA B C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nC C C\nB A C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nB C C\nB A A\nABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nB A C\nB B C\nCBBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nA B C\nA C A\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA C C\nB B A\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB A B\nC C C\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC C A\nC C B\nBCAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nB A C\nB A B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC C C\nC C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB A C\nA B A\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nC B C\nA B A\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB C A\nC A B\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC A C\nC A C\nBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nA C C\nC C A\nABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nA B C\nA B B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB A A\nA C C\nABAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nC A A\nC B B\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nC A A\nB B B\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nB B A\nB A A\nACCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nC A C\nA C A\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB C C\nA C A\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nC C A\nB C C\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nA C C\nC C A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nC B B\nC B A\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nC C A\nB A C\nABCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nB B C\nC C A\nAACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA C A\nB C C\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nC B C\nC C B\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nB C B\nB C B\nBABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nC A A\nC B A\nCBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nA B A\nB C B\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nC C C\nA C A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB A A\nA A B\nBCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC C B\nC C A\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nC B C\nA C C\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nC C C\nB A A\nCABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nC B B\nA A C\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB A B\nA C A\nCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nC C A\nA C B\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB C A\nA B B\nBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA B A\nC C A\nCBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nB B A\nA B B\nBBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nB C B\nA B B\nBABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nB B B\nA B A\nBCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nC B B\nB B C\nAAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nA B A\nA C B\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nA B B\nB A B\nACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nB B A\nB B A\nCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nA C C\nB C A\nCCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nB C A\nA C B\nCBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nA B A\nA B B\nBACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB A C\nC A C\nAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nC C B\nC A B\nBBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB C A\nC A C\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC C A\nB C C\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA B A\nC B A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB B B\nC A B\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB A C\nA A C\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA A B\nC A C\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nB B A\nC A A\nCABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nC C A\nB C A\nBBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nC A A\nC C A\nCACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nB C C\nB B A\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA A B\nB C C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB C C\nC C C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nA A A\nC B B\nBCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nA C C\nA C C\nCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA B B\nB B A\nBCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nB B C\nB B A\nBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nA B C\nB A B\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nC B C\nA B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nA A B\nA B B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nC B C\nA C A\nBACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nB A A\nC C A\nAAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB B B\nB C B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC C A\nB A C\nACAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA B B\nB A B\nABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nC A C\nB C C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC C C\nA A A\nCCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nB B A\nB B C\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB C C\nB B A\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA B B\nC B A\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB C B\nC A C\nBBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC C B\nA C C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nC C A\nC B A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nA B C\nB B A\nABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nB C B\nB C A\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nA C C\nB A C\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nC A B\nA C B\nBBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nB B A\nB C A\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA B A\nB B C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nB C A\nC B A\nBACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nB C B\nB B B\nCBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nC C B\nA A A\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nA B A\nC B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB A B\nC A C\nCBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nA C A\nA A C\nAACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nB A A\nC B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB B A\nC C A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB B A\nB C C\nCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nB A A\nB A C\nBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nC A A\nB C A\nABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nB C A\nB C B\nBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC A B\nB A B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nC B A\nB A A\nCAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nB B C\nA C C\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nA B A\nC B A\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nA B B\nB B B\nCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB A B\nB A B\nBBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nC C B\nC C C\nACCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC B C\nC A A\nBCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB A A\nA C A\nBCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC A C\nB C A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA C B\nB A B\nBCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC C B\nB C B\nBCBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nA B A\nB A C\nCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nA B C\nB C C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nA A B\nC A A\nCBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nA A C\nA C C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nA B C\nA C B\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nA C A\nB B B\nABAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nA A A\nC B A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC C C\nA B A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA C C\nB A B\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC A C\nA C B\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nC C B\nA B B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA B A\nC B A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nC C C\nC C A\nACAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nA A C\nB B A\nCBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nA A B\nB B C\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB A A\nB A B\nABCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nC A C\nB B B\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA B B\nB C C\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB A B\nB A B\nBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nA C C\nB A A\nBABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB C C\nC A A\nCCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB C B\nA B C\nCAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC B C\nB A B\nBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC C A\nB A B\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nA C A\nB C B\nBCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nC B C\nA C A\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC B B\nB A C\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nB B B\nB B A\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nA B A\nC C C\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nC A A\nA A A\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nC B C\nA A C\nBAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC A C\nA A C\nCACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nC C C\nB A C\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nB C A\nB C A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nB B B\nA B A\nACBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB C C\nC B A\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nC B B\nA B C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nB A B\nB A B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nC C C\nA C C\nCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nA A A\nC A B\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nA C C\nA A B\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nB B A\nB C A\nBCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA A B\nA B C\nCABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nA B A\nC B C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB B C\nB B A\nBBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nA A B\nA B A\nCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nA B C\nB C A\nCAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nA A C\nB C A\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA A A\nA A A\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB B B\nC A A\nCBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nB A C\nA A C\nBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nA A A\nB B B\nABAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC C A\nC B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nC C B\nB C B\nCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nC C A\nC B A\nCCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nA C A\nB C B\nCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nA A B\nA B C\nCACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nC B B\nB B C\nBCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA C A\nC C A\nACCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nB C B\nC A C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nB A A\nA A C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB A C\nB A C\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nA B B\nB A A\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB B A\nC C B\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC A B\nA C C\nCCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC A A\nC C C\nACCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nB B B\nA B A\nBBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB B B\nB B C\nBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nB B B\nA A C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nB C C\nB B A\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC B A\nB B A\nABBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA C C\nA B A\nAAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nB B A\nC C C\nABAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nA C C\nC C A\nCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nB A B\nB B C\nCAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB A A\nC C B\nCCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nA A B\nB B C\nBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nC A B\nA C A\nCCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA B C\nC B B\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB C B\nB B A\nBBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nA C C\nC B B\nABCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nB A A\nC B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC C A\nC A C\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nA C A\nA A B\nAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nC A C\nA C C\nABBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nB C A\nC C B\nBAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nA B C\nC C C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA C A\nA A C\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nB C C\nB A A\nBACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nA A B\nB A C\nAAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA B A\nC C A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC A B\nC A C\nBAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nA A C\nB B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC B A\nC A A\nBCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nC B B\nA A A\nCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nB C B\nC A B\nBAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nA B B\nB A B\nAABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nA A A\nC B B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nC A A\nC B A\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC A B\nB B C\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nC B C\nC C B\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nC B B\nC C A\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB B A\nB A A\nBABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC B A\nC B A\nCBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB C B\nC C A\nCACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nA A A\nA A C\nCAAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nB A B\nB B C\nBAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB B A\nB A C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB A B\nC B B\nCCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nB B A\nC B A\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nC B A\nC B B\nCBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nB C A\nB B C\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB B C\nC A C\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nA B A\nA C A\nCBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nA A C\nB C A\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA B A\nB C C\nCAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nC C C\nC C A\nAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nC B A\nB C A\nAACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB A A\nB A C\nCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C B\nA C B\nC A C\nABAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB B C\nC B B\nACAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nB A A\nC B A\nCCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nA C A\nB A A\nAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nC C C\nC C B\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nB C A\nA B B\nACCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nB B A\nC C B\nCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nB B B\nC C C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC C C\nA A C\nCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nC C C\nA A B\nBBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nA A C\nC B C\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nB C B\nC C B\nCCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nA C B\nC C B\nAACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nA C B\nB C A\nBBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nB B A\nC B C\nBBBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nC B C\nC C C\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nB A A\nA A B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nC C A\nB C A\nBABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nC A B\nB A A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nA C A\nC C B\nBACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nA B A\nC C C\nACCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB A C\nC C A\nABC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB A C\nC B C\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB A C\nB B C\nAACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA C B\nA C C\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB C A\nC C A\nBABB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nA B B\nC B B\nAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nA B A\nA A A\nAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC C A\nB A C\nCCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nA A C\nA C C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nA A C\nA B C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nB B C\nC B A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC B C\nB B B\nBCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nC B B\nA B B\nBCAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nA C B\nA A A\nACA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nC A A\nB B B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nB C C\nB B B\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nB C A\nC B A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA B C\nB B A\nCBBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nB C B\nC C C\nCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nB A A\nB C B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA B C\nA B A\nACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nA C C\nA C A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nB A B\nA B A\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nC C C\nA A B\nCBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nC C A\nB C B\nABBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nA B C\nC B A\nACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC B B\nC A B\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nC C C\nB B A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA C C\nB C A\nCCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nA A B\nB C C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA B B\nB A B\nCAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nA A C\nB C A\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nA C A\nC A C\nCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB B B\nC B C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nA C B\nA B B\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nA B C\nA B C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nB B C\nA A B\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nA A B\nC B C\nACAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB C B\nA A B\nBBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nB B C\nB A C\nBBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC C C\nB C C\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nC C B\nB C C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nC C C\nC A B\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B B\nC C C\nC A C\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nA B C\nA B B\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nA C A\nC C A\nBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB B C\nC A B\nABBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nA A A\nC C B\nCCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nA C B\nC A C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA A A\nB B C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nC B A\nA A A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB B B\nC A B\nBBCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nC A B\nA A C\nCCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nB C B\nB C C\nACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A C\nA A A\nB C A\nAACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nC A B\nC A C\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nC C C\nA C B\nBCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nB B B\nB B B\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nA A B\nA B C\nAAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nB A A\nC C A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB B A\nB A C\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C A\nB C B\nC C A\nCCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nC C A\nA C A\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nC C B\nB C B\nABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB A C\nC C B\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC B B\nB A B\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nA B B\nA A C\nBBAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nC A B\nB B C\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nA C C\nB A A\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C B\nB B B\nC A C\nBCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nB C A\nB A A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nA C C\nA B A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA A B\nA B C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B C\nC B B\nA B C\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nA A C\nB C B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nB C C\nA B C\nBCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nC C C\nC B A\nBBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nC A B\nA A B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nB C A\nB A C\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nA B C\nA B B\nAACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nA A A\nA B B\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nA A B\nA A A\nBACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA B A\nC A B\nABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nA B A\nC B B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nA C B\nB A C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nB B C\nC C B\nBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nB B A\nB B A\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nC A A\nB C C\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nC B B\nB B C\nBCA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A A\nB B B\nC B B\nAAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nB B A\nB B C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nC A B\nB B A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nB C A\nA B B\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA C A\nB B A\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A B\nA A A\nC C C\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nB B B\nA A B\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB B A\nB A B\nCABC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB B B\nA A A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nA B B\nB B A\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nA A C\nA C C\nCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A B\nA A A\nA A A\nCCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B B\nB B A\nB A B\nBBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nA B A\nC C B\nBAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C B\nC C B\nB C C\nACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nB A A\nC A C\nCBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nC C A\nA C B\nBAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nC C C\nA C C\nAACB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nA B C\nC A A\nCBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nB A C\nB B C\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A C\nB A B\nB A C\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nB B A\nA B A\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C C\nC A A\nA B B\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C C\nA B A\nC C A\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nC C B\nA A A\nBBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nC A A\nB B B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nB C C\nA C A\nAABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nB B A\nB C C\nAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nB A B\nB B B\nCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nA C C\nB A B\nCCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA B A\nC A A\nAAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC C A\nC C A\nACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC B A\nB C C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA A B\nC B B\nAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nB B B\nB B B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C B\nB B B\nA C A\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nB A C\nB B C\nABAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nB B C\nB C B\nACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nA A B\nC A C\nCBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C A\nC B C\nA B A\nACC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC C B\nC C A\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA B C\nC A A\nAABB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nA A B\nB B A\nACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nB B C\nC C C\nACCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nA B A\nA A B\nBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C A\nC C C\nB C B\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B C\nB C C\nC C A\nCAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB A A\nA C A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nC A B\nA B A\nBBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC C B\nA A B\nBAA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nC A A\nC B C\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nA C A\nC C C\nABBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A C\nA B C\nC C A\nCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB A A\nB C B\nB C B\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC C B\nC A B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB B C\nC B C\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nA B B\nA A C\nCCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA A A\nA A C\nC C C\nACCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nC B C\nC C A\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nA B C\nB B C\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA A C\nA B C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB A C\nB B A\nAACB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B A\nC B C\nB B B\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nA A B\nB C B\nAAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nA A C\nC C C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA B C\nA C A\nACC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nB A B\nA C B\nABBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB A B\nC A C\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A C\nA A A\nA B C\nBA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nC B A\nC B B\nACAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A B\nC C A\nC B C\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nC B C\nB B C\nCAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA B A\nC A C\nB C A\nBCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nB B A\nA C B\nCCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA A C\nC A C\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B C\nB A A\nB C A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB C A\nB B A\nBAAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nC B B\nA A C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB C A\nA A B\nC B A\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A A\nB C B\nB A B\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB C C\nA C C\nBCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nC B C\nA A B\nBBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB C B\nA B A\nC A C\nABBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nC C B\nC C A\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C C\nC B C\nA C A\nCCAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nB C C\nC B C\nBAB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nC C B\nA B A\nBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nB C B\nC A B\nBAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B A\nA C A\nB B A\nBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C C\nC A B\nC C A\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nA C A\nA B A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A B\nB C A\nB B A\nAC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C C\nC A B\nA B A\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA C A\nB A A\nA B B\nCCB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB A A\nB B C\nBABA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B A\nA A C\nC B C\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC A C\nC A C\nC C B\nCBB",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC B C\nC B B\nC C B\nBBCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nA A A\nB C C\nCCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nC B C\nC A A\nACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B A\nA A B\nA C C\nABBC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nA C C\nC A B\nA A B\nCC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nC C A\nA A A\nCCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC C A\nA A A\nB C C\nCB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A C\nB C C\nA C C\nAAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nB C C\nA B C\nAACA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nA C C\nC C C\nAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nC B A\nC A A\nACCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B B\nB A C\nB B B\nAA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nA B C\nA C A\nCC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B C\nA C C\nC B C\nAAC",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB B B\nC C C\nA A C\nBBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B C\nA C A\nA C B\nCBB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA B A\nB B C\nB A A\nCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB A A\nB A B\nABA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC B B\nC A C\nA C A\nABBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nB A A\nA B B\nA C A\nBC",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A A\nB A B\nB C C\nACBA",
+            "output": "No"
+        },
+        {
+            "input": "3 3\nC A B\nB A C\nA B B\nAAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nB B B\nB B A\nC A A\nBCAB",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nC C B\nB A A\nC A C\nABCA",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3\nA A B\nA B C\nC C C\nAACA",
+            "output": "No"
+        }
+    ]
+}

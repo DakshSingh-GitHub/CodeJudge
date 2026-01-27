@@ -1,0 +1,2025 @@
+{
+    "id": "jump_game",
+    "title": "Jump Game",
+    "description": "You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position. Return 'Yes' if you can reach the last index, or 'No' otherwise.",
+    "input_format": "Space-separated integers representing the array.",
+    "output_format": "'Yes' or 'No'.",
+    "constraints": {
+        "size": "1 <= size <= 10^4",
+        "values": "0 <= val <= 10^5"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "2 3 1 1 4",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 1 0 4",
+            "output": "No"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "1 1 1 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 0 2 0 1 1 0",
+            "output": "No"
+        },
+        {
+            "input": "2 0 1 0 0 3 0 2",
+            "output": "No"
+        },
+        {
+            "input": "3 0 1 2 2 3 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 2 3 3 0 2 2 1 3",
+            "output": "No"
+        },
+        {
+            "input": "0 3 0 3 3 2 2 3",
+            "output": "No"
+        },
+        {
+            "input": "1 0 2 3 0 2 0 0",
+            "output": "No"
+        },
+        {
+            "input": "3 3 0 1 2 1 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 2 1 2 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 3 2",
+            "output": "No"
+        },
+        {
+            "input": "2 2 1 1 1 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 0 1 0 0 3 3",
+            "output": "No"
+        },
+        {
+            "input": "0 3 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 3 0 3 2 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 2 3 1 0 0 0 0 0",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 0 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 2 0 0 2 2 3 3 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 0 3 3 1 1 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 2 0 0 1 1 1 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 3 0 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 2 2 3 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 3 1 2 2",
+            "output": "No"
+        },
+        {
+            "input": "0 0 3",
+            "output": "No"
+        },
+        {
+            "input": "1 2 1 1 0 3 3 0 0",
+            "output": "No"
+        },
+        {
+            "input": "3 3 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 3 0 2 3 2 3",
+            "output": "No"
+        },
+        {
+            "input": "0 3 3 2 2",
+            "output": "No"
+        },
+        {
+            "input": "1 2 1 3 0 1 1 2 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 3 3 3 1 3 0",
+            "output": "No"
+        },
+        {
+            "input": "0 1 2 2 3 2 3 1 2",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 1 1 2 0 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 3 3 0 2 3 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1 2 2 1 2 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 0 1 0 3 1",
+            "output": "No"
+        },
+        {
+            "input": "0 0 3 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 3 1 1 1",
+            "output": "No"
+        },
+        {
+            "input": "3 1 1 3 1 0 1 0 3",
+            "output": "No"
+        },
+        {
+            "input": "2 0 1 0 3",
+            "output": "No"
+        },
+        {
+            "input": "0 2 3 0 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 1 3 2 3 1 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 2 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 2 2 2 0 1 0 3 3 0",
+            "output": "No"
+        },
+        {
+            "input": "2 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 0 3 1 0",
+            "output": "No"
+        },
+        {
+            "input": "0 3 3",
+            "output": "No"
+        },
+        {
+            "input": "3 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 3 1 0 0 2 2",
+            "output": "No"
+        },
+        {
+            "input": "1 3 1 0 3 0 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 1 3 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 1 0 0 0 0 2",
+            "output": "No"
+        },
+        {
+            "input": "0 2 0",
+            "output": "No"
+        },
+        {
+            "input": "2 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 2 3 3 1 3 0 3 2",
+            "output": "No"
+        },
+        {
+            "input": "3 3 3 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 0 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 3 3 1 3 1 3 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 2 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 1 3",
+            "output": "No"
+        },
+        {
+            "input": "2 0 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 1 1",
+            "output": "No"
+        },
+        {
+            "input": "2 0 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 2 0 1 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 0 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 3 1 0 0 1 3",
+            "output": "No"
+        },
+        {
+            "input": "2 0 0 0 1 0 2 2 2",
+            "output": "No"
+        },
+        {
+            "input": "3 2 0 0 3 0 2 1 1",
+            "output": "No"
+        },
+        {
+            "input": "0 0 1 2 1 3 2",
+            "output": "No"
+        },
+        {
+            "input": "2 0 2 0 1 0 1 3 0 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 3 3 1 0 0 2",
+            "output": "No"
+        },
+        {
+            "input": "2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 3 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 0 1 3 1 1 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 2 3 1 2 1 0",
+            "output": "No"
+        },
+        {
+            "input": "1 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 2 3 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 2 0 3 1 1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "0 1 2 3 2",
+            "output": "No"
+        },
+        {
+            "input": "0 1 3 3 2 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "0 0 3 1 3 0 0 2",
+            "output": "No"
+        },
+        {
+            "input": "2 2 1 2 3 1 0 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 2",
+            "output": "No"
+        },
+        {
+            "input": "3 2 2 1 3 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 0 0 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 2 3 0 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 1",
+            "output": "No"
+        },
+        {
+            "input": "1 0 2 1 1 2 0",
+            "output": "No"
+        },
+        {
+            "input": "1 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 2 2 0 1 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 1 1 2 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 0 0 0 2 2 0 3",
+            "output": "No"
+        },
+        {
+            "input": "3 2 3 2 0 2 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 3 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 0 0 0 1 1 2 3 2",
+            "output": "No"
+        },
+        {
+            "input": "1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "1 2 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1",
+            "output": "No"
+        },
+        {
+            "input": "3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 2 1 1 3 0 1 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 0 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 0 0 1 3 1",
+            "output": "No"
+        },
+        {
+            "input": "2 1 3 1 3 3 0 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 1 2 0 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 1 1 2 1 3 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 1 1 2 3 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 3 1 1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 3 1 2",
+            "output": "No"
+        },
+        {
+            "input": "2 0 2 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 3 3 3 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 0 3 2 0 3",
+            "output": "No"
+        },
+        {
+            "input": "3 1 3 1 0 1 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 0 1 1 2 2 3 2 2",
+            "output": "No"
+        },
+        {
+            "input": "1 0 3 1 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 3 0 1 0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "0 3 3 0 0 2",
+            "output": "No"
+        },
+        {
+            "input": "1 2 0 3 1 1 1 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 3 1 0 2 0 3 3",
+            "output": "No"
+        },
+        {
+            "input": "0 3 0 3 3",
+            "output": "No"
+        },
+        {
+            "input": "0 0 3 3 0 3 0 2 0",
+            "output": "No"
+        },
+        {
+            "input": "1 1 0 0 1 3 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1 0 0 2 2 2",
+            "output": "No"
+        },
+        {
+            "input": "0 2",
+            "output": "No"
+        },
+        {
+            "input": "0 3 1 1 0 2 2 3 3 1",
+            "output": "No"
+        },
+        {
+            "input": "0 2 1 2 1",
+            "output": "No"
+        },
+        {
+            "input": "3 2 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 0 3 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 2 2 2 3 1 1 0 1",
+            "output": "No"
+        },
+        {
+            "input": "1 3 0 0 2 1 3 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 1 2",
+            "output": "No"
+        },
+        {
+            "input": "0 1 3 1",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 0 2 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 3 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 1 0 3 1 2",
+            "output": "No"
+        },
+        {
+            "input": "3 0 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 0 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 0 3",
+            "output": "No"
+        },
+        {
+            "input": "2 0 3 0 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 2 3 0 0 1 1 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 0 2 1 0 1 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 2 0 3 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 2 2 3 3 2",
+            "output": "No"
+        },
+        {
+            "input": "0 0 3 0 2 3 2",
+            "output": "No"
+        },
+        {
+            "input": "0 0 0 3 1 3 3 2 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 0 1 1 3 3 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 2 1 1 2 1 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 1 3 3 1",
+            "output": "No"
+        },
+        {
+            "input": "1 0 3",
+            "output": "No"
+        },
+        {
+            "input": "2 3 1 2 3 2 2 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 0 0 3 2 3 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 1 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 1 0 3 2 1",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 0 1 1 2",
+            "output": "No"
+        },
+        {
+            "input": "0 2 1 0 3 0 0 1 1 1",
+            "output": "No"
+        },
+        {
+            "input": "2 2 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 3 0 2 2 1 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 0 0 1 0",
+            "output": "No"
+        },
+        {
+            "input": "1 3 2 1 2 1 2 2 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3",
+            "output": "No"
+        },
+        {
+            "input": "0 3 3 0 1 0 0 3 1",
+            "output": "No"
+        },
+        {
+            "input": "1 1 3 3 0 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 3 0 0",
+            "output": "No"
+        },
+        {
+            "input": "1 2 0 1 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 0 1 3 2 1 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 2 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 1 0 3 2 3 2",
+            "output": "No"
+        },
+        {
+            "input": "1 1 3 1 0 0 2 2 1 0",
+            "output": "No"
+        },
+        {
+            "input": "0 3 2 0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "0 0 1 3",
+            "output": "No"
+        },
+        {
+            "input": "0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "2 2 0 3 1 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 0 0 2 0 2",
+            "output": "No"
+        },
+        {
+            "input": "2 0 3 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 3 2 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 3 1 1 0 1",
+            "output": "No"
+        },
+        {
+            "input": "1 2 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 0 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 0 3 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 0 0 0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "2 2 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 1 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 2 1 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 3 3 3 2 0 1 3 1",
+            "output": "No"
+        },
+        {
+            "input": "2 0 0 2",
+            "output": "No"
+        },
+        {
+            "input": "1 0 3 1",
+            "output": "No"
+        },
+        {
+            "input": "3 0 2 3 2 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 2 1 1 3 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 2 2",
+            "output": "No"
+        },
+        {
+            "input": "2 3 1 3 1 0 1 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 0 2 1 1 1 2",
+            "output": "No"
+        },
+        {
+            "input": "1 3 0 0 1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "3 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 2 0 2 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 1 0 3 3 0 1",
+            "output": "No"
+        },
+        {
+            "input": "1 1 0 0 2 1",
+            "output": "No"
+        },
+        {
+            "input": "1 2 1 3 2 2 0 3 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 2 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 0 0 2 0 0 2 1",
+            "output": "No"
+        },
+        {
+            "input": "3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 2 0",
+            "output": "No"
+        },
+        {
+            "input": "1 2 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 1 1 1 0 0 0",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 2 0 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 0 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 0 2 2 2",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 0 3 0 1 2 0 3 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 2 3 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "0 3 2 1 2",
+            "output": "No"
+        },
+        {
+            "input": "0 1 2",
+            "output": "No"
+        },
+        {
+            "input": "0 3 3 3 2 3 0",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 1 0 1 3 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 1 0 2 1 1",
+            "output": "No"
+        },
+        {
+            "input": "1 1 3 3 2 2 1 3 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 2 1 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 1",
+            "output": "No"
+        },
+        {
+            "input": "3 2 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 3 0",
+            "output": "No"
+        },
+        {
+            "input": "1 2 3 2 1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 2 3 1 2 3 2 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 1 0 0 0 2 0",
+            "output": "No"
+        },
+        {
+            "input": "3 0 2 1 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 3 0 0 0 2 0 2",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1 0 3",
+            "output": "No"
+        },
+        {
+            "input": "1 2 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 1 3 1 3",
+            "output": "No"
+        },
+        {
+            "input": "1 3 1 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 1 0 0 1 1 1 1",
+            "output": "No"
+        },
+        {
+            "input": "2 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 2",
+            "output": "No"
+        },
+        {
+            "input": "3 1 2 3 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 3 0 0 1 2 0 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 3 0 2 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 2 2 2",
+            "output": "No"
+        },
+        {
+            "input": "3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 2 0 1 1 0 0 3 1",
+            "output": "No"
+        },
+        {
+            "input": "2 3 0 0 3 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 1 1 0 3 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 1 0 3 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 3 3 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 3 1 3 0 2",
+            "output": "No"
+        },
+        {
+            "input": "2 2 2 3 3 2 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 2 1 2 2 0 2 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 0 1 2 2 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 3 2 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 1 0 0 3 2 2 1",
+            "output": "No"
+        },
+        {
+            "input": "1 2 3 3 0 3 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 3 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 3 1 3 0 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 2 2 1 2 0 1 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 1 3 0 3 2 0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 0 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 1 2 2 1 1 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 2 2 0 1 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 2 3 3 0 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 0 3 2 0 3",
+            "output": "No"
+        },
+        {
+            "input": "2 0 0 3 1 0",
+            "output": "No"
+        },
+        {
+            "input": "0 1 3 1 3 3 0 3 3",
+            "output": "No"
+        },
+        {
+            "input": "1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 3 1 2 1 0 2 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 2 0 3 3 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 2 0",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 2 2 0 3 3 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 1 0 3 2 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 2 2 1 3 3 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 3 3 1 0 1 3 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 2 2 2 0 1 0 2",
+            "output": "No"
+        },
+        {
+            "input": "1 2 1 3 1 0 0 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 1 2 1 2 2",
+            "output": "No"
+        },
+        {
+            "input": "3 2 1 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 2 0 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 0 2 3 0 2 0 0 0",
+            "output": "No"
+        },
+        {
+            "input": "2 0 3 2 3 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 3 1 0 3 0 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 2 0 3 1 0 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 2 3 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 2 0 0 3",
+            "output": "No"
+        },
+        {
+            "input": "0 2 0 2 1",
+            "output": "No"
+        },
+        {
+            "input": "1 0 2 2 1",
+            "output": "No"
+        },
+        {
+            "input": "3 2 0 0 2 0 2 3 0 2",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 1 1 3 3 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 0 2 1 1 0 0 3",
+            "output": "No"
+        },
+        {
+            "input": "2 3 2 2 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 3 3",
+            "output": "No"
+        },
+        {
+            "input": "2 1 2 3 2 1 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 3 0 2",
+            "output": "No"
+        },
+        {
+            "input": "1 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 3 2",
+            "output": "No"
+        },
+        {
+            "input": "1 0 2 0 2 0",
+            "output": "No"
+        },
+        {
+            "input": "1 2 1 3 1 2 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 3 2 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 0 2 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 3 3 2 1 3 2 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 2 3 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "2 3 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 1 0 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 2 1 1 1 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 0 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 1 2 3 0 2",
+            "output": "No"
+        },
+        {
+            "input": "3 0 3 0 0 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 1 1 1 2 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1 1 0 2 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "1 1 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 3 3 0 3 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 0 3 2 2 3",
+            "output": "No"
+        },
+        {
+            "input": "1 3 2 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 3 3 1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 1 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 3 2 0 3 3 1 2",
+            "output": "No"
+        },
+        {
+            "input": "1 1 0 3",
+            "output": "No"
+        },
+        {
+            "input": "2 2 2 1 1 3 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 1 3 3",
+            "output": "No"
+        },
+        {
+            "input": "3 2 0 0 3 0 3 0 2 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1 3 3 3 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 1 3 3 0 3 2 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 1 1",
+            "output": "No"
+        },
+        {
+            "input": "2 0 3 2 0 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 2 3 2 1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 1 3 2 0 3 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 1 1 1 0 0 1 1 2",
+            "output": "No"
+        },
+        {
+            "input": "1 2 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 0 2 1 1 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 0 2 0 2",
+            "output": "No"
+        },
+        {
+            "input": "2 0 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 2 3 1 2 1",
+            "output": "No"
+        },
+        {
+            "input": "1 1 2 2 1 0 2",
+            "output": "No"
+        },
+        {
+            "input": "0 2 3 2 3 0 3 3 0",
+            "output": "No"
+        },
+        {
+            "input": "3 3 3 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 2 3 1 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 2 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 3 1 0 1 2 0 2",
+            "output": "No"
+        },
+        {
+            "input": "3 3 0 0 3 3 0 1 0 1",
+            "output": "No"
+        },
+        {
+            "input": "2 2 2 1 1 1 3 3 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 0 1 3 2 1 3 0 0",
+            "output": "No"
+        },
+        {
+            "input": "2 0 1 2 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 1 3 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 2 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 0 2 1 1",
+            "output": "No"
+        },
+        {
+            "input": "2 2 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 2 3 1 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 3 0 3 1 0",
+            "output": "No"
+        },
+        {
+            "input": "2 2 2 3 0 1 0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "1 2 2 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 0 2 3 3",
+            "output": "No"
+        },
+        {
+            "input": "2 0 0 1 2 1 1 2",
+            "output": "No"
+        },
+        {
+            "input": "0 0 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "2 2 3 1 3 1",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 0 1 2 3 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 2 2 1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "1 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 3 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 3 2 3 2 1 2",
+            "output": "No"
+        },
+        {
+            "input": "1 1 2 0 0 1 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 0 1 2 1 0 3 2 3",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1 0 2 2 0 0 3",
+            "output": "No"
+        },
+        {
+            "input": "1 1 3 3 0 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 2 2 0 2",
+            "output": "No"
+        },
+        {
+            "input": "0 2 2 3 1 1",
+            "output": "No"
+        },
+        {
+            "input": "3 0 3 1 2 2 0 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 1 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 2 3 2 1",
+            "output": "No"
+        },
+        {
+            "input": "3 0 3 1 2 1 3 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "1 3 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 1 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 2 3 0 0 2 3 0 1",
+            "output": "Yes"
+        },
+        {
+            "input": "1 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 1 0 1 2 2",
+            "output": "No"
+        },
+        {
+            "input": "0 2 2 0 3 2 2",
+            "output": "No"
+        },
+        {
+            "input": "3 3 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 3 0 1 2 0 3 0 1",
+            "output": "No"
+        },
+        {
+            "input": "1 1 3 1 0 0 2 2 2",
+            "output": "No"
+        },
+        {
+            "input": "3 3 2 3 0 3 3 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 0 0 0 1 1 3",
+            "output": "No"
+        },
+        {
+            "input": "0 1 3 1 0 0 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 2 3 2 1 3 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 2 3 2 0 3",
+            "output": "No"
+        },
+        {
+            "input": "2 0 1 1 2 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 1 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 1 2 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 1 2 3 1 0 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 2 3 2 2 1 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 3 1 3 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 3 0 0 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "0 3 0 1 3 1 1 1",
+            "output": "No"
+        },
+        {
+            "input": "2 3 3 1 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 2",
+            "output": "No"
+        },
+        {
+            "input": "2 1 1 0 2 1 3 1 0",
+            "output": "No"
+        },
+        {
+            "input": "1 1 0 1 2 0 1",
+            "output": "No"
+        },
+        {
+            "input": "2 0 3 3 0 2 3 3 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 0 2 2",
+            "output": "No"
+        },
+        {
+            "input": "1 3 0 0 2 2 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 1 3 0 3 1 2 2",
+            "output": "No"
+        },
+        {
+            "input": "3 3 1 3 2 0 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 1 2 0 0 1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "2 3 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 0 0 2 2 2 3 3 3",
+            "output": "Yes"
+        },
+        {
+            "input": "0 2 3 2 3 0 3 1",
+            "output": "No"
+        },
+        {
+            "input": "3 2 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 1 3 3 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 3 1 2 1 2 0 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 3 3 2 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 0 0 0 1 2 0",
+            "output": "No"
+        },
+        {
+            "input": "3 1 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 2 3 0",
+            "output": "No"
+        },
+        {
+            "input": "3 3 0 1 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "1 0 2 0 3",
+            "output": "No"
+        },
+        {
+            "input": "0 1 0 1 2 2 0",
+            "output": "No"
+        },
+        {
+            "input": "2 2 1 0 3 0",
+            "output": "No"
+        },
+        {
+            "input": "0 3 3 1 0 0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "3 1 1 1 3 3 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 0 2 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 1 2 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 2 3 1",
+            "output": "No"
+        },
+        {
+            "input": "3 1 0 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 0 3 0 3 1 1",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 1 1 2 2 0",
+            "output": "No"
+        },
+        {
+            "input": "0 0 0 3 2 3 1 3 3",
+            "output": "No"
+        },
+        {
+            "input": "2 2 1 3",
+            "output": "Yes"
+        },
+        {
+            "input": "2 2 1 2 3 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 1 3 1 1 1",
+            "output": "No"
+        },
+        {
+            "input": "2 1 2 1 1 2 1 0 0",
+            "output": "No"
+        },
+        {
+            "input": "0 2 2 1 1 3 3 0 3 1",
+            "output": "No"
+        },
+        {
+            "input": "1 0 2 0 3 0 0 0 0 2",
+            "output": "No"
+        },
+        {
+            "input": "1 3 3 1 1 1 2 0 0",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 0 0 1 1 1 0 2 0",
+            "output": "No"
+        },
+        {
+            "input": "2 1 0 2 2 3 0 2 3",
+            "output": "No"
+        },
+        {
+            "input": "3 3 2 1 3 1 0",
+            "output": "Yes"
+        },
+        {
+            "input": "2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "3 0 3 2 3 2",
+            "output": "Yes"
+        },
+        {
+            "input": "0 3 0 2 1",
+            "output": "No"
+        },
+        {
+            "input": "1 1 1 0 1 1 3",
+            "output": "No"
+        }
+    ]
+}

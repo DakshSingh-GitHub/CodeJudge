@@ -1,0 +1,3864 @@
+{
+    "id": "regular_expression_matching",
+    "title": "Regular Expression Matching",
+    "description": "Given an input string s and a pattern p, implement regular expression matching with support for '.' and '*' where '.' matches any single character and '*' matches zero or more of the preceding element. The matching should cover the entire input string (not partial).",
+    "input_format": "String s on the first line and pattern p on the second line.",
+    "output_format": "'Yes' if it matches, 'No' otherwise.",
+    "constraints": {
+        "s_len, p_len": "1 <= length <= 20"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "aa\na",
+            "output": "No"
+        },
+        {
+            "input": "aa\na*",
+            "output": "Yes"
+        },
+        {
+            "input": "ab\n.*",
+            "output": "Yes"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "ca\nca*",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbbb\ncc*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "aca\na.a",
+            "output": "Yes"
+        },
+        {
+            "input": "accc\na...",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbac\ncb*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "acbb\nac*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "cabb\nca..",
+            "output": "Yes"
+        },
+        {
+            "input": "aca\nac*a",
+            "output": "Yes"
+        },
+        {
+            "input": "caa\nca*a",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbbb\n.c...",
+            "output": "Yes"
+        },
+        {
+            "input": "cccbc\ncc*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "ac\na.",
+            "output": "Yes"
+        },
+        {
+            "input": "ab\nab*",
+            "output": "Yes"
+        },
+        {
+            "input": "abacb\nab*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcb\nb.b",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaa\n..aa",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcba\ncb*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "ccb\ncc.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccc\ncc*c",
+            "output": "Yes"
+        },
+        {
+            "input": "cc\n..",
+            "output": "Yes"
+        },
+        {
+            "input": "bb\n..",
+            "output": "Yes"
+        },
+        {
+            "input": "bacca\nb.cc.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaca\naa*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "baaab\nb...b",
+            "output": "Yes"
+        },
+        {
+            "input": "bba\nbb*a",
+            "output": "Yes"
+        },
+        {
+            "input": "cca\ncc*a",
+            "output": "Yes"
+        },
+        {
+            "input": "aa\n..",
+            "output": "Yes"
+        },
+        {
+            "input": "acc\nac*c",
+            "output": "Yes"
+        },
+        {
+            "input": "bca\nbc*a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbc\nbb*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "abacc\nab*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "aabb\naa*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "acb\nac*b",
+            "output": "Yes"
+        },
+        {
+            "input": "cc\ncc*",
+            "output": "Yes"
+        },
+        {
+            "input": "abbbb\nab*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "bc\nbc*",
+            "output": "Yes"
+        },
+        {
+            "input": "ac\n.c",
+            "output": "Yes"
+        },
+        {
+            "input": "aaa\n...",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcc\n.b..",
+            "output": "Yes"
+        },
+        {
+            "input": "aab\n..b",
+            "output": "Yes"
+        },
+        {
+            "input": "bca\n.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "bacb\n.ac.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccac\n..a.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaa\ncc*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcc\nbb*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "aacb\naac.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcb\n..c.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccb\ncc*b",
+            "output": "Yes"
+        },
+        {
+            "input": "cbc\n.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccacb\ncc*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbb\n....",
+            "output": "Yes"
+        },
+        {
+            "input": "ab\n.b",
+            "output": "Yes"
+        },
+        {
+            "input": "baaa\nba*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "caaa\nc...",
+            "output": "Yes"
+        },
+        {
+            "input": "ac\nac*",
+            "output": "Yes"
+        },
+        {
+            "input": "aba\nab*a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbab\n..a.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbabb\ncb*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "bba\nbb.",
+            "output": "Yes"
+        },
+        {
+            "input": "baa\nba*a",
+            "output": "Yes"
+        },
+        {
+            "input": "abbcc\nab*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccba\ncc*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaba\nb.aba",
+            "output": "Yes"
+        },
+        {
+            "input": "ba\nb.",
+            "output": "Yes"
+        },
+        {
+            "input": "cca\n..a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaca\ncc*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "cbb\nc..",
+            "output": "Yes"
+        },
+        {
+            "input": "babbc\nba*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaccc\naa*ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbb\ncb*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbc\nbb*c",
+            "output": "Yes"
+        },
+        {
+            "input": "aac\naa*c",
+            "output": "Yes"
+        },
+        {
+            "input": "aab\naa*b",
+            "output": "Yes"
+        },
+        {
+            "input": "bab\nb.b",
+            "output": "Yes"
+        },
+        {
+            "input": "aacab\naa*cab",
+            "output": "Yes"
+        },
+        {
+            "input": "bbb\n...",
+            "output": "Yes"
+        },
+        {
+            "input": "bc\nb.",
+            "output": "Yes"
+        },
+        {
+            "input": "baccc\nba*ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "cabac\nca*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "acccb\n.cccb",
+            "output": "Yes"
+        },
+        {
+            "input": "caba\nca.a",
+            "output": "Yes"
+        },
+        {
+            "input": "aa\naa*",
+            "output": "Yes"
+        },
+        {
+            "input": "abcbc\na.c.c",
+            "output": "Yes"
+        },
+        {
+            "input": "aaca\naa*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "bcc\nbc*c",
+            "output": "Yes"
+        },
+        {
+            "input": "aabaa\n..b..",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcb\nc.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "abb\na..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcb\nbc*b",
+            "output": "Yes"
+        },
+        {
+            "input": "ba\nba*",
+            "output": "Yes"
+        },
+        {
+            "input": "aabca\naa*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "ab\na.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbccc\ncb*ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaa\nbc*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "aca\n.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbcb\n.c.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbba\nc..a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbba\ncb*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "ca\n.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaa\ncb..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcabc\nb.ab.",
+            "output": "Yes"
+        },
+        {
+            "input": "acaa\n.c..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbb\nbc*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbc\nc.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaa\nbb*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "abc\nab*c",
+            "output": "Yes"
+        },
+        {
+            "input": "aaabc\naa*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbac\nbbba.",
+            "output": "Yes"
+        },
+        {
+            "input": "ba\n.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcca\ncbcc.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbbc\nab*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "caaab\nc...b",
+            "output": "Yes"
+        },
+        {
+            "input": "cab\nca*b",
+            "output": "Yes"
+        },
+        {
+            "input": "aacbb\naa*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "ccb\n..b",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcba\nbb*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbca\n.bb.a",
+            "output": "Yes"
+        },
+        {
+            "input": "baab\nb..b",
+            "output": "Yes"
+        },
+        {
+            "input": "acc\na..",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaaa\ncb*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "cab\nc.b",
+            "output": "Yes"
+        },
+        {
+            "input": "cbccb\ncb*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcc\nb..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaa\nbc..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcacc\nb.a..",
+            "output": "Yes"
+        },
+        {
+            "input": "cccb\n...b",
+            "output": "Yes"
+        },
+        {
+            "input": "abcab\nab*cab",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaca\n...c.",
+            "output": "Yes"
+        },
+        {
+            "input": "abac\n.b.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaba\nbc*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "cab\n.ab",
+            "output": "Yes"
+        },
+        {
+            "input": "cabc\nca.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cb\ncb*",
+            "output": "Yes"
+        },
+        {
+            "input": "cbac\n.ba.",
+            "output": "Yes"
+        },
+        {
+            "input": "cabca\nca.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbc\n..b.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbb\nbb*b",
+            "output": "Yes"
+        },
+        {
+            "input": "cbca\ncbc.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbb\na...",
+            "output": "Yes"
+        },
+        {
+            "input": "acaa\nac*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "baab\nba*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "bb\nbb*",
+            "output": "Yes"
+        },
+        {
+            "input": "abc\na.c",
+            "output": "Yes"
+        },
+        {
+            "input": "baac\nba*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "aabb\n..bb",
+            "output": "Yes"
+        },
+        {
+            "input": "bacaa\nb.c..",
+            "output": "Yes"
+        },
+        {
+            "input": "aabcc\naa*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "abcaa\n.bc..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbba\nbc*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "abaac\na.aac",
+            "output": "Yes"
+        },
+        {
+            "input": "bcac\nb.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bccab\n.cca.",
+            "output": "Yes"
+        },
+        {
+            "input": "baa\nb..",
+            "output": "Yes"
+        },
+        {
+            "input": "cb\nc.",
+            "output": "Yes"
+        },
+        {
+            "input": "abcac\nab.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "baaaa\nba*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "cacb\ncac.",
+            "output": "Yes"
+        },
+        {
+            "input": "abcca\nab..a",
+            "output": "Yes"
+        },
+        {
+            "input": "caac\nc..c",
+            "output": "Yes"
+        },
+        {
+            "input": "aac\n..c",
+            "output": "Yes"
+        },
+        {
+            "input": "acabc\nac*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "cabb\nc.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "acabb\nac*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbc\nbc*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "aba\n.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "cabc\nc.bc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaac\naa*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "bcb\n.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "cccc\n....",
+            "output": "Yes"
+        },
+        {
+            "input": "cabc\nca*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "abaac\n.b..c",
+            "output": "Yes"
+        },
+        {
+            "input": "aabab\naa*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaba\naa*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "bcab\n.ca.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbb\ncb*b",
+            "output": "Yes"
+        },
+        {
+            "input": "bab\n.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbca\n.c.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "baba\nba*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "bacb\nba*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "acccb\nac*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "aaba\naa*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbabb\nc.a..",
+            "output": "Yes"
+        },
+        {
+            "input": "aaabc\naaa.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbb\nbb*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "bc\n.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bca\nb.a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbba\nbb*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "babca\nb.bc.",
+            "output": "Yes"
+        },
+        {
+            "input": "cba\ncb.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcccc\nbc*ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbc\n...c",
+            "output": "Yes"
+        },
+        {
+            "input": "cbacc\ncb*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "bac\n.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "caacc\nca*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "abcba\nab*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaab\nbb..b",
+            "output": "Yes"
+        },
+        {
+            "input": "acacb\n.c.cb",
+            "output": "Yes"
+        },
+        {
+            "input": "bacac\nb.c.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cab\nca.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbcc\na.b..",
+            "output": "Yes"
+        },
+        {
+            "input": "baaa\n.aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "acaba\n.c.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "baca\nba*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "cba\n.ba",
+            "output": "Yes"
+        },
+        {
+            "input": "baac\n.aac",
+            "output": "Yes"
+        },
+        {
+            "input": "bccbb\nbc*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "abcc\nab*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "aacab\naa.ab",
+            "output": "Yes"
+        },
+        {
+            "input": "bac\nba.",
+            "output": "Yes"
+        },
+        {
+            "input": "accb\nacc.",
+            "output": "Yes"
+        },
+        {
+            "input": "cabba\nc.bb.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbac\ncb*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "acbaa\na.baa",
+            "output": "Yes"
+        },
+        {
+            "input": "cacc\n.a..",
+            "output": "Yes"
+        },
+        {
+            "input": "babc\nba*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "cccbc\n...b.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcca\n..cca",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbbb\nbc*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaaa\nbc*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcca\nbb*cca",
+            "output": "Yes"
+        },
+        {
+            "input": "bbacc\nbb*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "baaaa\nb....",
+            "output": "Yes"
+        },
+        {
+            "input": "aaacb\naaac.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbabb\nbb*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "caaa\nca*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbccb\n..cc.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbba\na...a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbc\ncb*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "bba\n..a",
+            "output": "Yes"
+        },
+        {
+            "input": "cb\n.b",
+            "output": "Yes"
+        },
+        {
+            "input": "aaacc\naaa..",
+            "output": "Yes"
+        },
+        {
+            "input": "acaaa\nac*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "bcca\n.cca",
+            "output": "Yes"
+        },
+        {
+            "input": "aba\na.a",
+            "output": "Yes"
+        },
+        {
+            "input": "abbcb\nab*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "cac\n.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcab\nb.ab",
+            "output": "Yes"
+        },
+        {
+            "input": "caacc\nc..cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbca\ncb*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "aabc\naa.c",
+            "output": "Yes"
+        },
+        {
+            "input": "ccba\n..ba",
+            "output": "Yes"
+        },
+        {
+            "input": "caca\nca*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "aacbc\naa*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbcc\n...cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcc\n..cc",
+            "output": "Yes"
+        },
+        {
+            "input": "abab\na.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbac\nac*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "aacb\naa*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "abaca\nab*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "baabb\nba*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "bacc\nb.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cabb\nca*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "bccba\nb..ba",
+            "output": "Yes"
+        },
+        {
+            "input": "aaab\naaa.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbc\nab*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "aacc\naa..",
+            "output": "Yes"
+        },
+        {
+            "input": "baca\nb.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "caa\nc..",
+            "output": "Yes"
+        },
+        {
+            "input": "accac\na..a.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaac\ncb*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "aabba\n..bb.",
+            "output": "Yes"
+        },
+        {
+            "input": "acba\n.cb.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbba\nab*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "bac\nb.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbcc\nc..cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bcba\n.c.a",
+            "output": "Yes"
+        },
+        {
+            "input": "ababa\n.b.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "cba\ncb*a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbc\nbb.",
+            "output": "Yes"
+        },
+        {
+            "input": "acab\nac*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcaa\n..caa",
+            "output": "Yes"
+        },
+        {
+            "input": "aabc\naa*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "caac\nca*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "bcca\nb..a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbab\nbb*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "cccbb\ncc*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcaa\ncb*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "abac\naba.",
+            "output": "Yes"
+        },
+        {
+            "input": "ca\nc.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbca\nc.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "abb\nab*b",
+            "output": "Yes"
+        },
+        {
+            "input": "bbacc\n..acc",
+            "output": "Yes"
+        },
+        {
+            "input": "ababb\na.a..",
+            "output": "Yes"
+        },
+        {
+            "input": "baccb\nba*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "bca\nbc.",
+            "output": "Yes"
+        },
+        {
+            "input": "accba\n.ccb.",
+            "output": "Yes"
+        },
+        {
+            "input": "caca\n.a.a",
+            "output": "Yes"
+        },
+        {
+            "input": "bcba\nbc*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "aaab\n...b",
+            "output": "Yes"
+        },
+        {
+            "input": "baccc\nba...",
+            "output": "Yes"
+        },
+        {
+            "input": "cabba\nca*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "acbc\nac*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "bcacc\nbc.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "aabab\naa.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcab\nbb.ab",
+            "output": "Yes"
+        },
+        {
+            "input": "abbaa\nab*baa",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaba\nc.a.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbc\ncb*c",
+            "output": "Yes"
+        },
+        {
+            "input": "bacab\nb.c.b",
+            "output": "Yes"
+        },
+        {
+            "input": "aaacb\naaa.b",
+            "output": "Yes"
+        },
+        {
+            "input": "accb\nac*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaac\nbc*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "cacab\ncaca.",
+            "output": "Yes"
+        },
+        {
+            "input": "bab\nba*b",
+            "output": "Yes"
+        },
+        {
+            "input": "acbcc\nac.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaa\nbb..",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbca\ncb*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "cccac\ncc*cac",
+            "output": "Yes"
+        },
+        {
+            "input": "bccac\nb..a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcabc\nbc*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbba\nbb*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "aaccb\naa*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcac\nbc*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "baab\n.aa.",
+            "output": "Yes"
+        },
+        {
+            "input": "cabcc\n.ab..",
+            "output": "Yes"
+        },
+        {
+            "input": "aaccc\naa...",
+            "output": "Yes"
+        },
+        {
+            "input": "abcbc\nab*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "babb\n.a..",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbab\ncb*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "bacc\nba*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbccb\nc.cc.",
+            "output": "Yes"
+        },
+        {
+            "input": "caacc\n.aa..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbac\nb.ba.",
+            "output": "Yes"
+        },
+        {
+            "input": "baaa\nb...",
+            "output": "Yes"
+        },
+        {
+            "input": "cccb\ncc*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "cacaa\n.a.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "baba\nb.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbac\n...ac",
+            "output": "Yes"
+        },
+        {
+            "input": "cabbc\nca*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbb\nc...",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaab\nbb*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "caa\n.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "aaa\naa*a",
+            "output": "Yes"
+        },
+        {
+            "input": "acba\na.ba",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbcc\n.c.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "baacc\n.aacc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaac\n..aa.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcbc\nc.c.c",
+            "output": "Yes"
+        },
+        {
+            "input": "accab\nac*cab",
+            "output": "Yes"
+        },
+        {
+            "input": "cbca\n.b.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcca\n.b..a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaaa\nbb*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "cabaa\nca*baa",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbc\nb.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "aacac\naa*cac",
+            "output": "Yes"
+        },
+        {
+            "input": "abaa\n.b..",
+            "output": "Yes"
+        },
+        {
+            "input": "aacc\n..cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcbb\nbb*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaab\nc.aa.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcba\nb.ba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaca\ncb*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "acc\n.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bacc\nba..",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaba\ncc*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "aacb\naa.b",
+            "output": "Yes"
+        },
+        {
+            "input": "cabba\nca..a",
+            "output": "Yes"
+        },
+        {
+            "input": "cacbb\nca*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbaa\nc..aa",
+            "output": "Yes"
+        },
+        {
+            "input": "bccbb\nb..bb",
+            "output": "Yes"
+        },
+        {
+            "input": "acb\na.b",
+            "output": "Yes"
+        },
+        {
+            "input": "acccc\na....",
+            "output": "Yes"
+        },
+        {
+            "input": "abcc\n.bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "acab\naca.",
+            "output": "Yes"
+        },
+        {
+            "input": "aacca\naa*cca",
+            "output": "Yes"
+        },
+        {
+            "input": "bccba\nbc*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "acba\nac*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "aaabb\naaa..",
+            "output": "Yes"
+        },
+        {
+            "input": "cacca\nca*cca",
+            "output": "Yes"
+        },
+        {
+            "input": "bccb\n.cc.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbb\n.c..",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbbc\n..bb.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaac\ncc..c",
+            "output": "Yes"
+        },
+        {
+            "input": "ccab\ncc*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "bcccc\nb....",
+            "output": "Yes"
+        },
+        {
+            "input": "ccab\n..ab",
+            "output": "Yes"
+        },
+        {
+            "input": "babbb\n.a...",
+            "output": "Yes"
+        },
+        {
+            "input": "babb\nb.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "accb\n.ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbac\nbc*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "bbca\n..ca",
+            "output": "Yes"
+        },
+        {
+            "input": "accba\nacc.a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaac\n..aac",
+            "output": "Yes"
+        },
+        {
+            "input": "cacc\nca*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cacab\nca*cab",
+            "output": "Yes"
+        },
+        {
+            "input": "ccc\n...",
+            "output": "Yes"
+        },
+        {
+            "input": "baaac\nb...c",
+            "output": "Yes"
+        },
+        {
+            "input": "abcc\nab..",
+            "output": "Yes"
+        },
+        {
+            "input": "ccac\ncc*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "accab\na..ab",
+            "output": "Yes"
+        },
+        {
+            "input": "acbcb\nac*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaca\n.caca",
+            "output": "Yes"
+        },
+        {
+            "input": "aacba\naa.ba",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaac\nbb*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaa\naa*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "babc\nb.bc",
+            "output": "Yes"
+        },
+        {
+            "input": "abca\nab*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "cabaa\nc.b..",
+            "output": "Yes"
+        },
+        {
+            "input": "cacbc\nc.cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaacb\naa*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "abaa\nab*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "abcb\na.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "accb\na..b",
+            "output": "Yes"
+        },
+        {
+            "input": "cac\nc.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cacbc\n.a.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "acac\n.c.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cacba\nca*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbacc\n.ba..",
+            "output": "Yes"
+        },
+        {
+            "input": "bac\nba*c",
+            "output": "Yes"
+        },
+        {
+            "input": "aacba\n..cb.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbba\na.bba",
+            "output": "Yes"
+        },
+        {
+            "input": "abc\n.bc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcb\ncb*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbac\nbb*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "cac\nca*c",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcc\nbb..",
+            "output": "Yes"
+        },
+        {
+            "input": "bccc\nb...",
+            "output": "Yes"
+        },
+        {
+            "input": "aac\naa.",
+            "output": "Yes"
+        },
+        {
+            "input": "babcb\nba*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaab\n.caa.",
+            "output": "Yes"
+        },
+        {
+            "input": "abca\n.bc.",
+            "output": "Yes"
+        },
+        {
+            "input": "acaca\na.a.a",
+            "output": "Yes"
+        },
+        {
+            "input": "abab\nab*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcbb\ncb*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcca\nbcc.",
+            "output": "Yes"
+        },
+        {
+            "input": "baca\n.aca",
+            "output": "Yes"
+        },
+        {
+            "input": "bcab\nbc*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "bcacb\nb.a.b",
+            "output": "Yes"
+        },
+        {
+            "input": "baabc\n.aa.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbcc\nb.b..",
+            "output": "Yes"
+        },
+        {
+            "input": "acabb\naca..",
+            "output": "Yes"
+        },
+        {
+            "input": "cbb\n.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "baa\n.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "caaaa\nca*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbba\n...a",
+            "output": "Yes"
+        },
+        {
+            "input": "bccc\nbc*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cccba\ncc*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "cccaa\ncc*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbaa\n.c.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "caba\nc.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbccc\n.b...",
+            "output": "Yes"
+        },
+        {
+            "input": "caaac\nca*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "caab\n.aab",
+            "output": "Yes"
+        },
+        {
+            "input": "cacb\nca*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "abcba\na.c.a",
+            "output": "Yes"
+        },
+        {
+            "input": "abaac\nab*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "ccccc\ncc*ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "bcccb\nb...b",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbba\ncc*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "abac\nab*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "bbca\nbbc.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaab\ncb*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "acbcb\na.b.b",
+            "output": "Yes"
+        },
+        {
+            "input": "cccaa\n...aa",
+            "output": "Yes"
+        },
+        {
+            "input": "acb\n.cb",
+            "output": "Yes"
+        },
+        {
+            "input": "abac\na.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbbb\nbb*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "aacc\naa*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaa\n..aa",
+            "output": "Yes"
+        },
+        {
+            "input": "abbba\n.bbb.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbca\nbb.a",
+            "output": "Yes"
+        },
+        {
+            "input": "aabc\n..bc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbab\nbb*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcac\nbb*cac",
+            "output": "Yes"
+        },
+        {
+            "input": "aaacc\naa*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "baaca\n.aaca",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcc\nc.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccba\ncc.a",
+            "output": "Yes"
+        },
+        {
+            "input": "acbb\na.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "cabcc\nca*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaabb\naa*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "bacca\nba*cca",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaaa\nbb...",
+            "output": "Yes"
+        },
+        {
+            "input": "bbac\n..ac",
+            "output": "Yes"
+        },
+        {
+            "input": "ccccb\ncc*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbacc\nc.acc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcb\nbb*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "aabba\naa*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "bcacc\nbc*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "cacbb\ncac..",
+            "output": "Yes"
+        },
+        {
+            "input": "acbbb\nac...",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbb\n..bb",
+            "output": "Yes"
+        },
+        {
+            "input": "cacac\nca*cac",
+            "output": "Yes"
+        },
+        {
+            "input": "cbabc\nc.a.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cabac\nca.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "aaca\n..c.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaab\naa*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "caac\n.aa.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbca\nac*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "bbccc\nbb*ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "acbbc\nac*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "abbab\nab*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "aabcb\naa*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "abba\na..a",
+            "output": "Yes"
+        },
+        {
+            "input": "bacbb\nb.cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbca\nbb*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "cccab\nccc.b",
+            "output": "Yes"
+        },
+        {
+            "input": "accca\na...a",
+            "output": "Yes"
+        },
+        {
+            "input": "abcb\n.bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "baacc\nba*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "abcac\nab*cac",
+            "output": "Yes"
+        },
+        {
+            "input": "bbac\nbb*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "abab\n.b.b",
+            "output": "Yes"
+        },
+        {
+            "input": "caccc\nc.ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "bcabb\nbc*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "abbb\nab*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcac\n.cac",
+            "output": "Yes"
+        },
+        {
+            "input": "cba\nc.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcbc\n.b.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "cacb\n.a.b",
+            "output": "Yes"
+        },
+        {
+            "input": "babc\nbab.",
+            "output": "Yes"
+        },
+        {
+            "input": "abcb\nab*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbaa\nb.baa",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaab\ncc*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "abcc\na.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bacbc\n.ac.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bcca\nbc*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbcb\ncc*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbabc\n..a.c",
+            "output": "Yes"
+        },
+        {
+            "input": "caabc\n.aab.",
+            "output": "Yes"
+        },
+        {
+            "input": "cccbb\nccc..",
+            "output": "Yes"
+        },
+        {
+            "input": "aabbb\naa*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcac\n..cac",
+            "output": "Yes"
+        },
+        {
+            "input": "cabb\n.abb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbca\nbc*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "acaaa\n.c...",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbca\nbcbc.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbc\ncc*bc",
+            "output": "Yes"
+        },
+        {
+            "input": "accba\na..ba",
+            "output": "Yes"
+        },
+        {
+            "input": "ccca\n...a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaca\nbb.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "aab\naa.",
+            "output": "Yes"
+        },
+        {
+            "input": "cacc\nc.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbabc\nbbab.",
+            "output": "Yes"
+        },
+        {
+            "input": "bccbc\nb..b.",
+            "output": "Yes"
+        },
+        {
+            "input": "baacb\nbaa.b",
+            "output": "Yes"
+        },
+        {
+            "input": "acbac\na.ba.",
+            "output": "Yes"
+        },
+        {
+            "input": "cccac\n...a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbbc\nb.bb.",
+            "output": "Yes"
+        },
+        {
+            "input": "acca\na..a",
+            "output": "Yes"
+        },
+        {
+            "input": "accbc\na..b.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbc\nac.c",
+            "output": "Yes"
+        },
+        {
+            "input": "abbac\nab*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "cabbb\nc.bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "caccb\nca*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbca\n...ca",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaab\n.baab",
+            "output": "Yes"
+        },
+        {
+            "input": "baaaa\n.aaaa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbacc\nbba..",
+            "output": "Yes"
+        },
+        {
+            "input": "abba\n.bb.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccba\nccb.",
+            "output": "Yes"
+        },
+        {
+            "input": "bacb\nb.cb",
+            "output": "Yes"
+        },
+        {
+            "input": "caacb\n.aa.b",
+            "output": "Yes"
+        },
+        {
+            "input": "cacba\ncac.a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccca\ncc*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "bbccb\nbb*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaa\ncb*aa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcac\nbb.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "acaa\na.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "cca\ncc.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccabb\ncc*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "bacab\nba*cab",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcbb\n..c..",
+            "output": "Yes"
+        },
+        {
+            "input": "abccc\nab*ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "acac\nac*ac",
+            "output": "Yes"
+        },
+        {
+            "input": "accc\nac*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbab\ncb*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaab\naaaa.",
+            "output": "Yes"
+        },
+        {
+            "input": "baabc\nbaab.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbab\n...a.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaba\n...b.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbba\nc...a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbabb\ncb.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "caabb\nca*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbb\ncc*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbc\n..c",
+            "output": "Yes"
+        },
+        {
+            "input": "caab\nca*ab",
+            "output": "Yes"
+        },
+        {
+            "input": "bcc\n.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "acba\nac.a",
+            "output": "Yes"
+        },
+        {
+            "input": "acbaa\nac*baa",
+            "output": "Yes"
+        },
+        {
+            "input": "cacaa\nca*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbcb\nbb*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbcc\nbb*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "aacba\naa*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "acbb\n.cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbabc\ncb*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "bccca\nbc*cca",
+            "output": "Yes"
+        },
+        {
+            "input": "cabab\nc.b.b",
+            "output": "Yes"
+        },
+        {
+            "input": "babbb\nba*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "bacbb\n.ac..",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbbc\nbbbb.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbcc\nac*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "abbcb\n.bbcb",
+            "output": "Yes"
+        },
+        {
+            "input": "caacb\nca*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaba\ncb*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "bccac\nbcc.c",
+            "output": "Yes"
+        },
+        {
+            "input": "babbc\n.a..c",
+            "output": "Yes"
+        },
+        {
+            "input": "ccca\nccc.",
+            "output": "Yes"
+        },
+        {
+            "input": "ababc\nab*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "acbba\nac*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "bacac\nba*cac",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbab\nc..a.",
+            "output": "Yes"
+        },
+        {
+            "input": "acacb\nac*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbcc\nbc*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "aabca\n..bc.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaac\n.baa.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaca\nb.a.a",
+            "output": "Yes"
+        },
+        {
+            "input": "aabac\naa*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaaa\n..aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbb\ncc..",
+            "output": "Yes"
+        },
+        {
+            "input": "accba\nac*cba",
+            "output": "Yes"
+        },
+        {
+            "input": "bbacb\nbb*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbba\ncbb.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccabb\ncca..",
+            "output": "Yes"
+        },
+        {
+            "input": "acab\na.ab",
+            "output": "Yes"
+        },
+        {
+            "input": "abaaa\nab*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "aacbc\n..cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "aacbc\naa.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbc\na.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbba\n.cbb.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbab\nc.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbc\na..c",
+            "output": "Yes"
+        },
+        {
+            "input": "cccba\n...ba",
+            "output": "Yes"
+        },
+        {
+            "input": "caaac\n.aaa.",
+            "output": "Yes"
+        },
+        {
+            "input": "baac\nbaa.",
+            "output": "Yes"
+        },
+        {
+            "input": "cacab\nc.c.b",
+            "output": "Yes"
+        },
+        {
+            "input": "bcacb\nbc*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "abaca\na.aca",
+            "output": "Yes"
+        },
+        {
+            "input": "aaabc\n...bc",
+            "output": "Yes"
+        },
+        {
+            "input": "acaca\nac*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbbc\ncc*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "baac\nb..c",
+            "output": "Yes"
+        },
+        {
+            "input": "ccacc\n..a..",
+            "output": "Yes"
+        },
+        {
+            "input": "aacb\n..cb",
+            "output": "Yes"
+        },
+        {
+            "input": "abbc\n.bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbca\nbb*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "acaba\na.aba",
+            "output": "Yes"
+        },
+        {
+            "input": "accaa\nac*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "bccca\n.ccca",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbbc\nc...c",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaaa\naa*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "ababb\nab*abb",
+            "output": "Yes"
+        },
+        {
+            "input": "bacc\n.acc",
+            "output": "Yes"
+        },
+        {
+            "input": "caba\nca*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "abb\n.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "babc\n.a.c",
+            "output": "Yes"
+        },
+        {
+            "input": "aaabb\n...bb",
+            "output": "Yes"
+        },
+        {
+            "input": "baca\nba.a",
+            "output": "Yes"
+        },
+        {
+            "input": "acbbc\nac..c",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbaa\nccb..",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbab\nccb.b",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaa\n....",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbc\ncc.c",
+            "output": "Yes"
+        },
+        {
+            "input": "ccabb\n..abb",
+            "output": "Yes"
+        },
+        {
+            "input": "cccca\n....a",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbbc\nbb*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaa\n.caa",
+            "output": "Yes"
+        },
+        {
+            "input": "ababc\na.a.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cacca\nc.cc.",
+            "output": "Yes"
+        },
+        {
+            "input": "caba\n.aba",
+            "output": "Yes"
+        },
+        {
+            "input": "abbcc\n.bbcc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbc\n.bb.",
+            "output": "Yes"
+        },
+        {
+            "input": "accca\nac*cca",
+            "output": "Yes"
+        },
+        {
+            "input": "abccb\nab*ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbba\n....a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbca\ncc*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "bcabb\n.ca..",
+            "output": "Yes"
+        },
+        {
+            "input": "abcbb\nab*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "babca\n.a.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "cccc\ncc*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bacbc\nba*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "bccbc\nbc*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbca\ncbbc.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbcb\n.cbcb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbabc\n.bab.",
+            "output": "Yes"
+        },
+        {
+            "input": "babcc\nba*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "abc\nab.",
+            "output": "Yes"
+        },
+        {
+            "input": "bacac\nba.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcba\nbcb.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaac\naa*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "ccabc\ncc.bc",
+            "output": "Yes"
+        },
+        {
+            "input": "cabab\nca*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcbc\ncb*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbccc\n..ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaba\n..b.",
+            "output": "Yes"
+        },
+        {
+            "input": "caaa\n.aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "abcba\n.bcb.",
+            "output": "Yes"
+        },
+        {
+            "input": "babb\nba*bb",
+            "output": "Yes"
+        },
+        {
+            "input": "abaaa\n.b...",
+            "output": "Yes"
+        },
+        {
+            "input": "cccaa\nccc..",
+            "output": "Yes"
+        },
+        {
+            "input": "accbb\nacc..",
+            "output": "Yes"
+        },
+        {
+            "input": "caaca\n.aa.a",
+            "output": "Yes"
+        },
+        {
+            "input": "abbac\n.bb.c",
+            "output": "Yes"
+        },
+        {
+            "input": "abbcc\na..cc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbaa\n..baa",
+            "output": "Yes"
+        },
+        {
+            "input": "acaba\nac*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbaa\ncb*baa",
+            "output": "Yes"
+        },
+        {
+            "input": "aabaa\naa.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcbb\nc.c..",
+            "output": "Yes"
+        },
+        {
+            "input": "acccc\n.cccc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaac\naaa.",
+            "output": "Yes"
+        },
+        {
+            "input": "caaba\nca*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbbb\nc....",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcaa\nbb*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "bccb\nbc*cb",
+            "output": "Yes"
+        },
+        {
+            "input": "bccb\nb..b",
+            "output": "Yes"
+        },
+        {
+            "input": "acac\na.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "baaba\nb..b.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbab\ncc*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "aaba\naa.a",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaba\nbc.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "bccc\n.ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaa\ncc..",
+            "output": "Yes"
+        },
+        {
+            "input": "acb\nac.",
+            "output": "Yes"
+        },
+        {
+            "input": "bacba\n.ac.a",
+            "output": "Yes"
+        },
+        {
+            "input": "aabbb\naa...",
+            "output": "Yes"
+        },
+        {
+            "input": "abcab\n.bc.b",
+            "output": "Yes"
+        },
+        {
+            "input": "acbca\nac.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaca\nbc*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaca\nbb*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "aaac\n...c",
+            "output": "Yes"
+        },
+        {
+            "input": "abcca\nab*cca",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbab\n.c.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbab\n.bb.b",
+            "output": "Yes"
+        },
+        {
+            "input": "abbca\nabb.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbba\n.bba",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaba\nbb*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcab\n.b.ab",
+            "output": "Yes"
+        },
+        {
+            "input": "aacaa\n..c..",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbca\nc..ca",
+            "output": "Yes"
+        },
+        {
+            "input": "cabbc\nca..c",
+            "output": "Yes"
+        },
+        {
+            "input": "cacaa\nc.c..",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaab\nb.aab",
+            "output": "Yes"
+        },
+        {
+            "input": "cbacb\n.ba.b",
+            "output": "Yes"
+        },
+        {
+            "input": "bacaa\nba*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "acbaa\n.cb..",
+            "output": "Yes"
+        },
+        {
+            "input": "baba\n.a.a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbcb\n..b.b",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaab\nbc*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "ababc\n.b.bc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaacb\n...cb",
+            "output": "Yes"
+        },
+        {
+            "input": "acbc\n.cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "abcaa\nab*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "bacb\nba.b",
+            "output": "Yes"
+        },
+        {
+            "input": "aabbc\n..bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccccc\n.....",
+            "output": "Yes"
+        },
+        {
+            "input": "acaac\n.c..c",
+            "output": "Yes"
+        },
+        {
+            "input": "ababb\n.b.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcb\n.b.b",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbba\ncb*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbac\n.c.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "aaca\naa.a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccacb\n..a.b",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaba\n..aba",
+            "output": "Yes"
+        },
+        {
+            "input": "abbac\na..ac",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaaa\ncb...",
+            "output": "Yes"
+        },
+        {
+            "input": "acca\nac*ca",
+            "output": "Yes"
+        },
+        {
+            "input": "caccb\n.a..b",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcbb\n.b.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "cabac\nc.b.c",
+            "output": "Yes"
+        },
+        {
+            "input": "ababa\nab*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "cacac\n.a.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcab\nbc.b",
+            "output": "Yes"
+        },
+        {
+            "input": "aacab\n..c.b",
+            "output": "Yes"
+        },
+        {
+            "input": "caaca\nca*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "bccca\nb...a",
+            "output": "Yes"
+        },
+        {
+            "input": "cccca\ncccc.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbbb\n.bbbb",
+            "output": "Yes"
+        },
+        {
+            "input": "abcb\nab.b",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbbc\nbc*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "accbb\nac*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "cccb\nccc.",
+            "output": "Yes"
+        },
+        {
+            "input": "aacca\n..cc.",
+            "output": "Yes"
+        },
+        {
+            "input": "babbc\nbabb.",
+            "output": "Yes"
+        },
+        {
+            "input": "aabbc\naa*bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "caca\nc.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "baaca\nba*aca",
+            "output": "Yes"
+        },
+        {
+            "input": "bacba\nb.cb.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbaa\ncbb..",
+            "output": "Yes"
+        },
+        {
+            "input": "abba\nab*ba",
+            "output": "Yes"
+        },
+        {
+            "input": "acaac\nac*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "cacbc\nca*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbacb\n..ac.",
+            "output": "Yes"
+        },
+        {
+            "input": "caabc\nca*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "caaab\nca*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "accaa\na..aa",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcc\ncb*cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cacba\nc.cb.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbac\nccb.c",
+            "output": "Yes"
+        },
+        {
+            "input": "caccc\n.a...",
+            "output": "Yes"
+        },
+        {
+            "input": "acbbb\nac*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaaa\n.....",
+            "output": "Yes"
+        },
+        {
+            "input": "bacbc\nba.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbacb\ncb*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "cacb\nc.cb",
+            "output": "Yes"
+        },
+        {
+            "input": "abca\na.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "baacc\nbaa..",
+            "output": "Yes"
+        },
+        {
+            "input": "cabbb\nca...",
+            "output": "Yes"
+        },
+        {
+            "input": "bacac\n.acac",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaca\nbc.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "acacc\nac*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "cacca\n.a..a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaca\ncc.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "cabcb\nca*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "caaca\nc..c.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccac\ncc.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bbabc\nbb.bc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaac\ncc*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "ccab\ncca.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbbc\n....c",
+            "output": "Yes"
+        },
+        {
+            "input": "caaba\nc..b.",
+            "output": "Yes"
+        },
+        {
+            "input": "caaba\ncaa.a",
+            "output": "Yes"
+        },
+        {
+            "input": "acaab\nac*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "babab\nba*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcbb\nbb.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "baabc\nba*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbcc\ncc*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "abaca\n.b.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaacc\n...cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cabcb\nca.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaccb\n..ccb",
+            "output": "Yes"
+        },
+        {
+            "input": "accbb\na..bb",
+            "output": "Yes"
+        },
+        {
+            "input": "aabab\n..b.b",
+            "output": "Yes"
+        },
+        {
+            "input": "aabc\naab.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcba\n..c.a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaba\ncca.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cccba\ncccb.",
+            "output": "Yes"
+        },
+        {
+            "input": "babba\nba*bba",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaab\nbc..b",
+            "output": "Yes"
+        },
+        {
+            "input": "bbabb\n..a..",
+            "output": "Yes"
+        },
+        {
+            "input": "ababc\nabab.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaab\n..aa.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaac\n....c",
+            "output": "Yes"
+        },
+        {
+            "input": "acaab\n.c..b",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaaa\n..aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbac\n..ba.",
+            "output": "Yes"
+        },
+        {
+            "input": "babba\n.a..a",
+            "output": "Yes"
+        },
+        {
+            "input": "baacb\nba*acb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcba\ncbcb.",
+            "output": "Yes"
+        },
+        {
+            "input": "aabaa\naa*baa",
+            "output": "Yes"
+        },
+        {
+            "input": "bccac\nbc*cac",
+            "output": "Yes"
+        },
+        {
+            "input": "bbab\nbb.b",
+            "output": "Yes"
+        },
+        {
+            "input": "baaac\nba*aac",
+            "output": "Yes"
+        },
+        {
+            "input": "baaab\nba*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "cbccb\n.b..b",
+            "output": "Yes"
+        },
+        {
+            "input": "abbc\nabb.",
+            "output": "Yes"
+        },
+        {
+            "input": "acbab\nac*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "abcaa\nab.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "accab\nacca.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbcc\ncb*bcc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbabc\nbb*abc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaac\nbb..c",
+            "output": "Yes"
+        },
+        {
+            "input": "abaa\na.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "cbac\nc.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbab\n..bab",
+            "output": "Yes"
+        },
+        {
+            "input": "accc\n.ccc",
+            "output": "Yes"
+        },
+        {
+            "input": "abbab\na..a.",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaab\naa*aab",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbac\ncc.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "aacaa\naa*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaab\n....b",
+            "output": "Yes"
+        },
+        {
+            "input": "babac\nba*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "caabc\ncaa.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcbc\n..c.c",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaca\n.ba.a",
+            "output": "Yes"
+        },
+        {
+            "input": "aabcb\naab.b",
+            "output": "Yes"
+        },
+        {
+            "input": "bacba\nba.ba",
+            "output": "Yes"
+        },
+        {
+            "input": "abbac\nabba.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbaa\ncc*baa",
+            "output": "Yes"
+        },
+        {
+            "input": "cabab\nca.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbbb\nb.bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "baaba\nba*aba",
+            "output": "Yes"
+        },
+        {
+            "input": "bbac\nbba.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaba\ncc.b.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccacc\ncc*acc",
+            "output": "Yes"
+        },
+        {
+            "input": "abbbb\na....",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaaa\nbc...",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaac\naaaa.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbcc\n..b..",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbac\nc..ac",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaac\nb.aa.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcac\n.b.a.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbcb\ncc.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcba\nc.c.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cabbb\nca*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "acccb\na...b",
+            "output": "Yes"
+        },
+        {
+            "input": "acabc\na.ab.",
+            "output": "Yes"
+        },
+        {
+            "input": "abbb\n.bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "acbac\nac.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "bccaa\nbc*caa",
+            "output": "Yes"
+        },
+        {
+            "input": "bcac\nbc.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaba\n.ca.a",
+            "output": "Yes"
+        },
+        {
+            "input": "acacc\na.a..",
+            "output": "Yes"
+        },
+        {
+            "input": "acbca\na.b.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbbb\ncb*bbb",
+            "output": "Yes"
+        },
+        {
+            "input": "accbc\nac*cbc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcab\ncbc.b",
+            "output": "Yes"
+        },
+        {
+            "input": "abbca\nab*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "caaab\ncaaa.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcaa\nbb.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "babaa\nb.b..",
+            "output": "Yes"
+        },
+        {
+            "input": "acaca\n.c.c.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbab\nbc*bab",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaa\nb.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "aabcb\n..bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "cccbb\n...bb",
+            "output": "Yes"
+        },
+        {
+            "input": "babbc\nb.bbc",
+            "output": "Yes"
+        },
+        {
+            "input": "bccab\nbc*cab",
+            "output": "Yes"
+        },
+        {
+            "input": "aacba\naac.a",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaac\ncb..c",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbc\nbbb.",
+            "output": "Yes"
+        },
+        {
+            "input": "acab\n.c.b",
+            "output": "Yes"
+        },
+        {
+            "input": "abccc\nab...",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbcb\n...c.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbab\ncb.b",
+            "output": "Yes"
+        },
+        {
+            "input": "acaab\na.aab",
+            "output": "Yes"
+        },
+        {
+            "input": "abcba\nab.ba",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcb\nbb.b",
+            "output": "Yes"
+        },
+        {
+            "input": "acaac\na.aa.",
+            "output": "Yes"
+        },
+        {
+            "input": "accca\n.ccc.",
+            "output": "Yes"
+        },
+        {
+            "input": "bcacb\n.cac.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcba\nbb.ba",
+            "output": "Yes"
+        },
+        {
+            "input": "aabba\naa..a",
+            "output": "Yes"
+        },
+        {
+            "input": "bacbb\nba*cbb",
+            "output": "Yes"
+        },
+        {
+            "input": "acacc\n.c.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "cabcb\n.ab.b",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbca\nbbbc.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccab\ncc.b",
+            "output": "Yes"
+        },
+        {
+            "input": "cabac\n.aba.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbac\nbb.c",
+            "output": "Yes"
+        },
+        {
+            "input": "aabca\naa.ca",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaaa\ncc*aaa",
+            "output": "Yes"
+        },
+        {
+            "input": "babba\nb.bb.",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbcb\nc..c.",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaca\nbba.a",
+            "output": "Yes"
+        },
+        {
+            "input": "ccacb\nccac.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccccb\n....b",
+            "output": "Yes"
+        },
+        {
+            "input": "bbacc\nbb.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccacc\ncc.cc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcab\nbbc.b",
+            "output": "Yes"
+        },
+        {
+            "input": "babca\nba*bca",
+            "output": "Yes"
+        },
+        {
+            "input": "cacab\n.a.ab",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcaa\ncbc..",
+            "output": "Yes"
+        },
+        {
+            "input": "acbb\nac..",
+            "output": "Yes"
+        },
+        {
+            "input": "acaba\naca.a",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbcb\nbc*bcb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaac\nc.aac",
+            "output": "Yes"
+        },
+        {
+            "input": "abbca\na..ca",
+            "output": "Yes"
+        },
+        {
+            "input": "bbccb\nbb..b",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbac\ncc*bac",
+            "output": "Yes"
+        },
+        {
+            "input": "abccb\na.cc.",
+            "output": "Yes"
+        },
+        {
+            "input": "ccaab\ncc..b",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaba\n..a.a",
+            "output": "Yes"
+        },
+        {
+            "input": "accbc\nacc.c",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbcc\nbbb..",
+            "output": "Yes"
+        },
+        {
+            "input": "aabac\naa.ac",
+            "output": "Yes"
+        },
+        {
+            "input": "cbaa\nc.aa",
+            "output": "Yes"
+        },
+        {
+            "input": "acabb\n.c.bb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbbb\n.....",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbba\nccbb.",
+            "output": "Yes"
+        }
+    ]
+}

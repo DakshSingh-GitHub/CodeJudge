@@ -465,6 +465,317 @@ def solve_matrix_multiplication():
     outp = "\n".join(" ".join(map(str, row)) for row in res)
     return inp, outp
 
+def solve_rotate_array():
+    n = random.randint(1, 100)
+    arr = [random.randint(1, 100) for _ in range(n)]
+    k = random.randint(0, n)
+    k_rot = k % n if n > 0 else 0
+    res = arr[-k_rot:] + arr[:-k_rot] if n > 0 else arr
+    return f"{' '.join(map(str, arr))}\n{k}", " ".join(map(str, res))
+
+def solve_product_of_array_except_self():
+    n = random.randint(2, 12)
+    arr = [random.randint(1, 5) for _ in range(n)]
+    res = []
+    prod = 1
+    for x in arr: prod *= x
+    for x in arr: res.append(prod // x)
+    return " ".join(map(str, arr)), " ".join(map(str, res))
+
+def solve_combination_sum():
+    n = random.randint(3, 8)
+    candidates = sorted(list(set(random.randint(1, 10) for _ in range(n))))
+    target = random.randint(5, 15)
+    
+    res = []
+    def backtrack(remain, curr, start):
+        if remain == 0:
+            res.append(list(curr))
+            return
+        if remain < 0:
+            return
+        for i in range(start, len(candidates)):
+            curr.append(candidates[i])
+            backtrack(remain - candidates[i], curr, i)
+            curr.pop()
+            
+    backtrack(target, [], 0)
+    res.sort()
+    output_str = "\n".join(" ".join(map(str, combo)) for combo in res)
+    return f"{' '.join(map(str, candidates))}\n{target}", output_str
+
+def solve_group_anagrams():
+    words = ["eat", "tea", "tan", "ate", "nat", "bat", "listen", "silent", "rat", "art", "cat", "act"]
+    n = random.randint(5, 12)
+    chosen = random.choices(words, k=n)
+    
+    groups = {}
+    for w in chosen:
+        sorted_w = "".join(sorted(w))
+        if sorted_w not in groups: groups[sorted_w] = []
+        groups[sorted_w].append(w)
+        
+    sorted_groups = []
+    for g in groups.values():
+        g.sort()
+        sorted_groups.append(g)
+    
+    sorted_groups.sort(key=lambda x: x[0])
+    output_str = "\n".join(" ".join(g) for g in sorted_groups)
+    return " ".join(chosen), output_str
+
+def solve_permutations():
+    n = random.randint(2, 4)
+    arr = sorted(list(set(random.randint(1, 10) for _ in range(n))))
+    if len(arr) < n: arr = list(range(1, n+1))
+    
+    from itertools import permutations as iter_perms
+    res = sorted(list(iter_perms(arr)))
+    output_str = "\n".join(" ".join(map(str, p)) for p in res)
+    return " ".join(map(str, arr)), output_str
+
+def solve_maximum_subarray():
+    n = random.randint(1, 20)
+    arr = [random.randint(-10, 10) for _ in range(n)]
+    max_so_far = -float('inf')
+    max_ending_here = 0
+    for x in arr:
+        max_ending_here += x
+        if max_so_far < max_ending_here:
+            max_so_far = max_ending_here
+        if max_ending_here < 0:
+            max_ending_here = 0
+    return " ".join(map(str, arr)), str(max_so_far)
+
+def solve_jump_game():
+    n = random.randint(2, 10)
+    arr = [random.randint(0, 3) for _ in range(n)]
+    
+    reachable = 0
+    for i in range(n):
+        if i > reachable: break
+        reachable = max(reachable, i + arr[i])
+    
+    res = "Yes" if reachable >= n - 1 else "No"
+    return " ".join(map(str, arr)), res
+
+def solve_subarray_sum_equals_k():
+    n = random.randint(3, 15)
+    arr = [random.randint(-5, 5) for _ in range(n)]
+    k = random.randint(-10, 10)
+    
+    count = 0
+    for i in range(n):
+        s = 0
+        for j in range(i, n):
+            s += arr[j]
+            if s == k: count += 1
+    return " ".join(map(str, arr)) + f"\n{k}", str(count)
+
+def solve_kth_largest_element():
+    n = random.randint(1, 20)
+    arr = [random.randint(1, 100) for _ in range(n)]
+    k = random.randint(1, n)
+    res = sorted(arr, reverse=True)[k-1]
+    return " ".join(map(str, arr)) + f"\n{k}", str(res)
+
+def solve_word_search():
+    m, n = 3, 3
+    board = [[random.choice("ABC") for _ in range(n)] for _ in range(m)]
+    word_len = random.randint(2, 4)
+    word = "".join(random.choice("ABC") for _ in range(word_len))
+    
+    def dfs(r, c, idx, visited):
+        if idx == len(word): return True
+        if r < 0 or r >= m or c < 0 or c >= n or (r, c) in visited or board[r][c] != word[idx]:
+            return False
+        visited.add((r, c))
+        res = dfs(r+1, c, idx+1, visited) or dfs(r-1, c, idx+1, visited) or \
+              dfs(r, c+1, idx+1, visited) or dfs(r, c-1, idx+1, visited)
+        visited.remove((r, c))
+        return res
+
+    found = False
+    for i in range(m):
+        for j in range(n):
+            if dfs(i, j, 0, set()):
+                found = True
+                break
+        if found: break
+        
+    board_str = "\n".join(" ".join(row) for row in board)
+    return f"{m} {n}\n{board_str}\n{word}", "Yes" if found else "No"
+
+def solve_number_of_islands():
+    m, n = random.randint(3, 8), random.randint(3, 8)
+    grid = [[random.choice(["0", "0", "1"]) for _ in range(n)] for _ in range(m)]
+    
+    def dfs(r, c):
+        if r < 0 or r >= m or c < 0 or c >= n or grid[r][c] == "0":
+            return
+        grid[r][c] = "0"
+        dfs(r+1, c)
+        dfs(r-1, c)
+        dfs(r, c+1)
+        dfs(r, c-1)
+
+    temp_grid = [row[:] for row in grid]
+    count = 0
+    for i in range(m):
+        for j in range(n):
+            if grid[i][j] == "1":
+                count += 1
+                dfs(i, j)
+    
+    grid = temp_grid
+    grid_str = "\n".join(" ".join(row) for row in grid)
+    return f"{m} {n}\n{grid_str}", str(count)
+
+def solve_partition_labels():
+    letters = "abcde"
+    s = "".join(random.choices(letters, k=random.randint(5, 20)))
+    
+    last = {c: i for i, c in enumerate(s)}
+    j = anchor = 0
+    res = []
+    for i, c in enumerate(s):
+        j = max(j, last[c])
+        if i == j:
+            res.append(i - anchor + 1)
+            anchor = i + 1
+    return s, " ".join(map(str, res))
+
+def solve_spiral_matrix():
+    m, n = random.randint(2, 4), random.randint(2, 4)
+    matrix = [[random.randint(1, 20) for _ in range(n)] for _ in range(m)]
+    
+    res = []
+    r1, r2 = 0, m - 1
+    c1, c2 = 0, n - 1
+    while r1 <= r2 and c1 <= c2:
+        for c in range(c1, c2 + 1): res.append(matrix[r1][c])
+        for r in range(r1 + 1, r2 + 1): res.append(matrix[r][c2])
+        if r1 < r2 and c1 < c2:
+            for c in range(c2 - 1, c1, -1): res.append(matrix[r2][c])
+            for r in range(r2, r1, -1): res.append(matrix[r][c1])
+        r1 += 1; r2 -= 1
+        c1 += 1; c2 -= 1
+        
+    matrix_str = "\n".join(" ".join(map(str, row)) for row in matrix)
+    return f"{m} {n}\n{matrix_str}", " ".join(map(str, res))
+
+def solve_container_with_most_water():
+    n = random.randint(2, 15)
+    heights = [random.randint(1, 15) for _ in range(n)]
+    
+    l, r = 0, n - 1
+    res = 0
+    while l < r:
+        res = max(res, min(heights[l], heights[r]) * (r - l))
+        if heights[l] < heights[r]: l += 1
+        else: r -= 1
+    return " ".join(map(str, heights)), str(res)
+
+def solve_longest_palindromic_substring():
+    letters = "abc"
+    s = "".join(random.choices(letters, k=random.randint(3, 10)))
+    
+    res = ""
+    for i in range(len(s)):
+        # odd
+        l, r = i, i
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            if (r - l + 1) > len(res): res = s[l:r+1]
+            l -= 1; r += 1
+        # even
+        l, r = i, i + 1
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            if (r - l + 1) > len(res): res = s[l:r+1]
+            l -= 1; r += 1
+    return s, res
+
+def solve_n_queens():
+    n = random.randint(1, 8) # Keep small for efficiency
+    def backtrack(r, cols, posDiag, negDiag):
+        if r == n: return 1
+        res = 0
+        for c in range(n):
+            if c in cols or (r + c) in posDiag or (r - c) in negDiag:
+                continue
+            cols.add(c); posDiag.add(r + c); negDiag.add(r - c)
+            res += backtrack(r + 1, cols, posDiag, negDiag)
+            cols.remove(c); posDiag.remove(r + c); negDiag.remove(r - c)
+        return res
+    return str(n), str(backtrack(0, set(), set(), set()))
+
+def solve_median_of_two_sorted_arrays():
+    n1, n2 = random.randint(0, 10), random.randint(0, 10)
+    if n1 == 0 and n2 == 0: n1 = 1
+    nums1 = sorted([random.randint(1, 100) for _ in range(n1)])
+    nums2 = sorted([random.randint(1, 100) for _ in range(n2)])
+    merged = sorted(nums1 + nums2)
+    l = len(merged)
+    if l % 2 == 1: res = float(merged[l//2])
+    else: res = (merged[l//2 - 1] + merged[l//2]) / 2.0
+    return f"{' '.join(map(str, nums1))}\n{' '.join(map(str, nums2))}", f"{res:.5f}"
+
+def solve_regular_expression_matching():
+    # Simple regex cases
+    s = "".join(random.choices("abc", k=random.randint(2, 5)))
+    if random.choice([True, False]):
+        p = s.replace(random.choice(s), ".")
+    else:
+        p = s[:2] + "*" + s[2:]
+    
+    import re
+    # Convert pattern to standard regex (handle '*' correctly for this simple generator)
+    # The problem pattern is slightly different from re (covers entire string)
+    try:
+        match = re.fullmatch(p, s)
+        res = "Yes" if match else "No"
+    except:
+        res = "No"
+    return f"{s}\n{p}", res
+
+def solve_longest_valid_parentheses():
+    s = "".join(random.choices("()", k=random.randint(5, 20)))
+    stack = [-1]
+    res = 0
+    for i, char in enumerate(s):
+        if char == '(': stack.append(i)
+        else:
+            stack.pop()
+            if not stack: stack.append(i)
+            else: res = max(res, i - stack[-1])
+    return s, str(res)
+
+def solve_sudoku_solver():
+    # Provide one hardcoded Sudoku puzzle and its solution as a template
+    # Generating valid Sudokus is complex, so we'll use a few variants
+    puzzle = [
+        "5 3 . . 7 . . . .",
+        "6 . . 1 9 5 . . .",
+        ". 9 8 . . . . 6 .",
+        "8 . . . 6 . . . 3",
+        "4 . . 8 . 3 . . 1",
+        "7 . . . 2 . . . 6",
+        ". 6 . . . . 2 8 .",
+        ". . . 4 1 9 . . 5",
+        ". . . . 8 . . 7 9"
+    ]
+    solution = [
+        "5 3 4 6 7 8 9 1 2",
+        "6 7 2 1 9 5 3 4 8",
+        "1 9 8 3 4 2 5 6 7",
+        "8 5 9 7 6 1 4 2 3",
+        "4 2 6 8 5 3 7 9 1",
+        "7 1 3 9 2 4 8 5 6",
+        "9 6 1 5 3 7 2 8 4",
+        "2 8 7 4 1 9 6 3 5",
+        "3 4 5 2 8 6 1 7 9"
+    ]
+    return "\n".join(puzzle), "\n".join(solution)
+
 SOLVERS = {
     "area_of_a_rectangle": solve_area_of_a_rectangle,
     "binary_to_decimal": solve_binary_to_decimal,
@@ -516,6 +827,26 @@ SOLVERS = {
     "house_robber": solve_house_robber,
     "edit_distance": solve_edit_distance,
     "matrix_multiplication": solve_matrix_multiplication,
+    "rotate_array": solve_rotate_array,
+    "product_of_array_except_self": solve_product_of_array_except_self,
+    "combination_sum": solve_combination_sum,
+    "group_anagrams": solve_group_anagrams,
+    "permutations": solve_permutations,
+    "maximum_subarray": solve_maximum_subarray,
+    "jump_game": solve_jump_game,
+    "subarray_sum_equals_k": solve_subarray_sum_equals_k,
+    "kth_largest_element": solve_kth_largest_element,
+    "word_search": solve_word_search,
+    "number_of_islands": solve_number_of_islands,
+    "partition_labels": solve_partition_labels,
+    "spiral_matrix": solve_spiral_matrix,
+    "container_with_most_water": solve_container_with_most_water,
+    "longest_palindromic_substring": solve_longest_palindromic_substring,
+    "n_queens": solve_n_queens,
+    "median_of_two_sorted_arrays": solve_median_of_two_sorted_arrays,
+    "regular_expression_matching": solve_regular_expression_matching,
+    "longest_valid_parentheses": solve_longest_valid_parentheses,
+    "sudoku_solver": solve_sudoku_solver,
 }
 
 HARD_PROBLEMS = {
@@ -527,7 +858,15 @@ HARD_PROBLEMS = {
     "string_permutations", 
     "trapping_rain_water",
     "edit_distance",
-    "matrix_multiplication"
+    "matrix_multiplication",
+    "n_queens",
+    "median_of_two_sorted_arrays",
+    "regular_expression_matching",
+    "longest_valid_parentheses",
+    "sudoku_solver",
+    "combination_sum",
+    "word_search",
+    "number_of_islands"
 }
 
 def main():
