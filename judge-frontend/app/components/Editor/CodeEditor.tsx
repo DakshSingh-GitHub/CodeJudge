@@ -61,10 +61,20 @@ export default function CodeEditor({
                         readOnly: isDisabled,
                         cursorBlinking: "expand",
                         fontFamily: "Jetbrains Mono, sans-serif, Arial",
+                        suggestOnTriggerCharacters: true,
+                        quickSuggestions: {
+                            other: true,
+                            comments: true,
+                            strings: true,
+                        },
+                        parameterHints: { enabled: true },
+                        tabCompletion: "on",
                     }}
                 />
             </div>
-            {!isDisabled && <Toolbar fontSize={fontSize} setFontSize={setFontSize} />}
+            {!isDisabled && (
+                <Toolbar fontSize={fontSize} setFontSize={setFontSize} />
+            )}
         </div>
     );
 }

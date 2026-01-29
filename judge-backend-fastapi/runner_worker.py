@@ -86,14 +86,8 @@ def main():
                 # Read from our redirected stdin
                 input_line = sys.stdin.readline()
                 
-                # Echo the input back to stdout (mimicking a terminal)
-                # We add a newline because readline includes it if present, 
-                # but if it's the last line we might need to be careful.
-                if input_line:
-                    sys.stdout.write(input_line)
-                    if not input_line.endswith('\n'):
-                        sys.stdout.write('\n')
-                    sys.stdout.flush()
+                # Do not echo input back to stdout for judge
+                pass
                 
                 return input_line.rstrip('\n')
 
