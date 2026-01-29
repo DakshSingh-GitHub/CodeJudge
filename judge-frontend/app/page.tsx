@@ -96,19 +96,47 @@ export default function Home() {
         document.body.style.cursor = "col-resize";
     };
 
+    // State restoration on mount
+    useEffect(() => {
+        const lastProblemId = sessionStorage.getItem("last_selected_problem_id");
+        if (lastProblemId && !selectedProblemId) {
+            handleSelect(lastProblemId);
+        }
+    }, []);
+
+    // Save code changes
+    useEffect(() => {
+        if (selectedProblemId) {
+            sessionStorage.setItem(`draft_code_${selectedProblemId}`, code);
+        }
+    }, [code, selectedProblemId]);
+
     async function handleSelect(id: string) {
         setSelectedProblemId(id);
+        if (id) {
+            sessionStorage.setItem("last_selected_problem_id", id);
+        }
+
         setSearchQuery("");
         if (!id) {
             setProblem(null);
             setPastSubmissions([]);
             return;
         }
-        const data = await getProblemById(id);
-        setProblem(data);
-        setCode(DEFAULT_CODE);
+
+        // Restore saved code or use default
+        // We set code BEFORE awaiting the API to ensure batched updates (preventing race conditions in saving)
+        const savedCode = sessionStorage.getItem(`draft_code_${id}`);
+        setCode(savedCode || DEFAULT_CODE);
         setResult(null);
-        setPastSubmissions(getSubmissionsByProblemId(id));
+
+        try {
+            const data = await getProblemById(id);
+            setProblem(data);
+            setPastSubmissions(getSubmissionsByProblemId(id));
+        } catch (error) {
+            console.error("Failed to fetch problem", error);
+        }
     }
 
     async function handleTest() {
