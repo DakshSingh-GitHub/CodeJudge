@@ -10,6 +10,7 @@ import PastSubmissions from "./components/Editor/PastSubmissions";
 import { saveSubmission, getSubmissionsByProblemId, Submission } from "./lib/storage";
 import { Problem } from "./lib/types";
 import { useAppContext } from "./lib/context";
+import { FileText, Code, History } from "lucide-react";
 
 const DEFAULT_CODE = "#Write your code here";
 
@@ -289,51 +290,20 @@ export default function Home() {
                             className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col lg:flex-row gap-4"
                             transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                         >
-                            {/* Mobile Tabs */}
-                            {isMobile && (
-                                <div className="flex border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 rounded-t-xl overflow-hidden shrink-0">
-                                    <button
-                                        onClick={() => setMobileTab("problem")}
-                                        className={`flex-1 py-3 text-sm font-medium transition-colors duration-200 border-b-2 ${mobileTab === "problem"
-                                            ? "border-indigo-500 text-indigo-600 dark:text-indigo-400 bg-gray-50 dark:bg-gray-700/50"
-                                            : "border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                                            }`}
-                                    >
-                                        Problem
-                                    </button>
-                                    <button
-                                        onClick={() => setMobileTab("code")}
-                                        className={`flex-1 py-3 text-sm font-medium transition-colors duration-200 border-b-2 ${mobileTab === "code"
-                                            ? "border-indigo-500 text-indigo-600 dark:text-indigo-400 bg-gray-50 dark:bg-gray-700/50"
-                                            : "border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                                            }`}
-                                    >
-                                        Code
-                                    </button>
-                                    <button
-                                        onClick={() => setMobileTab("submissions")}
-                                        className={`flex-1 py-3 text-sm font-medium transition-colors duration-200 border-b-2 ${mobileTab === "submissions"
-                                            ? "border-indigo-500 text-indigo-600 dark:text-indigo-400 bg-gray-50 dark:bg-gray-700/50"
-                                            : "border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                                            }`}
-                                    >
-                                        Past
-                                    </button>
-                                </div>
-                            )}
+
 
                             {/* Problem Selector and Viewer */}
                             <div
                                 className={`flex-1 min-h-100 md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
                                     }`}
-                                style={{ flex: isMobile ? "none" : mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "80%" : "auto" }}
+                                style={{ flex: isMobile ? "none" : mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "100%" : "auto" }}
                             >
                                 <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
                                     <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
                                         Problem
                                     </h2>
                                 </div>
-                                <div className="flex-1 overflow-y-auto p-6 flex flex-col">
+                                <div className="flex-1 overflow-y-auto p-6 pb-28 flex flex-col">
                                     <div className="mt-8 flex-1 flex flex-col">
                                         <ProblemViewer problem={problem} />
                                     </div>
@@ -349,7 +319,7 @@ export default function Home() {
                             <div
                                 className={`flex-1 min-h-100 md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl flex flex-col overflow-hidden ${isMobile && mobileTab === "problem" ? "hidden" : "flex"
                                     }`}
-                                style={{ flex: isMobile ? "none" : 100 - mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "80%" : "auto" }}
+                                style={{ flex: isMobile ? "none" : 100 - mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "100%" : "auto" }}
                             >
                                 {/* Tabs Header - Desktop only or Submissions specific for mobile */}
                                 <div className={`flex border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 ${isMobile ? "hidden" : "flex"}`}>
@@ -373,7 +343,7 @@ export default function Home() {
                                     </button>
                                 </div>
 
-                                <div className="flex-1 min-h-0 p-4 flex flex-col gap-4">
+                                <div className="flex-1 min-h-0 p-4 pb-28 md:pb-4 flex flex-col gap-4">
                                     {/* Editor and Result Area - Kept mounted to avoid state loss and 'Canceled' errors */}
                                     <div className={`flex-1 min-h-0 flex flex-col gap-4 ${(activeTab === "editor" && !isMobile) || (isMobile && mobileTab === "code") ? "flex" : "hidden"}`}>
                                         <div className={`${isMobile ? "h-87.5" : "flex-1"} min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner`}>
@@ -550,6 +520,42 @@ export default function Home() {
                             </div>
                         </motion.div>
                     </div>
+                    {isMobile && (
+                        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+                            <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
+                                <button
+                                    onClick={() => setMobileTab("problem")}
+                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[70px] ${mobileTab === "problem"
+                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                        : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                        }`}
+                                >
+                                    <FileText className={`w-5 h-5 ${mobileTab === "problem" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                    <span className="text-[10px] font-bold tracking-wide">Problem</span>
+                                </button>
+                                <button
+                                    onClick={() => setMobileTab("code")}
+                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[70px] ${mobileTab === "code"
+                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                        : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                        }`}
+                                >
+                                    <Code className={`w-5 h-5 ${mobileTab === "code" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                    <span className="text-[10px] font-bold tracking-wide">Code</span>
+                                </button>
+                                <button
+                                    onClick={() => setMobileTab("submissions")}
+                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[70px] ${mobileTab === "submissions"
+                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                        : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                        }`}
+                                >
+                                    <History className={`w-5 h-5 ${mobileTab === "submissions" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                    <span className="text-[10px] font-bold tracking-wide">Past</span>
+                                </button>
+                            </div>
+                        </div>
+                    )}
                 </>
             )}
         </div>

@@ -91,12 +91,12 @@ export default function CodeTestPage() {
     if (!isMounted) return null;
 
     return (
-        <div className="flex-1 flex flex-col min-h-0 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans">
+        <div className="flex-1 flex flex-col min-h-0 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 relative overflow-y-auto font-sans pb-8">
             {/* Ambient Background Glows */}
             <div className="absolute top-0 right-0 w-125 h-125 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-100 h-100 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="flex-1 flex flex-col lg:flex-row gap-4 lg:gap-6 p-4 sm:p-6 relative z-10 overflow-hidden">
+            <div className="flex-1 flex flex-col lg:flex-row gap-4 lg:gap-6 p-4 sm:p-6 relative z-10">
                 {/* Left Pane - Code Editor */}
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
