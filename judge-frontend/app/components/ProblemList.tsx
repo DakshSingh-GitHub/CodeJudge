@@ -86,6 +86,20 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
         }
     };
 
+    const getDifficultyStyles = (difficulty?: string) => {
+        const diff = (difficulty || "medium").toLowerCase();
+        switch (diff) {
+            case "easy":
+                return "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20";
+            case "medium":
+                return "bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-500/20";
+            case "hard":
+                return "bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-500/20";
+            default:
+                return "bg-gray-50 dark:bg-gray-500/10 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-500/20";
+        }
+    };
+
     return (
         <div className="h-full flex flex-col bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
             <div className="p-4 border-b border-gray-200 dark:border-gray-700">
@@ -139,13 +153,16 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                                                 setIsSidebarOpen(false);
                                             }
                                         }}
-                                        className={`w-full text-left px-4 py-3 transition-colors duration-200 ${selectedId === problem.id
+                                        className={`w-full text-left px-4 py-3 transition-colors duration-200 flex justify-between items-center group ${selectedId === problem.id
                                             ? "bg-indigo-50 dark:bg-indigo-900 border-l-4 border-indigo-600 dark:border-indigo-400 text-indigo-900 dark:text-indigo-50 font-medium"
                                             : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                                             }`}
                                     >
-                                        <span className="block truncate">
+                                        <span className="block truncate pr-2">
                                             {problem.title}
+                                        </span>
+                                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border transition-opacity duration-200 uppercase tracking-tighter ${getDifficultyStyles(problem.difficulty)}`}>
+                                            {problem.difficulty || "Medium"}
                                         </span>
                                     </button>
                                 </motion.li>

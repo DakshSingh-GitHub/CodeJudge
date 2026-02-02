@@ -6,6 +6,7 @@ import { getProblems } from "../lib/api";
 interface Problem {
     id: string;
     title: string;
+    difficulty?: string;
 }
 
 interface ProblemSelectorProps {
@@ -42,6 +43,20 @@ export default function ProblemSelector({ onSelect }: ProblemSelectorProps) {
         setIsOpen(false);
     };
 
+    const getDifficultyStyles = (difficulty?: string) => {
+        const diff = (difficulty || "medium").toLowerCase();
+        switch (diff) {
+            case "easy":
+                return "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20";
+            case "medium":
+                return "bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-500/20";
+            case "hard":
+                return "bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-500/20";
+            default:
+                return "bg-gray-50 dark:bg-gray-500/10 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-500/20";
+        }
+    };
+
     return (
         <div className="relative" ref={wrapperRef}>
             <label id="listbox-label" className="block text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -55,7 +70,14 @@ export default function ProblemSelector({ onSelect }: ProblemSelectorProps) {
                 aria-labelledby="listbox-label"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <span className="block truncate">{selectedProblem ? selectedProblem.title : "Select a problem"}</span>
+                <div className="flex items-center justify-between">
+                    <span className="block truncate">{selectedProblem ? selectedProblem.title : "Select a problem"}</span>
+                    {selectedProblem && (
+                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border uppercase tracking-tighter mx-2 ${getDifficultyStyles(selectedProblem.difficulty)}`}>
+                            {selectedProblem.difficulty || "Medium"}
+                        </span>
+                    )}
+                </div>
                 <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
                     <svg className="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                         <path fillRule="evenodd" d="M10 3a.75.75 0 01.53.22l3.5 3.5a.75.75 0 01-1.06 1.06L10 4.81 6.53 8.28a.75.75 0 01-1.06-1.06l3.5-3.5A.75.75 0 0110 3zm-3.72 9.28a.75.75 0 011.06 0L10 15.19l2.47-2.47a.75.75 0 111.06 1.06l-3.5 3.5a.75.75 0 01-1.06 0l-3.5-3.5a.75.75 0 010-1.06z" clipRule="evenodd" />
@@ -85,9 +107,14 @@ export default function ProblemSelector({ onSelect }: ProblemSelectorProps) {
                             aria-selected={selectedProblem?.id === problem.id}
                             onClick={() => handleSelectProblem(problem)}
                         >
-                            <span className={`font-normal block truncate ${selectedProblem?.id === problem.id ? 'font-semibold' : ''}`}>
-                                {problem.title}
-                            </span>
+                            <div className="flex items-center justify-between">
+                                <span className={`font-normal block truncate ${selectedProblem?.id === problem.id ? 'font-semibold' : ''}`}>
+                                    {problem.title}
+                                </span>
+                                <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border uppercase tracking-tighter ${getDifficultyStyles(problem.difficulty)}`}>
+                                    {problem.difficulty || "Medium"}
+                                </span>
+                            </div>
                             {selectedProblem?.id === problem.id ? (
                                 <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 dark:text-white">
                                     <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

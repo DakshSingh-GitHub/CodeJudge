@@ -28,6 +28,7 @@ class ProblemBase(BaseModel):
     id: str
     title: str
     description: str
+    difficulty: Optional[str] = "medium"
 
 class ProblemDetail(ProblemBase):
     judge_mode: str = "ALL"
@@ -120,9 +121,11 @@ def list_problems():
             problems.append({
                 "id": problem.get("id"),
                 "title": problem.get("title"),
-                "description": problem.get("description")
+                "description": problem.get("description"),
+                "difficulty": problem.get("difficulty", "medium") # Default to medium
             })
-        except Exception:
+        except Exception as e:
+            print(f"Error loading problem {filename}: {e}")
             continue
 
     return {"count": len(problems), "problems": problems}
@@ -145,7 +148,8 @@ def get_problem(problem_id: str):
     response = {
         "id": problem.get("id"),
         "title": problem.get("title"),
-        "description": problem.get("description")
+        "description": problem.get("description"),
+        "difficulty": problem.get("difficulty", "medium")
     }
 
     optional_fields = ["input_format", "output_format", "constraints", "sample_test_cases"]
