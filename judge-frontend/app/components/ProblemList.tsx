@@ -1,8 +1,9 @@
 "use client";
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { getProblems } from "../lib/api";
+import { Filter, ChevronDown, Check } from "lucide-react";
 
 import { Problem } from "../lib/types";
 
@@ -17,6 +18,19 @@ interface ProblemListProps {
 export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, searchQuery, setSearchQuery }: ProblemListProps) {
     const [problems, setProblems] = useState<Problem[]>([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
+    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const filterRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (filterRef.current && !filterRef.current.contains(event.target as Node)) {
+                setIsFilterOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
 
     const shuffleArray = <T,>(array: T[]): T[] => {
         const shuffled = [...array];
@@ -57,9 +71,11 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
         });
     }, []);
 
-    const filteredProblems = problems.filter((problem) =>
-        problem.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const filteredProblems = problems.filter((problem) => {
+        const matchesSearch = problem.title.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesDifficulty = difficultyFilter === "all" || (problem.difficulty || "medium").toLowerCase() === difficultyFilter.toLowerCase();
+        return matchesSearch && matchesDifficulty;
+    });
 
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
@@ -102,17 +118,67 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
 
     return (
         <div className="h-full flex flex-col bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-            <div className="p-4 border-b border-gray-200 dark:border-gray-700">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3">
+            <div className="p-4 border-b border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3 flex items-center gap-2">
+                    <Filter className="w-4 h-4 text-indigo-500" />
                     Problems
                 </h2>
-                <input
-                    type="text"
-                    placeholder="Search problems..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-3 py-2 text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 dark:text-white dark:placeholder-gray-400"
-                />
+                <div className="flex items-center gap-2">
+                    <div className="relative flex-1">
+                        <input
+                            type="text"
+                            placeholder="Search problems..."
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                            className="w-full px-3 py-2 text-sm text-gray-900 bg-white/50 dark:bg-gray-700/50 backdrop-blur-md border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 outline-none transition-all dark:text-white dark:placeholder-gray-400"
+                        />
+                    </div>
+
+                    <div className="relative" ref={filterRef}>
+                        <motion.button
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            onClick={() => setIsFilterOpen(!isFilterOpen)}
+                            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-700/50 backdrop-blur-md border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600/50 transition-all outline-none min-w-[100px] justify-between"
+                        >
+                            <span className="capitalize">{difficultyFilter}</span>
+                            <motion.div
+                                animate={{ rotate: isFilterOpen ? 180 : 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <ChevronDown className="w-4 h-4 opacity-60" />
+                            </motion.div>
+                        </motion.button>
+
+                        <AnimatePresence>
+                            {isFilterOpen && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                                    animate={{ opacity: 1, y: 5, scale: 1 }}
+                                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                                    className="absolute right-0 top-full z-50 w-40 p-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-2xl border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl ring-1 ring-black/5"
+                                >
+                                    {["all", "easy", "medium", "hard"].map((level) => (
+                                        <button
+                                            key={level}
+                                            onClick={() => {
+                                                setDifficultyFilter(level);
+                                                setIsFilterOpen(false);
+                                            }}
+                                            className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors scale-100 hover:scale-[1.02] active:scale-[0.98] ${difficultyFilter === level
+                                                    ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
+                                                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
+                                                }`}
+                                        >
+                                            <span className="capitalize">{level}</span>
+                                            {difficultyFilter === level && <Check className="w-3.5 h-3.5" />}
+                                        </button>
+                                    ))}
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
+                </div>
             </div>
 
             <div className="flex-1 overflow-y-auto overflow-x-hidden">
