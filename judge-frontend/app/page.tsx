@@ -3,16 +3,28 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getProblemById, submitCode } from "./lib/api";
-import ProblemList from "./components/ProblemList";
-import ProblemViewer from "./components/ProblemViewer";
-import CodeEditor from "./components/Editor/CodeEditor";
-import PastSubmissions from "./components/Editor/PastSubmissions";
 import { saveSubmission, getSubmissionsByProblemId, Submission } from "./lib/storage";
 import { Problem } from "./lib/types";
 import { useAppContext } from "./lib/context";
 import { FileText, Code, History } from "lucide-react";
 
+import ProblemList from "./components/ProblemList";
+import ProblemViewer from "./components/ProblemViewer";
+import CodeEditor from "./components/Editor/CodeEditor";
+import PastSubmissions from "./components/Editor/PastSubmissions";
+
 const DEFAULT_CODE = "#Write your code here";
+
+interface SubmissionResult {
+    final_status: string;
+    summary: {
+        passed: number;
+        total: number;
+    };
+    total_duration?: number | undefined;
+    test_case_results?: { status: string }[];
+    error?: string;
+}
 
 export default function Home() {
     // State Variable Declarations
@@ -23,7 +35,7 @@ export default function Home() {
     const containerRef = useRef<HTMLDivElement>(null);
     const mainContentRef = useRef<HTMLDivElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [result, setResult] = useState<any>(null);
+    const [result, setResult] = useState<SubmissionResult | null>(null);
     const [activeTab, setActiveTab] = useState<"editor" | "submissions">("editor");
     const [pastSubmissions, setPastSubmissions] = useState<Submission[]>([]);
     const [searchQuery, setSearchQuery] = useState("");
@@ -85,13 +97,13 @@ export default function Home() {
         };
     }, [isMobile, isMounted, setIsSidebarOpen]);
 
-    const handleMouseDownSidebar = (e: React.MouseEvent) => {
+    const handleMouseDownSidebar = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         isResizingSidebar.current = true;
         document.body.style.cursor = "col-resize";
     };
 
-    const handleMouseDownMain = (e: React.MouseEvent) => {
+    const handleMouseDownMain = (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         isResizingMain.current = true;
         document.body.style.cursor = "col-resize";
@@ -101,9 +113,9 @@ export default function Home() {
     useEffect(() => {
         const lastProblemId = sessionStorage.getItem("last_selected_problem_id");
         if (lastProblemId && !selectedProblemId) {
-            handleSelect(lastProblemId);
+            handleSelect(lastProblemId).catch(console.error);
         }
-    }, []);
+    }, [selectedProblemId]);
 
     // Save code changes
     useEffect(() => {
@@ -125,8 +137,6 @@ export default function Home() {
             return;
         }
 
-        // Restore saved code or use default
-        // We set code BEFORE awaiting the API to ensure batched updates (preventing race conditions in saving)
         const savedCode = sessionStorage.getItem(`draft_code_${id}`);
         setCode(savedCode || DEFAULT_CODE);
         setResult(null);
@@ -134,7 +144,8 @@ export default function Home() {
         try {
             const data = await getProblemById(id);
             setProblem(data);
-            setPastSubmissions(getSubmissionsByProblemId(id));
+            const subs = await getSubmissionsByProblemId(id);
+            setPastSubmissions(subs);
         } catch (error) {
             console.error("Failed to fetch problem", error);
         }
@@ -147,13 +158,12 @@ export default function Home() {
         setResult(null);
 
         try {
-            const data = await submitCode(selectedProblemId, code, true); // testOnly = true
+            const data: SubmissionResult = await submitCode(selectedProblemId, code, true);
 
-            // Fallback: If backend is old and didn't filter hidden test cases, filter them here
             const sampleCount = problem.sample_test_cases?.length || 0;
             if (data.test_case_results && data.test_case_results.length > sampleCount && sampleCount > 0) {
                 const sampleResults = data.test_case_results.slice(0, sampleCount);
-                const passedCount = sampleResults.filter((r: any) => r.status === "Accepted").length;
+                const passedCount = sampleResults.filter(r => r.status === "Accepted").length;
 
                 data.summary = {
                     passed: passedCount,
@@ -164,12 +174,13 @@ export default function Home() {
             }
 
             setResult(data);
-        } catch (error: any) {
-            if (error.name === 'AbortError' || (error.message && error.message.toLowerCase().includes('cancel'))) {
+        } catch (error) {
+            const err = error as Error;
+            if (err.name === 'AbortError' || (err.message && err.message.toLowerCase().includes('cancel'))) {
                 console.warn('Test request was canceled.');
                 return;
             }
-            setResult({ error: error.message || "Something went wrong" });
+            setResult({ error: err.message || "Something went wrong", final_status: "Error", summary: { passed: 0, total: 0 } });
         } finally {
             setIsSubmitting(false);
         }
@@ -182,10 +193,10 @@ export default function Home() {
         setResult(null);
 
         try {
-            const data = await submitCode(selectedProblemId, code);
+            const data: SubmissionResult = await submitCode(selectedProblemId, code);
             setResult(data);
 
-            const newSubmission = saveSubmission({
+            const newSubmission = await saveSubmission({
                 problemId: selectedProblemId,
                 problemTitle: problem.title,
                 code: code,
@@ -197,12 +208,13 @@ export default function Home() {
             if (newSubmission) {
                 setPastSubmissions(prev => [newSubmission, ...prev.slice(0, 49)]);
             }
-        } catch (error: any) {
-            if (error.name === 'AbortError' || (error.message && error.message.toLowerCase().includes('cancel'))) {
+        } catch (error) {
+            const err = error as Error;
+            if (err.name === 'AbortError' || (err.message && err.message.toLowerCase().includes('cancel'))) {
                 console.warn('Submission request was canceled.');
-                return; // Do not show an error for cancellations
+                return;
             }
-            setResult({ error: error.message || "Something went wrong" });
+            setResult({ error: err.message || "Something went wrong", final_status: "Error", summary: { passed: 0, total: 0 } });
         } finally {
             setIsSubmitting(false);
         }
@@ -403,7 +415,7 @@ export default function Home() {
                                                                 <p className="text-gray-500 dark:text-gray-400 italic text-center text-sm">
                                                                     Happy coding! Think carefully before submission.
                                                                     <br />
-                                                                    <span className="text-amber-400 text-xs mt-1">⚠️ Don't add Prompts to Input ⚠️</span>
+                                                                    <span className="text-amber-400 text-xs mt-1">⚠️ Don&apos;t add Prompts to Input ⚠️</span>
                                                                 </p>
                                                             </motion.div>
                                                         ) : result.error ? (
@@ -525,7 +537,7 @@ export default function Home() {
                             <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
                                 <button
                                     onClick={() => setMobileTab("problem")}
-                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[70px] ${mobileTab === "problem"
+                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "problem"
                                         ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                         : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                         }`}
@@ -535,7 +547,7 @@ export default function Home() {
                                 </button>
                                 <button
                                     onClick={() => setMobileTab("code")}
-                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[70px] ${mobileTab === "code"
+                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "code"
                                         ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                         : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                         }`}
@@ -545,7 +557,7 @@ export default function Home() {
                                 </button>
                                 <button
                                     onClick={() => setMobileTab("submissions")}
-                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[70px] ${mobileTab === "submissions"
+                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "submissions"
                                         ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                         : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                         }`}

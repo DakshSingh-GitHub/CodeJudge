@@ -139,7 +139,7 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={() => setIsFilterOpen(!isFilterOpen)}
-                            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-700/50 backdrop-blur-md border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600/50 transition-all outline-none min-w-[100px] justify-between"
+                            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-700/50 backdrop-blur-md border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600/50 transition-all outline-none min-w-25 justify-between"
                         >
                             <span className="capitalize">{difficultyFilter}</span>
                             <motion.div
@@ -166,8 +166,8 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                                                 setIsFilterOpen(false);
                                             }}
                                             className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors scale-100 hover:scale-[1.02] active:scale-[0.98] ${difficultyFilter === level
-                                                    ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
-                                                    : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
+                                                ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
+                                                : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
                                                 }`}
                                         >
                                             <span className="capitalize">{level}</span>
