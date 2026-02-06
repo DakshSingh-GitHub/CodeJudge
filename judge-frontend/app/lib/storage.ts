@@ -136,6 +136,20 @@ export async function getSubmissionsByProblemId(problemId: string): Promise<Subm
     });
 }
 
+export async function deleteSubmission(id: string): Promise<void> {
+    if (typeof window === "undefined") return;
+
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+        const transaction = db.transaction(STORE_NAME, "readwrite");
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.delete(id);
+
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+    });
+}
+
 let migrationPromise: Promise<void> | null = null;
 
 async function migrateFromLocalStorage() {

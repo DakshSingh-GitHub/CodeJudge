@@ -18,7 +18,7 @@ export default function CodeEditor({
     isDark = false,
 }: CodeEditorProps) {
     const [showMinimap, setShowMinimap] = useState(false);
-    const editorRef = useRef<any>(null);
+    const editorRef = useRef<unknown>(null);
     const [fontSize, setFontSize] = useState(15);
     const monaco = useMonaco();
 

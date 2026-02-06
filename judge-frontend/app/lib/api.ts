@@ -3,6 +3,19 @@ import { getCachedProblems, setCachedProblems, getCachedProblemById, setCachedPr
 const LOCAL_URL = "http://localhost:5000";
 const REMOTE_URL = "https://code-judge-6fm6.vercel.app";
 
+function errorToString(err: unknown): string {
+	const error = err as Record<string, unknown>;
+	if (!error) return "Unknown error";
+	if (typeof error === 'string') return error;
+	if (error.error && typeof error.error === 'string') return error.error;
+	if (error.message && typeof error.message === 'string') return error.message;
+	if (error.detail) {
+		if (typeof error.detail === 'string') return error.detail;
+		return JSON.stringify(error.detail);
+	}
+	return JSON.stringify(error);
+}
+
 let resolvedBaseUrl: string | null = null;
 
 async function getBaseUrl() {
@@ -80,7 +93,7 @@ export async function submitCode(problemId: string, code: string, testOnly: bool
 
 	if (!res.ok) {
 		const err = await res.json();
-		throw new Error(err.error || "Sumbission failed");
+		throw new Error(errorToString(err));
 	}
 
 	return res.json();
@@ -101,7 +114,7 @@ export async function runCode(code: string, input: string = "") {
 
 	if (!res.ok) {
 		const err = await res.json();
-		throw new Error(err.error || "Execution failed");
+		throw new Error(errorToString(err));
 	}
 
 	return res.json();

@@ -8,7 +8,7 @@ import { runCode } from "../lib/api";
 import { Play, Terminal, Cpu, Info, AlertCircle, CheckCircle2, Loader2, MessageSquare } from "lucide-react";
 
 export default function CodeTestPage() {
-    const { TITLE, isDark } = useAppContext();
+    const { isDark } = useAppContext();
     const [code, setCode] = useState("# Write your code here to test\nprint('Hello, CodeJudge!')");
     const [input, setInput] = useState("");
     const [output, setOutput] = useState<{
@@ -69,10 +69,11 @@ export default function CodeTestPage() {
         try {
             const res = await runCode(code, input);
             setOutput(res);
-        } catch (error: any) {
+        } catch (error: unknown) {
+            const err = error as Error;
             setOutput({
                 stdout: "",
-                stderr: error.message || "Something went wrong",
+                stderr: err.message || "Something went wrong",
                 status: "Internal Error",
                 duration: 0
             });

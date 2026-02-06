@@ -224,11 +224,11 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                                             : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
                                             }`}
                                     >
-                                        <span className="block truncate pr-2">
-                                            {problem.title}
+                                        <span>
+                                            {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
                                         </span>
-                                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border transition-opacity duration-200 uppercase tracking-tighter ${getDifficultyStyles(problem.difficulty)}`}>
-                                            {problem.difficulty || "Medium"}
+                                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border transition-opacity duration-200 uppercase tracking-tighter ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
+                                            {typeof problem.difficulty === 'string' ? problem.difficulty : JSON.stringify(problem.difficulty || "Medium")}
                                         </span>
                                     </button>
                                 </motion.li>

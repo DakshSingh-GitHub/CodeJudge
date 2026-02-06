@@ -49,7 +49,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                         }}
                         className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-50 dark:to-gray-400"
                     >
-                        {problem.title}
+                        {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
                     </motion.h2>
 
                     <motion.div
@@ -57,7 +57,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             hidden: { opacity: 0, y: 10 },
                             visible: { opacity: 1, y: 0 }
                         }}
-                        className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300"
+                        className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 whitespace-pre-wrap"
                     >
                         {typeof problem.description === 'string' ? problem.description : JSON.stringify(problem.description)}
                     </motion.div>
@@ -73,9 +73,9 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
                                 Input Format
                             </h4>
-                            <p className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all">
+                            <div className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all whitespace-pre-wrap">
                                 {typeof problem.input_format === 'string' ? problem.input_format : JSON.stringify(problem.input_format)}
-                            </p>
+                            </div>
                         </motion.div>
                     )}
 
@@ -90,9 +90,9 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
                                 Output Format
                             </h4>
-                            <p className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all">
+                            <div className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all whitespace-pre-wrap">
                                 {typeof problem.output_format === 'string' ? problem.output_format : JSON.stringify(problem.output_format)}
-                            </p>
+                            </div>
                         </motion.div>
                     )}
 
@@ -111,11 +111,11 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                                 <div className="flex flex-col md:flex-row gap-4">
                                     <div className="flex-1">
                                         <p className="font-bold mb-1 text-indigo-600 dark:text-indigo-400 uppercase text-xs tracking-wider">Input:</p>
-                                        <pre className="whitespace-pre-wrap">{problem.sample_test_cases[0].input}</pre>
+                                        <pre className="whitespace-pre-wrap">{typeof problem.sample_test_cases[0].input === 'string' ? problem.sample_test_cases[0].input : JSON.stringify(problem.sample_test_cases[0].input || '')}</pre>
                                     </div>
                                     <div className="flex-1">
                                         <p className="font-bold mb-1 text-emerald-600 dark:text-emerald-400 uppercase text-xs tracking-wider">Output:</p>
-                                        <pre className="whitespace-pre-wrap">{problem.sample_test_cases[0].output}</pre>
+                                        <pre className="whitespace-pre-wrap">{typeof problem.sample_test_cases[0].output === 'string' ? problem.sample_test_cases[0].output : JSON.stringify(problem.sample_test_cases[0].output || '')}</pre>
                                     </div>
                                 </div>
                             </div>
@@ -134,13 +134,13 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                                 Constraints
                             </h4>
                             <pre className="mt-1 p-4 bg-gray-100 dark:bg-gray-900 rounded-xl text-sm text-gray-800 dark:text-gray-200 overflow-x-auto border border-gray-200 dark:border-gray-700">
-                                <code className="font-mono">
+                                <code className="font-mono whitespace-pre-wrap">
                                     {problem.constraints && typeof problem.constraints === 'object' ? (
                                         Object.entries(problem.constraints)
-                                            .map(([key, value]) => `${key}: ${String(value)}`)
+                                            .map(([key, value]) => `${key}: ${typeof value === 'object' ? JSON.stringify(value) : String(value)}`)
                                             .join('\n')
                                     ) : (
-                                        problem.constraints
+                                        typeof problem.constraints === 'string' ? problem.constraints : JSON.stringify(problem.constraints || '')
                                     )}
                                 </code>
                             </pre>

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getProblemById, submitCode } from "./lib/api";
-import { saveSubmission, getSubmissionsByProblemId, Submission } from "./lib/storage";
+import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "./lib/storage";
 import { Problem } from "./lib/types";
 import { useAppContext } from "./lib/context";
 import { FileText, Code, History } from "lucide-react";
@@ -220,6 +220,15 @@ export default function Home() {
         }
     }
 
+    async function handleDeleteSubmission(id: string) {
+        try {
+            await deleteSubmission(id);
+            setPastSubmissions(prev => prev.filter(sub => sub.id !== id));
+        } catch (error) {
+            console.error("Failed to delete submission", error);
+        }
+    }
+
 
     return (
         <div className="flex-1 flex flex-col min-h-0 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 relative overflow-hidden">
@@ -239,7 +248,7 @@ export default function Home() {
                         }}
                         className="text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
                     >
-                        {TITLE}
+                        {typeof TITLE === 'string' ? TITLE : JSON.stringify(TITLE || "Code Judge")}
                     </motion.div>
                     <motion.div
                         initial={{ width: 0 }}
@@ -428,7 +437,7 @@ export default function Home() {
                                                                 <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                                                                 </svg>
-                                                                <p className="font-medium">{result.error}</p>
+                                                                <p className="font-medium">{typeof result.error === 'string' ? result.error : JSON.stringify(result.error)}</p>
                                                             </motion.div>
                                                         ) : (
                                                             <motion.div
@@ -502,9 +511,9 @@ export default function Home() {
                                                                         className={`h-full ${result.final_status === "Accepted" ? "bg-green-500" : "bg-red-500"}`}
                                                                     />
                                                                 </div>
-                                                                <p className="text-sm mt-2 text-gray-300 font-medium">
-                                                                    Passed {result.summary.passed} /{" "}
-                                                                    {result.summary.total} test cases
+                                                                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                                                                    Passed {String(result.summary.passed ?? 0)} /{" "}
+                                                                    {String(result.summary.total ?? 0)} test cases
                                                                 </p>
                                                             </motion.div>
                                                         )}
@@ -526,12 +535,14 @@ export default function Home() {
                                                     setActiveTab("editor");
                                                 }
                                             }}
+                                            onDelete={handleDeleteSubmission}
                                         />
                                     </div>
                                 </div>
                             </div>
                         </motion.div>
                     </div>
+
                     {isMobile && (
                         <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
                             <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
