@@ -1,0 +1,29 @@
+{
+    "id": "to_lower_case",
+    "title": "To Lower Case",
+    "description": "Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.",
+    "input_format": "A single string s.",
+    "output_format": "A single string.",
+    "constraints": {
+        "s.length": "1 <= s.length <= 100",
+        "s": "consists of printable ASCII characters."
+    },
+    "difficulty": "easy",
+    "judge_mode": "str_compare_strip",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "Hello",
+            "output": "hello"
+        },
+        {
+            "input": "here",
+            "output": "here"
+        },
+        {
+            "input": "LOVELY",
+            "output": "lovely"
+        }
+    ],
+    "hidden_test_cases": []
+}

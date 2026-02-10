@@ -1,0 +1,29 @@
+{
+    "id": "buddy_strings",
+    "title": "Buddy Strings",
+    "description": "Given two strings s and goal, return true if you can swap two letters in s so the result is equal to goal, otherwise, return false. Swapping letters is defined as taking two indices i and j (0-indexed) such that i != j and swapping the characters at s[i] and s[j].",
+    "input_format": "Two strings s and goal separated by a newline.",
+    "output_format": "true or false",
+    "constraints": {
+        "s.length, goal.length": "1 <= length <= 2 * 10^4",
+        "s and goal": "consist of lowercase English letters."
+    },
+    "difficulty": "easy",
+    "judge_mode": "str_compare_strip",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "ab\nba",
+            "output": "true"
+        },
+        {
+            "input": "ab\nab",
+            "output": "false"
+        },
+        {
+            "input": "aa\naa",
+            "output": "true"
+        }
+    ],
+    "hidden_test_cases": []
+}

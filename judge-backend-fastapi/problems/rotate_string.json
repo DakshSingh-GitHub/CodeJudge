@@ -1,0 +1,24 @@
+{
+    "id": "rotate_string",
+    "title": "Rotate String",
+    "description": "Given two strings s and goal, return true if and only if s can become goal after some number of shifts on s. A shift on s consists of moving the leftmost character of s to the rightmost position. For example, if s = 'abcde', then it will be 'bcdea' after one shift.",
+    "input_format": "Two strings s and goal separated by a newline.",
+    "output_format": "true or false",
+    "constraints": {
+        "s.length, goal.length": "1 <= length <= 100"
+    },
+    "difficulty": "easy",
+    "judge_mode": "str_compare_strip",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "abcde\ncdeab",
+            "output": "true"
+        },
+        {
+            "input": "abcde\nabced",
+            "output": "false"
+        }
+    ],
+    "hidden_test_cases": []
+}

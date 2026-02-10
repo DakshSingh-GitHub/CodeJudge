@@ -1966,6 +1966,345 @@ def solve_daily_temperatures():
         
     return f"{n}\n{' '.join(map(str, temps))}", " ".join(map(str, answer))
 
+def solve_summary_ranges():
+    n = random.randint(0, 20)
+    nums = sorted(random.sample(range(-2147483648, 2147483647), n))
+    
+    if not nums:
+        return "", ""
+        
+    ranges = []
+    start = nums[0]
+    for i in range(1, n):
+        if nums[i] != nums[i-1] + 1:
+            if start == nums[i-1]:
+                ranges.append(str(start))
+            else:
+                ranges.append(f"{start}->{nums[i-1]}")
+            start = nums[i]
+            
+    if start == nums[-1]:
+        ranges.append(str(start))
+    else:
+        ranges.append(f"{start}->{nums[-1]}")
+        
+    return " ".join(map(str, nums)), " ".join(ranges)
+
+def solve_is_subsequence():
+    t_len = random.randint(0, 100)
+    t = "".join(random.choices("abcdefghijklmnopqrstuvwxyz", k=t_len))
+    
+    if random.choice([True, False]):
+        # Create a subsequence
+        sub_len = random.randint(0, t_len)
+        indices = sorted(random.sample(range(t_len), sub_len))
+        s = "".join([t[i] for i in indices])
+        res = "true"
+    else:
+        # Create random string
+        s_len = random.randint(0, 100)
+        s = "".join(random.choices("abcdefghijklmnopqrstuvwxyz", k=s_len))
+        
+        # Check if it happens to be a subsequence
+        it = iter(t)
+        if all(c in it for c in s):
+            res = "true"
+        else:
+            res = "false"
+            
+    return f"{s}\n{t}", res
+
+def solve_reverse_vowels_of_a_string():
+    s_len = random.randint(1, 100)
+    s_list = random.choices("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", k=s_len)
+    s = "".join(s_list)
+    
+    vowels = set("aeiouAEIOU")
+    s_vowels = [c for c in s if c in vowels]
+    s_vowels.reverse()
+    res_list = []
+    v_idx = 0
+    for c in s:
+        if c in vowels:
+            res_list.append(s_vowels[v_idx])
+            v_idx += 1
+        else:
+            res_list.append(c)
+            
+    return s, "".join(res_list)
+
+def solve_intersection_of_two_arrays_ii():
+    n = random.randint(1, 20)
+    m = random.randint(1, 20)
+    nums1 = [random.randint(0, 20) for _ in range(n)]
+    nums2 = [random.randint(0, 20) for _ in range(m)]
+    
+    from collections import Counter
+    c1 = Counter(nums1)
+    c2 = Counter(nums2)
+    
+    res = []
+    for num in c1:
+        if num in c2:
+            count = min(c1[num], c2[num])
+            res.extend([num] * count)
+            
+    return f"{' '.join(map(str, nums1))}\n{' '.join(map(str, nums2))}", " ".join(map(str, res))
+
+def solve_arranging_coins():
+    n = random.randint(1, 2**31 - 1)
+    import math
+    res = int((-1 + math.sqrt(1 + 8 * n)) // 2)
+    return str(n), str(res)
+
+def solve_find_all_numbers_disappeared_in_an_array():
+    n = random.randint(1, 20)
+    nums = [random.randint(1, n) for _ in range(n)]
+    
+    expected = set(range(1, n + 1))
+    actual = set(nums)
+    res = sorted(list(expected - actual))
+    
+    return " ".join(map(str, nums)), " ".join(map(str, res))
+
+def solve_max_consecutive_ones():
+    n = random.randint(1, 100)
+    nums = [random.choice([0, 1]) for _ in range(n)]
+    
+    max_ones = 0
+    current_ones = 0
+    for x in nums:
+        if x == 1:
+            current_ones += 1
+            max_ones = max(max_ones, current_ones)
+        else:
+            current_ones = 0
+            
+    return " ".join(map(str, nums)), str(max_ones)
+
+def solve_teemo_attacking():
+    n = random.randint(1, 20)
+    timeSeries = sorted(random.sample(range(0, 100), n))
+    duration = random.randint(0, 20)
+    
+    if not timeSeries:
+        return f"\n{duration}", "0"
+        
+    total = 0
+    for i in range(n - 1):
+        total += min(timeSeries[i+1] - timeSeries[i], duration)
+        
+    total += duration
+    return f"{' '.join(map(str, timeSeries))}\n{duration}", str(total)
+
+def solve_next_greater_element_i():
+    n2 = random.randint(1, 20)
+    nums2 = random.sample(range(0, 100), n2)
+    
+    n1 = random.randint(1, n2)
+    nums1 = random.sample(nums2, n1)
+    
+    # Simple O(N^2) solution for test generation is fine, or O(N) stack
+    res = []
+    for x in nums1:
+        found = False
+        val = -1
+        idx_in_nums2 = nums2.index(x)
+        for j in range(idx_in_nums2 + 1, n2):
+            if nums2[j] > x:
+                val = nums2[j]
+                break
+        res.append(val)
+        
+    return f"{' '.join(map(str, nums1))}\n{' '.join(map(str, nums2))}", " ".join(map(str, res))
+
+def solve_distribute_candies():
+    n = random.randint(2, 20)
+    if n % 2 != 0: n += 1
+    
+    candyType = [random.randint(-100, 100) for _ in range(n)]
+    
+    unique_candies = len(set(candyType))
+    res = min(unique_candies, n // 2)
+    
+    return " ".join(map(str, candyType)), str(res)
+
+def solve_can_place_flowers():
+    length = random.randint(1, 20)
+    flowerbed = [random.choice([0, 1]) for _ in range(length)]
+    n = random.randint(0, length)
+    
+    # Check valid placement logic for test generation
+    # Actually just solving it is easier
+    count = 0
+    temp_bed = flowerbed[:]
+    for i in range(length):
+        if temp_bed[i] == 0:
+            left_empty = (i == 0) or (temp_bed[i-1] == 0)
+            right_empty = (i == length - 1) or (temp_bed[i+1] == 0)
+            if left_empty and right_empty:
+                temp_bed[i] = 1
+                count += 1
+                
+    possible = count >= n
+    return f"{' '.join(map(str, flowerbed))}\n{n}", "true" if possible else "false"
+
+def solve_maximum_average_subarray_i():
+    n = random.randint(1, 20)
+    k = random.randint(1, n)
+    nums = [random.randint(-50, 50) for _ in range(n)]
+    
+    # Calculate max average
+    curr_sum = sum(nums[:k])
+    max_sum = curr_sum
+    for i in range(k, n):
+        curr_sum += nums[i] - nums[i-k]
+        max_sum = max(max_sum, curr_sum)
+        
+    return f"{' '.join(map(str, nums))}\n{k}", f"{max_sum / k:.5f}"
+
+def solve_set_mismatch():
+    n = random.randint(2, 20)
+    nums = list(range(1, n + 1))
+    
+    # Create mismatch
+    idx_dup = random.randint(0, n - 1)
+    idx_missing = random.randint(0, n - 1)
+    while idx_missing == idx_dup:
+        idx_missing = random.randint(0, n - 1)
+        
+    dup_val = nums[idx_dup]
+    # Replace the missing value with the duplicate value
+    # To do this correctly:
+    # We want nums to have one number twice and one number missing.
+    # Currently nums is 1..n
+    missing_val = nums[idx_missing]
+    nums[idx_missing] = dup_val
+    random.shuffle(nums)
+    
+    return " ".join(map(str, nums)), f"{dup_val} {missing_val}"
+
+def solve_to_lower_case():
+    s_len = random.randint(1, 20)
+    s = "".join(random.choices("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", k=s_len))
+    return s, s.lower()
+
+def solve_rotate_string():
+    s_len = random.randint(1, 20)
+    s = "".join(random.choices("abcde", k=s_len))
+    
+    if random.choice([True, False]):
+        # Rotate
+        shifts = random.randint(0, s_len)
+        goal = s[shifts:] + s[:shifts]
+        res = "true"
+    else:
+        # Random string of same length
+        goal = "".join(random.choices("abcde", k=s_len))
+        res = "true" if len(s) == len(goal) and goal in s + s else "false"
+        
+    return f"{s}\n{goal}", res
+
+def solve_unique_morse_code_words():
+    words_count = random.randint(1, 10)
+    words = ["".join(random.choices("abcdef", k=random.randint(1, 5))) for _ in range(words_count)]
+    
+    morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+    transformations = set()
+    for w in words:
+        trans = "".join(morse[ord(c) - ord('a')] for c in w)
+        transformations.add(trans)
+        
+    return " ".join(words), str(len(transformations))
+
+def solve_transpose_matrix():
+    rows = random.randint(1, 5)
+    cols = random.randint(1, 5)
+    matrix = [[random.randint(-10, 10) for _ in range(cols)] for _ in range(rows)]
+    
+    transposed = [[matrix[r][c] for r in range(rows)] for c in range(cols)]
+    
+    input_str = f"{rows} {cols}\n" + "\n".join(" ".join(map(str, row)) for row in matrix)
+    output_str = "\n".join(" ".join(map(str, row)) for row in transposed)
+    return input_str, output_str
+
+def solve_binary_gap():
+    n = random.randint(1, 1000)
+    binary = bin(n)[2:]
+    
+    max_dist = 0
+    last_idx = -1
+    for i, bit in enumerate(binary):
+        if bit == '1':
+            if last_idx != -1:
+                max_dist = max(max_dist, i - last_idx)
+            last_idx = i
+            
+    return str(n), str(max_dist)
+
+def solve_buddy_strings():
+    s_len = random.randint(2, 20)
+    s_list = random.choices("abcdef", k=s_len)
+    s = "".join(s_list)
+    
+    if random.choice([True, False]):
+        # Swap constraints
+        # 1. Swap two distinct indices
+        i, j = random.sample(range(s_len), 2)
+        s_list[i], s_list[j] = s_list[j], s_list[i]
+        goal = "".join(s_list)
+        res = "true"
+    else:
+        goal = "".join(random.choices("abcdef", k=s_len))
+        
+        # Solver logic
+        if len(s) != len(goal): res = "false"
+        elif s == goal:
+            res = "true" if len(set(s)) < len(s) else "false"
+        else:
+            diff = []
+            for i in range(len(s)):
+                if s[i] != goal[i]:
+                    diff.append((s[i], goal[i]))
+            res = "true" if len(diff) == 2 and diff[0] == diff[1][::-1] else "false"
+            
+    return f"{s}\n{goal}", res
+
+def solve_lemonade_change():
+    n = random.randint(1, 20)
+    # Generate a likely valid sequence
+    bills = []
+    
+    # Try to make it valid more often
+    for _ in range(n):
+        r = random.random()
+        if r < 0.6: bills.append(5)
+        elif r < 0.9: bills.append(10)
+        else: bills.append(20)
+        
+    five, ten = 0, 0
+    possible = True
+    for bill in bills:
+        if bill == 5:
+            five += 1
+        elif bill == 10:
+            if five == 0:
+                possible = False
+                break
+            five -= 1
+            ten += 1
+        else:
+            if five > 0 and ten > 0:
+                five -= 1
+                ten -= 1
+            elif five >= 3:
+                five -= 3
+            else:
+                possible = False
+                break
+                
+    return " ".join(map(str, bills)), "true" if possible else "false"
+
 SOLVERS = {
     "area_of_a_rectangle": solve_area_of_a_rectangle,
     "binary_to_decimal": solve_binary_to_decimal,
@@ -2117,6 +2456,26 @@ SOLVERS = {
     "four_sum": solve_four_sum,
     "minimum_number_of_arrows_to_burst_balloons": solve_minimum_number_of_arrows_to_burst_balloons,
     "non_overlapping_intervals": solve_non_overlapping_intervals,
+    "summary_ranges": solve_summary_ranges,
+    "is_subsequence": solve_is_subsequence,
+    "reverse_vowels_of_a_string": solve_reverse_vowels_of_a_string,
+    "intersection_of_two_arrays_ii": solve_intersection_of_two_arrays_ii,
+    "arranging_coins": solve_arranging_coins,
+    "find_all_numbers_disappeared_in_an_array": solve_find_all_numbers_disappeared_in_an_array,
+    "max_consecutive_ones": solve_max_consecutive_ones,
+    "teemo_attacking": solve_teemo_attacking,
+    "next_greater_element_i": solve_next_greater_element_i,
+    "distribute_candies": solve_distribute_candies,
+    "can_place_flowers": solve_can_place_flowers,
+    "maximum_average_subarray_i": solve_maximum_average_subarray_i,
+    "set_mismatch": solve_set_mismatch,
+    "to_lower_case": solve_to_lower_case,
+    "rotate_string": solve_rotate_string,
+    "unique_morse_code_words": solve_unique_morse_code_words,
+    "transpose_matrix": solve_transpose_matrix,
+    "binary_gap": solve_binary_gap,
+    "buddy_strings": solve_buddy_strings,
+    "lemonade_change": solve_lemonade_change,
 }
 
 HARD_PROBLEMS = {

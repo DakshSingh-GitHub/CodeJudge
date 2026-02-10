@@ -1,0 +1,25 @@
+{
+    "id": "maximum_average_subarray_i",
+    "title": "Maximum Average Subarray I",
+    "description": "You are given an integer array nums consisting of n elements, and an integer k. Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10^-5 will be accepted.",
+    "input_format": "First line: space-separated integers for nums. Second line: integer k.",
+    "output_format": "A float representing the maximum average.",
+    "constraints": {
+        "n": "1 <= k <= n <= 10^5",
+        "nums[i]": "-10^4 <= nums[i] <= 10^4"
+    },
+    "difficulty": "easy",
+    "judge_mode": "float_compare",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "1 12 -5 -6 50 3\n4",
+            "output": "12.75000"
+        },
+        {
+            "input": "5\n1",
+            "output": "5.00000"
+        }
+    ],
+    "hidden_test_cases": []
+}

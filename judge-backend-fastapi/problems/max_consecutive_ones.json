@@ -1,0 +1,25 @@
+{
+    "id": "max_consecutive_ones",
+    "title": "Max Consecutive Ones",
+    "description": "Given a binary array nums, return the maximum number of consecutive 1's in the array.",
+    "input_format": "Integers separated by space.",
+    "output_format": "A single integer.",
+    "constraints": {
+        "nums.length": "1 <= nums.length <= 10^5",
+        "nums[i]": "0 or 1"
+    },
+    "difficulty": "easy",
+    "judge_mode": "str_compare_strip",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "1 1 0 1 1 1",
+            "output": "3"
+        },
+        {
+            "input": "1 0 1 1 0 1",
+            "output": "2"
+        }
+    ],
+    "hidden_test_cases": []
+}
