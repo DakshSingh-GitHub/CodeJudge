@@ -3,8 +3,9 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { getProblems } from "../lib/api";
-import { Filter, ChevronDown, Check, Sparkles } from "lucide-react";
+import { Filter, ChevronDown, Check, Sparkles, SlidersHorizontal } from "lucide-react";
 import { getSubmissions } from "../lib/storage";
+import FilterModal from "./General/FilterModal";
 
 import { Problem } from "../lib/types";
 
@@ -19,15 +20,18 @@ interface ProblemListProps {
 export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, searchQuery, setSearchQuery }: ProblemListProps) {
     const [problems, setProblems] = useState<Problem[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
-    const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [filters, setFilters] = useState<{ difficulty: string[]; status: "all" | "solved" | "unsolved" }>({
+        difficulty: [],
+        status: "all"
+    });
+    const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
     const [solvedProblemIds, setSolvedProblemIds] = useState<Set<string>>(new Set());
     const filterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (filterRef.current && !filterRef.current.contains(event.target as Node)) {
-                setIsFilterOpen(false);
+                setIsFilterModalOpen(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
@@ -107,8 +111,18 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
 
     const filteredProblems = problems.filter((problem) => {
         const matchesSearch = problem.title.toLowerCase().includes(searchQuery.toLowerCase());
-        const matchesDifficulty = difficultyFilter === "all" || (problem.difficulty || "medium").toLowerCase() === difficultyFilter.toLowerCase();
-        return matchesSearch && matchesDifficulty;
+
+        // Difficulty Filter
+        const matchesDifficulty = filters.difficulty.length === 0 ||
+            filters.difficulty.includes((problem.difficulty || "medium").toLowerCase());
+
+        // Status Filter
+        const isSolved = solvedProblemIds.has(problem.id);
+        const matchesStatus = filters.status === "all" ||
+            (filters.status === "solved" && isSolved) ||
+            (filters.status === "unsolved" && !isSolved);
+
+        return matchesSearch && matchesDifficulty && matchesStatus;
     });
 
     const containerVariants: Variants = {
@@ -164,55 +178,33 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                             placeholder="Search problems..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full px-3 py-2 text-sm text-gray-900 bg-white/50 dark:bg-gray-700/50 backdrop-blur-md border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 outline-none transition-all dark:text-white dark:placeholder-gray-400"
+                            className="w-full px-4 py-2.5 text-sm text-gray-900 bg-gray-50/50 dark:bg-gray-900/50 border border-transparent focus:border-indigo-500/30 rounded-xl focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all dark:text-white dark:placeholder-gray-500"
                         />
                     </div>
 
-                    <div className="relative" ref={filterRef}>
-                        <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            onClick={() => setIsFilterOpen(!isFilterOpen)}
-                            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-700/50 backdrop-blur-md border border-gray-200 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600/50 transition-all outline-none min-w-25 justify-between"
-                        >
-                            <span className="capitalize">{difficultyFilter}</span>
-                            <motion.div
-                                animate={{ rotate: isFilterOpen ? 180 : 0 }}
-                                transition={{ duration: 0.2 }}
-                            >
-                                <ChevronDown className="w-4 h-4 opacity-60" />
-                            </motion.div>
-                        </motion.button>
-
-                        <AnimatePresence>
-                            {isFilterOpen && (
-                                <motion.div
-                                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                    animate={{ opacity: 1, y: 5, scale: 1 }}
-                                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                    className="absolute right-0 top-full z-50 w-40 p-1 bg-white/80 dark:bg-gray-800/80 backdrop-blur-2xl border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl ring-1 ring-black/5"
-                                >
-                                    {["all", "easy", "medium", "hard"].map((level) => (
-                                        <button
-                                            key={level}
-                                            onClick={() => {
-                                                setDifficultyFilter(level);
-                                                setIsFilterOpen(false);
-                                            }}
-                                            className={`w-full flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors scale-100 hover:scale-[1.02] active:scale-[0.98] ${difficultyFilter === level
-                                                ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
-                                                : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
-                                                }`}
-                                        >
-                                            <span className="capitalize">{level}</span>
-                                            {difficultyFilter === level && <Check className="w-3.5 h-3.5" />}
-                                        </button>
-                                    ))}
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
+                    <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setIsFilterModalOpen(true)}
+                        className={`flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg transition-all outline-none ${filters.difficulty.length > 0 || filters.status !== "all"
+                            ? "bg-indigo-500 text-white border-indigo-400 shadow-lg shadow-indigo-500/20"
+                            : "text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600/50"
+                            }`}
+                    >
+                        <SlidersHorizontal className="w-4 h-4" />
+                        <span className="hidden sm:inline">Filter</span>
+                        {(filters.difficulty.length > 0 || filters.status !== "all") && (
+                            <span className="flex h-2 w-2 rounded-full bg-white animate-pulse" />
+                        )}
+                    </motion.button>
                 </div>
+
+                <FilterModal
+                    isOpen={isFilterModalOpen}
+                    onClose={() => setIsFilterModalOpen(false)}
+                    filters={filters}
+                    setFilters={setFilters}
+                />
             </div>
 
             <div className="flex-1 overflow-y-auto overflow-x-hidden">
