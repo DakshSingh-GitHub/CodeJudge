@@ -3,7 +3,8 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 import { getProblems } from "../lib/api";
-import { Filter, ChevronDown, Check } from "lucide-react";
+import { Filter, ChevronDown, Check, Sparkles } from "lucide-react";
+import { getSubmissions } from "../lib/storage";
 
 import { Problem } from "../lib/types";
 
@@ -20,6 +21,7 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
     const [isLoading, setIsLoading] = useState(true);
     const [difficultyFilter, setDifficultyFilter] = useState<string>("all");
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+    const [solvedProblemIds, setSolvedProblemIds] = useState<Set<string>>(new Set());
     const filterRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -42,8 +44,23 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
     };
 
     useEffect(() => {
-        getProblems().then((data) => {
+        const fetchProblemsData = async () => {
+            const data = await getProblems();
             const problemList: Problem[] = data.problems || [];
+
+            // Fetch solved submissions
+            try {
+                const submissions = await getSubmissions();
+                const solvedIds = new Set(
+                    submissions
+                        .filter(s => s.final_status === "Accepted")
+                        .map(s => s.problemId)
+                );
+                setSolvedProblemIds(solvedIds);
+            } catch (err) {
+                console.error("Failed to fetch submissions", err);
+            }
+
             const sessionOrder = sessionStorage.getItem("problemOrder");
 
             if (sessionOrder) {
@@ -68,7 +85,24 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                 setProblems(shuffled);
             }
             setIsLoading(false);
-        });
+        };
+
+        fetchProblemsData();
+
+        // Listen for new submissions
+        const handleSubmissionUpdate = () => {
+            getSubmissions().then(submissions => {
+                const solvedIds = new Set(
+                    submissions
+                        .filter(s => s.final_status === "Accepted")
+                        .map(s => s.problemId)
+                );
+                setSolvedProblemIds(solvedIds);
+            });
+        };
+
+        window.addEventListener('submission-updated', handleSubmissionUpdate);
+        return () => window.removeEventListener('submission-updated', handleSubmissionUpdate);
     }, []);
 
     const filteredProblems = problems.filter((problem) => {
@@ -219,15 +253,26 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                                                 setIsSidebarOpen(false);
                                             }
                                         }}
-                                        className={`w-full text-left px-4 py-3 transition-colors duration-200 flex justify-between items-center group ${selectedId === problem.id
-                                            ? "bg-indigo-50 dark:bg-indigo-900 border-l-4 border-indigo-600 dark:border-indigo-400 text-indigo-900 dark:text-indigo-50 font-medium"
-                                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
+                                        className={`w-full text-left px-4 py-3 transition-all duration-200 flex justify-between items-center group relative ${selectedId === problem.id
+                                            ? "bg-indigo-50 dark:bg-indigo-900/40 border-l-4 border-indigo-600 dark:border-indigo-400 text-indigo-900 dark:text-indigo-50 font-medium"
+                                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50"
                                             }`}
                                     >
-                                        <span>
-                                            {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
-                                        </span>
-                                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border transition-opacity duration-200 uppercase tracking-tighter ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
+                                        <div className="flex items-center gap-2 overflow-hidden">
+                                            {solvedProblemIds.has(problem.id) && (
+                                                <motion.div
+                                                    initial={{ scale: 0, rotate: -20 }}
+                                                    animate={{ scale: 1, rotate: 0 }}
+                                                    className="flex items-center justify-center shrink-0"
+                                                >
+                                                    <Check className="w-4 h-4 text-emerald-500 stroke-[3px]" />
+                                                </motion.div>
+                                            )}
+                                            <span className="truncate">
+                                                {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
+                                            </span>
+                                        </div>
+                                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border transition-opacity duration-200 uppercase tracking-tighter shrink-0 ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
                                             {typeof problem.difficulty === 'string' ? problem.difficulty : JSON.stringify(problem.difficulty || "Medium")}
                                         </span>
                                     </button>

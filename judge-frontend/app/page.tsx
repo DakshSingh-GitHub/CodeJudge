@@ -207,6 +207,7 @@ export default function Home() {
 
             if (newSubmission) {
                 setPastSubmissions(prev => [newSubmission, ...prev.slice(0, 49)]);
+                window.dispatchEvent(new CustomEvent('submission-updated'));
             }
         } catch (error) {
             const err = error as Error;
