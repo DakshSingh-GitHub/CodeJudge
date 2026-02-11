@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { X, History, Sparkles, ChevronDown, CheckCircle2, XCircle, Clock, ExternalLink } from "lucide-react";
+import { X, History, Sparkles, ChevronDown, CheckCircle2, XCircle, Clock, ExternalLink, Code2, Terminal, ChevronRight } from "lucide-react";
 import { useEffect, useState, useMemo, memo } from "react";
 import { createPortal } from "react-dom";
 import { getSubmissions, Submission } from "../../lib/storage";
+import Editor from "@monaco-editor/react";
 
 interface SubmissionsModalProps {
     isOpen: boolean;
@@ -18,9 +19,12 @@ interface GroupedSubmissions {
     };
 }
 
-const SubmissionItem = memo(({ sub, formatDate }: { sub: Submission, formatDate: (t: number) => string }) => (
+const SubmissionItem = memo(({ sub, formatDate, isSelected, onToggle }: { sub: Submission, formatDate: (t: number) => string, isSelected: boolean, onToggle: (id: string) => void }) => (
     <div
-        className="flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700/50 hover:border-indigo-500/20 transition-all group/item transform-gpu"
+        className={`flex items-center justify-between p-4 rounded-2xl border transition-all group/item transform-gpu ${isSelected
+            ? "bg-indigo-50 border-indigo-200 dark:bg-indigo-500/10 dark:border-indigo-500/30 shadow-md shadow-indigo-500/5"
+            : "bg-white dark:bg-gray-800/40 border-gray-100 dark:border-gray-700/50 hover:border-indigo-500/20"
+            }`}
     >
         <div className="flex items-center gap-4">
             <div className={`w-8 h-8 rounded-full flex items-center justify-center ${sub.final_status === "Accepted" ? "bg-emerald-100 dark:bg-emerald-500/20 text-emerald-500" : "bg-rose-100 dark:bg-rose-500/20 text-rose-500"}`}>
@@ -48,8 +52,14 @@ const SubmissionItem = memo(({ sub, formatDate }: { sub: Submission, formatDate:
                 </div>
             </div>
         </div>
-        <button className="p-2 text-indigo-500 hover:bg-indigo-500/10 rounded-xl transition-all opacity-0 group-hover/item:opacity-100">
-            <ExternalLink className="w-4 h-4" />
+        <button
+            onClick={() => onToggle(sub.id)}
+            className={`p-2 rounded-xl transition-all ${isSelected
+                ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
+                : "text-indigo-500 hover:bg-indigo-500/10 opacity-0 group-hover/item:opacity-100"
+                }`}
+        >
+            <Code2 className="w-4 h-4" />
         </button>
     </div>
 ));
@@ -61,6 +71,7 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
     const [submissions, setSubmissions] = useState<Submission[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
+    const [selectedSubmissionID, setSelectedSubmissionID] = useState<string | null>(null);
 
     useEffect(() => {
         setMounted(true);
@@ -69,6 +80,7 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
             fetchSubmissions();
         } else {
             document.body.style.overflow = 'unset';
+            setSelectedSubmissionID(null);
         }
         return () => {
             document.body.style.overflow = 'unset';
@@ -109,6 +121,14 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
         });
     };
 
+    const toggleSubmission = (id: string) => {
+        setSelectedSubmissionID(prev => prev === id ? null : id);
+    };
+
+    const selectedSubmission = useMemo(() => {
+        return submissions.find(s => s.id === selectedSubmissionID) || null;
+    }, [submissions, selectedSubmissionID]);
+
     const formatDate = (timestamp: number) => {
         return new Intl.DateTimeFormat('en-US', {
             month: 'short',
@@ -124,7 +144,7 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
-                    {/* Backdrop - Simplified blur for performance */}
+                    {/* Backdrop */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -133,131 +153,251 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
                         className="absolute inset-0 bg-gray-950/40 backdrop-blur-sm"
                     />
 
-                    {/* Modal Card */}
+                    {/* Modal Card - Dynamic Width */}
                     <motion.div
+                        layout
                         initial={{ opacity: 0, scale: 0.95, y: 10 }}
-                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        animate={{
+                            opacity: 1,
+                            scale: 1,
+                            y: 0,
+                            width: selectedSubmission ? "min(1400px, 95vw)" : "min(768px, 95vw)"
+                        }}
                         exit={{ opacity: 0, scale: 0.95, y: 10 }}
-                        transition={{ duration: 0.2 }}
-                        className="relative w-full max-w-3xl bg-white dark:bg-gray-950 rounded-[2.5rem] shadow-2xl overflow-hidden border border-white/20 dark:border-gray-800 flex flex-col h-[650px] max-h-[90vh] transform-gpu"
+                        transition={{
+                            type: "spring",
+                            damping: 35,
+                            stiffness: 300,
+                            mass: 0.8,
+                            width: { type: "spring", damping: 35, stiffness: 300 },
+                            layout: { type: "spring", damping: 35, stiffness: 300 }
+                        }}
+                        className="relative bg-white dark:bg-gray-950 rounded-[2.5rem] shadow-2xl overflow-hidden border border-white/20 dark:border-gray-800 flex h-[750px] max-h-[90vh] transform-gpu"
                     >
-                        {/* Header Section */}
-                        <div className="p-8 md:p-10 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-md sticky top-0 z-10">
-                            <div className="flex items-center gap-5">
-                                <div className="p-4 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl shadow-xl shadow-indigo-500/30">
-                                    <History className="w-6 h-6 text-white" />
-                                </div>
-                                <div>
-                                    <h3 className="text-2xl font-black text-gray-900 dark:text-white flex items-center gap-3 tracking-tight">
-                                        Your Submissions
-                                        <div className="px-2 py-0.5 bg-indigo-500/10 text-indigo-500 text-[10px] font-black uppercase tracking-widest rounded-full border border-indigo-500/20">
-                                            BETA
-                                        </div>
-                                    </h3>
-                                    <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
-                                        Total of {submissions.length} attempts recorded
-                                    </p>
-                                </div>
-                            </div>
-                            <button
-                                onClick={onClose}
-                                className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl transition-all active:scale-90 group"
-                            >
-                                <X className="w-6 h-6 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
-                            </button>
-                        </div>
-
-                        {/* Content Area */}
-                        <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
-                            {isLoading ? (
-                                <div className="flex flex-col items-center justify-center h-full gap-4">
-                                    <motion.div
-                                        animate={{ rotate: 360 }}
-                                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                                        className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full"
-                                    />
-                                    <p className="text-gray-500 font-bold animate-pulse uppercase tracking-widest text-[10px]">Loading records...</p>
-                                </div>
-                            ) : Object.keys(grouped).length === 0 ? (
-                                <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
-                                    <div className="w-24 h-24 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center relative">
-                                        <History className="w-10 h-10 text-gray-200 dark:text-gray-700" />
-                                        <div className="absolute inset-0 rounded-full border-2 border-dashed border-gray-100 dark:border-gray-800 animate-[spin_10s_linear_infinite]" />
+                        {/* List Section (Left) */}
+                        <motion.div
+                            layout
+                            transition={{ type: "spring", damping: 35, stiffness: 300 }}
+                            className={`flex flex-col h-full border-r border-gray-100 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-950 z-20 relative shadow-[20px_0_40px_-20px_rgba(0,0,0,0.15)] ${selectedSubmission ? "w-[40%] min-w-[320px]" : "w-full"}`}
+                        >
+                            {/* Header */}
+                            <div className="p-8 md:p-10 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-md sticky top-0 z-10">
+                                <div className="flex items-center gap-5">
+                                    <div className="p-4 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl shadow-xl shadow-indigo-500/30">
+                                        <History className="w-6 h-6 text-white" />
                                     </div>
-                                    <div className="space-y-2">
-                                        <h4 className="text-xl font-bold text-gray-900 dark:text-white">Empty History</h4>
-                                        <p className="text-gray-500 dark:text-gray-400 max-w-xs mx-auto">
-                                            Start solving challenges to see your journey mapped out here.
+                                    <div>
+                                        <h3 className="text-2xl font-black text-gray-900 dark:text-white flex items-center gap-3 tracking-tight">
+                                            History
+                                            <div className="px-2 py-0.5 bg-indigo-500/10 text-indigo-500 text-[10px] font-black uppercase tracking-widest rounded-full border border-indigo-500/20">
+                                                BETA
+                                            </div>
+                                        </h3>
+                                        <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mt-1">
+                                            {submissions.length} attempts
                                         </p>
                                     </div>
                                 </div>
-                            ) : (
-                                <div className="space-y-4">
-                                    {Object.entries(grouped).map(([id, group], index) => {
-                                        const isExpanded = expandedGroups.has(id);
-                                        const latestStatus = group.submissions[0].final_status;
-                                        const isSolved = group.submissions.some(s => s.final_status === "Accepted");
+                                {!selectedSubmission && (
+                                    <button
+                                        onClick={onClose}
+                                        className="p-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl transition-all active:scale-90 group"
+                                    >
+                                        <X className="w-6 h-6 text-gray-500 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" />
+                                    </button>
+                                )}
+                            </div>
 
-                                        return (
-                                            <div
-                                                key={id}
-                                                className={`rounded-[2rem] border transition-all duration-300 transform-gpu ${isExpanded
-                                                    ? "bg-indigo-50/30 dark:bg-indigo-500/5 border-indigo-200 dark:border-indigo-500/30 shadow-lg shadow-indigo-500/5"
-                                                    : "bg-white dark:bg-gray-900/40 border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 shadow-sm"
-                                                    }`}
-                                            >
-                                                <button
-                                                    onClick={() => toggleGroup(id)}
-                                                    className="w-full p-6 flex items-center justify-between text-left group"
+                            {/* Scrollable List */}
+                            <div className="flex-1 overflow-y-auto p-6 md:p-8 custom-scrollbar">
+                                {isLoading ? (
+                                    <div className="flex flex-col items-center justify-center h-full gap-4">
+                                        <motion.div
+                                            animate={{ rotate: 360 }}
+                                            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                                            className="w-10 h-10 border-4 border-indigo-500 border-t-transparent rounded-full"
+                                        />
+                                        <p className="text-gray-500 font-bold animate-pulse uppercase tracking-widest text-[10px]">Loading records...</p>
+                                    </div>
+                                ) : Object.keys(grouped).length === 0 ? (
+                                    <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
+                                        <History className="w-12 h-12 text-gray-200 dark:text-gray-700" />
+                                        <h4 className="text-xl font-bold text-gray-900 dark:text-white">No history found</h4>
+                                    </div>
+                                ) : (
+                                    <div className="space-y-4">
+                                        {Object.entries(grouped).map(([id, group]) => {
+                                            const isExpanded = expandedGroups.has(id);
+                                            const latestStatus = group.submissions[0].final_status;
+                                            const isSolved = group.submissions.some(s => s.final_status === "Accepted");
+
+                                            return (
+                                                <div
+                                                    key={id}
+                                                    className={`rounded-[2rem] border transition-all duration-300 transform-gpu ${isExpanded
+                                                        ? "bg-indigo-50/30 dark:bg-indigo-500/5 border-indigo-200 dark:border-indigo-500/30 shadow-lg shadow-indigo-500/5"
+                                                        : "bg-white dark:bg-gray-900/40 border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 shadow-sm"
+                                                        }`}
                                                 >
-                                                    <div className="flex items-center gap-4">
-                                                        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 ${isSolved
-                                                            ? "bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
-                                                            : "bg-gray-100 dark:bg-gray-800 text-gray-400"
-                                                            }`}>
-                                                            {isSolved ? <CheckCircle2 className="w-6 h-6" /> : <Sparkles className="w-6 h-6" />}
-                                                        </div>
-                                                        <div>
-                                                            <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                                                                {group.title}
-                                                            </h4>
-                                                            <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1 uppercase tracking-tighter">
-                                                                {group.submissions.length} attempts • Latest: <span className={latestStatus === "Accepted" ? "text-emerald-500" : "text-rose-500"}>{latestStatus}</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div className={`p-2 rounded-xl transition-all duration-500 ${isExpanded ? "bg-indigo-500 text-white rotate-180" : "bg-gray-50 dark:bg-gray-800 text-gray-400"}`}>
-                                                        <ChevronDown className="w-5 h-5" />
-                                                    </div>
-                                                </button>
-
-                                                <AnimatePresence initial={false}>
-                                                    {isExpanded && (
-                                                        <motion.div
-                                                            initial={{ height: 0, opacity: 0 }}
-                                                            animate={{ height: "auto", opacity: 1 }}
-                                                            exit={{ height: 0, opacity: 0 }}
-                                                            transition={{ duration: 0.2 }}
-                                                            className="overflow-hidden"
-                                                        >
-                                                            <div className="px-6 pb-6 space-y-3">
-                                                                <div className="h-px bg-gray-100 dark:bg-gray-800 mx-2 mb-4" />
-                                                                {group.submissions.map((sub) => (
-                                                                    <SubmissionItem key={sub.id} sub={sub} formatDate={formatDate} />
-                                                                ))}
+                                                    <button
+                                                        onClick={() => toggleGroup(id)}
+                                                        className="w-full p-5 flex items-center justify-between text-left group"
+                                                    >
+                                                        <div className="flex items-center gap-4">
+                                                            <div className={`w-10 h-10 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 ${isSolved
+                                                                ? "bg-emerald-100 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                                                                : "bg-gray-100 dark:bg-gray-800 text-gray-400"
+                                                                }`}>
+                                                                {isSolved ? <CheckCircle2 className="w-5 h-5" /> : <Sparkles className="w-5 h-5" />}
                                                             </div>
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            )}
-                        </div>
+                                                            <div className="flex-1 min-w-0">
+                                                                <h4 className="font-bold text-gray-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate">
+                                                                    {group.title}
+                                                                </h4>
+                                                                <p className="text-[10px] font-semibold text-gray-500 dark:text-gray-400 mt-0.5 uppercase tracking-tighter">
+                                                                    {group.submissions.length} attempts
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <ChevronDown className={`w-4 h-4 transition-transform duration-500 ${isExpanded ? "rotate-180 text-indigo-500" : "text-gray-400"}`} />
+                                                    </button>
 
-                        {/* Footer decorative bar */}
-                        <div className="h-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500" />
+                                                    <AnimatePresence initial={false}>
+                                                        {isExpanded && (
+                                                            <motion.div
+                                                                initial={{ height: 0, opacity: 0 }}
+                                                                animate={{ height: "auto", opacity: 1 }}
+                                                                exit={{ height: 0, opacity: 0 }}
+                                                                transition={{ duration: 0.2 }}
+                                                                className="overflow-hidden px-4 pb-4 space-y-2"
+                                                            >
+                                                                {group.submissions.map((sub) => (
+                                                                    <SubmissionItem
+                                                                        key={sub.id}
+                                                                        sub={sub}
+                                                                        formatDate={formatDate}
+                                                                        isSelected={selectedSubmissionID === sub.id}
+                                                                        onToggle={toggleSubmission}
+                                                                    />
+                                                                ))}
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                )}
+                            </div>
+                        </motion.div>
+
+                        {/* Code Details Section (Right) */}
+                        <AnimatePresence>
+                            {selectedSubmission && (
+                                <motion.div
+                                    layout
+                                    initial={{ x: "-30%", opacity: 0 }}
+                                    animate={{ x: 0, opacity: 1 }}
+                                    exit={{ x: "-30%", opacity: 0 }}
+                                    transition={{ type: "spring", damping: 35, stiffness: 300 }}
+                                    className="flex-1 flex flex-col bg-white dark:bg-gray-950 relative border-l border-gray-100 dark:border-gray-800 z-10"
+                                >
+                                    {/* Code Header */}
+                                    <div className="p-6 md:px-8 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center bg-white dark:bg-gray-950">
+                                        <div className="flex items-center gap-4">
+                                            <div className="p-2.5 bg-indigo-500/10 text-indigo-500 rounded-xl">
+                                                <Code2 className="w-5 h-5" />
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                                                    Submission Source
+                                                    <span className="text-[10px] uppercase text-gray-400 font-black tracking-widest">#{selectedSubmission.id.slice(0, 8)}</span>
+                                                </h4>
+                                                <p className="text-xs text-gray-500 font-medium">{selectedSubmission.problemTitle}</p>
+                                            </div>
+                                        </div>
+                                        <button
+                                            onClick={() => setSelectedSubmissionID(null)}
+                                            className="p-2.5 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all"
+                                        >
+                                            <X className="w-5 h-5 text-gray-400" />
+                                        </button>
+                                    </div>
+
+                                    {/* Monaco Editor Container */}
+                                    <div className="flex-1 min-h-0 relative group">
+                                        <Editor
+                                            height="100%"
+                                            defaultLanguage="python"
+                                            theme="vs-dark"
+                                            value={selectedSubmission.code}
+                                            options={{
+                                                readOnly: true,
+                                                fontSize: 14,
+                                                minimap: { enabled: false },
+                                                scrollBeyondLastLine: false,
+                                                automaticLayout: true,
+                                                padding: { top: 20, bottom: 20 },
+                                                fontFamily: "Jetbrains Mono, monospace",
+                                                renderLineHighlight: "none",
+                                                hideCursorInOverviewRuler: true,
+                                                occurrencesHighlight: "off",
+                                                selectionHighlight: false
+                                            }}
+                                        />
+                                        <div className="absolute top-4 right-4 px-3 py-1 bg-gray-800/80 backdrop-blur-md rounded-lg border border-gray-700 text-[10px] font-black text-gray-400 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                                            Read Only
+                                        </div>
+                                    </div>
+
+                                    {/* Verdict Footer */}
+                                    <div className="p-6 md:p-8 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
+                                        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                                            <div className="flex items-center gap-5">
+                                                <div className={`p-4 rounded-[1.5rem] shadow-xl ${selectedSubmission.final_status === "Accepted"
+                                                    ? "bg-emerald-500/10 text-emerald-500 shadow-emerald-500/10"
+                                                    : "bg-rose-500/10 text-rose-500 shadow-rose-500/10"
+                                                    }`}>
+                                                    {selectedSubmission.final_status === "Accepted" ? <CheckCircle2 className="w-8 h-8" /> : <XCircle className="w-8 h-8" />}
+                                                </div>
+                                                <div>
+                                                    <div className="flex items-center gap-2">
+                                                        <h5 className={`text-2xl font-black tracking-tight ${selectedSubmission.final_status === "Accepted" ? "text-emerald-500" : "text-rose-500"}`}>
+                                                            {selectedSubmission.final_status}
+                                                        </h5>
+                                                        <ChevronRight className="w-5 h-5 text-gray-300" />
+                                                    </div>
+                                                    <div className="flex items-center gap-4 mt-1">
+                                                        <div className="flex items-center gap-2 text-xs font-bold text-gray-500">
+                                                            <Terminal className="w-3.5 h-3.5" />
+                                                            Python 3.10
+                                                        </div>
+                                                        <div className="w-1 h-1 rounded-full bg-gray-300" />
+                                                        <div className="text-xs font-bold text-gray-400">
+                                                            {selectedSubmission.total_duration < 1 ? selectedSubmission.total_duration.toFixed(3) : selectedSubmission.total_duration.toFixed(2)}ms
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center gap-3 bg-gray-50 dark:bg-gray-900 p-2 rounded-2xl border border-gray-100 dark:border-gray-800">
+                                                <div className="px-4 py-2 bg-emerald-500/10 rounded-xl text-center min-w-[80px]">
+                                                    <p className="text-[10px] font-black text-emerald-600/60 uppercase">Passed</p>
+                                                    <p className="text-lg font-black text-emerald-600">All</p>
+                                                </div>
+                                                <div className="px-4 py-2 bg-gray-200/50 dark:bg-gray-800 rounded-xl text-center min-w-[80px]">
+                                                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Testcases</p>
+                                                    <p className="text-lg font-black text-gray-700 dark:text-gray-300">Detailed</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        {/* Decoration */}
+                        <div className="absolute top-0 right-0 w-1 pt-full bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent opacity-20" />
                     </motion.div>
                 </div>
             )}
