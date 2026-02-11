@@ -6,6 +6,8 @@ import { createContext, useContext, useState, ReactNode, useEffect } from 'react
 interface AppContextType {
   isSidebarOpen: boolean;
   setIsSidebarOpen: (isOpen: boolean) => void;
+  isSubmissionsModalOpen: boolean;
+  setIsSubmissionsModalOpen: (isOpen: boolean) => void;
   isDark: boolean;
   toggleTheme: () => void;
   TITLE: string;
@@ -15,6 +17,7 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export function AppWrapper({ children }: { children: ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSubmissionsModalOpen, setIsSubmissionsModalOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
   const TITLE = "Code Judge";
 
@@ -48,7 +51,15 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AppContext.Provider value={{ isSidebarOpen, setIsSidebarOpen, isDark, toggleTheme, TITLE }}>
+    <AppContext.Provider value={{
+      isSidebarOpen,
+      setIsSidebarOpen,
+      isSubmissionsModalOpen,
+      setIsSubmissionsModalOpen,
+      isDark,
+      toggleTheme,
+      TITLE
+    }}>
       {children}
     </AppContext.Provider>
   );

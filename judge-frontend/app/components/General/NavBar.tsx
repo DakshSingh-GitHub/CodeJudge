@@ -2,17 +2,20 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { History } from 'lucide-react';
 import ThemeToggle from './ThemeToggle'; // Assuming ThemeToggle is in the same directory
 import NavDropdown from './NavDropdown';
 
 interface NavBarProps {
     isSidebarOpen: boolean;
     setIsSidebarOpen: (isOpen: boolean) => void;
+    isSubmissionsModalOpen: boolean;
+    setIsSubmissionsModalOpen: (isOpen: boolean) => void;
     isDark: boolean;
     toggleTheme: () => void;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isDark, toggleTheme }) => {
+const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
     return (
         <motion.header
             initial={{ y: -50, opacity: 0 }}
@@ -29,6 +32,14 @@ const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isDark
                     <NavDropdown />
                 </motion.div>
                 <div className="flex items-center gap-2 md:gap-4">
+                    <button
+                        onClick={() => setIsSubmissionsModalOpen(true)}
+                        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition-all duration-200 border border-indigo-100 dark:border-indigo-800/50 group"
+                        title="See Submissions"
+                    >
+                        <History className="w-4 h-4 group-hover:rotate-[-20deg] transition-transform" />
+                        <span className="text-sm font-semibold hidden sm:inline">Submissions</span>
+                    </button>
                     <button
                         onClick={() =>
                             setIsSidebarOpen(!isSidebarOpen)

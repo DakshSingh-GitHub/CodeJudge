@@ -4,9 +4,11 @@ import React from 'react';
 import { usePathname } from 'next/navigation';
 import { useAppContext } from '../../lib/context';
 import NavBar from './NavBar';
+import SubmissionsModal from './SubmissionsModal';
+import { History } from 'lucide-react';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
-    const { TITLE, isSidebarOpen, setIsSidebarOpen, isDark, toggleTheme } = useAppContext();
+    const { TITLE, isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme } = useAppContext();
     const pathname = usePathname();
     const isHomePage = pathname === '/';
 
@@ -15,12 +17,18 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             <NavBar
                 isSidebarOpen={isSidebarOpen}
                 setIsSidebarOpen={setIsSidebarOpen}
+                isSubmissionsModalOpen={isSubmissionsModalOpen}
+                setIsSubmissionsModalOpen={setIsSubmissionsModalOpen}
                 isDark={isDark}
                 toggleTheme={toggleTheme}
             />
             <div className="flex-1 min-h-0 flex flex-col">
                 {children}
             </div>
+            <SubmissionsModal
+                isOpen={isSubmissionsModalOpen}
+                onClose={() => setIsSubmissionsModalOpen(false)}
+            />
         </main>
     );
 }
