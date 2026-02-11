@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { X, History, Sparkles, ChevronDown, CheckCircle2, XCircle, Clock, ExternalLink } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo, memo } from "react";
 import { createPortal } from "react-dom";
 import { getSubmissions, Submission } from "../../lib/storage";
 
@@ -17,6 +17,44 @@ interface GroupedSubmissions {
         submissions: Submission[];
     };
 }
+
+const SubmissionItem = memo(({ sub, formatDate }: { sub: Submission, formatDate: (t: number) => string }) => (
+    <div
+        className="flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700/50 hover:border-indigo-500/20 transition-all group/item transform-gpu"
+    >
+        <div className="flex items-center gap-4">
+            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${sub.final_status === "Accepted" ? "bg-emerald-100 dark:bg-emerald-500/20 text-emerald-500" : "bg-rose-100 dark:bg-rose-500/20 text-rose-500"}`}>
+                {sub.final_status === "Accepted" ? <CheckCircle2 className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
+            </div>
+            <div>
+                <div className="flex items-center gap-2">
+                    <span className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">ID: {sub.id.toUpperCase()}</span>
+                    <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />
+                    <span className={`text-[10px] font-black uppercase ${sub.final_status === "Accepted" ? "text-emerald-500" : "text-rose-500"}`}>
+                        {sub.final_status}
+                    </span>
+                </div>
+                <div className="flex items-center gap-3 mt-1 text-xs font-semibold text-gray-500 dark:text-gray-400">
+                    <div className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {formatDate(sub.timestamp)}
+                    </div>
+                    {sub.total_duration > 0 && (
+                        <div className="flex items-center gap-1">
+                            <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />
+                            {sub.total_duration < 1 ? sub.total_duration.toFixed(3) : sub.total_duration.toFixed(2)}ms
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+        <button className="p-2 text-indigo-500 hover:bg-indigo-500/10 rounded-xl transition-all opacity-0 group-hover/item:opacity-100">
+            <ExternalLink className="w-4 h-4" />
+        </button>
+    </div>
+));
+
+SubmissionItem.displayName = "SubmissionItem";
 
 export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalProps) {
     const [mounted, setMounted] = useState(false);
@@ -49,24 +87,26 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
         }
     };
 
-    if (!mounted) return null;
-
-    const grouped: GroupedSubmissions = submissions.reduce((acc, sub) => {
-        if (!acc[sub.problemId]) {
-            acc[sub.problemId] = {
-                title: sub.problemTitle || "Unknown Problem",
-                submissions: []
-            };
-        }
-        acc[sub.problemId].submissions.push(sub);
-        return acc;
-    }, {} as GroupedSubmissions);
+    const grouped = useMemo(() => {
+        return submissions.reduce((acc, sub) => {
+            if (!acc[sub.problemId]) {
+                acc[sub.problemId] = {
+                    title: sub.problemTitle || "Unknown Problem",
+                    submissions: []
+                };
+            }
+            acc[sub.problemId].submissions.push(sub);
+            return acc;
+        }, {} as GroupedSubmissions);
+    }, [submissions]);
 
     const toggleGroup = (id: string) => {
-        const next = new Set(expandedGroups);
-        if (next.has(id)) next.delete(id);
-        else next.add(id);
-        setExpandedGroups(next);
+        setExpandedGroups(prev => {
+            const next = new Set(prev);
+            if (next.has(id)) next.delete(id);
+            else next.add(id);
+            return next;
+        });
     };
 
     const formatDate = (timestamp: number) => {
@@ -78,29 +118,31 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
         }).format(new Date(timestamp));
     };
 
+    if (!mounted) return null;
+
     const ModalContent = (
         <AnimatePresence>
             {isOpen && (
                 <div className="fixed inset-0 z-[10000] flex items-center justify-center p-4">
-                    {/* Backdrop */}
+                    {/* Backdrop - Simplified blur for performance */}
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
-                        className="absolute inset-0 bg-gray-950/60 backdrop-blur-xl"
+                        className="absolute inset-0 bg-gray-950/40 backdrop-blur-sm"
                     />
 
                     {/* Modal Card */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+                        initial={{ opacity: 0, scale: 0.95, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.95, y: 30 }}
-                        transition={{ type: "spring", damping: 25, stiffness: 350 }}
-                        className="relative w-full max-w-3xl bg-white dark:bg-gray-950 rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden border border-white/20 dark:border-gray-800 flex flex-col h-[650px] max-h-[90vh]"
+                        exit={{ opacity: 0, scale: 0.95, y: 10 }}
+                        transition={{ duration: 0.2 }}
+                        className="relative w-full max-w-3xl bg-white dark:bg-gray-950 rounded-[2.5rem] shadow-2xl overflow-hidden border border-white/20 dark:border-gray-800 flex flex-col h-[650px] max-h-[90vh] transform-gpu"
                     >
                         {/* Header Section */}
-                        <div className="p-8 md:p-10 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-md">
+                        <div className="p-8 md:p-10 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center bg-gray-50/50 dark:bg-gray-900/50 backdrop-blur-md sticky top-0 z-10">
                             <div className="flex items-center gap-5">
                                 <div className="p-4 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-2xl shadow-xl shadow-indigo-500/30">
                                     <History className="w-6 h-6 text-white" />
@@ -157,12 +199,9 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
                                         const isSolved = group.submissions.some(s => s.final_status === "Accepted");
 
                                         return (
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ delay: index * 0.05 }}
+                                            <div
                                                 key={id}
-                                                className={`rounded-[2rem] border transition-all duration-500 ${isExpanded
+                                                className={`rounded-[2rem] border transition-all duration-300 transform-gpu ${isExpanded
                                                     ? "bg-indigo-50/30 dark:bg-indigo-500/5 border-indigo-200 dark:border-indigo-500/30 shadow-lg shadow-indigo-500/5"
                                                     : "bg-white dark:bg-gray-900/40 border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 shadow-sm"
                                                     }`}
@@ -192,57 +231,25 @@ export default function SubmissionsModal({ isOpen, onClose }: SubmissionsModalPr
                                                     </div>
                                                 </button>
 
-                                                <AnimatePresence>
+                                                <AnimatePresence initial={false}>
                                                     {isExpanded && (
                                                         <motion.div
                                                             initial={{ height: 0, opacity: 0 }}
                                                             animate={{ height: "auto", opacity: 1 }}
                                                             exit={{ height: 0, opacity: 0 }}
+                                                            transition={{ duration: 0.2 }}
                                                             className="overflow-hidden"
                                                         >
                                                             <div className="px-6 pb-6 space-y-3">
                                                                 <div className="h-px bg-gray-100 dark:bg-gray-800 mx-2 mb-4" />
                                                                 {group.submissions.map((sub) => (
-                                                                    <div
-                                                                        key={sub.id}
-                                                                        className="flex items-center justify-between p-4 rounded-2xl bg-white dark:bg-gray-800/40 border border-gray-100 dark:border-gray-700/50 hover:border-indigo-500/20 transition-all group/item"
-                                                                    >
-                                                                        <div className="flex items-center gap-4">
-                                                                            <div className={`w-8 h-8 rounded-full flex items-center justify-center ${sub.final_status === "Accepted" ? "bg-emerald-100 dark:bg-emerald-500/20 text-emerald-500" : "bg-rose-100 dark:bg-rose-500/20 text-rose-500"}`}>
-                                                                                {sub.final_status === "Accepted" ? <CheckCircle2 className="w-4 h-4" /> : <XCircle className="w-4 h-4" />}
-                                                                            </div>
-                                                                            <div>
-                                                                                <div className="flex items-center gap-2">
-                                                                                    <span className="text-xs font-black text-gray-400 dark:text-gray-500 uppercase tracking-widest">ID: {sub.id.toUpperCase()}</span>
-                                                                                    <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />
-                                                                                    <span className={`text-[10px] font-black uppercase ${sub.final_status === "Accepted" ? "text-emerald-500" : "text-rose-500"}`}>
-                                                                                        {sub.final_status}
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div className="flex items-center gap-3 mt-1 text-xs font-semibold text-gray-500 dark:text-gray-400">
-                                                                                    <div className="flex items-center gap-1">
-                                                                                        <Clock className="w-3 h-3" />
-                                                                                        {formatDate(sub.timestamp)}
-                                                                                    </div>
-                                                                                    {sub.total_duration > 0 && (
-                                                                                        <div className="flex items-center gap-1">
-                                                                                            <span className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-700" />
-                                                                                            {Math.round(sub.total_duration)}ms
-                                                                                        </div>
-                                                                                    )}
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <button className="p-2 text-indigo-500 hover:bg-indigo-500/10 rounded-xl transition-all opacity-0 group-hover/item:opacity-100">
-                                                                            <ExternalLink className="w-4 h-4" />
-                                                                        </button>
-                                                                    </div>
+                                                                    <SubmissionItem key={sub.id} sub={sub} formatDate={formatDate} />
                                                                 ))}
                                                             </div>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
-                                            </motion.div>
+                                            </div>
                                         );
                                     })}
                                 </div>
