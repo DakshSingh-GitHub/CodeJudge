@@ -38,7 +38,6 @@ const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isSubm
                         title="See Submissions"
                     >
                         <History className="w-4 h-4 group-hover:rotate-[-20deg] transition-transform" />
-                        <span className="text-sm font-semibold hidden sm:inline">Submissions</span>
                     </button>
                     <button
                         onClick={() =>
