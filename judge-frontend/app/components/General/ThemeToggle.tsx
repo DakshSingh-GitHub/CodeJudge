@@ -9,22 +9,27 @@ interface ThemeToggleProps {
 
 export default function ThemeToggle({ isDark, toggleTheme }: ThemeToggleProps) {
     return (
-        <div
+        <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={toggleTheme}
-            className={`flex h-8 w-16 cursor-pointer items-center rounded-full p-1 transition-colors duration-500 ${isDark ? "bg-slate-700" : "bg-sky-400"
-                }`}
+            className={`relative flex h-8 w-14 cursor-pointer items-center rounded-full p-1 transition-colors duration-500 shadow-inner ${isDark ? "bg-indigo-950 border border-indigo-900/50" : "bg-sky-100 border border-sky-200"}`}
         >
             <motion.div
-                className="flex h-6 w-6 items-center justify-center rounded-full bg-white shadow-md text-sm select-none"
                 layout
-                transition={{ type: "spring", stiffness: 700, damping: 30 }}
+                transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                className={`flex h-6 w-6 items-center justify-center rounded-full shadow-lg transition-colors duration-500 ${isDark ? "bg-indigo-500" : "bg-white"}`}
                 style={{
                     marginLeft: isDark ? "auto" : "0",
                     marginRight: isDark ? "0" : "auto"
                 }}
             >
-                {isDark ? "🌙" : "☀️"}
+                {isDark ? (
+                    <motion.span initial={{ rotate: -45 }} animate={{ rotate: 0 }} className="text-[10px]">🌙</motion.span>
+                ) : (
+                    <motion.span initial={{ rotate: 45 }} animate={{ rotate: 0 }} className="text-[10px]">☀️</motion.span>
+                )}
             </motion.div>
-        </div>
+        </motion.div>
     );
 }

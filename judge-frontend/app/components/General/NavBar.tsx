@@ -3,8 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { History } from 'lucide-react';
-import ThemeToggle from './ThemeToggle'; // Assuming ThemeToggle is in the same directory
+import ThemeToggle from './ThemeToggle';
 import NavDropdown from './NavDropdown';
+import { usePathname } from 'next/navigation';
 
 interface NavBarProps {
     isSidebarOpen: boolean;
@@ -16,13 +17,16 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
+    const pathname = usePathname();
+    const isCodeIDE = pathname === '/code-ide';
+
     return (
         <motion.header
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 px-4 py-3 md:px-6 md:py-3 transition-all duration-500 sticky top-0 z-50 shrink-0"
+            className="bg-white/70 dark:bg-gray-950/70 backdrop-blur-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none border-b border-gray-100 dark:border-gray-800/50 px-4 py-3 md:px-8 md:py-4 transition-all duration-500 sticky top-0 z-50 shrink-0"
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="max-w-[1800px] mx-auto flex items-center justify-between">
                 <motion.div
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
@@ -31,57 +35,43 @@ const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isSubm
                 >
                     <NavDropdown />
                 </motion.div>
-                <div className="flex items-center gap-2 md:gap-4">
-                    <button
-                        onClick={() => setIsSubmissionsModalOpen(true)}
-                        className="flex items-center gap-2 px-3 py-2 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition-all duration-200 border border-indigo-100 dark:border-indigo-800/50 group"
-                        title="See Submissions"
-                    >
-                        <History className="w-4 h-4 group-hover:rotate-[-20deg] transition-transform" />
-                    </button>
-                    <button
-                        onClick={() =>
-                            setIsSidebarOpen(!isSidebarOpen)
-                        }
-                        className="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
-                        title={
-                            isSidebarOpen
-                                ? "Hide sidebar"
-                                : "Show sidebar"
-                        }
-                    >
-                        {isSidebarOpen ? (
-                            <svg
-                                className="w-5 h-5 text-gray-700 dark:text-gray-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
+                <div className="flex items-center gap-3 md:gap-6">
+                    {!isCodeIDE && (
+                        <>
+                            <button
+                                onClick={() => setIsSubmissionsModalOpen(true)}
+                                className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900 group shadow-sm hover:shadow-md"
+                                title="See Submissions"
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18L18 6M6 6l12 12"
-                                ></path>
-                            </svg>
-                        ) : (
-                            <svg
-                                className="w-5 h-5 text-gray-700 dark:text-gray-300"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
+                                <History className="w-5 h-5 group-hover:rotate-[-20deg] transition-transform" />
+                            </button>
+
+                            <button
+                                onClick={() =>
+                                    setIsSidebarOpen(!isSidebarOpen)
+                                }
+                                className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md"
+                                title={
+                                    isSidebarOpen
+                                        ? "Hide sidebar"
+                                        : "Show sidebar"
+                                }
                             >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                ></path>
-                            </svg>
-                        )}
-                    </button>
+                                {isSidebarOpen ? (
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                ) : (
+                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M4 6h16M4 12h16M4 18h16" />
+                                    </svg>
+                                )}
+                            </button>
+                        </>
+                    )}
+
+                    <div className="h-6 w-px bg-gray-100 dark:bg-gray-800 hidden md:block" />
+
                     <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
                 </div>
             </div>

@@ -92,75 +92,35 @@ export default function CodeTestPage() {
     if (!isMounted) return null;
 
     return (
-        <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 relative overflow-x-hidden overflow-y-auto font-sans pb-8 transition-colors duration-500">
+        <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 relative overflow-x-hidden overflow-y-auto lg:overflow-hidden font-sans transition-colors duration-500">
             {/* Premium Ambient Background Elements */}
             <div className="absolute top-0 right-[-10%] w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-[140px] pointer-events-none" />
             <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 flex-1 flex flex-col p-4 md:p-12 max-w-[1800px] mx-auto w-full gap-6">
-                {/* Header Information */}
-                <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex flex-col md:flex-row md:items-center justify-between gap-4"
-                >
-                    <div className="flex items-center gap-4">
-                        <div className="flex flex-col">
-                            <h1 className="text-3xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
-                                Code <span className="text-indigo-600 dark:text-indigo-400">IDE</span>
-                            </h1>
-                        </div>
-                        <div className="h-4 w-px bg-gray-200 dark:bg-gray-800 hidden md:block" />
-                        <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest hidden md:block">Think, build, and prototype</p>
-                    </div>
+            <div className="relative z-10 flex-1 flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 pb-16 md:pb-6 lg:pb-8 xl:pb-12 max-w-[1800px] mx-auto w-full gap-4 md:gap-6 lg:gap-8 min-h-0 lg:h-full">
+                {/* Mobile Title - Only visible on small screens */}
+                <div className="lg:hidden flex flex-col gap-1 px-2 mb-2">
+                    <h1 className="text-3xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                        Code <span className="text-indigo-600 dark:text-indigo-400">IDE</span>
+                    </h1>
+                    <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Think, build, and prototype</p>
+                </div>
 
-                    <div className="flex items-center gap-3">
-                        <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            onClick={handleReset}
-                            disabled={isLoading}
-                            className="px-5 py-2.5 rounded-xl text-xs font-bold transition-all bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-700 hover:shadow-sm"
-                        >
-                            Reset
-                        </motion.button>
-
-                        <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            onClick={handleRun}
-                            disabled={isLoading}
-                            className={`group relative px-8 py-2.5 rounded-xl text-sm font-bold transition-all shadow-xl overflow-hidden ${isLoading
-                                ? "bg-gray-100 dark:bg-gray-800 text-gray-400"
-                                : "bg-indigo-600 text-white shadow-indigo-500/20 hover:bg-indigo-700"
-                                }`}
-                        >
-                            <div className="relative z-10 flex items-center gap-2">
-                                {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4 fill-current" />}
-                                <span>{isLoading ? "Running..." : "Run Script"}</span>
-                            </div>
-                            {!isLoading && (
-                                <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                            )}
-                        </motion.button>
-                    </div>
-                </motion.div>
-
-                <div className="flex-1 flex flex-col lg:grid lg:grid-cols-12 gap-8 min-h-0">
-                    {/* Editor Section */}
+                <div className="flex-1 flex flex-col lg:grid lg:grid-cols-12 gap-6 md:gap-8 min-h-0">
+                    {/* Left Pane - Expanded Editor Section */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="lg:col-span-7 xl:col-span-8 flex flex-col bg-white dark:bg-gray-900 shadow-2xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 flex-1 min-h-[400px] lg:min-h-0"
+                        className="lg:col-span-7 xl:col-span-8 flex flex-col bg-white dark:bg-gray-900 shadow-2xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 lg:h-full min-h-[450px] lg:min-h-0"
                     >
                         <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50/50 dark:bg-gray-900/50">
                             <div className="flex items-center gap-4">
                                 <div className="flex gap-1.5">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-red-400/80 dark:bg-gray-800" />
-                                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80 dark:bg-gray-800" />
-                                    <div className="w-2.5 h-2.5 rounded-full bg-green-400/80 dark:bg-gray-800" />
+                                    <div className="w-2.5 h-2.5 rounded-full bg-red-400/80 dark:bg-gray-800/50 border border-red-500/10" />
+                                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80 dark:bg-gray-800/50 border border-amber-500/10" />
+                                    <div className="w-2.5 h-2.5 rounded-full bg-green-400/80 dark:bg-gray-800/50 border border-green-500/10" />
                                 </div>
                                 <div className="h-4 w-px bg-gray-200 dark:bg-gray-800" />
                                 <div className="flex items-center gap-2">
@@ -168,8 +128,39 @@ export default function CodeTestPage() {
                                     <span className="text-xs font-bold text-gray-500 dark:text-gray-400 tracking-tight">playground.py</span>
                                 </div>
                             </div>
+
+                            <div className="flex items-center gap-3">
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={handleReset}
+                                    disabled={isLoading}
+                                    className="px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-100 dark:hover:border-indigo-900/50 hover:shadow-sm"
+                                >
+                                    Reset
+                                </motion.button>
+
+                                <motion.button
+                                    whileHover={{ scale: 1.02 }}
+                                    whileTap={{ scale: 0.98 }}
+                                    onClick={handleRun}
+                                    disabled={isLoading}
+                                    className={`group relative px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg overflow-hidden ${isLoading
+                                        ? "bg-gray-100 dark:bg-gray-800 text-gray-400"
+                                        : "bg-indigo-600 text-white shadow-indigo-500/20 hover:bg-indigo-700"
+                                        }`}
+                                >
+                                    <div className="relative z-10 flex items-center gap-2">
+                                        {isLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Play className="w-3 h-3 fill-current" />}
+                                        <span>{isLoading ? "Running" : "Run"}</span>
+                                    </div>
+                                    {!isLoading && (
+                                        <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                                    )}
+                                </motion.button>
+                            </div>
                         </div>
-                        <div className="flex-1 relative">
+                        <div className="flex-1 relative min-h-0">
                             <CodeEditor
                                 code={code}
                                 setCode={setCode}
@@ -179,15 +170,23 @@ export default function CodeTestPage() {
                         </div>
                     </motion.div>
 
-                    {/* Interaction & Result Panels */}
+                    {/* Right Pane - Interaction & Result Panels */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="lg:col-span-5 xl:col-span-4 flex flex-col gap-6 flex-1 min-h-0"
+                        className="lg:col-span-5 xl:col-span-4 flex flex-col gap-6 lg:h-full min-h-0"
                     >
+                        {/* Desktop Title & Description Section - Hidden on mobile */}
+                        <div className="hidden lg:flex flex-col gap-1 px-4 mb-2">
+                            <h1 className="text-3xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                                Code <span className="text-indigo-600 dark:text-indigo-400">IDE</span>
+                            </h1>
+                            <p className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Think, build, and prototype</p>
+                        </div>
+
                         {/* Input Box */}
-                        <div className="h-[180px] lg:h-1/3 min-h-[150px] flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/5">
+                        <div className="flex-none h-[180px] lg:h-[200px] flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/5">
                             <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center gap-2 bg-gray-50/50 dark:bg-gray-900/50">
                                 <MessageSquare className="w-4 h-4 text-indigo-500" />
                                 <h2 className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em]">Input Stream</h2>
@@ -201,7 +200,7 @@ export default function CodeTestPage() {
                         </div>
 
                         {/* Result Area */}
-                        <div className="flex-1 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/5 min-h-[250px] lg:min-h-0">
+                        <div className="flex-1 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/5 min-h-[300px] lg:min-h-0">
                             <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50/50 dark:bg-gray-900/50">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="w-4 h-4 text-purple-500" />
@@ -235,7 +234,7 @@ export default function CodeTestPage() {
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
-                                            className="flex-1 flex flex-col items-center justify-center text-center opacity-40"
+                                            className="flex-1 flex flex-col items-center justify-center text-center opacity-40 overflow-hidden"
                                         >
                                             <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mb-4">
                                                 <Terminal className="w-6 h-6 text-gray-400" />
@@ -258,7 +257,7 @@ export default function CodeTestPage() {
                                             key="result"
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="flex-1 flex flex-col min-h-0"
+                                            className="flex-1 flex flex-col min-h-0 overflow-hidden"
                                         >
                                             <div className="flex-1 overflow-auto rounded-2xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800/50 p-5 font-mono text-sm leading-relaxed custom-scrollbar">
                                                 {output?.stdout && (
@@ -282,7 +281,7 @@ export default function CodeTestPage() {
                                     )}
                                 </AnimatePresence>
 
-                                <div className="mt-4 pt-4 border-t border-gray-50 dark:border-gray-800 flex items-center justify-between opacity-50">
+                                <div className="mt-4 pt-4 border-t border-gray-50 dark:border-gray-800 flex items-center justify-between opacity-50 flex-none">
                                     <div className="flex items-center gap-2 font-mono text-[10px]">
                                         <span className="text-green-500">➜</span>
                                         <span className="text-gray-500 dark:text-gray-400">python runtime</span>
@@ -293,6 +292,8 @@ export default function CodeTestPage() {
                         </div>
                     </motion.div>
                 </div>
+                {/* Explicit spacer for mobile bottom padding to ensure scroll visibility */}
+                <div className="lg:hidden h-20 w-full flex-none" />
             </div>
         </div>
     );
