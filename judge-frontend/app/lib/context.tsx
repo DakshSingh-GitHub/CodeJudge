@@ -18,25 +18,28 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export function AppWrapper({ children }: { children: ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isSubmissionsModalOpen, setIsSubmissionsModalOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
+
+  // Initialize theme from localStorage immediately if on client
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+        return true;
+      }
+    }
+    return false;
+  });
+
   const TITLE = "Code Judge";
 
   useEffect(() => {
-    // Check initial theme preference
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/rules-of-hooks/exhaustive-deps, react-hooks/set-state-in-effect
-      setIsDark(true);
+    // Ensure the DOM is synced with the state on mount/updates (double check)
+    if (isDark) {
       document.documentElement.classList.add("dark");
     } else {
-      // eslint-disable-next-line react-hooks/exhaustive-deps, react-hooks/rules-of-hooks/exhaustive-deps, react-hooks/set-state-in-effect
-      setIsDark(false);
       document.documentElement.classList.remove("dark");
     }
-  }, []);
+  }, [isDark]);
 
   const toggleTheme = () => {
     if (isDark) {

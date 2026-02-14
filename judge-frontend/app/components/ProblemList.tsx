@@ -256,32 +256,32 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                                                 setIsSidebarOpen(false);
                                             }
                                         }}
-                                        className={`w-full text-left px-0 py-3.5 rounded-2xl transition-all duration-300 flex justify-between items-center group relative border border-transparent ${selectedId === problem.id
+                                        className={`w-full text-left px-3 py-4 rounded-2xl transition-all duration-300 flex justify-between items-center group relative border border-transparent ${selectedId === problem.id
                                             ? "bg-white dark:bg-gray-800 shadow-xl shadow-indigo-500/10 border-indigo-200/50 dark:border-indigo-500/30 translate-x-1"
                                             : "hover:bg-white/40 dark:hover:bg-gray-800/40 hover:border-white/20 dark:hover:border-white/5 hover:translate-x-1"
                                             }`}
                                     >
-                                        <div className="flex items-center gap-3 overflow-hidden">
-                                            <div className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${selectedId === problem.id ? "bg-indigo-500" : "bg-gray-300 dark:bg-gray-700 group-hover:bg-indigo-400/50"}`} />
+                                        <div className="flex items-center gap-4 overflow-hidden">
+                                            <div className={`w-2 h-2 rounded-full shrink-0 transition-colors ${selectedId === problem.id ? "bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]" : "bg-gray-300 dark:bg-gray-700 group-hover:bg-indigo-400/50"}`} />
 
                                             <div className="flex flex-col overflow-hidden">
-                                                <span className={`truncate text-sm font-medium transition-colors ${selectedId === problem.id ? "text-indigo-900 dark:text-indigo-100" : "text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"}`}>
+                                                <span className={`truncate text-sm font-semibold transition-colors ${selectedId === problem.id ? "text-indigo-900 dark:text-indigo-100" : "text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"}`}>
                                                     {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
                                                 </span>
                                             </div>
                                         </div>
 
-                                        <div className="flex items-center gap-2 shrink-0">
+                                        <div className="flex items-center gap-3 shrink-0">
                                             {solvedProblemIds.has(problem.id) && (
                                                 <motion.div
                                                     initial={{ scale: 0 }}
                                                     animate={{ scale: 1 }}
                                                     className="text-emerald-500"
                                                 >
-                                                    <Check className="w-3.5 h-3.5" />
+                                                    <Check className="w-4 h-4" />
                                                 </motion.div>
                                             )}
-                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
+                                            <span className={`text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
                                                 {typeof problem.difficulty === 'string' ? problem.difficulty : JSON.stringify(problem.difficulty || "Medium")}
                                             </span>
                                         </div>

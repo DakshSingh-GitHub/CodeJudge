@@ -345,7 +345,7 @@ export default function Home() {
                             />
 
                             <div
-                                className={`flex-1 min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
+                                className={`flex-1 min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab === "problem" ? "hidden" : "flex"
                                     }`}
                                 style={{
                                     flex: isMobile ? "none" : `0 0 calc(${100 - mainContentWidth}% - 1.5rem)`,
