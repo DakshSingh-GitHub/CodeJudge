@@ -162,7 +162,7 @@ export default function CodeEditor({
 
     return (
         <div
-            className={`h-full w-full rounded-xl overflow-hidden relative flex flex-col bg-gray-800 ${isDisabled ? "opacity-60" : ""}`}
+            className={`h-full w-full rounded-xl overflow-hidden relative flex flex-col bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-800/50 shadow-inner ${isDisabled ? "opacity-60 grayscale" : ""}`}
         >
             {isDisabled && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-gray-900 bg-opacity-50 cursor-not-allowed">
@@ -186,7 +186,8 @@ export default function CodeEditor({
                         automaticLayout: true,
                         readOnly: isDisabled,
                         cursorBlinking: "expand",
-                        fontFamily: "Jetbrains Mono, sans-serif, Arial",
+                        fontFamily: "Jetbrains Mono, monospace",
+                        fontLigatures: true,
                         suggestOnTriggerCharacters: true,
                         quickSuggestions: {
                             other: true,
@@ -195,6 +196,16 @@ export default function CodeEditor({
                         },
                         parameterHints: { enabled: true },
                         tabCompletion: "on",
+                        smoothScrolling: true,
+                        cursorSmoothCaretAnimation: "on",
+                        formatOnPaste: true,
+                        formatOnType: true,
+                        renderLineHighlight: "all",
+                        scrollbar: {
+                            verticalScrollbarSize: 8,
+                            horizontalScrollbarSize: 8,
+                            useShadows: false
+                        }
                     }}
                 />
             </div>

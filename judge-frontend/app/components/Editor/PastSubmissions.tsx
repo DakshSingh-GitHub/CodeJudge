@@ -46,13 +46,13 @@ export default function PastSubmissions({ submissions, onLoadCode, onDelete }: P
                 {submissions.map((sub) => (
                     <div
                         key={sub.id}
-                        className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-200 group relative"
+                        className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-200 group relative hover:bg-white dark:hover:bg-gray-800"
                     >
                         <div className="flex items-center justify-between mb-3">
                             <div className="flex items-center gap-2">
-                                <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider ${sub.final_status === "Accepted"
-                                    ? "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400"
-                                    : "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
+                                <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm border ${sub.final_status === "Accepted"
+                                    ? "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 shadow-emerald-500/10"
+                                    : "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20 shadow-rose-500/10"
                                     }`}>
                                     {typeof sub.final_status === 'string' ? sub.final_status : JSON.stringify(sub.final_status || "Unknown")}
                                 </span>
@@ -69,7 +69,7 @@ export default function PastSubmissions({ submissions, onLoadCode, onDelete }: P
                                 </button>
                                 <button
                                     onClick={(e) => handleDeleteClick(e, sub.id)}
-                                    className="p-1.5 rounded-lg text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-all opacity-0 group-hover:opacity-100"
+                                    className="p-1.5 rounded-lg text-gray-400 hover:text-rose-500 hover:bg-rose-50 dark:hover:bg-rose-500/20 transition-all opacity-0 group-hover:opacity-100"
                                     title="Delete Submission"
                                 >
                                     <Trash2 className="w-4 h-4" />

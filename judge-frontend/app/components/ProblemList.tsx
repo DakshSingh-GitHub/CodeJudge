@@ -154,49 +154,59 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
         const diff = (difficulty || "medium").toLowerCase();
         switch (diff) {
             case "easy":
-                return "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-500/20";
+                return "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400";
             case "medium":
-                return "bg-amber-50 dark:bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-500/20";
+                return "bg-amber-500/10 text-amber-600 dark:text-amber-400";
             case "hard":
-                return "bg-rose-50 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400 border-rose-200 dark:border-rose-500/20";
+                return "bg-rose-500/10 text-rose-600 dark:text-rose-400";
             default:
-                return "bg-gray-50 dark:bg-gray-500/10 text-gray-700 dark:text-gray-400 border-gray-200 dark:border-gray-500/20";
+                return "bg-gray-500/10 text-gray-600 dark:text-gray-400";
         }
     };
 
     return (
-        <div className="h-full flex flex-col bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden">
-            <div className="p-4 border-b border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl">
-                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-3 flex items-center gap-2">
-                    <Filter className="w-4 h-4 text-indigo-500" />
-                    Problems
-                </h2>
-                <div className="flex items-center gap-2">
-                    <div className="relative flex-1">
-                        <input
-                            type="text"
-                            placeholder="Search problems..."
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full px-4 py-2.5 text-sm text-gray-900 bg-gray-50/50 dark:bg-gray-900/50 border border-transparent focus:border-indigo-500/30 rounded-xl focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all dark:text-white dark:placeholder-gray-500"
-                        />
-                    </div>
-
+        <div className="h-full flex flex-col bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800 rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/5">
+            <div className="p-5 border-b border-gray-100/50 dark:border-gray-800/50">
+                <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center gap-2.5">
+                        <div className="p-1.5 rounded-lg bg-indigo-500/10 dark:bg-indigo-400/10 text-indigo-600 dark:text-indigo-400">
+                            <Filter className="w-4 h-4" />
+                        </div>
+                        Problems
+                    </h2>
                     <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                         onClick={() => setIsFilterModalOpen(true)}
-                        className={`flex items-center gap-2 px-3 py-2 text-sm font-medium border rounded-lg transition-all outline-none ${filters.difficulty.length > 0 || filters.status !== "all"
-                            ? "bg-indigo-500 text-white border-indigo-400 shadow-lg shadow-indigo-500/20"
-                            : "text-gray-700 dark:text-gray-200 bg-white/50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-600/50"
+                        className={`p-2 rounded-lg transition-colors ${filters.difficulty.length > 0 || filters.status !== "all"
+                            ? "bg-indigo-100 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300 relative"
+                            : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
                             }`}
                     >
                         <SlidersHorizontal className="w-4 h-4" />
-                        <span className="hidden sm:inline">Filter</span>
                         {(filters.difficulty.length > 0 || filters.status !== "all") && (
-                            <span className="flex h-2 w-2 rounded-full bg-white animate-pulse" />
+                            <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-indigo-500 rounded-full" />
                         )}
                     </motion.button>
+                </div>
+
+                <div className="relative group">
+                    <div className="absolute inset-0 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-xl blur-md transition-opacity opacity-0 group-hover:opacity-100" />
+                    <input
+                        type="text"
+                        placeholder="Search problems..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="relative w-full px-4 py-3 pl-11 text-sm bg-white dark:bg-gray-950/50 border border-gray-200 dark:border-gray-800 rounded-xl focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10 outline-none transition-all placeholder:text-gray-400 dark:text-white"
+                    />
+                    <svg
+                        className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 peer-focus:text-indigo-500 transition-colors"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                 </div>
 
                 <FilterModal
@@ -230,13 +240,14 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                         variants={containerVariants}
                         initial="hidden"
                         animate="visible"
-                        className="divide-y divide-gray-200 dark:divide-gray-700"
+                        className="space-y-2 p-3 pb-24"
                     >
                         <AnimatePresence>
                             {filteredProblems.map((problem) => (
                                 <motion.li
                                     key={problem.id}
                                     variants={itemVariants}
+                                    className="px-3"
                                 >
                                     <button
                                         onClick={() => {
@@ -245,28 +256,35 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
                                                 setIsSidebarOpen(false);
                                             }
                                         }}
-                                        className={`w-full text-left px-4 py-3 transition-all duration-200 flex justify-between items-center group relative ${selectedId === problem.id
-                                            ? "bg-indigo-50 dark:bg-indigo-900/40 border-l-4 border-indigo-600 dark:border-indigo-400 text-indigo-900 dark:text-indigo-50 font-medium"
-                                            : "text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50"
+                                        className={`w-full text-left px-0 py-3.5 rounded-2xl transition-all duration-300 flex justify-between items-center group relative border border-transparent ${selectedId === problem.id
+                                            ? "bg-white dark:bg-gray-800 shadow-xl shadow-indigo-500/10 border-indigo-200/50 dark:border-indigo-500/30 translate-x-1"
+                                            : "hover:bg-white/40 dark:hover:bg-gray-800/40 hover:border-white/20 dark:hover:border-white/5 hover:translate-x-1"
                                             }`}
                                     >
-                                        <div className="flex items-center gap-2 overflow-hidden">
+                                        <div className="flex items-center gap-3 overflow-hidden">
+                                            <div className={`w-1.5 h-1.5 rounded-full shrink-0 transition-colors ${selectedId === problem.id ? "bg-indigo-500" : "bg-gray-300 dark:bg-gray-700 group-hover:bg-indigo-400/50"}`} />
+
+                                            <div className="flex flex-col overflow-hidden">
+                                                <span className={`truncate text-sm font-medium transition-colors ${selectedId === problem.id ? "text-indigo-900 dark:text-indigo-100" : "text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"}`}>
+                                                    {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div className="flex items-center gap-2 shrink-0">
                                             {solvedProblemIds.has(problem.id) && (
                                                 <motion.div
-                                                    initial={{ scale: 0, rotate: -20 }}
-                                                    animate={{ scale: 1, rotate: 0 }}
-                                                    className="flex items-center justify-center shrink-0"
+                                                    initial={{ scale: 0 }}
+                                                    animate={{ scale: 1 }}
+                                                    className="text-emerald-500"
                                                 >
-                                                    <Check className="w-4 h-4 text-emerald-500 stroke-[3px]" />
+                                                    <Check className="w-3.5 h-3.5" />
                                                 </motion.div>
                                             )}
-                                            <span className="truncate">
-                                                {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
+                                            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
+                                                {typeof problem.difficulty === 'string' ? problem.difficulty : JSON.stringify(problem.difficulty || "Medium")}
                                             </span>
                                         </div>
-                                        <span className={`text-[9px] font-bold px-1.5 py-0.5 rounded border transition-opacity duration-200 uppercase tracking-tighter shrink-0 ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
-                                            {typeof problem.difficulty === 'string' ? problem.difficulty : JSON.stringify(problem.difficulty || "Medium")}
-                                        </span>
                                     </button>
                                 </motion.li>
                             ))}

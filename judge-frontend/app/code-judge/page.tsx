@@ -232,10 +232,11 @@ export default function Home() {
 
 
     return (
-        <div className="flex-1 flex flex-col min-h-0 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 relative overflow-hidden">
-            {/* Ambient Background Glows */}
-            <div className="absolute top-0 right-0 w-125 h-125 bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-100 h-100 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-[100px] pointer-events-none" />
+        <div className="flex-1 flex flex-col min-h-0 bg-[#FAFAFA] dark:bg-[#0B0C15] text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans selection:bg-indigo-500/30">
+            {/* Ambient Background Glows - Refined for "Premium" feel */}
+            <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow" />
+            <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[100px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-1000" />
+            <div className="absolute top-[40%] left-[20%] w-[400px] h-[400px] bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-[80px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-2000" />
 
             {!isMounted ? (
                 <div className="flex-1 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50">
@@ -284,7 +285,7 @@ export default function Home() {
                                     className="flex flex-col md:flex-row h-full overflow-hidden shrink-0"
                                 >
                                     <aside
-                                        className="overflow-y-auto md:overflow-hidden shrink-0 w-full max-h-[60vh] md:max-h-none pr-0 md:pr-4"
+                                        className="h-full overflow-hidden shrink-0 w-full md:pr-4"
                                         style={{ width: isMobile ? "100%" : `${sidebarWidth}px` }}
                                     >
                                         <ProblemList
@@ -316,9 +317,14 @@ export default function Home() {
 
                             {/* Problem Selector and Viewer */}
                             <div
-                                className={`flex-1 min-h-100 md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl overflow-hidden flex flex-col ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
+                                className={`flex-1 min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
                                     }`}
-                                style={{ flex: isMobile ? "none" : mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "100%" : "auto" }}
+                                style={{
+                                    flex: isMobile ? "none" : `0 0 calc(${mainContentWidth}% - 1.5rem)`,
+                                    width: isMobile ? "100%" : "auto",
+                                    height: isMobile ? "100%" : "auto",
+                                    minWidth: 0
+                                }}
                             >
                                 <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
                                     <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
@@ -339,30 +345,58 @@ export default function Home() {
                             />
 
                             <div
-                                className={`flex-1 min-h-100 md:min-h-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl flex flex-col overflow-hidden ${isMobile && mobileTab === "problem" ? "hidden" : "flex"
+                                className={`flex-1 min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
                                     }`}
-                                style={{ flex: isMobile ? "none" : 100 - mainContentWidth, width: isMobile ? "100%" : "auto", height: isMobile ? "100%" : "auto" }}
+                                style={{
+                                    flex: isMobile ? "none" : `0 0 calc(${100 - mainContentWidth}% - 1.5rem)`,
+                                    width: isMobile ? "100%" : "auto",
+                                    height: isMobile ? "100%" : "auto",
+                                    minWidth: 0
+                                }}
                             >
-                                {/* Tabs Header - Desktop only or Submissions specific for mobile */}
-                                <div className={`flex border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 ${isMobile ? "hidden" : "flex"}`}>
-                                    <button
-                                        onClick={() => setActiveTab("editor")}
-                                        className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 ${activeTab === "editor"
-                                            ? "border-indigo-500 text-indigo-600 dark:text-indigo-400 bg-white dark:bg-gray-800"
-                                            : "border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                            }`}
-                                    >
-                                        Code Editor
-                                    </button>
-                                    <button
-                                        onClick={() => setActiveTab("submissions")}
-                                        className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 ${activeTab === "submissions"
-                                            ? "border-indigo-500 text-indigo-600 dark:text-indigo-400 bg-white dark:bg-gray-800"
-                                            : "border-transparent text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                                            }`}
-                                    >
-                                        Past Submissions
-                                    </button>
+                                {/* Tabs Header - Modern Minimal Tabs */}
+                                <div className={`flex items-center justify-between px-5 py-2 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md ${isMobile ? "hidden" : "flex"}`}>
+                                    <div className="flex items-center gap-6">
+                                        {(["editor", "submissions"] as const).map((tab) => (
+                                            <button
+                                                key={tab}
+                                                onClick={() => setActiveTab(tab)}
+                                                className={`relative py-2 text-sm font-medium transition-colors duration-200 ${activeTab === tab
+                                                    ? "text-cyan-700 dark:text-cyan-400"
+                                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                                                    }`}
+                                            >
+                                                {activeTab === tab && (
+                                                    <>
+                                                        <motion.div
+                                                            layoutId="activeTabBackground"
+                                                            className="absolute inset-0 -inset-x-3 bg-cyan-500/10 dark:bg-cyan-400/10 rounded-lg blur-sm"
+                                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                                        />
+                                                        <motion.div
+                                                            layoutId="activeTabUnderline"
+                                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"
+                                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                                        />
+                                                    </>
+                                                )}
+                                                <span className="relative z-10">
+                                                    {tab === "editor" ? "Code Editor" : "Past Submissions"}
+                                                </span>
+                                            </button>
+                                        ))}
+                                    </div>
+
+                                    {/* Optional Context/Actions could go here */}
+                                    <div className="flex items-center gap-2 text-xs font-medium text-gray-400 dark:text-gray-500">
+                                        {activeTab === "editor" ? (
+                                            <>
+                                                <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Ready</span>
+                                            </>
+                                        ) : (
+                                            <span>{pastSubmissions.length} records</span>
+                                        )}
+                                    </div>
                                 </div>
 
                                 <div className="flex-1 min-h-0 p-4 pb-28 md:pb-4 flex flex-col gap-4">
