@@ -14,14 +14,16 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
     return (
         <main className="flex h-screen flex-col">
-            <NavBar
-                isSidebarOpen={isSidebarOpen}
-                setIsSidebarOpen={setIsSidebarOpen}
-                isSubmissionsModalOpen={isSubmissionsModalOpen}
-                setIsSubmissionsModalOpen={setIsSubmissionsModalOpen}
-                isDark={isDark}
-                toggleTheme={toggleTheme}
-            />
+            {!isHomePage && (
+                <NavBar
+                    isSidebarOpen={isSidebarOpen}
+                    setIsSidebarOpen={setIsSidebarOpen}
+                    isSubmissionsModalOpen={isSubmissionsModalOpen}
+                    setIsSubmissionsModalOpen={setIsSubmissionsModalOpen}
+                    isDark={isDark}
+                    toggleTheme={toggleTheme}
+                />
+            )}
             <div className="flex-1 min-h-0 flex flex-col">
                 {children}
             </div>

@@ -11,8 +11,9 @@ export default function NavDropdown() {
     const dropdownRef = useRef<HTMLDivElement>(null);
 
     const routes = [
-        { name: "Code Judge", path: "/", icon: "⚖️", subtext: "Select a problem and start solving!" },
-        { name: "Code IDE", path: "/code", icon: "💻", subtext: "Think and Build!" }
+        { name: "Code Judge", path: "/code-judge", icon: "⚖️", subtext: "Select a problem and start solving!" },
+        { name: "Code IDE", path: "/code-ide", icon: "💻", subtext: "Think and Build!" },
+        { name: "Code Home", path: "/", icon: "👋", subtext: "See you here!" }
     ];
 
     const currentRoute = routes.find(r => r.path === pathname) || routes[0];
