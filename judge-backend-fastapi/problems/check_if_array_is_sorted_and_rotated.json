@@ -1,0 +1,373 @@
+{
+    "id": "check_if_array_is_sorted_and_rotated",
+    "title": "Check if Array Is Sorted and Rotated",
+    "description": "Given an array nums, return true if the array was originally sorted in non-decreasing order, then rotated some number of positions (including zero). Otherwise, return false.",
+    "difficulty": "Easy",
+    "category": "Arrays",
+    "input_format": "A single line containing space-separated integers.",
+    "output_format": "true or false.",
+    "sample_input": "3 4 5 1 2",
+    "sample_output": "true",
+    "hidden_test_cases": [
+        {
+            "input": "87 100 100 14 17 25 36 45 60 75 80 85",
+            "output": "true"
+        },
+        {
+            "input": "74 47 91 12 79 11 7 29 28 76 91 89 81 10 82",
+            "output": "false"
+        },
+        {
+            "input": "90 7 11 11 26 42 61",
+            "output": "true"
+        },
+        {
+            "input": "92 12 20 40 59 62 65 80 92",
+            "output": "true"
+        },
+        {
+            "input": "39 54 81 83 85 91 5 29 35",
+            "output": "true"
+        },
+        {
+            "input": "86 68 82",
+            "output": "true"
+        },
+        {
+            "input": "3 69 51 66 74 69 53 13 33 49 50 71 83 68 91 46 50 35 33 83",
+            "output": "false"
+        },
+        {
+            "input": "98 25 32 34 37 45 48 55 57 63 67 69 70 78 81 86 87 88 92 92",
+            "output": "true"
+        },
+        {
+            "input": "56 60 62 75 81 81 85 92 6 10 24 38 49",
+            "output": "true"
+        },
+        {
+            "input": "24 30 31 31 39 64 64 69 73 79 81 83 92 4 4 12 12",
+            "output": "true"
+        },
+        {
+            "input": "4 7 15 17 40 49 58 60 65 66 82 82 84 93 93",
+            "output": "true"
+        },
+        {
+            "input": "23 30 63 80 93 94 1",
+            "output": "true"
+        },
+        {
+            "input": "59 61 5 33 100 6 61",
+            "output": "false"
+        },
+        {
+            "input": "26 32 10 48 82 51",
+            "output": "false"
+        },
+        {
+            "input": "66 49 94 49 52 60 32 96 98 51 72 81 77 16 38 17 85 21 98 69",
+            "output": "false"
+        },
+        {
+            "input": "24 92 41 60 88 53 10",
+            "output": "false"
+        },
+        {
+            "input": "42 71 54",
+            "output": "false"
+        },
+        {
+            "input": "31 32 25 65 75 14 83 43 18 37 22 13 81",
+            "output": "false"
+        },
+        {
+            "input": "1 1 45 5 32 85",
+            "output": "false"
+        },
+        {
+            "input": "68 50 2 69 3 90 35 59 7 73 10",
+            "output": "false"
+        },
+        {
+            "input": "60 84 74",
+            "output": "false"
+        },
+        {
+            "input": "11 53 12 18 48 3 4 91",
+            "output": "false"
+        },
+        {
+            "input": "50 98 20 31",
+            "output": "true"
+        },
+        {
+            "input": "64 94 33 92 94 69 93 82 54 75 6 16 4 49",
+            "output": "false"
+        },
+        {
+            "input": "59 15 44 98",
+            "output": "false"
+        },
+        {
+            "input": "50 89 69 36 22 92 41 39 81 41 75 74 29 63 38 11",
+            "output": "false"
+        },
+        {
+            "input": "37 39 65 67 69 73 9 26",
+            "output": "true"
+        },
+        {
+            "input": "88 86 90 5 54 85 46 88 59 9 84 75 85 4 23 41 38 81 98",
+            "output": "false"
+        },
+        {
+            "input": "36 74 50 71 77 4 20 76 95 64 46 89 1 50 58 55 73 21 81 64",
+            "output": "false"
+        },
+        {
+            "input": "89 35 8 80 66 40 53 12 92 57 16",
+            "output": "false"
+        },
+        {
+            "input": "18 46 88 85 8 61",
+            "output": "false"
+        },
+        {
+            "input": "92 1 2 27 37 51 62 79 90",
+            "output": "true"
+        },
+        {
+            "input": "73 76 77 9 13 16 16 18 26 34 39 43 43 51 70 72",
+            "output": "true"
+        },
+        {
+            "input": "88 8 43 98 99 19 99 97 10 20 72 30 91 47 27 29 48",
+            "output": "false"
+        },
+        {
+            "input": "92 97 98 1 4 16 24 32 35 50 51 78 87 87",
+            "output": "true"
+        },
+        {
+            "input": "19 30 30 40 45 47 48 76 84 87 7 17",
+            "output": "true"
+        },
+        {
+            "input": "61 61 61 74 75 76 78 80 88 92 94 95 98 99 37 54",
+            "output": "true"
+        },
+        {
+            "input": "57 27 70 59 57 1 63 56 6 82 30 28",
+            "output": "false"
+        },
+        {
+            "input": "38 59 58 87 93 98 11 50 96",
+            "output": "false"
+        },
+        {
+            "input": "51 1 16 13 19 39 9",
+            "output": "false"
+        },
+        {
+            "input": "39 52 43 59 21 26 21 31 68 54 15 3 85 13 31 45 50 87",
+            "output": "false"
+        },
+        {
+            "input": "65 21 29 19 68 1",
+            "output": "false"
+        },
+        {
+            "input": "95 88 36 96 92",
+            "output": "false"
+        },
+        {
+            "input": "76 2 61 28",
+            "output": "false"
+        },
+        {
+            "input": "28 38 66 64 24 2 20 17 2 74 28 15 88 49",
+            "output": "false"
+        },
+        {
+            "input": "77 87 26 29 49 52 55 68",
+            "output": "true"
+        },
+        {
+            "input": "58",
+            "output": "true"
+        },
+        {
+            "input": "82 100 19 66",
+            "output": "true"
+        },
+        {
+            "input": "14 25 31 43 45 47 57 66 82 82 91 91",
+            "output": "true"
+        },
+        {
+            "input": "95",
+            "output": "true"
+        },
+        {
+            "input": "25 44 91 77 87 51 96 99 57 49 37 94 43 74 30",
+            "output": "false"
+        },
+        {
+            "input": "66 29 83 86 14 30 38",
+            "output": "false"
+        },
+        {
+            "input": "38 56 74 14",
+            "output": "true"
+        },
+        {
+            "input": "74 79 81 81 83 9 11 11 17 19 22 30 44 49 71 72",
+            "output": "true"
+        },
+        {
+            "input": "94 36 22 71 52 75 77 92",
+            "output": "false"
+        },
+        {
+            "input": "40 44 57 94",
+            "output": "true"
+        },
+        {
+            "input": "16 38 12 69 25 86 87",
+            "output": "false"
+        },
+        {
+            "input": "93 98 26 30 45 46 59 71 73 76",
+            "output": "true"
+        },
+        {
+            "input": "31 65 60 52 49 98 42 31 76 60",
+            "output": "false"
+        },
+        {
+            "input": "92 95 82 92 96 59 91 95 61 48 92 65 47",
+            "output": "false"
+        },
+        {
+            "input": "35 8 42 91 99 12 44 11 5 9 73 14 93 81 12 52 70 65",
+            "output": "false"
+        },
+        {
+            "input": "78 85 4 5 11 12 12 17 22 23 24 24 25 28 33 42 46 55 62 62",
+            "output": "true"
+        },
+        {
+            "input": "75 79 42 53 76 97 71",
+            "output": "false"
+        },
+        {
+            "input": "23 25 29 35 46 54 55 58 70 70 70 75 76 78 79 82 84 3 6 23",
+            "output": "true"
+        },
+        {
+            "input": "6 52 8 87 75 35 47 12 79 40 29 15 52 64 36 100 45 15 32 58",
+            "output": "false"
+        },
+        {
+            "input": "87 85",
+            "output": "true"
+        },
+        {
+            "input": "12 72 86 6",
+            "output": "true"
+        },
+        {
+            "input": "1 14 24 88",
+            "output": "true"
+        },
+        {
+            "input": "4 4 27 35 49 51 52 55 58 58 66 70 84 85 94 95 100 1 2",
+            "output": "true"
+        },
+        {
+            "input": "23 41 70 78 18",
+            "output": "true"
+        },
+        {
+            "input": "100 93 1 78 94 24 38 10",
+            "output": "false"
+        },
+        {
+            "input": "91 63",
+            "output": "true"
+        },
+        {
+            "input": "81 97 35 85 100 9 80 62 1 66 65 76 74 64 97 35 18 20",
+            "output": "false"
+        },
+        {
+            "input": "81 81 8 65",
+            "output": "true"
+        },
+        {
+            "input": "19 13 59 86 68 99 97 67 47 7 63 80",
+            "output": "false"
+        },
+        {
+            "input": "77 33 30",
+            "output": "false"
+        },
+        {
+            "input": "3 70 71 93 93",
+            "output": "true"
+        },
+        {
+            "input": "23 100 40 32 72 68 9 65 9 10 59 87 12",
+            "output": "false"
+        },
+        {
+            "input": "90 93 6 12 26 36 49 50 51 55 67 86",
+            "output": "true"
+        },
+        {
+            "input": "65 65 74 76 92 92 95 95 7 15 29 33 34 41 43 44 45 54 63 64",
+            "output": "true"
+        },
+        {
+            "input": "38 42 84 11 27 37",
+            "output": "true"
+        },
+        {
+            "input": "93 96 100 47 22 57 74",
+            "output": "false"
+        },
+        {
+            "input": "14 83 53 74 78 95 21 90 77 70 76 10 55 70 37",
+            "output": "false"
+        },
+        {
+            "input": "14 59 32 32 96 58",
+            "output": "false"
+        },
+        {
+            "input": "85 94 9 17 29 31 48 59 65",
+            "output": "true"
+        },
+        {
+            "input": "81 29 64",
+            "output": "true"
+        },
+        {
+            "input": "71 82 46 16 4 68 23 61 86 98 63 59 67 43",
+            "output": "false"
+        },
+        {
+            "input": "62 4 29 32 52",
+            "output": "true"
+        },
+        {
+            "input": "2 47",
+            "output": "true"
+        },
+        {
+            "input": "49 66 73 79 80 82 82 83 1 7 10 10 11 28 37 40 45 47",
+            "output": "true"
+        }
+    ]
+}

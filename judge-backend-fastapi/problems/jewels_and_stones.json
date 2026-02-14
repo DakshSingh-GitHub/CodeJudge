@@ -1,0 +1,373 @@
+{
+    "id": "jewels_and_stones",
+    "title": "Jewels and Stones",
+    "description": "You're given strings jewels representing the types of stones that are jewels, and stones representing the stones you have. Each character in stones is a type of stone you have. You want to know how many of the stones you have are also jewels.",
+    "difficulty": "Easy",
+    "category": "Strings",
+    "input_format": "Two lines: the first line is jewels, the second line is stones.",
+    "output_format": "The number of stones that are also jewels.",
+    "sample_input": "aA\naAAbbbb",
+    "sample_output": "3",
+    "hidden_test_cases": [
+        {
+            "input": "ZFMCLwDr\nFveTnDNBGmnQMCILi",
+            "output": "5"
+        },
+        {
+            "input": "TDbvh\nfwsVQrPCeJnFsWjorJlG",
+            "output": "0"
+        },
+        {
+            "input": "dM\nAqgTqXMBPlhBt",
+            "output": "1"
+        },
+        {
+            "input": "BaHvVSjQ\nxWHSyYumz",
+            "output": "2"
+        },
+        {
+            "input": "iIFNn\nuhVG",
+            "output": "0"
+        },
+        {
+            "input": "RXDOguL\nDybctXNrXLZAmyrI",
+            "output": "4"
+        },
+        {
+            "input": "ZhXp\nNPzVNzY",
+            "output": "0"
+        },
+        {
+            "input": "SIogxGP\npMwBqj",
+            "output": "0"
+        },
+        {
+            "input": "rhdAqk\naITXUFRm",
+            "output": "0"
+        },
+        {
+            "input": "Pg\nzM",
+            "output": "0"
+        },
+        {
+            "input": "ghGR\nxbVZjT",
+            "output": "0"
+        },
+        {
+            "input": "ILgx\nPwGGptdcjn",
+            "output": "0"
+        },
+        {
+            "input": "ShjLdMXDy\nZntpjSSzGof",
+            "output": "3"
+        },
+        {
+            "input": "ZcAgvTqF\nTykvRiVrdwCMpwAjQ",
+            "output": "3"
+        },
+        {
+            "input": "VeEmfGpOnQ\nDjbgf",
+            "output": "1"
+        },
+        {
+            "input": "Ebm\naEobB",
+            "output": "2"
+        },
+        {
+            "input": "OhEyjSXpI\nyns",
+            "output": "1"
+        },
+        {
+            "input": "Td\nUJoM",
+            "output": "0"
+        },
+        {
+            "input": "PJOxCVrS\nBxJmbPwrheiRUyuzyDB",
+            "output": "4"
+        },
+        {
+            "input": "H\nebdDRKZo",
+            "output": "0"
+        },
+        {
+            "input": "SUOuZVzBp\nRWFHbUhWhJXfGXSQNQl",
+            "output": "2"
+        },
+        {
+            "input": "OlTXMW\nuXpqIHHnx",
+            "output": "1"
+        },
+        {
+            "input": "csCBIEKUq\nuMNXAhx",
+            "output": "0"
+        },
+        {
+            "input": "I\npDqeWHGvKKKVfTFyjr",
+            "output": "0"
+        },
+        {
+            "input": "etTkAqgy\nGLyypeteYlm",
+            "output": "5"
+        },
+        {
+            "input": "ncHMOp\nzoCWtrEbcI",
+            "output": "1"
+        },
+        {
+            "input": "sGT\nWRBsGyjGfGuDpLK",
+            "output": "4"
+        },
+        {
+            "input": "ELiSFaU\niGyiyfU",
+            "output": "3"
+        },
+        {
+            "input": "xfUqPtGI\nfxilfqeLiYRqxJWgGa",
+            "output": "7"
+        },
+        {
+            "input": "NpDgfYAcF\nPXUyKtdS",
+            "output": "0"
+        },
+        {
+            "input": "N\ndsJrvrNgevqzfpCC",
+            "output": "1"
+        },
+        {
+            "input": "wOFUvl\ncBUUv",
+            "output": "3"
+        },
+        {
+            "input": "RxMWb\nf",
+            "output": "0"
+        },
+        {
+            "input": "qSQbFA\nqdgJRCMAk",
+            "output": "2"
+        },
+        {
+            "input": "OWKotmk\naKibObpHIPOAMRb",
+            "output": "3"
+        },
+        {
+            "input": "PFoksDqQ\njRVhKvJWa",
+            "output": "0"
+        },
+        {
+            "input": "xjDPF\nMbMNrRLgcQEjEw",
+            "output": "1"
+        },
+        {
+            "input": "HRkVjTBolv\nGsv",
+            "output": "1"
+        },
+        {
+            "input": "IvAV\ndbPPInvUw",
+            "output": "2"
+        },
+        {
+            "input": "e\nzVKcQopMlluq",
+            "output": "0"
+        },
+        {
+            "input": "eXoszqnY\nPBYGbVBfZvps",
+            "output": "2"
+        },
+        {
+            "input": "nMC\nyLZHsyK",
+            "output": "0"
+        },
+        {
+            "input": "Wq\nzgNXVUAeFOsTSmhNe",
+            "output": "0"
+        },
+        {
+            "input": "worhPuvz\nQouOAdJaLgIdrYU",
+            "output": "3"
+        },
+        {
+            "input": "tFbYSaG\nysLVvCDROcEVoa",
+            "output": "1"
+        },
+        {
+            "input": "xhbfoy\nGHQhY",
+            "output": "1"
+        },
+        {
+            "input": "lYrbpoxAM\nSbe",
+            "output": "1"
+        },
+        {
+            "input": "qO\nTJaKaikhxH",
+            "output": "0"
+        },
+        {
+            "input": "gTDOowky\nlEf",
+            "output": "0"
+        },
+        {
+            "input": "Z\nIwzwdjNfKrfzT",
+            "output": "0"
+        },
+        {
+            "input": "YwGeEOF\nFiS",
+            "output": "1"
+        },
+        {
+            "input": "zaVc\nSqhPFpQojeVEUdTrZky",
+            "output": "1"
+        },
+        {
+            "input": "vKkXha\nMxNPlrlArFAlFWWzJ",
+            "output": "0"
+        },
+        {
+            "input": "aGcs\nATjnQbgqlR",
+            "output": "0"
+        },
+        {
+            "input": "aPIWiJZ\nHjORMFBKftdnvSo",
+            "output": "0"
+        },
+        {
+            "input": "DMQHFGRs\nCshn",
+            "output": "1"
+        },
+        {
+            "input": "tshTPIFeL\njnjSLNcAmbGskvB",
+            "output": "2"
+        },
+        {
+            "input": "RWxtAsG\nrAphh",
+            "output": "1"
+        },
+        {
+            "input": "qCJ\nfPQoOgxNOqb",
+            "output": "1"
+        },
+        {
+            "input": "XMr\nGAHeTPujYXrTlBUBEoT",
+            "output": "2"
+        },
+        {
+            "input": "nWqmJkHK\nUIlLJBPGqXhZo",
+            "output": "2"
+        },
+        {
+            "input": "fkqPOuvx\nCIERVhyQ",
+            "output": "0"
+        },
+        {
+            "input": "gNHproCxan\nklNpWbocZBQiqSMagmi",
+            "output": "5"
+        },
+        {
+            "input": "P\ngAFWlCO",
+            "output": "0"
+        },
+        {
+            "input": "dmu\nMcAetzlrZMajSdMVa",
+            "output": "1"
+        },
+        {
+            "input": "mPuYTDAh\no",
+            "output": "0"
+        },
+        {
+            "input": "LUW\nCRN",
+            "output": "0"
+        },
+        {
+            "input": "q\nsmR",
+            "output": "0"
+        },
+        {
+            "input": "fQBic\nRy",
+            "output": "0"
+        },
+        {
+            "input": "QDHgAPE\nZqgQzbKfGPIt",
+            "output": "3"
+        },
+        {
+            "input": "NOMPfV\nxF",
+            "output": "0"
+        },
+        {
+            "input": "Gi\nFFCtCGqalwrz",
+            "output": "1"
+        },
+        {
+            "input": "VCB\niSwuHpJBmjj",
+            "output": "1"
+        },
+        {
+            "input": "Nw\nalmXQqbsg",
+            "output": "0"
+        },
+        {
+            "input": "qNxAm\nMZrIRNadBegJUXF",
+            "output": "1"
+        },
+        {
+            "input": "LjPrkX\nAjbeI",
+            "output": "1"
+        },
+        {
+            "input": "WVHFsYQLE\nsxgrLgqdePvNyyfe",
+            "output": "2"
+        },
+        {
+            "input": "AjwUMx\ngCFxLzCJdNJLUntkHF",
+            "output": "2"
+        },
+        {
+            "input": "yCAsbQvBWz\nVoOYhSGTjofKkSSVUD",
+            "output": "0"
+        },
+        {
+            "input": "iRmgfkE\nGFrma",
+            "output": "1"
+        },
+        {
+            "input": "SktzNjYXZ\nPGsdHBCHYpQotbOJhf",
+            "output": "2"
+        },
+        {
+            "input": "S\nS",
+            "output": "1"
+        },
+        {
+            "input": "tXHDMry\nivCWvvExLTGjIDiIoujm",
+            "output": "1"
+        },
+        {
+            "input": "N\nbytid",
+            "output": "0"
+        },
+        {
+            "input": "k\nBsTtCYqNick",
+            "output": "1"
+        },
+        {
+            "input": "mvcZMnOJr\nOJuJAjF",
+            "output": "3"
+        },
+        {
+            "input": "MnIxLCToQb\nPONNFBFxiyqEJk",
+            "output": "1"
+        },
+        {
+            "input": "tOLdEyfA\nFwJryjGEdmnDGDyJ",
+            "output": "4"
+        },
+        {
+            "input": "mnuOQ\nugIQionUE",
+            "output": "3"
+        },
+        {
+            "input": "midZtjerE\nGo",
+            "output": "0"
+        }
+    ]
+}

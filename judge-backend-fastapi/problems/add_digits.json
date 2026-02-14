@@ -22,2004 +22,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "9103",
+            "input": "215",
+            "output": "8"
+        },
+        {
+            "input": "9319",
             "output": "4"
         },
         {
-            "input": "9080",
-            "output": "8"
-        },
-        {
-            "input": "5700",
-            "output": "3"
-        },
-        {
-            "input": "5814",
-            "output": "9"
-        },
-        {
-            "input": "9366",
-            "output": "6"
-        },
-        {
-            "input": "4822",
+            "input": "637",
             "output": "7"
-        },
-        {
-            "input": "4096",
-            "output": "1"
-        },
-        {
-            "input": "6873",
-            "output": "6"
-        },
-        {
-            "input": "4666",
-            "output": "4"
-        },
-        {
-            "input": "563",
-            "output": "5"
-        },
-        {
-            "input": "6887",
-            "output": "2"
-        },
-        {
-            "input": "3908",
-            "output": "2"
-        },
-        {
-            "input": "2513",
-            "output": "2"
-        },
-        {
-            "input": "8920",
-            "output": "1"
-        },
-        {
-            "input": "9212",
-            "output": "5"
-        },
-        {
-            "input": "5410",
-            "output": "1"
-        },
-        {
-            "input": "9721",
-            "output": "1"
-        },
-        {
-            "input": "4059",
-            "output": "9"
-        },
-        {
-            "input": "6048",
-            "output": "9"
-        },
-        {
-            "input": "8120",
-            "output": "2"
-        },
-        {
-            "input": "1234",
-            "output": "1"
-        },
-        {
-            "input": "4721",
-            "output": "5"
-        },
-        {
-            "input": "3385",
-            "output": "1"
-        },
-        {
-            "input": "2694",
-            "output": "3"
-        },
-        {
-            "input": "2977",
-            "output": "7"
-        },
-        {
-            "input": "6699",
-            "output": "3"
-        },
-        {
-            "input": "1560",
-            "output": "3"
-        },
-        {
-            "input": "8499",
-            "output": "3"
-        },
-        {
-            "input": "7723",
-            "output": "1"
-        },
-        {
-            "input": "831",
-            "output": "3"
-        },
-        {
-            "input": "3647",
-            "output": "2"
-        },
-        {
-            "input": "5909",
-            "output": "5"
-        },
-        {
-            "input": "1292",
-            "output": "5"
-        },
-        {
-            "input": "5383",
-            "output": "1"
-        },
-        {
-            "input": "5016",
-            "output": "3"
-        },
-        {
-            "input": "9181",
-            "output": "1"
-        },
-        {
-            "input": "443",
-            "output": "2"
-        },
-        {
-            "input": "7370",
-            "output": "8"
-        },
-        {
-            "input": "5380",
-            "output": "7"
-        },
-        {
-            "input": "544",
-            "output": "4"
-        },
-        {
-            "input": "1251",
-            "output": "9"
-        },
-        {
-            "input": "4533",
-            "output": "6"
-        },
-        {
-            "input": "7787",
-            "output": "2"
-        },
-        {
-            "input": "1610",
-            "output": "8"
-        },
-        {
-            "input": "6431",
-            "output": "5"
-        },
-        {
-            "input": "5671",
-            "output": "1"
-        },
-        {
-            "input": "7919",
-            "output": "8"
-        },
-        {
-            "input": "404",
-            "output": "8"
-        },
-        {
-            "input": "1735",
-            "output": "7"
-        },
-        {
-            "input": "3702",
-            "output": "3"
-        },
-        {
-            "input": "6714",
-            "output": "9"
-        },
-        {
-            "input": "1009",
-            "output": "1"
-        },
-        {
-            "input": "8803",
-            "output": "1"
-        },
-        {
-            "input": "2061",
-            "output": "9"
-        },
-        {
-            "input": "2322",
-            "output": "9"
-        },
-        {
-            "input": "181",
-            "output": "1"
-        },
-        {
-            "input": "8694",
-            "output": "9"
-        },
-        {
-            "input": "7671",
-            "output": "3"
-        },
-        {
-            "input": "4795",
-            "output": "7"
-        },
-        {
-            "input": "4223",
-            "output": "2"
-        },
-        {
-            "input": "1476",
-            "output": "9"
-        },
-        {
-            "input": "9368",
-            "output": "8"
-        },
-        {
-            "input": "9278",
-            "output": "8"
-        },
-        {
-            "input": "992",
-            "output": "2"
-        },
-        {
-            "input": "7955",
-            "output": "8"
-        },
-        {
-            "input": "7380",
-            "output": "9"
-        },
-        {
-            "input": "3742",
-            "output": "7"
-        },
-        {
-            "input": "9411",
-            "output": "6"
-        },
-        {
-            "input": "5201",
-            "output": "8"
-        },
-        {
-            "input": "6351",
-            "output": "6"
-        },
-        {
-            "input": "77",
-            "output": "5"
-        },
-        {
-            "input": "9736",
-            "output": "7"
-        },
-        {
-            "input": "2759",
-            "output": "5"
-        },
-        {
-            "input": "6937",
-            "output": "7"
-        },
-        {
-            "input": "2221",
-            "output": "7"
-        },
-        {
-            "input": "2506",
-            "output": "4"
-        },
-        {
-            "input": "8435",
-            "output": "2"
-        },
-        {
-            "input": "7132",
-            "output": "4"
-        },
-        {
-            "input": "673",
-            "output": "7"
-        },
-        {
-            "input": "8874",
-            "output": "9"
-        },
-        {
-            "input": "2583",
-            "output": "9"
-        },
-        {
-            "input": "8438",
-            "output": "5"
-        },
-        {
-            "input": "4278",
-            "output": "3"
-        },
-        {
-            "input": "1999",
-            "output": "1"
-        },
-        {
-            "input": "5585",
-            "output": "5"
-        },
-        {
-            "input": "6689",
-            "output": "2"
-        },
-        {
-            "input": "9237",
-            "output": "3"
-        },
-        {
-            "input": "9262",
-            "output": "1"
-        },
-        {
-            "input": "2686",
-            "output": "4"
-        },
-        {
-            "input": "8877",
-            "output": "3"
-        },
-        {
-            "input": "6361",
-            "output": "7"
-        },
-        {
-            "input": "586",
-            "output": "1"
-        },
-        {
-            "input": "9453",
-            "output": "3"
-        },
-        {
-            "input": "6570",
-            "output": "9"
-        },
-        {
-            "input": "6880",
-            "output": "4"
-        },
-        {
-            "input": "6441",
-            "output": "6"
-        },
-        {
-            "input": "1404",
-            "output": "9"
-        },
-        {
-            "input": "4290",
-            "output": "6"
-        },
-        {
-            "input": "4321",
-            "output": "1"
-        },
-        {
-            "input": "3672",
-            "output": "9"
-        },
-        {
-            "input": "4284",
-            "output": "9"
-        },
-        {
-            "input": "7088",
-            "output": "5"
-        },
-        {
-            "input": "8460",
-            "output": "9"
-        },
-        {
-            "input": "7203",
-            "output": "3"
-        },
-        {
-            "input": "6998",
-            "output": "5"
-        },
-        {
-            "input": "5373",
-            "output": "9"
-        },
-        {
-            "input": "9018",
-            "output": "9"
-        },
-        {
-            "input": "127",
-            "output": "1"
-        },
-        {
-            "input": "1588",
-            "output": "4"
-        },
-        {
-            "input": "9270",
-            "output": "9"
-        },
-        {
-            "input": "3796",
-            "output": "7"
-        },
-        {
-            "input": "6920",
-            "output": "8"
-        },
-        {
-            "input": "9118",
-            "output": "1"
-        },
-        {
-            "input": "5941",
-            "output": "1"
-        },
-        {
-            "input": "961",
-            "output": "7"
-        },
-        {
-            "input": "7746",
-            "output": "6"
-        },
-        {
-            "input": "2537",
-            "output": "8"
-        },
-        {
-            "input": "2127",
-            "output": "3"
-        },
-        {
-            "input": "4104",
-            "output": "9"
-        },
-        {
-            "input": "2211",
-            "output": "6"
-        },
-        {
-            "input": "1523",
-            "output": "2"
-        },
-        {
-            "input": "6893",
-            "output": "8"
-        },
-        {
-            "input": "4832",
-            "output": "8"
-        },
-        {
-            "input": "6644",
-            "output": "2"
-        },
-        {
-            "input": "9681",
-            "output": "6"
-        },
-        {
-            "input": "1519",
-            "output": "7"
-        },
-        {
-            "input": "8520",
-            "output": "6"
-        },
-        {
-            "input": "2064",
-            "output": "3"
-        },
-        {
-            "input": "1700",
-            "output": "8"
-        },
-        {
-            "input": "9283",
-            "output": "4"
-        },
-        {
-            "input": "994",
-            "output": "4"
-        },
-        {
-            "input": "8493",
-            "output": "6"
-        },
-        {
-            "input": "2834",
-            "output": "8"
-        },
-        {
-            "input": "8653",
-            "output": "4"
-        },
-        {
-            "input": "123",
-            "output": "6"
-        },
-        {
-            "input": "7103",
-            "output": "2"
-        },
-        {
-            "input": "3061",
-            "output": "1"
-        },
-        {
-            "input": "2622",
-            "output": "3"
-        },
-        {
-            "input": "8927",
-            "output": "8"
-        },
-        {
-            "input": "9884",
-            "output": "2"
-        },
-        {
-            "input": "4910",
-            "output": "5"
-        },
-        {
-            "input": "3059",
-            "output": "8"
-        },
-        {
-            "input": "3380",
-            "output": "5"
-        },
-        {
-            "input": "8119",
-            "output": "1"
-        },
-        {
-            "input": "9899",
-            "output": "8"
         },
         {
             "input": "1723",
             "output": "4"
         },
         {
-            "input": "8312",
-            "output": "5"
-        },
-        {
-            "input": "4237",
+            "input": "7342",
             "output": "7"
-        },
-        {
-            "input": "5914",
-            "output": "1"
-        },
-        {
-            "input": "5321",
-            "output": "2"
-        },
-        {
-            "input": "529",
-            "output": "7"
-        },
-        {
-            "input": "7017",
-            "output": "6"
-        },
-        {
-            "input": "226",
-            "output": "1"
-        },
-        {
-            "input": "4965",
-            "output": "6"
-        },
-        {
-            "input": "7420",
-            "output": "4"
-        },
-        {
-            "input": "7530",
-            "output": "6"
-        },
-        {
-            "input": "9961",
-            "output": "7"
-        },
-        {
-            "input": "5385",
-            "output": "3"
-        },
-        {
-            "input": "8917",
-            "output": "7"
-        },
-        {
-            "input": "1186",
-            "output": "7"
-        },
-        {
-            "input": "7075",
-            "output": "1"
-        },
-        {
-            "input": "8365",
-            "output": "4"
-        },
-        {
-            "input": "7268",
-            "output": "5"
-        },
-        {
-            "input": "6257",
-            "output": "2"
-        },
-        {
-            "input": "7698",
-            "output": "3"
-        },
-        {
-            "input": "515",
-            "output": "2"
-        },
-        {
-            "input": "2505",
-            "output": "3"
-        },
-        {
-            "input": "4363",
-            "output": "7"
-        },
-        {
-            "input": "2803",
-            "output": "4"
-        },
-        {
-            "input": "9013",
-            "output": "4"
-        },
-        {
-            "input": "6176",
-            "output": "2"
-        },
-        {
-            "input": "9134",
-            "output": "8"
-        },
-        {
-            "input": "4587",
-            "output": "6"
-        },
-        {
-            "input": "9179",
-            "output": "8"
-        },
-        {
-            "input": "298",
-            "output": "1"
-        },
-        {
-            "input": "837",
-            "output": "9"
-        },
-        {
-            "input": "8870",
-            "output": "5"
-        },
-        {
-            "input": "7664",
-            "output": "5"
-        },
-        {
-            "input": "6341",
-            "output": "5"
-        },
-        {
-            "input": "2046",
-            "output": "3"
-        },
-        {
-            "input": "1353",
-            "output": "3"
-        },
-        {
-            "input": "4849",
-            "output": "7"
-        },
-        {
-            "input": "4190",
-            "output": "5"
-        },
-        {
-            "input": "4995",
-            "output": "9"
-        },
-        {
-            "input": "2042",
-            "output": "8"
-        },
-        {
-            "input": "4948",
-            "output": "7"
-        },
-        {
-            "input": "7325",
-            "output": "8"
-        },
-        {
-            "input": "3065",
-            "output": "5"
-        },
-        {
-            "input": "9987",
-            "output": "6"
-        },
-        {
-            "input": "8083",
-            "output": "1"
-        },
-        {
-            "input": "4047",
-            "output": "6"
-        },
-        {
-            "input": "5628",
-            "output": "3"
-        },
-        {
-            "input": "7067",
-            "output": "2"
-        },
-        {
-            "input": "160",
-            "output": "7"
-        },
-        {
-            "input": "148",
-            "output": "4"
-        },
-        {
-            "input": "8559",
-            "output": "9"
-        },
-        {
-            "input": "1864",
-            "output": "1"
-        },
-        {
-            "input": "4703",
-            "output": "5"
-        },
-        {
-            "input": "3993",
-            "output": "6"
-        },
-        {
-            "input": "7630",
-            "output": "7"
-        },
-        {
-            "input": "3360",
-            "output": "3"
-        },
-        {
-            "input": "3850",
-            "output": "7"
-        },
-        {
-            "input": "8753",
-            "output": "5"
-        },
-        {
-            "input": "2217",
-            "output": "3"
-        },
-        {
-            "input": "1874",
-            "output": "2"
-        },
-        {
-            "input": "1672",
-            "output": "7"
-        },
-        {
-            "input": "3128",
-            "output": "5"
-        },
-        {
-            "input": "2215",
-            "output": "1"
-        },
-        {
-            "input": "464",
-            "output": "5"
-        },
-        {
-            "input": "8432",
-            "output": "8"
-        },
-        {
-            "input": "4714",
-            "output": "7"
-        },
-        {
-            "input": "3693",
-            "output": "3"
-        },
-        {
-            "input": "8180",
-            "output": "8"
-        },
-        {
-            "input": "6082",
-            "output": "7"
-        },
-        {
-            "input": "3761",
-            "output": "8"
-        },
-        {
-            "input": "9950",
-            "output": "5"
-        },
-        {
-            "input": "3302",
-            "output": "8"
-        },
-        {
-            "input": "9730",
-            "output": "1"
-        },
-        {
-            "input": "1745",
-            "output": "8"
-        },
-        {
-            "input": "8557",
-            "output": "7"
-        },
-        {
-            "input": "237",
-            "output": "3"
-        },
-        {
-            "input": "8287",
-            "output": "7"
-        },
-        {
-            "input": "7004",
-            "output": "2"
-        },
-        {
-            "input": "1540",
-            "output": "1"
-        },
-        {
-            "input": "1397",
-            "output": "2"
-        },
-        {
-            "input": "6828",
-            "output": "6"
-        },
-        {
-            "input": "3106",
-            "output": "1"
-        },
-        {
-            "input": "7784",
-            "output": "8"
-        },
-        {
-            "input": "2976",
-            "output": "6"
-        },
-        {
-            "input": "8130",
-            "output": "3"
-        },
-        {
-            "input": "195",
-            "output": "6"
-        },
-        {
-            "input": "3681",
-            "output": "9"
-        },
-        {
-            "input": "1190",
-            "output": "2"
-        },
-        {
-            "input": "7448",
-            "output": "5"
-        },
-        {
-            "input": "2417",
-            "output": "5"
-        },
-        {
-            "input": "6861",
-            "output": "3"
-        },
-        {
-            "input": "7672",
-            "output": "4"
-        },
-        {
-            "input": "692",
-            "output": "8"
-        },
-        {
-            "input": "5164",
-            "output": "7"
-        },
-        {
-            "input": "2604",
-            "output": "3"
-        },
-        {
-            "input": "6039",
-            "output": "9"
-        },
-        {
-            "input": "2758",
-            "output": "4"
-        },
-        {
-            "input": "357",
-            "output": "6"
-        },
-        {
-            "input": "4123",
-            "output": "1"
-        },
-        {
-            "input": "3094",
-            "output": "7"
-        },
-        {
-            "input": "9073",
-            "output": "1"
-        },
-        {
-            "input": "3063",
-            "output": "3"
-        },
-        {
-            "input": "4379",
-            "output": "5"
-        },
-        {
-            "input": "5596",
-            "output": "7"
-        },
-        {
-            "input": "2833",
-            "output": "7"
-        },
-        {
-            "input": "4534",
-            "output": "7"
-        },
-        {
-            "input": "579",
-            "output": "3"
-        },
-        {
-            "input": "9637",
-            "output": "7"
-        },
-        {
-            "input": "5999",
-            "output": "5"
-        },
-        {
-            "input": "7673",
-            "output": "5"
-        },
-        {
-            "input": "6046",
-            "output": "7"
-        },
-        {
-            "input": "5209",
-            "output": "7"
-        },
-        {
-            "input": "6820",
-            "output": "7"
-        },
-        {
-            "input": "1202",
-            "output": "5"
-        },
-        {
-            "input": "9731",
-            "output": "2"
-        },
-        {
-            "input": "8774",
-            "output": "8"
-        },
-        {
-            "input": "5818",
-            "output": "4"
-        },
-        {
-            "input": "2670",
-            "output": "6"
-        },
-        {
-            "input": "9017",
-            "output": "8"
-        },
-        {
-            "input": "5474",
-            "output": "2"
-        },
-        {
-            "input": "319",
-            "output": "4"
-        },
-        {
-            "input": "3790",
-            "output": "1"
-        },
-        {
-            "input": "1558",
-            "output": "1"
-        },
-        {
-            "input": "8419",
-            "output": "4"
-        },
-        {
-            "input": "5345",
-            "output": "8"
-        },
-        {
-            "input": "8480",
-            "output": "2"
-        },
-        {
-            "input": "1311",
-            "output": "6"
-        },
-        {
-            "input": "1494",
-            "output": "9"
-        },
-        {
-            "input": "1879",
-            "output": "7"
-        },
-        {
-            "input": "4200",
-            "output": "6"
-        },
-        {
-            "input": "162",
-            "output": "9"
-        },
-        {
-            "input": "4527",
-            "output": "9"
-        },
-        {
-            "input": "3870",
-            "output": "9"
-        },
-        {
-            "input": "7204",
-            "output": "4"
-        },
-        {
-            "input": "8673",
-            "output": "6"
-        },
-        {
-            "input": "6941",
-            "output": "2"
-        },
-        {
-            "input": "9900",
-            "output": "9"
-        },
-        {
-            "input": "1910",
-            "output": "2"
-        },
-        {
-            "input": "7104",
-            "output": "3"
-        },
-        {
-            "input": "6135",
-            "output": "6"
-        },
-        {
-            "input": "6498",
-            "output": "9"
-        },
-        {
-            "input": "4555",
-            "output": "1"
-        },
-        {
-            "input": "4903",
-            "output": "7"
-        },
-        {
-            "input": "4630",
-            "output": "4"
-        },
-        {
-            "input": "1633",
-            "output": "4"
-        },
-        {
-            "input": "1116",
-            "output": "9"
-        },
-        {
-            "input": "583",
-            "output": "7"
-        },
-        {
-            "input": "1994",
-            "output": "5"
-        },
-        {
-            "input": "3906",
-            "output": "9"
-        },
-        {
-            "input": "6635",
-            "output": "2"
-        },
-        {
-            "input": "3607",
-            "output": "7"
-        },
-        {
-            "input": "7807",
-            "output": "4"
-        },
-        {
-            "input": "1635",
-            "output": "6"
-        },
-        {
-            "input": "6844",
-            "output": "4"
-        },
-        {
-            "input": "3627",
-            "output": "9"
-        },
-        {
-            "input": "6199",
-            "output": "7"
-        },
-        {
-            "input": "6261",
-            "output": "6"
-        },
-        {
-            "input": "1591",
-            "output": "7"
-        },
-        {
-            "input": "4287",
-            "output": "3"
-        },
-        {
-            "input": "5903",
-            "output": "8"
-        },
-        {
-            "input": "2380",
-            "output": "4"
-        },
-        {
-            "input": "6965",
-            "output": "8"
-        },
-        {
-            "input": "1289",
-            "output": "2"
-        },
-        {
-            "input": "2811",
-            "output": "3"
-        },
-        {
-            "input": "9604",
-            "output": "1"
-        },
-        {
-            "input": "8833",
-            "output": "4"
-        },
-        {
-            "input": "3588",
-            "output": "6"
-        },
-        {
-            "input": "3180",
-            "output": "3"
-        },
-        {
-            "input": "1145",
-            "output": "2"
-        },
-        {
-            "input": "645",
-            "output": "6"
-        },
-        {
-            "input": "2812",
-            "output": "4"
-        },
-        {
-            "input": "6818",
-            "output": "5"
-        },
-        {
-            "input": "1142",
-            "output": "8"
-        },
-        {
-            "input": "9920",
-            "output": "2"
-        },
-        {
-            "input": "1932",
-            "output": "6"
-        },
-        {
-            "input": "285",
-            "output": "6"
-        },
-        {
-            "input": "109",
-            "output": "1"
-        },
-        {
-            "input": "8203",
-            "output": "4"
-        },
-        {
-            "input": "2520",
-            "output": "9"
-        },
-        {
-            "input": "6435",
-            "output": "9"
-        },
-        {
-            "input": "4375",
-            "output": "1"
-        },
-        {
-            "input": "4157",
-            "output": "8"
-        },
-        {
-            "input": "3544",
-            "output": "7"
-        },
-        {
-            "input": "8128",
-            "output": "1"
-        },
-        {
-            "input": "4217",
-            "output": "5"
-        },
-        {
-            "input": "2533",
-            "output": "4"
-        },
-        {
-            "input": "4616",
-            "output": "8"
-        },
-        {
-            "input": "9072",
-            "output": "9"
-        },
-        {
-            "input": "2",
-            "output": "2"
-        },
-        {
-            "input": "9702",
-            "output": "9"
-        },
-        {
-            "input": "1350",
-            "output": "9"
-        },
-        {
-            "input": "1937",
-            "output": "2"
-        },
-        {
-            "input": "8401",
-            "output": "4"
-        },
-        {
-            "input": "3937",
-            "output": "4"
-        },
-        {
-            "input": "7144",
-            "output": "7"
-        },
-        {
-            "input": "8301",
-            "output": "3"
-        },
-        {
-            "input": "1713",
-            "output": "3"
-        },
-        {
-            "input": "2590",
-            "output": "7"
-        },
-        {
-            "input": "7350",
-            "output": "6"
-        },
-        {
-            "input": "9393",
-            "output": "6"
-        },
-        {
-            "input": "3275",
-            "output": "8"
-        },
-        {
-            "input": "1855",
-            "output": "1"
-        },
-        {
-            "input": "8238",
-            "output": "3"
-        },
-        {
-            "input": "3082",
-            "output": "4"
-        },
-        {
-            "input": "8459",
-            "output": "8"
-        },
-        {
-            "input": "662",
-            "output": "5"
-        },
-        {
-            "input": "606",
-            "output": "3"
-        },
-        {
-            "input": "164",
-            "output": "2"
-        },
-        {
-            "input": "8854",
-            "output": "7"
-        },
-        {
-            "input": "7688",
-            "output": "2"
-        },
-        {
-            "input": "7716",
-            "output": "3"
-        },
-        {
-            "input": "4585",
-            "output": "4"
-        },
-        {
-            "input": "2295",
-            "output": "9"
-        },
-        {
-            "input": "9045",
-            "output": "9"
-        },
-        {
-            "input": "6147",
-            "output": "9"
-        },
-        {
-            "input": "511",
-            "output": "7"
-        },
-        {
-            "input": "6407",
-            "output": "8"
-        },
-        {
-            "input": "4621",
-            "output": "4"
-        },
-        {
-            "input": "6319",
-            "output": "1"
-        },
-        {
-            "input": "3305",
-            "output": "2"
-        },
-        {
-            "input": "6427",
-            "output": "1"
-        },
-        {
-            "input": "2339",
-            "output": "8"
-        },
-        {
-            "input": "8462",
-            "output": "2"
-        },
-        {
-            "input": "2153",
-            "output": "2"
-        },
-        {
-            "input": "8944",
-            "output": "7"
-        },
-        {
-            "input": "5761",
-            "output": "1"
-        },
-        {
-            "input": "6584",
-            "output": "5"
-        },
-        {
-            "input": "1106",
-            "output": "8"
-        },
-        {
-            "input": "556",
-            "output": "7"
-        },
-        {
-            "input": "2629",
-            "output": "1"
-        },
-        {
-            "input": "9204",
-            "output": "6"
-        },
-        {
-            "input": "4618",
-            "output": "1"
-        },
-        {
-            "input": "6068",
-            "output": "2"
-        },
-        {
-            "input": "7951",
-            "output": "4"
-        },
-        {
-            "input": "1647",
-            "output": "9"
-        },
-        {
-            "input": "7028",
-            "output": "8"
-        },
-        {
-            "input": "1571",
-            "output": "5"
-        },
-        {
-            "input": "8361",
-            "output": "9"
-        },
-        {
-            "input": "8334",
-            "output": "9"
-        },
-        {
-            "input": "6189",
-            "output": "6"
-        },
-        {
-            "input": "3237",
-            "output": "6"
-        },
-        {
-            "input": "2886",
-            "output": "6"
-        },
-        {
-            "input": "1250",
-            "output": "8"
-        },
-        {
-            "input": "9523",
-            "output": "1"
-        },
-        {
-            "input": "4449",
-            "output": "3"
-        },
-        {
-            "input": "7275",
-            "output": "3"
-        },
-        {
-            "input": "3983",
-            "output": "5"
-        },
-        {
-            "input": "3003",
-            "output": "6"
-        },
-        {
-            "input": "8097",
-            "output": "6"
-        },
-        {
-            "input": "773",
-            "output": "8"
-        },
-        {
-            "input": "5816",
-            "output": "2"
-        },
-        {
-            "input": "3085",
-            "output": "7"
-        },
-        {
-            "input": "9564",
-            "output": "6"
-        },
-        {
-            "input": "8635",
-            "output": "4"
-        },
-        {
-            "input": "4954",
-            "output": "4"
-        },
-        {
-            "input": "5402",
-            "output": "2"
-        },
-        {
-            "input": "5620",
-            "output": "4"
-        },
-        {
-            "input": "4939",
-            "output": "7"
-        },
-        {
-            "input": "3475",
-            "output": "1"
-        },
-        {
-            "input": "1661",
-            "output": "5"
-        },
-        {
-            "input": "8085",
-            "output": "3"
-        },
-        {
-            "input": "5183",
-            "output": "8"
-        },
-        {
-            "input": "3823",
-            "output": "7"
-        },
-        {
-            "input": "6778",
-            "output": "1"
-        },
-        {
-            "input": "3995",
-            "output": "8"
-        },
-        {
-            "input": "1750",
-            "output": "4"
-        },
-        {
-            "input": "796",
-            "output": "4"
-        },
-        {
-            "input": "1804",
-            "output": "4"
-        },
-        {
-            "input": "4693",
-            "output": "4"
-        },
-        {
-            "input": "5049",
-            "output": "9"
-        },
-        {
-            "input": "594",
-            "output": "9"
-        },
-        {
-            "input": "4978",
-            "output": "1"
-        },
-        {
-            "input": "4322",
-            "output": "2"
-        },
-        {
-            "input": "9711",
-            "output": "9"
-        },
-        {
-            "input": "8009",
-            "output": "8"
-        },
-        {
-            "input": "9401",
-            "output": "5"
-        },
-        {
-            "input": "48",
-            "output": "3"
-        },
-        {
-            "input": "9263",
-            "output": "2"
-        },
-        {
-            "input": "2873",
-            "output": "2"
-        },
-        {
-            "input": "5142",
-            "output": "3"
-        },
-        {
-            "input": "8706",
-            "output": "3"
-        },
-        {
-            "input": "9931",
-            "output": "4"
-        },
-        {
-            "input": "4837",
-            "output": "4"
-        },
-        {
-            "input": "9562",
-            "output": "4"
-        },
-        {
-            "input": "5655",
-            "output": "3"
-        },
-        {
-            "input": "7844",
-            "output": "5"
-        },
-        {
-            "input": "5192",
-            "output": "8"
-        },
-        {
-            "input": "9379",
-            "output": "1"
-        },
-        {
-            "input": "8731",
-            "output": "1"
-        },
-        {
-            "input": "1517",
-            "output": "5"
-        },
-        {
-            "input": "5350",
-            "output": "4"
-        },
-        {
-            "input": "4755",
-            "output": "3"
-        },
-        {
-            "input": "4690",
-            "output": "1"
-        },
-        {
-            "input": "6502",
-            "output": "4"
-        },
-        {
-            "input": "9639",
-            "output": "9"
-        },
-        {
-            "input": "4765",
-            "output": "4"
-        },
-        {
-            "input": "7802",
-            "output": "8"
-        },
-        {
-            "input": "3855",
-            "output": "3"
-        },
-        {
-            "input": "3460",
-            "output": "4"
-        },
-        {
-            "input": "5012",
-            "output": "8"
-        },
-        {
-            "input": "3980",
-            "output": "2"
-        },
-        {
-            "input": "2403",
-            "output": "9"
-        },
-        {
-            "input": "8062",
-            "output": "7"
-        },
-        {
-            "input": "2103",
-            "output": "6"
-        },
-        {
-            "input": "6724",
-            "output": "1"
-        },
-        {
-            "input": "6454",
-            "output": "1"
-        },
-        {
-            "input": "6001",
-            "output": "7"
-        },
-        {
-            "input": "6585",
-            "output": "6"
-        },
-        {
-            "input": "3198",
-            "output": "3"
-        },
-        {
-            "input": "196",
-            "output": "7"
-        },
-        {
-            "input": "940",
-            "output": "4"
-        },
-        {
-            "input": "3819",
-            "output": "3"
-        },
-        {
-            "input": "4771",
-            "output": "1"
-        },
-        {
-            "input": "200",
-            "output": "2"
-        },
-        {
-            "input": "8457",
-            "output": "6"
-        },
-        {
-            "input": "1244",
-            "output": "2"
-        },
-        {
-            "input": "5449",
-            "output": "4"
-        },
-        {
-            "input": "5065",
-            "output": "7"
-        },
-        {
-            "input": "4635",
-            "output": "9"
-        },
-        {
-            "input": "3039",
-            "output": "6"
-        },
-        {
-            "input": "4094",
-            "output": "8"
-        },
-        {
-            "input": "3843",
-            "output": "9"
-        },
-        {
-            "input": "3511",
-            "output": "1"
-        },
-        {
-            "input": "1966",
-            "output": "4"
-        },
-        {
-            "input": "1282",
-            "output": "4"
-        },
-        {
-            "input": "8151",
-            "output": "6"
-        },
-        {
-            "input": "418",
-            "output": "4"
-        },
-        {
-            "input": "4467",
-            "output": "3"
-        },
-        {
-            "input": "5416",
-            "output": "7"
-        },
-        {
-            "input": "6688",
-            "output": "1"
-        },
-        {
-            "input": "3912",
-            "output": "6"
-        },
-        {
-            "input": "9020",
-            "output": "2"
-        },
-        {
-            "input": "1224",
-            "output": "9"
-        },
-        {
-            "input": "5794",
-            "output": "7"
-        },
-        {
-            "input": "15",
-            "output": "6"
-        },
-        {
-            "input": "6680",
-            "output": "2"
-        },
-        {
-            "input": "439",
-            "output": "7"
-        },
-        {
-            "input": "8761",
-            "output": "4"
-        },
-        {
-            "input": "3493",
-            "output": "1"
-        },
-        {
-            "input": "2355",
-            "output": "6"
-        },
-        {
-            "input": "1997",
-            "output": "8"
-        },
-        {
-            "input": "2306",
-            "output": "2"
-        },
-        {
-            "input": "6464",
-            "output": "2"
-        },
-        {
-            "input": "3602",
-            "output": "2"
-        },
-        {
-            "input": "17",
-            "output": "8"
-        },
-        {
-            "input": "3968",
-            "output": "8"
-        },
-        {
-            "input": "278",
-            "output": "8"
-        },
-        {
-            "input": "9332",
-            "output": "8"
-        },
-        {
-            "input": "1498",
-            "output": "4"
-        },
-        {
-            "input": "6513",
-            "output": "6"
-        },
-        {
-            "input": "8757",
-            "output": "9"
-        },
-        {
-            "input": "6815",
-            "output": "2"
         },
         {
             "input": "1357",
             "output": "7"
         },
         {
-            "input": "3734",
+            "input": "7557",
+            "output": "6"
+        },
+        {
+            "input": "651",
+            "output": "3"
+        },
+        {
+            "input": "3305",
+            "output": "2"
+        },
+        {
+            "input": "8316",
+            "output": "9"
+        },
+        {
+            "input": "8779",
+            "output": "4"
+        },
+        {
+            "input": "2648",
+            "output": "2"
+        },
+        {
+            "input": "988",
+            "output": "7"
+        },
+        {
+            "input": "5572",
+            "output": "1"
+        },
+        {
+            "input": "3334",
+            "output": "4"
+        },
+        {
+            "input": "9905",
+            "output": "5"
+        },
+        {
+            "input": "709",
+            "output": "7"
+        },
+        {
+            "input": "4739",
+            "output": "5"
+        },
+        {
+            "input": "7995",
+            "output": "3"
+        },
+        {
+            "input": "7602",
+            "output": "6"
+        },
+        {
+            "input": "663",
+            "output": "6"
+        },
+        {
+            "input": "3540",
+            "output": "3"
+        },
+        {
+            "input": "7426",
+            "output": "1"
+        },
+        {
+            "input": "4385",
+            "output": "2"
+        },
+        {
+            "input": "2078",
             "output": "8"
         },
         {
-            "input": "8118",
+            "input": "1835",
+            "output": "8"
+        },
+        {
+            "input": "4390",
+            "output": "7"
+        },
+        {
+            "input": "5553",
             "output": "9"
+        },
+        {
+            "input": "5098",
+            "output": "4"
+        },
+        {
+            "input": "7717",
+            "output": "4"
+        },
+        {
+            "input": "7317",
+            "output": "9"
+        },
+        {
+            "input": "5814",
+            "output": "9"
+        },
+        {
+            "input": "6615",
+            "output": "9"
+        },
+        {
+            "input": "5550",
+            "output": "6"
+        },
+        {
+            "input": "5998",
+            "output": "4"
+        },
+        {
+            "input": "8618",
+            "output": "5"
+        },
+        {
+            "input": "8237",
+            "output": "2"
+        },
+        {
+            "input": "6941",
+            "output": "2"
+        },
+        {
+            "input": "2303",
+            "output": "8"
+        },
+        {
+            "input": "9376",
+            "output": "7"
+        },
+        {
+            "input": "9112",
+            "output": "4"
+        },
+        {
+            "input": "8975",
+            "output": "2"
+        },
+        {
+            "input": "4845",
+            "output": "3"
+        },
+        {
+            "input": "255",
+            "output": "3"
+        },
+        {
+            "input": "4640",
+            "output": "5"
+        },
+        {
+            "input": "3247",
+            "output": "7"
+        },
+        {
+            "input": "8644",
+            "output": "4"
+        },
+        {
+            "input": "3812",
+            "output": "5"
+        },
+        {
+            "input": "1990",
+            "output": "1"
+        },
+        {
+            "input": "4648",
+            "output": "4"
+        },
+        {
+            "input": "6545",
+            "output": "2"
+        },
+        {
+            "input": "2377",
+            "output": "1"
+        },
+        {
+            "input": "2635",
+            "output": "7"
+        },
+        {
+            "input": "2557",
+            "output": "1"
+        },
+        {
+            "input": "8963",
+            "output": "8"
+        },
+        {
+            "input": "8853",
+            "output": "6"
+        },
+        {
+            "input": "243",
+            "output": "9"
+        },
+        {
+            "input": "7814",
+            "output": "2"
+        },
+        {
+            "input": "9890",
+            "output": "8"
+        },
+        {
+            "input": "9293",
+            "output": "5"
+        },
+        {
+            "input": "110",
+            "output": "2"
+        },
+        {
+            "input": "2196",
+            "output": "9"
+        },
+        {
+            "input": "4205",
+            "output": "2"
+        },
+        {
+            "input": "8543",
+            "output": "2"
+        },
+        {
+            "input": "1868",
+            "output": "5"
+        },
+        {
+            "input": "3580",
+            "output": "7"
+        },
+        {
+            "input": "3328",
+            "output": "7"
+        },
+        {
+            "input": "8263",
+            "output": "1"
+        },
+        {
+            "input": "375",
+            "output": "6"
+        },
+        {
+            "input": "2686",
+            "output": "4"
+        },
+        {
+            "input": "8751",
+            "output": "3"
+        },
+        {
+            "input": "7712",
+            "output": "8"
+        },
+        {
+            "input": "389",
+            "output": "2"
+        },
+        {
+            "input": "6729",
+            "output": "6"
+        },
+        {
+            "input": "9487",
+            "output": "1"
+        },
+        {
+            "input": "6273",
+            "output": "9"
+        },
+        {
+            "input": "9001",
+            "output": "1"
+        },
+        {
+            "input": "9298",
+            "output": "1"
+        },
+        {
+            "input": "5852",
+            "output": "2"
+        },
+        {
+            "input": "364",
+            "output": "4"
+        },
+        {
+            "input": "9998",
+            "output": "8"
+        },
+        {
+            "input": "8617",
+            "output": "4"
+        },
+        {
+            "input": "3550",
+            "output": "4"
+        },
+        {
+            "input": "3914",
+            "output": "8"
+        },
+        {
+            "input": "8278",
+            "output": "7"
+        },
+        {
+            "input": "1711",
+            "output": "1"
+        },
+        {
+            "input": "2189",
+            "output": "2"
+        },
+        {
+            "input": "4129",
+            "output": "7"
+        },
+        {
+            "input": "2856",
+            "output": "3"
+        },
+        {
+            "input": "6274",
+            "output": "1"
+        },
+        {
+            "input": "4182",
+            "output": "6"
+        },
+        {
+            "input": "3797",
+            "output": "8"
+        },
+        {
+            "input": "2653",
+            "output": "7"
+        },
+        {
+            "input": "1139",
+            "output": "5"
+        },
+        {
+            "input": "7631",
+            "output": "8"
+        },
+        {
+            "input": "2351",
+            "output": "2"
+        },
+        {
+            "input": "1994",
+            "output": "5"
+        },
+        {
+            "input": "1987",
+            "output": "7"
+        },
+        {
+            "input": "2646",
+            "output": "9"
+        },
+        {
+            "input": "5423",
+            "output": "5"
+        },
+        {
+            "input": "1023",
+            "output": "6"
+        },
+        {
+            "input": "852",
+            "output": "6"
+        },
+        {
+            "input": "4858",
+            "output": "7"
+        },
+        {
+            "input": "6817",
+            "output": "4"
+        },
+        {
+            "input": "3880",
+            "output": "1"
+        },
+        {
+            "input": "577",
+            "output": "1"
+        },
+        {
+            "input": "5898",
+            "output": "3"
+        },
+        {
+            "input": "1284",
+            "output": "6"
+        },
+        {
+            "input": "2026",
+            "output": "1"
+        },
+        {
+            "input": "8299",
+            "output": "1"
+        },
+        {
+            "input": "9222",
+            "output": "6"
+        },
+        {
+            "input": "332",
+            "output": "8"
+        },
+        {
+            "input": "1298",
+            "output": "2"
+        },
+        {
+            "input": "1204",
+            "output": "7"
+        },
+        {
+            "input": "2926",
+            "output": "1"
+        },
+        {
+            "input": "3398",
+            "output": "5"
+        },
+        {
+            "input": "5607",
+            "output": "9"
+        },
+        {
+            "input": "9241",
+            "output": "7"
+        },
+        {
+            "input": "1237",
+            "output": "4"
+        },
+        {
+            "input": "756",
+            "output": "9"
+        },
+        {
+            "input": "4104",
+            "output": "9"
+        },
+        {
+            "input": "2125",
+            "output": "1"
+        },
+        {
+            "input": "4284",
+            "output": "9"
+        },
+        {
+            "input": "1689",
+            "output": "6"
+        },
+        {
+            "input": "6674",
+            "output": "5"
+        },
+        {
+            "input": "841",
+            "output": "4"
+        },
+        {
+            "input": "7496",
+            "output": "8"
+        },
+        {
+            "input": "4370",
+            "output": "5"
+        },
+        {
+            "input": "3306",
+            "output": "3"
+        },
+        {
+            "input": "9994",
+            "output": "4"
+        },
+        {
+            "input": "5206",
+            "output": "4"
+        },
+        {
+            "input": "1822",
+            "output": "4"
+        },
+        {
+            "input": "2112",
+            "output": "6"
+        },
+        {
+            "input": "130",
+            "output": "4"
+        },
+        {
+            "input": "9010",
+            "output": "1"
+        },
+        {
+            "input": "2368",
+            "output": "1"
+        },
+        {
+            "input": "4884",
+            "output": "6"
+        },
+        {
+            "input": "839",
+            "output": "2"
+        },
+        {
+            "input": "4945",
+            "output": "4"
+        },
+        {
+            "input": "521",
+            "output": "8"
+        },
+        {
+            "input": "7501",
+            "output": "4"
+        },
+        {
+            "input": "3502",
+            "output": "1"
+        },
+        {
+            "input": "6792",
+            "output": "6"
+        },
+        {
+            "input": "1414",
+            "output": "1"
+        },
+        {
+            "input": "1426",
+            "output": "4"
+        },
+        {
+            "input": "5919",
+            "output": "6"
+        },
+        {
+            "input": "2027",
+            "output": "2"
+        },
+        {
+            "input": "3942",
+            "output": "9"
+        },
+        {
+            "input": "8488",
+            "output": "1"
+        },
+        {
+            "input": "2836",
+            "output": "1"
+        },
+        {
+            "input": "6185",
+            "output": "2"
+        },
+        {
+            "input": "6725",
+            "output": "2"
+        },
+        {
+            "input": "2427",
+            "output": "6"
+        },
+        {
+            "input": "8900",
+            "output": "8"
+        },
+        {
+            "input": "7942",
+            "output": "4"
+        },
+        {
+            "input": "9423",
+            "output": "9"
+        },
+        {
+            "input": "9560",
+            "output": "2"
+        },
+        {
+            "input": "8874",
+            "output": "9"
+        },
+        {
+            "input": "4382",
+            "output": "8"
+        },
+        {
+            "input": "1609",
+            "output": "7"
         }
     ]
 }

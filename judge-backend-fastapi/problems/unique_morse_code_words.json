@@ -22,5 +22,646 @@
             "output": "1"
         }
     ],
-    "hidden_test_cases": []
+    "hidden_test_cases": [
+        {
+            "input": "a eeab fd acd bdf aebb aa ddf",
+            "output": "8"
+        },
+        {
+            "input": "e dbc dc fab faec a",
+            "output": "6"
+        },
+        {
+            "input": "c eabc accd",
+            "output": "3"
+        },
+        {
+            "input": "fd fbd a b dbafe",
+            "output": "5"
+        },
+        {
+            "input": "f bddbc bcdf cdfde eb",
+            "output": "5"
+        },
+        {
+            "input": "a",
+            "output": "1"
+        },
+        {
+            "input": "da aa fde f efeee db",
+            "output": "6"
+        },
+        {
+            "input": "bae c d dbd",
+            "output": "4"
+        },
+        {
+            "input": "aac",
+            "output": "1"
+        },
+        {
+            "input": "adac dda",
+            "output": "2"
+        },
+        {
+            "input": "eebf cc a bf adaa",
+            "output": "5"
+        },
+        {
+            "input": "bcdcf aacd baebb edbf defa edcc cec dada",
+            "output": "8"
+        },
+        {
+            "input": "ffaab aacfd cfadf",
+            "output": "3"
+        },
+        {
+            "input": "aeb ec eaa fffa",
+            "output": "4"
+        },
+        {
+            "input": "bf cda",
+            "output": "2"
+        },
+        {
+            "input": "addb eecb dff cfcda fc dbbcc dfbee deca cb",
+            "output": "9"
+        },
+        {
+            "input": "aaef bab cbac",
+            "output": "3"
+        },
+        {
+            "input": "af",
+            "output": "1"
+        },
+        {
+            "input": "aa aceec abb b bb aff faba fbe ced abcdc",
+            "output": "10"
+        },
+        {
+            "input": "bbdb",
+            "output": "1"
+        },
+        {
+            "input": "dbaca daafe bfec b ad da bcbef",
+            "output": "7"
+        },
+        {
+            "input": "f cb dae fcd aeb b e",
+            "output": "7"
+        },
+        {
+            "input": "efcd bdfea fdcba aff d",
+            "output": "5"
+        },
+        {
+            "input": "ca",
+            "output": "1"
+        },
+        {
+            "input": "bdaf",
+            "output": "1"
+        },
+        {
+            "input": "be dcfb bb dabbf dd afaa fef eaabc afea",
+            "output": "9"
+        },
+        {
+            "input": "f addae df fcdc efbb e abf fdbc eed",
+            "output": "9"
+        },
+        {
+            "input": "a c a afd da bbffe acdcf eaf acba",
+            "output": "8"
+        },
+        {
+            "input": "f ac e ba f be dbabf ecc",
+            "output": "7"
+        },
+        {
+            "input": "dbfd bbceb fdeef",
+            "output": "3"
+        },
+        {
+            "input": "b daac cdb cefc facd ceed",
+            "output": "6"
+        },
+        {
+            "input": "cbcaa ebd bade ddc fd ff",
+            "output": "6"
+        },
+        {
+            "input": "aecf dead dcd feaa",
+            "output": "4"
+        },
+        {
+            "input": "ffcc afa a fc d",
+            "output": "5"
+        },
+        {
+            "input": "e",
+            "output": "1"
+        },
+        {
+            "input": "ee cbdac acfd dee fcbe fafaf afbaa",
+            "output": "7"
+        },
+        {
+            "input": "baed abbe aadf bdfd",
+            "output": "4"
+        },
+        {
+            "input": "a fbde b edff eaaea",
+            "output": "5"
+        },
+        {
+            "input": "baec a b ebe f bba eb",
+            "output": "7"
+        },
+        {
+            "input": "ec",
+            "output": "1"
+        },
+        {
+            "input": "a ebf fb ddcdd",
+            "output": "4"
+        },
+        {
+            "input": "b bfffd eedd efaf cf ffa e dbca",
+            "output": "8"
+        },
+        {
+            "input": "bdce acc cae d",
+            "output": "4"
+        },
+        {
+            "input": "cbfe dea a ddab e da cdbad c dcfb",
+            "output": "9"
+        },
+        {
+            "input": "ea ecfcc ceaa b c dfe",
+            "output": "6"
+        },
+        {
+            "input": "bcdff cfffc ff e efba ab bafbc a",
+            "output": "8"
+        },
+        {
+            "input": "caecf bdcfe dee cbde de fcd baa cfada",
+            "output": "8"
+        },
+        {
+            "input": "af eb bab fac c db f f",
+            "output": "7"
+        },
+        {
+            "input": "f eafd fdc aae c e ae",
+            "output": "7"
+        },
+        {
+            "input": "dab efcac",
+            "output": "2"
+        },
+        {
+            "input": "e cbb e f fdcd cb ab ffab fc dfafd",
+            "output": "9"
+        },
+        {
+            "input": "dec cedc dc f dce e",
+            "output": "6"
+        },
+        {
+            "input": "ecfb edce acab f ffce",
+            "output": "5"
+        },
+        {
+            "input": "fb fdae bad ecdaf dffac bfbeb ffff dfbfd fedd",
+            "output": "9"
+        },
+        {
+            "input": "f df bdcee cabbd c fccbc e e baf edbc",
+            "output": "9"
+        },
+        {
+            "input": "febf ea cdab abfd fccc a ece ba bee e",
+            "output": "10"
+        },
+        {
+            "input": "aa ab cecce afffe eba dfa fffda fdab d",
+            "output": "9"
+        },
+        {
+            "input": "e bcd ab",
+            "output": "3"
+        },
+        {
+            "input": "efaff ba d d df",
+            "output": "4"
+        },
+        {
+            "input": "bcdfa ad afcc c f af fbefd",
+            "output": "7"
+        },
+        {
+            "input": "bbad ba e dfeaa da bab efd eac",
+            "output": "8"
+        },
+        {
+            "input": "eb c c af cade c c dfa ea acb",
+            "output": "7"
+        },
+        {
+            "input": "abe",
+            "output": "1"
+        },
+        {
+            "input": "fdd ee ecaee d cebe e abd",
+            "output": "7"
+        },
+        {
+            "input": "cd ed",
+            "output": "2"
+        },
+        {
+            "input": "ad",
+            "output": "1"
+        },
+        {
+            "input": "ede fb acfdd",
+            "output": "3"
+        },
+        {
+            "input": "eaa b eafcc ebbdc ba ac da",
+            "output": "7"
+        },
+        {
+            "input": "c a",
+            "output": "2"
+        },
+        {
+            "input": "fcdfd f a",
+            "output": "3"
+        },
+        {
+            "input": "cee a aea ccfdd f accbd fb cf e cacd",
+            "output": "10"
+        },
+        {
+            "input": "de fea cdfc dbded dab edfac ee dd c efa",
+            "output": "10"
+        },
+        {
+            "input": "d",
+            "output": "1"
+        },
+        {
+            "input": "d efd eac a bdefd dd adede bbbb",
+            "output": "8"
+        },
+        {
+            "input": "bacae a ecef",
+            "output": "3"
+        },
+        {
+            "input": "cadb a afbd afd ce daca fdd b ecca b",
+            "output": "9"
+        },
+        {
+            "input": "bcfae efbbf cdf b df bdc ab ea",
+            "output": "8"
+        },
+        {
+            "input": "cecfd f eeedf",
+            "output": "3"
+        },
+        {
+            "input": "ffceb cedc ddafa e f",
+            "output": "5"
+        },
+        {
+            "input": "cd",
+            "output": "1"
+        },
+        {
+            "input": "ec ae beeab e f",
+            "output": "5"
+        },
+        {
+            "input": "cebd fecf ead fb ccbfe dbae cdde fed f efcea",
+            "output": "10"
+        },
+        {
+            "input": "e babef d becca ffde c cacd",
+            "output": "7"
+        },
+        {
+            "input": "cdb bb",
+            "output": "2"
+        },
+        {
+            "input": "afff dbb bdfb afa cccae ad ebb",
+            "output": "7"
+        },
+        {
+            "input": "cd aa e adc",
+            "output": "4"
+        },
+        {
+            "input": "bf fffbc cab",
+            "output": "3"
+        },
+        {
+            "input": "fcaa eebff be eafcd acc f deaed",
+            "output": "7"
+        },
+        {
+            "input": "ccfb bae bebda c a eee a dfd a",
+            "output": "7"
+        },
+        {
+            "input": "fe",
+            "output": "1"
+        },
+        {
+            "input": "feb bdd aaec a fabea dbfc b dcc bcbe",
+            "output": "9"
+        },
+        {
+            "input": "d aaf bfaf",
+            "output": "3"
+        },
+        {
+            "input": "fafea",
+            "output": "1"
+        },
+        {
+            "input": "aedd ecea",
+            "output": "2"
+        },
+        {
+            "input": "ed af c afd",
+            "output": "4"
+        },
+        {
+            "input": "bed b ddfee abddd a cbff",
+            "output": "6"
+        },
+        {
+            "input": "bcc fc cfb bccad eadad db bf b",
+            "output": "8"
+        },
+        {
+            "input": "eabdf ceef e bbb",
+            "output": "4"
+        },
+        {
+            "input": "cd ac cf",
+            "output": "3"
+        },
+        {
+            "input": "bd b fe dd",
+            "output": "4"
+        },
+        {
+            "input": "fcea fff f bcdf daebc eeaac bfea",
+            "output": "7"
+        },
+        {
+            "input": "cdffe dcfcc ea ab bfa dfbef ebaa edf f cdfbe",
+            "output": "10"
+        },
+        {
+            "input": "bdf c ee",
+            "output": "3"
+        },
+        {
+            "input": "debae f b ba aebfc a ddfdf cffce",
+            "output": "8"
+        },
+        {
+            "input": "daaba ecda bb da ceaa a bfd de cc a",
+            "output": "9"
+        },
+        {
+            "input": "c fc d fac abeac e bbaaf b",
+            "output": "8"
+        },
+        {
+            "input": "cafc ddadf eb",
+            "output": "3"
+        },
+        {
+            "input": "db dceb ddffa deda efd c cebd fbac dc da",
+            "output": "10"
+        },
+        {
+            "input": "bffa dccb",
+            "output": "2"
+        },
+        {
+            "input": "dfcb ba dded cfaa c a",
+            "output": "6"
+        },
+        {
+            "input": "defc ba cde ce faf afbab",
+            "output": "6"
+        },
+        {
+            "input": "ccabb aeb",
+            "output": "2"
+        },
+        {
+            "input": "dac cab ffe dd addbd ca dbb",
+            "output": "7"
+        },
+        {
+            "input": "ac",
+            "output": "1"
+        },
+        {
+            "input": "fda cdcb bb abe d eaeec",
+            "output": "6"
+        },
+        {
+            "input": "ac b cda ca",
+            "output": "4"
+        },
+        {
+            "input": "dcfcf f edfb ec",
+            "output": "4"
+        },
+        {
+            "input": "ce cc ffa",
+            "output": "3"
+        },
+        {
+            "input": "a cbba a ab",
+            "output": "3"
+        },
+        {
+            "input": "f a daaf",
+            "output": "3"
+        },
+        {
+            "input": "bfdd fa fcdb",
+            "output": "3"
+        },
+        {
+            "input": "fc ffd eead beae ed be acf",
+            "output": "7"
+        },
+        {
+            "input": "fbe db cefc df ded f",
+            "output": "6"
+        },
+        {
+            "input": "bfea fafff ceea da abb fc cb d edddc bbaa",
+            "output": "10"
+        },
+        {
+            "input": "adefe abba efe fefc dee effc fda b",
+            "output": "8"
+        },
+        {
+            "input": "feb db cadf ffbbb",
+            "output": "4"
+        },
+        {
+            "input": "fa dc dfdaa fcdfe daa cbcaa c a bcf",
+            "output": "9"
+        },
+        {
+            "input": "d bf bfa bbccd",
+            "output": "4"
+        },
+        {
+            "input": "dfebf c",
+            "output": "2"
+        },
+        {
+            "input": "c c a",
+            "output": "2"
+        },
+        {
+            "input": "fcdf c fcdd aedf deee badca cedd ed bfa afaef",
+            "output": "10"
+        },
+        {
+            "input": "aeb cea",
+            "output": "2"
+        },
+        {
+            "input": "ffcef",
+            "output": "1"
+        },
+        {
+            "input": "cade b",
+            "output": "2"
+        },
+        {
+            "input": "bba b cac edf dfcca",
+            "output": "5"
+        },
+        {
+            "input": "cc fbdca",
+            "output": "2"
+        },
+        {
+            "input": "f d fdad ca cba effd eadda a abd de",
+            "output": "10"
+        },
+        {
+            "input": "ee ce fdbb dffcc a dada ebfdd cf",
+            "output": "8"
+        },
+        {
+            "input": "eb ccfd",
+            "output": "2"
+        },
+        {
+            "input": "fdbd dcfe aeae dfcf dccea dbd af dceb",
+            "output": "7"
+        },
+        {
+            "input": "acad facb",
+            "output": "2"
+        },
+        {
+            "input": "dbcb faf cffac adefc bcded fa c d",
+            "output": "8"
+        },
+        {
+            "input": "ce dda a",
+            "output": "3"
+        },
+        {
+            "input": "ebc dbdef d aeced eeebc ebdfc beb b",
+            "output": "8"
+        },
+        {
+            "input": "d bf c defed bceff fec deba",
+            "output": "7"
+        },
+        {
+            "input": "beb b caecc d b acb",
+            "output": "5"
+        },
+        {
+            "input": "f bfb fbfaa c ffcf e caddc abb ca b",
+            "output": "10"
+        },
+        {
+            "input": "fbdd dcbb ffaeb",
+            "output": "3"
+        },
+        {
+            "input": "cbfd edd eacd eeead fccfd be",
+            "output": "6"
+        },
+        {
+            "input": "ecace dceef e daca a edc ecad da c a",
+            "output": "9"
+        },
+        {
+            "input": "fccf bdc e bf bfd abf efd",
+            "output": "7"
+        },
+        {
+            "input": "ec bb d ccfde bdfc dbeb d febb fbbda debe",
+            "output": "9"
+        },
+        {
+            "input": "bb da bece efb fdd cc",
+            "output": "6"
+        },
+        {
+            "input": "fec addf ee febbc",
+            "output": "4"
+        },
+        {
+            "input": "cbfbc",
+            "output": "1"
+        },
+        {
+            "input": "cefce",
+            "output": "1"
+        },
+        {
+            "input": "abcce ca b daffc ee eae fff",
+            "output": "7"
+        },
+        {
+            "input": "bbfce dafce ddafc a f cbeed d fbc",
+            "output": "8"
+        },
+        {
+            "input": "ceeac ee cc",
+            "output": "3"
+        },
+        {
+            "input": "b de fccb acdac fa dd ec cacf fff bd",
+            "output": "9"
+        }
+    ]
 }

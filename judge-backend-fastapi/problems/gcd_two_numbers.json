@@ -22,2004 +22,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "630 990",
-            "output": "90"
-        },
-        {
-            "input": "156 567",
-            "output": "3"
-        },
-        {
-            "input": "56 82",
-            "output": "2"
-        },
-        {
-            "input": "738 651",
-            "output": "3"
-        },
-        {
-            "input": "66 674",
-            "output": "2"
-        },
-        {
-            "input": "605 320",
-            "output": "5"
-        },
-        {
-            "input": "819 894",
-            "output": "3"
-        },
-        {
-            "input": "677 485",
-            "output": "1"
-        },
-        {
-            "input": "565 165",
-            "output": "5"
-        },
-        {
-            "input": "800 407",
-            "output": "1"
-        },
-        {
-            "input": "653 504",
-            "output": "1"
-        },
-        {
-            "input": "887 52",
-            "output": "1"
-        },
-        {
-            "input": "191 417",
-            "output": "1"
-        },
-        {
-            "input": "180 983",
-            "output": "1"
-        },
-        {
-            "input": "369 165",
-            "output": "3"
-        },
-        {
-            "input": "387 682",
-            "output": "1"
-        },
-        {
-            "input": "957 258",
-            "output": "3"
-        },
-        {
-            "input": "373 128",
-            "output": "1"
-        },
-        {
-            "input": "713 358",
-            "output": "1"
-        },
-        {
-            "input": "917 413",
-            "output": "7"
-        },
-        {
-            "input": "180 774",
-            "output": "18"
-        },
-        {
-            "input": "615 946",
-            "output": "1"
-        },
-        {
-            "input": "757 287",
-            "output": "1"
-        },
-        {
-            "input": "175 787",
-            "output": "1"
-        },
-        {
-            "input": "322 439",
-            "output": "1"
-        },
-        {
-            "input": "387 946",
-            "output": "43"
-        },
-        {
-            "input": "253 772",
-            "output": "1"
-        },
-        {
-            "input": "499 413",
-            "output": "1"
-        },
-        {
-            "input": "537 242",
-            "output": "1"
-        },
-        {
-            "input": "152 922",
-            "output": "2"
-        },
-        {
-            "input": "226 745",
-            "output": "1"
-        },
-        {
-            "input": "645 311",
-            "output": "1"
-        },
-        {
-            "input": "658 339",
-            "output": "1"
-        },
-        {
-            "input": "281 753",
-            "output": "1"
-        },
-        {
-            "input": "778 450",
-            "output": "2"
-        },
-        {
-            "input": "317 661",
-            "output": "1"
-        },
-        {
-            "input": "429 283",
-            "output": "1"
-        },
-        {
-            "input": "754 367",
-            "output": "1"
-        },
-        {
-            "input": "373 658",
-            "output": "1"
-        },
-        {
-            "input": "988 359",
-            "output": "1"
-        },
-        {
-            "input": "443 102",
-            "output": "1"
-        },
-        {
-            "input": "793 178",
-            "output": "1"
-        },
-        {
-            "input": "616 463",
-            "output": "1"
-        },
-        {
-            "input": "772 165",
-            "output": "1"
-        },
-        {
-            "input": "152 251",
-            "output": "1"
-        },
-        {
-            "input": "828 560",
-            "output": "4"
-        },
-        {
-            "input": "675 585",
-            "output": "45"
-        },
-        {
-            "input": "169 289",
-            "output": "1"
-        },
-        {
-            "input": "267 150",
-            "output": "3"
-        },
-        {
-            "input": "819 845",
-            "output": "13"
-        },
-        {
-            "input": "568 733",
-            "output": "1"
-        },
-        {
-            "input": "244 587",
-            "output": "1"
-        },
-        {
-            "input": "335 355",
-            "output": "5"
-        },
-        {
-            "input": "147 631",
-            "output": "1"
-        },
-        {
-            "input": "143 763",
-            "output": "1"
-        },
-        {
-            "input": "218 530",
-            "output": "2"
-        },
-        {
-            "input": "349 978",
-            "output": "1"
-        },
-        {
-            "input": "421 336",
-            "output": "1"
-        },
-        {
-            "input": "664 887",
-            "output": "1"
-        },
-        {
-            "input": "491 548",
-            "output": "1"
-        },
-        {
-            "input": "11 590",
-            "output": "1"
-        },
-        {
-            "input": "266 35",
-            "output": "7"
-        },
-        {
-            "input": "366 662",
-            "output": "2"
-        },
-        {
-            "input": "648 680",
-            "output": "8"
-        },
-        {
-            "input": "983 161",
-            "output": "1"
-        },
-        {
-            "input": "35 828",
-            "output": "1"
-        },
-        {
-            "input": "839 442",
-            "output": "1"
-        },
-        {
-            "input": "443 237",
-            "output": "1"
-        },
-        {
-            "input": "248 566",
-            "output": "2"
-        },
-        {
-            "input": "930 913",
-            "output": "1"
-        },
-        {
-            "input": "484 716",
-            "output": "4"
-        },
-        {
-            "input": "969 331",
-            "output": "1"
-        },
-        {
-            "input": "771 805",
-            "output": "1"
-        },
-        {
-            "input": "174 526",
-            "output": "2"
-        },
-        {
-            "input": "454 305",
-            "output": "1"
-        },
-        {
-            "input": "799 974",
-            "output": "1"
-        },
-        {
-            "input": "650 283",
-            "output": "1"
-        },
-        {
-            "input": "166 43",
-            "output": "1"
-        },
-        {
-            "input": "632 656",
-            "output": "8"
-        },
-        {
-            "input": "750 863",
-            "output": "1"
-        },
-        {
-            "input": "66 981",
-            "output": "3"
-        },
-        {
-            "input": "334 488",
-            "output": "2"
-        },
-        {
-            "input": "537 944",
-            "output": "1"
-        },
-        {
-            "input": "313 225",
-            "output": "1"
-        },
-        {
-            "input": "707 704",
-            "output": "1"
-        },
-        {
-            "input": "816 929",
-            "output": "1"
-        },
-        {
-            "input": "44 969",
-            "output": "1"
-        },
-        {
-            "input": "66 98",
-            "output": "2"
-        },
-        {
-            "input": "16 605",
-            "output": "1"
-        },
-        {
-            "input": "961 496",
-            "output": "31"
-        },
-        {
-            "input": "102 771",
-            "output": "3"
-        },
-        {
-            "input": "309 307",
-            "output": "1"
-        },
-        {
-            "input": "842 643",
-            "output": "1"
-        },
-        {
-            "input": "829 58",
-            "output": "1"
-        },
-        {
-            "input": "926 381",
-            "output": "1"
-        },
-        {
-            "input": "103 670",
-            "output": "1"
-        },
-        {
-            "input": "280 348",
-            "output": "4"
-        },
-        {
-            "input": "132 302",
-            "output": "2"
-        },
-        {
-            "input": "146 769",
-            "output": "1"
-        },
-        {
-            "input": "637 310",
-            "output": "1"
-        },
-        {
-            "input": "748 597",
-            "output": "1"
-        },
-        {
-            "input": "865 904",
-            "output": "1"
-        },
-        {
-            "input": "827 566",
-            "output": "1"
-        },
-        {
-            "input": "567 648",
-            "output": "81"
-        },
-        {
-            "input": "364 558",
-            "output": "2"
-        },
-        {
-            "input": "577 148",
-            "output": "1"
-        },
-        {
-            "input": "237 576",
-            "output": "3"
-        },
-        {
-            "input": "633 657",
-            "output": "3"
-        },
-        {
-            "input": "42 121",
-            "output": "1"
-        },
-        {
-            "input": "54 323",
-            "output": "1"
-        },
-        {
-            "input": "292 702",
-            "output": "2"
-        },
-        {
-            "input": "307 122",
-            "output": "1"
-        },
-        {
-            "input": "764 883",
-            "output": "1"
-        },
-        {
-            "input": "250 399",
-            "output": "1"
-        },
-        {
-            "input": "97 276",
-            "output": "1"
-        },
-        {
-            "input": "426 408",
-            "output": "6"
-        },
-        {
-            "input": "731 129",
-            "output": "43"
-        },
-        {
-            "input": "406 969",
-            "output": "1"
-        },
-        {
-            "input": "745 795",
-            "output": "5"
-        },
-        {
-            "input": "291 94",
-            "output": "1"
-        },
-        {
-            "input": "364 942",
-            "output": "2"
-        },
-        {
-            "input": "977 831",
-            "output": "1"
-        },
-        {
-            "input": "519 445",
-            "output": "1"
-        },
-        {
-            "input": "549 556",
-            "output": "1"
-        },
-        {
-            "input": "875 172",
-            "output": "1"
-        },
-        {
-            "input": "306 2",
-            "output": "2"
-        },
-        {
-            "input": "968 118",
-            "output": "2"
-        },
-        {
-            "input": "219 391",
-            "output": "1"
-        },
-        {
-            "input": "195 667",
-            "output": "1"
-        },
-        {
-            "input": "49 113",
-            "output": "1"
-        },
-        {
-            "input": "397 532",
-            "output": "1"
-        },
-        {
-            "input": "382 465",
-            "output": "1"
-        },
-        {
-            "input": "65 787",
-            "output": "1"
-        },
-        {
-            "input": "757 879",
-            "output": "1"
-        },
-        {
-            "input": "942 87",
-            "output": "3"
-        },
-        {
-            "input": "294 188",
-            "output": "2"
-        },
-        {
-            "input": "763 789",
-            "output": "1"
-        },
-        {
-            "input": "170 844",
-            "output": "2"
-        },
-        {
-            "input": "696 749",
-            "output": "1"
-        },
-        {
-            "input": "287 293",
-            "output": "1"
-        },
-        {
-            "input": "923 280",
-            "output": "1"
-        },
-        {
-            "input": "590 261",
-            "output": "1"
-        },
-        {
-            "input": "644 804",
-            "output": "4"
-        },
-        {
-            "input": "37 206",
-            "output": "1"
-        },
-        {
-            "input": "72 970",
-            "output": "2"
-        },
-        {
-            "input": "278 254",
-            "output": "2"
-        },
-        {
-            "input": "661 805",
-            "output": "1"
-        },
-        {
-            "input": "216 335",
-            "output": "1"
-        },
-        {
-            "input": "886 698",
-            "output": "2"
-        },
-        {
-            "input": "766 168",
-            "output": "2"
-        },
-        {
-            "input": "2 232",
-            "output": "2"
-        },
-        {
-            "input": "8 201",
-            "output": "1"
-        },
-        {
-            "input": "69 739",
-            "output": "1"
-        },
-        {
-            "input": "711 74",
-            "output": "1"
-        },
-        {
-            "input": "982 991",
-            "output": "1"
-        },
-        {
-            "input": "971 958",
-            "output": "1"
-        },
-        {
-            "input": "641 86",
-            "output": "1"
-        },
-        {
-            "input": "573 414",
-            "output": "3"
-        },
-        {
-            "input": "497 50",
-            "output": "1"
-        },
-        {
-            "input": "3 298",
-            "output": "1"
-        },
-        {
-            "input": "389 43",
-            "output": "1"
-        },
-        {
-            "input": "993 458",
-            "output": "1"
-        },
-        {
-            "input": "977 164",
-            "output": "1"
-        },
-        {
-            "input": "238 619",
-            "output": "1"
-        },
-        {
-            "input": "270 208",
-            "output": "2"
-        },
-        {
-            "input": "680 826",
-            "output": "2"
-        },
-        {
-            "input": "910 372",
-            "output": "2"
-        },
-        {
-            "input": "6 602",
-            "output": "2"
-        },
-        {
-            "input": "586 689",
-            "output": "1"
-        },
-        {
-            "input": "269 664",
-            "output": "1"
-        },
-        {
-            "input": "287 240",
-            "output": "1"
-        },
-        {
-            "input": "311 285",
-            "output": "1"
-        },
-        {
-            "input": "859 200",
-            "output": "1"
-        },
-        {
-            "input": "560 363",
-            "output": "1"
-        },
-        {
-            "input": "480 59",
-            "output": "1"
-        },
-        {
-            "input": "405 871",
-            "output": "1"
-        },
-        {
-            "input": "498 780",
-            "output": "6"
-        },
-        {
-            "input": "884 799",
-            "output": "17"
-        },
-        {
-            "input": "17 400",
-            "output": "1"
-        },
-        {
-            "input": "195 972",
-            "output": "3"
-        },
-        {
-            "input": "824 826",
-            "output": "2"
-        },
-        {
-            "input": "600 599",
-            "output": "1"
-        },
-        {
-            "input": "547 76",
-            "output": "1"
-        },
-        {
-            "input": "580 372",
-            "output": "4"
-        },
-        {
-            "input": "694 520",
-            "output": "2"
-        },
-        {
-            "input": "319 155",
-            "output": "1"
-        },
-        {
-            "input": "94 924",
-            "output": "2"
-        },
-        {
-            "input": "743 506",
-            "output": "1"
-        },
-        {
-            "input": "858 342",
-            "output": "6"
-        },
-        {
-            "input": "365 76",
-            "output": "1"
-        },
-        {
-            "input": "80 302",
-            "output": "2"
-        },
-        {
-            "input": "658 935",
-            "output": "1"
-        },
-        {
-            "input": "16 988",
-            "output": "4"
-        },
-        {
-            "input": "675 114",
-            "output": "3"
-        },
-        {
-            "input": "662 823",
-            "output": "1"
-        },
-        {
-            "input": "156 248",
-            "output": "4"
-        },
-        {
-            "input": "918 114",
-            "output": "6"
-        },
-        {
-            "input": "683 27",
-            "output": "1"
-        },
-        {
-            "input": "744 756",
-            "output": "12"
-        },
-        {
-            "input": "181 846",
-            "output": "1"
-        },
-        {
-            "input": "164 293",
-            "output": "1"
-        },
-        {
-            "input": "611 110",
-            "output": "1"
-        },
-        {
-            "input": "412 265",
-            "output": "1"
-        },
-        {
-            "input": "837 605",
-            "output": "1"
-        },
-        {
-            "input": "655 465",
-            "output": "5"
-        },
-        {
-            "input": "393 720",
-            "output": "3"
-        },
-        {
-            "input": "227 408",
-            "output": "1"
-        },
-        {
-            "input": "320 240",
-            "output": "80"
-        },
-        {
-            "input": "631 440",
-            "output": "1"
-        },
-        {
-            "input": "96 469",
-            "output": "1"
-        },
-        {
-            "input": "213 497",
-            "output": "71"
-        },
-        {
-            "input": "500 298",
-            "output": "2"
-        },
-        {
-            "input": "292 595",
-            "output": "1"
-        },
-        {
-            "input": "355 844",
-            "output": "1"
-        },
-        {
-            "input": "374 973",
-            "output": "1"
-        },
-        {
-            "input": "7 733",
-            "output": "1"
-        },
-        {
-            "input": "539 208",
-            "output": "1"
-        },
-        {
-            "input": "978 229",
-            "output": "1"
-        },
-        {
-            "input": "706 597",
-            "output": "1"
-        },
-        {
-            "input": "33 716",
-            "output": "1"
-        },
-        {
-            "input": "353 880",
-            "output": "1"
-        },
-        {
-            "input": "143 686",
-            "output": "1"
-        },
-        {
-            "input": "104 351",
-            "output": "13"
-        },
-        {
-            "input": "631 516",
-            "output": "1"
-        },
-        {
-            "input": "735 327",
-            "output": "3"
-        },
-        {
-            "input": "286 777",
-            "output": "1"
-        },
-        {
-            "input": "368 627",
-            "output": "1"
-        },
-        {
-            "input": "381 707",
-            "output": "1"
-        },
-        {
-            "input": "259 326",
-            "output": "1"
-        },
-        {
-            "input": "70 1000",
-            "output": "10"
-        },
-        {
-            "input": "118 989",
-            "output": "1"
-        },
-        {
-            "input": "286 370",
-            "output": "2"
-        },
-        {
-            "input": "191 203",
-            "output": "1"
-        },
-        {
-            "input": "494 31",
-            "output": "1"
-        },
-        {
-            "input": "865 534",
-            "output": "1"
-        },
-        {
-            "input": "189 461",
-            "output": "1"
-        },
-        {
-            "input": "388 520",
-            "output": "4"
-        },
-        {
-            "input": "523 322",
-            "output": "1"
-        },
-        {
-            "input": "344 971",
-            "output": "1"
-        },
-        {
-            "input": "582 330",
-            "output": "6"
-        },
-        {
-            "input": "145 508",
-            "output": "1"
-        },
-        {
-            "input": "417 561",
-            "output": "3"
-        },
-        {
-            "input": "81 803",
-            "output": "1"
-        },
-        {
-            "input": "963 946",
-            "output": "1"
-        },
-        {
-            "input": "762 798",
-            "output": "6"
-        },
-        {
-            "input": "638 313",
-            "output": "1"
-        },
-        {
-            "input": "509 43",
-            "output": "1"
-        },
-        {
-            "input": "173 668",
-            "output": "1"
-        },
-        {
-            "input": "437 621",
-            "output": "23"
-        },
-        {
-            "input": "114 732",
-            "output": "6"
-        },
-        {
-            "input": "210 113",
-            "output": "1"
-        },
-        {
-            "input": "713 747",
-            "output": "1"
-        },
-        {
-            "input": "347 422",
-            "output": "1"
-        },
-        {
-            "input": "36 857",
-            "output": "1"
-        },
-        {
-            "input": "307 635",
-            "output": "1"
-        },
-        {
-            "input": "584 325",
-            "output": "1"
-        },
-        {
-            "input": "220 896",
-            "output": "4"
-        },
-        {
-            "input": "298 478",
-            "output": "2"
-        },
-        {
-            "input": "194 689",
-            "output": "1"
-        },
-        {
-            "input": "583 855",
-            "output": "1"
-        },
-        {
-            "input": "780 151",
-            "output": "1"
-        },
-        {
-            "input": "804 327",
-            "output": "3"
-        },
-        {
-            "input": "473 117",
-            "output": "1"
-        },
-        {
-            "input": "430 592",
-            "output": "2"
-        },
-        {
-            "input": "619 713",
-            "output": "1"
-        },
-        {
-            "input": "633 636",
-            "output": "3"
-        },
-        {
-            "input": "617 370",
-            "output": "1"
-        },
-        {
-            "input": "375 576",
-            "output": "3"
-        },
-        {
-            "input": "62 743",
-            "output": "1"
-        },
-        {
-            "input": "341 885",
-            "output": "1"
-        },
-        {
-            "input": "979 294",
-            "output": "1"
-        },
-        {
-            "input": "359 698",
-            "output": "1"
-        },
-        {
-            "input": "60 454",
-            "output": "2"
-        },
-        {
-            "input": "916 739",
-            "output": "1"
-        },
-        {
-            "input": "279 915",
-            "output": "3"
-        },
-        {
-            "input": "396 785",
-            "output": "1"
-        },
-        {
-            "input": "110 948",
-            "output": "2"
-        },
-        {
-            "input": "137 426",
-            "output": "1"
-        },
-        {
-            "input": "886 490",
-            "output": "2"
-        },
-        {
-            "input": "482 603",
-            "output": "1"
-        },
-        {
-            "input": "797 252",
-            "output": "1"
-        },
-        {
-            "input": "723 492",
-            "output": "3"
-        },
-        {
-            "input": "243 386",
-            "output": "1"
-        },
-        {
-            "input": "258 130",
-            "output": "2"
-        },
-        {
-            "input": "248 365",
-            "output": "1"
-        },
-        {
-            "input": "648 171",
-            "output": "9"
-        },
-        {
-            "input": "836 99",
-            "output": "11"
-        },
-        {
-            "input": "389 557",
-            "output": "1"
-        },
-        {
-            "input": "143 737",
-            "output": "11"
-        },
-        {
-            "input": "301 520",
-            "output": "1"
-        },
-        {
-            "input": "810 90",
-            "output": "90"
-        },
-        {
-            "input": "226 922",
-            "output": "2"
-        },
-        {
-            "input": "337 468",
-            "output": "1"
-        },
-        {
-            "input": "891 131",
-            "output": "1"
-        },
-        {
-            "input": "289 81",
-            "output": "1"
-        },
-        {
-            "input": "682 406",
-            "output": "2"
-        },
-        {
-            "input": "998 142",
-            "output": "2"
-        },
-        {
-            "input": "563 289",
-            "output": "1"
-        },
-        {
-            "input": "970 433",
-            "output": "1"
-        },
-        {
-            "input": "344 357",
-            "output": "1"
-        },
-        {
-            "input": "611 679",
-            "output": "1"
-        },
-        {
-            "input": "343 520",
-            "output": "1"
-        },
-        {
-            "input": "571 729",
-            "output": "1"
-        },
-        {
-            "input": "660 775",
-            "output": "5"
-        },
-        {
-            "input": "486 466",
-            "output": "2"
-        },
-        {
-            "input": "728 778",
-            "output": "2"
-        },
-        {
-            "input": "603 382",
-            "output": "1"
-        },
-        {
-            "input": "803 515",
-            "output": "1"
-        },
-        {
-            "input": "296 7",
-            "output": "1"
-        },
-        {
-            "input": "734 980",
-            "output": "2"
-        },
-        {
-            "input": "403 607",
-            "output": "1"
-        },
-        {
-            "input": "464 434",
-            "output": "2"
-        },
-        {
-            "input": "392 262",
-            "output": "2"
-        },
-        {
-            "input": "471 210",
-            "output": "3"
-        },
-        {
-            "input": "245 899",
-            "output": "1"
-        },
-        {
-            "input": "952 242",
-            "output": "2"
-        },
-        {
-            "input": "865 856",
-            "output": "1"
-        },
-        {
-            "input": "436 258",
-            "output": "2"
-        },
-        {
-            "input": "178 271",
-            "output": "1"
-        },
-        {
-            "input": "184 890",
-            "output": "2"
-        },
-        {
-            "input": "549 212",
-            "output": "1"
-        },
-        {
-            "input": "281 848",
-            "output": "1"
-        },
-        {
-            "input": "495 251",
-            "output": "1"
-        },
-        {
-            "input": "888 637",
-            "output": "1"
-        },
-        {
-            "input": "878 218",
-            "output": "2"
-        },
-        {
-            "input": "718 303",
-            "output": "1"
-        },
-        {
-            "input": "242 164",
-            "output": "2"
-        },
-        {
-            "input": "364 396",
-            "output": "4"
-        },
-        {
-            "input": "885 466",
-            "output": "1"
-        },
-        {
-            "input": "125 919",
-            "output": "1"
-        },
-        {
-            "input": "165 76",
-            "output": "1"
-        },
-        {
-            "input": "305 338",
-            "output": "1"
-        },
-        {
-            "input": "890 44",
-            "output": "2"
-        },
-        {
-            "input": "296 108",
-            "output": "4"
-        },
-        {
-            "input": "280 146",
-            "output": "2"
-        },
-        {
-            "input": "345 88",
-            "output": "1"
-        },
-        {
-            "input": "99 647",
-            "output": "1"
-        },
-        {
-            "input": "638 623",
-            "output": "1"
-        },
-        {
-            "input": "441 788",
-            "output": "1"
-        },
-        {
-            "input": "839 237",
-            "output": "1"
-        },
-        {
-            "input": "457 275",
-            "output": "1"
-        },
-        {
-            "input": "419 594",
-            "output": "1"
-        },
-        {
-            "input": "78 406",
-            "output": "2"
-        },
-        {
-            "input": "996 781",
-            "output": "1"
-        },
-        {
-            "input": "536 900",
-            "output": "4"
-        },
-        {
-            "input": "820 258",
-            "output": "2"
-        },
-        {
-            "input": "878 356",
-            "output": "2"
-        },
-        {
-            "input": "367 964",
-            "output": "1"
-        },
-        {
-            "input": "331 786",
-            "output": "1"
-        },
-        {
-            "input": "241 792",
-            "output": "1"
-        },
-        {
-            "input": "147 494",
-            "output": "1"
-        },
-        {
-            "input": "263 508",
-            "output": "1"
-        },
-        {
-            "input": "15 39",
-            "output": "3"
-        },
-        {
-            "input": "486 197",
-            "output": "1"
-        },
-        {
-            "input": "32 641",
-            "output": "1"
-        },
-        {
-            "input": "612 660",
-            "output": "12"
-        },
-        {
-            "input": "12 531",
-            "output": "3"
-        },
-        {
-            "input": "20 639",
-            "output": "1"
-        },
-        {
-            "input": "482 729",
-            "output": "1"
-        },
-        {
-            "input": "350 399",
-            "output": "7"
-        },
-        {
-            "input": "783 770",
-            "output": "1"
-        },
-        {
-            "input": "224 486",
-            "output": "2"
-        },
-        {
-            "input": "995 648",
-            "output": "1"
-        },
-        {
-            "input": "76 325",
-            "output": "1"
-        },
-        {
-            "input": "753 209",
-            "output": "1"
-        },
-        {
-            "input": "564 404",
-            "output": "4"
-        },
-        {
-            "input": "454 213",
-            "output": "1"
-        },
-        {
-            "input": "690 66",
-            "output": "6"
-        },
-        {
-            "input": "866 665",
-            "output": "1"
-        },
-        {
-            "input": "350 950",
-            "output": "50"
-        },
-        {
-            "input": "95 890",
-            "output": "5"
-        },
-        {
-            "input": "511 91",
-            "output": "7"
-        },
-        {
-            "input": "317 582",
-            "output": "1"
-        },
-        {
-            "input": "384 506",
-            "output": "2"
-        },
-        {
-            "input": "989 241",
-            "output": "1"
-        },
-        {
-            "input": "398 210",
-            "output": "2"
-        },
-        {
-            "input": "999 750",
-            "output": "3"
-        },
-        {
-            "input": "436 767",
-            "output": "1"
-        },
-        {
-            "input": "49 767",
-            "output": "1"
-        },
-        {
-            "input": "846 926",
-            "output": "2"
-        },
-        {
-            "input": "942 558",
-            "output": "6"
-        },
-        {
-            "input": "661 665",
-            "output": "1"
-        },
-        {
-            "input": "874 687",
-            "output": "1"
-        },
-        {
-            "input": "534 856",
-            "output": "2"
-        },
-        {
-            "input": "331 730",
-            "output": "1"
-        },
-        {
-            "input": "899 923",
-            "output": "1"
-        },
-        {
-            "input": "815 725",
-            "output": "5"
-        },
-        {
-            "input": "773 553",
-            "output": "1"
-        },
-        {
-            "input": "544 66",
-            "output": "2"
-        },
-        {
-            "input": "752 90",
-            "output": "2"
-        },
-        {
-            "input": "280 232",
-            "output": "8"
-        },
-        {
-            "input": "914 610",
-            "output": "2"
-        },
-        {
-            "input": "704 214",
-            "output": "2"
-        },
-        {
-            "input": "398 938",
+            "input": "832 590",
             "output": "2"
         },
         {
-            "input": "400 861",
+            "input": "509 9",
             "output": "1"
         },
         {
-            "input": "225 132",
-            "output": "3"
+            "input": "551 725",
+            "output": "29"
         },
         {
-            "input": "297 495",
-            "output": "99"
-        },
-        {
-            "input": "659 695",
-            "output": "1"
-        },
-        {
-            "input": "988 864",
-            "output": "4"
-        },
-        {
-            "input": "943 252",
-            "output": "1"
-        },
-        {
-            "input": "715 959",
-            "output": "1"
-        },
-        {
-            "input": "436 732",
-            "output": "4"
-        },
-        {
-            "input": "952 832",
-            "output": "8"
-        },
-        {
-            "input": "778 331",
-            "output": "1"
-        },
-        {
-            "input": "242 341",
-            "output": "11"
-        },
-        {
-            "input": "152 723",
-            "output": "1"
-        },
-        {
-            "input": "958 699",
-            "output": "1"
-        },
-        {
-            "input": "703 955",
+            "input": "251 318",
             "output": "1"
-        },
-        {
-            "input": "755 192",
-            "output": "1"
-        },
-        {
-            "input": "795 630",
-            "output": "15"
         },
         {
-            "input": "152 133",
+            "input": "133 608",
             "output": "19"
         },
         {
-            "input": "457 928",
+            "input": "229 634",
             "output": "1"
         },
         {
-            "input": "270 595",
-            "output": "5"
-        },
-        {
-            "input": "118 29",
+            "input": "647 620",
             "output": "1"
         },
         {
-            "input": "594 652",
+            "input": "275 912",
+            "output": "1"
+        },
+        {
+            "input": "752 600",
+            "output": "8"
+        },
+        {
+            "input": "979 967",
+            "output": "1"
+        },
+        {
+            "input": "582 399",
+            "output": "3"
+        },
+        {
+            "input": "858 661",
+            "output": "1"
+        },
+        {
+            "input": "517 989",
+            "output": "1"
+        },
+        {
+            "input": "650 481",
+            "output": "13"
+        },
+        {
+            "input": "609 606",
+            "output": "3"
+        },
+        {
+            "input": "213 703",
+            "output": "1"
+        },
+        {
+            "input": "160 56",
+            "output": "8"
+        },
+        {
+            "input": "9 534",
+            "output": "3"
+        },
+        {
+            "input": "901 110",
+            "output": "1"
+        },
+        {
+            "input": "802 908",
             "output": "2"
         },
         {
-            "input": "222 158",
+            "input": "268 561",
+            "output": "1"
+        },
+        {
+            "input": "576 875",
+            "output": "1"
+        },
+        {
+            "input": "558 799",
+            "output": "1"
+        },
+        {
+            "input": "990 142",
             "output": "2"
         },
         {
-            "input": "199 981",
-            "output": "1"
-        },
-        {
-            "input": "334 476",
-            "output": "2"
-        },
-        {
-            "input": "302 607",
-            "output": "1"
-        },
-        {
-            "input": "902 647",
-            "output": "1"
-        },
-        {
-            "input": "998 367",
-            "output": "1"
-        },
-        {
-            "input": "698 218",
-            "output": "2"
-        },
-        {
-            "input": "512 44",
+            "input": "468 616",
             "output": "4"
         },
         {
-            "input": "10 527",
+            "input": "133 820",
             "output": "1"
         },
         {
-            "input": "413 213",
+            "input": "317 556",
             "output": "1"
         },
         {
-            "input": "810 97",
+            "input": "373 172",
             "output": "1"
         },
         {
-            "input": "760 493",
+            "input": "839 635",
             "output": "1"
         },
         {
-            "input": "193 997",
+            "input": "917 792",
             "output": "1"
         },
         {
-            "input": "29 179",
+            "input": "654 881",
             "output": "1"
         },
         {
-            "input": "585 423",
-            "output": "9"
+            "input": "476 306",
+            "output": "34"
         },
         {
-            "input": "234 804",
-            "output": "6"
-        },
-        {
-            "input": "773 767",
+            "input": "102 421",
             "output": "1"
         },
         {
-            "input": "634 814",
-            "output": "2"
-        },
-        {
-            "input": "263 1000",
+            "input": "671 846",
             "output": "1"
         },
         {
-            "input": "319 299",
+            "input": "961 276",
             "output": "1"
         },
         {
-            "input": "872 725",
+            "input": "685 935",
+            "output": "5"
+        },
+        {
+            "input": "451 567",
             "output": "1"
         },
         {
-            "input": "777 678",
-            "output": "3"
-        },
-        {
-            "input": "57 679",
+            "input": "831 466",
             "output": "1"
         },
         {
-            "input": "682 746",
-            "output": "2"
+            "input": "756 316",
+            "output": "4"
         },
         {
-            "input": "893 353",
+            "input": "361 834",
             "output": "1"
         },
         {
-            "input": "323 940",
+            "input": "775 741",
             "output": "1"
         },
         {
-            "input": "816 954",
-            "output": "6"
-        },
-        {
-            "input": "291 963",
-            "output": "3"
-        },
-        {
-            "input": "903 156",
-            "output": "3"
-        },
-        {
-            "input": "690 740",
-            "output": "10"
-        },
-        {
-            "input": "437 945",
+            "input": "947 450",
             "output": "1"
         },
         {
-            "input": "737 617",
-            "output": "1"
-        },
-        {
-            "input": "198 798",
-            "output": "6"
-        },
-        {
-            "input": "199 927",
-            "output": "1"
-        },
-        {
-            "input": "7 644",
-            "output": "7"
-        },
-        {
-            "input": "585 456",
-            "output": "3"
-        },
-        {
-            "input": "991 894",
-            "output": "1"
-        },
-        {
-            "input": "28 71",
-            "output": "1"
-        },
-        {
-            "input": "760 836",
-            "output": "76"
-        },
-        {
-            "input": "858 492",
-            "output": "6"
-        },
-        {
-            "input": "58 693",
-            "output": "1"
-        },
-        {
-            "input": "257 280",
-            "output": "1"
-        },
-        {
-            "input": "979 165",
+            "input": "253 220",
             "output": "11"
         },
         {
-            "input": "415 281",
-            "output": "1"
-        },
-        {
-            "input": "357 455",
-            "output": "7"
-        },
-        {
-            "input": "542 920",
+            "input": "686 454",
             "output": "2"
         },
         {
-            "input": "214 960",
-            "output": "2"
-        },
-        {
-            "input": "657 259",
+            "input": "263 185",
             "output": "1"
         },
         {
-            "input": "236 713",
+            "input": "987 514",
             "output": "1"
         },
         {
-            "input": "415 129",
+            "input": "64 792",
+            "output": "8"
+        },
+        {
+            "input": "891 626",
             "output": "1"
         },
         {
-            "input": "750 428",
-            "output": "2"
+            "input": "512 848",
+            "output": "16"
         },
         {
-            "input": "687 572",
-            "output": "1"
-        },
-        {
-            "input": "944 826",
-            "output": "118"
-        },
-        {
-            "input": "862 687",
-            "output": "1"
-        },
-        {
-            "input": "237 569",
-            "output": "1"
-        },
-        {
-            "input": "287 32",
-            "output": "1"
-        },
-        {
-            "input": "951 231",
-            "output": "3"
-        },
-        {
-            "input": "942 685",
-            "output": "1"
-        },
-        {
-            "input": "671 915",
-            "output": "61"
-        },
-        {
-            "input": "351 200",
-            "output": "1"
-        },
-        {
-            "input": "923 509",
-            "output": "1"
-        },
-        {
-            "input": "914 888",
-            "output": "2"
-        },
-        {
-            "input": "227 361",
-            "output": "1"
-        },
-        {
-            "input": "922 543",
-            "output": "1"
-        },
-        {
-            "input": "250 556",
-            "output": "2"
-        },
-        {
-            "input": "190 253",
-            "output": "1"
-        },
-        {
-            "input": "976 277",
-            "output": "1"
-        },
-        {
-            "input": "223 855",
-            "output": "1"
-        },
-        {
-            "input": "563 738",
-            "output": "1"
-        },
-        {
-            "input": "782 705",
-            "output": "1"
-        },
-        {
-            "input": "950 84",
-            "output": "2"
-        },
-        {
-            "input": "12 989",
-            "output": "1"
-        },
-        {
-            "input": "980 34",
-            "output": "2"
-        },
-        {
-            "input": "205 883",
-            "output": "1"
-        },
-        {
-            "input": "927 274",
-            "output": "1"
-        },
-        {
-            "input": "102 515",
-            "output": "1"
-        },
-        {
-            "input": "855 607",
-            "output": "1"
-        },
-        {
-            "input": "350 560",
-            "output": "70"
-        },
-        {
-            "input": "209 279",
-            "output": "1"
-        },
-        {
-            "input": "800 815",
-            "output": "5"
-        },
-        {
-            "input": "128 868",
+            "input": "484 640",
             "output": "4"
         },
         {
-            "input": "830 210",
-            "output": "10"
-        },
-        {
-            "input": "40 40",
-            "output": "40"
-        },
-        {
-            "input": "959 615",
+            "input": "171 346",
             "output": "1"
         },
         {
-            "input": "516 554",
+            "input": "776 502",
             "output": "2"
+        },
+        {
+            "input": "303 270",
+            "output": "3"
+        },
+        {
+            "input": "764 763",
+            "output": "1"
+        },
+        {
+            "input": "304 716",
+            "output": "4"
+        },
+        {
+            "input": "752 906",
+            "output": "2"
+        },
+        {
+            "input": "668 741",
+            "output": "1"
+        },
+        {
+            "input": "280 407",
+            "output": "1"
+        },
+        {
+            "input": "72 983",
+            "output": "1"
+        },
+        {
+            "input": "911 491",
+            "output": "1"
+        },
+        {
+            "input": "257 42",
+            "output": "1"
+        },
+        {
+            "input": "648 924",
+            "output": "12"
+        },
+        {
+            "input": "983 610",
+            "output": "1"
+        },
+        {
+            "input": "865 114",
+            "output": "1"
+        },
+        {
+            "input": "716 949",
+            "output": "1"
+        },
+        {
+            "input": "64 957",
+            "output": "1"
+        },
+        {
+            "input": "936 614",
+            "output": "2"
+        },
+        {
+            "input": "265 739",
+            "output": "1"
+        },
+        {
+            "input": "863 816",
+            "output": "1"
+        },
+        {
+            "input": "862 70",
+            "output": "2"
+        },
+        {
+            "input": "767 279",
+            "output": "1"
+        },
+        {
+            "input": "967 308",
+            "output": "1"
+        },
+        {
+            "input": "39 901",
+            "output": "1"
+        },
+        {
+            "input": "452 433",
+            "output": "1"
+        },
+        {
+            "input": "182 770",
+            "output": "14"
+        },
+        {
+            "input": "433 913",
+            "output": "1"
+        },
+        {
+            "input": "788 285",
+            "output": "1"
+        },
+        {
+            "input": "749 345",
+            "output": "1"
+        },
+        {
+            "input": "994 688",
+            "output": "2"
+        },
+        {
+            "input": "794 711",
+            "output": "1"
+        },
+        {
+            "input": "83 215",
+            "output": "1"
+        },
+        {
+            "input": "576 873",
+            "output": "9"
+        },
+        {
+            "input": "199 532",
+            "output": "1"
+        },
+        {
+            "input": "103 712",
+            "output": "1"
+        },
+        {
+            "input": "316 393",
+            "output": "1"
+        },
+        {
+            "input": "768 962",
+            "output": "2"
+        },
+        {
+            "input": "387 40",
+            "output": "1"
+        },
+        {
+            "input": "668 191",
+            "output": "1"
+        },
+        {
+            "input": "833 642",
+            "output": "1"
+        },
+        {
+            "input": "959 10",
+            "output": "1"
+        },
+        {
+            "input": "121 115",
+            "output": "1"
+        },
+        {
+            "input": "859 760",
+            "output": "1"
+        },
+        {
+            "input": "857 421",
+            "output": "1"
+        },
+        {
+            "input": "156 171",
+            "output": "3"
+        },
+        {
+            "input": "586 391",
+            "output": "1"
+        },
+        {
+            "input": "610 437",
+            "output": "1"
+        },
+        {
+            "input": "33 567",
+            "output": "3"
+        },
+        {
+            "input": "705 381",
+            "output": "3"
+        },
+        {
+            "input": "826 128",
+            "output": "2"
+        },
+        {
+            "input": "223 232",
+            "output": "1"
+        },
+        {
+            "input": "978 386",
+            "output": "2"
+        },
+        {
+            "input": "883 953",
+            "output": "1"
+        },
+        {
+            "input": "339 664",
+            "output": "1"
+        },
+        {
+            "input": "784 541",
+            "output": "1"
+        },
+        {
+            "input": "801 927",
+            "output": "9"
+        },
+        {
+            "input": "785 795",
+            "output": "5"
+        },
+        {
+            "input": "705 33",
+            "output": "3"
+        },
+        {
+            "input": "697 529",
+            "output": "1"
+        },
+        {
+            "input": "818 545",
+            "output": "1"
+        },
+        {
+            "input": "719 590",
+            "output": "1"
+        },
+        {
+            "input": "438 160",
+            "output": "2"
+        },
+        {
+            "input": "193 999",
+            "output": "1"
+        },
+        {
+            "input": "594 11",
+            "output": "11"
+        },
+        {
+            "input": "353 897",
+            "output": "1"
+        },
+        {
+            "input": "376 116",
+            "output": "4"
+        },
+        {
+            "input": "63 499",
+            "output": "1"
+        },
+        {
+            "input": "405 341",
+            "output": "1"
+        },
+        {
+            "input": "885 117",
+            "output": "3"
+        },
+        {
+            "input": "653 528",
+            "output": "1"
+        },
+        {
+            "input": "741 295",
+            "output": "1"
+        },
+        {
+            "input": "485 414",
+            "output": "1"
+        },
+        {
+            "input": "823 62",
+            "output": "1"
+        },
+        {
+            "input": "118 323",
+            "output": "1"
+        },
+        {
+            "input": "729 709",
+            "output": "1"
+        },
+        {
+            "input": "884 477",
+            "output": "1"
+        },
+        {
+            "input": "699 292",
+            "output": "1"
+        },
+        {
+            "input": "275 884",
+            "output": "1"
+        },
+        {
+            "input": "658 978",
+            "output": "2"
+        },
+        {
+            "input": "598 511",
+            "output": "1"
+        },
+        {
+            "input": "66 512",
+            "output": "2"
+        },
+        {
+            "input": "216 519",
+            "output": "3"
+        },
+        {
+            "input": "490 383",
+            "output": "1"
+        },
+        {
+            "input": "896 706",
+            "output": "2"
+        },
+        {
+            "input": "716 389",
+            "output": "1"
+        },
+        {
+            "input": "752 508",
+            "output": "4"
+        },
+        {
+            "input": "289 851",
+            "output": "1"
+        },
+        {
+            "input": "436 440",
+            "output": "4"
+        },
+        {
+            "input": "665 295",
+            "output": "5"
+        },
+        {
+            "input": "526 966",
+            "output": "2"
+        },
+        {
+            "input": "802 876",
+            "output": "2"
+        },
+        {
+            "input": "641 594",
+            "output": "1"
+        },
+        {
+            "input": "637 474",
+            "output": "1"
+        },
+        {
+            "input": "603 200",
+            "output": "1"
+        },
+        {
+            "input": "993 990",
+            "output": "3"
+        },
+        {
+            "input": "307 474",
+            "output": "1"
+        },
+        {
+            "input": "732 886",
+            "output": "2"
+        },
+        {
+            "input": "561 252",
+            "output": "3"
+        },
+        {
+            "input": "51 450",
+            "output": "3"
+        },
+        {
+            "input": "392 148",
+            "output": "4"
+        },
+        {
+            "input": "240 98",
+            "output": "2"
+        },
+        {
+            "input": "479 44",
+            "output": "1"
+        },
+        {
+            "input": "311 507",
+            "output": "1"
+        },
+        {
+            "input": "746 70",
+            "output": "2"
+        },
+        {
+            "input": "188 743",
+            "output": "1"
+        },
+        {
+            "input": "783 749",
+            "output": "1"
+        },
+        {
+            "input": "233 521",
+            "output": "1"
+        },
+        {
+            "input": "141 282",
+            "output": "141"
+        },
+        {
+            "input": "366 215",
+            "output": "1"
+        },
+        {
+            "input": "161 69",
+            "output": "23"
+        },
+        {
+            "input": "532 608",
+            "output": "76"
         }
     ],
     "difficulty": "medium"

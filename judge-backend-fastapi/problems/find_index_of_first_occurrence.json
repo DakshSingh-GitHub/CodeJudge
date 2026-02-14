@@ -23,11 +23,7 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "mississippi\nxyz",
-            "output": "-1"
-        },
-        {
-            "input": "aaaaa\nxyz",
+            "input": "def\nxyz",
             "output": "-1"
         },
         {
@@ -35,39 +31,71 @@
             "output": "-1"
         },
         {
-            "input": "def\ndef",
-            "output": "0"
-        },
-        {
-            "input": "abc\nab",
-            "output": "0"
-        },
-        {
             "input": "world\nxyz",
             "output": "-1"
         },
         {
-            "input": "mississippi\ns",
+            "input": "hello\nlo",
+            "output": "3"
+        },
+        {
+            "input": "aaaaa\ne",
+            "output": "-1"
+        },
+        {
+            "input": "def\ndef",
+            "output": "0"
+        },
+        {
+            "input": "aaaaa\nxyz",
+            "output": "-1"
+        },
+        {
+            "input": "abc\nb",
+            "output": "1"
+        },
+        {
+            "input": "abc\nbc",
+            "output": "1"
+        },
+        {
+            "input": "mississippi\nsippi",
+            "output": "6"
+        },
+        {
+            "input": "mississippi\nxyz",
+            "output": "-1"
+        },
+        {
+            "input": "aaaaa\na",
+            "output": "0"
+        },
+        {
+            "input": "world\nw",
+            "output": "0"
+        },
+        {
+            "input": "abc\nc",
             "output": "2"
         },
         {
+            "input": "abc\nd",
+            "output": "-1"
+        },
+        {
+            "input": "world\nl",
+            "output": "3"
+        },
+        {
+            "input": "def\na",
+            "output": "-1"
+        },
+        {
+            "input": "aaaaa\naaaaa",
+            "output": "0"
+        },
+        {
             "input": "hello\nb",
-            "output": "-1"
-        },
-        {
-            "input": "aaaaa\naaa",
-            "output": "0"
-        },
-        {
-            "input": "def\nd",
-            "output": "0"
-        },
-        {
-            "input": "def\nxyz",
-            "output": "-1"
-        },
-        {
-            "input": "aaaaa\nb",
             "output": "-1"
         },
         {
@@ -75,19 +103,23 @@
             "output": "-1"
         },
         {
-            "input": "mississippi\nb",
+            "input": "mississippi\nd",
             "output": "-1"
         },
         {
-            "input": "abc\nc",
-            "output": "2"
+            "input": "def\nb",
+            "output": "-1"
         },
         {
-            "input": "abc\nb",
-            "output": "1"
+            "input": "world\nc",
+            "output": "-1"
         },
         {
             "input": "def\ne",
+            "output": "1"
+        },
+        {
+            "input": "def\nef",
             "output": "1"
         },
         {
@@ -95,100 +127,100 @@
             "output": "0"
         },
         {
-            "input": "world\nor",
-            "output": "1"
-        },
-        {
-            "input": "aaaaa\nc",
-            "output": "-1"
-        },
-        {
-            "input": "def\nef",
-            "output": "1"
-        },
-        {
-            "input": "def\nf",
-            "output": "2"
-        },
-        {
-            "input": "def\nb",
-            "output": "-1"
-        },
-        {
-            "input": "aaaaa\ne",
-            "output": "-1"
-        },
-        {
-            "input": "def\nde",
-            "output": "0"
-        },
-        {
-            "input": "hello\nd",
-            "output": "-1"
-        },
-        {
-            "input": "hello\nc",
-            "output": "-1"
-        },
-        {
-            "input": "mississippi\nsi",
-            "output": "3"
-        },
-        {
-            "input": "world\norld",
-            "output": "1"
-        },
-        {
-            "input": "abc\nabc",
-            "output": "0"
-        },
-        {
-            "input": "abc\nd",
-            "output": "-1"
-        },
-        {
-            "input": "hello\nl",
-            "output": "2"
-        },
-        {
-            "input": "world\nrl",
-            "output": "2"
-        },
-        {
-            "input": "hello\nel",
-            "output": "1"
-        },
-        {
-            "input": "aaaaa\naaaa",
-            "output": "0"
-        },
-        {
-            "input": "hello\nhel",
-            "output": "0"
-        },
-        {
-            "input": "aaaaa\na",
-            "output": "0"
+            "input": "world\nd",
+            "output": "4"
         },
         {
             "input": "world\ne",
             "output": "-1"
         },
         {
+            "input": "aaaaa\naa",
+            "output": "0"
+        },
+        {
+            "input": "mississippi\nc",
+            "output": "-1"
+        },
+        {
+            "input": "aaaaa\nb",
+            "output": "-1"
+        },
+        {
+            "input": "def\nd",
+            "output": "0"
+        },
+        {
             "input": "mississippi\ne",
             "output": "-1"
         },
         {
-            "input": "world\nworl",
+            "input": "mississippi\nppi",
+            "output": "8"
+        },
+        {
+            "input": "aaaaa\naaa",
             "output": "0"
         },
         {
-            "input": "hello\nhe",
+            "input": "hello\ne",
+            "output": "1"
+        },
+        {
+            "input": "mississippi\nb",
+            "output": "-1"
+        },
+        {
+            "input": "def\nf",
+            "output": "2"
+        },
+        {
+            "input": "mississippi\nissippi",
+            "output": "4"
+        },
+        {
+            "input": "world\na",
+            "output": "-1"
+        },
+        {
+            "input": "mississippi\nsissi",
+            "output": "3"
+        },
+        {
+            "input": "hello\nl",
+            "output": "2"
+        },
+        {
+            "input": "world\nld",
+            "output": "3"
+        },
+        {
+            "input": "hello\nel",
+            "output": "1"
+        },
+        {
+            "input": "world\nworld",
             "output": "0"
         },
         {
-            "input": "world\nw",
+            "input": "def\nde",
             "output": "0"
+        },
+        {
+            "input": "abc\nabc",
+            "output": "0"
+        },
+        {
+            "input": "def\nc",
+            "output": "-1"
+        },
+        {
+            "input": "mississippi\nmissi",
+            "output": "0"
+        },
+        {
+            "input": "world\nrl",
+            "output": "2"
         },
         {
             "input": "mississippi\na",
@@ -199,111 +231,67 @@
             "output": "-1"
         },
         {
-            "input": "world\na",
-            "output": "-1"
+            "input": "mississippi\nississi",
+            "output": "1"
         },
         {
-            "input": "hello\na",
-            "output": "-1"
-        },
-        {
-            "input": "mississippi\nsissi",
-            "output": "3"
-        },
-        {
-            "input": "world\nd",
-            "output": "4"
-        },
-        {
-            "input": "world\nrld",
-            "output": "2"
-        },
-        {
-            "input": "hello\nh",
+            "input": "abc\nab",
             "output": "0"
-        },
-        {
-            "input": "mississippi\nssissippi",
-            "output": "2"
-        },
-        {
-            "input": "mississippi\nssi",
-            "output": "2"
-        },
-        {
-            "input": "hello\no",
-            "output": "4"
         },
         {
             "input": "world\no",
             "output": "1"
         },
         {
-            "input": "aaaaa\naa",
+            "input": "hello\nc",
+            "output": "-1"
+        },
+        {
+            "input": "hello\nllo",
+            "output": "2"
+        },
+        {
+            "input": "world\nworl",
             "output": "0"
-        },
-        {
-            "input": "world\nb",
-            "output": "-1"
-        },
-        {
-            "input": "mississippi\nissis",
-            "output": "1"
-        },
-        {
-            "input": "mississippi\nipp",
-            "output": "7"
-        },
-        {
-            "input": "def\nc",
-            "output": "-1"
         },
         {
             "input": "world\nwo",
             "output": "0"
         },
         {
-            "input": "world\nc",
-            "output": "-1"
-        },
-        {
-            "input": "mississippi\nssip",
-            "output": "5"
-        },
-        {
-            "input": "mississippi\nd",
-            "output": "-1"
-        },
-        {
-            "input": "mississippi\nssis",
+            "input": "mississippi\nssissi",
             "output": "2"
         },
         {
-            "input": "abc\nbc",
+            "input": "mississippi\nissipp",
+            "output": "4"
+        },
+        {
+            "input": "hello\nhel",
+            "output": "0"
+        },
+        {
+            "input": "world\norld",
             "output": "1"
         },
         {
-            "input": "mississippi\ni",
-            "output": "1"
-        },
-        {
-            "input": "mississippi\nssipp",
-            "output": "5"
-        },
-        {
-            "input": "world\nld",
+            "input": "mississippi\nsissipp",
             "output": "3"
         },
         {
-            "input": "mississippi\nc",
-            "output": "-1"
+            "input": "mississippi\nssissippi",
+            "output": "2"
         },
         {
-            "input": "hello\nlo",
-            "output": "3"
+            "input": "world\nr",
+            "output": "2"
         },
         {
-            "input": "hello\ne",
+            "input": "mississippi\npi",
+            "output": "9"
+        },
+        {
+            "input": "mississippi\nississip",
             "output": "1"
         },
         {
@@ -311,55 +299,55 @@
             "output": "0"
         },
         {
-            "input": "hello\nll",
-            "output": "2"
-        },
-        {
-            "input": "mississippi\nss",
-            "output": "2"
-        },
-        {
-            "input": "mississippi\nississippi",
-            "output": "1"
-        },
-        {
-            "input": "hello\nllo",
-            "output": "2"
-        },
-        {
             "input": "world\norl",
             "output": "1"
         },
         {
-            "input": "mississippi\nippi",
-            "output": "7"
-        },
-        {
-            "input": "world\nr",
-            "output": "2"
-        },
-        {
-            "input": "mississippi\nsippi",
-            "output": "6"
-        },
-        {
-            "input": "world\nworld",
-            "output": "0"
-        },
-        {
-            "input": "mississippi\nsip",
-            "output": "6"
-        },
-        {
-            "input": "mississippi\nsipp",
-            "output": "6"
-        },
-        {
-            "input": "mississippi\nississipp",
+            "input": "mississippi\niss",
             "output": "1"
         },
         {
-            "input": "mississippi\nmississ",
+            "input": "mississippi\nissi",
+            "output": "1"
+        },
+        {
+            "input": "hello\na",
+            "output": "-1"
+        },
+        {
+            "input": "mississippi\nssis",
+            "output": "2"
+        },
+        {
+            "input": "mississippi\ns",
+            "output": "2"
+        },
+        {
+            "input": "aaaaa\nc",
+            "output": "-1"
+        },
+        {
+            "input": "aaaaa\naaaa",
+            "output": "0"
+        },
+        {
+            "input": "hello\nd",
+            "output": "-1"
+        },
+        {
+            "input": "mississippi\nip",
+            "output": "7"
+        },
+        {
+            "input": "mississippi\ni",
+            "output": "1"
+        },
+        {
+            "input": "hello\nhell",
+            "output": "0"
+        },
+        {
+            "input": "mississippi\nmississi",
             "output": "0"
         },
         {
@@ -367,47 +355,19 @@
             "output": "3"
         },
         {
-            "input": "mississippi\nmiss",
-            "output": "0"
-        },
-        {
-            "input": "def\na",
-            "output": "-1"
-        },
-        {
-            "input": "mississippi\nissipp",
-            "output": "4"
-        },
-        {
-            "input": "mississippi\nissi",
-            "output": "1"
-        },
-        {
-            "input": "aaaaa\naaaaa",
-            "output": "0"
-        },
-        {
-            "input": "abc\ne",
-            "output": "-1"
-        },
-        {
-            "input": "mississippi\niss",
-            "output": "1"
-        },
-        {
-            "input": "hello\nell",
-            "output": "1"
-        },
-        {
-            "input": "mississippi\nmississipp",
-            "output": "0"
-        },
-        {
-            "input": "hello\nhell",
-            "output": "0"
-        },
-        {
             "input": "hello\nello",
+            "output": "1"
+        },
+        {
+            "input": "mississippi\nississipp",
+            "output": "1"
+        },
+        {
+            "input": "mississippi\nipp",
+            "output": "7"
+        },
+        {
+            "input": "world\nor",
             "output": "1"
         },
         {
@@ -415,64 +375,68 @@
             "output": "0"
         },
         {
-            "input": "world\nl",
+            "input": "hello\nell",
+            "output": "1"
+        },
+        {
+            "input": "mississippi\nippi",
+            "output": "7"
+        },
+        {
+            "input": "hello\nll",
+            "output": "2"
+        },
+        {
+            "input": "mississippi\nmississipp",
+            "output": "0"
+        },
+        {
+            "input": "mississippi\nssiss",
+            "output": "2"
+        },
+        {
+            "input": "hello\no",
+            "output": "4"
+        },
+        {
+            "input": "mississippi\nsis",
             "output": "3"
+        },
+        {
+            "input": "hello\nhe",
+            "output": "0"
         },
         {
             "input": "mississippi\nmissis",
             "output": "0"
         },
         {
-            "input": "mississippi\nmi",
+            "input": "hello\nh",
             "output": "0"
-        },
-        {
-            "input": "mississippi\nis",
-            "output": "1"
-        },
-        {
-            "input": "mississippi\nmississippi",
-            "output": "0"
-        },
-        {
-            "input": "mississippi\nsissipp",
-            "output": "3"
-        },
-        {
-            "input": "mississippi\nissippi",
-            "output": "4"
-        },
-        {
-            "input": "mississippi\nississi",
-            "output": "1"
-        },
-        {
-            "input": "mississippi\nississip",
-            "output": "1"
-        },
-        {
-            "input": "mississippi\nmis",
-            "output": "0"
-        },
-        {
-            "input": "mississippi\nmississip",
-            "output": "0"
-        },
-        {
-            "input": "mississippi\nssissip",
-            "output": "2"
-        },
-        {
-            "input": "mississippi\nississ",
-            "output": "1"
         },
         {
             "input": "mississippi\np",
             "output": "8"
         },
         {
-            "input": "mississippi\nsissippi",
-            "output": "3"
+            "input": "mississippi\nissip",
+            "output": "4"
+        },
+        {
+            "input": "mississippi\nssi",
+            "output": "2"
+        },
+        {
+            "input": "world\nb",
+            "output": "-1"
+        },
+        {
+            "input": "abc\ne",
+            "output": "-1"
+        },
+        {
+            "input": "mississippi\nssip",
+            "output": "5"
         }
     ]
 }

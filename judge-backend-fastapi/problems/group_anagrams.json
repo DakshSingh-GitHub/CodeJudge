@@ -18,2004 +18,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "nat nat listen eat nat eat cat tan art act",
-            "output": "act cat\nart\neat eat\nlisten\nnat nat nat tan"
+            "input": "tea ate tan bat bat tea",
+            "output": "ate tea tea\nbat bat\ntan"
         },
         {
-            "input": "bat tan art tea eat tea rat tea art silent nat eat",
-            "output": "art art rat\nbat\neat eat tea tea tea\nnat tan\nsilent"
+            "input": "art silent rat act tan ate art tea",
+            "output": "act\nart art rat\nate tea\nsilent\ntan"
         },
         {
-            "input": "bat ate rat nat rat ate rat",
-            "output": "ate ate\nbat\nnat\nrat rat rat"
+            "input": "eat listen nat act tea ate bat nat tan rat",
+            "output": "act\nate eat tea\nbat\nlisten\nnat nat tan\nrat"
         },
         {
-            "input": "art eat nat nat bat bat cat",
-            "output": "art\nbat bat\ncat\neat\nnat nat"
+            "input": "listen ate act silent nat tan bat eat",
+            "output": "act\nate eat\nbat\nlisten silent\nnat tan"
         },
         {
-            "input": "nat act bat listen tan art",
-            "output": "act\nart\nbat\nlisten\nnat tan"
+            "input": "bat cat silent art listen act",
+            "output": "act cat\nart\nbat\nlisten silent"
         },
         {
-            "input": "bat tea tan tan cat listen rat silent cat act rat rat",
-            "output": "act cat cat\nbat\nlisten silent\nrat rat rat\ntan tan\ntea"
+            "input": "tea art art tan ate cat act",
+            "output": "act cat\nart art\nate tea\ntan"
         },
         {
-            "input": "cat art eat art rat eat nat silent bat listen nat",
-            "output": "art art rat\nbat\ncat\neat eat\nlisten silent\nnat nat"
-        },
-        {
-            "input": "tea listen eat cat listen",
-            "output": "cat\neat tea\nlisten listen"
-        },
-        {
-            "input": "bat eat ate bat eat eat art",
-            "output": "art\nate eat eat eat\nbat bat"
-        },
-        {
-            "input": "listen tan tan nat silent eat ate cat ate",
-            "output": "ate ate eat\ncat\nlisten silent\nnat tan tan"
-        },
-        {
-            "input": "eat listen listen rat cat ate act nat listen act tan",
-            "output": "act act cat\nate eat\nlisten listen listen\nnat tan\nrat"
-        },
-        {
-            "input": "rat cat art rat ate nat bat",
-            "output": "art rat rat\nate\nbat\ncat\nnat"
-        },
-        {
-            "input": "act tan art eat tan tan nat ate eat ate",
-            "output": "act\nart\nate ate eat eat\nnat tan tan tan"
-        },
-        {
-            "input": "bat silent silent ate listen tan cat",
-            "output": "ate\nbat\ncat\nlisten silent silent\ntan"
-        },
-        {
-            "input": "rat rat silent eat silent rat ate rat rat",
-            "output": "ate eat\nrat rat rat rat rat\nsilent silent"
-        },
-        {
-            "input": "tan tan rat ate tan tan act ate silent nat act rat",
-            "output": "act act\nate ate\nnat tan tan tan tan\nrat rat\nsilent"
-        },
-        {
-            "input": "ate art ate cat bat listen silent act act tan tea",
-            "output": "act act cat\nart\nate ate tea\nbat\nlisten silent\ntan"
-        },
-        {
-            "input": "art nat ate listen eat ate",
-            "output": "art\nate ate eat\nlisten\nnat"
-        },
-        {
-            "input": "listen rat act listen silent",
-            "output": "act\nlisten listen silent\nrat"
-        },
-        {
-            "input": "act tan silent listen tan",
-            "output": "act\nlisten silent\ntan tan"
-        },
-        {
-            "input": "art art nat tan rat",
-            "output": "art art rat\nnat tan"
-        },
-        {
-            "input": "nat tan act act silent",
-            "output": "act act\nnat tan\nsilent"
-        },
-        {
-            "input": "bat ate nat tan eat ate rat act art",
-            "output": "act\nart rat\nate ate eat\nbat\nnat tan"
-        },
-        {
-            "input": "eat rat ate rat silent silent tan tan eat rat art ate",
-            "output": "art rat rat rat\nate ate eat eat\nsilent silent\ntan tan"
-        },
-        {
-            "input": "bat listen art bat art",
-            "output": "art art\nbat bat\nlisten"
-        },
-        {
-            "input": "tan cat bat bat silent tan cat tan silent act cat tan",
-            "output": "act cat cat cat\nbat bat\nsilent silent\ntan tan tan tan"
-        },
-        {
-            "input": "art cat cat ate listen ate ate silent art ate tea act",
-            "output": "act cat cat\nart art\nate ate ate ate tea\nlisten silent"
-        },
-        {
-            "input": "eat tea art bat tea eat ate tan cat rat listen",
-            "output": "art rat\nate eat eat tea tea\nbat\ncat\nlisten\ntan"
-        },
-        {
-            "input": "eat listen bat listen eat eat tea",
-            "output": "bat\neat eat eat tea\nlisten listen"
-        },
-        {
-            "input": "bat eat tan silent ate",
-            "output": "ate eat\nbat\nsilent\ntan"
-        },
-        {
-            "input": "eat listen ate art tea ate tea cat act eat",
-            "output": "act cat\nart\nate ate eat eat tea tea\nlisten"
-        },
-        {
-            "input": "nat silent tan tan art bat nat",
-            "output": "art\nbat\nnat nat tan tan\nsilent"
-        },
-        {
-            "input": "nat act bat art tan nat",
-            "output": "act\nart\nbat\nnat nat tan"
-        },
-        {
-            "input": "rat silent nat tea silent tea eat silent art ate",
-            "output": "art rat\nate eat tea tea\nnat\nsilent silent silent"
-        },
-        {
-            "input": "tan ate ate listen cat ate act nat",
-            "output": "act cat\nate ate ate\nlisten\nnat tan"
-        },
-        {
-            "input": "art cat tan art tea art act eat silent listen bat",
-            "output": "act cat\nart art art\nbat\neat tea\nlisten silent\ntan"
-        },
-        {
-            "input": "art cat nat eat silent rat silent silent",
-            "output": "art rat\ncat\neat\nnat\nsilent silent silent"
-        },
-        {
-            "input": "cat ate act tan art act art listen ate ate cat",
-            "output": "act act cat cat\nart art\nate ate ate\nlisten\ntan"
-        },
-        {
-            "input": "silent ate silent ate nat cat listen",
-            "output": "ate ate\ncat\nlisten silent silent\nnat"
-        },
-        {
-            "input": "silent tan tea tea tan tea ate tan",
-            "output": "ate tea tea tea\nsilent\ntan tan tan"
-        },
-        {
-            "input": "rat cat listen tea silent rat bat silent act",
-            "output": "act cat\nbat\nlisten silent silent\nrat rat\ntea"
-        },
-        {
-            "input": "silent bat listen act rat silent ate cat tan",
-            "output": "act cat\nate\nbat\nlisten silent silent\nrat\ntan"
-        },
-        {
-            "input": "ate eat cat bat eat tea",
-            "output": "ate eat eat tea\nbat\ncat"
-        },
-        {
-            "input": "tan rat rat nat eat tea silent",
-            "output": "eat tea\nnat tan\nrat rat\nsilent"
-        },
-        {
-            "input": "silent tea tea rat bat ate nat nat nat cat art nat",
-            "output": "art rat\nate tea tea\nbat\ncat\nnat nat nat nat\nsilent"
-        },
-        {
-            "input": "eat nat art art cat act act listen art tea art",
-            "output": "act act cat\nart art art art\neat tea\nlisten\nnat"
-        },
-        {
-            "input": "cat silent listen cat bat eat cat ate listen tea",
-            "output": "ate eat tea\nbat\ncat cat cat\nlisten listen silent"
-        },
-        {
-            "input": "rat eat tea bat tea tea bat act bat tan",
-            "output": "act\nbat bat bat\neat tea tea tea\nrat\ntan"
-        },
-        {
-            "input": "act silent nat rat bat eat silent eat nat",
-            "output": "act\nbat\neat eat\nnat nat\nrat\nsilent silent"
-        },
-        {
-            "input": "nat art eat art tea listen",
-            "output": "art art\neat tea\nlisten\nnat"
-        },
-        {
-            "input": "art listen rat tan act eat art listen ate nat listen art",
-            "output": "act\nart art art rat\nate eat\nlisten listen listen\nnat tan"
-        },
-        {
-            "input": "cat tea act tea bat act cat cat",
-            "output": "act act cat cat cat\nbat\ntea tea"
-        },
-        {
-            "input": "listen cat cat silent rat act",
-            "output": "act cat cat\nlisten silent\nrat"
-        },
-        {
-            "input": "listen tea rat art ate tan cat silent tea art bat",
-            "output": "art art rat\nate tea tea\nbat\ncat\nlisten silent\ntan"
-        },
-        {
-            "input": "ate eat art act eat rat ate bat cat ate tea ate",
-            "output": "act cat\nart rat\nate ate ate ate eat eat tea\nbat"
-        },
-        {
-            "input": "silent rat bat bat art",
-            "output": "art rat\nbat bat\nsilent"
-        },
-        {
-            "input": "art art art act rat cat act eat art eat",
-            "output": "act act cat\nart art art art rat\neat eat"
-        },
-        {
-            "input": "tea nat rat listen silent act tea ate ate listen nat",
-            "output": "act\nate ate tea tea\nlisten listen silent\nnat nat\nrat"
-        },
-        {
-            "input": "eat eat silent nat ate ate nat bat tan",
-            "output": "ate ate eat eat\nbat\nnat nat tan\nsilent"
-        },
-        {
-            "input": "cat nat tan ate cat",
-            "output": "ate\ncat cat\nnat tan"
-        },
-        {
-            "input": "art silent tan act eat ate act rat",
-            "output": "act act\nart rat\nate eat\nsilent\ntan"
-        },
-        {
-            "input": "rat cat listen nat art tan",
-            "output": "art rat\ncat\nlisten\nnat tan"
-        },
-        {
-            "input": "nat silent nat bat tan tea nat bat",
-            "output": "bat bat\nnat nat nat tan\nsilent\ntea"
-        },
-        {
-            "input": "cat eat bat eat cat act tea listen",
-            "output": "act cat cat\nbat\neat eat tea\nlisten"
-        },
-        {
-            "input": "eat silent tea listen art listen act ate eat act cat silent",
-            "output": "act act cat\nart\nate eat eat tea\nlisten listen silent silent"
-        },
-        {
-            "input": "nat cat silent act bat tan cat bat silent",
-            "output": "act cat cat\nbat bat\nnat tan\nsilent silent"
-        },
-        {
-            "input": "act cat listen silent ate silent art",
-            "output": "act cat\nart\nate\nlisten silent silent"
-        },
-        {
-            "input": "eat art listen cat silent silent act",
-            "output": "act cat\nart\neat\nlisten silent silent"
-        },
-        {
-            "input": "listen art tan act eat",
-            "output": "act\nart\neat\nlisten\ntan"
-        },
-        {
-            "input": "act eat tea ate act cat art tan rat",
-            "output": "act act cat\nart rat\nate eat tea\ntan"
-        },
-        {
-            "input": "bat eat act act ate tan",
-            "output": "act act\nate eat\nbat\ntan"
-        },
-        {
-            "input": "art ate cat act tan tan bat rat silent ate bat",
-            "output": "act cat\nart rat\nate ate\nbat bat\nsilent\ntan tan"
-        },
-        {
-            "input": "tea bat rat bat listen bat",
-            "output": "bat bat bat\nlisten\nrat\ntea"
-        },
-        {
-            "input": "listen rat tea eat cat",
-            "output": "cat\neat tea\nlisten\nrat"
-        },
-        {
-            "input": "rat bat bat listen tan tan ate",
-            "output": "ate\nbat bat\nlisten\nrat\ntan tan"
-        },
-        {
-            "input": "art nat nat rat cat silent tea",
-            "output": "art rat\ncat\nnat nat\nsilent\ntea"
-        },
-        {
-            "input": "bat listen cat tan bat act tan",
-            "output": "act cat\nbat bat\nlisten\ntan tan"
-        },
-        {
-            "input": "eat tea art act rat art eat tea tan cat ate",
-            "output": "act cat\nart art rat\nate eat eat tea tea\ntan"
-        },
-        {
-            "input": "tea ate cat art act listen ate rat silent art rat bat",
-            "output": "act cat\nart art rat rat\nate ate tea\nbat\nlisten silent"
-        },
-        {
-            "input": "tan tea tan cat nat",
-            "output": "cat\nnat tan tan\ntea"
-        },
-        {
-            "input": "ate listen rat bat tan silent eat bat listen",
-            "output": "ate eat\nbat bat\nlisten listen silent\nrat\ntan"
-        },
-        {
-            "input": "silent rat art art rat",
-            "output": "art art rat rat\nsilent"
-        },
-        {
-            "input": "tea bat rat eat ate",
-            "output": "ate eat tea\nbat\nrat"
-        },
-        {
-            "input": "listen act rat listen cat silent nat nat cat bat eat",
-            "output": "act cat cat\nbat\neat\nlisten listen silent\nnat nat\nrat"
-        },
-        {
-            "input": "tan listen act act listen art rat act",
-            "output": "act act act\nart rat\nlisten listen\ntan"
-        },
-        {
-            "input": "silent silent silent silent cat ate cat tea tan",
-            "output": "ate tea\ncat cat\nsilent silent silent silent\ntan"
-        },
-        {
-            "input": "eat eat listen cat eat eat tan ate cat bat",
-            "output": "ate eat eat eat eat\nbat\ncat cat\nlisten\ntan"
-        },
-        {
-            "input": "art rat eat listen silent eat rat bat silent rat ate",
-            "output": "art rat rat rat\nate eat eat\nbat\nlisten silent silent"
-        },
-        {
-            "input": "eat tea rat bat ate",
-            "output": "ate eat tea\nbat\nrat"
-        },
-        {
-            "input": "tea rat cat eat tan tea silent listen bat act rat silent",
-            "output": "act cat\nbat\neat tea tea\nlisten silent silent\nrat rat\ntan"
-        },
-        {
-            "input": "ate art ate cat ate nat listen listen act silent rat bat",
-            "output": "act cat\nart rat\nate ate ate\nbat\nlisten listen silent\nnat"
-        },
-        {
-            "input": "rat silent silent bat cat act cat act cat act silent",
-            "output": "act act act cat cat cat\nbat\nrat\nsilent silent silent"
-        },
-        {
-            "input": "tea art eat silent cat act tan listen tea cat art nat",
-            "output": "act cat cat\nart art\neat tea tea\nlisten silent\nnat tan"
-        },
-        {
-            "input": "listen cat silent nat silent ate rat act nat",
-            "output": "act cat\nate\nlisten silent silent\nnat nat\nrat"
-        },
-        {
-            "input": "act nat silent art art cat tea",
-            "output": "act cat\nart art\nnat\nsilent\ntea"
-        },
-        {
-            "input": "silent listen silent listen act rat tan rat ate silent act tan",
-            "output": "act act\nate\nlisten listen silent silent silent\nrat rat\ntan tan"
-        },
-        {
-            "input": "cat act art tea eat tea art tea nat eat ate",
-            "output": "act cat\nart art\nate eat eat tea tea tea\nnat"
-        },
-        {
-            "input": "listen tan bat bat bat tan art act tea tan bat",
-            "output": "act\nart\nbat bat bat bat\nlisten\ntan tan tan\ntea"
-        },
-        {
-            "input": "rat silent silent ate art silent nat act",
-            "output": "act\nart rat\nate\nnat\nsilent silent silent"
-        },
-        {
-            "input": "bat silent ate eat nat listen",
-            "output": "ate eat\nbat\nlisten silent\nnat"
-        },
-        {
-            "input": "silent cat art rat tan bat art rat rat rat nat",
-            "output": "art art rat rat rat rat\nbat\ncat\nnat tan\nsilent"
-        },
-        {
-            "input": "cat art cat bat rat act tea silent listen tan",
-            "output": "act cat cat\nart rat\nbat\nlisten silent\ntan\ntea"
-        },
-        {
-            "input": "nat nat tea silent bat bat tea",
-            "output": "bat bat\nnat nat\nsilent\ntea tea"
-        },
-        {
-            "input": "tan art eat eat nat act rat silent act",
-            "output": "act act\nart rat\neat eat\nnat tan\nsilent"
-        },
-        {
-            "input": "tan bat tea bat act",
-            "output": "act\nbat bat\ntan\ntea"
-        },
-        {
-            "input": "cat art act nat act tan act tea eat tea act act",
-            "output": "act act act act act cat\nart\neat tea tea\nnat tan"
-        },
-        {
-            "input": "eat ate bat nat act tan act act",
-            "output": "act act act\nate eat\nbat\nnat tan"
-        },
-        {
-            "input": "ate silent cat nat rat bat",
-            "output": "ate\nbat\ncat\nnat\nrat\nsilent"
-        },
-        {
-            "input": "art listen eat rat ate",
-            "output": "art rat\nate eat\nlisten"
-        },
-        {
-            "input": "art ate silent listen eat listen tan art art rat art act",
-            "output": "act\nart art art art rat\nate eat\nlisten listen silent\ntan"
-        },
-        {
-            "input": "nat eat ate bat act rat cat eat nat listen",
-            "output": "act cat\nate eat eat\nbat\nlisten\nnat nat\nrat"
-        },
-        {
-            "input": "art cat tan tea nat",
-            "output": "art\ncat\nnat tan\ntea"
-        },
-        {
-            "input": "act tea bat act ate ate art silent silent silent",
-            "output": "act act\nart\nate ate tea\nbat\nsilent silent silent"
-        },
-        {
-            "input": "rat art act art bat nat",
-            "output": "act\nart art rat\nbat\nnat"
-        },
-        {
-            "input": "tea rat cat bat ate ate rat silent eat bat nat tan",
-            "output": "ate ate eat tea\nbat bat\ncat\nnat tan\nrat rat\nsilent"
-        },
-        {
-            "input": "tea rat ate cat listen",
-            "output": "ate tea\ncat\nlisten\nrat"
-        },
-        {
-            "input": "act rat silent cat bat listen listen",
-            "output": "act cat\nbat\nlisten listen silent\nrat"
-        },
-        {
-            "input": "rat art bat tan bat tea cat cat nat act",
-            "output": "act cat cat\nart rat\nbat bat\nnat tan\ntea"
-        },
-        {
-            "input": "cat art eat rat ate",
-            "output": "art rat\nate eat\ncat"
-        },
-        {
-            "input": "eat nat listen silent tea eat bat cat bat ate silent",
-            "output": "ate eat eat tea\nbat bat\ncat\nlisten silent silent\nnat"
-        },
-        {
-            "input": "tea art cat eat cat",
-            "output": "art\ncat cat\neat tea"
-        },
-        {
-            "input": "eat bat art tan art rat eat silent silent rat ate",
-            "output": "art art rat rat\nate eat eat\nbat\nsilent silent\ntan"
-        },
-        {
-            "input": "rat ate silent tan nat bat cat art rat",
-            "output": "art rat rat\nate\nbat\ncat\nnat tan\nsilent"
-        },
-        {
-            "input": "bat silent art listen ate act tea",
-            "output": "act\nart\nate tea\nbat\nlisten silent"
-        },
-        {
-            "input": "silent tan silent ate eat silent eat cat nat",
-            "output": "ate eat eat\ncat\nnat tan\nsilent silent silent"
-        },
-        {
-            "input": "nat rat art nat art tea tan",
-            "output": "art art rat\nnat nat tan\ntea"
-        },
-        {
-            "input": "bat bat listen art art cat tea silent",
-            "output": "art art\nbat bat\ncat\nlisten silent\ntea"
-        },
-        {
-            "input": "silent tan tan listen bat bat art silent act ate",
-            "output": "act\nart\nate\nbat bat\nlisten silent silent\ntan tan"
-        },
-        {
-            "input": "silent silent listen listen act",
-            "output": "act\nlisten listen silent silent"
-        },
-        {
-            "input": "eat cat art bat bat eat rat",
-            "output": "art rat\nbat bat\ncat\neat eat"
-        },
-        {
-            "input": "tea cat tan nat ate",
-            "output": "ate tea\ncat\nnat tan"
-        },
-        {
-            "input": "eat silent tan silent nat eat cat rat ate cat",
-            "output": "ate eat eat\ncat cat\nnat tan\nrat\nsilent silent"
-        },
-        {
-            "input": "silent tea eat eat eat tan ate",
-            "output": "ate eat eat eat tea\nsilent\ntan"
-        },
-        {
-            "input": "rat act art art rat",
-            "output": "act\nart art rat rat"
-        },
-        {
-            "input": "art tan listen cat tea",
-            "output": "art\ncat\nlisten\ntan\ntea"
-        },
-        {
-            "input": "eat nat nat bat silent art bat act tea nat tan nat",
-            "output": "act\nart\nbat bat\neat tea\nnat nat nat nat tan\nsilent"
-        },
-        {
-            "input": "nat silent rat rat rat rat tan silent silent",
-            "output": "nat tan\nrat rat rat rat\nsilent silent silent"
-        },
-        {
-            "input": "nat cat act tea nat rat tea",
-            "output": "act cat\nnat nat\nrat\ntea tea"
-        },
-        {
-            "input": "ate bat art tea tan art rat",
-            "output": "art art rat\nate tea\nbat\ntan"
-        },
-        {
-            "input": "nat eat cat act tea",
-            "output": "act cat\neat tea\nnat"
-        },
-        {
-            "input": "cat bat silent bat tea",
-            "output": "bat bat\ncat\nsilent\ntea"
-        },
-        {
-            "input": "ate tan art nat act silent",
-            "output": "act\nart\nate\nnat tan\nsilent"
-        },
-        {
-            "input": "art nat rat art ate eat bat bat art",
-            "output": "art art art rat\nate eat\nbat bat\nnat"
-        },
-        {
-            "input": "act listen art art act",
-            "output": "act act\nart art\nlisten"
-        },
-        {
-            "input": "tea eat ate cat bat nat",
-            "output": "ate eat tea\nbat\ncat\nnat"
-        },
-        {
-            "input": "rat listen eat art silent listen tea",
-            "output": "art rat\neat tea\nlisten listen silent"
-        },
-        {
-            "input": "bat rat eat silent cat art art silent silent nat act ate",
-            "output": "act cat\nart art rat\nate eat\nbat\nnat\nsilent silent silent"
-        },
-        {
-            "input": "rat nat cat nat rat tea art art act listen tea",
-            "output": "act cat\nart art rat rat\nlisten\nnat nat\ntea tea"
-        },
-        {
-            "input": "rat tan nat cat bat",
-            "output": "bat\ncat\nnat tan\nrat"
-        },
-        {
-            "input": "act rat tan tea rat ate",
-            "output": "act\nate tea\nrat rat\ntan"
-        },
-        {
-            "input": "tea listen rat bat silent listen act silent ate rat listen",
-            "output": "act\nate tea\nbat\nlisten listen listen silent silent\nrat rat"
-        },
-        {
-            "input": "silent rat silent nat silent tan art eat listen listen listen act",
-            "output": "act\nart rat\neat\nlisten listen listen silent silent silent\nnat tan"
-        },
-        {
-            "input": "listen ate eat nat bat eat act tan ate nat tan",
-            "output": "act\nate ate eat eat\nbat\nlisten\nnat nat tan tan"
-        },
-        {
-            "input": "cat tea tan art act ate rat bat tea tan rat ate",
-            "output": "act cat\nart rat rat\nate ate tea tea\nbat\ntan tan"
-        },
-        {
-            "input": "act eat tea cat rat tea silent nat tea art rat",
-            "output": "act cat\nart rat rat\neat tea tea tea\nnat\nsilent"
-        },
-        {
-            "input": "tea bat silent nat tea",
-            "output": "bat\nnat\nsilent\ntea tea"
-        },
-        {
-            "input": "bat ate silent act tan eat silent nat eat eat",
-            "output": "act\nate eat eat eat\nbat\nnat tan\nsilent silent"
-        },
-        {
-            "input": "art bat bat act ate eat nat eat silent eat act",
-            "output": "act act\nart\nate eat eat eat\nbat bat\nnat\nsilent"
-        },
-        {
-            "input": "act nat silent cat tan nat act nat ate silent nat listen",
-            "output": "act act cat\nate\nlisten silent silent\nnat nat nat nat tan"
-        },
-        {
-            "input": "act act listen listen ate ate",
-            "output": "act act\nate ate\nlisten listen"
-        },
-        {
-            "input": "eat tan silent cat cat tea cat",
-            "output": "cat cat cat\neat tea\nsilent\ntan"
-        },
-        {
-            "input": "tea listen cat tea cat cat",
-            "output": "cat cat cat\nlisten\ntea tea"
-        },
-        {
-            "input": "act ate silent bat cat cat",
-            "output": "act cat cat\nate\nbat\nsilent"
-        },
-        {
-            "input": "bat tan ate act act tan eat eat",
-            "output": "act act\nate eat eat\nbat\ntan tan"
-        },
-        {
-            "input": "ate listen tea nat art silent eat",
-            "output": "art\nate eat tea\nlisten silent\nnat"
-        },
-        {
-            "input": "ate ate act bat tea listen cat silent tan silent",
-            "output": "act cat\nate ate tea\nbat\nlisten silent silent\ntan"
-        },
-        {
-            "input": "eat cat silent cat listen listen act listen listen eat",
-            "output": "act cat cat\neat eat\nlisten listen listen listen silent"
-        },
-        {
-            "input": "ate silent eat rat tan tan nat cat nat",
-            "output": "ate eat\ncat\nnat nat tan tan\nrat\nsilent"
-        },
-        {
-            "input": "act tea art rat ate tea eat",
-            "output": "act\nart rat\nate eat tea tea"
-        },
-        {
-            "input": "nat ate listen bat bat listen tea",
-            "output": "ate tea\nbat bat\nlisten listen\nnat"
-        },
-        {
-            "input": "ate tea act nat nat eat nat cat rat",
-            "output": "act cat\nate eat tea\nnat nat nat\nrat"
-        },
-        {
-            "input": "ate art bat art ate nat tan rat act silent silent",
-            "output": "act\nart art rat\nate ate\nbat\nnat tan\nsilent silent"
-        },
-        {
-            "input": "ate bat ate art bat act tea",
-            "output": "act\nart\nate ate tea\nbat bat"
-        },
-        {
-            "input": "ate silent nat silent ate tea act rat silent nat bat",
-            "output": "act\nate ate tea\nbat\nnat nat\nrat\nsilent silent silent"
-        },
-        {
-            "input": "listen ate bat nat eat eat act silent listen",
-            "output": "act\nate eat eat\nbat\nlisten listen silent\nnat"
-        },
-        {
-            "input": "ate cat nat art silent tea",
-            "output": "art\nate tea\ncat\nnat\nsilent"
-        },
-        {
-            "input": "listen act silent rat nat ate cat nat nat rat",
-            "output": "act cat\nate\nlisten silent\nnat nat nat\nrat rat"
-        },
-        {
-            "input": "tan act eat tea listen tea act eat silent art",
-            "output": "act act\nart\neat eat tea tea\nlisten silent\ntan"
-        },
-        {
-            "input": "tea listen act listen act act rat act eat tea cat nat",
-            "output": "act act act act cat\neat tea tea\nlisten listen\nnat\nrat"
-        },
-        {
-            "input": "tan art listen cat tan rat",
-            "output": "art rat\ncat\nlisten\ntan tan"
-        },
-        {
-            "input": "tan nat cat act nat tan tea tan tan bat cat",
-            "output": "act cat cat\nbat\nnat nat tan tan tan tan\ntea"
-        },
-        {
-            "input": "silent art tea eat bat rat art tan tan",
-            "output": "art art rat\nbat\neat tea\nsilent\ntan tan"
-        },
-        {
-            "input": "ate listen bat rat act eat rat",
-            "output": "act\nate eat\nbat\nlisten\nrat rat"
-        },
-        {
-            "input": "tan silent tan art bat silent bat",
-            "output": "art\nbat bat\nsilent silent\ntan tan"
-        },
-        {
-            "input": "nat silent eat tan nat listen",
-            "output": "eat\nlisten silent\nnat nat tan"
-        },
-        {
-            "input": "tea cat ate cat cat",
-            "output": "ate tea\ncat cat cat"
-        },
-        {
-            "input": "bat bat bat act listen listen nat",
-            "output": "act\nbat bat bat\nlisten listen\nnat"
-        },
-        {
-            "input": "eat tea tan tan cat tea",
-            "output": "cat\neat tea tea\ntan tan"
-        },
-        {
-            "input": "silent art rat nat tea nat",
-            "output": "art rat\nnat nat\nsilent\ntea"
-        },
-        {
-            "input": "rat tan art tan tea listen listen silent bat tan act",
-            "output": "act\nart rat\nbat\nlisten listen silent\ntan tan tan\ntea"
-        },
-        {
-            "input": "rat bat ate eat rat eat rat tan nat tea tea art",
-            "output": "art rat rat rat\nate eat eat tea tea\nbat\nnat tan"
-        },
-        {
-            "input": "tan nat rat cat cat listen eat nat rat listen cat",
-            "output": "cat cat cat\neat\nlisten listen\nnat nat tan\nrat rat"
-        },
-        {
-            "input": "art bat bat ate eat",
-            "output": "art\nate eat\nbat bat"
-        },
-        {
-            "input": "cat tea act tan ate ate ate tan eat tan",
-            "output": "act cat\nate ate ate eat tea\ntan tan tan"
-        },
-        {
-            "input": "ate listen listen tea tan tea art",
-            "output": "art\nate tea tea\nlisten listen\ntan"
-        },
-        {
-            "input": "tea rat bat tea act ate ate bat rat rat tan silent",
-            "output": "act\nate ate tea tea\nbat bat\nrat rat rat\nsilent\ntan"
-        },
-        {
-            "input": "tea act listen silent ate eat act nat tea",
-            "output": "act act\nate eat tea tea\nlisten silent\nnat"
-        },
-        {
-            "input": "cat silent eat art cat art rat tea cat rat eat",
-            "output": "art art rat rat\ncat cat cat\neat eat tea\nsilent"
-        },
-        {
-            "input": "bat tea rat silent act silent",
-            "output": "act\nbat\nrat\nsilent silent\ntea"
-        },
-        {
-            "input": "silent cat silent tan silent silent act ate bat bat",
-            "output": "act cat\nate\nbat bat\nsilent silent silent silent\ntan"
-        },
-        {
-            "input": "ate tan silent cat eat ate silent rat tan tea ate bat",
-            "output": "ate ate ate eat tea\nbat\ncat\nrat\nsilent silent\ntan tan"
-        },
-        {
-            "input": "silent tea eat listen art art listen act ate bat act art",
-            "output": "act act\nart art art\nate eat tea\nbat\nlisten listen silent"
-        },
-        {
-            "input": "eat ate silent cat listen listen eat eat art listen listen",
-            "output": "art\nate eat eat eat\ncat\nlisten listen listen listen silent"
-        },
-        {
-            "input": "cat cat tea tan nat bat bat listen cat tan cat",
-            "output": "bat bat\ncat cat cat cat\nlisten\nnat tan tan\ntea"
-        },
-        {
-            "input": "tan tan ate ate art act cat cat bat",
-            "output": "act cat cat\nart\nate ate\nbat\ntan tan"
-        },
-        {
-            "input": "tea tan bat cat art act cat",
-            "output": "act cat cat\nart\nbat\ntan\ntea"
-        },
-        {
-            "input": "cat art ate act eat cat bat cat cat",
-            "output": "act cat cat cat cat\nart\nate eat\nbat"
-        },
-        {
-            "input": "nat act art art eat",
-            "output": "act\nart art\neat\nnat"
-        },
-        {
-            "input": "silent act eat cat act silent art act act act bat",
-            "output": "act act act act act cat\nart\nbat\neat\nsilent silent"
-        },
-        {
-            "input": "eat cat tan act bat tea listen bat act nat listen",
-            "output": "act act cat\nbat bat\neat tea\nlisten listen\nnat tan"
-        },
-        {
-            "input": "nat eat rat cat rat art cat tan act eat silent",
-            "output": "act cat cat\nart rat rat\neat eat\nnat tan\nsilent"
-        },
-        {
-            "input": "rat nat bat art act nat bat silent art rat rat tea",
-            "output": "act\nart art rat rat rat\nbat bat\nnat nat\nsilent\ntea"
-        },
-        {
-            "input": "art act act nat listen",
+            "input": "listen act nat act art",
             "output": "act act\nart\nlisten\nnat"
         },
         {
-            "input": "eat eat tea art act bat eat silent",
-            "output": "act\nart\nbat\neat eat eat tea\nsilent"
+            "input": "eat act nat cat ate",
+            "output": "act cat\nate eat\nnat"
         },
         {
-            "input": "bat silent bat silent cat listen listen rat listen eat listen tea",
-            "output": "bat bat\ncat\neat tea\nlisten listen listen listen silent silent\nrat"
+            "input": "rat nat tea rat tan act bat cat ate rat bat",
+            "output": "act cat\nate tea\nbat bat\nnat tan\nrat rat rat"
         },
         {
-            "input": "eat art bat nat ate bat listen silent",
-            "output": "art\nate eat\nbat bat\nlisten silent\nnat"
+            "input": "eat listen rat bat rat eat act silent tea eat",
+            "output": "act\nbat\neat eat eat tea\nlisten silent\nrat rat"
         },
         {
-            "input": "art art art nat silent art cat act listen",
-            "output": "act cat\nart art art art\nlisten silent\nnat"
+            "input": "tea art ate art tea ate tea bat ate bat",
+            "output": "art art\nate ate ate tea tea tea\nbat bat"
         },
         {
-            "input": "nat tea cat silent eat tea bat",
-            "output": "bat\ncat\neat tea tea\nnat\nsilent"
+            "input": "tea listen act art art tan act tan",
+            "output": "act act\nart art\nlisten\ntan tan\ntea"
         },
         {
-            "input": "cat tan cat art listen eat",
-            "output": "art\ncat cat\neat\nlisten\ntan"
+            "input": "tea ate nat rat rat",
+            "output": "ate tea\nnat\nrat rat"
         },
         {
-            "input": "nat art act nat listen tan ate act listen silent",
-            "output": "act act\nart\nate\nlisten listen silent\nnat nat tan"
+            "input": "silent tea nat bat cat ate cat cat ate eat nat",
+            "output": "ate ate eat tea\nbat\ncat cat cat\nnat nat\nsilent"
         },
         {
-            "input": "ate rat tan rat tan rat cat tan",
-            "output": "ate\ncat\nrat rat rat\ntan tan tan"
+            "input": "cat listen bat cat tea art tan cat silent tan",
+            "output": "art\nbat\ncat cat cat\nlisten silent\ntan tan\ntea"
         },
         {
-            "input": "cat tan bat cat bat tea bat rat cat rat listen",
-            "output": "bat bat bat\ncat cat cat\nlisten\nrat rat\ntan\ntea"
+            "input": "tea cat silent silent tea art bat eat tan listen tea",
+            "output": "art\nbat\ncat\neat tea tea tea\nlisten silent silent\ntan"
         },
         {
-            "input": "eat tea tan tea rat silent tan",
-            "output": "eat tea tea\nrat\nsilent\ntan tan"
+            "input": "bat silent nat art bat tan tan eat tan tea rat eat",
+            "output": "art rat\nbat bat\neat eat tea\nnat tan tan tan\nsilent"
         },
         {
-            "input": "act rat silent listen cat art act art art listen listen",
-            "output": "act act cat\nart art art rat\nlisten listen listen silent"
+            "input": "bat tea silent act act ate tan act silent nat silent",
+            "output": "act act act\nate tea\nbat\nnat tan\nsilent silent silent"
         },
         {
-            "input": "bat ate tan art act rat eat",
-            "output": "act\nart rat\nate eat\nbat\ntan"
+            "input": "ate bat silent bat nat listen art ate",
+            "output": "art\nate ate\nbat bat\nlisten silent\nnat"
         },
         {
-            "input": "rat eat eat eat eat art art art listen art",
-            "output": "art art art art rat\neat eat eat eat\nlisten"
+            "input": "tan nat cat art silent art",
+            "output": "art art\ncat\nnat tan\nsilent"
         },
         {
-            "input": "bat act ate nat art cat listen rat tan",
-            "output": "act cat\nart rat\nate\nbat\nlisten\nnat tan"
+            "input": "listen cat ate cat ate ate ate",
+            "output": "ate ate ate ate\ncat cat\nlisten"
         },
         {
-            "input": "bat cat silent rat eat tea act",
-            "output": "act cat\nbat\neat tea\nrat\nsilent"
+            "input": "rat nat cat nat silent cat bat ate silent ate nat cat",
+            "output": "ate ate\nbat\ncat cat cat\nnat nat nat\nrat\nsilent silent"
         },
         {
-            "input": "nat listen art tan cat act tea",
-            "output": "act cat\nart\nlisten\nnat tan\ntea"
+            "input": "art art cat cat ate art bat eat rat nat",
+            "output": "art art art rat\nate eat\nbat\ncat cat\nnat"
         },
         {
-            "input": "ate tan art rat tan silent listen",
-            "output": "art rat\nate\nlisten silent\ntan tan"
+            "input": "ate ate silent bat rat tan silent art tan",
+            "output": "art rat\nate ate\nbat\nsilent silent\ntan tan"
         },
         {
-            "input": "listen silent tea nat ate nat nat tea listen",
-            "output": "ate tea tea\nlisten listen silent\nnat nat nat"
+            "input": "ate listen tea bat eat listen bat cat cat",
+            "output": "ate eat tea\nbat bat\ncat cat\nlisten listen"
         },
         {
-            "input": "cat bat act listen act ate",
-            "output": "act act cat\nate\nbat\nlisten"
+            "input": "cat ate listen nat rat act eat nat cat",
+            "output": "act cat cat\nate eat\nlisten\nnat nat\nrat"
         },
         {
-            "input": "rat art eat tea ate art eat act nat silent",
-            "output": "act\nart art rat\nate eat eat tea\nnat\nsilent"
+            "input": "tea art listen tea ate art nat nat",
+            "output": "art art\nate tea tea\nlisten\nnat nat"
         },
         {
-            "input": "nat bat listen bat nat eat bat silent rat eat",
-            "output": "bat bat bat\neat eat\nlisten silent\nnat nat\nrat"
+            "input": "act rat art rat listen silent tan ate",
+            "output": "act\nart rat rat\nate\nlisten silent\ntan"
         },
         {
-            "input": "tea silent act eat nat cat art art ate rat rat",
-            "output": "act cat\nart art rat rat\nate eat tea\nnat\nsilent"
+            "input": "bat listen tan tan tan ate",
+            "output": "ate\nbat\nlisten\ntan tan tan"
         },
         {
-            "input": "tan ate cat tea eat silent tan eat cat",
-            "output": "ate eat eat tea\ncat cat\nsilent\ntan tan"
+            "input": "cat tea tea cat ate",
+            "output": "ate tea tea\ncat cat"
         },
         {
-            "input": "rat eat silent silent rat cat",
-            "output": "cat\neat\nrat rat\nsilent silent"
+            "input": "ate eat cat eat cat listen rat nat nat eat art",
+            "output": "art rat\nate eat eat eat\ncat cat\nlisten\nnat nat"
         },
         {
-            "input": "rat art act listen art bat eat tea art tan silent",
-            "output": "act\nart art art rat\nbat\neat tea\nlisten silent\ntan"
+            "input": "silent bat listen nat eat eat silent cat listen bat tan",
+            "output": "bat bat\ncat\neat eat\nlisten listen silent silent\nnat tan"
         },
         {
-            "input": "silent ate silent art silent",
-            "output": "art\nate\nsilent silent silent"
+            "input": "nat listen nat rat art cat act bat ate act rat rat",
+            "output": "act act cat\nart rat rat rat\nate\nbat\nlisten\nnat nat"
         },
         {
-            "input": "ate silent ate silent silent bat listen art nat",
-            "output": "art\nate ate\nbat\nlisten silent silent silent\nnat"
+            "input": "ate rat tea silent ate",
+            "output": "ate ate tea\nrat\nsilent"
         },
         {
-            "input": "art eat cat art art listen cat",
-            "output": "art art art\ncat cat\neat\nlisten"
+            "input": "act nat ate ate silent listen tea",
+            "output": "act\nate ate tea\nlisten silent\nnat"
         },
         {
-            "input": "nat eat silent eat silent art silent silent rat listen cat tan",
-            "output": "art rat\ncat\neat eat\nlisten silent silent silent silent\nnat tan"
+            "input": "tea cat nat nat bat listen",
+            "output": "bat\ncat\nlisten\nnat nat\ntea"
         },
         {
-            "input": "cat art silent rat eat",
-            "output": "art rat\ncat\neat\nsilent"
+            "input": "nat listen art listen cat act ate eat listen",
+            "output": "act cat\nart\nate eat\nlisten listen listen\nnat"
         },
         {
-            "input": "eat ate ate tea tea tan nat cat nat art cat",
-            "output": "art\nate ate eat tea tea\ncat cat\nnat nat tan"
+            "input": "eat cat art tan art",
+            "output": "art art\ncat\neat\ntan"
         },
         {
-            "input": "listen art eat act nat act cat eat rat",
-            "output": "act act cat\nart rat\neat eat\nlisten\nnat"
+            "input": "nat listen cat cat tan silent silent silent ate",
+            "output": "ate\ncat cat\nlisten silent silent silent\nnat tan"
         },
         {
-            "input": "nat tea nat nat tea ate act bat",
-            "output": "act\nate tea tea\nbat\nnat nat nat"
+            "input": "bat art tea ate cat bat bat nat tea tan",
+            "output": "art\nate tea tea\nbat bat bat\ncat\nnat tan"
         },
         {
-            "input": "listen nat silent tea cat",
-            "output": "cat\nlisten silent\nnat\ntea"
+            "input": "art rat act ate listen eat nat silent art",
+            "output": "act\nart art rat\nate eat\nlisten silent\nnat"
         },
         {
-            "input": "act silent tan eat art act tan",
-            "output": "act act\nart\neat\nsilent\ntan tan"
+            "input": "cat cat art listen listen",
+            "output": "art\ncat cat\nlisten listen"
         },
         {
-            "input": "listen listen bat ate nat nat ate",
-            "output": "ate ate\nbat\nlisten listen\nnat nat"
+            "input": "eat ate act cat rat nat",
+            "output": "act cat\nate eat\nnat\nrat"
         },
         {
-            "input": "cat ate act tan rat silent eat art tea nat ate art",
-            "output": "act cat\nart art rat\nate ate eat tea\nnat tan\nsilent"
+            "input": "silent tan act ate tea ate cat",
+            "output": "act cat\nate ate tea\nsilent\ntan"
         },
         {
-            "input": "silent listen nat ate eat eat eat silent eat",
-            "output": "ate eat eat eat eat\nlisten silent silent\nnat"
+            "input": "eat silent art silent cat tea nat ate eat rat",
+            "output": "art rat\nate eat eat tea\ncat\nnat\nsilent silent"
         },
         {
-            "input": "act ate tan eat eat tea eat bat silent art",
-            "output": "act\nart\nate eat eat eat tea\nbat\nsilent\ntan"
+            "input": "nat silent ate art art tea act act rat",
+            "output": "act act\nart art rat\nate tea\nnat\nsilent"
         },
         {
-            "input": "act silent nat cat act eat tea tan",
-            "output": "act act cat\neat tea\nnat tan\nsilent"
+            "input": "nat eat eat bat rat tan silent act cat eat bat rat",
+            "output": "act cat\nbat bat\neat eat eat\nnat tan\nrat rat\nsilent"
         },
         {
-            "input": "act tan listen bat eat eat act act rat eat act",
-            "output": "act act act act\nbat\neat eat eat\nlisten\nrat\ntan"
+            "input": "art nat rat listen tea silent tan silent art cat",
+            "output": "art art rat\ncat\nlisten silent silent\nnat tan\ntea"
         },
         {
-            "input": "ate act cat cat listen tan eat rat act",
-            "output": "act act cat cat\nate eat\nlisten\nrat\ntan"
+            "input": "act bat listen silent nat ate listen",
+            "output": "act\nate\nbat\nlisten listen silent\nnat"
         },
         {
-            "input": "tan rat nat listen ate tan cat",
-            "output": "ate\ncat\nlisten\nnat tan tan\nrat"
+            "input": "eat ate tea tea tan nat ate",
+            "output": "ate ate eat tea tea\nnat tan"
         },
         {
-            "input": "tan tan act act cat nat",
-            "output": "act act cat\nnat tan tan"
+            "input": "tan tea bat listen eat ate",
+            "output": "ate eat tea\nbat\nlisten\ntan"
         },
         {
-            "input": "tan nat tan act silent cat tea listen",
-            "output": "act cat\nlisten silent\nnat tan tan\ntea"
+            "input": "rat listen silent tan ate rat tan act tea",
+            "output": "act\nate tea\nlisten silent\nrat rat\ntan tan"
         },
         {
-            "input": "cat tan eat tan tan rat silent rat listen",
-            "output": "cat\neat\nlisten silent\nrat rat\ntan tan tan"
+            "input": "ate rat silent eat ate art art act bat",
+            "output": "act\nart art rat\nate ate eat\nbat\nsilent"
         },
         {
-            "input": "tan ate cat eat rat rat nat",
-            "output": "ate eat\ncat\nnat tan\nrat rat"
+            "input": "tea tan eat nat art listen silent cat act rat",
+            "output": "act cat\nart rat\neat tea\nlisten silent\nnat tan"
         },
         {
-            "input": "art act cat ate listen ate eat",
-            "output": "act cat\nart\nate ate eat\nlisten"
+            "input": "listen listen listen eat cat",
+            "output": "cat\neat\nlisten listen listen"
         },
         {
-            "input": "art tea tea rat eat cat bat nat listen nat tan tea",
-            "output": "art rat\nbat\ncat\neat tea tea tea\nlisten\nnat nat tan"
+            "input": "ate rat ate bat tea cat ate tea act bat cat",
+            "output": "act cat cat\nate ate ate tea tea\nbat bat\nrat"
         },
         {
-            "input": "act ate bat listen cat listen silent tea",
-            "output": "act cat\nate tea\nbat\nlisten listen silent"
+            "input": "tan act art eat tan listen art listen tan",
+            "output": "act\nart art\neat\nlisten listen\ntan tan tan"
         },
         {
-            "input": "listen art tea silent cat eat art silent eat eat bat",
-            "output": "art art\nbat\ncat\neat eat eat tea\nlisten silent silent"
+            "input": "nat act act art art cat tea tan rat act",
+            "output": "act act act cat\nart art rat\nnat tan\ntea"
         },
         {
-            "input": "act eat nat silent silent nat cat act",
-            "output": "act act cat\neat\nnat nat\nsilent silent"
+            "input": "rat art nat listen listen tan listen bat cat eat act silent",
+            "output": "act cat\nart rat\nbat\neat\nlisten listen listen silent\nnat tan"
         },
         {
-            "input": "listen silent tan listen art eat cat",
-            "output": "art\ncat\neat\nlisten listen silent\ntan"
+            "input": "act ate silent ate listen cat act eat ate act",
+            "output": "act act act cat\nate ate ate eat\nlisten silent"
         },
         {
-            "input": "cat ate art silent listen eat rat art silent",
-            "output": "art art rat\nate eat\ncat\nlisten silent silent"
+            "input": "nat tea cat listen act silent cat ate nat tan",
+            "output": "act cat cat\nate tea\nlisten silent\nnat nat tan"
         },
         {
-            "input": "tan tea act cat ate eat rat act bat silent",
-            "output": "act act cat\nate eat tea\nbat\nrat\nsilent\ntan"
+            "input": "eat listen rat tan tea",
+            "output": "eat tea\nlisten\nrat\ntan"
         },
         {
-            "input": "act art eat nat tan rat cat tan act eat tea",
-            "output": "act act cat\nart rat\neat eat tea\nnat tan tan"
+            "input": "act art tea listen silent listen cat nat bat",
+            "output": "act cat\nart\nbat\nlisten listen silent\nnat\ntea"
         },
         {
-            "input": "rat act ate bat ate silent rat act bat eat",
-            "output": "act act\nate ate eat\nbat bat\nrat rat\nsilent"
+            "input": "bat act rat bat tea bat act art listen nat",
+            "output": "act act\nart rat\nbat bat bat\nlisten\nnat\ntea"
         },
         {
-            "input": "rat nat eat cat tan art",
-            "output": "art rat\ncat\neat\nnat tan"
+            "input": "listen rat ate art listen tan tea bat nat rat bat",
+            "output": "art rat rat\nate tea\nbat bat\nlisten listen\nnat tan"
         },
         {
-            "input": "tea tea eat ate eat",
-            "output": "ate eat eat tea tea"
+            "input": "act eat listen bat eat rat cat ate art cat cat bat",
+            "output": "act cat cat cat\nart rat\nate eat eat\nbat bat\nlisten"
         },
         {
-            "input": "tan tan bat bat listen tea tea art tea ate tan",
-            "output": "art\nate tea tea tea\nbat bat\nlisten\ntan tan tan"
+            "input": "cat silent cat tan eat eat rat art act",
+            "output": "act cat cat\nart rat\neat eat\nsilent\ntan"
         },
         {
-            "input": "listen tan act ate art silent",
-            "output": "act\nart\nate\nlisten silent\ntan"
+            "input": "cat bat tea silent rat ate tan rat tan bat cat act",
+            "output": "act cat cat\nate tea\nbat bat\nrat rat\nsilent\ntan tan"
         },
         {
-            "input": "nat ate eat nat cat art rat act act",
-            "output": "act act cat\nart rat\nate eat\nnat nat"
+            "input": "ate tea rat art art",
+            "output": "art art rat\nate tea"
         },
         {
-            "input": "nat silent tea nat listen art cat silent eat cat listen",
-            "output": "art\ncat cat\neat tea\nlisten listen silent silent\nnat nat"
+            "input": "tea eat cat art nat art",
+            "output": "art art\ncat\neat tea\nnat"
         },
         {
-            "input": "act act nat bat nat tan ate art rat act",
-            "output": "act act act\nart rat\nate\nbat\nnat nat tan"
+            "input": "tea listen tan act ate eat art listen eat cat tan tea",
+            "output": "act cat\nart\nate eat eat tea tea\nlisten listen\ntan tan"
         },
         {
-            "input": "bat bat nat tea cat eat cat cat tan",
-            "output": "bat bat\ncat cat cat\neat tea\nnat tan"
+            "input": "tan listen silent art tan",
+            "output": "art\nlisten silent\ntan tan"
         },
         {
-            "input": "art eat tea eat ate cat cat ate",
-            "output": "art\nate ate eat eat tea\ncat cat"
+            "input": "act nat cat eat nat",
+            "output": "act cat\neat\nnat nat"
         },
         {
-            "input": "ate silent cat cat tan nat eat ate act",
-            "output": "act cat cat\nate ate eat\nnat tan\nsilent"
+            "input": "tea nat silent cat cat tan listen nat eat rat",
+            "output": "cat cat\neat tea\nlisten silent\nnat nat tan\nrat"
         },
         {
-            "input": "art art tea ate art tea art nat bat tea",
-            "output": "art art art art\nate tea tea tea\nbat\nnat"
+            "input": "eat art ate listen ate",
+            "output": "art\nate ate eat\nlisten"
         },
         {
-            "input": "eat art tan rat bat silent tea",
-            "output": "art rat\nbat\neat tea\nsilent\ntan"
+            "input": "rat ate cat silent listen rat silent listen ate bat cat",
+            "output": "ate ate\nbat\ncat cat\nlisten listen silent silent\nrat rat"
         },
         {
-            "input": "nat ate tan art rat ate tan rat ate nat silent",
-            "output": "art rat rat\nate ate ate\nnat nat tan tan\nsilent"
+            "input": "nat cat tea nat silent bat listen cat act listen",
+            "output": "act cat cat\nbat\nlisten listen silent\nnat nat\ntea"
         },
         {
-            "input": "cat cat art eat ate bat",
-            "output": "art\nate eat\nbat\ncat cat"
+            "input": "silent art art art rat eat eat rat",
+            "output": "art art art rat rat\neat eat\nsilent"
         },
         {
-            "input": "eat nat act tan listen art ate tan nat tea",
-            "output": "act\nart\nate eat tea\nlisten\nnat nat tan tan"
+            "input": "silent bat bat listen ate listen tea",
+            "output": "ate tea\nbat bat\nlisten listen silent"
         },
         {
-            "input": "rat rat listen eat silent act nat rat",
-            "output": "act\neat\nlisten silent\nnat\nrat rat rat"
+            "input": "cat tan eat tea art nat cat eat act cat listen rat",
+            "output": "act cat cat cat\nart rat\neat eat tea\nlisten\nnat tan"
         },
         {
-            "input": "rat rat act tea listen tan",
-            "output": "act\nlisten\nrat rat\ntan\ntea"
+            "input": "eat listen art ate cat act",
+            "output": "act cat\nart\nate eat\nlisten"
         },
         {
-            "input": "act silent cat ate listen rat eat listen act listen",
-            "output": "act act cat\nate eat\nlisten listen listen silent\nrat"
+            "input": "nat act tan nat ate ate",
+            "output": "act\nate ate\nnat nat tan"
         },
         {
-            "input": "rat silent art eat act cat eat bat bat tan cat cat",
-            "output": "act cat cat cat\nart rat\nbat bat\neat eat\nsilent\ntan"
+            "input": "art act nat listen ate bat rat",
+            "output": "act\nart rat\nate\nbat\nlisten\nnat"
         },
         {
-            "input": "bat bat listen tea nat ate cat ate art",
-            "output": "art\nate ate tea\nbat bat\ncat\nlisten\nnat"
+            "input": "silent tan tan cat nat act nat art ate",
+            "output": "act cat\nart\nate\nnat nat tan tan\nsilent"
         },
         {
-            "input": "listen eat listen tea eat tea eat nat rat cat bat",
-            "output": "bat\ncat\neat eat eat tea tea\nlisten listen\nnat\nrat"
+            "input": "nat act cat cat cat silent silent rat",
+            "output": "act cat cat cat\nnat\nrat\nsilent silent"
         },
         {
-            "input": "rat ate rat ate tea ate rat",
-            "output": "ate ate ate tea\nrat rat rat"
+            "input": "ate tea art art ate nat cat tea",
+            "output": "art art\nate ate tea tea\ncat\nnat"
         },
         {
-            "input": "listen silent rat listen act eat art tan ate",
-            "output": "act\nart rat\nate eat\nlisten listen silent\ntan"
+            "input": "tea bat eat cat bat rat ate eat art listen nat",
+            "output": "art rat\nate eat eat tea\nbat bat\ncat\nlisten\nnat"
         },
         {
-            "input": "ate act rat ate bat cat eat listen",
-            "output": "act cat\nate ate eat\nbat\nlisten\nrat"
+            "input": "cat tan bat silent tan eat silent rat act eat eat",
+            "output": "act cat\nbat\neat eat eat\nrat\nsilent silent\ntan tan"
         },
         {
-            "input": "eat listen ate cat eat ate act art",
-            "output": "act cat\nart\nate ate eat eat\nlisten"
+            "input": "silent silent art eat silent eat tea tea silent tan art bat",
+            "output": "art art\nbat\neat eat tea tea\nsilent silent silent silent\ntan"
         },
         {
-            "input": "act silent nat tan tea silent art silent",
-            "output": "act\nart\nnat tan\nsilent silent silent\ntea"
+            "input": "rat act ate tan rat bat nat rat bat eat rat eat",
+            "output": "act\nate eat eat\nbat bat\nnat tan\nrat rat rat rat"
         },
         {
-            "input": "tea listen tan tan art listen",
-            "output": "art\nlisten listen\ntan tan\ntea"
+            "input": "bat tan nat act act art tan listen rat rat tea",
+            "output": "act act\nart rat rat\nbat\nlisten\nnat tan tan\ntea"
         },
         {
-            "input": "tea silent tan cat art eat",
-            "output": "art\ncat\neat tea\nsilent\ntan"
+            "input": "act tan listen listen rat bat bat",
+            "output": "act\nbat bat\nlisten listen\nrat\ntan"
         },
         {
-            "input": "listen bat rat bat eat bat silent rat ate silent",
-            "output": "ate eat\nbat bat bat\nlisten silent silent\nrat rat"
+            "input": "silent silent rat cat cat art tan ate ate rat listen tan",
+            "output": "art rat rat\nate ate\ncat cat\nlisten silent silent\ntan tan"
         },
         {
-            "input": "cat silent act art cat eat",
-            "output": "act cat cat\nart\neat\nsilent"
+            "input": "silent art nat listen bat eat listen ate ate bat",
+            "output": "art\nate ate eat\nbat bat\nlisten listen silent\nnat"
         },
         {
-            "input": "nat tea cat silent cat tan ate tan art bat rat",
-            "output": "art rat\nate tea\nbat\ncat cat\nnat tan tan\nsilent"
+            "input": "listen cat cat tea eat",
+            "output": "cat cat\neat tea\nlisten"
         },
         {
-            "input": "ate ate listen tan art nat act nat",
-            "output": "act\nart\nate ate\nlisten\nnat nat tan"
+            "input": "rat bat silent rat eat nat cat rat tea rat nat",
+            "output": "bat\ncat\neat tea\nnat nat\nrat rat rat rat\nsilent"
         },
         {
-            "input": "cat art art eat rat",
-            "output": "art art rat\ncat\neat"
+            "input": "rat listen eat act listen act",
+            "output": "act act\neat\nlisten listen\nrat"
         },
         {
-            "input": "eat ate cat tan silent tea listen eat nat",
-            "output": "ate eat eat tea\ncat\nlisten silent\nnat tan"
+            "input": "cat tan tea ate ate silent eat silent tan bat cat ate",
+            "output": "ate ate ate eat tea\nbat\ncat cat\nsilent silent\ntan tan"
         },
         {
-            "input": "listen bat cat nat listen ate ate cat art nat act silent",
-            "output": "act cat cat\nart\nate ate\nbat\nlisten listen silent\nnat nat"
+            "input": "art bat eat ate cat art nat rat eat",
+            "output": "art art rat\nate eat eat\nbat\ncat\nnat"
         },
         {
-            "input": "bat ate rat silent listen rat listen nat",
-            "output": "ate\nbat\nlisten listen silent\nnat\nrat rat"
+            "input": "tan ate bat tea listen tea art ate bat",
+            "output": "art\nate ate tea tea\nbat bat\nlisten\ntan"
         },
         {
-            "input": "art tan ate tan art rat nat listen art listen",
-            "output": "art art art rat\nate\nlisten listen\nnat tan tan"
+            "input": "act eat tan listen bat",
+            "output": "act\nbat\neat\nlisten\ntan"
         },
         {
-            "input": "tea cat silent listen cat eat ate art act cat",
-            "output": "act cat cat cat\nart\nate eat tea\nlisten silent"
+            "input": "rat silent eat eat silent cat listen tan tea eat",
+            "output": "cat\neat eat eat tea\nlisten silent silent\nrat\ntan"
         },
         {
-            "input": "art bat bat act art nat tan tea art tan tan nat",
-            "output": "act\nart art art\nbat bat\nnat nat tan tan tan\ntea"
+            "input": "listen act ate ate ate",
+            "output": "act\nate ate ate\nlisten"
         },
         {
-            "input": "listen tea silent eat art bat tea eat listen eat",
-            "output": "art\nbat\neat eat eat tea tea\nlisten listen silent"
+            "input": "eat art cat art rat cat",
+            "output": "art art rat\ncat cat\neat"
         },
         {
-            "input": "listen tan rat listen ate bat cat act art",
-            "output": "act cat\nart rat\nate\nbat\nlisten listen\ntan"
+            "input": "ate art rat ate art tan ate silent listen art eat",
+            "output": "art art art rat\nate ate ate eat\nlisten silent\ntan"
         },
         {
-            "input": "tea nat tea act silent silent tan tea tea",
-            "output": "act\nnat tan\nsilent silent\ntea tea tea tea"
+            "input": "eat nat tan ate eat eat nat tan art eat act",
+            "output": "act\nart\nate eat eat eat eat\nnat nat tan tan"
         },
         {
-            "input": "art rat tan silent ate act art silent bat",
-            "output": "act\nart art rat\nate\nbat\nsilent silent\ntan"
+            "input": "rat rat ate bat art tan rat bat",
+            "output": "art rat rat rat\nate\nbat bat\ntan"
         },
         {
-            "input": "eat ate act bat cat ate",
-            "output": "act cat\nate ate eat\nbat"
+            "input": "art cat bat ate nat act art bat act rat eat tea",
+            "output": "act act cat\nart art rat\nate eat tea\nbat bat\nnat"
         },
         {
-            "input": "rat tan ate nat art act ate tan cat tea ate",
-            "output": "act cat\nart rat\nate ate ate tea\nnat tan tan"
+            "input": "cat ate nat cat bat ate eat eat cat nat eat",
+            "output": "ate ate eat eat eat\nbat\ncat cat cat\nnat nat"
         },
         {
-            "input": "eat ate rat ate silent silent rat nat silent tea",
-            "output": "ate ate eat tea\nnat\nrat rat\nsilent silent silent"
+            "input": "eat art act cat art ate listen tan cat ate",
+            "output": "act cat cat\nart art\nate ate eat\nlisten\ntan"
         },
         {
-            "input": "eat cat cat tan nat",
-            "output": "cat cat\neat\nnat tan"
+            "input": "ate rat cat eat tea cat bat rat ate",
+            "output": "ate ate eat tea\nbat\ncat cat\nrat rat"
         },
         {
-            "input": "ate art eat rat ate listen rat ate rat",
-            "output": "art rat rat rat\nate ate ate eat\nlisten"
+            "input": "eat silent act act art act silent ate act bat cat silent",
+            "output": "act act act act cat\nart\nate eat\nbat\nsilent silent silent"
         },
         {
-            "input": "eat bat ate nat tan art act eat act",
-            "output": "act act\nart\nate eat eat\nbat\nnat tan"
+            "input": "act tan eat eat eat",
+            "output": "act\neat eat eat\ntan"
         },
         {
-            "input": "tea ate rat nat eat tan nat rat eat tan silent nat",
-            "output": "ate eat eat tea\nnat nat nat tan tan\nrat rat\nsilent"
+            "input": "rat rat listen ate cat act",
+            "output": "act cat\nate\nlisten\nrat rat"
         },
         {
-            "input": "bat silent listen art nat",
-            "output": "art\nbat\nlisten silent\nnat"
+            "input": "rat bat eat bat listen eat rat art silent ate",
+            "output": "art rat rat\nate eat eat\nbat bat\nlisten silent"
         },
         {
-            "input": "listen act listen cat eat cat",
-            "output": "act cat cat\neat\nlisten listen"
+            "input": "act eat listen nat tan tan eat tea",
+            "output": "act\neat eat tea\nlisten\nnat tan tan"
         },
         {
-            "input": "listen ate tea tea silent ate",
-            "output": "ate ate tea tea\nlisten silent"
+            "input": "cat nat nat art listen eat",
+            "output": "art\ncat\neat\nlisten\nnat nat"
         },
         {
-            "input": "rat tea rat cat ate bat silent cat ate art cat art",
-            "output": "art art rat rat\nate ate tea\nbat\ncat cat cat\nsilent"
+            "input": "silent art act cat act silent nat",
+            "output": "act act cat\nart\nnat\nsilent silent"
         },
         {
-            "input": "listen tea nat nat silent act ate tea",
-            "output": "act\nate tea tea\nlisten silent\nnat nat"
+            "input": "eat nat cat silent silent tan listen tan art cat eat",
+            "output": "art\ncat cat\neat eat\nlisten silent silent\nnat tan tan"
         },
         {
-            "input": "art act listen nat art",
-            "output": "act\nart art\nlisten\nnat"
+            "input": "bat eat listen tea rat cat nat rat ate cat eat ate",
+            "output": "ate ate eat eat tea\nbat\ncat cat\nlisten\nnat\nrat rat"
         },
         {
-            "input": "ate silent nat silent nat nat eat",
-            "output": "ate eat\nnat nat nat\nsilent silent"
+            "input": "cat silent tea listen act eat act cat",
+            "output": "act act cat cat\neat tea\nlisten silent"
         },
         {
-            "input": "art tea bat eat art cat tea ate silent cat nat",
-            "output": "art art\nate eat tea tea\nbat\ncat cat\nnat\nsilent"
+            "input": "listen listen tea act bat",
+            "output": "act\nbat\nlisten listen\ntea"
         },
         {
-            "input": "rat tea silent nat rat act silent cat rat eat silent",
-            "output": "act cat\neat tea\nnat\nrat rat rat\nsilent silent silent"
+            "input": "rat act ate tan bat rat bat listen bat act act tea",
+            "output": "act act act\nate tea\nbat bat bat\nlisten\nrat rat\ntan"
         },
         {
-            "input": "art art tea bat silent cat tea art",
-            "output": "art art art\nbat\ncat\nsilent\ntea tea"
+            "input": "tan listen ate listen tea tea",
+            "output": "ate tea tea\nlisten listen\ntan"
         },
         {
-            "input": "silent silent nat listen cat",
-            "output": "cat\nlisten silent silent\nnat"
+            "input": "eat silent ate eat art art act bat ate",
+            "output": "act\nart art\nate ate eat eat\nbat\nsilent"
         },
         {
-            "input": "nat act ate silent tea bat",
-            "output": "act\nate tea\nbat\nnat\nsilent"
+            "input": "art eat art listen act cat",
+            "output": "act cat\nart art\neat\nlisten"
         },
         {
-            "input": "tan tea nat cat cat rat art eat nat",
-            "output": "art rat\ncat cat\neat tea\nnat nat tan"
+            "input": "ate eat ate cat nat eat listen",
+            "output": "ate ate eat eat\ncat\nlisten\nnat"
         },
         {
-            "input": "art nat nat tea tan act",
-            "output": "act\nart\nnat nat tan\ntea"
+            "input": "eat bat act eat rat",
+            "output": "act\nbat\neat eat\nrat"
         },
         {
-            "input": "bat eat tea ate art rat tan tan",
-            "output": "art rat\nate eat tea\nbat\ntan tan"
+            "input": "eat silent nat bat ate listen cat rat",
+            "output": "ate eat\nbat\ncat\nlisten silent\nnat\nrat"
         },
         {
-            "input": "tan bat listen art eat bat tan silent cat",
-            "output": "art\nbat bat\ncat\neat\nlisten silent\ntan tan"
+            "input": "cat eat ate ate bat",
+            "output": "ate ate eat\nbat\ncat"
         },
         {
-            "input": "rat ate rat bat tea art eat",
-            "output": "art rat rat\nate eat tea\nbat"
+            "input": "act eat cat tea listen eat",
+            "output": "act cat\neat eat tea\nlisten"
         },
         {
-            "input": "ate silent tan art art listen",
-            "output": "art art\nate\nlisten silent\ntan"
+            "input": "listen nat nat act act tea tan nat silent bat",
+            "output": "act act\nbat\nlisten silent\nnat nat nat tan\ntea"
         },
         {
-            "input": "cat tea bat rat act",
-            "output": "act cat\nbat\nrat\ntea"
+            "input": "cat cat ate cat tan act tea eat art",
+            "output": "act cat cat cat\nart\nate eat tea\ntan"
         },
         {
-            "input": "tea rat bat tan act tea",
-            "output": "act\nbat\nrat\ntan\ntea tea"
+            "input": "act silent act silent act",
+            "output": "act act act\nsilent silent"
         },
         {
-            "input": "art bat tan silent ate nat art cat act act art bat",
-            "output": "act act cat\nart art art\nate\nbat bat\nnat tan\nsilent"
+            "input": "listen rat ate eat rat ate tea rat",
+            "output": "ate ate eat tea\nlisten\nrat rat rat"
         },
         {
-            "input": "rat ate silent bat tea tea silent tea tea rat art art",
-            "output": "art art rat rat\nate tea tea tea tea\nbat\nsilent silent"
+            "input": "nat eat silent silent ate listen art act art",
+            "output": "act\nart art\nate eat\nlisten silent silent\nnat"
         },
         {
-            "input": "tea cat silent act listen cat art silent eat rat",
-            "output": "act cat cat\nart rat\neat tea\nlisten silent silent"
+            "input": "act cat tan eat rat cat ate ate act silent eat nat",
+            "output": "act act cat cat\nate ate eat eat\nnat tan\nrat\nsilent"
         },
         {
-            "input": "cat tea eat tan act art eat act eat",
-            "output": "act act cat\nart\neat eat eat tea\ntan"
+            "input": "nat nat ate act rat rat tea",
+            "output": "act\nate tea\nnat nat\nrat rat"
         },
         {
-            "input": "art rat cat eat ate tea",
-            "output": "art rat\nate eat tea\ncat"
+            "input": "tea rat cat rat act tea art",
+            "output": "act cat\nart rat rat\ntea tea"
         },
         {
-            "input": "rat listen eat rat listen bat listen",
-            "output": "bat\neat\nlisten listen listen\nrat rat"
+            "input": "act ate act tea nat tan act act ate",
+            "output": "act act act act\nate ate tea\nnat tan"
         },
         {
-            "input": "rat cat silent cat silent eat art art ate nat cat",
-            "output": "art art rat\nate eat\ncat cat cat\nnat\nsilent silent"
+            "input": "tan silent cat ate ate bat",
+            "output": "ate ate\nbat\ncat\nsilent\ntan"
         },
         {
-            "input": "ate nat cat bat silent act",
-            "output": "act cat\nate\nbat\nnat\nsilent"
+            "input": "nat eat nat cat act nat ate art",
+            "output": "act cat\nart\nate eat\nnat nat nat"
         },
         {
-            "input": "act cat tan rat tea listen art bat",
-            "output": "act cat\nart rat\nbat\nlisten\ntan\ntea"
+            "input": "eat silent rat listen tan",
+            "output": "eat\nlisten silent\nrat\ntan"
         },
         {
-            "input": "tea act listen art tan rat cat cat silent tea",
-            "output": "act cat cat\nart rat\nlisten silent\ntan\ntea tea"
+            "input": "ate tea ate bat bat act act rat silent",
+            "output": "act act\nate ate tea\nbat bat\nrat\nsilent"
         },
         {
-            "input": "act silent ate listen act silent nat cat listen art cat silent",
-            "output": "act act cat cat\nart\nate\nlisten listen silent silent silent\nnat"
+            "input": "nat listen listen act nat nat",
+            "output": "act\nlisten listen\nnat nat nat"
         },
         {
-            "input": "eat rat act silent rat nat listen rat tea eat",
-            "output": "act\neat eat tea\nlisten silent\nnat\nrat rat rat"
+            "input": "ate tea listen act bat art tan ate eat act",
+            "output": "act act\nart\nate ate eat tea\nbat\nlisten\ntan"
         },
         {
-            "input": "bat eat eat art ate",
-            "output": "art\nate eat eat\nbat"
+            "input": "rat eat eat tan nat ate bat bat",
+            "output": "ate eat eat\nbat bat\nnat tan\nrat"
         },
         {
-            "input": "bat cat tea act tea silent cat bat tan",
-            "output": "act cat cat\nbat bat\nsilent\ntan\ntea tea"
+            "input": "tea tan ate tan art",
+            "output": "art\nate tea\ntan tan"
         },
         {
-            "input": "cat art tea nat cat ate",
-            "output": "art\nate tea\ncat cat\nnat"
+            "input": "silent eat bat art tea cat act",
+            "output": "act cat\nart\nbat\neat tea\nsilent"
         },
         {
-            "input": "cat tan cat listen rat",
-            "output": "cat cat\nlisten\nrat\ntan"
+            "input": "rat act listen rat cat nat nat eat cat act",
+            "output": "act act cat cat\neat\nlisten\nnat nat\nrat rat"
         },
         {
-            "input": "eat bat tea tea tan rat cat ate",
-            "output": "ate eat tea tea\nbat\ncat\nrat\ntan"
+            "input": "tan listen art bat bat bat ate act ate eat",
+            "output": "act\nart\nate ate eat\nbat bat bat\nlisten\ntan"
         },
         {
-            "input": "act ate nat ate eat rat rat rat rat cat",
-            "output": "act cat\nate ate eat\nnat\nrat rat rat rat"
+            "input": "cat nat art silent eat tan listen eat cat",
+            "output": "art\ncat cat\neat eat\nlisten silent\nnat tan"
         },
         {
-            "input": "tea tea nat nat tan rat",
-            "output": "nat nat tan\nrat\ntea tea"
+            "input": "tea tan nat tan cat",
+            "output": "cat\nnat tan tan\ntea"
         },
         {
-            "input": "silent silent tan ate eat silent listen act silent",
-            "output": "act\nate eat\nlisten silent silent silent silent\ntan"
+            "input": "rat act tan tea art act act ate",
+            "output": "act act act\nart rat\nate tea\ntan"
         },
         {
-            "input": "nat tan listen art tea bat",
-            "output": "art\nbat\nlisten\nnat tan\ntea"
+            "input": "tan tea rat art eat eat",
+            "output": "art rat\neat eat tea\ntan"
         },
         {
-            "input": "rat act nat tea silent listen",
-            "output": "act\nlisten silent\nnat\nrat\ntea"
+            "input": "tea cat cat tea act art",
+            "output": "act cat cat\nart\ntea tea"
         },
         {
-            "input": "tan bat bat tea eat",
-            "output": "bat bat\neat tea\ntan"
+            "input": "eat bat cat tan ate tea",
+            "output": "ate eat tea\nbat\ncat\ntan"
         },
         {
-            "input": "art act silent rat cat",
-            "output": "act cat\nart rat\nsilent"
+            "input": "nat nat tea nat eat act nat eat cat listen act",
+            "output": "act act cat\neat eat tea\nlisten\nnat nat nat nat"
         },
         {
-            "input": "bat bat cat tea eat listen bat tea nat eat",
-            "output": "bat bat bat\ncat\neat eat tea tea\nlisten\nnat"
+            "input": "nat rat art rat cat listen act",
+            "output": "act cat\nart rat rat\nlisten\nnat"
         },
         {
-            "input": "act tan listen bat tan silent ate",
-            "output": "act\nate\nbat\nlisten silent\ntan tan"
-        },
-        {
-            "input": "listen nat silent act act nat ate nat ate nat",
-            "output": "act act\nate ate\nlisten silent\nnat nat nat nat"
-        },
-        {
-            "input": "cat ate silent tan tea bat",
-            "output": "ate tea\nbat\ncat\nsilent\ntan"
-        },
-        {
-            "input": "act tan cat art art tea nat tan listen bat",
-            "output": "act cat\nart art\nbat\nlisten\nnat tan tan\ntea"
-        },
-        {
-            "input": "cat art tea tan bat nat ate act listen cat ate",
-            "output": "act cat cat\nart\nate ate tea\nbat\nlisten\nnat tan"
-        },
-        {
-            "input": "act eat listen nat rat bat listen silent",
-            "output": "act\nbat\neat\nlisten listen silent\nnat\nrat"
-        },
-        {
-            "input": "tea ate cat nat eat cat silent act act",
-            "output": "act act cat cat\nate eat tea\nnat\nsilent"
-        },
-        {
-            "input": "tan nat bat rat cat tan tea nat rat",
-            "output": "bat\ncat\nnat nat tan tan\nrat rat\ntea"
-        },
-        {
-            "input": "art tea ate bat art silent nat nat listen",
-            "output": "art art\nate tea\nbat\nlisten silent\nnat nat"
-        },
-        {
-            "input": "tea tea tan tea listen ate rat nat",
-            "output": "ate tea tea tea\nlisten\nnat tan\nrat"
-        },
-        {
-            "input": "art tan art ate eat silent",
-            "output": "art art\nate eat\nsilent\ntan"
-        },
-        {
-            "input": "eat tea bat silent act rat cat bat silent eat cat bat",
-            "output": "act cat cat\nbat bat bat\neat eat tea\nrat\nsilent silent"
-        },
-        {
-            "input": "nat silent bat tea rat listen ate listen ate cat silent tea",
-            "output": "ate ate tea tea\nbat\ncat\nlisten listen silent silent\nnat\nrat"
-        },
-        {
-            "input": "rat listen tan tea rat bat silent art cat rat ate",
-            "output": "art rat rat rat\nate tea\nbat\ncat\nlisten silent\ntan"
-        },
-        {
-            "input": "cat nat tan ate tan act silent bat act",
-            "output": "act act cat\nate\nbat\nnat tan tan\nsilent"
-        },
-        {
-            "input": "listen tan ate listen nat nat tea",
-            "output": "ate tea\nlisten listen\nnat nat tan"
-        },
-        {
-            "input": "ate cat eat eat rat tan act nat ate cat tan ate",
-            "output": "act cat cat\nate ate ate eat eat\nnat tan tan\nrat"
-        },
-        {
-            "input": "silent art cat listen tan cat",
-            "output": "art\ncat cat\nlisten silent\ntan"
-        },
-        {
-            "input": "tan art act act nat ate eat act act",
-            "output": "act act act act\nart\nate eat\nnat tan"
-        },
-        {
-            "input": "art listen listen art rat",
-            "output": "art art rat\nlisten listen"
-        },
-        {
-            "input": "listen tan nat ate cat listen ate ate tea silent art",
-            "output": "art\nate ate ate tea\ncat\nlisten listen silent\nnat tan"
-        },
-        {
-            "input": "rat act silent silent nat silent cat rat",
-            "output": "act cat\nnat\nrat rat\nsilent silent silent"
-        },
-        {
-            "input": "bat act tan eat ate ate nat ate",
-            "output": "act\nate ate ate eat\nbat\nnat tan"
-        },
-        {
-            "input": "act ate act eat nat listen cat nat listen nat act eat",
-            "output": "act act act cat\nate eat eat\nlisten listen\nnat nat nat"
-        },
-        {
-            "input": "ate cat rat act eat act bat cat",
-            "output": "act act cat cat\nate eat\nbat\nrat"
-        },
-        {
-            "input": "tan listen eat bat cat",
-            "output": "bat\ncat\neat\nlisten\ntan"
-        },
-        {
-            "input": "eat rat cat ate cat art rat art listen cat",
-            "output": "art art rat rat\nate eat\ncat cat cat\nlisten"
-        },
-        {
-            "input": "act cat tea tea bat art tea eat listen eat",
-            "output": "act cat\nart\nbat\neat eat tea tea tea\nlisten"
-        },
-        {
-            "input": "silent cat nat silent silent ate cat art rat tea",
-            "output": "art rat\nate tea\ncat cat\nnat\nsilent silent silent"
-        },
-        {
-            "input": "listen eat listen eat silent ate art tea cat ate eat tea",
-            "output": "art\nate ate eat eat eat tea tea\ncat\nlisten listen silent"
-        },
-        {
-            "input": "silent tan rat cat listen nat tan rat rat",
-            "output": "cat\nlisten silent\nnat tan tan\nrat rat rat"
-        },
-        {
-            "input": "cat listen tea eat listen",
-            "output": "cat\neat tea\nlisten listen"
-        },
-        {
-            "input": "bat tea nat eat ate tea tan art cat listen",
-            "output": "art\nate eat tea tea\nbat\ncat\nlisten\nnat tan"
-        },
-        {
-            "input": "act ate silent nat listen cat rat ate ate tan silent",
-            "output": "act cat\nate ate ate\nlisten silent silent\nnat tan\nrat"
-        },
-        {
-            "input": "art bat nat ate silent ate bat ate bat nat",
-            "output": "art\nate ate ate\nbat bat bat\nnat nat\nsilent"
-        },
-        {
-            "input": "rat eat eat tan eat",
-            "output": "eat eat eat\nrat\ntan"
-        },
-        {
-            "input": "listen listen tea cat ate act nat nat ate silent nat bat",
-            "output": "act cat\nate ate tea\nbat\nlisten listen silent\nnat nat nat"
-        },
-        {
-            "input": "act art rat rat cat act",
-            "output": "act act cat\nart rat rat"
-        },
-        {
-            "input": "bat silent listen cat listen",
-            "output": "bat\ncat\nlisten listen silent"
-        },
-        {
-            "input": "eat art tea cat art ate listen bat listen bat nat",
-            "output": "art art\nate eat tea\nbat bat\ncat\nlisten listen\nnat"
-        },
-        {
-            "input": "cat nat ate listen silent nat ate ate eat rat tea",
-            "output": "ate ate ate eat tea\ncat\nlisten silent\nnat nat\nrat"
-        },
-        {
-            "input": "silent ate ate tan cat rat art eat cat silent",
-            "output": "art rat\nate ate eat\ncat cat\nsilent silent\ntan"
-        },
-        {
-            "input": "tea listen cat tan cat silent ate listen act tea bat act",
-            "output": "act act cat cat\nate tea tea\nbat\nlisten listen silent\ntan"
-        },
-        {
-            "input": "silent silent cat tan listen bat listen ate nat listen",
-            "output": "ate\nbat\ncat\nlisten listen listen silent silent\nnat tan"
-        },
-        {
-            "input": "listen silent eat listen bat tea tea tan silent cat",
-            "output": "bat\ncat\neat tea tea\nlisten listen silent silent\ntan"
-        },
-        {
-            "input": "tea tan tea rat tea rat eat tan rat eat",
-            "output": "eat eat tea tea tea\nrat rat rat\ntan tan"
-        },
-        {
-            "input": "act ate eat cat silent eat art tea eat listen rat nat",
-            "output": "act cat\nart rat\nate eat eat eat tea\nlisten silent\nnat"
-        },
-        {
-            "input": "rat tan listen tea bat",
-            "output": "bat\nlisten\nrat\ntan\ntea"
-        },
-        {
-            "input": "cat cat tea listen listen cat tan bat tea bat",
-            "output": "bat bat\ncat cat cat\nlisten listen\ntan\ntea tea"
-        },
-        {
-            "input": "listen act cat tea rat tan",
-            "output": "act cat\nlisten\nrat\ntan\ntea"
-        },
-        {
-            "input": "eat cat tea tan nat tan bat cat ate tea act silent",
-            "output": "act cat cat\nate eat tea tea\nbat\nnat tan tan\nsilent"
-        },
-        {
-            "input": "tan tan act listen eat nat art silent tan silent",
-            "output": "act\nart\neat\nlisten silent silent\nnat tan tan tan"
-        },
-        {
-            "input": "ate tan silent bat act listen tan ate cat bat listen",
-            "output": "act cat\nate ate\nbat bat\nlisten listen silent\ntan tan"
-        },
-        {
-            "input": "tan silent nat tea rat tea ate",
-            "output": "ate tea tea\nnat tan\nrat\nsilent"
-        },
-        {
-            "input": "tea listen bat listen tea eat rat eat eat",
-            "output": "bat\neat eat eat tea tea\nlisten listen\nrat"
-        },
-        {
-            "input": "bat listen silent art art art silent cat ate tea",
-            "output": "art art art\nate tea\nbat\ncat\nlisten silent silent"
-        },
-        {
-            "input": "listen listen tan silent bat bat tea bat",
-            "output": "bat bat bat\nlisten listen silent\ntan\ntea"
-        },
-        {
-            "input": "bat tan rat ate eat",
-            "output": "ate eat\nbat\nrat\ntan"
-        },
-        {
-            "input": "nat tea bat bat eat ate bat tea cat tan tea",
-            "output": "ate eat tea tea tea\nbat bat bat\ncat\nnat tan"
-        },
-        {
-            "input": "cat rat art nat nat rat silent",
-            "output": "art rat rat\ncat\nnat nat\nsilent"
-        },
-        {
-            "input": "bat tea cat tan nat tan rat",
-            "output": "bat\ncat\nnat tan tan\nrat\ntea"
-        },
-        {
-            "input": "cat tea silent nat nat nat",
-            "output": "cat\nnat nat nat\nsilent\ntea"
-        },
-        {
-            "input": "tea rat tea tan nat act art cat listen cat act rat",
-            "output": "act act cat cat\nart rat rat\nlisten\nnat tan\ntea tea"
-        },
-        {
-            "input": "eat listen cat bat nat",
-            "output": "bat\ncat\neat\nlisten\nnat"
-        },
-        {
-            "input": "tan ate cat tan bat rat act",
-            "output": "act cat\nate\nbat\nrat\ntan tan"
-        },
-        {
-            "input": "rat silent tea art silent bat rat act eat ate",
-            "output": "act\nart rat rat\nate eat tea\nbat\nsilent silent"
-        },
-        {
-            "input": "nat listen art eat tan bat eat",
-            "output": "art\nbat\neat eat\nlisten\nnat tan"
-        },
-        {
-            "input": "rat nat act eat act ate cat silent",
-            "output": "act act cat\nate eat\nnat\nrat\nsilent"
-        },
-        {
-            "input": "eat nat art art ate listen",
-            "output": "art art\nate eat\nlisten\nnat"
-        },
-        {
-            "input": "rat art tea listen tan listen ate bat eat ate",
-            "output": "art rat\nate ate eat tea\nbat\nlisten listen\ntan"
-        },
-        {
-            "input": "rat listen nat act act cat nat bat ate art",
-            "output": "act act cat\nart rat\nate\nbat\nlisten\nnat nat"
-        },
-        {
-            "input": "bat tan tan nat cat",
-            "output": "bat\ncat\nnat tan tan"
-        },
-        {
-            "input": "eat cat tea eat tan art",
-            "output": "art\ncat\neat eat tea\ntan"
-        },
-        {
-            "input": "eat bat art tan rat silent tan tea",
-            "output": "art rat\nbat\neat tea\nsilent\ntan tan"
-        },
-        {
-            "input": "art eat bat ate bat cat bat",
-            "output": "art\nate eat\nbat bat bat\ncat"
-        },
-        {
-            "input": "silent tan tea silent art eat",
-            "output": "art\neat tea\nsilent silent\ntan"
-        },
-        {
-            "input": "eat eat silent listen ate act nat",
-            "output": "act\nate eat eat\nlisten silent\nnat"
-        },
-        {
-            "input": "silent eat listen eat nat nat listen",
-            "output": "eat eat\nlisten listen silent\nnat nat"
-        },
-        {
-            "input": "eat eat nat tan ate rat tea art cat nat cat",
-            "output": "art rat\nate eat eat tea\ncat cat\nnat nat tan"
-        },
-        {
-            "input": "silent silent ate listen cat ate ate act eat rat art art",
-            "output": "act cat\nart art rat\nate ate ate eat\nlisten silent silent"
-        },
-        {
-            "input": "tan ate rat rat listen listen eat listen eat tan eat silent",
-            "output": "ate eat eat eat\nlisten listen listen silent\nrat rat\ntan tan"
-        },
-        {
-            "input": "tea silent silent nat silent rat tea act tan tan tea",
-            "output": "act\nnat tan tan\nrat\nsilent silent silent\ntea tea tea"
-        },
-        {
-            "input": "tan rat eat act bat rat listen tea cat art rat",
-            "output": "act cat\nart rat rat rat\nbat\neat tea\nlisten\ntan"
-        },
-        {
-            "input": "ate ate art rat tan cat eat eat art nat",
-            "output": "art art rat\nate ate eat eat\ncat\nnat tan"
-        },
-        {
-            "input": "tea nat listen tan bat rat tea art tea ate listen",
-            "output": "art rat\nate tea tea tea\nbat\nlisten listen\nnat tan"
-        },
-        {
-            "input": "nat art ate tan tea nat nat nat act cat",
-            "output": "act cat\nart\nate tea\nnat nat nat nat tan"
-        },
-        {
-            "input": "tea tea cat silent listen ate tan art bat tea nat",
-            "output": "art\nate tea tea tea\nbat\ncat\nlisten silent\nnat tan"
-        },
-        {
-            "input": "art art silent tea tan",
-            "output": "art art\nsilent\ntan\ntea"
-        },
-        {
-            "input": "eat act eat tea silent tea art bat eat tea listen silent",
-            "output": "act\nart\nbat\neat eat eat tea tea tea\nlisten silent silent"
-        },
-        {
-            "input": "tan tea rat tea ate act tea ate cat nat rat",
-            "output": "act cat\nate ate tea tea tea\nnat tan\nrat rat"
-        },
-        {
-            "input": "act silent art ate act tan",
-            "output": "act act\nart\nate\nsilent\ntan"
-        },
-        {
-            "input": "nat act silent bat cat",
-            "output": "act cat\nbat\nnat\nsilent"
-        },
-        {
-            "input": "tea art ate act tea silent rat",
-            "output": "act\nart rat\nate tea tea\nsilent"
-        },
-        {
-            "input": "eat listen cat tan silent listen rat act nat act ate",
-            "output": "act act cat\nate eat\nlisten listen silent\nnat tan\nrat"
-        },
-        {
-            "input": "nat nat act silent tea",
-            "output": "act\nnat nat\nsilent\ntea"
-        },
-        {
-            "input": "cat bat bat listen silent tan rat art",
-            "output": "art rat\nbat bat\ncat\nlisten silent\ntan"
-        },
-        {
-            "input": "rat silent silent tea eat tea",
-            "output": "eat tea tea\nrat\nsilent silent"
-        },
-        {
-            "input": "tan tan art silent eat rat ate",
-            "output": "art rat\nate eat\nsilent\ntan tan"
-        },
-        {
-            "input": "rat tan eat tan tea ate cat art rat bat",
-            "output": "art rat rat\nate eat tea\nbat\ncat\ntan tan"
-        },
-        {
-            "input": "rat silent rat eat silent tan ate tea rat",
-            "output": "ate eat tea\nrat rat rat\nsilent silent\ntan"
-        },
-        {
-            "input": "tea silent listen art act",
-            "output": "act\nart\nlisten silent\ntea"
-        },
-        {
-            "input": "tan bat act eat ate art ate rat cat rat",
-            "output": "act cat\nart rat rat\nate ate eat\nbat\ntan"
-        },
-        {
-            "input": "art silent bat silent tea tan eat silent eat",
-            "output": "art\nbat\neat eat tea\nsilent silent silent\ntan"
-        },
-        {
-            "input": "tea eat rat cat bat tea eat bat tea",
-            "output": "bat bat\ncat\neat eat tea tea tea\nrat"
-        },
-        {
-            "input": "eat rat bat tan silent tan act tea act nat",
-            "output": "act act\nbat\neat tea\nnat tan tan\nrat\nsilent"
-        },
-        {
-            "input": "eat eat eat listen act tan bat",
-            "output": "act\nbat\neat eat eat\nlisten\ntan"
-        },
-        {
-            "input": "eat nat silent bat act act",
-            "output": "act act\nbat\neat\nnat\nsilent"
-        },
-        {
-            "input": "eat silent silent cat tan ate bat nat",
-            "output": "ate eat\nbat\ncat\nnat tan\nsilent silent"
-        },
-        {
-            "input": "art silent eat cat cat cat",
-            "output": "art\ncat cat cat\neat\nsilent"
-        },
-        {
-            "input": "bat listen act eat rat nat bat ate art listen tan tan",
-            "output": "act\nart rat\nate eat\nbat bat\nlisten listen\nnat tan tan"
-        },
-        {
-            "input": "act ate listen rat bat listen bat",
-            "output": "act\nate\nbat bat\nlisten listen\nrat"
-        },
-        {
-            "input": "rat cat tan eat listen tan silent",
-            "output": "cat\neat\nlisten silent\nrat\ntan tan"
-        },
-        {
-            "input": "listen tan eat listen bat eat listen cat tea rat rat bat",
-            "output": "bat bat\ncat\neat eat tea\nlisten listen listen\nrat rat\ntan"
-        },
-        {
-            "input": "eat act nat cat eat cat",
-            "output": "act cat cat\neat eat\nnat"
-        },
-        {
-            "input": "silent cat rat tea cat cat",
-            "output": "cat cat cat\nrat\nsilent\ntea"
-        },
-        {
-            "input": "silent listen ate ate tan",
-            "output": "ate ate\nlisten silent\ntan"
-        },
-        {
-            "input": "nat art tan nat rat cat cat cat silent act ate",
-            "output": "act cat cat cat\nart rat\nate\nnat nat tan\nsilent"
-        },
-        {
-            "input": "silent bat art rat art eat tea",
-            "output": "art art rat\nbat\neat tea\nsilent"
-        },
-        {
-            "input": "ate tan bat eat tan art act tea art nat tea eat",
-            "output": "act\nart art\nate eat eat tea tea\nbat\nnat tan tan"
-        },
-        {
-            "input": "nat silent eat tan art art listen bat ate ate bat nat",
-            "output": "art art\nate ate eat\nbat bat\nlisten silent\nnat nat tan"
-        },
-        {
-            "input": "listen listen art cat silent silent act tea act listen silent rat",
-            "output": "act act cat\nart rat\nlisten listen listen silent silent silent\ntea"
-        },
-        {
-            "input": "act silent rat bat listen",
-            "output": "act\nbat\nlisten silent\nrat"
-        },
-        {
-            "input": "tea listen silent nat cat tan art tan",
-            "output": "art\ncat\nlisten silent\nnat tan tan\ntea"
-        },
-        {
-            "input": "act act cat listen bat",
-            "output": "act act cat\nbat\nlisten"
-        },
-        {
-            "input": "cat silent cat act tan tan",
-            "output": "act cat cat\nsilent\ntan tan"
-        },
-        {
-            "input": "bat tan nat tan bat bat art art bat act act tea",
-            "output": "act act\nart art\nbat bat bat bat\nnat tan tan\ntea"
-        },
-        {
-            "input": "silent act cat rat art bat",
-            "output": "act cat\nart rat\nbat\nsilent"
-        },
-        {
-            "input": "tea act rat bat listen",
-            "output": "act\nbat\nlisten\nrat\ntea"
-        },
-        {
-            "input": "bat ate ate listen bat nat art act eat nat tea act",
-            "output": "act act\nart\nate ate eat tea\nbat bat\nlisten\nnat nat"
-        },
-        {
-            "input": "tan ate act tan tan nat listen tan tea act tea",
-            "output": "act act\nate tea tea\nlisten\nnat tan tan tan tan"
-        },
-        {
-            "input": "rat bat tea eat tan art ate tan eat listen",
-            "output": "art rat\nate eat eat tea\nbat\nlisten\ntan tan"
-        },
-        {
-            "input": "art listen rat act bat silent eat eat ate",
-            "output": "act\nart rat\nate eat eat\nbat\nlisten silent"
-        },
-        {
-            "input": "ate nat art tea ate",
-            "output": "art\nate ate tea\nnat"
-        },
-        {
-            "input": "ate rat silent cat ate",
-            "output": "ate ate\ncat\nrat\nsilent"
-        },
-        {
-            "input": "ate tan silent ate cat act tea tea act",
-            "output": "act act cat\nate ate tea tea\nsilent\ntan"
+            "input": "silent art art cat listen ate listen eat eat",
+            "output": "art art\nate eat eat\ncat\nlisten listen silent"
         }
     ],
     "difficulty": "medium"

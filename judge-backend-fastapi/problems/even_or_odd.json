@@ -21,2003 +21,643 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "42103",
+            "input": "99493",
             "output": "Odd"
         },
         {
-            "input": "68169",
-            "output": "Odd"
-        },
-        {
-            "input": "14247",
-            "output": "Odd"
-        },
-        {
-            "input": "76806",
-            "output": "Even"
-        },
-        {
-            "input": "75736",
-            "output": "Even"
-        },
-        {
-            "input": "29098",
-            "output": "Even"
-        },
-        {
-            "input": "54742",
-            "output": "Even"
-        },
-        {
-            "input": "638",
-            "output": "Even"
-        },
-        {
-            "input": "71753",
-            "output": "Odd"
-        },
-        {
-            "input": "51799",
-            "output": "Odd"
-        },
-        {
-            "input": "11517",
-            "output": "Odd"
-        },
-        {
-            "input": "294",
-            "output": "Even"
-        },
-        {
-            "input": "5452",
-            "output": "Even"
-        },
-        {
-            "input": "12882",
-            "output": "Even"
-        },
-        {
-            "input": "37723",
-            "output": "Odd"
-        },
-        {
-            "input": "79867",
-            "output": "Odd"
-        },
-        {
-            "input": "87274",
-            "output": "Even"
-        },
-        {
-            "input": "35172",
-            "output": "Even"
-        },
-        {
-            "input": "66860",
-            "output": "Even"
-        },
-        {
-            "input": "61530",
-            "output": "Even"
-        },
-        {
-            "input": "74763",
-            "output": "Odd"
-        },
-        {
-            "input": "9181",
-            "output": "Odd"
-        },
-        {
-            "input": "21860",
-            "output": "Even"
-        },
-        {
-            "input": "83884",
-            "output": "Even"
-        },
-        {
-            "input": "464",
-            "output": "Even"
-        },
-        {
-            "input": "68910",
-            "output": "Even"
-        },
-        {
-            "input": "59929",
-            "output": "Odd"
-        },
-        {
-            "input": "16429",
-            "output": "Odd"
-        },
-        {
-            "input": "58516",
-            "output": "Even"
-        },
-        {
-            "input": "21403",
-            "output": "Odd"
-        },
-        {
-            "input": "45168",
-            "output": "Even"
-        },
-        {
-            "input": "58670",
-            "output": "Even"
-        },
-        {
-            "input": "29791",
-            "output": "Odd"
-        },
-        {
-            "input": "62792",
-            "output": "Even"
-        },
-        {
-            "input": "32513",
-            "output": "Odd"
-        },
-        {
-            "input": "25978",
-            "output": "Even"
-        },
-        {
-            "input": "95529",
-            "output": "Odd"
-        },
-        {
-            "input": "95895",
-            "output": "Odd"
-        },
-        {
-            "input": "14841",
-            "output": "Odd"
-        },
-        {
-            "input": "72050",
-            "output": "Even"
-        },
-        {
-            "input": "86801",
-            "output": "Odd"
-        },
-        {
-            "input": "79319",
-            "output": "Odd"
-        },
-        {
-            "input": "48895",
-            "output": "Odd"
-        },
-        {
-            "input": "84756",
-            "output": "Even"
-        },
-        {
-            "input": "88333",
-            "output": "Odd"
-        },
-        {
-            "input": "49782",
-            "output": "Even"
-        },
-        {
-            "input": "17947",
-            "output": "Odd"
-        },
-        {
-            "input": "88943",
-            "output": "Odd"
-        },
-        {
-            "input": "21888",
-            "output": "Even"
-        },
-        {
-            "input": "44483",
-            "output": "Odd"
-        },
-        {
-            "input": "79361",
-            "output": "Odd"
-        },
-        {
-            "input": "42659",
-            "output": "Odd"
-        },
-        {
-            "input": "79727",
-            "output": "Odd"
-        },
-        {
-            "input": "19294",
-            "output": "Even"
-        },
-        {
-            "input": "48719",
-            "output": "Odd"
-        },
-        {
-            "input": "11001",
-            "output": "Odd"
-        },
-        {
-            "input": "48108",
-            "output": "Even"
-        },
-        {
-            "input": "98913",
-            "output": "Odd"
-        },
-        {
-            "input": "11786",
-            "output": "Even"
-        },
-        {
-            "input": "7136",
-            "output": "Even"
-        },
-        {
-            "input": "14936",
-            "output": "Even"
-        },
-        {
-            "input": "86514",
-            "output": "Even"
-        },
-        {
-            "input": "73884",
-            "output": "Even"
-        },
-        {
-            "input": "24385",
-            "output": "Odd"
-        },
-        {
-            "input": "90494",
-            "output": "Even"
-        },
-        {
-            "input": "58823",
-            "output": "Odd"
-        },
-        {
-            "input": "59716",
-            "output": "Even"
-        },
-        {
-            "input": "90026",
-            "output": "Even"
-        },
-        {
-            "input": "26830",
-            "output": "Even"
-        },
-        {
-            "input": "29045",
-            "output": "Odd"
-        },
-        {
-            "input": "64566",
-            "output": "Even"
-        },
-        {
-            "input": "94558",
-            "output": "Even"
-        },
-        {
-            "input": "62765",
-            "output": "Odd"
-        },
-        {
-            "input": "70804",
-            "output": "Even"
-        },
-        {
-            "input": "8744",
-            "output": "Even"
-        },
-        {
-            "input": "45940",
-            "output": "Even"
-        },
-        {
-            "input": "26694",
-            "output": "Even"
-        },
-        {
-            "input": "87245",
-            "output": "Odd"
-        },
-        {
-            "input": "91071",
-            "output": "Odd"
-        },
-        {
-            "input": "49306",
-            "output": "Even"
-        },
-        {
-            "input": "62156",
-            "output": "Even"
-        },
-        {
-            "input": "39002",
-            "output": "Even"
-        },
-        {
-            "input": "46015",
-            "output": "Odd"
-        },
-        {
-            "input": "84917",
-            "output": "Odd"
-        },
-        {
-            "input": "17993",
-            "output": "Odd"
-        },
-        {
-            "input": "26020",
-            "output": "Even"
-        },
-        {
-            "input": "95363",
-            "output": "Odd"
-        },
-        {
-            "input": "48995",
-            "output": "Odd"
-        },
-        {
-            "input": "23417",
-            "output": "Odd"
-        },
-        {
-            "input": "98777",
-            "output": "Odd"
-        },
-        {
-            "input": "84368",
-            "output": "Even"
-        },
-        {
-            "input": "76844",
-            "output": "Even"
-        },
-        {
-            "input": "82479",
-            "output": "Odd"
-        },
-        {
-            "input": "60713",
-            "output": "Odd"
-        },
-        {
-            "input": "21862",
-            "output": "Even"
-        },
-        {
-            "input": "96283",
-            "output": "Odd"
-        },
-        {
-            "input": "98831",
-            "output": "Odd"
-        },
-        {
-            "input": "7537",
-            "output": "Odd"
-        },
-        {
-            "input": "37089",
-            "output": "Odd"
-        },
-        {
-            "input": "922",
-            "output": "Even"
-        },
-        {
-            "input": "62043",
-            "output": "Odd"
-        },
-        {
-            "input": "48956",
-            "output": "Even"
-        },
-        {
-            "input": "4448",
-            "output": "Even"
-        },
-        {
-            "input": "23699",
-            "output": "Odd"
-        },
-        {
-            "input": "62337",
-            "output": "Odd"
-        },
-        {
-            "input": "45407",
-            "output": "Odd"
-        },
-        {
-            "input": "81540",
-            "output": "Even"
-        },
-        {
-            "input": "45869",
-            "output": "Odd"
-        },
-        {
-            "input": "74544",
-            "output": "Even"
-        },
-        {
-            "input": "4413",
-            "output": "Odd"
-        },
-        {
-            "input": "48743",
-            "output": "Odd"
-        },
-        {
-            "input": "59610",
-            "output": "Even"
-        },
-        {
-            "input": "53477",
-            "output": "Odd"
-        },
-        {
-            "input": "31490",
-            "output": "Even"
-        },
-        {
-            "input": "7147",
-            "output": "Odd"
-        },
-        {
-            "input": "86847",
-            "output": "Odd"
-        },
-        {
-            "input": "45446",
-            "output": "Even"
-        },
-        {
-            "input": "24325",
-            "output": "Odd"
-        },
-        {
-            "input": "93745",
-            "output": "Odd"
-        },
-        {
-            "input": "48832",
-            "output": "Even"
-        },
-        {
-            "input": "10538",
-            "output": "Even"
-        },
-        {
-            "input": "34872",
-            "output": "Even"
-        },
-        {
-            "input": "57321",
-            "output": "Odd"
-        },
-        {
-            "input": "41719",
-            "output": "Odd"
-        },
-        {
-            "input": "23654",
-            "output": "Even"
-        },
-        {
-            "input": "36216",
-            "output": "Even"
-        },
-        {
-            "input": "67616",
-            "output": "Even"
-        },
-        {
-            "input": "17323",
-            "output": "Odd"
-        },
-        {
-            "input": "71428",
-            "output": "Even"
-        },
-        {
-            "input": "46691",
-            "output": "Odd"
-        },
-        {
-            "input": "3164",
-            "output": "Even"
-        },
-        {
-            "input": "90142",
-            "output": "Even"
-        },
-        {
-            "input": "49242",
-            "output": "Even"
-        },
-        {
-            "input": "43381",
-            "output": "Odd"
-        },
-        {
-            "input": "25465",
-            "output": "Odd"
-        },
-        {
-            "input": "64323",
-            "output": "Odd"
-        },
-        {
-            "input": "86872",
-            "output": "Even"
-        },
-        {
-            "input": "63510",
-            "output": "Even"
-        },
-        {
-            "input": "99960",
-            "output": "Even"
-        },
-        {
-            "input": "83400",
-            "output": "Even"
-        },
-        {
-            "input": "21274",
-            "output": "Even"
-        },
-        {
-            "input": "29268",
-            "output": "Even"
-        },
-        {
-            "input": "73619",
-            "output": "Odd"
-        },
-        {
-            "input": "11441",
-            "output": "Odd"
-        },
-        {
-            "input": "53511",
-            "output": "Odd"
-        },
-        {
-            "input": "31218",
-            "output": "Even"
-        },
-        {
-            "input": "5849",
-            "output": "Odd"
-        },
-        {
-            "input": "16720",
-            "output": "Even"
-        },
-        {
-            "input": "7002",
-            "output": "Even"
-        },
-        {
-            "input": "70621",
-            "output": "Odd"
-        },
-        {
-            "input": "83402",
-            "output": "Even"
-        },
-        {
-            "input": "1398",
-            "output": "Even"
-        },
-        {
-            "input": "99967",
-            "output": "Odd"
-        },
-        {
-            "input": "12771",
-            "output": "Odd"
-        },
-        {
-            "input": "54345",
-            "output": "Odd"
-        },
-        {
-            "input": "35484",
-            "output": "Even"
-        },
-        {
-            "input": "82895",
-            "output": "Odd"
-        },
-        {
-            "input": "52746",
-            "output": "Even"
-        },
-        {
-            "input": "63482",
-            "output": "Even"
-        },
-        {
-            "input": "8379",
-            "output": "Odd"
-        },
-        {
-            "input": "51387",
-            "output": "Odd"
-        },
-        {
-            "input": "46583",
-            "output": "Odd"
-        },
-        {
-            "input": "96473",
-            "output": "Odd"
-        },
-        {
-            "input": "47377",
-            "output": "Odd"
-        },
-        {
-            "input": "13814",
-            "output": "Even"
-        },
-        {
-            "input": "89549",
-            "output": "Odd"
-        },
-        {
-            "input": "34466",
-            "output": "Even"
-        },
-        {
-            "input": "19637",
-            "output": "Odd"
-        },
-        {
-            "input": "59628",
-            "output": "Even"
-        },
-        {
-            "input": "51809",
-            "output": "Odd"
-        },
-        {
-            "input": "60552",
-            "output": "Even"
-        },
-        {
-            "input": "38537",
-            "output": "Odd"
-        },
-        {
-            "input": "83159",
-            "output": "Odd"
-        },
-        {
-            "input": "6726",
-            "output": "Even"
-        },
-        {
-            "input": "20464",
-            "output": "Even"
-        },
-        {
-            "input": "25023",
-            "output": "Odd"
-        },
-        {
-            "input": "75214",
-            "output": "Even"
-        },
-        {
-            "input": "96923",
-            "output": "Odd"
-        },
-        {
-            "input": "5918",
-            "output": "Even"
-        },
-        {
-            "input": "98431",
-            "output": "Odd"
-        },
-        {
-            "input": "23562",
-            "output": "Even"
-        },
-        {
-            "input": "90156",
-            "output": "Even"
-        },
-        {
-            "input": "79983",
-            "output": "Odd"
-        },
-        {
-            "input": "83108",
-            "output": "Even"
-        },
-        {
-            "input": "32140",
-            "output": "Even"
-        },
-        {
-            "input": "62555",
-            "output": "Odd"
-        },
-        {
-            "input": "82955",
-            "output": "Odd"
-        },
-        {
-            "input": "24902",
-            "output": "Even"
-        },
-        {
-            "input": "76471",
-            "output": "Odd"
-        },
-        {
-            "input": "9456",
-            "output": "Even"
-        },
-        {
-            "input": "64315",
-            "output": "Odd"
-        },
-        {
-            "input": "18917",
-            "output": "Odd"
-        },
-        {
-            "input": "31328",
-            "output": "Even"
-        },
-        {
-            "input": "80747",
-            "output": "Odd"
-        },
-        {
-            "input": "62251",
-            "output": "Odd"
-        },
-        {
-            "input": "81562",
-            "output": "Even"
-        },
-        {
-            "input": "82478",
-            "output": "Even"
-        },
-        {
-            "input": "83188",
-            "output": "Even"
-        },
-        {
-            "input": "43426",
-            "output": "Even"
-        },
-        {
-            "input": "2018",
-            "output": "Even"
-        },
-        {
-            "input": "73073",
-            "output": "Odd"
-        },
-        {
-            "input": "58538",
-            "output": "Even"
-        },
-        {
-            "input": "35266",
-            "output": "Even"
-        },
-        {
-            "input": "49253",
-            "output": "Odd"
-        },
-        {
-            "input": "11511",
-            "output": "Odd"
-        },
-        {
-            "input": "21597",
-            "output": "Odd"
-        },
-        {
-            "input": "809",
-            "output": "Odd"
-        },
-        {
-            "input": "74867",
-            "output": "Odd"
-        },
-        {
-            "input": "71579",
-            "output": "Odd"
-        },
-        {
-            "input": "15756",
-            "output": "Even"
-        },
-        {
-            "input": "62974",
-            "output": "Even"
-        },
-        {
-            "input": "19649",
-            "output": "Odd"
-        },
-        {
-            "input": "29812",
-            "output": "Even"
-        },
-        {
-            "input": "14336",
-            "output": "Even"
-        },
-        {
-            "input": "75302",
-            "output": "Even"
-        },
-        {
-            "input": "72217",
-            "output": "Odd"
-        },
-        {
-            "input": "62429",
-            "output": "Odd"
-        },
-        {
-            "input": "38866",
-            "output": "Even"
-        },
-        {
-            "input": "43646",
-            "output": "Even"
-        },
-        {
-            "input": "50598",
+            "input": "3986",
             "output": "Even"
-        },
-        {
-            "input": "19116",
-            "output": "Even"
-        },
-        {
-            "input": "94758",
-            "output": "Even"
-        },
-        {
-            "input": "41365",
-            "output": "Odd"
-        },
-        {
-            "input": "62713",
-            "output": "Odd"
-        },
-        {
-            "input": "13677",
-            "output": "Odd"
-        },
-        {
-            "input": "58656",
-            "output": "Even"
-        },
-        {
-            "input": "71854",
-            "output": "Even"
-        },
-        {
-            "input": "51978",
-            "output": "Even"
-        },
-        {
-            "input": "69113",
-            "output": "Odd"
-        },
-        {
-            "input": "12914",
-            "output": "Even"
-        },
-        {
-            "input": "78699",
-            "output": "Odd"
-        },
-        {
-            "input": "73555",
-            "output": "Odd"
-        },
-        {
-            "input": "49617",
-            "output": "Odd"
-        },
-        {
-            "input": "46765",
-            "output": "Odd"
-        },
-        {
-            "input": "50250",
-            "output": "Even"
-        },
-        {
-            "input": "19137",
-            "output": "Odd"
-        },
-        {
-            "input": "78878",
-            "output": "Even"
-        },
-        {
-            "input": "55718",
-            "output": "Even"
-        },
-        {
-            "input": "69855",
-            "output": "Odd"
-        },
-        {
-            "input": "86489",
-            "output": "Odd"
-        },
-        {
-            "input": "22987",
-            "output": "Odd"
-        },
-        {
-            "input": "7863",
-            "output": "Odd"
-        },
-        {
-            "input": "74449",
-            "output": "Odd"
-        },
-        {
-            "input": "44196",
-            "output": "Even"
-        },
-        {
-            "input": "98296",
-            "output": "Even"
-        },
-        {
-            "input": "53771",
-            "output": "Odd"
-        },
-        {
-            "input": "25107",
-            "output": "Odd"
-        },
-        {
-            "input": "84924",
-            "output": "Even"
-        },
-        {
-            "input": "53482",
-            "output": "Even"
-        },
-        {
-            "input": "31523",
-            "output": "Odd"
-        },
-        {
-            "input": "22041",
-            "output": "Odd"
-        },
-        {
-            "input": "66046",
-            "output": "Even"
-        },
-        {
-            "input": "44990",
-            "output": "Even"
-        },
-        {
-            "input": "37685",
-            "output": "Odd"
-        },
-        {
-            "input": "34755",
-            "output": "Odd"
-        },
-        {
-            "input": "28381",
-            "output": "Odd"
-        },
-        {
-            "input": "68645",
-            "output": "Odd"
-        },
-        {
-            "input": "57530",
-            "output": "Even"
-        },
-        {
-            "input": "94641",
-            "output": "Odd"
-        },
-        {
-            "input": "42296",
-            "output": "Even"
-        },
-        {
-            "input": "32525",
-            "output": "Odd"
-        },
-        {
-            "input": "21248",
-            "output": "Even"
-        },
-        {
-            "input": "94131",
-            "output": "Odd"
         },
         {
-            "input": "4963",
+            "input": "72135",
             "output": "Odd"
         },
         {
-            "input": "19597",
+            "input": "44801",
             "output": "Odd"
         },
         {
-            "input": "60417",
-            "output": "Odd"
+            "input": "79738",
+            "output": "Even"
         },
         {
-            "input": "83101",
+            "input": "97479",
             "output": "Odd"
         },
         {
-            "input": "78685",
+            "input": "94423",
             "output": "Odd"
         },
         {
-            "input": "14943",
+            "input": "55197",
             "output": "Odd"
-        },
-        {
-            "input": "41930",
-            "output": "Even"
-        },
-        {
-            "input": "72344",
-            "output": "Even"
         },
         {
-            "input": "94933",
+            "input": "22969",
             "output": "Odd"
         },
         {
-            "input": "92364",
-            "output": "Even"
-        },
-        {
-            "input": "58038",
-            "output": "Even"
-        },
-        {
-            "input": "43593",
+            "input": "32657",
             "output": "Odd"
         },
         {
-            "input": "8617",
+            "input": "94561",
             "output": "Odd"
         },
         {
-            "input": "372",
+            "input": "20046",
             "output": "Even"
         },
         {
-            "input": "6879",
-            "output": "Odd"
+            "input": "51558",
+            "output": "Even"
         },
         {
-            "input": "63714",
+            "input": "62526",
             "output": "Even"
         },
         {
-            "input": "70385",
+            "input": "74583",
             "output": "Odd"
         },
         {
-            "input": "59930",
+            "input": "48114",
             "output": "Even"
         },
         {
-            "input": "87903",
+            "input": "37777",
             "output": "Odd"
         },
         {
-            "input": "17484",
+            "input": "51662",
             "output": "Even"
         },
         {
-            "input": "25798",
+            "input": "614",
             "output": "Even"
         },
         {
-            "input": "1342",
+            "input": "49184",
             "output": "Even"
         },
         {
-            "input": "21005",
+            "input": "3189",
             "output": "Odd"
         },
         {
-            "input": "83681",
-            "output": "Odd"
+            "input": "92312",
+            "output": "Even"
         },
         {
-            "input": "94898",
+            "input": "67546",
             "output": "Even"
         },
         {
-            "input": "28547",
-            "output": "Odd"
+            "input": "29892",
+            "output": "Even"
         },
         {
-            "input": "5559",
+            "input": "57775",
             "output": "Odd"
         },
         {
-            "input": "3109",
+            "input": "3345",
             "output": "Odd"
         },
         {
-            "input": "32881",
+            "input": "83331",
             "output": "Odd"
         },
         {
-            "input": "39386",
-            "output": "Even"
-        },
-        {
-            "input": "66663",
+            "input": "9385",
             "output": "Odd"
-        },
-        {
-            "input": "72664",
-            "output": "Even"
         },
         {
-            "input": "70829",
+            "input": "32283",
             "output": "Odd"
         },
         {
-            "input": "68995",
+            "input": "97885",
             "output": "Odd"
         },
         {
-            "input": "58947",
-            "output": "Odd"
+            "input": "54126",
+            "output": "Even"
         },
         {
-            "input": "67417",
+            "input": "57275",
             "output": "Odd"
         },
         {
-            "input": "15858",
+            "input": "45974",
             "output": "Even"
         },
         {
-            "input": "44746",
+            "input": "34144",
             "output": "Even"
         },
         {
-            "input": "49912",
-            "output": "Even"
-        },
-        {
-            "input": "89933",
+            "input": "28129",
             "output": "Odd"
         },
         {
-            "input": "86624",
+            "input": "64016",
             "output": "Even"
         },
         {
-            "input": "1254",
+            "input": "97266",
             "output": "Even"
         },
         {
-            "input": "94284",
+            "input": "50088",
             "output": "Even"
         },
         {
-            "input": "98203",
+            "input": "97741",
             "output": "Odd"
         },
         {
-            "input": "60264",
+            "input": "74",
             "output": "Even"
         },
         {
-            "input": "9969",
+            "input": "83601",
             "output": "Odd"
-        },
-        {
-            "input": "56278",
-            "output": "Even"
         },
         {
-            "input": "9304",
+            "input": "90796",
             "output": "Even"
         },
         {
-            "input": "71805",
+            "input": "64711",
             "output": "Odd"
-        },
-        {
-            "input": "32970",
-            "output": "Even"
-        },
-        {
-            "input": "42432",
-            "output": "Even"
         },
         {
-            "input": "17197",
+            "input": "40987",
             "output": "Odd"
         },
         {
-            "input": "7684",
+            "input": "91068",
             "output": "Even"
         },
         {
-            "input": "15705",
+            "input": "26505",
             "output": "Odd"
         },
         {
-            "input": "36421",
+            "input": "57987",
             "output": "Odd"
         },
         {
-            "input": "33931",
+            "input": "88135",
             "output": "Odd"
         },
         {
-            "input": "34265",
-            "output": "Odd"
-        },
-        {
-            "input": "58111",
-            "output": "Odd"
-        },
-        {
-            "input": "91016",
+            "input": "97596",
             "output": "Even"
         },
         {
-            "input": "44866",
+            "input": "60024",
             "output": "Even"
-        },
-        {
-            "input": "54647",
-            "output": "Odd"
-        },
-        {
-            "input": "38517",
-            "output": "Odd"
         },
         {
-            "input": "10511",
-            "output": "Odd"
-        },
-        {
-            "input": "26450",
+            "input": "74160",
             "output": "Even"
-        },
-        {
-            "input": "84149",
-            "output": "Odd"
         },
         {
-            "input": "83196",
+            "input": "90574",
             "output": "Even"
         },
         {
-            "input": "90527",
+            "input": "98065",
             "output": "Odd"
         },
         {
-            "input": "38722",
+            "input": "246",
             "output": "Even"
         },
         {
-            "input": "10793",
-            "output": "Odd"
+            "input": "31824",
+            "output": "Even"
         },
         {
-            "input": "87523",
-            "output": "Odd"
+            "input": "67312",
+            "output": "Even"
         },
         {
-            "input": "91120",
+            "input": "7604",
             "output": "Even"
         },
         {
-            "input": "65325",
+            "input": "19857",
             "output": "Odd"
-        },
-        {
-            "input": "20742",
-            "output": "Even"
         },
         {
-            "input": "80374",
+            "input": "25674",
             "output": "Even"
         },
         {
-            "input": "84012",
+            "input": "16088",
             "output": "Even"
         },
         {
-            "input": "52906",
+            "input": "88286",
             "output": "Even"
-        },
-        {
-            "input": "87897",
-            "output": "Odd"
         },
         {
-            "input": "84436",
+            "input": "55156",
             "output": "Even"
         },
         {
-            "input": "88775",
+            "input": "44077",
             "output": "Odd"
         },
         {
-            "input": "11127",
+            "input": "71999",
             "output": "Odd"
         },
         {
-            "input": "54182",
+            "input": "80118",
             "output": "Even"
         },
         {
-            "input": "61083",
+            "input": "31829",
             "output": "Odd"
         },
         {
-            "input": "87372",
+            "input": "74516",
             "output": "Even"
         },
         {
-            "input": "41153",
+            "input": "6067",
             "output": "Odd"
         },
         {
-            "input": "27957",
+            "input": "6643",
             "output": "Odd"
         },
         {
-            "input": "45311",
+            "input": "54479",
             "output": "Odd"
-        },
-        {
-            "input": "38697",
-            "output": "Odd"
-        },
-        {
-            "input": "53900",
-            "output": "Even"
         },
         {
-            "input": "28592",
+            "input": "19550",
             "output": "Even"
         },
         {
-            "input": "35245",
+            "input": "94919",
             "output": "Odd"
-        },
-        {
-            "input": "61042",
-            "output": "Even"
-        },
-        {
-            "input": "13018",
-            "output": "Even"
         },
         {
-            "input": "94502",
+            "input": "22340",
             "output": "Even"
         },
         {
-            "input": "48900",
+            "input": "54506",
             "output": "Even"
         },
         {
-            "input": "97184",
-            "output": "Even"
-        },
-        {
-            "input": "33166",
-            "output": "Even"
-        },
-        {
-            "input": "357",
+            "input": "32549",
             "output": "Odd"
-        },
-        {
-            "input": "68422",
-            "output": "Even"
         },
         {
-            "input": "51736",
+            "input": "29824",
             "output": "Even"
         },
         {
-            "input": "86710",
+            "input": "1474",
             "output": "Even"
         },
         {
-            "input": "94997",
+            "input": "59449",
             "output": "Odd"
-        },
-        {
-            "input": "78914",
-            "output": "Even"
-        },
-        {
-            "input": "90822",
-            "output": "Even"
-        },
-        {
-            "input": "53844",
-            "output": "Even"
-        },
-        {
-            "input": "57464",
-            "output": "Even"
-        },
-        {
-            "input": "62070",
-            "output": "Even"
         },
         {
-            "input": "11935",
+            "input": "55357",
             "output": "Odd"
         },
         {
-            "input": "8715",
+            "input": "16197",
             "output": "Odd"
         },
         {
-            "input": "78002",
-            "output": "Even"
-        },
-        {
-            "input": "32783",
+            "input": "81005",
             "output": "Odd"
         },
         {
-            "input": "93856",
+            "input": "64078",
             "output": "Even"
         },
         {
-            "input": "95133",
+            "input": "82715",
             "output": "Odd"
         },
         {
-            "input": "74826",
+            "input": "40824",
             "output": "Even"
-        },
-        {
-            "input": "60391",
-            "output": "Odd"
         },
         {
-            "input": "18565",
+            "input": "37279",
             "output": "Odd"
         },
         {
-            "input": "90131",
+            "input": "47347",
             "output": "Odd"
         },
         {
-            "input": "47588",
+            "input": "13520",
             "output": "Even"
         },
         {
-            "input": "88117",
+            "input": "54105",
             "output": "Odd"
         },
         {
-            "input": "36784",
+            "input": "94812",
             "output": "Even"
-        },
-        {
-            "input": "26191",
-            "output": "Odd"
         },
         {
-            "input": "15541",
+            "input": "439",
             "output": "Odd"
         },
         {
-            "input": "20089",
+            "input": "42139",
             "output": "Odd"
         },
         {
-            "input": "22349",
+            "input": "90029",
             "output": "Odd"
         },
         {
-            "input": "59857",
+            "input": "55277",
             "output": "Odd"
         },
         {
-            "input": "25348",
+            "input": "90416",
             "output": "Even"
         },
         {
-            "input": "54894",
+            "input": "132",
             "output": "Even"
         },
         {
-            "input": "60729",
+            "input": "73901",
             "output": "Odd"
         },
         {
-            "input": "85195",
+            "input": "86361",
             "output": "Odd"
         },
         {
-            "input": "99031",
+            "input": "37709",
             "output": "Odd"
-        },
-        {
-            "input": "63564",
-            "output": "Even"
         },
         {
-            "input": "78050",
-            "output": "Even"
-        },
-        {
-            "input": "793",
+            "input": "15405",
             "output": "Odd"
-        },
-        {
-            "input": "2008",
-            "output": "Even"
         },
         {
-            "input": "23971",
+            "input": "61301",
             "output": "Odd"
-        },
-        {
-            "input": "99946",
-            "output": "Even"
         },
         {
-            "input": "48769",
+            "input": "26045",
             "output": "Odd"
         },
         {
-            "input": "78631",
+            "input": "96479",
             "output": "Odd"
         },
         {
-            "input": "33776",
+            "input": "66754",
             "output": "Even"
-        },
-        {
-            "input": "14015",
-            "output": "Odd"
         },
         {
-            "input": "72759",
+            "input": "53459",
             "output": "Odd"
         },
         {
-            "input": "68780",
+            "input": "300",
             "output": "Even"
         },
         {
-            "input": "79576",
-            "output": "Even"
-        },
-        {
-            "input": "76302",
-            "output": "Even"
-        },
-        {
-            "input": "91185",
+            "input": "92519",
             "output": "Odd"
-        },
-        {
-            "input": "85920",
-            "output": "Even"
-        },
-        {
-            "input": "1282",
-            "output": "Even"
         },
         {
-            "input": "82033",
+            "input": "14049",
             "output": "Odd"
         },
         {
-            "input": "79813",
+            "input": "67391",
             "output": "Odd"
         },
         {
-            "input": "54168",
+            "input": "27260",
             "output": "Even"
         },
         {
-            "input": "61527",
+            "input": "27153",
             "output": "Odd"
         },
         {
-            "input": "15776",
-            "output": "Even"
-        },
-        {
-            "input": "75223",
+            "input": "34919",
             "output": "Odd"
         },
         {
-            "input": "96118",
+            "input": "64014",
             "output": "Even"
-        },
-        {
-            "input": "9927",
-            "output": "Odd"
-        },
-        {
-            "input": "18277",
-            "output": "Odd"
-        },
-        {
-            "input": "46959",
-            "output": "Odd"
         },
         {
-            "input": "46397",
+            "input": "75247",
             "output": "Odd"
         },
         {
-            "input": "84464",
-            "output": "Even"
-        },
-        {
-            "input": "3950",
-            "output": "Even"
-        },
-        {
-            "input": "78725",
+            "input": "55941",
             "output": "Odd"
         },
         {
-            "input": "39300",
+            "input": "80234",
             "output": "Even"
-        },
-        {
-            "input": "33005",
-            "output": "Odd"
         },
         {
-            "input": "5464",
+            "input": "96430",
             "output": "Even"
         },
         {
-            "input": "34343",
+            "input": "3323",
             "output": "Odd"
         },
         {
-            "input": "55389",
+            "input": "95439",
             "output": "Odd"
         },
         {
-            "input": "59067",
+            "input": "72137",
             "output": "Odd"
-        },
-        {
-            "input": "30616",
-            "output": "Even"
         },
         {
-            "input": "6304",
+            "input": "93816",
             "output": "Even"
-        },
-        {
-            "input": "79650",
-            "output": "Even"
-        },
-        {
-            "input": "47659",
-            "output": "Odd"
         },
         {
-            "input": "66583",
+            "input": "27889",
             "output": "Odd"
         },
         {
-            "input": "527",
+            "input": "17519",
             "output": "Odd"
-        },
-        {
-            "input": "68178",
-            "output": "Even"
         },
         {
-            "input": "38314",
+            "input": "93274",
             "output": "Even"
-        },
-        {
-            "input": "82207",
-            "output": "Odd"
         },
         {
-            "input": "57867",
+            "input": "65657",
             "output": "Odd"
         },
         {
-            "input": "56884",
+            "input": "96690",
             "output": "Even"
         },
         {
-            "input": "53910",
+            "input": "46688",
             "output": "Even"
         },
         {
-            "input": "89638",
+            "input": "55144",
             "output": "Even"
-        },
-        {
-            "input": "27456",
-            "output": "Even"
-        },
-        {
-            "input": "63934",
-            "output": "Even"
-        },
-        {
-            "input": "5216",
-            "output": "Even"
-        },
-        {
-            "input": "90660",
-            "output": "Even"
-        },
-        {
-            "input": "43084",
-            "output": "Even"
-        },
-        {
-            "input": "91597",
-            "output": "Odd"
-        },
-        {
-            "input": "12313",
-            "output": "Odd"
         },
         {
-            "input": "16511",
+            "input": "74203",
             "output": "Odd"
         },
         {
-            "input": "53430",
+            "input": "9762",
             "output": "Even"
-        },
-        {
-            "input": "32437",
-            "output": "Odd"
         },
         {
-            "input": "46056",
+            "input": "26878",
             "output": "Even"
         },
         {
-            "input": "78610",
+            "input": "66328",
             "output": "Even"
         },
         {
-            "input": "74691",
+            "input": "58151",
             "output": "Odd"
         },
         {
-            "input": "97713",
-            "output": "Odd"
-        },
-        {
-            "input": "39590",
+            "input": "94692",
             "output": "Even"
-        },
-        {
-            "input": "58175",
-            "output": "Odd"
-        },
-        {
-            "input": "86525",
-            "output": "Odd"
-        },
-        {
-            "input": "68465",
-            "output": "Odd"
         },
         {
-            "input": "59091",
-            "output": "Odd"
-        },
-        {
-            "input": "83336",
+            "input": "47006",
             "output": "Even"
         },
         {
-            "input": "94291",
+            "input": "1269",
             "output": "Odd"
-        },
-        {
-            "input": "15258",
-            "output": "Even"
         },
         {
-            "input": "27315",
+            "input": "18585",
             "output": "Odd"
         },
         {
-            "input": "84768",
+            "input": "27762",
             "output": "Even"
-        },
-        {
-            "input": "58245",
-            "output": "Odd"
         },
         {
-            "input": "94560",
+            "input": "11580",
             "output": "Even"
-        },
-        {
-            "input": "10799",
-            "output": "Odd"
         },
         {
-            "input": "25729",
+            "input": "88387",
             "output": "Odd"
         },
         {
-            "input": "55049",
+            "input": "75103",
             "output": "Odd"
         },
         {
-            "input": "79227",
-            "output": "Odd"
+            "input": "36760",
+            "output": "Even"
         },
         {
-            "input": "24945",
+            "input": "68871",
             "output": "Odd"
-        },
-        {
-            "input": "41030",
-            "output": "Even"
         },
         {
-            "input": "54744",
+            "input": "28032",
             "output": "Even"
         },
         {
-            "input": "12904",
+            "input": "47372",
             "output": "Even"
         },
         {
-            "input": "1402",
+            "input": "52188",
             "output": "Even"
         },
         {
-            "input": "52267",
+            "input": "1167",
             "output": "Odd"
-        },
-        {
-            "input": "68934",
-            "output": "Even"
         },
         {
-            "input": "40496",
+            "input": "77430",
             "output": "Even"
         },
         {
-            "input": "85101",
+            "input": "82455",
             "output": "Odd"
         },
         {
-            "input": "88564",
-            "output": "Even"
-        },
-        {
-            "input": "52783",
+            "input": "66717",
             "output": "Odd"
         },
         {
-            "input": "72383",
-            "output": "Odd"
+            "input": "33208",
+            "output": "Even"
         },
         {
-            "input": "69191",
+            "input": "86401",
             "output": "Odd"
         },
         {
-            "input": "8301",
+            "input": "71339",
             "output": "Odd"
         },
         {
-            "input": "46994",
+            "input": "49590",
             "output": "Even"
         },
         {
-            "input": "13761",
+            "input": "11797",
             "output": "Odd"
         },
         {
-            "input": "64865",
-            "output": "Odd"
+            "input": "90358",
+            "output": "Even"
         },
         {
-            "input": "13019",
+            "input": "77019",
             "output": "Odd"
-        },
-        {
-            "input": "34430",
-            "output": "Even"
         },
         {
-            "input": "47224",
+            "input": "11776",
             "output": "Even"
         },
         {
-            "input": "51392",
+            "input": "62368",
             "output": "Even"
-        },
-        {
-            "input": "10739",
-            "output": "Odd"
-        },
-        {
-            "input": "85345",
-            "output": "Odd"
         },
         {
-            "input": "63342",
+            "input": "98060",
             "output": "Even"
-        },
-        {
-            "input": "96601",
-            "output": "Odd"
-        },
-        {
-            "input": "72601",
-            "output": "Odd"
-        },
-        {
-            "input": "16515",
-            "output": "Odd"
         },
         {
-            "input": "57181",
+            "input": "77569",
             "output": "Odd"
         }
     ],

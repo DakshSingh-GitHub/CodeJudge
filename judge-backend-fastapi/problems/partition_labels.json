@@ -17,2004 +17,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "cbeebbba",
-            "output": "1 6 1"
+            "input": "adebddcdde",
+            "output": "1 9"
         },
         {
-            "input": "eedecdbccae",
-            "output": "11"
-        },
-        {
-            "input": "cabac",
-            "output": "5"
-        },
-        {
-            "input": "adccbdcdcbeabbdaddce",
-            "output": "20"
-        },
-        {
-            "input": "bccdceebdaeebeacc",
-            "output": "17"
-        },
-        {
-            "input": "adaaaaaadbaaac",
-            "output": "13 1"
-        },
-        {
-            "input": "eddcde",
-            "output": "6"
-        },
-        {
-            "input": "adeaacbdeeaaecace",
-            "output": "17"
-        },
-        {
-            "input": "aaeacace",
-            "output": "8"
-        },
-        {
-            "input": "eaebceabd",
-            "output": "8 1"
-        },
-        {
-            "input": "dabbada",
-            "output": "7"
-        },
-        {
-            "input": "adbaabbcae",
-            "output": "9 1"
-        },
-        {
-            "input": "beeca",
-            "output": "1 2 1 1"
-        },
-        {
-            "input": "caceccce",
-            "output": "8"
-        },
-        {
-            "input": "bacccb",
-            "output": "6"
-        },
-        {
-            "input": "eeddcdadaadbabee",
-            "output": "16"
-        },
-        {
-            "input": "dedbbdbda",
-            "output": "8 1"
-        },
-        {
-            "input": "bdcbddcdaeeece",
+            "input": "aaedcbeeadbaec",
             "output": "14"
         },
         {
-            "input": "deababbcebccbda",
-            "output": "15"
-        },
-        {
-            "input": "accabcde",
-            "output": "6 1 1"
-        },
-        {
-            "input": "eddebcecbbbdaaceecdb",
-            "output": "20"
-        },
-        {
-            "input": "bbcaabceddddccacdc",
-            "output": "18"
-        },
-        {
-            "input": "ccdabcbddbbbec",
+            "input": "becdbaebbecaac",
             "output": "14"
         },
         {
-            "input": "beeedcaadeebddeba",
-            "output": "17"
+            "input": "ebbbcabcbabbbcbeccb",
+            "output": "19"
         },
         {
-            "input": "ebdecb",
-            "output": "6"
-        },
-        {
-            "input": "cddeebabaddeecdadbea",
-            "output": "20"
-        },
-        {
-            "input": "eddcbbebcddecacadcbe",
-            "output": "20"
-        },
-        {
-            "input": "ebaeabecbaeaac",
-            "output": "14"
-        },
-        {
-            "input": "cdadaecaabd",
-            "output": "11"
-        },
-        {
-            "input": "debbaddcead",
-            "output": "11"
-        },
-        {
-            "input": "deccb",
-            "output": "1 1 2 1"
-        },
-        {
-            "input": "eacbdbebbbadcceeec",
-            "output": "18"
-        },
-        {
-            "input": "eeaacedaceaaaeabc",
-            "output": "17"
-        },
-        {
-            "input": "deaba",
-            "output": "1 1 3"
-        },
-        {
-            "input": "adcbbbecdced",
-            "output": "1 11"
-        },
-        {
-            "input": "daaacdcaed",
-            "output": "10"
-        },
-        {
-            "input": "bcdeebeed",
+            "input": "caedcccdc",
             "output": "9"
         },
         {
-            "input": "abebcddcabada",
-            "output": "13"
-        },
-        {
-            "input": "aedcdcdcceabeddbecdd",
-            "output": "20"
-        },
-        {
-            "input": "eeeaddcadecbddbb",
-            "output": "16"
-        },
-        {
-            "input": "bbbdbbaba",
-            "output": "9"
-        },
-        {
-            "input": "ddaabcdcdddd",
-            "output": "12"
-        },
-        {
-            "input": "dbbdbccebcdabcc",
-            "output": "15"
-        },
-        {
-            "input": "deceecebedeedccbace",
-            "output": "19"
-        },
-        {
-            "input": "decaaecebcedcbeaebc",
-            "output": "19"
-        },
-        {
-            "input": "aedbacbeec",
-            "output": "10"
-        },
-        {
-            "input": "adebabcacadccb",
-            "output": "14"
-        },
-        {
-            "input": "bdcebdbaebadceade",
-            "output": "17"
-        },
-        {
-            "input": "ecadbbecca",
-            "output": "10"
-        },
-        {
-            "input": "ccbeceebaecd",
-            "output": "11 1"
-        },
-        {
-            "input": "adbbdaeccebdebebec",
-            "output": "18"
-        },
-        {
-            "input": "eceddeeaaabca",
-            "output": "13"
-        },
-        {
-            "input": "ccdcbeccdadecca",
-            "output": "15"
-        },
-        {
-            "input": "acadcc",
-            "output": "6"
-        },
-        {
-            "input": "aacdbeaebbdbec",
-            "output": "14"
-        },
-        {
-            "input": "bddccbebbaceadd",
-            "output": "15"
-        },
-        {
-            "input": "addccdcc",
-            "output": "1 7"
-        },
-        {
-            "input": "cdbeb",
-            "output": "1 1 3"
-        },
-        {
-            "input": "cdebce",
-            "output": "6"
-        },
-        {
-            "input": "dcebebebcd",
-            "output": "10"
-        },
-        {
-            "input": "abddbcceacdbaa",
-            "output": "14"
-        },
-        {
-            "input": "addceaaaadbecaabdaab",
-            "output": "20"
-        },
-        {
-            "input": "cdaabcdaeadd",
-            "output": "12"
-        },
-        {
-            "input": "dbadccdbbeaaaabc",
-            "output": "16"
-        },
-        {
-            "input": "edaacacabdbcbae",
-            "output": "15"
-        },
-        {
-            "input": "aadebaadb",
-            "output": "9"
-        },
-        {
-            "input": "bedacbd",
-            "output": "7"
-        },
-        {
-            "input": "cdeccebc",
-            "output": "8"
-        },
-        {
-            "input": "bbeebabbec",
-            "output": "9 1"
-        },
-        {
-            "input": "cdcabbabceddcbcc",
-            "output": "16"
-        },
-        {
-            "input": "cbcbdbcbeccbc",
-            "output": "13"
-        },
-        {
-            "input": "edacdbdeceadacedd",
-            "output": "17"
-        },
-        {
-            "input": "ebbedccdbabdcead",
-            "output": "16"
-        },
-        {
-            "input": "ebcdeebbead",
-            "output": "11"
-        },
-        {
-            "input": "ecbeabcbeddcbbc",
-            "output": "15"
-        },
-        {
-            "input": "dddad",
-            "output": "5"
-        },
-        {
-            "input": "ebeacddbccccbd",
-            "output": "14"
-        },
-        {
-            "input": "eacbbdaecbbabdccacc",
-            "output": "19"
-        },
-        {
-            "input": "abcebbd",
-            "output": "1 5 1"
-        },
-        {
-            "input": "bbbccbebbbe",
-            "output": "11"
-        },
-        {
-            "input": "ceddcceec",
-            "output": "9"
-        },
-        {
-            "input": "caabebecdedddbb",
-            "output": "15"
-        },
-        {
-            "input": "bdabaccbdbccbdccccba",
-            "output": "20"
-        },
-        {
-            "input": "cbaaedeae",
-            "output": "1 1 7"
-        },
-        {
-            "input": "dddbdcab",
-            "output": "8"
-        },
-        {
-            "input": "accbbab",
-            "output": "7"
-        },
-        {
-            "input": "ebebe",
-            "output": "5"
-        },
-        {
-            "input": "eaecbdadeeadabab",
-            "output": "16"
-        },
-        {
-            "input": "bedeedbcbecbbae",
-            "output": "15"
-        },
-        {
-            "input": "ebdbdbedcdbcabdbc",
-            "output": "17"
-        },
-        {
-            "input": "eccaeabad",
-            "output": "8 1"
-        },
-        {
-            "input": "dddaaecdeebdb",
-            "output": "13"
-        },
-        {
-            "input": "bbabbbae",
-            "output": "7 1"
-        },
-        {
-            "input": "bdcaadadeccceaceebb",
-            "output": "19"
-        },
-        {
-            "input": "ccbeebcdecdee",
-            "output": "13"
-        },
-        {
-            "input": "daacadaebbedbaecbb",
-            "output": "18"
-        },
-        {
-            "input": "ccdbcbeeddeba",
-            "output": "12 1"
-        },
-        {
-            "input": "dbeabcaebbecdeb",
-            "output": "15"
-        },
-        {
-            "input": "deeaaddcdc",
-            "output": "10"
-        },
-        {
-            "input": "adebaadcccceeeaeedba",
-            "output": "20"
-        },
-        {
-            "input": "aadceadcbbbbd",
-            "output": "13"
-        },
-        {
-            "input": "dbeadbcaec",
-            "output": "10"
-        },
-        {
-            "input": "edaceecdbabedbaed",
-            "output": "17"
-        },
-        {
-            "input": "ebaeacddcedae",
-            "output": "13"
-        },
-        {
-            "input": "cdbeaeacccac",
-            "output": "12"
-        },
-        {
-            "input": "eecaaaeb",
-            "output": "7 1"
-        },
-        {
-            "input": "bdacdaabbdecebebbe",
-            "output": "18"
-        },
-        {
-            "input": "cbcaecddabd",
-            "output": "11"
-        },
-        {
-            "input": "ccbacdbbcebaccec",
-            "output": "16"
-        },
-        {
-            "input": "bdcda",
-            "output": "1 3 1"
-        },
-        {
-            "input": "ecaaebeddaca",
-            "output": "12"
-        },
-        {
-            "input": "deecccdbab",
-            "output": "7 3"
-        },
-        {
-            "input": "acaecadb",
-            "output": "6 1 1"
-        },
-        {
-            "input": "aecebcbebadae",
-            "output": "13"
-        },
-        {
-            "input": "cdcbecddecbcdddbacd",
-            "output": "19"
-        },
-        {
-            "input": "eedecbbbbceececca",
-            "output": "16 1"
-        },
-        {
-            "input": "beebab",
-            "output": "6"
-        },
-        {
-            "input": "bbeaddcbaacdd",
-            "output": "13"
-        },
-        {
-            "input": "bddbeddb",
-            "output": "8"
-        },
-        {
-            "input": "ebabbedeaadcdceca",
-            "output": "17"
-        },
-        {
-            "input": "ebcabc",
-            "output": "1 5"
-        },
-        {
-            "input": "bedbddb",
-            "output": "7"
-        },
-        {
-            "input": "bcdaceaeebbcdbd",
-            "output": "15"
-        },
-        {
-            "input": "dabebeedaeac",
-            "output": "11 1"
-        },
-        {
-            "input": "ddabea",
-            "output": "2 4"
-        },
-        {
-            "input": "aaecabbeee",
-            "output": "10"
-        },
-        {
-            "input": "accbbddde",
-            "output": "1 2 2 3 1"
-        },
-        {
-            "input": "decbacbbdedccc",
-            "output": "14"
-        },
-        {
-            "input": "ccbeacbaebbaaccd",
-            "output": "15 1"
-        },
-        {
-            "input": "eedecedaeaadabdc",
-            "output": "16"
-        },
-        {
-            "input": "cbacdabdabaacbdeab",
-            "output": "18"
-        },
-        {
-            "input": "edddacecbedacd",
-            "output": "14"
-        },
-        {
-            "input": "aebadcddabebecbc",
-            "output": "16"
-        },
-        {
-            "input": "cddeebeeabecdbed",
-            "output": "16"
-        },
-        {
-            "input": "eedbaaacadda",
-            "output": "2 10"
-        },
-        {
-            "input": "bdcabcde",
-            "output": "7 1"
-        },
-        {
-            "input": "ecdddaddbdde",
-            "output": "12"
-        },
-        {
-            "input": "acacbaece",
-            "output": "9"
-        },
-        {
-            "input": "bdeceedbabcbbd",
-            "output": "14"
-        },
-        {
-            "input": "dabdcebde",
-            "output": "9"
-        },
-        {
-            "input": "cbdcecdaebebeabd",
-            "output": "16"
-        },
-        {
-            "input": "ebbbdccdeadcddec",
-            "output": "16"
-        },
-        {
-            "input": "accbcdcccbcbeedcca",
-            "output": "18"
-        },
-        {
-            "input": "cdacedceabbadecb",
-            "output": "16"
-        },
-        {
-            "input": "debaeb",
-            "output": "1 5"
-        },
-        {
-            "input": "beddacbebabaeea",
-            "output": "15"
-        },
-        {
-            "input": "abecdbdeccd",
-            "output": "1 10"
-        },
-        {
-            "input": "dccadbcaaadac",
-            "output": "13"
-        },
-        {
-            "input": "eaedaaeeddbbaeedda",
-            "output": "18"
-        },
-        {
-            "input": "cbaaccc",
-            "output": "7"
-        },
-        {
-            "input": "ccbeacabbbeaabaaa",
-            "output": "17"
-        },
-        {
-            "input": "eaccbcecbaadeeaacba",
-            "output": "19"
-        },
-        {
-            "input": "eecedcceadaead",
-            "output": "14"
-        },
-        {
-            "input": "dedda",
-            "output": "4 1"
-        },
-        {
-            "input": "dbdadd",
-            "output": "6"
-        },
-        {
-            "input": "deeeecd",
-            "output": "7"
-        },
-        {
-            "input": "eebaa",
-            "output": "2 1 2"
-        },
-        {
-            "input": "cebdecbaeaaeebcdae",
-            "output": "18"
-        },
-        {
-            "input": "ceebdaab",
-            "output": "1 2 5"
-        },
-        {
-            "input": "bdbdcceeebedbadebdc",
-            "output": "19"
-        },
-        {
-            "input": "accdbbbec",
-            "output": "1 8"
-        },
-        {
-            "input": "eddcabacbeaeacddadce",
-            "output": "20"
-        },
-        {
-            "input": "ddaaacdadadcdbd",
-            "output": "15"
-        },
-        {
-            "input": "bdbecbadaeacadcb",
-            "output": "16"
-        },
-        {
-            "input": "eadebbedeaaadacac",
-            "output": "17"
-        },
-        {
-            "input": "bddcee",
+            "input": "daabcc",
             "output": "1 2 1 2"
         },
         {
-            "input": "ccbcbcbeebbcc",
-            "output": "13"
-        },
-        {
-            "input": "ccdcaccdccaeddadaba",
-            "output": "19"
-        },
-        {
-            "input": "cbecbaeaebbbeecdccae",
+            "input": "bacedccacaccddcdeadb",
             "output": "20"
         },
         {
-            "input": "bbedebbbeaaea",
-            "output": "13"
-        },
-        {
-            "input": "edaaccb",
-            "output": "1 1 2 2 1"
-        },
-        {
-            "input": "beadbaedaed",
+            "input": "beebeaaceae",
             "output": "11"
         },
         {
-            "input": "abecdcbbdecdacaded",
+            "input": "debceecbbcadc",
+            "output": "13"
+        },
+        {
+            "input": "abbcababd",
+            "output": "8 1"
+        },
+        {
+            "input": "bedcebdaacdbaa",
+            "output": "14"
+        },
+        {
+            "input": "aaddbbedabddda",
+            "output": "14"
+        },
+        {
+            "input": "deadebbdc",
+            "output": "8 1"
+        },
+        {
+            "input": "caccdddbdadecdaceb",
             "output": "18"
         },
         {
-            "input": "aaacedca",
-            "output": "8"
-        },
-        {
-            "input": "eecaaa",
-            "output": "2 1 3"
-        },
-        {
-            "input": "aedaeaddcdcdeaceed",
-            "output": "18"
-        },
-        {
-            "input": "daddd",
-            "output": "5"
-        },
-        {
-            "input": "dbbabdddbc",
-            "output": "9 1"
-        },
-        {
-            "input": "daaababbaa",
-            "output": "1 9"
-        },
-        {
-            "input": "deabdccaabedbecd",
-            "output": "16"
-        },
-        {
-            "input": "dabdedeeaeecbcabc",
-            "output": "17"
-        },
-        {
-            "input": "eaadcaececbdda",
+            "input": "aeebaecbacbbdb",
             "output": "14"
         },
         {
-            "input": "eabeaddaaaedddecb",
-            "output": "17"
-        },
-        {
-            "input": "ecceadacc",
-            "output": "9"
-        },
-        {
-            "input": "dcaebecdabcedbcbe",
-            "output": "17"
-        },
-        {
-            "input": "ebbdbebbbe",
-            "output": "10"
-        },
-        {
-            "input": "cceaeabbc",
-            "output": "9"
-        },
-        {
-            "input": "ccbcebaa",
-            "output": "6 2"
-        },
-        {
-            "input": "bbcedcbebbdebdebbed",
-            "output": "19"
-        },
-        {
-            "input": "debeedccacaeebcdc",
-            "output": "17"
-        },
-        {
-            "input": "bebaaadbdde",
-            "output": "11"
-        },
-        {
-            "input": "adaedbabeadde",
-            "output": "13"
-        },
-        {
-            "input": "addbdebdbbbbaba",
-            "output": "15"
-        },
-        {
-            "input": "cbccdee",
-            "output": "4 1 2"
-        },
-        {
-            "input": "eddbcadaacaeded",
-            "output": "15"
-        },
-        {
-            "input": "ccbdddbeabcbbccdba",
-            "output": "18"
-        },
-        {
-            "input": "ddececeaaadc",
-            "output": "12"
-        },
-        {
-            "input": "aaaedbddddacae",
-            "output": "14"
-        },
-        {
-            "input": "eccbedd",
-            "output": "5 2"
-        },
-        {
-            "input": "edbcccadebcaeeebda",
-            "output": "18"
-        },
-        {
-            "input": "caeaabeacb",
-            "output": "10"
-        },
-        {
-            "input": "bababaadeca",
-            "output": "11"
-        },
-        {
-            "input": "eabccbbebaecabd",
-            "output": "14 1"
-        },
-        {
-            "input": "bbbadbcecdecc",
-            "output": "13"
-        },
-        {
-            "input": "bccbccbbeaeca",
-            "output": "13"
-        },
-        {
-            "input": "eacccebedaeedda",
-            "output": "15"
-        },
-        {
-            "input": "dcdbcadaedebccbbbeb",
-            "output": "19"
-        },
-        {
-            "input": "bdcaceeecbcaabcdd",
-            "output": "17"
-        },
-        {
-            "input": "eeecccdaceceeebe",
-            "output": "16"
-        },
-        {
-            "input": "dbacdeecbdbcaccde",
-            "output": "17"
-        },
-        {
-            "input": "dedeabdd",
-            "output": "8"
-        },
-        {
-            "input": "abacd",
-            "output": "3 1 1"
-        },
-        {
-            "input": "ebeedcdceaccccdbeecd",
-            "output": "20"
-        },
-        {
-            "input": "baddacbebcceae",
-            "output": "14"
-        },
-        {
-            "input": "eeadcdaecba",
-            "output": "11"
-        },
-        {
-            "input": "ceabccd",
-            "output": "6 1"
-        },
-        {
-            "input": "eeedcddedeaebedb",
-            "output": "16"
-        },
-        {
-            "input": "bbaae",
-            "output": "2 2 1"
-        },
-        {
-            "input": "eebdb",
-            "output": "2 3"
-        },
-        {
-            "input": "ebeaaeadbdddbecddcc",
-            "output": "19"
-        },
-        {
-            "input": "aaeada",
-            "output": "6"
-        },
-        {
-            "input": "cebcdcbdbecceabddca",
-            "output": "19"
-        },
-        {
-            "input": "ebceecdabbdaabdebba",
-            "output": "19"
-        },
-        {
-            "input": "edeaabd",
-            "output": "7"
-        },
-        {
-            "input": "caddbcbedbbe",
-            "output": "12"
-        },
-        {
-            "input": "ebcebbbe",
-            "output": "8"
-        },
-        {
-            "input": "bbbaab",
-            "output": "6"
-        },
-        {
-            "input": "ceacda",
-            "output": "6"
-        },
-        {
-            "input": "baebcb",
-            "output": "6"
-        },
-        {
-            "input": "edabbcdadccddd",
-            "output": "1 13"
-        },
-        {
-            "input": "ebdaaeadcaca",
-            "output": "12"
-        },
-        {
-            "input": "eabdaddba",
-            "output": "1 8"
-        },
-        {
-            "input": "abcec",
-            "output": "1 1 3"
-        },
-        {
-            "input": "becccaabbddaaaa",
-            "output": "15"
-        },
-        {
-            "input": "abacce",
-            "output": "3 2 1"
-        },
-        {
-            "input": "baaadcabbab",
-            "output": "11"
-        },
-        {
-            "input": "ddadecbbeccbccbad",
-            "output": "17"
-        },
-        {
-            "input": "ceebcbcbcadcdd",
-            "output": "14"
-        },
-        {
-            "input": "beccabeebbade",
-            "output": "13"
-        },
-        {
-            "input": "dddcc",
-            "output": "3 2"
-        },
-        {
-            "input": "ceaddaeaecbadb",
-            "output": "14"
-        },
-        {
-            "input": "beeadbad",
-            "output": "8"
-        },
-        {
-            "input": "dddbddacb",
-            "output": "9"
-        },
-        {
-            "input": "cacbce",
+            "input": "acabcd",
             "output": "5 1"
         },
         {
-            "input": "beaedcbbbdbbed",
-            "output": "14"
-        },
-        {
-            "input": "caacecdde",
-            "output": "9"
-        },
-        {
-            "input": "ddabaede",
-            "output": "8"
-        },
-        {
-            "input": "cbceecabbaaeeddaceab",
-            "output": "20"
-        },
-        {
-            "input": "bacacceabeecac",
-            "output": "14"
-        },
-        {
-            "input": "ecadcbbc",
-            "output": "1 7"
-        },
-        {
-            "input": "ededbcc",
-            "output": "4 1 2"
-        },
-        {
-            "input": "ebcdebacebddeb",
-            "output": "14"
-        },
-        {
-            "input": "bedcecccaea",
-            "output": "1 10"
-        },
-        {
-            "input": "bdaae",
-            "output": "1 1 2 1"
-        },
-        {
-            "input": "cdbaaabbeddaaaedd",
-            "output": "1 16"
-        },
-        {
-            "input": "cbbdccedb",
-            "output": "9"
-        },
-        {
-            "input": "aadedcaaedeabeda",
-            "output": "16"
-        },
-        {
-            "input": "ebbeeeccbacbcbccabe",
+            "input": "ceaddcbecdeacdecded",
             "output": "19"
         },
         {
-            "input": "cacdbaedaacaceacdba",
-            "output": "19"
-        },
-        {
-            "input": "bbbdeeaaaadaacae",
-            "output": "3 13"
-        },
-        {
-            "input": "eaeceecd",
-            "output": "7 1"
-        },
-        {
-            "input": "ddcddceadd",
+            "input": "ecdaeeccbe",
             "output": "10"
         },
         {
-            "input": "dbcbb",
-            "output": "1 4"
-        },
-        {
-            "input": "bddbaddacabbaece",
-            "output": "16"
-        },
-        {
-            "input": "accdbcbbda",
-            "output": "10"
-        },
-        {
-            "input": "ddcbcdadababeccacec",
-            "output": "19"
-        },
-        {
-            "input": "adaeecaacbdddbdc",
-            "output": "16"
-        },
-        {
-            "input": "aebaac",
-            "output": "5 1"
-        },
-        {
-            "input": "dbebcdabdcccbcd",
+            "input": "eceedaeedaddabd",
             "output": "15"
         },
         {
-            "input": "ceabccaaabdeaaeeadb",
-            "output": "19"
+            "input": "ddcccbbdadd",
+            "output": "11"
         },
         {
-            "input": "aaecdccad",
-            "output": "9"
+            "input": "abebebcdbddcbdebba",
+            "output": "18"
         },
         {
-            "input": "bbdaa",
-            "output": "2 1 2"
+            "input": "eabbbdbdbadeb",
+            "output": "13"
         },
         {
-            "input": "bbebb",
+            "input": "dcadbcc",
+            "output": "7"
+        },
+        {
+            "input": "aacbacdbeddacdbdb",
+            "output": "17"
+        },
+        {
+            "input": "cbdcd",
             "output": "5"
         },
         {
-            "input": "aedbacbca",
-            "output": "9"
-        },
-        {
-            "input": "dcbacecdbabeab",
+            "input": "cbbedcdeaaceba",
             "output": "14"
         },
         {
-            "input": "ebdacddcbbadbbaacac",
-            "output": "1 18"
-        },
-        {
-            "input": "aabdcbabddbadacae",
-            "output": "16 1"
-        },
-        {
-            "input": "dbaca",
-            "output": "1 1 3"
-        },
-        {
-            "input": "adcecacbbeed",
+            "input": "adbbeecbeaaa",
             "output": "12"
         },
         {
-            "input": "cdacbabbdadaeaa",
-            "output": "15"
-        },
-        {
-            "input": "bacceddd",
-            "output": "1 1 2 1 3"
-        },
-        {
-            "input": "beadcd",
-            "output": "1 1 1 3"
-        },
-        {
-            "input": "bccadebd",
-            "output": "8"
-        },
-        {
-            "input": "abbcccbeecedababdee",
-            "output": "19"
-        },
-        {
-            "input": "caceacccdababaacaebe",
-            "output": "20"
-        },
-        {
-            "input": "eadaebd",
-            "output": "7"
-        },
-        {
-            "input": "ceabebdbbbcccaecdbd",
-            "output": "19"
-        },
-        {
-            "input": "cacdadecccacebeed",
-            "output": "17"
-        },
-        {
-            "input": "addbccbbda",
-            "output": "10"
-        },
-        {
-            "input": "bcddcdeea",
-            "output": "1 5 2 1"
-        },
-        {
-            "input": "aceaceacba",
-            "output": "10"
-        },
-        {
-            "input": "dceeaadbdae",
-            "output": "11"
-        },
-        {
-            "input": "ceedadbdbbdeebaca",
-            "output": "17"
-        },
-        {
-            "input": "dadbbeecea",
-            "output": "10"
-        },
-        {
-            "input": "beeeaebdbdeeaeaaac",
-            "output": "17 1"
-        },
-        {
-            "input": "cbeacbbdacabeacbac",
-            "output": "18"
-        },
-        {
-            "input": "ebdcaeaebdd",
-            "output": "11"
-        },
-        {
-            "input": "aadebb",
-            "output": "2 1 1 2"
-        },
-        {
-            "input": "dbcadcaacebdb",
-            "output": "13"
-        },
-        {
-            "input": "addda",
-            "output": "5"
-        },
-        {
-            "input": "ddceaeabcbbb",
-            "output": "2 10"
-        },
-        {
-            "input": "cdddeecbdd",
-            "output": "10"
-        },
-        {
-            "input": "ccebaebbeaa",
-            "output": "2 9"
-        },
-        {
-            "input": "abccbeae",
-            "output": "8"
-        },
-        {
-            "input": "eceed",
-            "output": "4 1"
-        },
-        {
-            "input": "caeddbdbcebeabccca",
-            "output": "18"
-        },
-        {
-            "input": "dcbdadabb",
-            "output": "9"
-        },
-        {
-            "input": "bcccceaed",
-            "output": "1 4 3 1"
-        },
-        {
-            "input": "abababdcda",
-            "output": "10"
-        },
-        {
-            "input": "bbdccdebebabbd",
-            "output": "14"
-        },
-        {
-            "input": "ccbedadbbabdbcddb",
-            "output": "17"
-        },
-        {
-            "input": "cbdcedbd",
-            "output": "8"
-        },
-        {
-            "input": "dddabbacce",
-            "output": "3 4 2 1"
-        },
-        {
-            "input": "bddbdcbcdcac",
-            "output": "12"
-        },
-        {
-            "input": "daceebaededadadd",
-            "output": "16"
-        },
-        {
-            "input": "bebee",
-            "output": "5"
-        },
-        {
-            "input": "cdeadabaeaabbebdd",
-            "output": "1 16"
-        },
-        {
-            "input": "aeacbeadcbeddbbd",
-            "output": "16"
-        },
-        {
-            "input": "cdadbdeaaebdba",
-            "output": "1 13"
-        },
-        {
-            "input": "aaaecabcecbeebc",
-            "output": "15"
-        },
-        {
-            "input": "aaccbbbeabeddedd",
-            "output": "16"
-        },
-        {
-            "input": "ecbaeceeddaadc",
-            "output": "14"
-        },
-        {
-            "input": "dbddabadddebacdebad",
-            "output": "19"
-        },
-        {
-            "input": "dbeecddcdebeeaabda",
-            "output": "18"
-        },
-        {
-            "input": "bdeadbcaedadcbb",
-            "output": "15"
-        },
-        {
-            "input": "ddbdbbabaebccbcdcb",
-            "output": "18"
-        },
-        {
-            "input": "eddebbec",
-            "output": "7 1"
-        },
-        {
-            "input": "aceebd",
-            "output": "1 1 2 1 1"
-        },
-        {
-            "input": "badbacddaaeadca",
-            "output": "15"
-        },
-        {
-            "input": "acedbcedeebcbb",
-            "output": "1 13"
-        },
-        {
-            "input": "caacbddadeddce",
-            "output": "14"
-        },
-        {
-            "input": "bcebddab",
-            "output": "8"
-        },
-        {
-            "input": "bcbddcd",
-            "output": "7"
-        },
-        {
-            "input": "cbecadaedcecccc",
-            "output": "15"
-        },
-        {
-            "input": "aeeebdcca",
-            "output": "9"
-        },
-        {
-            "input": "eecbbabbaabdbdcca",
-            "output": "2 15"
-        },
-        {
-            "input": "dadecaddaddaabccbe",
-            "output": "18"
-        },
-        {
-            "input": "cedbcbbadaeab",
-            "output": "13"
-        },
-        {
-            "input": "badacaebaedcbdcbe",
-            "output": "17"
-        },
-        {
-            "input": "aeecdebdb",
-            "output": "1 8"
-        },
-        {
-            "input": "abbdbdadbcaaaeeaa",
-            "output": "17"
-        },
-        {
-            "input": "acebbbbeddcbacececb",
-            "output": "19"
-        },
-        {
-            "input": "adebdebbbeaebcec",
-            "output": "16"
-        },
-        {
-            "input": "ebcaccbaaad",
-            "output": "1 9 1"
-        },
-        {
-            "input": "abcdbd",
-            "output": "1 5"
-        },
-        {
-            "input": "cdecd",
-            "output": "5"
-        },
-        {
-            "input": "cdcaddbbdeeaabccaa",
-            "output": "18"
-        },
-        {
-            "input": "daeab",
-            "output": "1 3 1"
-        },
-        {
-            "input": "ceaccbcdabacd",
-            "output": "13"
-        },
-        {
-            "input": "edbcbdabacdaaeaed",
-            "output": "17"
-        },
-        {
-            "input": "ceabe",
-            "output": "1 4"
-        },
-        {
-            "input": "daacbdaebbb",
-            "output": "11"
-        },
-        {
-            "input": "ebaccbbecaabaccbe",
-            "output": "17"
-        },
-        {
-            "input": "daabdaa",
-            "output": "7"
-        },
-        {
-            "input": "aaeceae",
-            "output": "7"
-        },
-        {
-            "input": "ccdbadddbbbbabbacdde",
-            "output": "19 1"
-        },
-        {
-            "input": "dcdcdbbeccddcaab",
-            "output": "16"
-        },
-        {
-            "input": "cbebcbe",
-            "output": "7"
-        },
-        {
-            "input": "cccadadddedcdbeabecc",
-            "output": "20"
-        },
-        {
-            "input": "edddbcbdbbcdced",
-            "output": "15"
-        },
-        {
-            "input": "caebbcc",
-            "output": "7"
-        },
-        {
-            "input": "baadcbbabecdbbb",
-            "output": "15"
-        },
-        {
-            "input": "acadcebccccbddc",
-            "output": "15"
-        },
-        {
-            "input": "bdedacaaccecaaabeede",
-            "output": "20"
-        },
-        {
-            "input": "edbbcab",
-            "output": "1 1 5"
-        },
-        {
-            "input": "cecdab",
-            "output": "3 1 1 1"
-        },
-        {
-            "input": "dbcacadddadccbcd",
-            "output": "16"
-        },
-        {
-            "input": "bbacaaeceeed",
-            "output": "2 9 1"
-        },
-        {
-            "input": "deecdccedcbeddcdcb",
-            "output": "18"
-        },
-        {
-            "input": "dedecaccaeedbebccddc",
-            "output": "20"
-        },
-        {
-            "input": "bccaebcdeeecebdbad",
-            "output": "18"
-        },
-        {
-            "input": "ebdcaaabeaadcceeeaaa",
-            "output": "20"
-        },
-        {
-            "input": "abcbabeaeebd",
-            "output": "11 1"
-        },
-        {
-            "input": "deadaa",
-            "output": "6"
-        },
-        {
-            "input": "ccabdddaceaeedbd",
-            "output": "16"
-        },
-        {
-            "input": "ddbccbbcdadcbecbcd",
-            "output": "18"
-        },
-        {
-            "input": "bbeedea",
-            "output": "2 4 1"
-        },
-        {
-            "input": "bcecaacaadb",
-            "output": "11"
-        },
-        {
-            "input": "adcdcceaadabcaab",
-            "output": "16"
-        },
-        {
-            "input": "ccaaa",
-            "output": "2 3"
-        },
-        {
-            "input": "eaebacecaeeeccdbcaa",
-            "output": "19"
-        },
-        {
-            "input": "eceddedcaecacaacde",
-            "output": "18"
-        },
-        {
-            "input": "ebbceeebabcdbeddd",
-            "output": "17"
-        },
-        {
-            "input": "dbbae",
-            "output": "1 2 1 1"
-        },
-        {
-            "input": "eacebbbccdaba",
-            "output": "13"
-        },
-        {
-            "input": "cacabcebbaecbbebcea",
-            "output": "19"
-        },
-        {
-            "input": "abdecadc",
-            "output": "8"
-        },
-        {
-            "input": "debccaceddab",
-            "output": "12"
-        },
-        {
-            "input": "dbedeeaacbccbdaced",
-            "output": "18"
-        },
-        {
-            "input": "baceeeebadddbedecc",
-            "output": "18"
-        },
-        {
-            "input": "abeaeaabab",
-            "output": "10"
-        },
-        {
-            "input": "ccebdebd",
-            "output": "2 6"
-        },
-        {
-            "input": "eeddadcddc",
-            "output": "2 8"
-        },
-        {
-            "input": "ebaecebb",
-            "output": "8"
-        },
-        {
-            "input": "beacccacbbbdbdda",
-            "output": "16"
-        },
-        {
-            "input": "caabeaaaabcdcddc",
-            "output": "16"
-        },
-        {
-            "input": "cdeaecdd",
-            "output": "8"
-        },
-        {
-            "input": "cabcbdcdcdba",
-            "output": "12"
-        },
-        {
-            "input": "ceacc",
-            "output": "5"
-        },
-        {
-            "input": "caaedecddae",
-            "output": "11"
-        },
-        {
-            "input": "decebadadecdeadd",
-            "output": "16"
-        },
-        {
-            "input": "acedba",
-            "output": "6"
-        },
-        {
-            "input": "bcaaceabadbadcaceaec",
-            "output": "20"
-        },
-        {
-            "input": "eaabada",
-            "output": "1 6"
-        },
-        {
-            "input": "cbcbbdccbabdecab",
-            "output": "16"
-        },
-        {
-            "input": "bedccb",
-            "output": "6"
-        },
-        {
-            "input": "abdebceeed",
-            "output": "1 9"
-        },
-        {
-            "input": "dcecbedabdcadadcebd",
-            "output": "19"
-        },
-        {
-            "input": "cacdebbaddccccdee",
-            "output": "17"
-        },
-        {
-            "input": "cbebccbecadddcacdce",
-            "output": "19"
-        },
-        {
-            "input": "eeeeeccedebbcee",
-            "output": "15"
-        },
-        {
-            "input": "abebeadc",
-            "output": "6 1 1"
-        },
-        {
-            "input": "cedcbcdecdadee",
-            "output": "14"
-        },
-        {
-            "input": "adcedacbeeb",
-            "output": "11"
-        },
-        {
-            "input": "ddddedbebd",
-            "output": "10"
-        },
-        {
-            "input": "dbeeedebae",
-            "output": "10"
-        },
-        {
-            "input": "beceaddccbedecdbc",
-            "output": "17"
-        },
-        {
-            "input": "bbcabca",
-            "output": "7"
-        },
-        {
-            "input": "cedaeeaeaadbc",
-            "output": "13"
-        },
-        {
-            "input": "dcaaceedcaddbae",
-            "output": "15"
-        },
-        {
-            "input": "daeadd",
-            "output": "6"
-        },
-        {
-            "input": "dbcced",
-            "output": "6"
-        },
-        {
-            "input": "dceddcaadebeaccebe",
-            "output": "18"
-        },
-        {
-            "input": "bbacdecdedabacecada",
-            "output": "19"
-        },
-        {
-            "input": "caebcaeeadcbbec",
-            "output": "15"
-        },
-        {
-            "input": "dbdedbeceddabdaedbed",
-            "output": "20"
-        },
-        {
-            "input": "abeecde",
-            "output": "1 1 5"
-        },
-        {
-            "input": "daaabbeecbabcaceabc",
-            "output": "1 18"
-        },
-        {
-            "input": "edaac",
-            "output": "1 1 2 1"
-        },
-        {
-            "input": "acbdebabbcddc",
-            "output": "13"
-        },
-        {
-            "input": "ebdebec",
-            "output": "6 1"
-        },
-        {
-            "input": "dbedaeecae",
-            "output": "10"
-        },
-        {
-            "input": "aebbdddbcd",
-            "output": "1 1 8"
-        },
-        {
-            "input": "edcccab",
-            "output": "1 1 3 1 1"
-        },
-        {
-            "input": "aeabaaebaebcedbaec",
-            "output": "18"
-        },
-        {
-            "input": "accacacacbceabacccc",
-            "output": "19"
-        },
-        {
-            "input": "acacc",
-            "output": "5"
-        },
-        {
-            "input": "eeecbceedaeb",
-            "output": "12"
-        },
-        {
-            "input": "ccdddababeeaececdc",
-            "output": "18"
-        },
-        {
-            "input": "caaaebae",
-            "output": "1 7"
-        },
-        {
-            "input": "dbdbecdcdadba",
-            "output": "13"
-        },
-        {
-            "input": "adbbbeeee",
-            "output": "1 1 3 4"
-        },
-        {
-            "input": "beccdcecbeaee",
-            "output": "13"
-        },
-        {
-            "input": "acedccebcacadba",
-            "output": "15"
-        },
-        {
-            "input": "eeacdeebaaeadeea",
-            "output": "16"
-        },
-        {
-            "input": "ccecdbdd",
-            "output": "4 4"
-        },
-        {
-            "input": "ddddcddabdccdce",
-            "output": "14 1"
-        },
-        {
-            "input": "acaacadaacaabbbcd",
-            "output": "17"
-        },
-        {
-            "input": "cbcabbbeadadadbabdab",
-            "output": "20"
-        },
-        {
-            "input": "deeaacb",
-            "output": "1 2 2 1 1"
-        },
-        {
-            "input": "aeecdadebcdcebbcbcc",
-            "output": "19"
-        },
-        {
-            "input": "becbcddebdeaaedbbcab",
-            "output": "20"
-        },
-        {
-            "input": "bcaaadacdbdd",
-            "output": "12"
-        },
-        {
-            "input": "acaabdaeaeaaea",
-            "output": "14"
-        },
-        {
-            "input": "abdaabcccbcbc",
-            "output": "13"
-        },
-        {
-            "input": "bbeadceceecbae",
-            "output": "14"
-        },
-        {
-            "input": "eaabcddcbceac",
-            "output": "13"
-        },
-        {
-            "input": "aceebccbbeaaaaaabc",
-            "output": "18"
-        },
-        {
-            "input": "ecdaee",
-            "output": "6"
-        },
-        {
-            "input": "cbdeaedcabaddaedd",
-            "output": "17"
-        },
-        {
-            "input": "bdcbdeabdaeabcbaaa",
-            "output": "18"
-        },
-        {
-            "input": "accabaeba",
-            "output": "9"
-        },
-        {
-            "input": "aeecbdbccecddbb",
-            "output": "1 14"
-        },
-        {
-            "input": "cccecaeebe",
-            "output": "10"
-        },
-        {
-            "input": "cbdbeabdeccdaeaeddbd",
-            "output": "20"
-        },
-        {
-            "input": "cebdcdcadcede",
-            "output": "13"
-        },
-        {
-            "input": "beadddedcd",
-            "output": "1 9"
-        },
-        {
-            "input": "aebcbdeaccbc",
-            "output": "12"
-        },
-        {
-            "input": "cedeaedaad",
-            "output": "1 9"
-        },
-        {
-            "input": "ddaaacacdccceaccbec",
-            "output": "19"
-        },
-        {
-            "input": "eaacebdbeeb",
-            "output": "11"
-        },
-        {
-            "input": "abbcddeeaeed",
-            "output": "12"
-        },
-        {
-            "input": "aededcebdcbd",
+            "input": "ceeeaaabbdee",
             "output": "1 11"
         },
         {
-            "input": "bccdcbddb",
-            "output": "9"
-        },
-        {
-            "input": "ebdceecedbbccccdb",
-            "output": "17"
-        },
-        {
-            "input": "bbdbecacebdcdbdeae",
+            "input": "aeeebcaacecaaacecb",
             "output": "18"
         },
         {
-            "input": "ebeeb",
-            "output": "5"
-        },
-        {
-            "input": "deacecee",
-            "output": "1 7"
-        },
-        {
-            "input": "bbccbb",
-            "output": "6"
-        },
-        {
-            "input": "ecacabcacdaebeb",
-            "output": "15"
-        },
-        {
-            "input": "cccbeddabead",
-            "output": "3 9"
-        },
-        {
-            "input": "bccbcb",
-            "output": "6"
-        },
-        {
-            "input": "daaaabbddcd",
-            "output": "11"
-        },
-        {
-            "input": "adacbabebaadcbacaee",
-            "output": "19"
-        },
-        {
-            "input": "adaceeabdc",
-            "output": "10"
-        },
-        {
-            "input": "dadcbbbbaedcb",
+            "input": "eddaaaeddbeba",
             "output": "13"
         },
         {
-            "input": "deccaeadaceaaaecbdcb",
-            "output": "20"
+            "input": "cdabaeceeb",
+            "output": "10"
         },
         {
-            "input": "eccaeeb",
-            "output": "6 1"
+            "input": "acaabaabbad",
+            "output": "10 1"
         },
         {
-            "input": "bbcbdedbe",
+            "input": "ddeeccd",
+            "output": "7"
+        },
+        {
+            "input": "daaebdcec",
             "output": "9"
         },
         {
-            "input": "eccebcdcccbccddae",
-            "output": "17"
-        },
-        {
-            "input": "bdcbdaceaedb",
-            "output": "12"
-        },
-        {
-            "input": "cbccecdcebc",
+            "input": "ebaecbdaecb",
             "output": "11"
         },
         {
-            "input": "ddbddcebcccebcb",
-            "output": "15"
-        },
-        {
-            "input": "aedbeb",
+            "input": "cabeae",
             "output": "1 5"
         },
         {
-            "input": "dbbdadacaec",
+            "input": "bacdcccdaa",
+            "output": "1 9"
+        },
+        {
+            "input": "ddecaebdccbaadceca",
+            "output": "18"
+        },
+        {
+            "input": "dbadebcecc",
+            "output": "10"
+        },
+        {
+            "input": "cccadcccabc",
             "output": "11"
         },
         {
-            "input": "cbabaabcdaeecdab",
+            "input": "eaccda",
+            "output": "1 5"
+        },
+        {
+            "input": "edabae",
+            "output": "6"
+        },
+        {
+            "input": "daacadabdbd",
+            "output": "11"
+        },
+        {
+            "input": "daeaedacbebe",
+            "output": "12"
+        },
+        {
+            "input": "bacdbdcbd",
+            "output": "9"
+        },
+        {
+            "input": "eeaddbbccdbdcccc",
+            "output": "2 1 13"
+        },
+        {
+            "input": "ccaabccdeaaecbdbb",
+            "output": "17"
+        },
+        {
+            "input": "bdbeccbca",
+            "output": "8 1"
+        },
+        {
+            "input": "bdbcbd",
+            "output": "6"
+        },
+        {
+            "input": "bbcdeddbdeecadbb",
             "output": "16"
         },
         {
-            "input": "aecbacbeceecddccaeb",
+            "input": "bbdab",
+            "output": "5"
+        },
+        {
+            "input": "cbbcdbcabcbcaccdcdb",
             "output": "19"
         },
         {
-            "input": "cbbeecaedebbcece",
+            "input": "ccadbcdbadceeaeced",
+            "output": "18"
+        },
+        {
+            "input": "deeee",
+            "output": "1 4"
+        },
+        {
+            "input": "dabeabbeceebdeee",
             "output": "16"
         },
         {
-            "input": "daceebdb",
+            "input": "daaabb",
+            "output": "1 3 2"
+        },
+        {
+            "input": "babaab",
+            "output": "6"
+        },
+        {
+            "input": "edeedcdecbab",
+            "output": "9 3"
+        },
+        {
+            "input": "ddcace",
+            "output": "2 3 1"
+        },
+        {
+            "input": "aeebdcbde",
+            "output": "1 8"
+        },
+        {
+            "input": "bbbbbbcbebadadbeeeed",
+            "output": "20"
+        },
+        {
+            "input": "abcbcd",
+            "output": "1 4 1"
+        },
+        {
+            "input": "cbeeaeb",
+            "output": "1 6"
+        },
+        {
+            "input": "adaeaebcbcdebbceab",
+            "output": "18"
+        },
+        {
+            "input": "ececddbeaedbdccaceeb",
+            "output": "20"
+        },
+        {
+            "input": "dbade",
+            "output": "4 1"
+        },
+        {
+            "input": "ccbeddcadcdbaeacc",
+            "output": "17"
+        },
+        {
+            "input": "ceaeecddccbcabcddeaa",
+            "output": "20"
+        },
+        {
+            "input": "edeedbeadee",
+            "output": "11"
+        },
+        {
+            "input": "babedcaddeeed",
+            "output": "13"
+        },
+        {
+            "input": "dbdadcecccb",
+            "output": "11"
+        },
+        {
+            "input": "dcebbdeecbcadce",
+            "output": "15"
+        },
+        {
+            "input": "aeacdbabdebcaebdadd",
+            "output": "19"
+        },
+        {
+            "input": "cabdeacbdbcdeecaec",
+            "output": "18"
+        },
+        {
+            "input": "eedebcbedbbc",
+            "output": "12"
+        },
+        {
+            "input": "aaabedb",
+            "output": "3 4"
+        },
+        {
+            "input": "bcaebdacda",
+            "output": "10"
+        },
+        {
+            "input": "ddceaacccbd",
+            "output": "11"
+        },
+        {
+            "input": "deaeddbecbcabcdee",
+            "output": "17"
+        },
+        {
+            "input": "acaeddacabcece",
+            "output": "14"
+        },
+        {
+            "input": "bbbcceebb",
+            "output": "9"
+        },
+        {
+            "input": "dabddcde",
+            "output": "7 1"
+        },
+        {
+            "input": "abacadeceaeceec",
+            "output": "15"
+        },
+        {
+            "input": "acbdebbbaaeeaa",
+            "output": "14"
+        },
+        {
+            "input": "cebccccdbe",
+            "output": "10"
+        },
+        {
+            "input": "dacacbaaeecebdced",
+            "output": "17"
+        },
+        {
+            "input": "dcceccaca",
+            "output": "1 8"
+        },
+        {
+            "input": "edccbd",
+            "output": "1 5"
+        },
+        {
+            "input": "abdcdbdebdea",
+            "output": "12"
+        },
+        {
+            "input": "ddbbadecaa",
+            "output": "10"
+        },
+        {
+            "input": "cbccededaaeedbaab",
+            "output": "17"
+        },
+        {
+            "input": "ddeeccdce",
+            "output": "9"
+        },
+        {
+            "input": "cedbcdeadeddebabcbe",
+            "output": "19"
+        },
+        {
+            "input": "bcecc",
+            "output": "1 4"
+        },
+        {
+            "input": "dbadbcbce",
+            "output": "8 1"
+        },
+        {
+            "input": "adddbcdcdc",
+            "output": "1 9"
+        },
+        {
+            "input": "ababdbbaccbeac",
+            "output": "14"
+        },
+        {
+            "input": "caebecebcdcdd",
+            "output": "13"
+        },
+        {
+            "input": "dccdaaacebebcbddcdd",
+            "output": "19"
+        },
+        {
+            "input": "ebdcccadebdebdadaaea",
+            "output": "20"
+        },
+        {
+            "input": "edbdbcedaedddebbcbc",
+            "output": "19"
+        },
+        {
+            "input": "aecbdcbbbcccddccdad",
+            "output": "19"
+        },
+        {
+            "input": "bdceaeee",
+            "output": "1 1 1 5"
+        },
+        {
+            "input": "ecaeadeaeb",
+            "output": "9 1"
+        },
+        {
+            "input": "bceda",
+            "output": "1 1 1 1 1"
+        },
+        {
+            "input": "ddaaeeabbebadcebbbbc",
+            "output": "20"
+        },
+        {
+            "input": "baeecddeacbba",
+            "output": "13"
+        },
+        {
+            "input": "bccdbeb",
+            "output": "7"
+        },
+        {
+            "input": "cebdaccdeacbbdcdcada",
+            "output": "20"
+        },
+        {
+            "input": "bcdbbbddcecdd",
+            "output": "13"
+        },
+        {
+            "input": "aeccccbebd",
+            "output": "1 8 1"
+        },
+        {
+            "input": "bcedebbedccbeb",
+            "output": "14"
+        },
+        {
+            "input": "bccadaceddbbeabdeced",
+            "output": "20"
+        },
+        {
+            "input": "bbcdaaba",
             "output": "8"
         },
         {
-            "input": "beaabebda",
+            "input": "baaaabbddacabbbedac",
+            "output": "19"
+        },
+        {
+            "input": "eacecdbcdaac",
+            "output": "12"
+        },
+        {
+            "input": "acebcdbcaadc",
+            "output": "12"
+        },
+        {
+            "input": "abdcdcbcdaeabddbcaae",
+            "output": "20"
+        },
+        {
+            "input": "cbbddddddbcaceb",
+            "output": "15"
+        },
+        {
+            "input": "bbacaeeea",
+            "output": "2 7"
+        },
+        {
+            "input": "bcbcadc",
+            "output": "7"
+        },
+        {
+            "input": "aecabd",
+            "output": "4 1 1"
+        },
+        {
+            "input": "dcddecabbbceaea",
+            "output": "15"
+        },
+        {
+            "input": "adebbacdecedaa",
+            "output": "14"
+        },
+        {
+            "input": "bdbdbacda",
             "output": "9"
+        },
+        {
+            "input": "dbedceccdbccaa",
+            "output": "12 2"
+        },
+        {
+            "input": "cdadacaedececabd",
+            "output": "16"
+        },
+        {
+            "input": "dabdeb",
+            "output": "6"
+        },
+        {
+            "input": "cedbdecce",
+            "output": "9"
+        },
+        {
+            "input": "caddaaabcaab",
+            "output": "12"
+        },
+        {
+            "input": "dddaedcacbedddeaa",
+            "output": "17"
+        },
+        {
+            "input": "becaab",
+            "output": "6"
+        },
+        {
+            "input": "aabedbbaddab",
+            "output": "12"
+        },
+        {
+            "input": "cdaacee",
+            "output": "5 2"
+        },
+        {
+            "input": "baeacbbdcdeaeaad",
+            "output": "16"
+        },
+        {
+            "input": "cbaedbeb",
+            "output": "1 7"
+        },
+        {
+            "input": "ccbcceccaaddedabab",
+            "output": "18"
+        },
+        {
+            "input": "ccdcccacecb",
+            "output": "10 1"
+        },
+        {
+            "input": "cacebaec",
+            "output": "8"
+        },
+        {
+            "input": "adbbcedcbcc",
+            "output": "1 10"
+        },
+        {
+            "input": "adaecaddaedbd",
+            "output": "13"
+        },
+        {
+            "input": "cdccebaea",
+            "output": "4 5"
+        },
+        {
+            "input": "bdbbabcaac",
+            "output": "10"
+        },
+        {
+            "input": "cecbdadecdacddbcdac",
+            "output": "19"
+        },
+        {
+            "input": "aeaddaddcce",
+            "output": "11"
+        },
+        {
+            "input": "edbbaeee",
+            "output": "8"
+        },
+        {
+            "input": "bacbadddd",
+            "output": "5 4"
+        },
+        {
+            "input": "bcededbcabcddeabdcbb",
+            "output": "20"
+        },
+        {
+            "input": "dcceeaeeeddbdceed",
+            "output": "17"
+        },
+        {
+            "input": "aadbbab",
+            "output": "7"
+        },
+        {
+            "input": "adbddcdcbaadbeedbad",
+            "output": "19"
+        },
+        {
+            "input": "ddcbeaeaded",
+            "output": "11"
+        },
+        {
+            "input": "acceeeadbebbaead",
+            "output": "16"
+        },
+        {
+            "input": "dddddbebadaabdebc",
+            "output": "16 1"
+        },
+        {
+            "input": "abaaeddaeeabcbedbd",
+            "output": "18"
+        },
+        {
+            "input": "baedacbaaacdba",
+            "output": "14"
+        },
+        {
+            "input": "abdabeddd",
+            "output": "9"
+        },
+        {
+            "input": "cdcdbcae",
+            "output": "6 1 1"
+        },
+        {
+            "input": "ceecdaadaa",
+            "output": "4 6"
+        },
+        {
+            "input": "dbebdee",
+            "output": "7"
         }
     ],
     "difficulty": "medium"

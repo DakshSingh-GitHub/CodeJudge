@@ -25,2004 +25,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "/tmp/docs/./tmp/user/./../docs",
-            "output": "/tmp/docs/tmp/docs"
-        },
-        {
-            "input": "//docs/docs/docs/../../home/user/home/docs/./var",
-            "output": "/docs/home/user/home/docs/var"
-        },
-        {
-            "input": "//user/docs/var/user/user/user/docs",
-            "output": "/user/docs/var/user/user/user/docs"
-        },
-        {
-            "input": "/var/../../../var/docs/var/user/tmp/tmp/../home/home/..",
-            "output": "/var/docs/var/user/tmp/home"
-        },
-        {
-            "input": "/user/tmp/tmp/docs",
-            "output": "/user/tmp/tmp/docs"
-        },
-        {
-            "input": "//home/./user/var/home/./../docs/user/tmp/./var/user/../docs/user/user",
-            "output": "/home/user/var/docs/user/tmp/var/docs/user/user"
-        },
-        {
-            "input": "//tmp/../../tmp/tmp/var/home/var/home/home/user/tmp/docs",
-            "output": "/tmp/tmp/var/home/var/home/home/user/tmp/docs"
-        },
-        {
-            "input": "//user/tmp/home/docs/home/../docs/..",
-            "output": "/user/tmp/home/docs"
-        },
-        {
-            "input": "//tmp/./tmp/home/home/home/..",
-            "output": "/tmp/tmp/home/home"
-        },
-        {
-            "input": "/home/./var/home/./../docs/tmp/user/user/../home/home/tmp/docs",
-            "output": "/home/var/docs/tmp/user/home/home/tmp/docs"
-        },
-        {
-            "input": "/../../user/user/tmp",
-            "output": "/user/user/tmp"
-        },
-        {
-            "input": "//var/.",
-            "output": "/var"
-        },
-        {
-            "input": "//./tmp/tmp/user/tmp/user",
-            "output": "/tmp/tmp/user/tmp/user"
-        },
-        {
-            "input": "/home/../tmp/../home/user/home/var/../tmp/tmp",
-            "output": "/home/user/home/tmp/tmp"
-        },
-        {
-            "input": "//docs/home/../tmp/tmp/../home/tmp/user",
-            "output": "/docs/tmp/home/tmp/user"
-        },
-        {
-            "input": "/user/home",
-            "output": "/user/home"
-        },
-        {
-            "input": "//home/var/user/.././docs/docs",
-            "output": "/home/var/docs/docs"
-        },
-        {
-            "input": "//user/./docs/docs/user",
-            "output": "/user/docs/docs/user"
-        },
-        {
-            "input": "//docs/home/var/home/var/var/./var/user",
-            "output": "/docs/home/var/home/var/var/var/user"
-        },
-        {
-            "input": "/../../../docs/home/user/../user/user/tmp",
-            "output": "/docs/home/user/user/tmp"
-        },
-        {
-            "input": "//home/home/user",
-            "output": "/home/home/user"
-        },
-        {
-            "input": "/./home/docs/user/home/docs/home",
-            "output": "/home/docs/user/home/docs/home"
-        },
-        {
-            "input": "//var/home/var",
-            "output": "/var/home/var"
-        },
-        {
-            "input": "//tmp/../docs/tmp/./home/docs",
-            "output": "/docs/tmp/home/docs"
-        },
-        {
-            "input": "//tmp/./docs/home/var/user/./../tmp/var/././docs/home/tmp",
-            "output": "/tmp/docs/home/var/tmp/var/docs/home/tmp"
-        },
-        {
-            "input": "/..",
-            "output": "/"
-        },
-        {
-            "input": "//././var/tmp/docs/user/tmp/./user/../var/../../.",
-            "output": "/var/tmp/docs/user"
-        },
-        {
-            "input": "//user/./../user/../home/var/.",
-            "output": "/home/var"
-        },
-        {
-            "input": "//var/docs/./docs/../var/tmp/home",
-            "output": "/var/docs/var/tmp/home"
-        },
-        {
-            "input": "/var/docs/tmp/./../tmp/tmp/tmp/var/home/var/user/tmp",
-            "output": "/var/docs/tmp/tmp/tmp/var/home/var/user/tmp"
-        },
-        {
-            "input": "//tmp/tmp/tmp/docs",
-            "output": "/tmp/tmp/tmp/docs"
-        },
-        {
-            "input": "//../../docs/user/./var/home/docs/home/.././../../home/user/var/tmp",
-            "output": "/docs/user/var/home/user/var/tmp"
-        },
-        {
-            "input": "//../../home/home/user/home/./../tmp/./..",
-            "output": "/home/home/user"
-        },
-        {
-            "input": "//user/../../var/user/.././tmp/./var/./var/user/var",
-            "output": "/var/tmp/var/var/user/var"
-        },
-        {
-            "input": "//../tmp/.././../user/user/var/user/home/tmp/docs",
-            "output": "/user/user/var/user/home/tmp/docs"
-        },
-        {
-            "input": "//./tmp/user/docs/var/var/docs/tmp/tmp/././tmp/.././user/home/tmp/var/var/..",
-            "output": "/tmp/user/docs/var/var/docs/tmp/tmp/user/home/tmp/var"
-        },
-        {
-            "input": "//./docs/user/user/./../var/.././tmp/../docs/tmp/tmp/././docs/../user",
-            "output": "/docs/user/docs/tmp/tmp/user"
-        },
-        {
-            "input": "//user/../var/./user/user/tmp/user/tmp/./tmp/./home",
-            "output": "/var/user/user/tmp/user/tmp/tmp/home"
-        },
-        {
-            "input": "/docs/tmp/./user/.././tmp/docs/././../home",
-            "output": "/docs/tmp/tmp/home"
-        },
-        {
-            "input": "/var/tmp/./.././tmp/docs/var/../home/tmp/docs/tmp",
-            "output": "/var/tmp/docs/home/tmp/docs/tmp"
-        },
-        {
-            "input": "/../home/.././var/docs/docs/../var/docs/./docs/var",
-            "output": "/var/docs/var/docs/docs/var"
-        },
-        {
-            "input": "//docs/docs/tmp/docs/.././home/./user/tmp/user/.",
-            "output": "/docs/docs/tmp/home/user/tmp/user"
-        },
-        {
-            "input": "//docs/../docs/../../user/.././../home",
-            "output": "/home"
-        },
-        {
-            "input": "/../user/home/docs/var/var/docs/tmp/tmp/./var/..",
-            "output": "/user/home/docs/var/var/docs/tmp/tmp"
-        },
-        {
-            "input": "//docs/home/var",
-            "output": "/docs/home/var"
-        },
-        {
-            "input": "/docs/user/docs",
-            "output": "/docs/user/docs"
-        },
-        {
-            "input": "//tmp/./docs/var/var/tmp/var/user/./docs/tmp/var/tmp/home",
-            "output": "/tmp/docs/var/var/tmp/var/user/docs/tmp/var/tmp/home"
-        },
-        {
-            "input": "//docs/docs/var/home/../docs/../home/home/home/.././docs",
-            "output": "/docs/docs/var/home/home/docs"
-        },
-        {
-            "input": "//var/docs/./docs/user/home/./docs/var/..",
-            "output": "/var/docs/docs/user/home/docs"
-        },
-        {
-            "input": "/docs/home/user/./user/tmp/../../docs/var/../../tmp/home/tmp/././user/./docs",
-            "output": "/docs/home/user/tmp/home/tmp/user/docs"
-        },
-        {
-            "input": "/var/.",
-            "output": "/var"
-        },
-        {
-            "input": "/home/tmp/user/docs/user/tmp/docs/docs/docs/home/./var/docs/.././docs/user/tmp/user/home",
-            "output": "/home/tmp/user/docs/user/tmp/docs/docs/docs/home/var/docs/user/tmp/user/home"
-        },
-        {
-            "input": "//./home/user/../home/home/../var/var/../user/user/../docs",
-            "output": "/home/home/var/user/docs"
-        },
-        {
-            "input": "//docs/home/../user/..",
-            "output": "/docs"
-        },
-        {
             "input": "//docs",
             "output": "/docs"
         },
         {
-            "input": "/var/user/home/./user/docs/../var/home/var/tmp/tmp/user/home/./var/././tmp",
-            "output": "/var/user/home/user/var/home/var/tmp/tmp/user/home/var/tmp"
+            "input": "/tmp/./var",
+            "output": "/tmp/var"
         },
         {
-            "input": "/tmp/var/../user/docs/tmp/tmp/user/tmp/var/docs/docs",
-            "output": "/tmp/user/docs/tmp/tmp/user/tmp/var/docs/docs"
+            "input": "//var/user/var/var/user/home/tmp/../var/tmp/docs/tmp/user/home/docs",
+            "output": "/var/user/var/var/user/home/var/tmp/docs/tmp/user/home/docs"
         },
         {
-            "input": "/./docs/./docs/home/user/home/../home/home",
-            "output": "/docs/docs/home/user/home/home"
-        },
-        {
-            "input": "/tmp/home/docs/home/tmp/./var/tmp/docs/tmp",
-            "output": "/tmp/home/docs/home/tmp/var/tmp/docs/tmp"
-        },
-        {
-            "input": "/user/user/var/docs/home/docs/user/tmp",
-            "output": "/user/user/var/docs/home/docs/user/tmp"
-        },
-        {
-            "input": "//docs/tmp/../../../tmp/user/user",
-            "output": "/tmp/user/user"
-        },
-        {
-            "input": "/user/var/docs/var/user/home/user",
-            "output": "/user/var/docs/var/user/home/user"
-        },
-        {
-            "input": "//docs/tmp/docs/docs/user/tmp/user/docs/home/./docs/../.././var/home/user",
-            "output": "/docs/tmp/docs/docs/user/tmp/user/docs/var/home/user"
-        },
-        {
-            "input": "/home/user/../tmp/user/docs/../tmp/user/home/tmp/home/tmp/../user/docs/../home/.",
-            "output": "/home/tmp/user/tmp/user/home/tmp/home/user/home"
-        },
-        {
-            "input": "/docs/./docs/../user/.",
-            "output": "/docs/user"
-        },
-        {
-            "input": "/user/var/user/var/../../user/docs/../docs/var/./.",
-            "output": "/user/var/user/docs/var"
-        },
-        {
-            "input": "/../../../tmp/var/home/../user/var",
-            "output": "/tmp/var/user/var"
-        },
-        {
-            "input": "/user/../home/./../user/tmp/tmp/docs/./../home/var/home/..",
-            "output": "/user/tmp/tmp/home/var"
-        },
-        {
-            "input": "/docs/./../tmp/tmp",
-            "output": "/tmp/tmp"
-        },
-        {
-            "input": "/home/../home/docs/docs/docs/../docs/docs/home/././home/var/tmp",
-            "output": "/home/docs/docs/docs/docs/home/home/var/tmp"
-        },
-        {
-            "input": "//.././docs/var/var/tmp/./tmp/.././tmp/tmp/user/..",
-            "output": "/docs/var/var/tmp/tmp/tmp"
-        },
-        {
-            "input": "/docs/tmp/var",
-            "output": "/docs/tmp/var"
-        },
-        {
-            "input": "/./../.././tmp/var/docs/./../user",
-            "output": "/tmp/var/user"
-        },
-        {
-            "input": "/./././docs/./.",
+            "input": "//.././home/../docs",
             "output": "/docs"
         },
         {
-            "input": "//var/home",
-            "output": "/var/home"
+            "input": "//tmp/home/../.",
+            "output": "/tmp"
         },
         {
-            "input": "//docs/user/home",
-            "output": "/docs/user/home"
+            "input": "/.././tmp/var/home/../../..",
+            "output": "/"
         },
         {
-            "input": "/././././home/./user/home/.././home/home",
-            "output": "/home/user/home/home"
+            "input": "//var/tmp/user/home/docs/home/home/tmp/var/user/user/home",
+            "output": "/var/tmp/user/home/docs/home/home/tmp/var/user/user/home"
         },
         {
-            "input": "//.././var/../home/var/user/home/../var/docs",
-            "output": "/home/var/user/var/docs"
-        },
-        {
-            "input": "//tmp/.././docs/docs/user/user/.././tmp/home/var",
-            "output": "/docs/docs/user/tmp/home/var"
-        },
-        {
-            "input": "//var/home/tmp/user/../tmp/../..",
-            "output": "/var/home"
-        },
-        {
-            "input": "/tmp/../var/user/docs/home/var/docs/../docs/../..",
-            "output": "/var/user/docs/home"
-        },
-        {
-            "input": "//tmp/../user/var/../../user/tmp/../var/./.././../../../var",
-            "output": "/var"
-        },
-        {
-            "input": "/tmp/var/docs/tmp/user",
-            "output": "/tmp/var/docs/tmp/user"
-        },
-        {
-            "input": "//home/../docs/var/../docs/tmp/../home/./..",
-            "output": "/docs/docs"
-        },
-        {
-            "input": "//./home/docs/tmp/../user/../user/user/user/tmp/././user",
-            "output": "/home/docs/user/user/user/tmp/user"
-        },
-        {
-            "input": "//var/tmp",
-            "output": "/var/tmp"
-        },
-        {
-            "input": "//././var/docs/../user/./home/.././tmp/../user/docs/home/tmp",
-            "output": "/var/user/user/docs/home/tmp"
-        },
-        {
-            "input": "//var/var/var/user/home/tmp/home/var/var/tmp/docs/../home/docs/tmp/..",
-            "output": "/var/var/var/user/home/tmp/home/var/var/tmp/home/docs"
-        },
-        {
-            "input": "/user/home/home/docs/user/docs/user/../var/tmp/./docs/docs",
-            "output": "/user/home/home/docs/user/docs/var/tmp/docs/docs"
-        },
-        {
-            "input": "/./user/var",
-            "output": "/user/var"
-        },
-        {
-            "input": "//home/../docs/tmp/tmp",
-            "output": "/docs/tmp/tmp"
-        },
-        {
-            "input": "/user/var/home/var/././../user/user/docs/var",
-            "output": "/user/var/home/user/user/docs/var"
-        },
-        {
-            "input": "/./user/.././tmp/user/docs/docs/user/user/tmp/.././docs/user/home",
-            "output": "/tmp/user/docs/docs/user/user/docs/user/home"
-        },
-        {
-            "input": "//docs/.",
-            "output": "/docs"
-        },
-        {
-            "input": "/user/docs/docs/..",
+            "input": "/.././user/docs",
             "output": "/user/docs"
         },
         {
-            "input": "//user/tmp/home/home",
-            "output": "/user/tmp/home/home"
+            "input": "//home/user/.././docs/user/../home",
+            "output": "/home/docs/home"
         },
         {
-            "input": "/../tmp/user/user/./var/home/..",
-            "output": "/tmp/user/user/var"
+            "input": "//home/home/user/user/docs/./user/docs/home/home/././home/tmp/user/tmp/tmp/var",
+            "output": "/home/home/user/user/docs/user/docs/home/home/home/tmp/user/tmp/tmp/var"
         },
         {
-            "input": "/../var/home/var/user/var/.././var/./tmp/tmp/home/var/./home/.",
-            "output": "/var/home/var/user/var/tmp/tmp/home/var/home"
+            "input": "//home/var/user/var/docs/./tmp/user/home/var/var/docs/.",
+            "output": "/home/var/user/var/docs/tmp/user/home/var/var/docs"
         },
         {
-            "input": "//docs/tmp/tmp/docs/home/././var/tmp/var/../var/user/docs/home/user",
-            "output": "/docs/tmp/tmp/docs/home/var/tmp/var/user/docs/home/user"
+            "input": "//../docs/var/../var/user/home/./tmp/home/../tmp/docs/var/tmp/docs/tmp/tmp",
+            "output": "/docs/var/user/home/tmp/tmp/docs/var/tmp/docs/tmp/tmp"
         },
         {
-            "input": "/docs/home/../.././home/user/././user/user/home/docs/docs/home/../home/../tmp/.",
-            "output": "/home/user/user/user/home/docs/docs/tmp"
+            "input": "/docs/docs/user/home/user/docs",
+            "output": "/docs/docs/user/home/user/docs"
         },
         {
-            "input": "/.././var/../home/./home/docs/user/./tmp/var/user/./docs/docs/home/docs/user",
-            "output": "/home/home/docs/user/tmp/var/user/docs/docs/home/docs/user"
+            "input": "/tmp/docs/.././docs/var/../docs/./../../var/var/home/user/user",
+            "output": "/tmp/var/var/home/user/user"
         },
         {
-            "input": "//../tmp/../tmp/./home/docs/../home/docs/docs/tmp/../user/user",
-            "output": "/tmp/home/home/docs/docs/user/user"
+            "input": "/docs/var/../../tmp/tmp/tmp/.",
+            "output": "/tmp/tmp/tmp"
         },
         {
-            "input": "//var/tmp/home/./var/tmp/./user",
-            "output": "/var/tmp/home/var/tmp/user"
+            "input": "//tmp/./../tmp/home/tmp/tmp/home/var/var/../tmp/docs/../var/./var/docs/user/home",
+            "output": "/tmp/home/tmp/tmp/home/var/tmp/var/var/docs/user/home"
         },
         {
-            "input": "//.././tmp/tmp/user/var/docs/user/home/var/.././user/tmp/user/var/tmp/home/home/var",
-            "output": "/tmp/tmp/user/var/docs/user/home/user/tmp/user/var/tmp/home/home/var"
+            "input": "//tmp/./home/.././tmp/tmp/./tmp/docs/./home/user/./../tmp/../docs/docs",
+            "output": "/tmp/tmp/tmp/tmp/docs/home/docs/docs"
         },
         {
-            "input": "//home/.././var/tmp/tmp/./user/./var/docs/./tmp/docs/docs/tmp/./var",
-            "output": "/var/tmp/tmp/user/var/docs/tmp/docs/docs/tmp/var"
+            "input": "/docs/docs/tmp/docs/docs/tmp/home/./user/home/var/home/./home/docs/./user/..",
+            "output": "/docs/docs/tmp/docs/docs/tmp/home/user/home/var/home/home/docs"
         },
         {
-            "input": "/var/user/tmp/tmp/home/docs/home/var/docs/var/home/var/tmp/./../tmp/./home/home",
-            "output": "/var/user/tmp/tmp/home/docs/home/var/docs/var/home/var/tmp/home/home"
+            "input": "//./var/tmp/home/../var/./tmp/home/home/tmp/./user/var/tmp/home/../..",
+            "output": "/var/tmp/var/tmp/home/home/tmp/user/var"
         },
         {
-            "input": "/user/home/home/user/home/docs/../var/var/var/home/docs/./var/./var/home/var/docs/.",
-            "output": "/user/home/home/user/home/var/var/var/home/docs/var/var/home/var/docs"
+            "input": "/tmp/docs/tmp/.././tmp/../home/././tmp/home/user/.././../home/./home/docs",
+            "output": "/tmp/docs/home/tmp/home/home/docs"
         },
         {
-            "input": "//tmp/./home/var/user/tmp/home/var/var/../../tmp/var/user/tmp/var/./..",
-            "output": "/tmp/home/var/user/tmp/home/tmp/var/user/tmp"
+            "input": "//user/user/user/user/./docs/var/home/./home/home/docs/./docs/user/./var/../.",
+            "output": "/user/user/user/user/docs/var/home/home/home/docs/docs/user"
         },
         {
-            "input": "//home/docs/../var/tmp",
-            "output": "/home/var/tmp"
+            "input": "/tmp/../home/./../tmp/user/user/var/home/home/././var/home/var/tmp/./../.",
+            "output": "/tmp/user/user/var/home/home/var/home/var"
         },
         {
-            "input": "/tmp/user/home/tmp/../tmp/tmp/../../tmp/user/home/docs/./var/tmp",
-            "output": "/tmp/user/home/tmp/user/home/docs/var/tmp"
+            "input": "/tmp/user/tmp/../user/home/./docs/var/..",
+            "output": "/tmp/user/user/home/docs"
         },
         {
-            "input": "//./../tmp/tmp/./docs/var/home/./../tmp/var/var/docs/var/tmp/tmp/var/tmp/var",
-            "output": "/tmp/tmp/docs/var/tmp/var/var/docs/var/tmp/tmp/var/tmp/var"
+            "input": "/var/home/var/./tmp/../var/tmp/tmp/var/./user/user/../home/docs/var/docs/docs/tmp",
+            "output": "/var/home/var/var/tmp/tmp/var/user/home/docs/var/docs/docs/tmp"
         },
         {
-            "input": "//docs/tmp/docs/home/./docs/user/var/docs/docs/./user/./../../var/tmp/tmp/home",
-            "output": "/docs/tmp/docs/home/docs/user/var/docs/var/tmp/tmp/home"
+            "input": "//var/home/././tmp/user/docs/docs/./.././user/docs/var",
+            "output": "/var/home/tmp/user/docs/user/docs/var"
         },
         {
-            "input": "//.",
-            "output": "/"
+            "input": "//./tmp/home/home/user/home/home/./home/user/tmp/docs/.",
+            "output": "/tmp/home/home/user/home/home/home/user/tmp/docs"
         },
         {
-            "input": "/var/var/.",
-            "output": "/var/var"
+            "input": "//./home/./user/.././user/tmp/var/tmp/../var/tmp",
+            "output": "/home/user/tmp/var/var/tmp"
         },
         {
-            "input": "/tmp/docs/docs/../../tmp/docs/var/user/home/../../tmp/..",
-            "output": "/tmp/tmp/docs/var"
+            "input": "/tmp/var/var/docs/tmp/user",
+            "output": "/tmp/var/var/docs/tmp/user"
         },
         {
-            "input": "//user/var/user/docs/var/docs",
-            "output": "/user/var/user/docs/var/docs"
+            "input": "/./../home/tmp/var/../docs/tmp/docs/.././user/user/home/./home/var",
+            "output": "/home/tmp/docs/tmp/user/user/home/home/var"
         },
         {
-            "input": "//var/var/../tmp/..",
-            "output": "/var"
+            "input": "//./user/../home/home/docs/user/docs/docs/tmp/var/user",
+            "output": "/home/home/docs/user/docs/docs/tmp/var/user"
         },
         {
-            "input": "//tmp/docs/docs/user/tmp/docs/../tmp/./../tmp",
-            "output": "/tmp/docs/docs/user/tmp/tmp"
+            "input": "//user/user/home/tmp/./docs/..",
+            "output": "/user/user/home/tmp"
         },
         {
-            "input": "/var/./home/tmp/home",
-            "output": "/var/home/tmp/home"
+            "input": "/tmp/././../user/home/home/tmp/../user",
+            "output": "/user/home/home/user"
         },
         {
-            "input": "//./var/home/tmp/var/docs/home/./user/docs/docs/tmp/user/tmp",
-            "output": "/var/home/tmp/var/docs/home/user/docs/docs/tmp/user/tmp"
+            "input": "/tmp/../home/docs/docs/user/../home/././user/user/docs/../..",
+            "output": "/home/docs/docs/home/user"
         },
         {
-            "input": "//tmp/var/home/../home/docs/home/../.././user/tmp/docs/tmp/../../docs/user/.",
-            "output": "/tmp/var/home/user/tmp/docs/user"
+            "input": "//docs/var/home/var/tmp/./var/home/var/docs/home/././user/tmp/./home/user",
+            "output": "/docs/var/home/var/tmp/var/home/var/docs/home/user/tmp/home/user"
         },
         {
-            "input": "//home/var/var/../docs/var/./docs",
-            "output": "/home/var/docs/var/docs"
+            "input": "//tmp/docs/tmp/var/home/docs/tmp/./home",
+            "output": "/tmp/docs/tmp/var/home/docs/tmp/home"
         },
         {
-            "input": "/../../..",
-            "output": "/"
+            "input": "//tmp/var/user/home",
+            "output": "/tmp/var/user/home"
         },
         {
-            "input": "//var/tmp/tmp/tmp/user",
-            "output": "/var/tmp/tmp/tmp/user"
+            "input": "//.././.././../../tmp/var/./../user/./docs/var",
+            "output": "/tmp/user/docs/var"
         },
         {
-            "input": "//./docs/var/../../home/user/../tmp/home/../../../var/../user/./tmp/tmp",
-            "output": "/user/tmp/tmp"
+            "input": "//tmp/home/./var/tmp/home/docs/../user/./var/tmp/docs/./tmp/../.",
+            "output": "/tmp/home/var/tmp/home/user/var/tmp/docs"
         },
         {
-            "input": "//user/user/user/docs/tmp/home/home/../user/home/../user/home/user/./../../home",
-            "output": "/user/user/user/docs/tmp/home/user/user/home"
+            "input": "//tmp/docs/./tmp/var/tmp/tmp/var/user/../docs/./../docs/var/var/tmp/var",
+            "output": "/tmp/docs/tmp/var/tmp/tmp/var/docs/var/var/tmp/var"
         },
         {
-            "input": "/./../docs/../tmp/docs/tmp/home/docs/user/./user/tmp/var/docs/var/tmp/.",
-            "output": "/tmp/docs/tmp/home/docs/user/user/tmp/var/docs/var/tmp"
+            "input": "//./../user/home/home/tmp/./docs/var/./home/./../docs/./tmp",
+            "output": "/user/home/home/tmp/docs/var/docs/tmp"
         },
         {
-            "input": "/docs/./docs/home/./home/var/docs/docs/./home/tmp/..",
-            "output": "/docs/docs/home/home/var/docs/docs/home"
+            "input": "//docs/home/../././home/../docs/var/user/./var/../home/../../docs/tmp",
+            "output": "/docs/docs/var/docs/tmp"
         },
         {
-            "input": "//tmp/user/../var/home/./home/tmp/var/docs/var/home/tmp/user/user/tmp/./home/var/.",
-            "output": "/tmp/var/home/home/tmp/var/docs/var/home/tmp/user/user/tmp/home/var"
+            "input": "//tmp/tmp/var/../user/docs/./docs/var/home/tmp",
+            "output": "/tmp/tmp/user/docs/docs/var/home/tmp"
         },
         {
-            "input": "//user/docs/home/../tmp/docs/./home/tmp/var/../.././tmp/home/docs/var",
-            "output": "/user/docs/tmp/docs/home/tmp/home/docs/var"
+            "input": "/tmp/./../docs/docs/./././tmp/docs/../tmp/user/var/tmp",
+            "output": "/docs/docs/tmp/tmp/user/var/tmp"
         },
         {
-            "input": "/tmp/user/./var/var/user/../.././user/home/user/var/docs/../../home/./docs/user",
-            "output": "/tmp/user/var/user/home/user/home/docs/user"
+            "input": "/./docs/././var/user/.",
+            "output": "/docs/var/user"
         },
         {
-            "input": "/user/home/../docs/tmp/user/tmp/var/user/tmp/tmp/user/home/home",
-            "output": "/user/docs/tmp/user/tmp/var/user/tmp/tmp/user/home/home"
+            "input": "/../docs/home/./home/tmp/../docs/var/home/tmp/tmp/docs/docs/home/tmp/user",
+            "output": "/docs/home/home/docs/var/home/tmp/tmp/docs/docs/home/tmp/user"
         },
         {
-            "input": "/../home/..",
-            "output": "/"
+            "input": "/docs/var/docs/home/./../home",
+            "output": "/docs/var/docs/home"
         },
         {
-            "input": "/./home/./.././.././tmp/user/tmp/user/var/./var/../user/home",
-            "output": "/tmp/user/tmp/user/var/user/home"
+            "input": "//docs/../tmp/tmp/docs/../tmp/home/var/var/../var/./tmp/user",
+            "output": "/tmp/tmp/tmp/home/var/var/tmp/user"
         },
         {
-            "input": "/../../var/home/docs/home/user/docs/user/tmp/var/home/var/../tmp/var",
-            "output": "/var/home/docs/home/user/docs/user/tmp/var/home/tmp/var"
-        },
-        {
-            "input": "//tmp/tmp/var/./home/var/home/user/./user/var/./tmp",
-            "output": "/tmp/tmp/var/home/var/home/user/user/var/tmp"
-        },
-        {
-            "input": "/./var/../home/../docs/home/../docs/user/var/docs/tmp/../var/./tmp/tmp",
-            "output": "/docs/docs/user/var/docs/var/tmp/tmp"
-        },
-        {
-            "input": "/tmp/var/./docs/var/./../var/home/home/../tmp/var/home/././tmp/var/docs",
-            "output": "/tmp/var/docs/var/home/tmp/var/home/tmp/var/docs"
-        },
-        {
-            "input": "//./../var/./docs/./../tmp/./../var/../home/home/../var/docs/user",
-            "output": "/var/home/var/docs/user"
-        },
-        {
-            "input": "/docs/home/user/docs/var/docs/tmp/docs/tmp/docs",
-            "output": "/docs/home/user/docs/var/docs/tmp/docs/tmp/docs"
-        },
-        {
-            "input": "//tmp/var/user/../docs/../tmp/home/docs",
-            "output": "/tmp/var/tmp/home/docs"
-        },
-        {
-            "input": "//var/user/./var",
-            "output": "/var/user/var"
-        },
-        {
-            "input": "/user/tmp/user/./tmp/user/var/home/user/user",
-            "output": "/user/tmp/user/tmp/user/var/home/user/user"
-        },
-        {
-            "input": "//var/tmp/var/home/var/home",
-            "output": "/var/tmp/var/home/var/home"
-        },
-        {
-            "input": "/var/user/../../tmp/./var/./var/var",
-            "output": "/tmp/var/var/var"
-        },
-        {
-            "input": "//././var/home/docs/home/./user/tmp/var/docs/../user/var/user/user/../docs/.",
-            "output": "/var/home/docs/home/user/tmp/var/user/var/user/docs"
-        },
-        {
-            "input": "//../user/var/.././docs/home/user/var/../docs/home/user/user/user/./user/home/.",
-            "output": "/user/docs/home/user/docs/home/user/user/user/user/home"
-        },
-        {
-            "input": "/../home/home/tmp/home/home/home/../tmp/docs/../..",
-            "output": "/home/home/tmp/home/home"
-        },
-        {
-            "input": "//docs/tmp/user/./var/user/user/user",
-            "output": "/docs/tmp/user/var/user/user/user"
-        },
-        {
-            "input": "//docs/user/.",
-            "output": "/docs/user"
-        },
-        {
-            "input": "/docs/var",
-            "output": "/docs/var"
-        },
-        {
-            "input": "//var/tmp/user/../user/./user/home/var/tmp",
-            "output": "/var/tmp/user/user/home/var/tmp"
-        },
-        {
-            "input": "//./home/user/../tmp/home/var/./././user/tmp/././var/var/var/user",
-            "output": "/home/tmp/home/var/user/tmp/var/var/var/user"
-        },
-        {
-            "input": "//tmp/home/tmp/tmp/docs/user/user/docs/tmp/home/docs/user/home/./docs/docs/tmp/user/var",
-            "output": "/tmp/home/tmp/tmp/docs/user/user/docs/tmp/home/docs/user/home/docs/docs/tmp/user/var"
-        },
-        {
-            "input": "/tmp/tmp/.",
-            "output": "/tmp/tmp"
-        },
-        {
-            "input": "//home/tmp/home/docs/../tmp",
-            "output": "/home/tmp/home/tmp"
-        },
-        {
-            "input": "//../var/var/docs/user/user/home/tmp/docs/var/././home",
-            "output": "/var/var/docs/user/user/home/tmp/docs/var/home"
-        },
-        {
-            "input": "/../var/user/tmp/home/../../var/tmp/home/docs/docs/./docs/home/user/user",
-            "output": "/var/user/var/tmp/home/docs/docs/docs/home/user/user"
-        },
-        {
-            "input": "//../docs/../home/././docs/docs/home/var/tmp/docs/tmp/home",
-            "output": "/home/docs/docs/home/var/tmp/docs/tmp/home"
-        },
-        {
-            "input": "//.././user/home/../home/docs/var/home/user/user/./var/var",
-            "output": "/user/home/docs/var/home/user/user/var/var"
-        },
-        {
-            "input": "//tmp/tmp",
-            "output": "/tmp/tmp"
-        },
-        {
-            "input": "//tmp/var/../var/../var/docs/./tmp/.././var",
-            "output": "/tmp/var/docs/var"
-        },
-        {
-            "input": "//var/docs/tmp/.././user/user/../home/var/user/../tmp/docs/tmp/var/var/.",
-            "output": "/var/docs/user/home/var/tmp/docs/tmp/var/var"
-        },
-        {
-            "input": "//user/var/docs/var/./user/home/tmp/../user/var/docs/docs/docs",
-            "output": "/user/var/docs/var/user/home/user/var/docs/docs/docs"
-        },
-        {
-            "input": "/home/docs/../tmp/var/home/docs/..",
-            "output": "/home/tmp/var/home"
-        },
-        {
-            "input": "//home/tmp/tmp/./.././home/home/tmp/./../user/../var",
-            "output": "/home/tmp/home/home/var"
-        },
-        {
-            "input": "//var/../var/user/var/user/.",
-            "output": "/var/user/var/user"
-        },
-        {
-            "input": "/tmp/docs/home/home/home/var/../docs/home/home/docs/tmp/./user/docs/var/tmp/tmp/user",
-            "output": "/tmp/docs/home/home/home/docs/home/home/docs/tmp/user/docs/var/tmp/tmp/user"
-        },
-        {
-            "input": "/home/user/docs/tmp/./docs/home/var/../tmp/docs/../user/user/home/docs/home/home/.",
-            "output": "/home/user/docs/tmp/docs/home/tmp/user/user/home/docs/home/home"
-        },
-        {
-            "input": "//./var/tmp/var/user/home/./user/user",
-            "output": "/var/tmp/var/user/home/user/user"
-        },
-        {
-            "input": "//user/tmp/./home/docs/./docs/docs/./tmp/user/././../user/..",
-            "output": "/user/tmp/home/docs/docs/docs/tmp"
-        },
-        {
-            "input": "//../home/..",
-            "output": "/"
-        },
-        {
-            "input": "//./user/user",
-            "output": "/user/user"
-        },
-        {
-            "input": "//docs/var/docs/home/var/tmp/user/../../user/var/docs/home/./user/user/../user",
-            "output": "/docs/var/docs/home/var/user/var/docs/home/user/user"
-        },
-        {
-            "input": "/docs/../././var/user/home/../user/home",
-            "output": "/var/user/user/home"
-        },
-        {
-            "input": "/../home/tmp/tmp/var/docs/./var/home/var/var/var/docs",
-            "output": "/home/tmp/tmp/var/docs/var/home/var/var/var/docs"
-        },
-        {
-            "input": "//../user/var/tmp/tmp/./var/../home/docs/user/./docs/docs/docs/user/var/var",
-            "output": "/user/var/tmp/tmp/home/docs/user/docs/docs/docs/user/var/var"
+            "input": "/var/var/docs/user/../user/docs/var/docs/var/./../docs/./user/././..",
+            "output": "/var/var/docs/user/docs/var/docs/docs"
         },
         {
             "input": "//tmp/..",
             "output": "/"
         },
         {
-            "input": "/home/../home/user/./docs/var/tmp/var/docs/../../var",
-            "output": "/home/user/docs/var/tmp/var"
+            "input": "/tmp/tmp/docs/././tmp/./home/tmp/tmp",
+            "output": "/tmp/tmp/docs/tmp/home/tmp/tmp"
         },
         {
-            "input": "/../../tmp/var/docs/home/./../../docs",
-            "output": "/tmp/var/docs"
+            "input": "//home/tmp/docs/home/user",
+            "output": "/home/tmp/docs/home/user"
         },
         {
-            "input": "/docs/../docs/./tmp/.",
-            "output": "/docs/tmp"
+            "input": "//tmp/./../tmp/tmp/var/docs/home/home/../home/../docs/user/../var/tmp/../docs/home",
+            "output": "/tmp/tmp/var/docs/home/docs/var/docs/home"
         },
         {
-            "input": "/../var/.",
-            "output": "/var"
+            "input": "/./user/../tmp/tmp/user/home/user/tmp/./user/docs/.",
+            "output": "/tmp/tmp/user/home/user/tmp/user/docs"
         },
         {
-            "input": "/../../home/../docs/docs/user/docs/var/var/./var/docs/tmp/user",
-            "output": "/docs/docs/user/docs/var/var/var/docs/tmp/user"
+            "input": "//var/./docs/var/docs/docs/docs/user/var/docs/var/tmp/var/..",
+            "output": "/var/docs/var/docs/docs/docs/user/var/docs/var/tmp"
         },
         {
-            "input": "/home/docs/user/user/var/./var",
-            "output": "/home/docs/user/user/var/var"
+            "input": "/user/var/docs/../docs/home/home/docs/./tmp/user/user/home/user/tmp",
+            "output": "/user/var/docs/home/home/docs/tmp/user/user/home/user/tmp"
         },
         {
-            "input": "/user/var/tmp/tmp/docs/./user/docs/user/./user/docs/home/var/var/home/docs",
-            "output": "/user/var/tmp/tmp/docs/user/docs/user/user/docs/home/var/var/home/docs"
+            "input": "//var/docs/tmp/var/./docs/docs/../docs/user/.",
+            "output": "/var/docs/tmp/var/docs/docs/user"
         },
         {
-            "input": "//home/user/./user/.",
-            "output": "/home/user/user"
-        },
-        {
-            "input": "//tmp/home/user/../user/./var/.././.",
-            "output": "/tmp/home/user"
-        },
-        {
-            "input": "//docs/tmp/../user/home/user/docs/docs/home/docs/user",
-            "output": "/docs/user/home/user/docs/docs/home/docs/user"
-        },
-        {
-            "input": "/.",
-            "output": "/"
-        },
-        {
-            "input": "//user/tmp/var/var/tmp/user/user/docs/tmp/var/../docs/var/user/../../docs",
-            "output": "/user/tmp/var/var/tmp/user/user/docs/tmp/docs/docs"
-        },
-        {
-            "input": "/home/docs/var/././..",
-            "output": "/home/docs"
-        },
-        {
-            "input": "//tmp/var/../user",
-            "output": "/tmp/user"
-        },
-        {
-            "input": "//home/user/./home/docs/docs/.",
-            "output": "/home/user/home/docs/docs"
-        },
-        {
-            "input": "/tmp/tmp/var/tmp/./../user/./home",
-            "output": "/tmp/tmp/var/user/home"
-        },
-        {
-            "input": "//var/tmp/tmp/./docs/../docs/var/..",
-            "output": "/var/tmp/tmp/docs"
-        },
-        {
-            "input": "/var/var/user/home/docs/home/./docs/var/../home",
-            "output": "/var/var/user/home/docs/home/docs/home"
-        },
-        {
-            "input": "/././user/./tmp/user/./user",
-            "output": "/user/tmp/user/user"
-        },
-        {
-            "input": "/../docs/home/var/../var/./././home/var/home/home/././user/user/../.",
-            "output": "/docs/home/var/home/var/home/home/user"
-        },
-        {
-            "input": "/docs/home/home/user/var/docs",
-            "output": "/docs/home/home/user/var/docs"
-        },
-        {
-            "input": "//././tmp/tmp/..",
-            "output": "/tmp"
-        },
-        {
-            "input": "//var/var/var/home/./var/user/../home/user/var/tmp/tmp/tmp/tmp/..",
-            "output": "/var/var/var/home/var/home/user/var/tmp/tmp/tmp"
-        },
-        {
-            "input": "/tmp/user/././docs/var/tmp/./tmp/tmp/user/tmp/docs/user/user",
-            "output": "/tmp/user/docs/var/tmp/tmp/tmp/user/tmp/docs/user/user"
-        },
-        {
-            "input": "//home/home/var/tmp/./home/docs/././tmp/user/tmp/home/var/./var",
-            "output": "/home/home/var/tmp/home/docs/tmp/user/tmp/home/var/var"
-        },
-        {
-            "input": "/user/user/home/../././user/user/docs/tmp/../tmp/./docs/var/tmp/docs/user/home",
-            "output": "/user/user/user/user/docs/tmp/docs/var/tmp/docs/user/home"
-        },
-        {
-            "input": "/tmp/user/../docs/tmp/tmp/home/home/tmp/tmp/docs/user/home/docs/./.",
-            "output": "/tmp/docs/tmp/tmp/home/home/tmp/tmp/docs/user/home/docs"
-        },
-        {
-            "input": "/home/..",
-            "output": "/"
-        },
-        {
-            "input": "/tmp/home/../docs/../home/var/tmp/var/./var/tmp/tmp",
-            "output": "/tmp/home/var/tmp/var/var/tmp/tmp"
-        },
-        {
-            "input": "/./docs/tmp/.././user/./user/../tmp/user/tmp/user/var/user/home/var/home",
-            "output": "/docs/user/tmp/user/tmp/user/var/user/home/var/home"
-        },
-        {
-            "input": "/user/docs/home/user/var/tmp/docs/home/tmp/user/user/tmp/home/./../docs/home/home/var",
-            "output": "/user/docs/home/user/var/tmp/docs/home/tmp/user/user/tmp/docs/home/home/var"
-        },
-        {
-            "input": "/./user/tmp/../tmp/var/./home/var/home/../var/home/docs/.././../user/home/..",
-            "output": "/user/tmp/var/home/var/var/user"
-        },
-        {
-            "input": "//../user",
-            "output": "/user"
-        },
-        {
-            "input": "/user/./user/tmp/docs/./././user/tmp/./var",
-            "output": "/user/user/tmp/docs/user/tmp/var"
-        },
-        {
-            "input": "//docs/./docs/var/./user/user/tmp",
-            "output": "/docs/docs/var/user/user/tmp"
-        },
-        {
-            "input": "//user/home/user/./tmp/docs/docs/../.././user/user/tmp",
-            "output": "/user/home/user/tmp/user/user/tmp"
-        },
-        {
-            "input": "//var/docs/var/docs/./../user/var/user/docs/user",
-            "output": "/var/docs/var/user/var/user/docs/user"
-        },
-        {
-            "input": "//var/docs/home/./../../var/docs/../home/home/tmp/..",
-            "output": "/var/var/home/home"
-        },
-        {
-            "input": "/var/./../tmp/user/docs/../tmp/tmp/tmp/var/var/docs/user/../tmp/home/..",
-            "output": "/tmp/user/tmp/tmp/tmp/var/var/docs/tmp"
-        },
-        {
-            "input": "/./docs/user/./..",
+            "input": "/./docs",
             "output": "/docs"
         },
         {
-            "input": "//./tmp/../tmp/var/./home",
-            "output": "/tmp/var/home"
+            "input": "/../tmp/var/./home/docs/var/user/../var/user/user/docs/home/tmp/home/./var",
+            "output": "/tmp/var/home/docs/var/var/user/user/docs/home/tmp/home/var"
         },
         {
-            "input": "/./././user/user/tmp/.",
-            "output": "/user/user/tmp"
+            "input": "//user/var/user/tmp/tmp/home/../home/var/../var",
+            "output": "/user/var/user/tmp/tmp/home/var"
         },
         {
-            "input": "//user/docs/var/home/docs/var/var/./user",
-            "output": "/user/docs/var/home/docs/var/var/user"
+            "input": "//docs/./tmp/tmp",
+            "output": "/docs/tmp/tmp"
         },
         {
-            "input": "//tmp/./tmp/tmp/docs/user/var/home/home/./var/tmp/tmp/docs/docs",
-            "output": "/tmp/tmp/tmp/docs/user/var/home/home/var/tmp/tmp/docs/docs"
+            "input": "//var/../../tmp/user/../var/tmp/tmp/user",
+            "output": "/tmp/var/tmp/tmp/user"
         },
         {
-            "input": "//home/docs/var/./docs/tmp/docs/tmp/./user/docs/user/docs/./docs/docs/user/tmp/docs",
-            "output": "/home/docs/var/docs/tmp/docs/tmp/user/docs/user/docs/docs/docs/user/tmp/docs"
+            "input": "/docs/docs/./docs/home/home/./home/home/../home/var/tmp/tmp",
+            "output": "/docs/docs/docs/home/home/home/home/var/tmp/tmp"
         },
         {
-            "input": "/../home/var/tmp/./user/../../docs/var/var/user/docs/user/home/../.",
-            "output": "/home/var/docs/var/var/user/docs/user"
+            "input": "/home/tmp/tmp/var/tmp/tmp/user/var/home/tmp",
+            "output": "/home/tmp/tmp/var/tmp/tmp/user/var/home/tmp"
         },
         {
-            "input": "/docs/home/docs/var/tmp/./docs/docs/docs/./user/././var/tmp/var/home/..",
-            "output": "/docs/home/docs/var/tmp/docs/docs/docs/user/var/tmp/var"
+            "input": "/tmp/user/var/../../docs",
+            "output": "/tmp/docs"
         },
         {
-            "input": "//tmp/./user/home/user",
-            "output": "/tmp/user/home/user"
+            "input": "//docs/user/tmp/tmp/home/user/./../../user/user/home/./docs",
+            "output": "/docs/user/tmp/tmp/user/user/home/docs"
         },
         {
-            "input": "/home/docs",
-            "output": "/home/docs"
+            "input": "//var/tmp/var/../user/var/var/home/./var/./../home/./docs",
+            "output": "/var/tmp/user/var/var/home/home/docs"
         },
         {
-            "input": "//home/var/user/docs/var/home/var/docs/home/docs/user/docs/docs/./home/var/../.",
-            "output": "/home/var/user/docs/var/home/var/docs/home/docs/user/docs/docs/home"
-        },
-        {
-            "input": "//./././../home/docs/user/tmp/./../docs/var/docs",
-            "output": "/home/docs/user/docs/var/docs"
-        },
-        {
-            "input": "//./user/tmp/tmp/home/home/home/./home",
-            "output": "/user/tmp/tmp/home/home/home/home"
-        },
-        {
-            "input": "/../user/./././../tmp",
-            "output": "/tmp"
-        },
-        {
-            "input": "//var/tmp/docs/docs/user/..",
-            "output": "/var/tmp/docs/docs"
-        },
-        {
-            "input": "//var/home/user/.././tmp/user/var/docs/var/var/var",
-            "output": "/var/home/tmp/user/var/docs/var/var/var"
-        },
-        {
-            "input": "//../tmp/var/../home/user/..",
-            "output": "/tmp/home"
-        },
-        {
-            "input": "/home/docs/var/user/./home/./docs/var/user/user/docs/../../.././user/tmp",
-            "output": "/home/docs/var/user/home/docs/var/user/tmp"
-        },
-        {
-            "input": "//var/../var/tmp/var/./var/home/user/user/././home",
-            "output": "/var/tmp/var/var/home/user/user/home"
-        },
-        {
-            "input": "/home/docs/home/../user",
-            "output": "/home/docs/user"
-        },
-        {
-            "input": "//./var/user/tmp/user/.",
-            "output": "/var/user/tmp/user"
-        },
-        {
-            "input": "//docs/../tmp/tmp/user",
-            "output": "/tmp/tmp/user"
-        },
-        {
-            "input": "/../tmp/var/./../user",
-            "output": "/tmp/user"
-        },
-        {
-            "input": "/./../docs/tmp/tmp/docs/user/user/var/../../docs/home/home/var/user/docs/home",
-            "output": "/docs/tmp/tmp/docs/user/docs/home/home/var/user/docs/home"
-        },
-        {
-            "input": "/docs/.",
-            "output": "/docs"
-        },
-        {
-            "input": "//tmp/docs/./home/tmp/home/../home/docs/./var/../var/tmp/..",
-            "output": "/tmp/docs/home/tmp/home/docs/var"
-        },
-        {
-            "input": "/docs/home/tmp/home/user/../user/home",
-            "output": "/docs/home/tmp/home/user/home"
-        },
-        {
-            "input": "//./tmp/docs/home/./docs/user/home/user",
-            "output": "/tmp/docs/home/docs/user/home/user"
-        },
-        {
-            "input": "//home/../tmp",
-            "output": "/tmp"
-        },
-        {
-            "input": "//./user/home/user/user/tmp/user/home/./docs",
-            "output": "/user/home/user/user/tmp/user/home/docs"
-        },
-        {
-            "input": "/user/home/var/docs/tmp/home/./../tmp/../tmp/../home/././var/tmp/tmp/..",
-            "output": "/user/home/var/docs/tmp/home/var/tmp"
-        },
-        {
-            "input": "/user/.././docs",
-            "output": "/docs"
-        },
-        {
-            "input": "//var/tmp/./docs/docs/docs/docs/var/user/docs/home/var/tmp/docs/tmp/var/user/docs/tmp/user",
-            "output": "/var/tmp/docs/docs/docs/docs/var/user/docs/home/var/tmp/docs/tmp/var/user/docs/tmp/user"
-        },
-        {
-            "input": "/../.",
+            "input": "//../..",
             "output": "/"
-        },
-        {
-            "input": "/var/./tmp/user/./docs/user/../././docs/../user",
-            "output": "/var/tmp/user/docs/user"
-        },
-        {
-            "input": "//docs/user/user/../home/../user/./../home",
-            "output": "/docs/user/home"
-        },
-        {
-            "input": "//../../var/user/./home/home/user/var/../user/././../home/var/docs/tmp",
-            "output": "/var/user/home/home/user/home/var/docs/tmp"
-        },
-        {
-            "input": "//var/tmp/docs/user/user/./user/tmp/././docs/docs/./var/tmp/tmp/././.",
-            "output": "/var/tmp/docs/user/user/user/tmp/docs/docs/var/tmp/tmp"
-        },
-        {
-            "input": "//./tmp/user/var/docs/var/var/../docs/user/var/user/user/home/..",
-            "output": "/tmp/user/var/docs/var/docs/user/var/user/user"
-        },
-        {
-            "input": "/var",
-            "output": "/var"
-        },
-        {
-            "input": "/./tmp/../home/home/home/home/tmp/user/docs/docs/user/var/var/user/.",
-            "output": "/home/home/home/home/tmp/user/docs/docs/user/var/var/user"
-        },
-        {
-            "input": "/docs/tmp/docs/docs/tmp",
-            "output": "/docs/tmp/docs/docs/tmp"
-        },
-        {
-            "input": "/docs/.././var/tmp/tmp/user/docs/home/docs/user/docs/./tmp/home/home/home/home",
-            "output": "/var/tmp/tmp/user/docs/home/docs/user/docs/tmp/home/home/home/home"
-        },
-        {
-            "input": "//tmp/home/var/../home/docs/home/tmp/user/docs/var/tmp",
-            "output": "/tmp/home/home/docs/home/tmp/user/docs/var/tmp"
-        },
-        {
-            "input": "/tmp/user/user/home/docs/tmp/user/./home/../tmp/./user/user/./../../var",
-            "output": "/tmp/user/user/home/docs/tmp/user/tmp/var"
-        },
-        {
-            "input": "/user/../docs/user/docs/home/user/tmp/user/var/user/tmp/docs",
-            "output": "/docs/user/docs/home/user/tmp/user/var/user/tmp/docs"
-        },
-        {
-            "input": "/user/user/var/docs/..",
-            "output": "/user/user/var"
-        },
-        {
-            "input": "/user/user/../docs/var/home/docs/./var/user/var/tmp/var/./docs",
-            "output": "/user/docs/var/home/docs/var/user/var/tmp/var/docs"
-        },
-        {
-            "input": "//./../docs/home/docs/./home/var/docs/home/../docs/.././home/tmp/home/./home",
-            "output": "/docs/home/docs/home/var/docs/home/tmp/home/home"
-        },
-        {
-            "input": "/././var/../user/user",
-            "output": "/user/user"
-        },
-        {
-            "input": "/docs/home/tmp/user",
-            "output": "/docs/home/tmp/user"
-        },
-        {
-            "input": "/../var/../user/user/docs/user/docs/home/var/user/docs/home",
-            "output": "/user/user/docs/user/docs/home/var/user/docs/home"
-        },
-        {
-            "input": "//home/./docs/home/./var/tmp/user/var/home/home",
-            "output": "/home/docs/home/var/tmp/user/var/home/home"
-        },
-        {
-            "input": "//tmp/docs/var/var/var/../../user/user/var/tmp/../user",
-            "output": "/tmp/docs/var/user/user/var/user"
-        },
-        {
-            "input": "/docs/../../var",
-            "output": "/var"
-        },
-        {
-            "input": "/home/home/docs/.",
-            "output": "/home/home/docs"
-        },
-        {
-            "input": "/user/docs/tmp/var/user/docs/..",
-            "output": "/user/docs/tmp/var/user"
-        },
-        {
-            "input": "//tmp/./tmp/./docs/var/home/tmp/./var/.././docs/./tmp/docs/home/../tmp/home",
-            "output": "/tmp/tmp/docs/var/home/tmp/docs/tmp/docs/tmp/home"
-        },
-        {
-            "input": "//../docs/./docs/var/tmp/tmp/../user/../tmp/var",
-            "output": "/docs/docs/var/tmp/tmp/var"
-        },
-        {
-            "input": "//docs/docs/user/user/tmp/user/././.",
-            "output": "/docs/docs/user/user/tmp/user"
-        },
-        {
-            "input": "//docs/tmp/home/user/tmp/var/docs/docs/tmp/user",
-            "output": "/docs/tmp/home/user/tmp/var/docs/docs/tmp/user"
-        },
-        {
-            "input": "//././../docs/docs/docs/var/././home",
-            "output": "/docs/docs/docs/var/home"
-        },
-        {
-            "input": "/home/var/var/././docs/user/./../user/var/./var/var/../docs/./user",
-            "output": "/home/var/var/docs/user/var/var/docs/user"
-        },
-        {
-            "input": "//var/./home/user/../tmp/../docs/user/../user/home/home/docs/docs/user/../var/../tmp",
-            "output": "/var/home/docs/user/home/home/docs/docs/tmp"
-        },
-        {
-            "input": "//user/docs/../var/../../user",
-            "output": "/user"
-        },
-        {
-            "input": "//tmp/../../../user/docs/./var/home/./var/./docs/./user/docs/docs/user",
-            "output": "/user/docs/var/home/var/docs/user/docs/docs/user"
-        },
-        {
-            "input": "//docs/docs/docs/user/var/tmp/docs",
-            "output": "/docs/docs/docs/user/var/tmp/docs"
-        },
-        {
-            "input": "//docs/./.././home/tmp/home/user/./var/user/..",
-            "output": "/home/tmp/home/user/var"
-        },
-        {
-            "input": "/docs/tmp/./user",
-            "output": "/docs/tmp/user"
-        },
-        {
-            "input": "/./var/tmp/user/../../home/tmp/var/../user/./var/var/docs/docs/docs/docs/var/user",
-            "output": "/var/home/tmp/user/var/var/docs/docs/docs/docs/var/user"
-        },
-        {
-            "input": "/user/user/.././var/../tmp/tmp/docs/var/docs/docs/docs/home/user/home/home/.",
-            "output": "/user/tmp/tmp/docs/var/docs/docs/docs/home/user/home/home"
-        },
-        {
-            "input": "//home/./var/user/user/docs",
-            "output": "/home/var/user/user/docs"
-        },
-        {
-            "input": "/home/../user/var/../tmp/./../../user/docs/user/tmp/././././var/./home",
-            "output": "/user/docs/user/tmp/var/home"
-        },
-        {
-            "input": "//var/home/../.././user/var/docs/docs/./home/./tmp",
-            "output": "/user/var/docs/docs/home/tmp"
-        },
-        {
-            "input": "/docs/var/user/.././var/user/docs/home/docs/././tmp",
-            "output": "/docs/var/var/user/docs/home/docs/tmp"
-        },
-        {
-            "input": "/var/user/home/../tmp/user/././var/var/user/../user/./user/home",
-            "output": "/var/user/tmp/user/var/var/user/user/home"
-        },
-        {
-            "input": "/home",
-            "output": "/home"
-        },
-        {
-            "input": "/tmp/tmp/tmp/var/./../../user/docs/user/var/tmp/../user/user/tmp/home/../..",
-            "output": "/tmp/tmp/user/docs/user/var/user/user"
-        },
-        {
-            "input": "//..",
-            "output": "/"
-        },
-        {
-            "input": "/var/var/tmp/tmp/docs/tmp/docs/home/docs/././docs/./tmp/tmp/home/user/../user/docs",
-            "output": "/var/var/tmp/tmp/docs/tmp/docs/home/docs/docs/tmp/tmp/home/user/docs"
-        },
-        {
-            "input": "/var/./../docs",
-            "output": "/docs"
-        },
-        {
-            "input": "//home/docs/./home/./home/../home/user/user/tmp/home/../tmp",
-            "output": "/home/docs/home/home/user/user/tmp/tmp"
-        },
-        {
-            "input": "/docs/home/user/./var/user/../home",
-            "output": "/docs/home/user/var/home"
-        },
-        {
-            "input": "/home/user/tmp/user/tmp/var",
-            "output": "/home/user/tmp/user/tmp/var"
-        },
-        {
-            "input": "//home/var/docs/docs/tmp/docs/../../tmp/../var/./docs/user/.././home",
-            "output": "/home/var/docs/docs/var/docs/home"
-        },
-        {
-            "input": "/var/./user/tmp/./var/./../..",
-            "output": "/var/user"
-        },
-        {
-            "input": "//./home/var/home/user/../var/home/./home/tmp/tmp/docs/tmp",
-            "output": "/home/var/home/var/home/home/tmp/tmp/docs/tmp"
-        },
-        {
-            "input": "//home/var/var/tmp/./user/docs/home/home/../docs",
-            "output": "/home/var/var/tmp/user/docs/home/docs"
-        },
-        {
-            "input": "//tmp/./docs/docs/var/var/tmp/.././../var",
-            "output": "/tmp/docs/docs/var/var"
-        },
-        {
-            "input": "/tmp",
-            "output": "/tmp"
-        },
-        {
-            "input": "//tmp/docs/home/.././docs/./tmp/var",
-            "output": "/tmp/docs/docs/tmp/var"
-        },
-        {
-            "input": "/home/tmp/tmp/home/./home/./home/docs/..",
-            "output": "/home/tmp/tmp/home/home/home"
-        },
-        {
-            "input": "/user",
-            "output": "/user"
-        },
-        {
-            "input": "/var/user/user/docs/./tmp/user/././././var/..",
-            "output": "/var/user/user/docs/tmp/user"
-        },
-        {
-            "input": "//../../../var",
-            "output": "/var"
-        },
-        {
-            "input": "//./home/docs/../../var",
-            "output": "/var"
-        },
-        {
-            "input": "//docs/tmp/home/.",
-            "output": "/docs/tmp/home"
-        },
-        {
-            "input": "//./tmp/var/docs/docs/./tmp/user",
-            "output": "/tmp/var/docs/docs/tmp/user"
-        },
-        {
-            "input": "//../docs/../../user/docs/home/../tmp",
-            "output": "/user/docs/tmp"
-        },
-        {
-            "input": "/var/../docs/var/var/.././user/././tmp/./../home/tmp/tmp/home/tmp/home",
-            "output": "/docs/var/user/home/tmp/tmp/home/tmp/home"
-        },
-        {
-            "input": "/docs/docs/var/user/docs/../var/../tmp/tmp/docs/../home/tmp/tmp/..",
-            "output": "/docs/docs/var/user/tmp/tmp/home/tmp"
-        },
-        {
-            "input": "//home/user/docs/./user/docs/var/../../home/var/docs/docs/../user/../var",
-            "output": "/home/user/docs/user/home/var/docs/var"
-        },
-        {
-            "input": "//user/./var/user/user/./tmp",
-            "output": "/user/var/user/user/tmp"
-        },
-        {
-            "input": "/tmp/./var/..",
-            "output": "/tmp"
-        },
-        {
-            "input": "/tmp/.",
-            "output": "/tmp"
-        },
-        {
-            "input": "/var/././docs/docs/home/user/var/home/home/user/./var/../../docs/home/user/docs/docs",
-            "output": "/var/docs/docs/home/user/var/home/home/docs/home/user/docs/docs"
-        },
-        {
-            "input": "/docs/docs",
-            "output": "/docs/docs"
-        },
-        {
-            "input": "//tmp/home/tmp/var/home/user/docs/docs/../user/tmp/../././home/./.",
-            "output": "/tmp/home/tmp/var/home/user/docs/user/home"
-        },
-        {
-            "input": "/tmp/tmp/docs/../docs/user/../user/home/../user",
-            "output": "/tmp/tmp/docs/user/user"
-        },
-        {
-            "input": "//home",
-            "output": "/home"
-        },
-        {
-            "input": "//../home/docs/docs/./user/user/var/tmp/var/var/user/tmp/tmp",
-            "output": "/home/docs/docs/user/user/var/tmp/var/var/user/tmp/tmp"
-        },
-        {
-            "input": "//./../user/docs/user",
-            "output": "/user/docs/user"
-        },
-        {
-            "input": "/user/user/tmp/home/docs/home",
-            "output": "/user/user/tmp/home/docs/home"
-        },
-        {
-            "input": "//user/tmp/docs/home/home",
-            "output": "/user/tmp/docs/home/home"
-        },
-        {
-            "input": "/../user/var/docs/docs/./home/home/docs/./tmp/./../docs/home/.",
-            "output": "/user/var/docs/docs/home/home/docs/docs/home"
-        },
-        {
-            "input": "/docs",
-            "output": "/docs"
-        },
-        {
-            "input": "//user/var/home/user/./../user/./home/var/home/home/tmp",
-            "output": "/user/var/home/user/home/var/home/home/tmp"
-        },
-        {
-            "input": "/../tmp/../../home/./home/docs/user/docs/../tmp",
-            "output": "/home/home/docs/user/tmp"
-        },
-        {
-            "input": "//../home/./tmp/user/home/var/./user/user/tmp/docs/tmp/..",
-            "output": "/home/tmp/user/home/var/user/user/tmp/docs"
-        },
-        {
-            "input": "//tmp/./docs/..",
-            "output": "/tmp"
-        },
-        {
-            "input": "/tmp/tmp/home/var/var/docs/../docs/home/../user/home",
-            "output": "/tmp/tmp/home/var/var/docs/user/home"
-        },
-        {
-            "input": "//docs/home/var/user/user/tmp/var/tmp/./tmp/var/docs",
-            "output": "/docs/home/var/user/user/tmp/var/tmp/tmp/var/docs"
-        },
-        {
-            "input": "/user/user/var/var/var/user/home/..",
-            "output": "/user/user/var/var/var/user"
-        },
-        {
-            "input": "//../user/.",
-            "output": "/user"
-        },
-        {
-            "input": "/user/../user/tmp/docs/user/tmp/var/user/tmp/../../tmp/home/tmp/user",
-            "output": "/user/tmp/docs/user/tmp/var/tmp/home/tmp/user"
-        },
-        {
-            "input": "/var/tmp/user/tmp/var/.././.",
-            "output": "/var/tmp/user/tmp"
-        },
-        {
-            "input": "/docs/../tmp/tmp",
-            "output": "/tmp/tmp"
-        },
-        {
-            "input": "//var/user/.././home/../user/docs/home/docs/./docs/docs/user",
-            "output": "/var/user/docs/home/docs/docs/docs/user"
-        },
-        {
-            "input": "//docs/user/../../../user/tmp/.",
-            "output": "/user/tmp"
-        },
-        {
-            "input": "/tmp/tmp/./home/var/../home/./../user/home/..",
-            "output": "/tmp/tmp/home/user"
-        },
-        {
-            "input": "/tmp/../var/tmp/user/var/../tmp/../../var/home/docs/../user/var/var",
-            "output": "/var/tmp/var/home/user/var/var"
-        },
-        {
-            "input": "//var/var/../tmp/docs/home/./var/home/tmp/home/tmp/home",
-            "output": "/var/tmp/docs/home/var/home/tmp/home/tmp/home"
-        },
-        {
-            "input": "/var/./.",
-            "output": "/var"
-        },
-        {
-            "input": "//home/home/user/docs/home/./docs/./var/./docs/..",
-            "output": "/home/home/user/docs/home/docs/var"
-        },
-        {
-            "input": "/user/../user/../docs/./home/docs/.././user/../var/var/tmp/../tmp",
-            "output": "/docs/home/var/var/tmp"
-        },
-        {
-            "input": "/user/docs/home/user/../user/docs/user/docs/./../var",
-            "output": "/user/docs/home/user/docs/user/var"
-        },
-        {
-            "input": "/../docs/home/../home/./tmp/../../docs/docs/tmp/./home/var/docs/var",
-            "output": "/docs/docs/docs/tmp/home/var/docs/var"
-        },
-        {
-            "input": "//var/./docs/docs/tmp/var/../tmp/user/docs/user/var/tmp/var/var/../home/docs",
-            "output": "/var/docs/docs/tmp/tmp/user/docs/user/var/tmp/var/home/docs"
-        },
-        {
-            "input": "//tmp",
-            "output": "/tmp"
-        },
-        {
-            "input": "//tmp/docs/tmp/user/docs/tmp/./../home/./var/var/var/./user/home/docs/home",
-            "output": "/tmp/docs/tmp/user/docs/home/var/var/var/user/home/docs/home"
-        },
-        {
-            "input": "//../../user/../home/../home/tmp/home/var/docs/var/tmp/./var/docs/..",
-            "output": "/home/tmp/home/var/docs/var/tmp/var"
-        },
-        {
-            "input": "//tmp/./../../docs/docs/home/var/user",
-            "output": "/docs/docs/home/var/user"
-        },
-        {
-            "input": "/user/tmp/var/user/./var/tmp/home/var/home/docs/user/tmp/../var",
-            "output": "/user/tmp/var/user/var/tmp/home/var/home/docs/user/var"
-        },
-        {
-            "input": "/tmp/var/var/docs/docs/user/var",
-            "output": "/tmp/var/var/docs/docs/user/var"
-        },
-        {
-            "input": "//home/user/docs/home/./tmp/.././../var/../var/var/home/user/user",
-            "output": "/home/user/docs/var/var/home/user/user"
-        },
-        {
-            "input": "/user/tmp/var/tmp/tmp/var/var/../user/../var/user/user/docs/user",
-            "output": "/user/tmp/var/tmp/tmp/var/var/user/user/docs/user"
-        },
-        {
-            "input": "//.././tmp/tmp/./home/docs/var/docs/user/tmp/../././.././user/tmp/home",
-            "output": "/tmp/tmp/home/docs/var/docs/user/tmp/home"
-        },
-        {
-            "input": "/../docs/var/tmp/user/home/../docs/docs/home/tmp/docs/tmp",
-            "output": "/docs/var/tmp/user/docs/docs/home/tmp/docs/tmp"
-        },
-        {
-            "input": "//./tmp/user/../user/user/home/tmp/./user/tmp/user/home/tmp/home",
-            "output": "/tmp/user/user/home/tmp/user/tmp/user/home/tmp/home"
-        },
-        {
-            "input": "/home/.",
-            "output": "/home"
-        },
-        {
-            "input": "/tmp/docs/home/user/user/tmp/././home/./var/./docs/user/tmp/home/home/docs/.",
-            "output": "/tmp/docs/home/user/user/tmp/home/var/docs/user/tmp/home/home/docs"
-        },
-        {
-            "input": "//tmp/user/user/./../docs/./tmp/home/../docs/./user/user/var/var/var/user",
-            "output": "/tmp/user/docs/tmp/docs/user/user/var/var/var/user"
-        },
-        {
-            "input": "//user/var/user/var/var/./var/docs/docs/user/docs/var/tmp/..",
-            "output": "/user/var/user/var/var/var/docs/docs/user/docs/var"
-        },
-        {
-            "input": "//user/docs/var/../tmp",
-            "output": "/user/docs/tmp"
-        },
-        {
-            "input": "/tmp/docs/home/var/var/./tmp/var/user/tmp/var",
-            "output": "/tmp/docs/home/var/var/tmp/var/user/tmp/var"
-        },
-        {
-            "input": "//home/user/home/user/user/tmp/../var/var/var/./docs/home/../user",
-            "output": "/home/user/home/user/user/var/var/var/docs/user"
-        },
-        {
-            "input": "//../tmp/.././../user/docs/./var/var/.",
-            "output": "/user/docs/var/var"
-        },
-        {
-            "input": "/var/./../user/./docs/docs/user/tmp/docs/home/home/user/./docs/./.",
-            "output": "/user/docs/docs/user/tmp/docs/home/home/user/docs"
-        },
-        {
-            "input": "/tmp/./docs/var/../docs/tmp/user/../docs/home",
-            "output": "/tmp/docs/docs/tmp/docs/home"
-        },
-        {
-            "input": "/home/tmp/../user/var/docs",
-            "output": "/home/user/var/docs"
-        },
-        {
-            "input": "/tmp/./././user",
-            "output": "/tmp/user"
-        },
-        {
-            "input": "/user/user/docs/../docs/var/../.",
-            "output": "/user/user/docs"
-        },
-        {
-            "input": "/docs/tmp/tmp/./var/../docs/home",
-            "output": "/docs/tmp/tmp/docs/home"
-        },
-        {
-            "input": "//docs/var/./var/./tmp/tmp/user/./var/../tmp/var/tmp/home/./docs/user/docs/var",
-            "output": "/docs/var/var/tmp/tmp/user/tmp/var/tmp/home/docs/user/docs/var"
-        },
-        {
-            "input": "//docs/tmp/docs/user/.",
-            "output": "/docs/tmp/docs/user"
-        },
-        {
-            "input": "//../var/home/./../docs/var/tmp/./user/var/./home/docs/.././user/user/..",
-            "output": "/var/docs/var/tmp/user/var/home/user"
-        },
-        {
-            "input": "/var/../home/../docs/..",
-            "output": "/"
-        },
-        {
-            "input": "//user/var/var/var/./home/user/.",
-            "output": "/user/var/var/var/home/user"
-        },
-        {
-            "input": "//./docs/../docs/tmp/user/home/user/docs/.././docs/user/../tmp",
-            "output": "/docs/tmp/user/home/user/docs/tmp"
-        },
-        {
-            "input": "/tmp/./docs/../home/tmp/home/docs/var/var/../../home/home/user/./.././user",
-            "output": "/tmp/home/tmp/home/docs/home/home/user"
-        },
-        {
-            "input": "//../home/docs/.",
-            "output": "/home/docs"
-        },
-        {
-            "input": "/tmp/./home/user",
-            "output": "/tmp/home/user"
-        },
-        {
-            "input": "/./home/./tmp/home/./user/user/tmp/./../docs/user/var",
-            "output": "/home/tmp/home/user/user/docs/user/var"
-        },
-        {
-            "input": "/var/docs/home/docs/../../.",
-            "output": "/var/docs"
-        },
-        {
-            "input": "//user/./././var/tmp/tmp/../../home/../var/tmp/.././home/user",
-            "output": "/user/var/var/home/user"
-        },
-        {
-            "input": "//var/var/.././home/docs/.././var/var/user/./home/../user/home/.",
-            "output": "/var/home/var/var/user/user/home"
-        },
-        {
-            "input": "/var/var/tmp/tmp/docs",
-            "output": "/var/var/tmp/tmp/docs"
-        },
-        {
-            "input": "/./tmp/home/user/./home/./../../home/user/./var/home/tmp/tmp/home",
-            "output": "/tmp/home/home/user/var/home/tmp/tmp/home"
-        },
-        {
-            "input": "/./tmp/var/./../var/var/..",
-            "output": "/tmp/var"
-        },
-        {
-            "input": "/user/./../var/var/tmp/user/user/home/tmp/user/../tmp/docs",
-            "output": "/var/var/tmp/user/user/home/tmp/tmp/docs"
-        },
-        {
-            "input": "/./home/./../home/var/home/../.././.././tmp/.",
-            "output": "/tmp"
-        },
-        {
-            "input": "/docs/docs/tmp/var/home/tmp/user/tmp/user",
-            "output": "/docs/docs/tmp/var/home/tmp/user/tmp/user"
-        },
-        {
-            "input": "//./user/tmp/home",
-            "output": "/user/tmp/home"
-        },
-        {
-            "input": "/./tmp/../user",
-            "output": "/user"
-        },
-        {
-            "input": "/./user",
-            "output": "/user"
-        },
-        {
-            "input": "//var/var/home/docs/home",
-            "output": "/var/var/home/docs/home"
-        },
-        {
-            "input": "//tmp/./../tmp/user/docs/docs",
-            "output": "/tmp/user/docs/docs"
-        },
-        {
-            "input": "/var/var/./..",
-            "output": "/var"
-        },
-        {
-            "input": "//var/var/docs/user/docs/./var/../docs/../docs",
-            "output": "/var/var/docs/user/docs/docs"
-        },
-        {
-            "input": "/home/tmp/../docs/user/../../home/tmp/../../var/user/./tmp/docs/user/home/./user",
-            "output": "/home/var/user/tmp/docs/user/home/user"
-        },
-        {
-            "input": "//home/user/home/home/user/var/var",
-            "output": "/home/user/home/home/user/var/var"
-        },
-        {
-            "input": "/docs/user/user/docs/../home/user/var/tmp/tmp/user/docs/./var/var/./tmp/home",
-            "output": "/docs/user/user/home/user/var/tmp/tmp/user/docs/var/var/tmp/home"
         },
         {
             "input": "//var",
             "output": "/var"
         },
         {
-            "input": "/home/./tmp/user/./user/./tmp/var/../home/.././user/user/tmp/tmp/var/../tmp",
-            "output": "/home/tmp/user/user/tmp/user/user/tmp/tmp/tmp"
+            "input": "/tmp",
+            "output": "/tmp"
         },
         {
-            "input": "//docs/tmp",
+            "input": "/user/var/.././user/././docs/./docs/../../../.",
+            "output": "/user"
+        },
+        {
+            "input": "/var/home/docs/../home/var/user/tmp/user/var/.",
+            "output": "/var/home/home/var/user/tmp/user/var"
+        },
+        {
+            "input": "/tmp/docs/var/tmp/./../tmp/docs/user/docs/../home/./.",
+            "output": "/tmp/docs/var/tmp/docs/user/home"
+        },
+        {
+            "input": "/var",
+            "output": "/var"
+        },
+        {
+            "input": "//../user/user/./docs/docs/docs/./docs/home/home",
+            "output": "/user/user/docs/docs/docs/docs/home/home"
+        },
+        {
+            "input": "//var/var/var/var/../docs/var/var/docs/docs/../tmp/user",
+            "output": "/var/var/var/docs/var/var/docs/tmp/user"
+        },
+        {
+            "input": "//docs/home/var/./home/docs/../user/./home/docs/home/home/./home/var/../var/../var",
+            "output": "/docs/home/var/home/user/home/docs/home/home/home/var"
+        },
+        {
+            "input": "//home/var/../../home/user/user/var/./home/docs/user/docs/../user/var/./user/user",
+            "output": "/home/user/user/var/home/docs/user/user/var/user/user"
+        },
+        {
+            "input": "/../user/../var/./docs/var/var/user/var/var/var/../user/var/../../user/home",
+            "output": "/var/docs/var/var/user/var/var/user/home"
+        },
+        {
+            "input": "//./docs/./user/home/user/..",
+            "output": "/docs/user/home"
+        },
+        {
+            "input": "/home/docs/var/docs/./home/var/home/tmp/home/var/../var/home/user/./tmp",
+            "output": "/home/docs/var/docs/home/var/home/tmp/home/var/home/user/tmp"
+        },
+        {
+            "input": "//../../var/docs/././../user",
+            "output": "/var/user"
+        },
+        {
+            "input": "/./tmp/tmp/home/var/home/home/home/home",
+            "output": "/tmp/tmp/home/var/home/home/home/home"
+        },
+        {
+            "input": "/././docs/docs/user/var",
+            "output": "/docs/docs/user/var"
+        },
+        {
+            "input": "/../home/..",
+            "output": "/"
+        },
+        {
+            "input": "//tmp/home/home/tmp/docs",
+            "output": "/tmp/home/home/tmp/docs"
+        },
+        {
+            "input": "//tmp/user/home/home/user/user/tmp/../../user/..",
+            "output": "/tmp/user/home/home/user"
+        },
+        {
+            "input": "//docs/home/var",
+            "output": "/docs/home/var"
+        },
+        {
+            "input": "//./var/docs/././home/././home/home/user/tmp/docs/var/../var/var/.",
+            "output": "/var/docs/home/home/home/user/tmp/docs/var/var"
+        },
+        {
+            "input": "//docs/tmp/var/docs/var/home/tmp/./docs/home/home/home/docs/./home",
+            "output": "/docs/tmp/var/docs/var/home/tmp/docs/home/home/home/docs/home"
+        },
+        {
+            "input": "/user/./tmp/user/tmp/home/../../../home/.",
+            "output": "/user/tmp/home"
+        },
+        {
+            "input": "//./../home/user/user/../docs/../var/./docs/./user/./var",
+            "output": "/home/user/var/docs/user/var"
+        },
+        {
+            "input": "//./home/./user/../var/../docs/docs/./tmp/docs/./home/var/user",
+            "output": "/home/docs/docs/tmp/docs/home/var/user"
+        },
+        {
+            "input": "/user/.",
+            "output": "/user"
+        },
+        {
+            "input": "//var/../tmp/.././tmp/user",
+            "output": "/tmp/user"
+        },
+        {
+            "input": "//./var/tmp/tmp/user",
+            "output": "/var/tmp/tmp/user"
+        },
+        {
+            "input": "/home/./tmp/docs",
+            "output": "/home/tmp/docs"
+        },
+        {
+            "input": "//user/home/../home/home/docs/user/../tmp/user/../docs/docs/./user/tmp",
+            "output": "/user/home/home/docs/tmp/docs/docs/user/tmp"
+        },
+        {
+            "input": "//var/home/docs/./tmp/user/docs/var/tmp/var/./user/user",
+            "output": "/var/home/docs/tmp/user/docs/var/tmp/var/user/user"
+        },
+        {
+            "input": "/user/tmp/tmp/../var/user/.././var/./user/tmp",
+            "output": "/user/tmp/var/var/user/tmp"
+        },
+        {
+            "input": "//../.././user/var/var/../../user/docs/var/tmp",
+            "output": "/user/user/docs/var/tmp"
+        },
+        {
+            "input": "//../home/../../var/docs/./user/docs/docs/docs/../tmp/home/tmp",
+            "output": "/var/docs/user/docs/docs/tmp/home/tmp"
+        },
+        {
+            "input": "/../docs/../../docs",
+            "output": "/docs"
+        },
+        {
+            "input": "//docs/.././var/..",
+            "output": "/"
+        },
+        {
+            "input": "/user/docs/var/tmp/docs/home/var/../tmp/tmp/./user/tmp/.",
+            "output": "/user/docs/var/tmp/docs/home/tmp/tmp/user/tmp"
+        },
+        {
+            "input": "//var/.././../user/user/docs/user/var",
+            "output": "/user/user/docs/user/var"
+        },
+        {
+            "input": "/docs/tmp/../tmp/home/../var/docs/var/./../../tmp/var/./.",
+            "output": "/docs/tmp/var/tmp/var"
+        },
+        {
+            "input": "//../docs/tmp",
             "output": "/docs/tmp"
         },
         {
-            "input": "/tmp/user/../user/docs/home/tmp/var/user",
-            "output": "/tmp/user/docs/home/tmp/var/user"
+            "input": "//tmp/user/var/var",
+            "output": "/tmp/user/var/var"
         },
         {
-            "input": "/user/docs/./var/var/../docs/var/home/./user/../tmp",
-            "output": "/user/docs/var/docs/var/home/tmp"
+            "input": "/home/home/user/tmp/docs/../../user/docs/tmp/user/tmp/docs/docs/..",
+            "output": "/home/home/user/user/docs/tmp/user/tmp/docs"
         },
         {
-            "input": "//.././docs/docs/././user/docs/home/.",
-            "output": "/docs/docs/user/docs/home"
-        },
-        {
-            "input": "//user/var/../home/../.",
-            "output": "/user"
-        },
-        {
-            "input": "//var/tmp/docs/home/./var/tmp/../user/docs/tmp/home/home/./..",
-            "output": "/var/tmp/docs/home/var/user/docs/tmp/home"
-        },
-        {
-            "input": "/user/user/..",
-            "output": "/user"
-        },
-        {
-            "input": "//docs/docs/tmp/docs/../tmp",
-            "output": "/docs/docs/tmp/tmp"
-        },
-        {
-            "input": "//./docs/home/var/tmp",
-            "output": "/docs/home/var/tmp"
-        },
-        {
-            "input": "/tmp/tmp/user/./home",
-            "output": "/tmp/tmp/user/home"
-        },
-        {
-            "input": "/tmp/var/../var/./var/user/user/docs/././tmp/./var/home",
-            "output": "/tmp/var/var/user/user/docs/tmp/var/home"
-        },
-        {
-            "input": "//./var/tmp/.././docs/docs/../docs/home",
-            "output": "/var/docs/docs/home"
-        },
-        {
-            "input": "//./docs/home/tmp",
-            "output": "/docs/home/tmp"
-        },
-        {
-            "input": "/user/docs/home",
-            "output": "/user/docs/home"
-        },
-        {
-            "input": "/user/././var/tmp/var/var/tmp/tmp/tmp/home/./docs/home/docs",
-            "output": "/user/var/tmp/var/var/tmp/tmp/tmp/home/docs/home/docs"
-        },
-        {
-            "input": "//user/../tmp/../.././docs/home/tmp/../var/docs",
-            "output": "/docs/home/var/docs"
-        },
-        {
-            "input": "//var/home/docs/../user/var/docs/home/tmp/docs/var/./docs/../tmp/../.",
-            "output": "/var/home/user/var/docs/home/tmp/docs/var"
-        },
-        {
-            "input": "/../tmp/user/tmp/docs/docs/user/../..",
-            "output": "/tmp/user/tmp/docs"
-        },
-        {
-            "input": "/var/var/home/././user/user",
-            "output": "/var/var/home/user/user"
-        },
-        {
-            "input": "/docs/tmp/tmp/var/docs/var/docs",
-            "output": "/docs/tmp/tmp/var/docs/var/docs"
-        },
-        {
-            "input": "//user/user/home/./././docs/docs",
-            "output": "/user/user/home/docs/docs"
-        },
-        {
-            "input": "/./././././../docs/var/user",
-            "output": "/docs/var/user"
-        },
-        {
-            "input": "//../home/var/docs/../home/home/.",
-            "output": "/home/var/home/home"
-        },
-        {
-            "input": "/tmp/var/./docs/././../docs/.",
-            "output": "/tmp/var/docs"
-        },
-        {
-            "input": "/../var/home/./var/user/var/tmp/docs",
-            "output": "/var/home/var/user/var/tmp/docs"
-        },
-        {
-            "input": "/var/../tmp/user/./home/user/../docs/./..",
-            "output": "/tmp/user/home"
-        },
-        {
-            "input": "//user/docs/tmp/var/var/var",
-            "output": "/user/docs/tmp/var/var/var"
-        },
-        {
-            "input": "//var/tmp/./docs/user/var/../var/var/tmp/user/docs/var/tmp/.././docs/./..",
-            "output": "/var/tmp/docs/user/var/var/tmp/user/docs/var"
-        },
-        {
-            "input": "/user/../home/user/../.././user/./../docs/tmp/home/var/var/tmp/./docs",
-            "output": "/docs/tmp/home/var/var/tmp/docs"
-        },
-        {
-            "input": "/home/./tmp/var/.././var/var/home/tmp/docs/user/user/docs/docs/./home/home",
-            "output": "/home/tmp/var/var/home/tmp/docs/user/user/docs/docs/home/home"
-        },
-        {
-            "input": "/user/docs",
-            "output": "/user/docs"
-        },
-        {
-            "input": "/docs/./user/../docs",
-            "output": "/docs/docs"
-        },
-        {
-            "input": "//home/home/docs/tmp/../home/user/user",
-            "output": "/home/home/docs/home/user/user"
-        },
-        {
-            "input": "//docs/../../docs/./home/user/./var/user",
-            "output": "/docs/home/user/var/user"
-        },
-        {
-            "input": "//tmp/var/var/tmp/tmp/home/home/./home",
-            "output": "/tmp/var/var/tmp/tmp/home/home/home"
-        },
-        {
-            "input": "//user/var/tmp/home/user/../tmp/../../user/var/var/./user/docs/./..",
-            "output": "/user/var/tmp/user/var/var/user"
-        },
-        {
-            "input": "//user/.././var/home/./../var/../user/user/./home/../home/./user/docs/home/..",
-            "output": "/var/user/user/home/user/docs"
-        },
-        {
-            "input": "/./../user/tmp/docs/var/user/docs",
-            "output": "/user/tmp/docs/var/user/docs"
-        },
-        {
-            "input": "//home/home/././home/home/user/tmp/docs/tmp/tmp/tmp",
-            "output": "/home/home/home/home/user/tmp/docs/tmp/tmp/tmp"
-        },
-        {
-            "input": "/../var/docs/home/../docs/var/var/../..",
-            "output": "/var/docs/docs"
-        },
-        {
-            "input": "//docs/user/../tmp/docs/tmp/home/home/tmp/user",
-            "output": "/docs/tmp/docs/tmp/home/home/tmp/user"
-        },
-        {
-            "input": "//user/../user/docs/docs/.",
-            "output": "/user/docs/docs"
-        },
-        {
-            "input": "//var/home/tmp/docs/./../user/../.././var/tmp/var/user/var/user",
-            "output": "/var/home/var/tmp/var/user/var/user"
-        },
-        {
-            "input": "/user/user/tmp/home/docs/home/var/var/./home/user/home/var/var/home/tmp/tmp/home/./tmp",
-            "output": "/user/user/tmp/home/docs/home/var/var/home/user/home/var/var/home/tmp/tmp/home/tmp"
-        },
-        {
-            "input": "//user/./var/home/docs/../tmp/var/home/./.././tmp/var/var/../../user/./docs",
-            "output": "/user/var/home/tmp/var/tmp/user/docs"
-        },
-        {
-            "input": "//user/home/docs/tmp",
-            "output": "/user/home/docs/tmp"
-        },
-        {
-            "input": "/tmp/./../home/docs/./home/home/tmp/home/./var/home/./user",
-            "output": "/home/docs/home/home/tmp/home/var/home/user"
-        },
-        {
-            "input": "//var/docs/user/var/var",
-            "output": "/var/docs/user/var/var"
-        },
-        {
-            "input": "//./user/../../../../.././home/./home/../home/../var/var/home/tmp/./tmp",
-            "output": "/home/var/var/home/tmp/tmp"
-        },
-        {
-            "input": "/tmp/user/tmp/./user/../../home/home/var/var/./tmp/var/user/home/../home",
-            "output": "/tmp/user/home/home/var/var/tmp/var/user/home"
-        },
-        {
-            "input": "//../tmp/../home/home/../home/var/home/..",
-            "output": "/home/home/var"
-        },
-        {
-            "input": "/user/var/docs/../user/user/./user/./../user",
-            "output": "/user/var/user/user/user"
-        },
-        {
-            "input": "//../tmp/var/home/tmp/tmp/home/./var/tmp/./../tmp/./../user/./..",
-            "output": "/tmp/var/home/tmp/tmp/home/var"
-        },
-        {
-            "input": "//var/../.././tmp/tmp/tmp/home/var/home/tmp/docs/../../docs/.././docs/var",
-            "output": "/tmp/tmp/tmp/home/var/home/docs/var"
-        },
-        {
-            "input": "//tmp/tmp/home/user/user/tmp/docs/docs/home/var/var/./docs/docs/docs/var/tmp/docs",
-            "output": "/tmp/tmp/home/user/user/tmp/docs/docs/home/var/var/docs/docs/docs/var/tmp/docs"
-        },
-        {
-            "input": "//tmp/tmp/docs/home/user/docs/var/.",
-            "output": "/tmp/tmp/docs/home/user/docs/var"
-        },
-        {
-            "input": "/home/var/user/home/docs/home/docs/././var/home/tmp",
-            "output": "/home/var/user/home/docs/home/docs/var/home/tmp"
-        },
-        {
-            "input": "//./user/tmp/./user/./home/./../var",
-            "output": "/user/tmp/user/var"
-        },
-        {
-            "input": "/./docs/./home",
-            "output": "/docs/home"
-        },
-        {
-            "input": "/var/../docs/docs/var/./tmp/var/.",
-            "output": "/docs/docs/var/tmp/var"
-        },
-        {
-            "input": "/../../tmp/user/user/home/docs",
-            "output": "/tmp/user/user/home/docs"
-        },
-        {
-            "input": "/home/../home",
+            "input": "/home",
             "output": "/home"
         },
         {
-            "input": "/tmp/docs/../var/./user/var/user/user",
-            "output": "/tmp/var/user/var/user/user"
+            "input": "/../user/tmp/user/docs/docs/tmp/../docs/user/user/home/docs",
+            "output": "/user/tmp/user/docs/docs/docs/user/user/home/docs"
         },
         {
-            "input": "//tmp/var/../var/./docs/../docs/../user",
-            "output": "/tmp/var/user"
+            "input": "/tmp/docs",
+            "output": "/tmp/docs"
         },
         {
-            "input": "/user/../var/user/user/tmp/tmp/tmp/./user/./tmp/var/user/tmp/../home",
-            "output": "/var/user/user/tmp/tmp/tmp/user/tmp/var/user/home"
+            "input": "/home/home/docs/docs/docs/var/user/..",
+            "output": "/home/home/docs/docs/docs/var"
         },
         {
-            "input": "/././home/user/user/tmp",
-            "output": "/home/user/user/tmp"
+            "input": "/../..",
+            "output": "/"
         },
         {
-            "input": "/home/user",
-            "output": "/home/user"
+            "input": "//user/tmp/user/tmp/docs/tmp/home",
+            "output": "/user/tmp/user/tmp/docs/tmp/home"
         },
         {
-            "input": "/tmp/user/var/tmp/./var/../home/docs/user/user/var/./docs/docs/./home",
-            "output": "/tmp/user/var/tmp/home/docs/user/user/var/docs/docs/home"
+            "input": "/./tmp/tmp/docs/./user/././docs/docs/./tmp/../user/user/tmp/home/docs/docs/home",
+            "output": "/tmp/tmp/docs/user/docs/docs/user/user/tmp/home/docs/docs/home"
         },
         {
-            "input": "/user/docs/.././var/../docs/tmp/tmp/home/tmp/var/docs/var/../docs/tmp/../var/.",
-            "output": "/user/docs/tmp/tmp/home/tmp/var/docs/docs/var"
+            "input": "/user/.././home/./var/var",
+            "output": "/home/var/var"
         },
         {
-            "input": "/tmp/../user/home/docs/docs/docs/user/././var/var/tmp/user/tmp",
-            "output": "/user/home/docs/docs/docs/user/var/var/tmp/user/tmp"
+            "input": "//./../home/user/var/home/./tmp/var/tmp/var/./.././docs/user/..",
+            "output": "/home/user/var/home/tmp/var/tmp/docs"
         },
         {
-            "input": "/../../../docs/home/.././../var/../user/user/../var/./var/.././home/var",
-            "output": "/user/var/home/var"
+            "input": "/var/docs/././docs/./../user/tmp/../home/./../user",
+            "output": "/var/docs/user/user"
         },
         {
-            "input": "//home/user/./user/var/var/var/home/home/user/tmp/tmp/var/var/tmp",
-            "output": "/home/user/user/var/var/var/home/home/user/tmp/tmp/var/var/tmp"
+            "input": "//../../tmp/docs/var/docs/.",
+            "output": "/tmp/docs/var/docs"
         },
         {
-            "input": "//docs/tmp/user/./user/docs/docs",
-            "output": "/docs/tmp/user/user/docs/docs"
+            "input": "//./user/var/docs/../docs/home/../tmp",
+            "output": "/user/var/docs/tmp"
         },
         {
-            "input": "//var/./user/user/docs/tmp/./docs",
-            "output": "/var/user/user/docs/tmp/docs"
+            "input": "//docs/tmp/var/tmp/./home/var/var/../docs",
+            "output": "/docs/tmp/var/tmp/home/var/docs"
         },
         {
-            "input": "/docs/tmp/./user/var",
-            "output": "/docs/tmp/user/var"
+            "input": "/user/user/user/./var/tmp/var/docs",
+            "output": "/user/user/user/var/tmp/var/docs"
         },
         {
-            "input": "//home/docs/var/..",
-            "output": "/home/docs"
+            "input": "//var/var/var/docs/home/home/home/home/home/./user/home/../tmp",
+            "output": "/var/var/var/docs/home/home/home/home/home/user/tmp"
         },
         {
-            "input": "//tmp/var/docs/..",
-            "output": "/tmp/var"
+            "input": "//user/var/docs/user/../user/user/user",
+            "output": "/user/var/docs/user/user/user"
         },
         {
-            "input": "/user/docs/home/../tmp/../../.",
-            "output": "/user"
+            "input": "//var/var/../home/var/user/user/home",
+            "output": "/var/home/var/user/user/home"
         },
         {
-            "input": "/user/var/var/var/var/home/user/home",
-            "output": "/user/var/var/var/var/home/user/home"
+            "input": "/var/docs/../../var/docs/home/docs/user/docs/user/../docs/./var/./user/home/var",
+            "output": "/var/docs/home/docs/user/docs/docs/var/user/home/var"
         },
         {
-            "input": "/user/tmp/var/home/./tmp/user/tmp/docs/../user/tmp/.",
-            "output": "/user/tmp/var/home/tmp/user/tmp/user/tmp"
+            "input": "/./var/docs/var/./user/user/../../../user/../../var",
+            "output": "/var/var"
         },
         {
-            "input": "//../var/tmp/docs/user/tmp/var/docs/user/./../home/home/home/././home/home",
-            "output": "/var/tmp/docs/user/tmp/var/docs/home/home/home/home/home"
+            "input": "/../docs/home/./user/./docs/../tmp/docs/home/user/home/var/../tmp/user/user",
+            "output": "/docs/home/user/tmp/docs/home/user/home/tmp/user/user"
         },
         {
-            "input": "/./home/.",
+            "input": "//user/home/home/tmp/user/docs/../user/../../var",
+            "output": "/user/home/home/tmp/var"
+        },
+        {
+            "input": "/docs/tmp/./docs/../user/home/var/tmp/user/var/tmp/docs/./../home/tmp/user",
+            "output": "/docs/tmp/user/home/var/tmp/user/var/tmp/home/tmp/user"
+        },
+        {
+            "input": "/user/../docs/./var/var/user/../home/docs/user/var/docs/./home/home/./user/home",
+            "output": "/docs/var/var/home/docs/user/var/docs/home/home/user/home"
+        },
+        {
+            "input": "//var/./docs/docs/docs/var/home/user/var/user/home/./docs/tmp/tmp/./.",
+            "output": "/var/docs/docs/docs/var/home/user/var/user/home/docs/tmp/tmp"
+        },
+        {
+            "input": "//home/docs/../././user/../.",
             "output": "/home"
         },
         {
-            "input": "//var/tmp/tmp/docs/docs/tmp/var/./tmp/.././user",
-            "output": "/var/tmp/tmp/docs/docs/tmp/var/user"
+            "input": "/./var/user/../home/var/tmp/home/../home/user/tmp/var/home/..",
+            "output": "/var/home/var/tmp/home/user/tmp/var"
         },
         {
-            "input": "/user/user/../docs/home/tmp/./docs/tmp/home",
-            "output": "/user/docs/home/tmp/docs/tmp/home"
+            "input": "//docs/home/var/user/./docs/var/.././../../home/tmp/docs/./var/user/tmp",
+            "output": "/docs/home/var/home/tmp/docs/var/user/tmp"
         },
         {
-            "input": "//tmp/../docs/./home/docs/docs/var",
-            "output": "/docs/home/docs/docs/var"
+            "input": "/docs/tmp",
+            "output": "/docs/tmp"
         },
         {
-            "input": "/home/user/../var/tmp/./home/../tmp/..",
-            "output": "/home/var/tmp"
+            "input": "/tmp/user/./home/./user/docs/user/user/.",
+            "output": "/tmp/user/home/user/docs/user/user"
         },
         {
-            "input": "/var/user/user/../../docs/tmp/../user/tmp/./var/docs/user",
-            "output": "/var/docs/user/tmp/var/docs/user"
+            "input": "//var/home",
+            "output": "/var/home"
         },
         {
-            "input": "//./../home/tmp/home/home/home/user/var/var/docs/./var/user/var",
-            "output": "/home/tmp/home/home/home/user/var/var/docs/var/user/var"
+            "input": "//user/user/../user/tmp/user/var/tmp/tmp/home/tmp/../var/tmp/./var/../docs",
+            "output": "/user/user/tmp/user/var/tmp/tmp/home/var/tmp/docs"
         },
         {
-            "input": "//home/var/var/../tmp/./tmp/.././docs/home/home/user/./tmp",
-            "output": "/home/var/tmp/docs/home/home/user/tmp"
+            "input": "/var/.././docs/docs/home/home/././var/docs/..",
+            "output": "/docs/docs/home/home/var"
+        },
+        {
+            "input": "/tmp/home/../docs/tmp/tmp/../../home/tmp/var/docs/home/tmp/././user/var",
+            "output": "/tmp/docs/home/tmp/var/docs/home/tmp/user/var"
+        },
+        {
+            "input": "//.",
+            "output": "/"
+        },
+        {
+            "input": "//tmp/var/user/../home/user/var/tmp/./var/var/user/tmp",
+            "output": "/tmp/var/home/user/var/tmp/var/var/user/tmp"
+        },
+        {
+            "input": "/home/var/user/../user/./../user/docs/user/docs/home/docs/tmp/tmp/..",
+            "output": "/home/var/user/docs/user/docs/home/docs/tmp"
+        },
+        {
+            "input": "//var/tmp/user",
+            "output": "/var/tmp/user"
+        },
+        {
+            "input": "/user/../user/home/home/./../var/tmp/home/user/var/./tmp",
+            "output": "/user/home/var/tmp/home/user/var/tmp"
+        },
+        {
+            "input": "/../user/var/var/../../home/docs/../tmp/./docs/user/var/.././../../var",
+            "output": "/user/home/tmp/var"
+        },
+        {
+            "input": "//../home/var/tmp/home/../docs/tmp/var/./docs/home/docs",
+            "output": "/home/var/tmp/docs/tmp/var/docs/home/docs"
+        },
+        {
+            "input": "//docs/tmp/tmp/./home/var",
+            "output": "/docs/tmp/tmp/home/var"
+        },
+        {
+            "input": "//../././user/home/../tmp/home/../home/tmp/tmp/tmp/home/docs/var/./user",
+            "output": "/user/tmp/home/tmp/tmp/tmp/home/docs/var/user"
+        },
+        {
+            "input": "/../home/home/../var/docs/../docs/var/home/user/../home/./tmp/././..",
+            "output": "/home/var/docs/var/home/home"
+        },
+        {
+            "input": "//home/tmp/var/../user/../../../var/home/user/user/home/docs/.././var/var/./..",
+            "output": "/var/home/user/user/home/var"
+        },
+        {
+            "input": "/tmp/var/docs/user/var/user/var/../user/docs/docs/./tmp/home/./docs/home/docs/tmp/docs",
+            "output": "/tmp/var/docs/user/var/user/user/docs/docs/tmp/home/docs/home/docs/tmp/docs"
+        },
+        {
+            "input": "//home/././docs/user/tmp/user/var/user",
+            "output": "/home/docs/user/tmp/user/var/user"
+        },
+        {
+            "input": "//home/../user/var/home/tmp/docs/var",
+            "output": "/user/var/home/tmp/docs/var"
+        },
+        {
+            "input": "//user/.././home/docs/../docs/var/var/../tmp/home/../user/home/docs/user/user",
+            "output": "/home/docs/var/tmp/user/home/docs/user/user"
+        },
+        {
+            "input": "//docs/user/docs/docs/../home/../var/./user/.",
+            "output": "/docs/user/docs/var/user"
+        },
+        {
+            "input": "/user/tmp/./.././docs/docs/home/home/var/.",
+            "output": "/user/docs/docs/home/home/var"
+        },
+        {
+            "input": "/.././tmp",
+            "output": "/tmp"
         }
     ],
     "difficulty": "medium"

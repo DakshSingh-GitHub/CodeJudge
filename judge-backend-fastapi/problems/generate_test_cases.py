@@ -2305,6 +2305,217 @@ def solve_lemonade_change():
                 
     return " ".join(map(str, bills)), "true" if possible else "false"
 
+def solve_count_primes():
+    n = random.randint(0, 1000)
+    if n <= 2: return str(n), "0"
+    primes = [True] * n
+    primes[0] = primes[1] = False
+    for i in range(2, int(n**0.5) + 1):
+        if primes[i]:
+            for j in range(i*i, n, i):
+                primes[j] = False
+    return str(n), str(sum(primes))
+
+def solve_third_maximum_number():
+    n = random.randint(1, 20)
+    nums = [random.randint(-100, 100) for _ in range(n)]
+    distinct_nums = sorted(list(set(nums)), reverse=True)
+    if len(distinct_nums) >= 3:
+        res = distinct_nums[2]
+    else:
+        res = distinct_nums[0]
+    return " ".join(map(str, nums)), str(res)
+
+def solve_find_the_duplicate_number():
+    n = random.randint(1, 20)
+    nums = list(range(1, n + 1))
+    dup = random.randint(1, n)
+    nums.append(dup)
+    random.shuffle(nums)
+    return " ".join(map(str, nums)), str(dup)
+
+def solve_check_if_array_is_sorted_and_rotated():
+    n = random.randint(1, 20)
+    nums = sorted([random.randint(1, 100) for _ in range(n)])
+    if random.choice([True, False]):
+        rot = random.randint(0, n - 1)
+        nums = nums[rot:] + nums[:rot]
+        res = "true"
+    else:
+        nums = [random.randint(1, 100) for _ in range(n)]
+        count = 0
+        for i in range(n):
+            if nums[i] > nums[(i + 1) % n]:
+                count += 1
+        res = "true" if count <= 1 else "false"
+    return " ".join(map(str, nums)), res
+
+def solve_replace_elements_with_greatest_element_on_right_side():
+    n = random.randint(1, 20)
+    arr = [random.randint(1, 100) for _ in range(n)]
+    res = []
+    mx = -1
+    for i in range(n - 1, -1, -1):
+        res.append(mx)
+        mx = max(mx, arr[i])
+    res.reverse()
+    return " ".join(map(str, arr)), " ".join(map(str, res))
+
+def solve_sort_array_by_parity():
+    n = random.randint(1, 20)
+    nums = [random.randint(0, 100) for _ in range(n)]
+    evens = [x for x in nums if x % 2 == 0]
+    odds = [x for x in nums if x % 2 != 0]
+    res = evens + odds
+    return " ".join(map(str, nums)), " ".join(map(str, res))
+
+def solve_squares_of_a_sorted_array():
+    n = random.randint(1, 20)
+    nums = sorted([random.randint(-100, 100) for _ in range(n)])
+    res = sorted([x*x for x in nums])
+    return " ".join(map(str, nums)), " ".join(map(str, res))
+
+def solve_defanging_an_ip_address():
+    ip = ".".join(str(random.randint(0, 255)) for _ in range(4))
+    res = ip.replace(".", "[.]")
+    return ip, res
+
+def solve_jewels_and_stones():
+    jewels_list = random.sample("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", random.randint(1, 10))
+    jewels = "".join(jewels_list)
+    stones = "".join(random.choices("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", k=random.randint(1, 20)))
+    count = sum(1 for s in stones if s in jewels)
+    return f"{jewels}\n{stones}", str(count)
+
+def solve_how_many_numbers_smaller_than_current():
+    n = random.randint(1, 20)
+    nums = [random.randint(0, 100) for _ in range(n)]
+    res = []
+    for i in range(n):
+        count = sum(1 for j in range(n) if i != j and nums[j] < nums[i])
+        res.append(count)
+    return " ".join(map(str, nums)), " ".join(map(str, res))
+
+def solve_maximum_69_number():
+    num_str = "".join(random.choices("69", k=random.randint(1, 5)))
+    num = int(num_str)
+    res = list(str(num))
+    for i in range(len(res)):
+        if res[i] == '6':
+            res[i] = '9'
+            break
+    return str(num), "".join(res)
+
+def solve_check_if_n_and_double_exist():
+    n = random.randint(2, 20)
+    nums = [random.randint(-20, 20) for _ in range(n)]
+    if random.choice([True, False]):
+        idx1, idx2 = random.sample(range(n), 2)
+        nums[idx1] = 2 * nums[idx2]
+    
+    seen = set()
+    possible = False
+    for x in nums:
+        if 2 * x in seen or (x % 2 == 0 and x // 2 in seen):
+            possible = True
+            break
+        seen.add(x)
+    return " ".join(map(str, nums)), "true" if possible else "false"
+
+def solve_shuffle_the_array():
+    n = random.randint(1, 10)
+    nums = [random.randint(1, 100) for _ in range(2 * n)]
+    x = nums[:n]
+    y = nums[n:]
+    res = []
+    for i in range(n):
+        res.append(x[i])
+        res.append(y[i])
+    return f"{n}\n" + " ".join(map(str, nums)), " ".join(map(str, res))
+
+def solve_kids_with_greatest_number_of_candies():
+    n = random.randint(2, 20)
+    candies = [random.randint(1, 20) for _ in range(n)]
+    extra = random.randint(1, 10)
+    max_candies = max(candies)
+    res = ["true" if c + extra >= max_candies else "false" for c in candies]
+    return f"{extra}\n" + " ".join(map(str, candies)), " ".join(res)
+
+def solve_richest_customer_wealth():
+    m, n = random.randint(1, 5), random.randint(1, 5)
+    accounts = [[random.randint(1, 20) for _ in range(n)] for _ in range(m)]
+    max_wealth = max(sum(customer) for customer in accounts)
+    input_str = f"{m} {n}\n" + "\n".join(" ".join(map(str, row)) for row in accounts)
+    return input_str, str(max_wealth)
+
+def solve_matrix_diagonal_sum():
+    n = random.randint(1, 10)
+    mat = [[random.randint(1, 10) for _ in range(n)] for _ in range(n)]
+    total = 0
+    for i in range(n):
+        total += mat[i][i]
+        if i != n - 1 - i:
+            total += mat[i][n - 1 - i]
+    input_str = f"{n}\n" + "\n".join(" ".join(map(str, row)) for row in mat)
+    return input_str, str(total)
+
+def solve_count_negative_numbers_in_sorted_matrix():
+    m, n = random.randint(1, 5), random.randint(1, 5)
+    grid = [[random.randint(-10, 10) for _ in range(n)] for _ in range(m)]
+    for r in range(m): grid[r].sort(reverse=True)
+    grid.sort(key=lambda x: x[0], reverse=True)
+    
+    count = 0
+    for r in range(m):
+        for c in range(n):
+            if grid[r][c] < 0:
+                count += 1
+    input_str = f"{m} {n}\n" + "\n".join(" ".join(map(str, row)) for row in grid)
+    return input_str, str(count)
+
+def solve_find_the_highest_altitude():
+    n = random.randint(1, 20)
+    gain = [random.randint(-10, 10) for _ in range(n)]
+    current = 0
+    highest = 0
+    for x in gain:
+        current += x
+        highest = max(highest, current)
+    return " ".join(map(str, gain)), str(highest)
+
+def solve_maximal_square():
+    m, n = random.randint(2, 8), random.randint(2, 8)
+    matrix = [[random.choice([0, 1]) for _ in range(n)] for _ in range(m)]
+    dp = [[0] * (n + 1) for _ in range(m + 1)]
+    max_side = 0
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if matrix[i-1][j-1] == 1:
+                dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1
+                max_side = max(max_side, dp[i][j])
+    input_str = f"{m} {n}\n" + "\n".join(" ".join(map(str, row)) for row in matrix)
+    return input_str, str(max_side * max_side)
+
+def solve_partition_equal_subset_sum():
+    n = random.randint(2, 10)
+    nums = [random.randint(1, 20) for _ in range(n)]
+    total = sum(nums)
+    if total % 2 != 0:
+        res = "false"
+    else:
+        target = total // 2
+        dp = [False] * (target + 1)
+        dp[0] = True
+        for x in nums:
+            for i in range(target, x - 1, -1):
+                dp[i] = dp[i] or dp[i-x]
+        res = "true" if dp[target] else "false"
+    return " ".join(map(str, nums)), res
+
+
+
+
+
 SOLVERS = {
     "area_of_a_rectangle": solve_area_of_a_rectangle,
     "binary_to_decimal": solve_binary_to_decimal,
@@ -2476,6 +2687,26 @@ SOLVERS = {
     "binary_gap": solve_binary_gap,
     "buddy_strings": solve_buddy_strings,
     "lemonade_change": solve_lemonade_change,
+    "count_primes": solve_count_primes,
+    "third_maximum_number": solve_third_maximum_number,
+    "find_the_duplicate_number": solve_find_the_duplicate_number,
+    "check_if_array_is_sorted_and_rotated": solve_check_if_array_is_sorted_and_rotated,
+    "replace_elements_with_greatest_element_on_right_side": solve_replace_elements_with_greatest_element_on_right_side,
+    "sort_array_by_parity": solve_sort_array_by_parity,
+    "squares_of_a_sorted_array": solve_squares_of_a_sorted_array,
+    "defanging_an_ip_address": solve_defanging_an_ip_address,
+    "jewels_and_stones": solve_jewels_and_stones,
+    "how_many_numbers_smaller_than_current": solve_how_many_numbers_smaller_than_current,
+    "maximum_69_number": solve_maximum_69_number,
+    "check_if_n_and_double_exist": solve_check_if_n_and_double_exist,
+    "shuffle_the_array": solve_shuffle_the_array,
+    "kids_with_greatest_number_of_candies": solve_kids_with_greatest_number_of_candies,
+    "richest_customer_wealth": solve_richest_customer_wealth,
+    "matrix_diagonal_sum": solve_matrix_diagonal_sum,
+    "count_negative_numbers_in_sorted_matrix": solve_count_negative_numbers_in_sorted_matrix,
+    "find_the_highest_altitude": solve_find_the_highest_altitude,
+    "maximal_square": solve_maximal_square,
+    "partition_equal_subset_sum": solve_partition_equal_subset_sum,
 }
 
 HARD_PROBLEMS = {
@@ -2508,6 +2739,10 @@ HARD_PROBLEMS = {
     "four_sum",
     "minimum_number_of_arrows_to_burst_balloons",
     "non_overlapping_intervals",
+    "count_primes",
+    "find_the_duplicate_number",
+    "maximal_square",
+    "partition_equal_subset_sum",
 }
 
 def main():
@@ -2533,10 +2768,18 @@ def main():
             
             solver = SOLVERS[problem_id]
             
-            # Determine count
-            target_count = 1000 if problem_id in HARD_PROBLEMS else 500
+            # Determine count based on difficulty
+            difficulty = data.get("difficulty", "Medium")
+            if difficulty == "Easy":
+                target_count = 90
+            elif difficulty == "Medium":
+                target_count = 160
+            elif difficulty == "Hard":
+                target_count = 220
+            else:
+                target_count = 160
             
-            print(f"Generating {target_count} cases for {filename}...")
+            print(f"Generating {target_count} cases for {filename} ({difficulty})...")
             
             new_cases = []
             seen_inputs = set()

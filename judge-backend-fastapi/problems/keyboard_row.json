@@ -28,2004 +28,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "Dad sfd Alaska Peace omk",
-            "output": "Dad sfd Alaska"
-        },
-        {
-            "input": "Alaska Dad Hello Alaska sfd",
-            "output": "Alaska Dad Alaska sfd"
-        },
-        {
-            "input": "omk sfd adsdf Peace sfd",
-            "output": "sfd adsdf sfd"
-        },
-        {
-            "input": "omk adsdf sfd adsdf Peace",
-            "output": "adsdf sfd adsdf"
-        },
-        {
-            "input": "Peace sfd Peace sfd Dad",
-            "output": "sfd sfd Dad"
-        },
-        {
-            "input": "Hello omk Alaska Peace Peace",
-            "output": "Alaska"
-        },
-        {
-            "input": "Peace Hello omk Hello Peace",
-            "output": ""
-        },
-        {
-            "input": "sfd sfd Alaska Peace sfd",
-            "output": "sfd sfd Alaska sfd"
-        },
-        {
-            "input": "Hello Alaska Hello Dad sfd",
-            "output": "Alaska Dad sfd"
-        },
-        {
-            "input": "Peace Alaska Alaska Dad omk",
-            "output": "Alaska Alaska Dad"
-        },
-        {
-            "input": "Alaska Hello adsdf Hello omk",
-            "output": "Alaska adsdf"
-        },
-        {
-            "input": "sfd Dad Hello adsdf omk",
-            "output": "sfd Dad adsdf"
-        },
-        {
-            "input": "sfd Dad omk Peace omk",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "omk adsdf Peace Peace Alaska",
-            "output": "adsdf Alaska"
-        },
-        {
-            "input": "sfd Dad Alaska Hello omk",
-            "output": "sfd Dad Alaska"
-        },
-        {
-            "input": "sfd Hello Peace adsdf sfd",
-            "output": "sfd adsdf sfd"
-        },
-        {
-            "input": "Alaska Alaska Peace Alaska Hello",
-            "output": "Alaska Alaska Alaska"
-        },
-        {
-            "input": "Peace adsdf Peace sfd omk",
-            "output": "adsdf sfd"
-        },
-        {
-            "input": "sfd Alaska omk Dad adsdf",
-            "output": "sfd Alaska Dad adsdf"
-        },
-        {
-            "input": "omk sfd adsdf adsdf Alaska",
-            "output": "sfd adsdf adsdf Alaska"
-        },
-        {
-            "input": "Peace Alaska Hello Alaska sfd",
-            "output": "Alaska Alaska sfd"
-        },
-        {
-            "input": "Dad Alaska Peace Peace adsdf",
-            "output": "Dad Alaska adsdf"
-        },
-        {
-            "input": "Peace Peace Alaska Dad Alaska",
-            "output": "Alaska Dad Alaska"
-        },
-        {
-            "input": "Peace omk adsdf adsdf omk",
-            "output": "adsdf adsdf"
-        },
-        {
-            "input": "sfd Hello sfd adsdf sfd",
-            "output": "sfd sfd adsdf sfd"
-        },
-        {
-            "input": "Hello sfd Peace adsdf Dad",
-            "output": "sfd adsdf Dad"
-        },
-        {
-            "input": "sfd sfd adsdf Peace Peace",
-            "output": "sfd sfd adsdf"
-        },
-        {
-            "input": "adsdf omk Peace Alaska Dad",
-            "output": "adsdf Alaska Dad"
-        },
-        {
-            "input": "Peace adsdf sfd Dad adsdf",
-            "output": "adsdf sfd Dad adsdf"
-        },
-        {
-            "input": "Hello Peace adsdf Dad adsdf",
-            "output": "adsdf Dad adsdf"
-        },
-        {
-            "input": "omk Alaska adsdf sfd Dad",
-            "output": "Alaska adsdf sfd Dad"
-        },
-        {
-            "input": "Peace Dad Dad Alaska Peace",
-            "output": "Dad Dad Alaska"
-        },
-        {
-            "input": "omk omk adsdf omk sfd",
-            "output": "adsdf sfd"
-        },
-        {
-            "input": "Alaska adsdf sfd Alaska adsdf",
-            "output": "Alaska adsdf sfd Alaska adsdf"
-        },
-        {
-            "input": "Alaska omk omk Hello Peace",
-            "output": "Alaska"
-        },
-        {
-            "input": "Dad sfd Hello sfd sfd",
-            "output": "Dad sfd sfd sfd"
-        },
-        {
-            "input": "sfd Alaska sfd omk sfd",
-            "output": "sfd Alaska sfd sfd"
-        },
-        {
-            "input": "Peace Peace sfd adsdf Alaska",
-            "output": "sfd adsdf Alaska"
-        },
-        {
-            "input": "Alaska adsdf Peace Hello omk",
-            "output": "Alaska adsdf"
-        },
-        {
-            "input": "omk Hello sfd Peace Dad",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "Dad omk Peace Alaska Alaska",
-            "output": "Dad Alaska Alaska"
-        },
-        {
-            "input": "Alaska Hello adsdf Peace adsdf",
-            "output": "Alaska adsdf adsdf"
-        },
-        {
-            "input": "Dad Hello sfd Alaska Dad",
-            "output": "Dad sfd Alaska Dad"
-        },
-        {
-            "input": "Hello adsdf Peace Peace Dad",
-            "output": "adsdf Dad"
-        },
-        {
-            "input": "adsdf Peace omk Dad adsdf",
-            "output": "adsdf Dad adsdf"
-        },
-        {
-            "input": "omk Alaska adsdf Alaska Peace",
-            "output": "Alaska adsdf Alaska"
-        },
-        {
-            "input": "omk Dad sfd Hello sfd",
-            "output": "Dad sfd sfd"
-        },
-        {
-            "input": "omk Peace sfd adsdf Peace",
-            "output": "sfd adsdf"
-        },
-        {
-            "input": "Peace Hello Hello Alaska sfd",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "omk Alaska Alaska Peace Alaska",
-            "output": "Alaska Alaska Alaska"
-        },
-        {
-            "input": "Peace Hello Hello sfd omk",
-            "output": "sfd"
-        },
-        {
-            "input": "sfd Dad Peace Alaska Alaska",
-            "output": "sfd Dad Alaska Alaska"
-        },
-        {
-            "input": "Dad Peace sfd sfd adsdf",
-            "output": "Dad sfd sfd adsdf"
-        },
-        {
-            "input": "Peace Peace Alaska Hello omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "adsdf Hello Hello adsdf Hello",
-            "output": "adsdf adsdf"
-        },
-        {
-            "input": "sfd Alaska adsdf adsdf Dad",
-            "output": "sfd Alaska adsdf adsdf Dad"
-        },
-        {
-            "input": "sfd omk sfd Dad Hello",
-            "output": "sfd sfd Dad"
-        },
-        {
-            "input": "Hello adsdf Alaska sfd sfd",
-            "output": "adsdf Alaska sfd sfd"
-        },
-        {
-            "input": "Peace Peace Dad Alaska Alaska",
-            "output": "Dad Alaska Alaska"
-        },
-        {
-            "input": "omk Hello Alaska Hello adsdf",
-            "output": "Alaska adsdf"
-        },
-        {
-            "input": "omk sfd Dad Dad Dad",
-            "output": "sfd Dad Dad Dad"
-        },
-        {
-            "input": "Peace sfd Dad Alaska omk",
-            "output": "sfd Dad Alaska"
-        },
-        {
-            "input": "Peace Alaska Hello Peace omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "sfd Hello Peace Alaska Peace",
-            "output": "sfd Alaska"
-        },
-        {
-            "input": "Alaska adsdf Alaska adsdf omk",
-            "output": "Alaska adsdf Alaska adsdf"
-        },
-        {
-            "input": "Dad omk Hello Peace sfd",
+            "input": "Dad sfd Peace Hello Peace",
             "output": "Dad sfd"
-        },
-        {
-            "input": "Peace adsdf Hello Dad adsdf",
-            "output": "adsdf Dad adsdf"
-        },
-        {
-            "input": "adsdf Peace Peace sfd Alaska",
-            "output": "adsdf sfd Alaska"
-        },
-        {
-            "input": "Alaska Hello Peace Dad Hello",
-            "output": "Alaska Dad"
-        },
-        {
-            "input": "omk sfd Alaska Peace sfd",
-            "output": "sfd Alaska sfd"
-        },
-        {
-            "input": "Dad sfd Hello Peace Peace",
-            "output": "Dad sfd"
-        },
-        {
-            "input": "sfd Alaska Dad Hello Hello",
-            "output": "sfd Alaska Dad"
-        },
-        {
-            "input": "adsdf Dad Alaska Alaska adsdf",
-            "output": "adsdf Dad Alaska Alaska adsdf"
-        },
-        {
-            "input": "omk omk Hello Peace adsdf",
-            "output": "adsdf"
-        },
-        {
-            "input": "Hello Peace adsdf Dad sfd",
-            "output": "adsdf Dad sfd"
-        },
-        {
-            "input": "omk adsdf Hello omk Peace",
-            "output": "adsdf"
-        },
-        {
-            "input": "Hello adsdf omk Dad sfd",
-            "output": "adsdf Dad sfd"
-        },
-        {
-            "input": "Peace Dad Alaska Dad Hello",
-            "output": "Dad Alaska Dad"
-        },
-        {
-            "input": "Alaska Alaska Peace Dad sfd",
-            "output": "Alaska Alaska Dad sfd"
-        },
-        {
-            "input": "Alaska sfd Dad sfd sfd",
-            "output": "Alaska sfd Dad sfd sfd"
-        },
-        {
-            "input": "Alaska Peace Dad Hello Alaska",
-            "output": "Alaska Dad Alaska"
-        },
-        {
-            "input": "Peace omk Alaska Alaska Peace",
-            "output": "Alaska Alaska"
-        },
-        {
-            "input": "sfd omk Peace Peace Hello",
-            "output": "sfd"
-        },
-        {
-            "input": "sfd omk Peace omk Hello",
-            "output": "sfd"
-        },
-        {
-            "input": "omk Alaska Hello Hello Alaska",
-            "output": "Alaska Alaska"
-        },
-        {
-            "input": "Alaska Peace Alaska Peace Alaska",
-            "output": "Alaska Alaska Alaska"
-        },
-        {
-            "input": "adsdf adsdf Dad Peace Peace",
-            "output": "adsdf adsdf Dad"
-        },
-        {
-            "input": "sfd Peace omk Alaska sfd",
-            "output": "sfd Alaska sfd"
-        },
-        {
-            "input": "sfd omk sfd Alaska adsdf",
-            "output": "sfd sfd Alaska adsdf"
-        },
-        {
-            "input": "omk Peace adsdf Dad Alaska",
-            "output": "adsdf Dad Alaska"
-        },
-        {
-            "input": "adsdf Peace Peace Alaska adsdf",
-            "output": "adsdf Alaska adsdf"
-        },
-        {
-            "input": "sfd omk Dad Alaska sfd",
-            "output": "sfd Dad Alaska sfd"
-        },
-        {
-            "input": "Alaska sfd Hello Peace Alaska",
-            "output": "Alaska sfd Alaska"
-        },
-        {
-            "input": "Dad Dad sfd omk sfd",
-            "output": "Dad Dad sfd sfd"
-        },
-        {
-            "input": "adsdf adsdf sfd omk Peace",
-            "output": "adsdf adsdf sfd"
-        },
-        {
-            "input": "Dad omk Dad omk omk",
-            "output": "Dad Dad"
-        },
-        {
-            "input": "adsdf sfd Dad adsdf adsdf",
-            "output": "adsdf sfd Dad adsdf adsdf"
-        },
-        {
-            "input": "adsdf Hello sfd Hello Alaska",
-            "output": "adsdf sfd Alaska"
-        },
-        {
-            "input": "sfd adsdf Peace omk sfd",
-            "output": "sfd adsdf sfd"
-        },
-        {
-            "input": "Dad Alaska sfd Hello adsdf",
-            "output": "Dad Alaska sfd adsdf"
-        },
-        {
-            "input": "omk Hello sfd Hello Peace",
-            "output": "sfd"
-        },
-        {
-            "input": "sfd Hello Hello omk Dad",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "sfd Alaska sfd Hello Alaska",
-            "output": "sfd Alaska sfd Alaska"
-        },
-        {
-            "input": "sfd Peace Alaska Dad adsdf",
-            "output": "sfd Alaska Dad adsdf"
-        },
-        {
-            "input": "Alaska adsdf sfd adsdf Alaska",
-            "output": "Alaska adsdf sfd adsdf Alaska"
-        },
-        {
-            "input": "adsdf omk adsdf Dad Alaska",
-            "output": "adsdf adsdf Dad Alaska"
-        },
-        {
-            "input": "Dad sfd adsdf sfd Peace",
-            "output": "Dad sfd adsdf sfd"
-        },
-        {
-            "input": "sfd Alaska Dad Dad Hello",
-            "output": "sfd Alaska Dad Dad"
-        },
-        {
-            "input": "Hello Peace sfd omk Hello",
-            "output": "sfd"
-        },
-        {
-            "input": "sfd Peace Hello Peace sfd",
-            "output": "sfd sfd"
-        },
-        {
-            "input": "sfd Peace Alaska omk Hello",
-            "output": "sfd Alaska"
-        },
-        {
-            "input": "omk omk Peace omk Dad",
-            "output": "Dad"
-        },
-        {
-            "input": "adsdf Hello omk adsdf Alaska",
-            "output": "adsdf adsdf Alaska"
-        },
-        {
-            "input": "omk Alaska Alaska sfd omk",
-            "output": "Alaska Alaska sfd"
-        },
-        {
-            "input": "adsdf sfd adsdf adsdf sfd",
-            "output": "adsdf sfd adsdf adsdf sfd"
-        },
-        {
-            "input": "Hello Hello Hello omk Alaska",
-            "output": "Alaska"
-        },
-        {
-            "input": "sfd Hello Alaska Dad omk",
-            "output": "sfd Alaska Dad"
-        },
-        {
-            "input": "Dad Peace Dad sfd Dad",
-            "output": "Dad Dad sfd Dad"
-        },
-        {
-            "input": "adsdf omk Alaska Alaska adsdf",
-            "output": "adsdf Alaska Alaska adsdf"
-        },
-        {
-            "input": "Hello adsdf Hello omk Alaska",
-            "output": "adsdf Alaska"
-        },
-        {
-            "input": "Peace Peace Alaska Alaska Peace",
-            "output": "Alaska Alaska"
-        },
-        {
-            "input": "Hello Dad adsdf Hello omk",
-            "output": "Dad adsdf"
-        },
-        {
-            "input": "omk Peace omk adsdf Hello",
-            "output": "adsdf"
-        },
-        {
-            "input": "omk sfd Alaska Hello omk",
-            "output": "sfd Alaska"
-        },
-        {
-            "input": "Alaska sfd adsdf omk sfd",
-            "output": "Alaska sfd adsdf sfd"
-        },
-        {
-            "input": "omk Alaska sfd adsdf Dad",
-            "output": "Alaska sfd adsdf Dad"
-        },
-        {
-            "input": "Peace sfd sfd sfd omk",
-            "output": "sfd sfd sfd"
-        },
-        {
-            "input": "Dad Dad sfd Hello sfd",
-            "output": "Dad Dad sfd sfd"
-        },
-        {
-            "input": "sfd Dad Dad adsdf Dad",
-            "output": "sfd Dad Dad adsdf Dad"
-        },
-        {
-            "input": "adsdf Alaska Alaska Alaska Dad",
-            "output": "adsdf Alaska Alaska Alaska Dad"
-        },
-        {
-            "input": "Alaska adsdf omk sfd Peace",
-            "output": "Alaska adsdf sfd"
-        },
-        {
-            "input": "Alaska Dad adsdf omk Peace",
-            "output": "Alaska Dad adsdf"
-        },
-        {
-            "input": "Hello omk Dad omk sfd",
-            "output": "Dad sfd"
-        },
-        {
-            "input": "Alaska adsdf adsdf omk sfd",
-            "output": "Alaska adsdf adsdf sfd"
-        },
-        {
-            "input": "Dad sfd Dad adsdf Alaska",
-            "output": "Dad sfd Dad adsdf Alaska"
-        },
-        {
-            "input": "Hello adsdf Alaska Alaska omk",
-            "output": "adsdf Alaska Alaska"
-        },
-        {
-            "input": "omk Hello Peace Alaska sfd",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "Hello Peace Peace adsdf Peace",
-            "output": "adsdf"
-        },
-        {
-            "input": "adsdf sfd omk Alaska Alaska",
-            "output": "adsdf sfd Alaska Alaska"
-        },
-        {
-            "input": "Dad adsdf Peace Peace adsdf",
-            "output": "Dad adsdf adsdf"
-        },
-        {
-            "input": "omk Alaska Dad omk Alaska",
-            "output": "Alaska Dad Alaska"
-        },
-        {
-            "input": "sfd Dad Alaska adsdf Hello",
-            "output": "sfd Dad Alaska adsdf"
-        },
-        {
-            "input": "adsdf omk Hello Dad Hello",
-            "output": "adsdf Dad"
-        },
-        {
-            "input": "omk Hello Alaska Dad sfd",
-            "output": "Alaska Dad sfd"
-        },
-        {
-            "input": "sfd Peace omk Peace omk",
-            "output": "sfd"
-        },
-        {
-            "input": "sfd sfd Alaska Peace Dad",
-            "output": "sfd sfd Alaska Dad"
-        },
-        {
-            "input": "Alaska Hello Hello sfd adsdf",
-            "output": "Alaska sfd adsdf"
-        },
-        {
-            "input": "Alaska adsdf sfd Alaska Dad",
-            "output": "Alaska adsdf sfd Alaska Dad"
-        },
-        {
-            "input": "Hello Dad Dad Alaska omk",
-            "output": "Dad Dad Alaska"
-        },
-        {
-            "input": "Dad Dad adsdf Peace adsdf",
-            "output": "Dad Dad adsdf adsdf"
-        },
-        {
-            "input": "sfd Dad omk omk Dad",
-            "output": "sfd Dad Dad"
-        },
-        {
-            "input": "adsdf Alaska sfd omk Peace",
-            "output": "adsdf Alaska sfd"
-        },
-        {
-            "input": "omk Peace sfd Hello Alaska",
-            "output": "sfd Alaska"
-        },
-        {
-            "input": "Dad adsdf sfd Alaska Peace",
-            "output": "Dad adsdf sfd Alaska"
-        },
-        {
-            "input": "Peace adsdf sfd Hello Hello",
-            "output": "adsdf sfd"
-        },
-        {
-            "input": "omk sfd omk Dad Hello",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "sfd sfd adsdf Peace adsdf",
-            "output": "sfd sfd adsdf adsdf"
-        },
-        {
-            "input": "adsdf Peace Peace Hello adsdf",
-            "output": "adsdf adsdf"
-        },
-        {
-            "input": "sfd sfd adsdf omk adsdf",
-            "output": "sfd sfd adsdf adsdf"
-        },
-        {
-            "input": "Dad Dad omk Hello omk",
-            "output": "Dad Dad"
-        },
-        {
-            "input": "Alaska Hello adsdf Peace Peace",
-            "output": "Alaska adsdf"
-        },
-        {
-            "input": "sfd Dad adsdf Alaska Peace",
-            "output": "sfd Dad adsdf Alaska"
-        },
-        {
-            "input": "Hello Alaska omk Dad Peace",
-            "output": "Alaska Dad"
-        },
-        {
-            "input": "adsdf Alaska sfd sfd Peace",
-            "output": "adsdf Alaska sfd sfd"
-        },
-        {
-            "input": "Hello Dad sfd Dad Dad",
-            "output": "Dad sfd Dad Dad"
-        },
-        {
-            "input": "adsdf adsdf Alaska Dad sfd",
-            "output": "adsdf adsdf Alaska Dad sfd"
-        },
-        {
-            "input": "adsdf Hello Peace Dad Hello",
-            "output": "adsdf Dad"
-        },
-        {
-            "input": "Hello Alaska omk Alaska sfd",
-            "output": "Alaska Alaska sfd"
-        },
-        {
-            "input": "Hello Hello Alaska Alaska sfd",
-            "output": "Alaska Alaska sfd"
-        },
-        {
-            "input": "Peace sfd sfd sfd Hello",
-            "output": "sfd sfd sfd"
-        },
-        {
-            "input": "Hello adsdf adsdf Hello adsdf",
-            "output": "adsdf adsdf adsdf"
-        },
-        {
-            "input": "Peace Alaska Peace omk omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "omk Alaska omk omk Dad",
-            "output": "Alaska Dad"
-        },
-        {
-            "input": "Dad Alaska sfd Dad Alaska",
-            "output": "Dad Alaska sfd Dad Alaska"
-        },
-        {
-            "input": "Dad Peace adsdf omk sfd",
-            "output": "Dad adsdf sfd"
-        },
-        {
-            "input": "Peace omk Alaska adsdf Alaska",
-            "output": "Alaska adsdf Alaska"
-        },
-        {
-            "input": "adsdf adsdf Peace Hello adsdf",
-            "output": "adsdf adsdf adsdf"
-        },
-        {
-            "input": "adsdf adsdf Alaska Hello sfd",
-            "output": "adsdf adsdf Alaska sfd"
-        },
-        {
-            "input": "Hello omk Peace sfd Alaska",
-            "output": "sfd Alaska"
-        },
-        {
-            "input": "sfd Alaska omk Dad Peace",
-            "output": "sfd Alaska Dad"
-        },
-        {
-            "input": "adsdf omk Alaska omk Peace",
-            "output": "adsdf Alaska"
-        },
-        {
-            "input": "Alaska Peace Hello Hello sfd",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "Peace omk Hello omk Peace",
-            "output": ""
-        },
-        {
-            "input": "Hello Peace Hello Peace Alaska",
-            "output": "Alaska"
-        },
-        {
-            "input": "Peace Hello Alaska Hello Peace",
-            "output": "Alaska"
-        },
-        {
-            "input": "Hello omk adsdf Hello Peace",
-            "output": "adsdf"
-        },
-        {
-            "input": "Peace Hello Peace Peace Alaska",
-            "output": "Alaska"
-        },
-        {
-            "input": "Peace omk omk sfd sfd",
-            "output": "sfd sfd"
-        },
-        {
-            "input": "Hello adsdf adsdf Peace omk",
-            "output": "adsdf adsdf"
-        },
-        {
-            "input": "Dad Alaska Peace Alaska Hello",
-            "output": "Dad Alaska Alaska"
-        },
-        {
-            "input": "omk adsdf adsdf omk adsdf",
-            "output": "adsdf adsdf adsdf"
-        },
-        {
-            "input": "adsdf Peace Alaska Alaska Alaska",
-            "output": "adsdf Alaska Alaska Alaska"
-        },
-        {
-            "input": "adsdf Dad Hello Alaska sfd",
-            "output": "adsdf Dad Alaska sfd"
-        },
-        {
-            "input": "omk Peace Peace Hello Peace",
-            "output": ""
-        },
-        {
-            "input": "adsdf sfd omk Dad Hello",
-            "output": "adsdf sfd Dad"
-        },
-        {
-            "input": "sfd Peace Dad omk Hello",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "sfd adsdf omk Hello Alaska",
-            "output": "sfd adsdf Alaska"
-        },
-        {
-            "input": "sfd Hello Hello omk Peace",
-            "output": "sfd"
-        },
-        {
-            "input": "omk sfd Alaska adsdf adsdf",
-            "output": "sfd Alaska adsdf adsdf"
-        },
-        {
-            "input": "omk sfd adsdf Alaska sfd",
-            "output": "sfd adsdf Alaska sfd"
-        },
-        {
-            "input": "sfd adsdf omk omk Alaska",
-            "output": "sfd adsdf Alaska"
-        },
-        {
-            "input": "Dad omk omk sfd Peace",
-            "output": "Dad sfd"
-        },
-        {
-            "input": "sfd sfd Hello sfd sfd",
-            "output": "sfd sfd sfd sfd"
-        },
-        {
-            "input": "Dad Peace adsdf sfd Dad",
-            "output": "Dad adsdf sfd Dad"
-        },
-        {
-            "input": "Peace Peace Peace omk sfd",
-            "output": "sfd"
-        },
-        {
-            "input": "Peace omk omk Alaska Dad",
-            "output": "Alaska Dad"
-        },
-        {
-            "input": "Peace Peace Peace Alaska omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "omk adsdf Peace sfd omk",
-            "output": "adsdf sfd"
-        },
-        {
-            "input": "Dad sfd Hello Peace adsdf",
-            "output": "Dad sfd adsdf"
-        },
-        {
-            "input": "Alaska Alaska Dad Peace omk",
-            "output": "Alaska Alaska Dad"
-        },
-        {
-            "input": "omk adsdf adsdf Peace Alaska",
-            "output": "adsdf adsdf Alaska"
-        },
-        {
-            "input": "sfd Hello sfd omk sfd",
-            "output": "sfd sfd sfd"
-        },
-        {
-            "input": "adsdf omk sfd Dad Peace",
-            "output": "adsdf sfd Dad"
-        },
-        {
-            "input": "omk Peace Alaska sfd Peace",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "adsdf sfd sfd Dad adsdf",
-            "output": "adsdf sfd sfd Dad adsdf"
-        },
-        {
-            "input": "Dad Peace omk sfd Alaska",
-            "output": "Dad sfd Alaska"
-        },
-        {
-            "input": "omk omk Alaska Peace omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "Hello adsdf omk Peace Peace",
-            "output": "adsdf"
-        },
-        {
-            "input": "Peace sfd Hello sfd Alaska",
-            "output": "sfd sfd Alaska"
-        },
-        {
-            "input": "adsdf omk Alaska Peace sfd",
-            "output": "adsdf Alaska sfd"
-        },
-        {
-            "input": "Alaska adsdf Alaska Alaska Dad",
-            "output": "Alaska adsdf Alaska Alaska Dad"
-        },
-        {
-            "input": "Hello sfd Peace Dad Peace",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "Dad adsdf Dad Peace Hello",
-            "output": "Dad adsdf Dad"
-        },
-        {
-            "input": "Dad Peace sfd Hello Alaska",
-            "output": "Dad sfd Alaska"
-        },
-        {
-            "input": "Alaska Dad Peace omk adsdf",
-            "output": "Alaska Dad adsdf"
-        },
-        {
-            "input": "Peace Hello Hello Dad omk",
-            "output": "Dad"
-        },
-        {
-            "input": "adsdf omk sfd Dad adsdf",
-            "output": "adsdf sfd Dad adsdf"
-        },
-        {
-            "input": "adsdf omk Dad Peace sfd",
-            "output": "adsdf Dad sfd"
-        },
-        {
-            "input": "omk Dad Alaska omk adsdf",
-            "output": "Dad Alaska adsdf"
-        },
-        {
-            "input": "Peace Alaska Peace Alaska Alaska",
-            "output": "Alaska Alaska Alaska"
-        },
-        {
-            "input": "Peace omk Dad adsdf Peace",
-            "output": "Dad adsdf"
-        },
-        {
-            "input": "Dad Alaska omk Peace Hello",
-            "output": "Dad Alaska"
-        },
-        {
-            "input": "adsdf sfd Alaska omk Dad",
-            "output": "adsdf sfd Alaska Dad"
-        },
-        {
-            "input": "Alaska Hello Peace Dad omk",
-            "output": "Alaska Dad"
-        },
-        {
-            "input": "Hello adsdf Dad Alaska omk",
-            "output": "adsdf Dad Alaska"
-        },
-        {
-            "input": "Peace Hello omk omk Alaska",
-            "output": "Alaska"
-        },
-        {
-            "input": "Alaska omk omk Hello omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "Alaska sfd adsdf adsdf sfd",
-            "output": "Alaska sfd adsdf adsdf sfd"
-        },
-        {
-            "input": "Alaska Peace sfd Peace adsdf",
-            "output": "Alaska sfd adsdf"
-        },
-        {
-            "input": "omk omk Dad Alaska Alaska",
-            "output": "Dad Alaska Alaska"
-        },
-        {
-            "input": "adsdf adsdf Hello adsdf sfd",
-            "output": "adsdf adsdf adsdf sfd"
-        },
-        {
-            "input": "Alaska Dad adsdf sfd sfd",
-            "output": "Alaska Dad adsdf sfd sfd"
-        },
-        {
-            "input": "adsdf adsdf Peace sfd sfd",
-            "output": "adsdf adsdf sfd sfd"
-        },
-        {
-            "input": "adsdf sfd Hello Hello Hello",
-            "output": "adsdf sfd"
-        },
-        {
-            "input": "Alaska Alaska Alaska sfd Alaska",
-            "output": "Alaska Alaska Alaska sfd Alaska"
-        },
-        {
-            "input": "omk adsdf Hello Hello omk",
-            "output": "adsdf"
-        },
-        {
-            "input": "omk Dad Peace omk Peace",
-            "output": "Dad"
-        },
-        {
-            "input": "adsdf adsdf Hello Peace Alaska",
-            "output": "adsdf adsdf Alaska"
-        },
-        {
-            "input": "Dad sfd Hello sfd adsdf",
-            "output": "Dad sfd sfd adsdf"
-        },
-        {
-            "input": "Hello adsdf Hello omk Dad",
-            "output": "adsdf Dad"
-        },
-        {
-            "input": "Hello omk Dad Alaska adsdf",
-            "output": "Dad Alaska adsdf"
-        },
-        {
-            "input": "sfd Peace adsdf adsdf Dad",
-            "output": "sfd adsdf adsdf Dad"
-        },
-        {
-            "input": "Alaska Dad Peace Hello sfd",
-            "output": "Alaska Dad sfd"
-        },
-        {
-            "input": "Peace Hello Alaska omk omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "omk omk Hello omk omk",
-            "output": ""
-        },
-        {
-            "input": "Hello Peace Hello Dad Peace",
-            "output": "Dad"
-        },
-        {
-            "input": "Alaska adsdf omk adsdf Dad",
-            "output": "Alaska adsdf adsdf Dad"
-        },
-        {
-            "input": "Hello adsdf Dad sfd Peace",
-            "output": "adsdf Dad sfd"
-        },
-        {
-            "input": "Hello omk Hello Dad Peace",
-            "output": "Dad"
-        },
-        {
-            "input": "omk sfd Dad Peace omk",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "adsdf Alaska Alaska Alaska omk",
-            "output": "adsdf Alaska Alaska Alaska"
-        },
-        {
-            "input": "sfd Alaska sfd Peace Hello",
-            "output": "sfd Alaska sfd"
-        },
-        {
-            "input": "Dad adsdf sfd omk Peace",
-            "output": "Dad adsdf sfd"
-        },
-        {
-            "input": "adsdf Peace Peace Peace Peace",
-            "output": "adsdf"
-        },
-        {
-            "input": "Alaska Peace Hello sfd Dad",
-            "output": "Alaska sfd Dad"
-        },
-        {
-            "input": "sfd adsdf Peace Peace Peace",
-            "output": "sfd adsdf"
-        },
-        {
-            "input": "Hello Dad Dad Alaska Peace",
-            "output": "Dad Dad Alaska"
-        },
-        {
-            "input": "adsdf Dad Peace Alaska Peace",
-            "output": "adsdf Dad Alaska"
-        },
-        {
-            "input": "Alaska Peace Dad Alaska Dad",
-            "output": "Alaska Dad Alaska Dad"
-        },
-        {
-            "input": "Alaska Alaska sfd Hello Dad",
-            "output": "Alaska Alaska sfd Dad"
-        },
-        {
-            "input": "Peace omk Peace Hello Dad",
-            "output": "Dad"
-        },
-        {
-            "input": "Dad Hello omk Alaska Peace",
-            "output": "Dad Alaska"
-        },
-        {
-            "input": "adsdf Peace Dad Alaska sfd",
-            "output": "adsdf Dad Alaska sfd"
-        },
-        {
-            "input": "Hello Alaska adsdf adsdf Peace",
-            "output": "Alaska adsdf adsdf"
-        },
-        {
-            "input": "sfd Peace Hello Hello sfd",
-            "output": "sfd sfd"
-        },
-        {
-            "input": "Dad omk Alaska Hello Alaska",
-            "output": "Dad Alaska Alaska"
-        },
-        {
-            "input": "Peace sfd sfd adsdf Dad",
-            "output": "sfd sfd adsdf Dad"
-        },
-        {
-            "input": "Hello adsdf Peace Dad omk",
-            "output": "adsdf Dad"
-        },
-        {
-            "input": "omk Alaska Peace omk Alaska",
-            "output": "Alaska Alaska"
-        },
-        {
-            "input": "Peace omk Dad Peace Peace",
-            "output": "Dad"
-        },
-        {
-            "input": "sfd omk adsdf Hello Alaska",
-            "output": "sfd adsdf Alaska"
-        },
-        {
-            "input": "sfd omk sfd adsdf Hello",
-            "output": "sfd sfd adsdf"
-        },
-        {
-            "input": "Alaska Hello sfd Alaska Peace",
-            "output": "Alaska sfd Alaska"
-        },
-        {
-            "input": "sfd Hello Dad Dad omk",
-            "output": "sfd Dad Dad"
-        },
-        {
-            "input": "adsdf Peace Alaska omk sfd",
-            "output": "adsdf Alaska sfd"
-        },
-        {
-            "input": "adsdf Dad sfd adsdf Peace",
-            "output": "adsdf Dad sfd adsdf"
-        },
-        {
-            "input": "Hello sfd sfd Hello Dad",
-            "output": "sfd sfd Dad"
-        },
-        {
-            "input": "Dad omk omk omk Peace",
-            "output": "Dad"
-        },
-        {
-            "input": "sfd Alaska sfd Peace Alaska",
-            "output": "sfd Alaska sfd Alaska"
-        },
-        {
-            "input": "Hello sfd Peace adsdf Hello",
-            "output": "sfd adsdf"
-        },
-        {
-            "input": "Peace Alaska omk Hello omk",
-            "output": "Alaska"
-        },
-        {
-            "input": "sfd Peace Alaska Hello Alaska",
-            "output": "sfd Alaska Alaska"
-        },
-        {
-            "input": "Peace sfd Alaska Dad Dad",
-            "output": "sfd Alaska Dad Dad"
-        },
-        {
-            "input": "Hello adsdf omk adsdf sfd",
-            "output": "adsdf adsdf sfd"
-        },
-        {
-            "input": "Hello sfd omk sfd sfd",
-            "output": "sfd sfd sfd"
-        },
-        {
-            "input": "Alaska Dad Peace Alaska Hello",
-            "output": "Alaska Dad Alaska"
-        },
-        {
-            "input": "Alaska Dad adsdf Hello sfd",
-            "output": "Alaska Dad adsdf sfd"
-        },
-        {
-            "input": "sfd sfd sfd Hello Peace",
-            "output": "sfd sfd sfd"
-        },
-        {
-            "input": "adsdf omk Hello Dad Dad",
-            "output": "adsdf Dad Dad"
-        },
-        {
-            "input": "Peace adsdf Alaska Dad Dad",
-            "output": "adsdf Alaska Dad Dad"
-        },
-        {
-            "input": "sfd Hello adsdf Dad Peace",
-            "output": "sfd adsdf Dad"
-        },
-        {
-            "input": "adsdf omk Alaska Peace Dad",
-            "output": "adsdf Alaska Dad"
-        },
-        {
-            "input": "Peace sfd Hello adsdf omk",
-            "output": "sfd adsdf"
-        },
-        {
-            "input": "sfd Dad omk Dad Peace",
-            "output": "sfd Dad Dad"
-        },
-        {
-            "input": "Dad Dad Peace sfd sfd",
-            "output": "Dad Dad sfd sfd"
-        },
-        {
-            "input": "adsdf adsdf adsdf omk Alaska",
-            "output": "adsdf adsdf adsdf Alaska"
-        },
-        {
-            "input": "Peace sfd Alaska adsdf omk",
-            "output": "sfd Alaska adsdf"
-        },
-        {
-            "input": "adsdf Hello adsdf Alaska Alaska",
-            "output": "adsdf adsdf Alaska Alaska"
-        },
-        {
-            "input": "Alaska adsdf Alaska Alaska omk",
-            "output": "Alaska adsdf Alaska Alaska"
-        },
-        {
-            "input": "omk sfd Hello Dad omk",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "Hello Alaska sfd omk Alaska",
-            "output": "Alaska sfd Alaska"
-        },
-        {
-            "input": "Dad Alaska Peace adsdf Hello",
-            "output": "Dad Alaska adsdf"
-        },
-        {
-            "input": "Peace Alaska adsdf adsdf Dad",
-            "output": "Alaska adsdf adsdf Dad"
-        },
-        {
-            "input": "Peace Peace Alaska Dad sfd",
-            "output": "Alaska Dad sfd"
-        },
-        {
-            "input": "sfd sfd Dad omk Alaska",
-            "output": "sfd sfd Dad Alaska"
-        },
-        {
-            "input": "omk Alaska adsdf adsdf Peace",
-            "output": "Alaska adsdf adsdf"
-        },
-        {
-            "input": "omk Peace omk adsdf sfd",
-            "output": "adsdf sfd"
-        },
-        {
-            "input": "Hello Hello Dad Dad Hello",
-            "output": "Dad Dad"
-        },
-        {
-            "input": "adsdf Peace Alaska Peace Alaska",
-            "output": "adsdf Alaska Alaska"
-        },
-        {
-            "input": "Dad sfd Alaska Hello sfd",
-            "output": "Dad sfd Alaska sfd"
-        },
-        {
-            "input": "Peace Alaska adsdf omk sfd",
-            "output": "Alaska adsdf sfd"
-        },
-        {
-            "input": "Peace Peace Dad Peace omk",
-            "output": "Dad"
-        },
-        {
-            "input": "Alaska adsdf Hello Hello adsdf",
-            "output": "Alaska adsdf adsdf"
-        },
-        {
-            "input": "Alaska sfd adsdf Peace adsdf",
-            "output": "Alaska sfd adsdf adsdf"
-        },
-        {
-            "input": "sfd sfd sfd Dad adsdf",
-            "output": "sfd sfd sfd Dad adsdf"
-        },
-        {
-            "input": "sfd Peace omk Alaska Alaska",
-            "output": "sfd Alaska Alaska"
-        },
-        {
-            "input": "omk adsdf adsdf Hello Dad",
-            "output": "adsdf adsdf Dad"
-        },
-        {
-            "input": "Hello Alaska Alaska sfd omk",
-            "output": "Alaska Alaska sfd"
-        },
-        {
-            "input": "Dad Dad adsdf Alaska Alaska",
-            "output": "Dad Dad adsdf Alaska Alaska"
-        },
-        {
-            "input": "Peace omk Alaska omk Alaska",
-            "output": "Alaska Alaska"
-        },
-        {
-            "input": "Dad Hello Hello Alaska Hello",
-            "output": "Dad Alaska"
-        },
-        {
-            "input": "Hello Peace Alaska sfd Hello",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "Peace Alaska omk sfd Hello",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "Alaska Peace adsdf Hello sfd",
-            "output": "Alaska adsdf sfd"
-        },
-        {
-            "input": "Alaska Dad Alaska Dad Alaska",
-            "output": "Alaska Dad Alaska Dad Alaska"
-        },
-        {
-            "input": "sfd omk sfd sfd Dad",
-            "output": "sfd sfd sfd Dad"
-        },
-        {
-            "input": "Alaska Hello Alaska adsdf Peace",
-            "output": "Alaska Alaska adsdf"
-        },
-        {
-            "input": "Dad Dad Alaska omk Hello",
-            "output": "Dad Dad Alaska"
-        },
-        {
-            "input": "sfd sfd sfd Peace Hello",
-            "output": "sfd sfd sfd"
-        },
-        {
-            "input": "omk Hello Hello Alaska sfd",
-            "output": "Alaska sfd"
         },
         {
             "input": "omk omk omk Peace Alaska",
             "output": "Alaska"
         },
         {
-            "input": "Dad Dad Peace omk Dad",
-            "output": "Dad Dad Dad"
+            "input": "Alaska sfd Dad sfd Dad",
+            "output": "Alaska sfd Dad sfd Dad"
         },
         {
-            "input": "Hello Peace adsdf Peace Peace",
+            "input": "Hello Alaska Peace omk Peace",
+            "output": "Alaska"
+        },
+        {
+            "input": "omk Peace sfd Dad omk",
+            "output": "sfd Dad"
+        },
+        {
+            "input": "adsdf Hello Hello Peace Hello",
             "output": "adsdf"
         },
         {
-            "input": "sfd adsdf omk Peace Alaska",
-            "output": "sfd adsdf Alaska"
+            "input": "Alaska Alaska Alaska Peace Dad",
+            "output": "Alaska Alaska Alaska Dad"
         },
         {
-            "input": "Alaska sfd sfd Peace Peace",
-            "output": "Alaska sfd sfd"
-        },
-        {
-            "input": "Alaska Peace omk Alaska omk",
+            "input": "Peace Peace Alaska Alaska Peace",
             "output": "Alaska Alaska"
         },
         {
-            "input": "adsdf sfd adsdf Alaska Peace",
-            "output": "adsdf sfd adsdf Alaska"
+            "input": "adsdf Alaska Peace sfd Alaska",
+            "output": "adsdf Alaska sfd Alaska"
         },
         {
-            "input": "sfd adsdf Hello Alaska Dad",
-            "output": "sfd adsdf Alaska Dad"
+            "input": "Dad sfd Alaska Hello Peace",
+            "output": "Dad sfd Alaska"
         },
         {
-            "input": "Alaska adsdf Dad Hello sfd",
-            "output": "Alaska adsdf Dad sfd"
+            "input": "sfd sfd Peace Alaska Alaska",
+            "output": "sfd sfd Alaska Alaska"
         },
         {
-            "input": "Hello omk Alaska adsdf Dad",
-            "output": "Alaska adsdf Dad"
+            "input": "adsdf omk adsdf sfd sfd",
+            "output": "adsdf adsdf sfd sfd"
         },
         {
-            "input": "adsdf Dad Alaska adsdf Dad",
-            "output": "adsdf Dad Alaska adsdf Dad"
+            "input": "Peace Dad Hello Dad sfd",
+            "output": "Dad Dad sfd"
         },
         {
-            "input": "omk Hello Hello sfd Alaska",
-            "output": "sfd Alaska"
+            "input": "Peace Hello Alaska Alaska adsdf",
+            "output": "Alaska Alaska adsdf"
         },
         {
-            "input": "sfd Alaska sfd sfd Alaska",
-            "output": "sfd Alaska sfd sfd Alaska"
+            "input": "Dad Peace Alaska Dad Peace",
+            "output": "Dad Alaska Dad"
         },
         {
-            "input": "Peace omk adsdf Hello sfd",
-            "output": "adsdf sfd"
+            "input": "adsdf adsdf adsdf Alaska adsdf",
+            "output": "adsdf adsdf adsdf Alaska adsdf"
         },
         {
-            "input": "Hello Hello omk omk omk",
-            "output": ""
+            "input": "Dad adsdf Peace adsdf Dad",
+            "output": "Dad adsdf adsdf Dad"
         },
         {
-            "input": "adsdf Alaska Alaska Alaska Hello",
-            "output": "adsdf Alaska Alaska Alaska"
+            "input": "sfd omk Peace Alaska sfd",
+            "output": "sfd Alaska sfd"
         },
         {
-            "input": "Peace Alaska adsdf Hello Hello",
-            "output": "Alaska adsdf"
+            "input": "Alaska Peace omk Peace sfd",
+            "output": "Alaska sfd"
         },
         {
-            "input": "Dad Hello sfd Peace adsdf",
-            "output": "Dad sfd adsdf"
+            "input": "adsdf omk sfd Peace sfd",
+            "output": "adsdf sfd sfd"
         },
         {
-            "input": "Dad sfd Alaska Alaska sfd",
-            "output": "Dad sfd Alaska Alaska sfd"
-        },
-        {
-            "input": "adsdf Alaska sfd Dad omk",
-            "output": "adsdf Alaska sfd Dad"
-        },
-        {
-            "input": "sfd Dad Dad sfd omk",
-            "output": "sfd Dad Dad sfd"
-        },
-        {
-            "input": "Hello Hello sfd adsdf adsdf",
+            "input": "omk sfd Peace adsdf adsdf",
             "output": "sfd adsdf adsdf"
         },
         {
-            "input": "sfd Peace Peace omk Dad",
-            "output": "sfd Dad"
+            "input": "adsdf sfd Alaska adsdf sfd",
+            "output": "adsdf sfd Alaska adsdf sfd"
         },
         {
-            "input": "Alaska adsdf omk sfd adsdf",
-            "output": "Alaska adsdf sfd adsdf"
-        },
-        {
-            "input": "Hello Dad Peace Dad Hello",
-            "output": "Dad Dad"
-        },
-        {
-            "input": "Hello adsdf Peace Alaska sfd",
-            "output": "adsdf Alaska sfd"
-        },
-        {
-            "input": "Hello Dad Peace omk Hello",
-            "output": "Dad"
-        },
-        {
-            "input": "Alaska Alaska Alaska omk sfd",
-            "output": "Alaska Alaska Alaska sfd"
-        },
-        {
-            "input": "adsdf Hello omk omk Hello",
-            "output": "adsdf"
-        },
-        {
-            "input": "Dad adsdf sfd Dad adsdf",
-            "output": "Dad adsdf sfd Dad adsdf"
-        },
-        {
-            "input": "Dad Dad sfd omk Dad",
-            "output": "Dad Dad sfd Dad"
-        },
-        {
-            "input": "adsdf Peace adsdf sfd omk",
-            "output": "adsdf adsdf sfd"
-        },
-        {
-            "input": "omk Peace Peace omk Hello",
-            "output": ""
-        },
-        {
-            "input": "adsdf Hello sfd adsdf Peace",
-            "output": "adsdf sfd adsdf"
-        },
-        {
-            "input": "Peace Alaska omk adsdf omk",
-            "output": "Alaska adsdf"
-        },
-        {
-            "input": "Peace Dad Alaska Peace omk",
-            "output": "Dad Alaska"
-        },
-        {
-            "input": "Hello Hello Alaska adsdf sfd",
-            "output": "Alaska adsdf sfd"
-        },
-        {
-            "input": "Hello Dad sfd Dad Alaska",
-            "output": "Dad sfd Dad Alaska"
-        },
-        {
-            "input": "sfd Hello Peace Dad adsdf",
-            "output": "sfd Dad adsdf"
-        },
-        {
-            "input": "Hello Peace Alaska Peace Peace",
-            "output": "Alaska"
-        },
-        {
-            "input": "Peace sfd Hello Alaska adsdf",
-            "output": "sfd Alaska adsdf"
-        },
-        {
-            "input": "Dad sfd sfd Dad sfd",
-            "output": "Dad sfd sfd Dad sfd"
-        },
-        {
-            "input": "Alaska Hello Dad Peace sfd",
-            "output": "Alaska Dad sfd"
-        },
-        {
-            "input": "omk Hello Hello Dad sfd",
-            "output": "Dad sfd"
-        },
-        {
-            "input": "Alaska omk omk Hello Hello",
-            "output": "Alaska"
-        },
-        {
-            "input": "Peace Peace Peace Alaska sfd",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "adsdf Hello Dad omk Hello",
-            "output": "adsdf Dad"
-        },
-        {
-            "input": "omk Hello omk adsdf Alaska",
-            "output": "adsdf Alaska"
-        },
-        {
-            "input": "adsdf Hello Alaska Dad Peace",
-            "output": "adsdf Alaska Dad"
-        },
-        {
-            "input": "Peace Peace omk adsdf Hello",
-            "output": "adsdf"
-        },
-        {
-            "input": "omk omk Peace Hello Alaska",
-            "output": "Alaska"
-        },
-        {
-            "input": "Alaska sfd omk Peace Hello",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "Hello Hello omk Peace omk",
-            "output": ""
-        },
-        {
-            "input": "adsdf omk Hello adsdf adsdf",
-            "output": "adsdf adsdf adsdf"
-        },
-        {
-            "input": "Peace Dad Hello sfd adsdf",
-            "output": "Dad sfd adsdf"
-        },
-        {
-            "input": "sfd Dad Peace Peace Alaska",
-            "output": "sfd Dad Alaska"
-        },
-        {
-            "input": "Peace sfd omk Alaska Dad",
-            "output": "sfd Alaska Dad"
-        },
-        {
-            "input": "omk Dad Alaska adsdf Alaska",
-            "output": "Dad Alaska adsdf Alaska"
-        },
-        {
-            "input": "sfd sfd adsdf omk Alaska",
-            "output": "sfd sfd adsdf Alaska"
-        },
-        {
-            "input": "Alaska Dad Peace Hello Hello",
-            "output": "Alaska Dad"
-        },
-        {
-            "input": "Dad omk adsdf Peace Hello",
-            "output": "Dad adsdf"
-        },
-        {
-            "input": "Peace Hello omk omk omk",
-            "output": ""
-        },
-        {
-            "input": "sfd adsdf Peace Alaska Dad",
-            "output": "sfd adsdf Alaska Dad"
-        },
-        {
-            "input": "Hello Dad sfd sfd omk",
-            "output": "Dad sfd sfd"
-        },
-        {
-            "input": "omk sfd Peace omk Dad",
-            "output": "sfd Dad"
-        },
-        {
-            "input": "adsdf Peace sfd Hello adsdf",
-            "output": "adsdf sfd adsdf"
-        },
-        {
-            "input": "sfd Dad Hello Hello adsdf",
-            "output": "sfd Dad adsdf"
-        },
-        {
-            "input": "omk Alaska Hello adsdf Hello",
-            "output": "Alaska adsdf"
-        },
-        {
-            "input": "omk Dad Alaska sfd Peace",
-            "output": "Dad Alaska sfd"
-        },
-        {
-            "input": "adsdf omk Dad Hello sfd",
-            "output": "adsdf Dad sfd"
-        },
-        {
-            "input": "Hello adsdf Alaska Dad Peace",
-            "output": "adsdf Alaska Dad"
-        },
-        {
-            "input": "omk Hello Dad Hello Hello",
-            "output": "Dad"
-        },
-        {
-            "input": "adsdf Alaska Alaska adsdf Dad",
-            "output": "adsdf Alaska Alaska adsdf Dad"
-        },
-        {
-            "input": "adsdf adsdf Peace sfd Hello",
-            "output": "adsdf adsdf sfd"
-        },
-        {
-            "input": "sfd Alaska Dad Dad adsdf",
-            "output": "sfd Alaska Dad Dad adsdf"
-        },
-        {
-            "input": "Hello sfd Alaska Alaska Hello",
-            "output": "sfd Alaska Alaska"
-        },
-        {
-            "input": "omk adsdf Dad Alaska Peace",
-            "output": "adsdf Dad Alaska"
-        },
-        {
-            "input": "Alaska omk Hello omk sfd",
-            "output": "Alaska sfd"
-        },
-        {
-            "input": "adsdf Hello Dad Dad Dad",
-            "output": "adsdf Dad Dad Dad"
-        },
-        {
-            "input": "sfd Alaska Peace Hello Alaska",
-            "output": "sfd Alaska Alaska"
-        },
-        {
-            "input": "omk omk Alaska Peace Dad",
-            "output": "Alaska Dad"
-        },
-        {
-            "input": "adsdf sfd omk omk Hello",
-            "output": "adsdf sfd"
-        },
-        {
-            "input": "sfd Peace Hello omk Hello",
-            "output": "sfd"
-        },
-        {
-            "input": "omk adsdf Hello Dad Dad",
-            "output": "adsdf Dad Dad"
-        },
-        {
-            "input": "adsdf Dad Peace Peace Peace",
-            "output": "adsdf Dad"
-        },
-        {
-            "input": "Dad omk Hello Peace omk",
-            "output": "Dad"
-        },
-        {
-            "input": "Peace Peace Dad adsdf sfd",
-            "output": "Dad adsdf sfd"
-        },
-        {
-            "input": "Dad sfd omk Hello Hello",
-            "output": "Dad sfd"
-        },
-        {
-            "input": "omk Hello Hello Peace Peace",
-            "output": ""
-        },
-        {
-            "input": "Peace adsdf Dad Dad omk",
-            "output": "adsdf Dad Dad"
-        },
-        {
-            "input": "Hello Peace adsdf Peace Alaska",
-            "output": "adsdf Alaska"
-        },
-        {
-            "input": "sfd Dad Dad sfd adsdf",
-            "output": "sfd Dad Dad sfd adsdf"
-        },
-        {
-            "input": "sfd sfd sfd adsdf Peace",
-            "output": "sfd sfd sfd adsdf"
-        },
-        {
-            "input": "Peace Dad sfd Peace Peace",
-            "output": "Dad sfd"
-        },
-        {
-            "input": "Dad Alaska Peace Dad omk",
-            "output": "Dad Alaska Dad"
-        },
-        {
-            "input": "adsdf Dad Peace Alaska Dad",
-            "output": "adsdf Dad Alaska Dad"
-        },
-        {
-            "input": "Alaska sfd Dad Peace Peace",
-            "output": "Alaska sfd Dad"
-        },
-        {
-            "input": "Hello adsdf sfd Hello Alaska",
-            "output": "adsdf sfd Alaska"
-        },
-        {
-            "input": "Dad omk Alaska adsdf Dad",
-            "output": "Dad Alaska adsdf Dad"
-        },
-        {
-            "input": "Dad Alaska Hello Dad Hello",
-            "output": "Dad Alaska Dad"
-        },
-        {
-            "input": "Dad Alaska Peace Dad sfd",
-            "output": "Dad Alaska Dad sfd"
-        },
-        {
-            "input": "Peace omk Alaska Peace Peace",
-            "output": "Alaska"
-        },
-        {
-            "input": "adsdf Alaska omk Dad Peace",
-            "output": "adsdf Alaska Dad"
-        },
-        {
-            "input": "adsdf Peace Alaska adsdf Alaska",
-            "output": "adsdf Alaska adsdf Alaska"
-        },
-        {
-            "input": "Peace Peace Alaska Alaska sfd",
-            "output": "Alaska Alaska sfd"
-        },
-        {
-            "input": "Hello omk Hello omk Peace",
-            "output": ""
-        },
-        {
-            "input": "Alaska sfd Peace Alaska Alaska",
-            "output": "Alaska sfd Alaska Alaska"
-        },
-        {
-            "input": "Peace adsdf Alaska sfd Dad",
-            "output": "adsdf Alaska sfd Dad"
-        },
-        {
-            "input": "Peace adsdf adsdf Dad Peace",
-            "output": "adsdf adsdf Dad"
-        },
-        {
-            "input": "Hello Hello Alaska Hello Hello",
-            "output": "Alaska"
-        },
-        {
-            "input": "Dad sfd omk Alaska adsdf",
-            "output": "Dad sfd Alaska adsdf"
-        },
-        {
-            "input": "adsdf Alaska Hello Peace adsdf",
-            "output": "adsdf Alaska adsdf"
-        },
-        {
-            "input": "Dad sfd Alaska adsdf omk",
-            "output": "Dad sfd Alaska adsdf"
-        },
-        {
-            "input": "sfd omk omk adsdf omk",
-            "output": "sfd adsdf"
-        },
-        {
-            "input": "Alaska Alaska adsdf adsdf Peace",
-            "output": "Alaska Alaska adsdf adsdf"
-        },
-        {
-            "input": "Alaska sfd Hello omk Alaska",
-            "output": "Alaska sfd Alaska"
-        },
-        {
-            "input": "Dad Hello Alaska Alaska Peace",
-            "output": "Dad Alaska Alaska"
-        },
-        {
-            "input": "adsdf adsdf Dad adsdf Hello",
-            "output": "adsdf adsdf Dad adsdf"
-        },
-        {
-            "input": "omk adsdf Peace omk Peace",
-            "output": "adsdf"
-        },
-        {
-            "input": "Dad Alaska Peace adsdf adsdf",
-            "output": "Dad Alaska adsdf adsdf"
-        },
-        {
-            "input": "Alaska omk omk adsdf Alaska",
-            "output": "Alaska adsdf Alaska"
-        },
-        {
-            "input": "sfd omk omk Peace Alaska",
-            "output": "sfd Alaska"
-        },
-        {
-            "input": "Dad Dad Alaska Hello sfd",
-            "output": "Dad Dad Alaska sfd"
-        },
-        {
-            "input": "Dad Peace Peace Dad adsdf",
-            "output": "Dad Dad adsdf"
-        },
-        {
-            "input": "sfd Alaska Peace Dad sfd",
-            "output": "sfd Alaska Dad sfd"
-        },
-        {
-            "input": "Alaska Peace Hello Alaska sfd",
-            "output": "Alaska Alaska sfd"
-        },
-        {
-            "input": "Alaska adsdf Dad Hello Dad",
-            "output": "Alaska adsdf Dad Dad"
-        },
-        {
-            "input": "Dad Dad Dad Alaska Dad",
-            "output": "Dad Dad Dad Alaska Dad"
-        },
-        {
-            "input": "omk adsdf Peace sfd Dad",
-            "output": "adsdf sfd Dad"
-        },
-        {
-            "input": "Dad Peace Hello Peace omk",
-            "output": "Dad"
-        },
-        {
-            "input": "Alaska Alaska sfd Dad Peace",
-            "output": "Alaska Alaska sfd Dad"
-        },
-        {
-            "input": "omk Dad Dad omk Hello",
-            "output": "Dad Dad"
-        },
-        {
-            "input": "adsdf omk adsdf Alaska omk",
-            "output": "adsdf adsdf Alaska"
-        },
-        {
-            "input": "Dad omk sfd sfd omk",
-            "output": "Dad sfd sfd"
-        },
-        {
-            "input": "Alaska adsdf adsdf Hello Dad",
-            "output": "Alaska adsdf adsdf Dad"
-        },
-        {
-            "input": "omk Hello Hello Hello Dad",
-            "output": "Dad"
-        },
-        {
-            "input": "adsdf Hello sfd omk Alaska",
-            "output": "adsdf sfd Alaska"
-        },
-        {
-            "input": "Hello Alaska Alaska Peace omk",
+            "input": "Peace Alaska Hello Alaska Peace",
             "output": "Alaska Alaska"
         },
         {
-            "input": "Peace omk sfd Peace Dad",
-            "output": "sfd Dad"
+            "input": "sfd adsdf Hello Dad adsdf",
+            "output": "sfd adsdf Dad adsdf"
         },
         {
-            "input": "omk Hello omk Hello adsdf",
-            "output": "adsdf"
+            "input": "adsdf Hello Peace Dad adsdf",
+            "output": "adsdf Dad adsdf"
         },
         {
-            "input": "sfd Hello adsdf Dad Dad",
-            "output": "sfd adsdf Dad Dad"
+            "input": "Hello sfd adsdf sfd Dad",
+            "output": "sfd adsdf sfd Dad"
         },
         {
-            "input": "omk adsdf Dad Alaska sfd",
-            "output": "adsdf Dad Alaska sfd"
+            "input": "sfd adsdf adsdf Hello adsdf",
+            "output": "sfd adsdf adsdf adsdf"
         },
         {
-            "input": "Hello omk sfd Alaska Alaska",
-            "output": "sfd Alaska Alaska"
+            "input": "Alaska Dad Peace Alaska Dad",
+            "output": "Alaska Dad Alaska Dad"
         },
         {
-            "input": "sfd Dad Alaska adsdf Dad",
-            "output": "sfd Dad Alaska adsdf Dad"
+            "input": "Dad adsdf Dad Hello adsdf",
+            "output": "Dad adsdf Dad adsdf"
         },
         {
-            "input": "Hello adsdf Alaska adsdf adsdf",
-            "output": "adsdf Alaska adsdf adsdf"
+            "input": "adsdf Hello Dad omk adsdf",
+            "output": "adsdf Dad adsdf"
         },
         {
-            "input": "sfd Peace omk Hello adsdf",
-            "output": "sfd adsdf"
+            "input": "sfd sfd Peace omk Hello",
+            "output": "sfd sfd"
         },
         {
-            "input": "Dad adsdf Alaska Hello Peace",
+            "input": "adsdf sfd Alaska Hello Peace",
+            "output": "adsdf sfd Alaska"
+        },
+        {
+            "input": "Peace Dad Hello Hello adsdf",
+            "output": "Dad adsdf"
+        },
+        {
+            "input": "adsdf Alaska omk adsdf Hello",
+            "output": "adsdf Alaska adsdf"
+        },
+        {
+            "input": "adsdf Peace sfd omk adsdf",
+            "output": "adsdf sfd adsdf"
+        },
+        {
+            "input": "Alaska Peace adsdf Alaska Alaska",
+            "output": "Alaska adsdf Alaska Alaska"
+        },
+        {
+            "input": "Dad Alaska adsdf Dad adsdf",
+            "output": "Dad Alaska adsdf Dad adsdf"
+        },
+        {
+            "input": "Peace omk Dad adsdf Alaska",
             "output": "Dad adsdf Alaska"
         },
         {
-            "input": "Peace Alaska Peace sfd adsdf",
-            "output": "Alaska sfd adsdf"
+            "input": "Dad Dad Dad Dad sfd",
+            "output": "Dad Dad Dad Dad sfd"
         },
         {
-            "input": "Dad Alaska omk Alaska Peace",
-            "output": "Dad Alaska Alaska"
+            "input": "Alaska Dad Dad Alaska Dad",
+            "output": "Alaska Dad Dad Alaska Dad"
+        },
+        {
+            "input": "omk sfd sfd omk Alaska",
+            "output": "sfd sfd Alaska"
+        },
+        {
+            "input": "sfd omk Alaska adsdf omk",
+            "output": "sfd Alaska adsdf"
+        },
+        {
+            "input": "omk Hello Dad Alaska Hello",
+            "output": "Dad Alaska"
+        },
+        {
+            "input": "Peace adsdf Alaska Peace Hello",
+            "output": "adsdf Alaska"
+        },
+        {
+            "input": "sfd adsdf omk sfd sfd",
+            "output": "sfd adsdf sfd sfd"
+        },
+        {
+            "input": "adsdf Dad sfd Hello adsdf",
+            "output": "adsdf Dad sfd adsdf"
+        },
+        {
+            "input": "Hello Alaska Peace omk sfd",
+            "output": "Alaska sfd"
+        },
+        {
+            "input": "Peace Dad omk Peace Dad",
+            "output": "Dad Dad"
+        },
+        {
+            "input": "Dad sfd omk Hello omk",
+            "output": "Dad sfd"
+        },
+        {
+            "input": "Peace Alaska sfd Peace sfd",
+            "output": "Alaska sfd sfd"
+        },
+        {
+            "input": "Alaska Alaska Dad sfd Dad",
+            "output": "Alaska Alaska Dad sfd Dad"
+        },
+        {
+            "input": "omk sfd Hello adsdf adsdf",
+            "output": "sfd adsdf adsdf"
+        },
+        {
+            "input": "sfd omk Dad Alaska Peace",
+            "output": "sfd Dad Alaska"
+        },
+        {
+            "input": "adsdf adsdf omk Alaska Dad",
+            "output": "adsdf adsdf Alaska Dad"
+        },
+        {
+            "input": "Alaska Dad Dad adsdf sfd",
+            "output": "Alaska Dad Dad adsdf sfd"
+        },
+        {
+            "input": "omk Hello Dad omk Alaska",
+            "output": "Dad Alaska"
+        },
+        {
+            "input": "omk Hello omk Hello omk",
+            "output": ""
+        },
+        {
+            "input": "adsdf Peace Dad sfd Alaska",
+            "output": "adsdf Dad sfd Alaska"
+        },
+        {
+            "input": "adsdf Hello Hello Dad Dad",
+            "output": "adsdf Dad Dad"
+        },
+        {
+            "input": "Peace adsdf sfd Dad Peace",
+            "output": "adsdf sfd Dad"
+        },
+        {
+            "input": "adsdf Hello Alaska Hello Hello",
+            "output": "adsdf Alaska"
+        },
+        {
+            "input": "adsdf Dad Dad Peace Hello",
+            "output": "adsdf Dad Dad"
+        },
+        {
+            "input": "Hello omk Alaska Alaska Peace",
+            "output": "Alaska Alaska"
+        },
+        {
+            "input": "Alaska Alaska Dad Alaska omk",
+            "output": "Alaska Alaska Dad Alaska"
+        },
+        {
+            "input": "Alaska sfd Hello omk sfd",
+            "output": "Alaska sfd sfd"
+        },
+        {
+            "input": "Hello Dad adsdf Hello sfd",
+            "output": "Dad adsdf sfd"
+        },
+        {
+            "input": "adsdf omk Hello Alaska Peace",
+            "output": "adsdf Alaska"
+        },
+        {
+            "input": "Peace Alaska omk Hello Dad",
+            "output": "Alaska Dad"
+        },
+        {
+            "input": "Dad Dad omk Hello Dad",
+            "output": "Dad Dad Dad"
+        },
+        {
+            "input": "omk Dad adsdf Hello Peace",
+            "output": "Dad adsdf"
+        },
+        {
+            "input": "Hello Dad adsdf omk Alaska",
+            "output": "Dad adsdf Alaska"
+        },
+        {
+            "input": "adsdf sfd sfd adsdf Peace",
+            "output": "adsdf sfd sfd adsdf"
+        },
+        {
+            "input": "sfd Peace Alaska Peace omk",
+            "output": "sfd Alaska"
+        },
+        {
+            "input": "adsdf Peace adsdf Dad Hello",
+            "output": "adsdf adsdf Dad"
+        },
+        {
+            "input": "Alaska omk Dad omk Hello",
+            "output": "Alaska Dad"
+        },
+        {
+            "input": "sfd Alaska adsdf Hello Hello",
+            "output": "sfd Alaska adsdf"
+        },
+        {
+            "input": "omk Dad Hello adsdf Peace",
+            "output": "Dad adsdf"
+        },
+        {
+            "input": "Hello sfd Peace adsdf sfd",
+            "output": "sfd adsdf sfd"
+        },
+        {
+            "input": "Hello Alaska sfd Alaska adsdf",
+            "output": "Alaska sfd Alaska adsdf"
+        },
+        {
+            "input": "adsdf Dad adsdf Hello omk",
+            "output": "adsdf Dad adsdf"
+        },
+        {
+            "input": "adsdf adsdf adsdf Alaska sfd",
+            "output": "adsdf adsdf adsdf Alaska sfd"
+        },
+        {
+            "input": "Dad sfd sfd Dad Peace",
+            "output": "Dad sfd sfd Dad"
+        },
+        {
+            "input": "Peace Dad Dad omk Alaska",
+            "output": "Dad Dad Alaska"
+        },
+        {
+            "input": "Hello Alaska adsdf adsdf sfd",
+            "output": "Alaska adsdf adsdf sfd"
+        },
+        {
+            "input": "Hello sfd Peace omk Dad",
+            "output": "sfd Dad"
+        },
+        {
+            "input": "omk Alaska Hello sfd Dad",
+            "output": "Alaska sfd Dad"
+        },
+        {
+            "input": "sfd sfd Alaska omk adsdf",
+            "output": "sfd sfd Alaska adsdf"
+        },
+        {
+            "input": "omk Alaska Alaska Alaska Alaska",
+            "output": "Alaska Alaska Alaska Alaska"
+        },
+        {
+            "input": "adsdf Alaska sfd Peace sfd",
+            "output": "adsdf Alaska sfd sfd"
+        },
+        {
+            "input": "Peace adsdf Peace Hello Hello",
+            "output": "adsdf"
+        },
+        {
+            "input": "Dad omk Dad Peace Peace",
+            "output": "Dad Dad"
+        },
+        {
+            "input": "Dad adsdf Hello Alaska adsdf",
+            "output": "Dad adsdf Alaska adsdf"
+        },
+        {
+            "input": "Hello omk Alaska Hello omk",
+            "output": "Alaska"
+        },
+        {
+            "input": "adsdf omk omk Dad Hello",
+            "output": "adsdf Dad"
+        },
+        {
+            "input": "Alaska Dad omk sfd adsdf",
+            "output": "Alaska Dad sfd adsdf"
+        },
+        {
+            "input": "Alaska Peace Alaska sfd Peace",
+            "output": "Alaska Alaska sfd"
+        },
+        {
+            "input": "Alaska adsdf Alaska sfd omk",
+            "output": "Alaska adsdf Alaska sfd"
+        },
+        {
+            "input": "Alaska adsdf Alaska sfd adsdf",
+            "output": "Alaska adsdf Alaska sfd adsdf"
+        },
+        {
+            "input": "Hello Hello adsdf Peace adsdf",
+            "output": "adsdf adsdf"
+        },
+        {
+            "input": "omk Peace Hello Alaska omk",
+            "output": "Alaska"
+        },
+        {
+            "input": "omk sfd omk Dad Alaska",
+            "output": "sfd Dad Alaska"
+        },
+        {
+            "input": "omk Alaska Peace Dad sfd",
+            "output": "Alaska Dad sfd"
+        },
+        {
+            "input": "Dad omk Alaska adsdf Peace",
+            "output": "Dad Alaska adsdf"
+        },
+        {
+            "input": "sfd adsdf Peace Alaska omk",
+            "output": "sfd adsdf Alaska"
+        },
+        {
+            "input": "omk Dad Peace Hello adsdf",
+            "output": "Dad adsdf"
+        },
+        {
+            "input": "omk Dad Hello adsdf Dad",
+            "output": "Dad adsdf Dad"
+        },
+        {
+            "input": "omk Dad Alaska Dad Alaska",
+            "output": "Dad Alaska Dad Alaska"
+        },
+        {
+            "input": "Hello Hello Hello Peace Peace",
+            "output": ""
+        },
+        {
+            "input": "Hello Peace Dad Hello Alaska",
+            "output": "Dad Alaska"
+        },
+        {
+            "input": "Hello omk Dad sfd Hello",
+            "output": "Dad sfd"
+        },
+        {
+            "input": "Dad Hello Alaska adsdf sfd",
+            "output": "Dad Alaska adsdf sfd"
+        },
+        {
+            "input": "Hello sfd adsdf Alaska Peace",
+            "output": "sfd adsdf Alaska"
+        },
+        {
+            "input": "Peace Dad omk Peace adsdf",
+            "output": "Dad adsdf"
+        },
+        {
+            "input": "sfd Dad omk omk Alaska",
+            "output": "sfd Dad Alaska"
+        },
+        {
+            "input": "Dad Hello adsdf sfd omk",
+            "output": "Dad adsdf sfd"
+        },
+        {
+            "input": "sfd Hello Alaska sfd Peace",
+            "output": "sfd Alaska sfd"
+        },
+        {
+            "input": "adsdf sfd adsdf omk Dad",
+            "output": "adsdf sfd adsdf Dad"
+        },
+        {
+            "input": "omk sfd sfd Alaska Alaska",
+            "output": "sfd sfd Alaska Alaska"
+        },
+        {
+            "input": "Hello Peace Alaska adsdf Hello",
+            "output": "Alaska adsdf"
+        },
+        {
+            "input": "Dad omk omk Hello adsdf",
+            "output": "Dad adsdf"
+        },
+        {
+            "input": "omk Hello omk sfd Dad",
+            "output": "sfd Dad"
+        },
+        {
+            "input": "Peace adsdf Dad Peace adsdf",
+            "output": "adsdf Dad adsdf"
+        },
+        {
+            "input": "sfd Peace Hello omk omk",
+            "output": "sfd"
+        },
+        {
+            "input": "Dad Hello Alaska omk Dad",
+            "output": "Dad Alaska Dad"
+        },
+        {
+            "input": "Hello Alaska Dad Peace Peace",
+            "output": "Alaska Dad"
+        },
+        {
+            "input": "omk Dad Dad adsdf omk",
+            "output": "Dad Dad adsdf"
+        },
+        {
+            "input": "Alaska adsdf omk Alaska omk",
+            "output": "Alaska adsdf Alaska"
+        },
+        {
+            "input": "adsdf Hello omk Peace omk",
+            "output": "adsdf"
+        },
+        {
+            "input": "omk Peace adsdf Hello Alaska",
+            "output": "adsdf Alaska"
+        },
+        {
+            "input": "sfd Alaska Peace sfd sfd",
+            "output": "sfd Alaska sfd sfd"
+        },
+        {
+            "input": "adsdf omk Hello Hello omk",
+            "output": "adsdf"
+        },
+        {
+            "input": "Hello Dad adsdf sfd Hello",
+            "output": "Dad adsdf sfd"
+        },
+        {
+            "input": "adsdf sfd Alaska Dad sfd",
+            "output": "adsdf sfd Alaska Dad sfd"
+        },
+        {
+            "input": "sfd sfd Alaska sfd Peace",
+            "output": "sfd sfd Alaska sfd"
+        },
+        {
+            "input": "Peace Hello Alaska Peace Peace",
+            "output": "Alaska"
+        },
+        {
+            "input": "omk Peace Dad omk adsdf",
+            "output": "Dad adsdf"
+        },
+        {
+            "input": "omk Hello Peace Peace sfd",
+            "output": "sfd"
+        },
+        {
+            "input": "Dad Alaska Hello Hello adsdf",
+            "output": "Dad Alaska adsdf"
+        },
+        {
+            "input": "Alaska adsdf adsdf omk Peace",
+            "output": "Alaska adsdf adsdf"
         },
         {
             "input": "sfd sfd Peace omk sfd",
             "output": "sfd sfd sfd"
         },
         {
-            "input": "Hello Dad omk Alaska Peace",
+            "input": "adsdf omk Dad Peace adsdf",
+            "output": "adsdf Dad adsdf"
+        },
+        {
+            "input": "Hello adsdf omk Hello adsdf",
+            "output": "adsdf adsdf"
+        },
+        {
+            "input": "sfd Peace Alaska Dad Hello",
+            "output": "sfd Alaska Dad"
+        },
+        {
+            "input": "Hello Peace Hello omk Hello",
+            "output": ""
+        },
+        {
+            "input": "sfd Dad Dad Peace Alaska",
+            "output": "sfd Dad Dad Alaska"
+        },
+        {
+            "input": "omk sfd omk omk adsdf",
+            "output": "sfd adsdf"
+        },
+        {
+            "input": "omk Alaska Dad Peace Hello",
+            "output": "Alaska Dad"
+        },
+        {
+            "input": "Dad sfd adsdf Hello Hello",
+            "output": "Dad sfd adsdf"
+        },
+        {
+            "input": "Hello Dad Alaska Hello Peace",
             "output": "Dad Alaska"
         },
         {
-            "input": "Dad Dad sfd sfd Alaska",
-            "output": "Dad Dad sfd sfd Alaska"
+            "input": "Hello Hello Dad omk Alaska",
+            "output": "Dad Alaska"
         },
         {
-            "input": "adsdf Hello omk omk Peace",
-            "output": "adsdf"
+            "input": "omk omk Peace Alaska Alaska",
+            "output": "Alaska Alaska"
         },
         {
-            "input": "Alaska Alaska Dad Peace Hello",
-            "output": "Alaska Alaska Dad"
+            "input": "Dad Peace sfd Hello omk",
+            "output": "Dad sfd"
         },
         {
-            "input": "Peace Alaska adsdf Dad adsdf",
-            "output": "Alaska adsdf Dad adsdf"
+            "input": "Alaska omk Peace Dad Dad",
+            "output": "Alaska Dad Dad"
         },
         {
-            "input": "omk sfd Hello Peace Hello",
-            "output": "sfd"
+            "input": "Hello sfd Dad Dad sfd",
+            "output": "sfd Dad Dad sfd"
         },
         {
-            "input": "Dad Dad Alaska Dad Dad",
-            "output": "Dad Dad Alaska Dad Dad"
+            "input": "Dad omk sfd Peace omk",
+            "output": "Dad sfd"
         },
         {
-            "input": "Alaska Hello adsdf Dad Alaska",
-            "output": "Alaska adsdf Dad Alaska"
+            "input": "sfd omk Dad adsdf Hello",
+            "output": "sfd Dad adsdf"
         },
         {
-            "input": "Hello Dad omk Alaska Dad",
-            "output": "Dad Alaska Dad"
+            "input": "adsdf Hello omk Dad omk",
+            "output": "adsdf Dad"
         },
         {
-            "input": "Hello Alaska omk Alaska Alaska",
-            "output": "Alaska Alaska Alaska"
+            "input": "Dad Hello Peace Peace Dad",
+            "output": "Dad Dad"
+        },
+        {
+            "input": "Alaska Hello Dad sfd sfd",
+            "output": "Alaska Dad sfd sfd"
+        },
+        {
+            "input": "Hello Hello Alaska Alaska sfd",
+            "output": "Alaska Alaska sfd"
         }
     ]
 }
