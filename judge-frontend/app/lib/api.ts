@@ -41,16 +41,18 @@ async function getBaseUrl() {
 	return resolvedBaseUrl;
 }
 
-export async function getProblems() {
+export async function getProblems(skipCache: boolean = false) {
 	const baseUrl = await getBaseUrl();
-	const cached = getCachedProblems();
-	if (cached) {
-		// Fetch in background to update cache for next time
-		fetch(`${baseUrl}/problems`)
-			.then(res => res.json())
-			.then(data => setCachedProblems(data))
-			.catch(console.error);
-		return cached;
+	if (!skipCache) {
+		const cached = getCachedProblems();
+		if (cached) {
+			// Fetch in background to update cache for next time
+			fetch(`${baseUrl}/problems`)
+				.then(res => res.json())
+				.then(data => setCachedProblems(data))
+				.catch(console.error);
+			return cached;
+		}
 	}
 
 	const res = await fetch(`${baseUrl}/problems`);
@@ -78,6 +80,11 @@ export async function getProblemById(id: string) {
 }
 
 export async function submitCode(problemId: string, code: string, testOnly: boolean = false) {
+	const { getSystemConfig } = await import("./storage");
+	if (getSystemConfig().maintenanceMode) {
+		throw new Error("⚠️ System Maintenance: Submissions are currently paused.");
+	}
+
 	const baseUrl = await getBaseUrl();
 	const res = await fetch(`${baseUrl}/submit`, {
 		method: "POST",
@@ -100,6 +107,11 @@ export async function submitCode(problemId: string, code: string, testOnly: bool
 }
 
 export async function runCode(code: string, input: string = "") {
+	const { getSystemConfig } = await import("./storage");
+	if (getSystemConfig().maintenanceMode) {
+		throw new Error("⚠️ System Maintenance: Execution is currently paused.");
+	}
+
 	const baseUrl = await getBaseUrl();
 	const res = await fetch(`${baseUrl}/run`, {
 		method: "POST",

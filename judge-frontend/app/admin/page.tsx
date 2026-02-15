@@ -82,7 +82,8 @@ export default function AdminPage() {
         setUsers(allUsers);
 
         try {
-            const problemsData = await getProblems();
+            // Force refresh to ensure we get latest test case counts
+            const problemsData = await getProblems(true);
             let newProblems: Problem[] = [];
             if (Array.isArray(problemsData)) {
                 newProblems = problemsData;
@@ -175,9 +176,15 @@ export default function AdminPage() {
     const getDifficultyStats = () => {
         const stats = { Easy: 0, Medium: 0, Hard: 0 };
         problems.forEach(p => {
-            const diff = p.difficulty || 'Medium';
+            const rawDiff = p.difficulty || 'Medium';
+            // Normalize: "easy" -> "Easy", "HARD" -> "Hard"
+            const diff = rawDiff.charAt(0).toUpperCase() + rawDiff.slice(1).toLowerCase();
+
             if (stats[diff as keyof typeof stats] !== undefined) {
                 stats[diff as keyof typeof stats]++;
+            } else {
+                // Fallback for unexpected values
+                stats['Medium']++;
             }
         });
         return stats;
@@ -378,7 +385,7 @@ export default function AdminPage() {
                                             <h3 className="text-xl font-black mb-4">System Config</h3>
                                             <div className="space-y-4">
                                                 <ConfigToggle
-                                                    label="Maintenance Mode"
+                                                    label="Stop All Submissions (Maintenance)"
                                                     active={systemSettings.maintenanceMode}
                                                     onChange={(val) => {
                                                         const newConfig = { ...systemSettings, maintenanceMode: val };
@@ -386,33 +393,13 @@ export default function AdminPage() {
                                                         setSystemConfig(newConfig);
                                                     }}
                                                 />
-                                                <ConfigToggle
-                                                    label="Public Submissions"
-                                                    active={systemSettings.publicSubmissions}
-                                                    onChange={(val) => {
-                                                        const newConfig = { ...systemSettings, publicSubmissions: val };
-                                                        setSystemSettings(newConfig);
-                                                        setSystemConfig(newConfig);
-                                                    }}
-                                                />
-                                                <ConfigToggle
-                                                    label="Dynamic Scaling"
-                                                    active={systemSettings.dynamicScaling}
-                                                    onChange={(val) => {
-                                                        const newConfig = { ...systemSettings, dynamicScaling: val };
-                                                        setSystemSettings(newConfig);
-                                                        setSystemConfig(newConfig);
-                                                    }}
-                                                />
-                                                <ConfigToggle
-                                                    label="Debug Logs"
-                                                    active={systemSettings.debugLogs}
-                                                    onChange={(val) => {
-                                                        const newConfig = { ...systemSettings, debugLogs: val };
-                                                        setSystemSettings(newConfig);
-                                                        setSystemConfig(newConfig);
-                                                    }}
-                                                />
+                                                <div className="p-3 rounded-xl bg-white/5 border border-white/5">
+                                                    <div className="flex items-center gap-2 mb-1">
+                                                        <ShieldCheck className="w-4 h-4 text-green-300" />
+                                                        <span className="text-xs font-bold text-indigo-50">Security Level: High</span>
+                                                    </div>
+                                                    <p className="text-[10px] text-indigo-200/70">Root protection enabled. Audit logs active.</p>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -620,9 +607,17 @@ export default function AdminPage() {
                                     </div>
                                     <div>
                                         <h2 className="text-3xl font-black tracking-tight">Problem Inventory</h2>
-                                        <p className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-1">
-                                            {problems.length} total units cached
-                                        </p>
+                                        <div className="flex gap-4 mt-2">
+                                            <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-green-500/10 text-green-600 text-[10px] font-black uppercase">
+                                                {diffStats.Easy} Easy
+                                            </div>
+                                            <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-yellow-500/10 text-yellow-600 text-[10px] font-black uppercase">
+                                                {diffStats.Medium} Medium
+                                            </div>
+                                            <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-red-500/10 text-red-600 text-[10px] font-black uppercase">
+                                                {diffStats.Hard} Hard
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <button

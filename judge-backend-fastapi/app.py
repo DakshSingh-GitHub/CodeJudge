@@ -68,9 +68,13 @@ class SubmitResponse(BaseModel):
     summary: dict
     test_case_results: List[dict] # Modified slightly to handle visible results logic
 
+class ProblemSummary(ProblemBase):
+    sample_test_cases_count: Optional[int] = 0
+    hidden_test_cases_count: Optional[int] = 0
+
 class ProblemsListResponse(BaseModel):
     count: int
-    problems: List[ProblemBase]
+    problems: List[ProblemSummary]
 
 # Helper Functions
 def validate_problem_data(problem: dict) -> List[str]:
@@ -151,7 +155,9 @@ def get_problem(problem_id: str):
         "id": problem.get("id"),
         "title": problem.get("title"),
         "description": problem.get("description"),
-        "difficulty": problem.get("difficulty", "medium")
+        "difficulty": problem.get("difficulty", "medium"),
+        "sample_test_cases_count": len(problem.get("sample_test_cases", [])),
+        "hidden_test_cases_count": len(problem.get("hidden_test_cases", []))
     }
 
     optional_fields = ["input_format", "output_format", "constraints", "sample_test_cases"]

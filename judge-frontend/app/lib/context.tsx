@@ -20,37 +20,40 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   const [isSubmissionsModalOpen, setIsSubmissionsModalOpen] = useState(false);
 
   // Initialize theme from localStorage immediately if on client
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-        document.documentElement.classList.add("dark");
-        return true;
-      }
-    }
-    return false;
-  });
-
-  const TITLE = "Code Judge";
+  // Initialize as false to match server, then update on mount
+  const [isDark, setIsDark] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Ensure the DOM is synced with the state on mount/updates (double check)
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDark]);
+    setMounted(true);
+    if (typeof window !== 'undefined') {
+      const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const isStorageDark = localStorage.theme === "dark";
+      const isStorageMissing = !("theme" in localStorage);
 
-  const toggleTheme = () => {
+      if (isStorageDark || (isStorageMissing && isSystemDark)) {
+        setIsDark(true);
+        document.documentElement.classList.add("dark");
+      } else {
+        setIsDark(false);
+        document.documentElement.classList.remove("dark");
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
     if (isDark) {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
-      setIsDark(false);
-    } else {
       document.documentElement.classList.add("dark");
       localStorage.theme = "dark";
-      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.theme = "light";
     }
+  }, [isDark, mounted]);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
   };
 
   return (
@@ -61,7 +64,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
       setIsSubmissionsModalOpen,
       isDark,
       toggleTheme,
-      TITLE
+      TITLE: "Code Judge"
     }}>
       {children}
     </AppContext.Provider>
