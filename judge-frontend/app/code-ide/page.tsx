@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import CodeEditor from "../components/Editor/CodeEditor";
 import { useAppContext } from "../lib/context";
 import { runCode } from "../lib/api";
-import { Play, Terminal, Cpu, Info, AlertCircle, CheckCircle2, Loader2, MessageSquare } from "lucide-react";
+import { Play, Terminal, Cpu, Info, AlertCircle, CheckCircle2, Loader2, MessageSquare, RotateCcw } from "lucide-react";
 
 export default function CodeTestPage() {
     const { isDark } = useAppContext();
@@ -131,28 +131,29 @@ export default function CodeTestPage() {
 
                             <div className="flex items-center gap-3">
                                 <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                     onClick={handleReset}
                                     disabled={isLoading}
-                                    className="px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-100 dark:hover:border-indigo-900/50 hover:shadow-sm"
+                                    title="Reset IDE"
+                                    className="p-2 rounded-xl transition-all bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-100 dark:hover:border-blue-900/50 hover:shadow-sm"
                                 >
-                                    Reset
+                                    <RotateCcw className="w-4 h-4" />
                                 </motion.button>
 
                                 <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
                                     onClick={handleRun}
                                     disabled={isLoading}
-                                    className={`group relative px-6 py-2 rounded-xl text-xs font-black uppercase tracking-widest transition-all shadow-lg overflow-hidden ${isLoading
+                                    title="Run Code"
+                                    className={`group relative p-2.5 rounded-xl transition-all shadow-lg overflow-hidden ${isLoading
                                         ? "bg-gray-100 dark:bg-gray-800 text-gray-400"
-                                        : "bg-indigo-600 text-white shadow-indigo-500/20 hover:bg-indigo-700"
+                                        : "bg-emerald-600 text-white shadow-emerald-500/20 hover:bg-emerald-700"
                                         }`}
                                 >
-                                    <div className="relative z-10 flex items-center gap-2">
-                                        {isLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Play className="w-3 h-3 fill-current" />}
-                                        <span>{isLoading ? "Running" : "Run"}</span>
+                                    <div className="relative z-10 flex items-center justify-center">
+                                        {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4 fill-current" />}
                                     </div>
                                     {!isLoading && (
                                         <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
