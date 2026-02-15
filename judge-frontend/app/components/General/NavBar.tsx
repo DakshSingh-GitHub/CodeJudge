@@ -26,7 +26,7 @@ const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isSubm
             animate={{ y: 0, opacity: 1 }}
             className="bg-white/70 dark:bg-gray-950/70 backdrop-blur-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none border-b border-gray-100 dark:border-gray-800/50 px-4 py-3 md:px-8 md:py-4 transition-all duration-500 sticky top-0 z-50 shrink-0"
         >
-            <div className="max-w-[1800px] mx-auto flex items-center justify-between">
+            <div className="max-w-[1800px] mx-auto flex items-center justify-between px-10">
                 <motion.div
                     initial={{ x: -20, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}

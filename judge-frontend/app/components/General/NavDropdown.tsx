@@ -64,9 +64,9 @@ export default function NavDropdown() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                        initial={{ opacity: 0, y: 20, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        exit={{ opacity: 0, y: 20, scale: 0.95 }}
                         transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                         className="absolute top-full left-0 mt-3 w-80 bg-white/95 dark:bg-gray-950/95 backdrop-blur-2xl border border-gray-100 dark:border-gray-800 rounded-[2rem] shadow-2xl p-3 z-50 overflow-hidden"
                     >

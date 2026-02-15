@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { Code, Scale, Zap, Shield, Globe, Cpu, ArrowRight, Github } from 'lucide-react';
+import { Code, Scale, Zap, Shield, Globe, Cpu, ArrowRight, Github, BookOpen } from 'lucide-react';
 import { useAppContext } from './lib/context';
 
 export default function Home() {
@@ -85,14 +85,22 @@ export default function Home() {
                             </span>
                             <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                         </Link>
-                        <a
-                            href="https://github.com/DakshSingh-GitHub/CodeJudge"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-bold text-lg border border-gray-200 dark:border-gray-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300"
-                        >
-                            <Github className="w-5 h-5" /> GitHub
-                        </a>
+                        <div className="flex flex-row gap-4">
+                            <Link
+                                href="https://github.com/DakshSingh-GitHub/CodeJudge"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-bold text-lg border border-gray-200 dark:border-gray-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300"
+                            >
+                                <Github className="w-5 h-5" /> GitHub
+                            </Link>
+                            <Link
+                                href="/docs"
+                                className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-bold text-lg border border-gray-200 dark:border-gray-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300"
+                            >
+                                <BookOpen className="w-5 h-5" /> Documentation
+                            </Link>
+                        </div>
                     </motion.div>
                 </motion.section>
 
@@ -199,7 +207,7 @@ export default function Home() {
                     <div className="flex items-center gap-6">
                         <Link href="/code-judge" className="text-sm font-bold hover:text-indigo-500 transition-colors">Practice</Link>
                         <Link href="/code-ide" className="text-sm font-bold hover:text-indigo-500 transition-colors">IDE</Link>
-                        <a href="#" className="text-sm font-bold hover:text-indigo-500 transition-colors">Documentation</a>
+                        <Link href="/docs" className="text-sm font-bold hover:text-indigo-500 transition-colors">Documentation</Link>
                     </div>
                 </div>
             </footer>
