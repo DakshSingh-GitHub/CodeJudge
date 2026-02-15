@@ -1,3 +1,5 @@
+import { User } from "./types";
+
 export interface Submission {
     id: string;
     problemId: string;
@@ -16,6 +18,70 @@ const DB_NAME = "CodeJudgeDB";
 const DB_VERSION = 1;
 const STORE_NAME = "submissions";
 const OLD_STORAGE_KEY = "code_judge_submissions";
+const USERS_STORAGE_KEY = "code_judge_users";
+
+// ... existing openDB and other submission functions ...
+
+export function getUsers(): User[] {
+    if (typeof window === "undefined") return [];
+    const stored = localStorage.getItem(USERS_STORAGE_KEY);
+    if (!stored) {
+        // Initialize with root user
+        const rootUser: User = {
+            id: 'root-daksh',
+            username: 'daksh',
+            password: 'daksh@codejudge',
+            permissions: ['DOCS_INT', 'ADMIN_VIEW', 'ADMIN_EDIT'],
+            isRoot: true,
+            createdAt: Date.now()
+        };
+        localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify([rootUser]));
+        return [rootUser];
+    }
+    return JSON.parse(stored);
+}
+
+export function saveUser(user: Omit<User, 'id' | 'createdAt'>): User {
+    const users = getUsers();
+    const newUser: User = {
+        ...user,
+        id: Math.random().toString(36).substr(2, 9),
+        createdAt: Date.now()
+    };
+    users.push(newUser);
+    localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
+    return newUser;
+}
+
+export function updateUser(id: string, updates: Partial<User>): User | null {
+    const users = getUsers();
+    const index = users.findIndex(u => u.id === id);
+    if (index === -1) return null;
+
+    // Protection: root user cannot lose ADMIN_EDIT or be modified in some ways
+    if (users[index].isRoot) {
+        updates.isRoot = true;
+        if (updates.permissions) {
+            updates.permissions = ['DOCS_INT', 'ADMIN_VIEW', 'ADMIN_EDIT'];
+        }
+    }
+
+    users[index] = { ...users[index], ...updates };
+    localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(users));
+    return users[index];
+}
+
+export function deleteUser(id: string): boolean {
+    const users = getUsers();
+    const userToDelete = users.find(u => u.id === id);
+    if (!userToDelete || userToDelete.isRoot) return false;
+
+    const filtered = users.filter(u => u.id !== id);
+    localStorage.setItem(USERS_STORAGE_KEY, JSON.stringify(filtered));
+    return true;
+}
+
+// ... rest of the existing code ...
 
 async function openDB(): Promise<IDBDatabase> {
     return new Promise((resolve, reject) => {
@@ -181,5 +247,45 @@ async function migrateFromLocalStorage() {
         }
     })();
 
+
     return migrationPromise;
+}
+
+// Admin Dashboard Persistence
+export function setAdminStats(stats: any) {
+    if (typeof window !== 'undefined') {
+        localStorage.setItem('admin_stats', JSON.stringify(stats));
+    }
+}
+
+export function getAdminStats() {
+    if (typeof window !== 'undefined') {
+        const stats = localStorage.getItem('admin_stats');
+        return stats ? JSON.parse(stats) : null;
+    }
+    return null;
+}
+
+export function setSystemConfig(config: any) {
+    if (typeof window !== 'undefined') {
+        localStorage.setItem('system_config', JSON.stringify(config));
+    }
+}
+
+export function getSystemConfig() {
+    if (typeof window !== 'undefined') {
+        const config = localStorage.getItem('system_config');
+        return config ? JSON.parse(config) : {
+            maintenanceMode: false,
+            publicSubmissions: true,
+            dynamicScaling: true,
+            debugLogs: false
+        };
+    }
+    return {
+        maintenanceMode: false,
+        publicSubmissions: true,
+        dynamicScaling: true,
+        debugLogs: false
+    };
 }

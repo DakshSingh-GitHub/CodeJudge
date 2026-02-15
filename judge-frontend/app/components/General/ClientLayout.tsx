@@ -10,7 +10,7 @@ import { History } from 'lucide-react';
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
     const { TITLE, isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme } = useAppContext();
     const pathname = usePathname();
-    const excludedPaths = ['/', '/docs', '/docs-int']
+    const excludedPaths = ['/', '/docs', '/docs-int', '/admin']
     const isHomePage = excludedPaths.includes(pathname);
 
     return (

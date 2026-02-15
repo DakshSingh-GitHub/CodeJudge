@@ -24,6 +24,7 @@ import {
     LineChart
 } from 'lucide-react';
 import Link from 'next/link';
+import { getUsers } from '../lib/storage';
 import { useAppContext } from '../lib/context';
 
 export default function DocsInt() {
@@ -35,9 +36,16 @@ export default function DocsInt() {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        if (username === "daksh" && password === "daksh@codejudge") {
-            setIsAuthenticated(true);
-            setError("");
+        const allUsers = getUsers();
+        const user = allUsers.find(u => u.username === username && u.password === password);
+
+        if (user) {
+            if (user.permissions.includes('DOCS_INT')) {
+                setIsAuthenticated(true);
+                setError("");
+            } else {
+                setError("You don't have access to Internal Docs.");
+            }
         } else {
             setError("You aren't a insider..sorry :(");
         }

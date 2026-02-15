@@ -122,7 +122,9 @@ def list_problems():
                 "id": problem.get("id"),
                 "title": problem.get("title"),
                 "description": problem.get("description"),
-                "difficulty": problem.get("difficulty", "medium") # Default to medium
+                "difficulty": problem.get("difficulty", "medium"),
+                "sample_test_cases_count": len(problem.get("sample_test_cases", [])),
+                "hidden_test_cases_count": len(problem.get("hidden_test_cases", []))
             })
         except Exception as e:
             print(f"Error loading problem {filename}: {e}")
