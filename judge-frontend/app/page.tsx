@@ -39,7 +39,7 @@ export default function Home() {
     ];
 
     return (
-        <div className="flex-1 overflow-y-auto overflow-x-hidden bg-white dark:bg-gray-950 transition-colors duration-500">
+        <div className="relative flex-1 overflow-y-auto overflow-x-hidden bg-white dark:bg-gray-950 transition-colors duration-500">
             {/* Ambient Background Elements */}
             <div className="absolute top-0 left-1/4 w-120 h-120 bg-indigo-500/10 rounded-full blur-[140px] pointer-events-none" />
             <div className="absolute bottom-1/4 right-0 w-100 h-100 bg-purple-500/10 rounded-full blur-[120px] pointer-events-none" />
