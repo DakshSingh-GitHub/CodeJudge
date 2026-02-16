@@ -149,7 +149,7 @@ export default function Documentation() {
 
                     <motion.h1
                         variants={itemVariants}
-                        className="text-5xl md:text-7xl font-black tracking-tighter mb-6 leading-tight"
+                        className="text-4xl md:text-7xl font-black tracking-tighter mb-6 leading-tight"
                     >
                         Master the Art of <br />
                         <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
@@ -159,7 +159,7 @@ export default function Documentation() {
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed"
+                        className="text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed"
                     >
                         Everything you need to know about navigating and excelling on the CodeJudge platform.
                     </motion.p>
@@ -183,14 +183,14 @@ export default function Documentation() {
                                     <div className={`w-14 h-14 ${section.bg} rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-transparent group-hover:border-current transition-all duration-500`}>
                                         <div className={section.color}>{section.icon}</div>
                                     </div>
-                                    <h2 className="text-3xl font-black tracking-tight mb-4">{section.title}</h2>
+                                    <h2 className="text-2xl md:text-3xl font-black tracking-tight mb-4">{section.title}</h2>
                                     <div className="w-12 h-1 bg-gray-100 dark:bg-gray-800 rounded-full" />
                                 </div>
 
                                 {/* Section Content */}
                                 <div className="md:w-2/3">
                                     {section.content && (
-                                        <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8 font-medium">
+                                        <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg leading-relaxed mb-8 font-medium">
                                             {section.content}
                                         </p>
                                     )}

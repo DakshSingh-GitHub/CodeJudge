@@ -248,7 +248,7 @@ export default function Home() {
                             repeat: Infinity,
                             repeatType: "reverse"
                         }}
-                        className="text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
+                        className="text-2xl md:text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
                     >
                         {typeof TITLE === 'string' ? TITLE : JSON.stringify(TITLE || "Code Judge")}
                     </motion.div>
@@ -327,7 +327,7 @@ export default function Home() {
                                 }}
                             >
                                 <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
-                                    <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
+                                    <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-50">
                                         Problem
                                     </h2>
                                 </div>
@@ -361,7 +361,7 @@ export default function Home() {
                                             <button
                                                 key={tab}
                                                 onClick={() => setActiveTab(tab)}
-                                                className={`relative py-2 text-sm font-medium transition-colors duration-200 ${activeTab === tab
+                                                className={`relative py-2 text-xs md:text-sm font-medium transition-colors duration-200 ${activeTab === tab
                                                     ? "text-cyan-700 dark:text-cyan-400"
                                                     : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                                                     }`}
@@ -481,63 +481,61 @@ export default function Home() {
                                                                 animate={{ opacity: 1, y: 0 }}
                                                                 className="flex flex-col h-full justify-center"
                                                             >
-                                                                <div className="text-xl font-bold flex items-center gap-3">
-                                                                    Verdict:{" "}
-                                                                    <motion.span
-                                                                        initial={{ scale: 0.8, filter: "blur(4px)" }}
-                                                                        animate={{ scale: 1, filter: "blur(0px)" }}
-                                                                        className={`px-3 py-1 rounded-lg text-sm uppercase tracking-wider font-black shadow-sm ${result.final_status === "Accepted"
-                                                                            ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                                                                            : "bg-red-500/20 text-red-400 border border-red-500/30"
-                                                                            }`}
+                                                                Verdict:{" "}
+                                                                <motion.span
+                                                                    initial={{ scale: 0.8, filter: "blur(4px)" }}
+                                                                    animate={{ scale: 1, filter: "blur(0px)" }}
+                                                                    className={`px-3 py-1 rounded-lg text-sm uppercase tracking-wider font-black shadow-sm ${result.final_status === "Accepted"
+                                                                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
+                                                                        : "bg-red-500/20 text-red-400 border border-red-500/30"
+                                                                        }`}
+                                                                >
+                                                                    {result.final_status}
+                                                                </motion.span>
+                                                                {result.final_status === "Accepted" ? (
+                                                                    <motion.div
+                                                                        initial={{ scale: 0 }}
+                                                                        animate={{ scale: 1 }}
+                                                                        className="p-0.5 bg-green-500 rounded-full"
                                                                     >
-                                                                        {result.final_status}
-                                                                    </motion.span>
-                                                                    {result.final_status === "Accepted" ? (
-                                                                        <motion.div
-                                                                            initial={{ scale: 0 }}
-                                                                            animate={{ scale: 1 }}
-                                                                            className="p-0.5 bg-green-500 rounded-full"
+                                                                        <svg
+                                                                            className="w-3.5 h-3.5 text-white"
+                                                                            fill="none"
+                                                                            stroke="currentColor"
+                                                                            viewBox="0 0 24 24"
                                                                         >
-                                                                            <svg
-                                                                                className="w-3.5 h-3.5 text-white"
-                                                                                fill="none"
-                                                                                stroke="currentColor"
-                                                                                viewBox="0 0 24 24"
-                                                                            >
-                                                                                <path
-                                                                                    strokeLinecap="round"
-                                                                                    strokeLinejoin="round"
-                                                                                    strokeWidth={4}
-                                                                                    d="M5 13l4 4L19 7"
-                                                                                />
-                                                                            </svg>
-                                                                        </motion.div>
-                                                                    ) : (
-                                                                        <motion.div
-                                                                            initial={{ scale: 0 }}
-                                                                            animate={{ scale: 1 }}
-                                                                            className="p-0.5 bg-red-500 rounded-full"
+                                                                            <path
+                                                                                strokeLinecap="round"
+                                                                                strokeLinejoin="round"
+                                                                                strokeWidth={4}
+                                                                                d="M5 13l4 4L19 7"
+                                                                            />
+                                                                        </svg>
+                                                                    </motion.div>
+                                                                ) : (
+                                                                    <motion.div
+                                                                        initial={{ scale: 0 }}
+                                                                        animate={{ scale: 1 }}
+                                                                        className="p-0.5 bg-red-500 rounded-full"
+                                                                    >
+                                                                        <svg
+                                                                            className="w-3.5 h-3.5 text-white"
+                                                                            fill="none"
+                                                                            stroke="currentColor"
+                                                                            viewBox="0 0 24 24"
                                                                         >
-                                                                            <svg
-                                                                                className="w-3.5 h-3.5 text-white"
-                                                                                fill="none"
-                                                                                stroke="currentColor"
-                                                                                viewBox="0 0 24 24"
-                                                                            >
-                                                                                <path
-                                                                                    strokeLinecap="round"
-                                                                                    strokeLinejoin="round"
-                                                                                    strokeWidth={4}
-                                                                                    d="M6 18L18 6M6 6l12 12"
-                                                                                />
-                                                                            </svg>
-                                                                        </motion.div>
-                                                                    )}
-                                                                    <span className="text-gray-400 text-xs font-normal">
-                                                                        ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
-                                                                    </span>
-                                                                </div>
+                                                                            <path
+                                                                                strokeLinecap="round"
+                                                                                strokeLinejoin="round"
+                                                                                strokeWidth={4}
+                                                                                d="M6 18L18 6M6 6l12 12"
+                                                                            />
+                                                                        </svg>
+                                                                    </motion.div>
+                                                                )}
+                                                                <span className="text-gray-400 text-xs font-normal">
+                                                                    ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
+                                                                </span>
                                                                 <div className="mt-2 w-full bg-gray-800 rounded-full h-1.5 overflow-hidden border border-gray-700">
                                                                     <motion.div
                                                                         initial={{ width: 0 }}
@@ -578,44 +576,48 @@ export default function Home() {
                         </motion.div>
                     </div>
 
-                    {isMobile && (
-                        <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-                            <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
-                                <button
-                                    onClick={() => setMobileTab("problem")}
-                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "problem"
-                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
-                                        : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
-                                        }`}
-                                >
-                                    <FileText className={`w-5 h-5 ${mobileTab === "problem" ? "stroke-[2.5px]" : "stroke-2"}`} />
-                                    <span className="text-[10px] font-bold tracking-wide">Problem</span>
-                                </button>
-                                <button
-                                    onClick={() => setMobileTab("code")}
-                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "code"
-                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
-                                        : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
-                                        }`}
-                                >
-                                    <Code className={`w-5 h-5 ${mobileTab === "code" ? "stroke-[2.5px]" : "stroke-2"}`} />
-                                    <span className="text-[10px] font-bold tracking-wide">Code</span>
-                                </button>
-                                <button
-                                    onClick={() => setMobileTab("submissions")}
-                                    className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "submissions"
-                                        ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
-                                        : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
-                                        }`}
-                                >
-                                    <History className={`w-5 h-5 ${mobileTab === "submissions" ? "stroke-[2.5px]" : "stroke-2"}`} />
-                                    <span className="text-[10px] font-bold tracking-wide">Past</span>
-                                </button>
+
+                    {
+                        isMobile && (
+                            <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+                                <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
+                                    <button
+                                        onClick={() => setMobileTab("problem")}
+                                        className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "problem"
+                                            ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                            : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                            }`}
+                                    >
+                                        <FileText className={`w-5 h-5 ${mobileTab === "problem" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                        <span className="text-[10px] font-bold tracking-wide">Problem</span>
+                                    </button>
+                                    <button
+                                        onClick={() => setMobileTab("code")}
+                                        className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "code"
+                                            ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                            : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                            }`}
+                                    >
+                                        <Code className={`w-5 h-5 ${mobileTab === "code" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                        <span className="text-[10px] font-bold tracking-wide">Code</span>
+                                    </button>
+                                    <button
+                                        onClick={() => setMobileTab("submissions")}
+                                        className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "submissions"
+                                            ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                            : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                            }`}
+                                    >
+                                        <History className={`w-5 h-5 ${mobileTab === "submissions" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                        <span className="text-[10px] font-bold tracking-wide">Past</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        )
+                    }
                 </>
-            )}
-        </div>
+            )
+            }
+        </div >
     );
 }

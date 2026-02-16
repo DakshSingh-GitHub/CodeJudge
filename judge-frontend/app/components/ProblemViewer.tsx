@@ -17,7 +17,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                     exit={{ opacity: 0, y: -10 }}
                     className="flex flex-col items-center justify-center h-full text-center"
                 >
-                    <h3 className="text-lg font-medium text-gray-900 dark:text-gray-50">
+                    <h3 className="text-base md:text-lg font-medium text-gray-900 dark:text-gray-50">
                         No Problem Selected
                     </h3>
                     <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
@@ -48,7 +48,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             hidden: { opacity: 0, y: 10 },
                             visible: { opacity: 1, y: 0 }
                         }}
-                        className="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-50 dark:to-gray-400"
+                        className="text-xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-50 dark:to-gray-400"
                     >
                         {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
                     </motion.h2>
@@ -71,7 +71,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             }}
                             className="space-y-2 group"
                         >
-                            <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
+                            <h4 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
                                 Input Format
                             </h4>
                             <div className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all whitespace-pre-wrap">
@@ -88,7 +88,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             }}
                             className="space-y-2 group"
                         >
-                            <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
+                            <h4 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
                                 Output Format
                             </h4>
                             <div className="text-gray-600 dark:text-gray-300 bg-gray-50 dark:bg-gray-900/50 p-3 rounded-lg border border-transparent hover:border-indigo-500/30 transition-all whitespace-pre-wrap">
@@ -105,7 +105,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             }}
                             className="space-y-3"
                         >
-                            <h4 className="text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                            <h4 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                                 <Sparkles className="w-5 h-5 text-amber-500" />
                                 Example
                             </h4>
@@ -141,7 +141,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
                             }}
                             className="space-y-2"
                         >
-                            <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-50">
+                            <h4 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-50">
                                 Constraints
                             </h4>
                             <pre className="mt-1 p-4 bg-gray-100 dark:bg-gray-900 rounded-xl text-sm text-gray-800 dark:text-gray-200 overflow-x-auto border border-gray-200 dark:border-gray-700">

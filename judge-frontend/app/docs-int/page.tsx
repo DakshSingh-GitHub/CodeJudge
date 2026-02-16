@@ -153,14 +153,14 @@ export default function DocsInt() {
                         <span className="text-xs font-bold text-red-700 dark:text-red-300 uppercase tracking-widest">Confidential Technical Specs</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-8xl font-black tracking-tighter mb-8 leading-tight">
+                    <h1 className="text-4xl md:text-8xl font-black tracking-tighter mb-8 leading-tight">
                         Under the Hood <br />
                         <span className="bg-clip-text text-transparent bg-linear-to-r from-red-600 via-orange-600 to-amber-600 dark:from-red-400 dark:via-orange-400 dark:to-amber-400">
                             Judge Architecture
                         </span>
                     </h1>
 
-                    <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl font-medium leading-relaxed">
+                    <p className="text-base md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl font-medium leading-relaxed">
                         A deep-dive into the internals of CodeJudge. From FastAPI routing to the high-performance parallelized execution engine.
                     </p>
                 </motion.div>
@@ -174,7 +174,7 @@ export default function DocsInt() {
                             <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-indigo-600/20">
                                 <Server className="w-7 h-7 text-white" />
                             </div>
-                            <h2 className="text-4xl font-black tracking-tighter mb-4">FastAPI Core</h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">FastAPI Core</h2>
                             <p className="text-gray-600 dark:text-gray-400 font-medium">The brain of the backend, handling high-concurrency requests with Pydantic validation.</p>
                         </div>
                         <div className="lg:col-span-8 space-y-8">
@@ -224,7 +224,7 @@ export default function DocsInt() {
                             <div className="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-emerald-600/20">
                                 <Cpu className="w-7 h-7 text-white" />
                             </div>
-                            <h2 className="text-4xl font-black tracking-tighter mb-4">The Runner Engine</h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">The Runner Engine</h2>
                             <p className="text-gray-600 dark:text-gray-400 font-medium">The industrial-grade execution layer built on top of Python's subprocess API.</p>
                         </div>
                         <div className="lg:col-span-8 space-y-8">
@@ -297,7 +297,7 @@ export default function DocsInt() {
                             <div className="w-14 h-14 bg-red-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-red-600/20">
                                 <ShieldCheck className="w-7 h-7 text-white" />
                             </div>
-                            <h2 className="text-4xl font-black tracking-tighter mb-4">Sandboxing</h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">Sandboxing</h2>
                             <p className="text-gray-600 dark:text-gray-400 font-medium">Multi-layered security to ensure untrusted user code cannot compromise the host system.</p>
                         </div>
                         <div className="lg:col-span-8 space-y-8">
@@ -363,7 +363,7 @@ export default function DocsInt() {
                             <div className="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-amber-500/20">
                                 <Database className="w-7 h-7 text-white" />
                             </div>
-                            <h2 className="text-4xl font-black tracking-tighter mb-4">Data Management</h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">Data Management</h2>
                             <p className="text-gray-600 dark:text-gray-400 font-medium">How we handle test cases and problem synchronization with the execution engine.</p>
                         </div>
                         <div className="lg:col-span-8 space-y-8">
@@ -398,7 +398,7 @@ export default function DocsInt() {
                             <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-blue-600/20">
                                 <Activity className="w-7 h-7 text-white" />
                             </div>
-                            <h2 className="text-4xl font-black tracking-tighter mb-4">Benchmarks</h2>
+                            <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">Benchmarks</h2>
                             <p className="text-gray-600 dark:text-gray-400 font-medium">Quantifying the efficiency of our execution engine under heavy load.</p>
                         </div>
                         <div className="lg:col-span-8 space-y-8">

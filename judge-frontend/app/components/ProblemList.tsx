@@ -168,7 +168,7 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
         <div className="h-full flex flex-col bg-white/40 dark:bg-gray-900/40 backdrop-blur-xl border border-white/20 dark:border-gray-800 rounded-3xl overflow-hidden shadow-2xl shadow-indigo-500/5">
             <div className="p-5 border-b border-gray-100/50 dark:border-gray-800/50">
                 <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center gap-2.5">
+                    <h2 className="text-lg md:text-xl font-bold tracking-tight text-gray-900 dark:text-white flex items-center gap-2.5">
                         <div className="p-1.5 rounded-lg bg-indigo-500/10 dark:bg-indigo-400/10 text-indigo-600 dark:text-indigo-400">
                             <Filter className="w-4 h-4" />
                         </div>

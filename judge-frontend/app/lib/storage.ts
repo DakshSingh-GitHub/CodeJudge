@@ -14,6 +14,14 @@ export interface Submission {
     timestamp: number;
 }
 
+export interface SystemLog {
+    id: string;
+    timestamp: number;
+    status: 'SUCCESS' | 'WARNING' | 'ERROR';
+    details: string;
+    type: 'AUDIT' | 'SYSTEM' | 'SECURITY';
+}
+
 const DB_NAME = "CodeJudgeDB";
 const DB_VERSION = 1;
 const STORE_NAME = "submissions";
@@ -288,4 +296,28 @@ export function getSystemConfig() {
         dynamicScaling: true,
         debugLogs: false
     };
+}
+
+export function saveSystemLog(log: Omit<SystemLog, 'id' | 'timestamp'>) {
+    if (typeof window === 'undefined') return;
+
+    const logs = getSystemLogs();
+    const newLog: SystemLog = {
+        ...log,
+        id: Math.random().toString(36).substr(2, 9),
+        timestamp: Date.now()
+    };
+
+    logs.unshift(newLog); // Add to beginning
+    // Keep only last 100 logs
+    if (logs.length > 100) logs.length = 100;
+
+    localStorage.setItem('code_judge_system_logs', JSON.stringify(logs));
+    return newLog;
+}
+
+export function getSystemLogs(): SystemLog[] {
+    if (typeof window === 'undefined') return [];
+    const logs = localStorage.getItem('code_judge_system_logs');
+    return logs ? JSON.parse(logs) : [];
 }

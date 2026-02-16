@@ -101,7 +101,7 @@ export default function CodeTestPage() {
             <div className="relative z-10 flex-1 flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 pb-16 md:pb-6 lg:pb-8 xl:pb-12 max-w-[1800px] mx-auto w-full gap-4 md:gap-6 lg:gap-8 min-h-0 lg:h-full">
                 {/* Mobile Title - Only visible on small screens */}
                 <div className="lg:hidden flex flex-col gap-1 px-2 mb-2">
-                    <h1 className="text-3xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
+                    <h1 className="text-2xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                         Code <span className="text-indigo-600 dark:text-indigo-400">IDE</span>
                     </h1>
                     <p className="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Think, build, and prototype</p>

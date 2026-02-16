@@ -60,7 +60,7 @@ export default function Home() {
 
                     <motion.h1
                         variants={itemVariants}
-                        className="text-6xl md:text-8xl font-black tracking-tighter mb-8 leading-[0.9]"
+                        className="text-4xl md:text-6xl lg:text-8xl font-black tracking-tighter mb-8 leading-[0.95] md:leading-[0.9]"
                     >
                         Master the Art of <br />
                         <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
@@ -70,7 +70,7 @@ export default function Home() {
 
                     <motion.p
                         variants={itemVariants}
-                        className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 font-medium leading-relaxed"
+                        className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 font-medium leading-relaxed"
                     >
                         CodeJudge — a fast, secure, and intuitive platform designed for developers to sharpen their skills and ace technical interviews.
                     </motion.p>
@@ -124,8 +124,8 @@ export default function Home() {
                                 <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-600/20">
                                     <Scale className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-3xl font-black mb-4">Code Judge</h3>
-                                <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-8">
+                                <h3 className="text-xl md:text-3xl font-black mb-4">Code Judge</h3>
+                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-8">
                                     Practice with 50+ hand-picked algorithmic problems. Experience instant evaluation with our industrial-grade sandbox runtime.
                                 </p>
                                 <div className="mt-auto flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold">
@@ -147,8 +147,8 @@ export default function Home() {
                                 <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-600/20">
                                     <Code className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-3xl font-black mb-4">Code IDE</h3>
-                                <p className="text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-8">
+                                <h3 className="text-xl md:text-3xl font-black mb-4">Code IDE</h3>
+                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-8">
                                     A versatile environment to think, prototype and build. Write code in multiple languages with professional-grade editor features.
                                 </p>
                                 <div className="mt-auto flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold">
@@ -167,8 +167,8 @@ export default function Home() {
                     viewport={{ once: true }}
                 >
                     <motion.div variants={itemVariants} className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight">Built for Performance</h2>
-                        <p className="text-gray-600 dark:text-gray-400 font-medium">Engineered to provide the best possible coding experience.</p>
+                        <h2 className="text-2xl md:text-4xl lg:text-5xl font-black mb-4 tracking-tight">Built for Performance</h2>
+                        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium">Engineered to provide the best possible coding experience.</p>
                     </motion.div>
 
                     <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
