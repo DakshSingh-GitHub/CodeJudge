@@ -17,7 +17,6 @@ import {
     Activity,
     Settings,
     Shield,
-    Trash2,
     ArrowRight,
     Cpu,
     Terminal
