@@ -2,10 +2,11 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import CodeEditor from "../components/Editor/CodeEditor";
 import { useAppContext } from "../lib/context";
 import { runCode } from "../lib/api";
-import { Play, Terminal, Cpu, Info, AlertCircle, CheckCircle2, Loader2, MessageSquare, RotateCcw } from "lucide-react";
+import { Play, Terminal, Cpu, AlertCircle, Loader2, MessageSquare, RotateCcw } from "lucide-react";
+
+import CodeEditor from "../components/Editor/CodeEditor";
 
 export default function CodeTestPage() {
     const { isDark } = useAppContext();
@@ -94,11 +95,11 @@ export default function CodeTestPage() {
     return (
         <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 relative overflow-x-hidden overflow-y-auto lg:overflow-hidden font-sans transition-colors duration-500">
             {/* Premium Ambient Background Elements */}
-            <div className="absolute top-0 right-[-10%] w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-[140px] pointer-events-none" />
-            <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute top-1/2 left-1/4 w-[300px] h-[300px] bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-[-10%] w-125 h-125 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] left-[-5%] w-100 h-100 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
+            <div className="absolute top-1/2 left-1/4 w-75 h-75 bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 flex-1 flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 pb-16 md:pb-6 lg:pb-8 xl:pb-12 max-w-[1800px] mx-auto w-full gap-4 md:gap-6 lg:gap-8 min-h-0 lg:h-full">
+            <div className="relative z-10 flex-1 flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 pb-16 md:pb-6 lg:pb-8 xl:pb-12 max-w-450 mx-auto w-full gap-4 md:gap-6 lg:gap-8 min-h-0 lg:h-full">
                 {/* Mobile Title - Only visible on small screens */}
                 <div className="lg:hidden flex flex-col gap-1 px-2 mb-2">
                     <h1 className="text-2xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
@@ -113,7 +114,7 @@ export default function CodeTestPage() {
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, delay: 0.1 }}
-                        className="lg:col-span-7 xl:col-span-8 flex flex-col bg-white dark:bg-gray-900 shadow-2xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 lg:h-full min-h-[450px] lg:min-h-0"
+                        className="lg:col-span-7 xl:col-span-8 flex flex-col bg-white dark:bg-gray-900 shadow-2xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 lg:h-full min-h-112.5 lg:min-h-0"
                     >
                         <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50/50 dark:bg-gray-900/50">
                             <div className="flex items-center gap-4">
@@ -156,7 +157,7 @@ export default function CodeTestPage() {
                                         {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Play className="w-4 h-4 fill-current" />}
                                     </div>
                                     {!isLoading && (
-                                        <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                                        <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                                     )}
                                 </motion.button>
                             </div>
@@ -187,7 +188,7 @@ export default function CodeTestPage() {
                         </div>
 
                         {/* Input Box */}
-                        <div className="flex-none h-[180px] lg:h-[200px] flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/5">
+                        <div className="flex-none h-45 lg:h-50 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/5">
                             <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center gap-2 bg-gray-50/50 dark:bg-gray-900/50">
                                 <MessageSquare className="w-4 h-4 text-indigo-500" />
                                 <h2 className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em]">Input Stream</h2>
@@ -201,7 +202,7 @@ export default function CodeTestPage() {
                         </div>
 
                         {/* Result Area */}
-                        <div className="flex-1 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-[2rem] overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/5 min-h-[300px] lg:min-h-0">
+                        <div className="flex-1 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/5 min-h-75 lg:min-h-0">
                             <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50/50 dark:bg-gray-900/50">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="w-4 h-4 text-purple-500" />
