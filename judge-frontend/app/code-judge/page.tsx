@@ -6,7 +6,7 @@ import { getProblemById, submitCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
 import { Problem } from "../lib/types";
 import { useAppContext } from "../lib/context";
-import { FileText, Code, History } from "lucide-react";
+import { FileText, Code, History, Check, X } from "lucide-react";
 
 import ProblemList from "../components/ProblemList";
 import ProblemViewer from "../components/ProblemViewer";
@@ -412,7 +412,7 @@ export default function Home() {
                                                 isDark={isDark}
                                             />
                                         </div>
-                                        <div className="flex-none min-h-16.25 max-h-45 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
+                                        <div className="flex-none h-40 md:h-32 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
 
                                             <div className="flex flex-row md:flex-col w-full md:w-1/4 gap-2">
                                                 <button
@@ -481,73 +481,55 @@ export default function Home() {
                                                                 animate={{ opacity: 1, y: 0 }}
                                                                 className="flex flex-col h-full justify-center"
                                                             >
-                                                                Verdict:{" "}
-                                                                <motion.span
-                                                                    initial={{ scale: 0.8, filter: "blur(4px)" }}
-                                                                    animate={{ scale: 1, filter: "blur(0px)" }}
-                                                                    className={`px-3 py-1 rounded-lg text-sm uppercase tracking-wider font-black shadow-sm ${result.final_status === "Accepted"
-                                                                        ? "bg-green-500/20 text-green-400 border border-green-500/30"
-                                                                        : "bg-red-500/20 text-red-400 border border-red-500/30"
-                                                                        }`}
-                                                                >
-                                                                    {result.final_status}
-                                                                </motion.span>
-                                                                {result.final_status === "Accepted" ? (
-                                                                    <motion.div
-                                                                        initial={{ scale: 0 }}
-                                                                        animate={{ scale: 1 }}
-                                                                        className="p-0.5 bg-green-500 rounded-full"
-                                                                    >
-                                                                        <svg
-                                                                            className="w-3.5 h-3.5 text-white"
-                                                                            fill="none"
-                                                                            stroke="currentColor"
-                                                                            viewBox="0 0 24 24"
+                                                                <div className="space-y-4">
+                                                                    <div className="flex items-center gap-3">
+                                                                        <span className="text-xl font-bold text-gray-900 dark:text-gray-100">Verdict:</span>
+                                                                        <motion.span
+                                                                            initial={{ scale: 0.9, opacity: 0 }}
+                                                                            animate={{ scale: 1, opacity: 1 }}
+                                                                            className={`px-4 py-1.5 rounded-lg text-sm font-black uppercase tracking-wider ${result.final_status === "Accepted"
+                                                                                ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20"
+                                                                                : "bg-red-500/10 text-red-500 border border-red-500/20"
+                                                                                }`}
                                                                         >
-                                                                            <path
-                                                                                strokeLinecap="round"
-                                                                                strokeLinejoin="round"
-                                                                                strokeWidth={4}
-                                                                                d="M5 13l4 4L19 7"
-                                                                            />
-                                                                        </svg>
-                                                                    </motion.div>
-                                                                ) : (
-                                                                    <motion.div
-                                                                        initial={{ scale: 0 }}
-                                                                        animate={{ scale: 1 }}
-                                                                        className="p-0.5 bg-red-500 rounded-full"
-                                                                    >
-                                                                        <svg
-                                                                            className="w-3.5 h-3.5 text-white"
-                                                                            fill="none"
-                                                                            stroke="currentColor"
-                                                                            viewBox="0 0 24 24"
-                                                                        >
-                                                                            <path
-                                                                                strokeLinecap="round"
-                                                                                strokeLinejoin="round"
-                                                                                strokeWidth={4}
-                                                                                d="M6 18L18 6M6 6l12 12"
-                                                                            />
-                                                                        </svg>
-                                                                    </motion.div>
-                                                                )}
-                                                                <span className="text-gray-400 text-xs font-normal">
-                                                                    ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
-                                                                </span>
-                                                                <div className="mt-2 w-full bg-gray-800 rounded-full h-1.5 overflow-hidden border border-gray-700">
+                                                                            {result.final_status === "Accepted" ? "ACCEPTED" : result.final_status}
+                                                                        </motion.span>
+                                                                        {result.final_status === "Accepted" ? (
+                                                                            <motion.div
+                                                                                initial={{ scale: 0 }}
+                                                                                animate={{ scale: 1 }}
+                                                                                className="p-1 bg-emerald-500 rounded-full"
+                                                                            >
+                                                                                <Check className="w-4 h-4 text-white stroke-[3px]" />
+                                                                            </motion.div>
+                                                                        ) : (
+                                                                            <motion.div
+                                                                                initial={{ scale: 0 }}
+                                                                                animate={{ scale: 1 }}
+                                                                                className="p-1 bg-red-500 rounded-full"
+                                                                            >
+                                                                                <X className="w-4 h-4 text-white stroke-[3px]" />
+                                                                            </motion.div>
+                                                                        )}
+                                                                        <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                                                                            ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
+                                                                        </span>
+                                                                    </div>
+
                                                                     <motion.div
                                                                         initial={{ width: 0 }}
-                                                                        animate={{ width: `${(result.summary.passed / result.summary.total) * 100}%` }}
-                                                                        transition={{ duration: 1, ease: "easeOut" }}
-                                                                        className={`h-full ${result.final_status === "Accepted" ? "bg-green-500" : "bg-red-500"}`}
+                                                                        animate={{ width: "100%" }}
+                                                                        transition={{ duration: 0.8, ease: "easeOut" }}
+                                                                        className={`h-1.5 rounded-full ${result.final_status === "Accepted"
+                                                                            ? "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
+                                                                            : "bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.4)]"
+                                                                            }`}
                                                                     />
+
+                                                                    <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">
+                                                                        Passed {String(result.summary.passed ?? 0)} / {String(result.summary.total ?? 0)} test cases
+                                                                    </p>
                                                                 </div>
-                                                                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                                                                    Passed {String(result.summary.passed ?? 0)} /{" "}
-                                                                    {String(result.summary.total ?? 0)} test cases
-                                                                </p>
                                                             </motion.div>
                                                         )}
                                                     </AnimatePresence>
