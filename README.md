@@ -6,6 +6,63 @@ Built with love using **Flask** 🌶 and **Next.js** ⚛️, this little judge l
 
 ---
 
+## License Notice
+
+CodeJudge uses a dual-license structure to balance openness and intellectual property protection.
+
+### Frontend (MIT License)
+The frontend located in the `/frontend` directory is licensed under the MIT License.
+
+This means you are free to:
+
+- Use the frontend code
+- Modify the frontend code
+- Distribute the frontend code
+- Use it in your own projects
+
+As long as the original copyright and license notice are included.
+
+See: `/frontend/LICENSE`
+
+---
+
+### Backend and Core System (Proprietary License)
+
+The backend, judge core, database structure, API, and all other components outside the `/frontend` directory are licensed under the **CodeJudge Proprietary License v1.0**.
+
+This means you may NOT:
+
+- Copy the backend or core system
+- Modify the backend without permission
+- Redistribute CodeJudge
+- Sell CodeJudge or derivatives
+- Create competing platforms based on CodeJudge
+
+Explicit written permission is required for:
+
+- Commercial use
+- Redistribution
+- Modification of protected components
+
+See: `/LICENSE`
+
+---
+
+### Summary
+
+| Component | License | Status |
+|---------|--------|--------|
+| Frontend | MIT License | Open |
+| Backend | Proprietary | Restricted |
+| Judge Core | Proprietary | Restricted |
+| Database Structure | Proprietary | Restricted |
+
+---
+
+Unauthorized use, redistribution, or commercialization of proprietary components is strictly prohibited.
+
+For licensing inquiries, contact: daksh.singh.2407@gmail.com
+
 ## 📸 Screenshots
 
 | General UI | Code Editor & Problem | Submission Result |
@@ -80,10 +137,10 @@ npm run dev
 
 We're constantly growing! Here's what's cooking:
 - 🟢 **Phase 0 & 1**: Core foundations & Verdicts (Done! 🎉)
-- 🟡 **Phase 2**: Handling multiple test cases (Working on it! 🛠)
+- 🟡 **Phase 2**: Handling multiple test cases (Done 🛠)
 - 🔵 **Phase 3**: Better problem definitions (Planned! 📐)
-- 🔐 **Phase 4**: Super secure sandboxing with Docker (Soon! 🐳)
-- 🌐 **Phase 5**: Submissions history & User accounts (The dream! ✨)
+- 🔐 **Phase 4**: Super secure sandboxing with Docker (Done! 🐳)
+- 🌐 **Phase 5**: Submissions history & User accounts (Almost done!)
 
 ---
 
