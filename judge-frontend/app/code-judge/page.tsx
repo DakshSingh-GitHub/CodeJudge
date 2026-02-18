@@ -229,14 +229,13 @@ export default function Home() {
             console.error("Failed to delete submission", error);
         }
     }
-
-
+    
     return (
-        <div className="flex-1 flex flex-col min-h-0 bg-[#FAFAFA] dark:bg-[#0B0C15] text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans selection:bg-indigo-500/30">
+        <div className={`flex-1 flex flex-col min-h-0 bg-[#FAFAFA] dark:bg-[#0B0C15] text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans selection:bg-indigo-500/301`}>
             {/* Ambient Background Glows - Refined for "Premium" feel */}
-            <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow" />
-            <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[100px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-1000" />
-            <div className="absolute top-[40%] left-[20%] w-[400px] h-[400px] bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-[80px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-2000" />
+            <div className="absolute top-[-20%] right-[-10%] w-200 h-200 bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow" />
+            <div className="absolute bottom-[-20%] left-[-10%] w-150 h-150 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[100px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-1000" />
+            <div className="absolute top-[40%] left-[20%] w-100 h-100 bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-[80px] pointer-events-none mix-blend-multiply dark:mix-blend-screen animate-pulse-slow delay-2000" />
 
             {!isMounted ? (
                 <div className="flex-1 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50">
@@ -375,7 +374,7 @@ export default function Home() {
                                                         />
                                                         <motion.div
                                                             layoutId="activeTabUnderline"
-                                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"
+                                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-cyan-500 to-emerald-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"
                                                             transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                                         />
                                                     </>
@@ -413,7 +412,6 @@ export default function Home() {
                                             />
                                         </div>
                                         <div className="flex-none h-40 md:h-32 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
-
                                             <div className="flex flex-row md:flex-col w-full md:w-1/4 gap-2">
                                                 <button
                                                     onClick={handleSubmit}

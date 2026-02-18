@@ -7,6 +7,7 @@ import { Code, Scale, Zap, Shield, Globe, Cpu, ArrowRight, Github, BookOpen } fr
 import { useAppContext } from './lib/context';
 
 export default function Home() {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { isDark } = useAppContext();
 
     const containerVariants: Variants = {
@@ -83,7 +84,7 @@ export default function Home() {
                             <span className="relative z-10 flex items-center gap-2">
                                 Get Started <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
-                            <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                            <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                         </Link>
                         <div className="flex flex-row gap-4">
                             <Link
@@ -141,7 +142,7 @@ export default function Home() {
                             className="h-full p-8 rounded-[2.5rem] bg-linear-to-br from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-900 border border-purple-100 dark:border-purple-800/50 hover:border-purple-400 dark:hover:border-purple-400 transition-all duration-500 relative overflow-hidden flex flex-col"
                         >
                             <div className="absolute top-0 right-0 p-8 text-purple-200 dark:text-purple-900/40 group-hover:text-purple-400 dark:group-hover:text-purple-700 transition-colors duration-500">
-                                <Code className="w-32 h-32 rotate-[15deg] group-hover:scale-110 transition-transform duration-700" />
+                                <Code className="w-32 h-32 rotate-15 group-hover:scale-110 transition-transform duration-700" />
                             </div>
                             <div className="relative z-10">
                                 <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-600/20">
