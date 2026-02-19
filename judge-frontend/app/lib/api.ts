@@ -33,6 +33,7 @@ async function getBaseUrl() {
 
 		clearTimeout(timeoutId);
 		resolvedBaseUrl = LOCAL_URL;
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	} catch (e) {
 		console.warn("Local backend not found, falling back to remote:", REMOTE_URL);
 		resolvedBaseUrl = REMOTE_URL;

@@ -1,6 +1,6 @@
 "use client";
 
-import { Submission } from "../../lib/storage";
+import { Submission } from "../../app/lib/storage";
 import { Trash2, AlertTriangle, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";

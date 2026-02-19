@@ -2,12 +2,12 @@
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
-import { getProblems } from "../lib/api";
+import { getProblems } from "../app/lib/api";
 import { Filter, ChevronDown, Check, Sparkles, SlidersHorizontal } from "lucide-react";
-import { getSubmissions } from "../lib/storage";
+import { getSubmissions } from "../app/lib/storage";
 import FilterModal from "./General/FilterModal";
 
-import { Problem } from "../lib/types";
+import { Problem } from "../app/lib/types";
 
 interface ProblemListProps {
     onSelect: (id: string) => void;

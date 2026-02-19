@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, History, Sparkles, ChevronDown, CheckCircle2, XCircle, Clock, ExternalLink, Code2, Terminal, ChevronRight } from "lucide-react";
 import { useEffect, useState, useMemo, memo } from "react";
 import { createPortal } from "react-dom";
-import { getSubmissions, Submission } from "../../lib/storage";
+import { getSubmissions, Submission } from "../../app/lib/storage";
 import Editor from "@monaco-editor/react";
 
 interface SubmissionsModalProps {

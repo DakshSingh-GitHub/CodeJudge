@@ -8,10 +8,10 @@ import { Problem } from "../lib/types";
 import { useAppContext } from "../lib/context";
 import { FileText, Code, History, Check, X } from "lucide-react";
 
-import ProblemList from "../components/ProblemList";
-import ProblemViewer from "../components/ProblemViewer";
-import CodeEditor from "../components/Editor/CodeEditor";
-import PastSubmissions from "../components/Editor/PastSubmissions";
+import ProblemList from "../../components/ProblemList";
+import ProblemViewer from "../../components/ProblemViewer";
+import CodeEditor from "../../components/Editor/CodeEditor";
+import PastSubmissions from "../../components/Editor/PastSubmissions";
 
 const DEFAULT_CODE = "#Write your code here";
 

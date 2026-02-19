@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { Problem } from "../lib/types";
+import { Problem } from "../app/lib/types";
 import { Sparkles, Terminal } from "lucide-react";
 
 interface ProblemViewerProps {

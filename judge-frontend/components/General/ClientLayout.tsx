@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { useAppContext } from '../../lib/context';
+import { useAppContext } from '../../app/lib/context';
 import NavBar from './NavBar';
 import SubmissionsModal from './SubmissionsModal';
 import { History } from 'lucide-react';

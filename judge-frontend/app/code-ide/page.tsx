@@ -6,7 +6,7 @@ import { useAppContext } from "../lib/context";
 import { runCode } from "../lib/api";
 import { Play, Terminal, Cpu, AlertCircle, Loader2, MessageSquare, RotateCcw } from "lucide-react";
 
-import CodeEditor from "../components/Editor/CodeEditor";
+import CodeEditor from "../../components/Editor/CodeEditor";
 
 export default function CodeTestPage() {
     const { isDark } = useAppContext();
