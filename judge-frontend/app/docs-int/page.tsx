@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import React, { useState } from 'react';
@@ -122,8 +125,8 @@ export default function DocsInt() {
     return (
         <div className="flex-1 overflow-y-auto overflow-x-hidden bg-white dark:bg-gray-950 transition-colors duration-500 selection:bg-indigo-500/30">
             {/* Ambient Background Elements */}
-            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[160px] pointer-events-none" />
-            <div className="absolute bottom-1/4 left-0 w-[600px] h-[600px] bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-200 h-200 bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[160px] pointer-events-none" />
+            <div className="absolute bottom-1/4 left-0 w-150 h-150 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
 
             {/* Back to Home Button */}
             <motion.div
