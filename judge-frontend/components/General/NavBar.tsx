@@ -16,6 +16,7 @@ interface NavBarProps {
     toggleTheme: () => void;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
     const pathname = usePathname();
     const isCodeIDE = pathname === '/code-ide';
@@ -47,9 +48,9 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
     return (
         <header
             ref={headerRef}
-            className="bg-white/70 dark:bg-gray-950/70 backdrop-blur-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none border-b border-gray-100 dark:border-gray-800/50 px-4 py-3 md:px-8 md:py-4 transition-all duration-500 sticky top-0 z-50 shrink-0 opacity-0"
+            className="bg-white/70 dark:bg-gray-950/70 backdrop-blur-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none border-b border-gray-100 dark:border-gray-800/50 px-4 py-3 md:px-8 md:py-4 transition-colors duration-200 sticky top-0 z-50 shrink-0 opacity-0"
         >
-            <div className="max-w-[1800px] mx-auto flex items-center justify-between md:px-10 px-0">
+            <div className="max-w-450 mx-auto flex items-center justify-between md:px-10 px-0">
                 <div
                     ref={navItemsRef}
                     className="flex items-center gap-4 opacity-0"
@@ -61,7 +62,7 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
                         <>
                             <button
                                 onClick={() => setIsSubmissionsModalOpen(true)}
-                                className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900 group shadow-sm hover:shadow-md"
+                                className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900 group shadow-sm hover:shadow-md"
                                 title="See Submissions"
                             >
                                 <History className="w-5 h-5 group-hover:rotate-[-20deg] transition-transform" />
@@ -71,7 +72,7 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
                                 onClick={() =>
                                     setIsSidebarOpen(!isSidebarOpen)
                                 }
-                                className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 transition-all duration-300 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md"
+                                className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md"
                                 title={
                                     isSidebarOpen
                                         ? "Hide sidebar"

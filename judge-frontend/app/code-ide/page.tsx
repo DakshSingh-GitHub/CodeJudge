@@ -132,7 +132,7 @@ export default function CodeTestPage() {
     if (!isMounted) return null;
 
     return (
-        <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 relative overflow-x-hidden overflow-y-auto lg:overflow-hidden font-sans transition-colors duration-500">
+        <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 relative overflow-x-hidden overflow-y-auto lg:overflow-hidden font-sans transition-colors duration-200">
             {/* Premium Ambient Background Elements */}
             <div className="absolute top-0 right-[-10%] w-125 h-125 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-[140px] pointer-events-none" />
             <div className="absolute bottom-[-10%] left-[-5%] w-100 h-100 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
@@ -172,7 +172,7 @@ export default function CodeTestPage() {
                                     onClick={handleReset}
                                     disabled={isLoading}
                                     title="Reset IDE"
-                                    className="p-2 rounded-xl transition-all bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-100 dark:hover:border-blue-900/50 hover:shadow-sm active:scale-95"
+                                    className="p-2 rounded-xl transition-[background-color,color,border-color,box-shadow,transform] duration-200 bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-100 dark:hover:border-blue-900/50 hover:shadow-sm active:scale-95"
                                 >
                                     <RotateCcw className="w-4 h-4" />
                                 </button>
@@ -181,7 +181,7 @@ export default function CodeTestPage() {
                                     onClick={handleRun}
                                     disabled={isLoading}
                                     title="Run Code"
-                                    className={`group relative p-2.5 rounded-xl transition-all shadow-lg overflow-hidden active:scale-95 ${isLoading
+                                    className={`group relative p-2.5 rounded-xl transition-[background-color,transform] duration-200 shadow-lg overflow-hidden active:scale-95 ${isLoading
                                         ? "bg-gray-100 dark:bg-gray-800 text-gray-400"
                                         : "bg-emerald-600 text-white shadow-emerald-500/20 hover:bg-emerald-700"
                                         }`}
@@ -219,7 +219,7 @@ export default function CodeTestPage() {
                         </div>
 
                         {/* Input Box */}
-                        <div className="flex-none h-45 lg:h-50 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/5">
+                        <div className="flex-none h-45 lg:h-50 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 transition-shadow duration-300 hover:shadow-2xl hover:shadow-indigo-500/5">
                             <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center gap-2 bg-gray-50/50 dark:bg-gray-900/50">
                                 <MessageSquare className="w-4 h-4 text-indigo-500" />
                                 <h2 className="text-[10px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em]">Input Stream</h2>
@@ -233,7 +233,7 @@ export default function CodeTestPage() {
                         </div>
 
                         {/* Result Area */}
-                        <div className="flex-1 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/5 min-h-75 lg:min-h-0">
+                        <div className="flex-1 flex flex-col bg-white dark:bg-gray-900 shadow-xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 transition-shadow duration-300 hover:shadow-2xl hover:shadow-purple-500/5 min-h-75 lg:min-h-0">
                             <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50/50 dark:bg-gray-900/50">
                                 <div className="flex items-center gap-2">
                                     <Cpu className="w-4 h-4 text-purple-500" />

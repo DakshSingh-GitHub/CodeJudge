@@ -58,6 +58,34 @@ body {
   overflow-x: hidden;
 }
 
+/* Apply short, scoped transitions only during active theme toggle */
+html.theme-switching,
+html.theme-switching * {
+  transition-property: background-color, color, border-color, fill, stroke;
+  transition-duration: 180ms;
+  transition-timing-function: ease-out;
+}
+
+/* Exclude expensive surfaces from theme transition */
+.no-transition, 
+.no-transition *,
+canvas,
+img,
+[data-no-theme-transition],
+[data-no-theme-transition] *,
+[data-monaco-cursor],
+.monaco-editor,
+.monaco-editor * {
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-switching,
+  html.theme-switching * {
+    transition-duration: 0ms !important;
+  }
+}
+
 /* Custom cursor for light mode */
 html:not(.dark) {
   cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9jAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAEAAADKADAAQAAAABAAAAEAAAAAAXqg+kAAABoSURBVDhPY2AgF2ARsWNgYHj37x+EGRmYPjAwMrC3t/+fGBgYGFwcqAQMDAysrWwMjIwsDKysbGysrAwMDDw/Pz8/MzMz+fn5/f0D+2MGBgYGdgYGJgYGFgYWdgYGBgbGwMDAQARgABxYQ133dD/QAAAAAElFTkSuQmCC") 8 8, auto;

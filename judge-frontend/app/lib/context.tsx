@@ -1,7 +1,7 @@
 /* eslint-disable */
 "use client";
 
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { createContext, useContext, useState, ReactNode, useEffect, useRef } from 'react';
 
 interface AppContextType {
   isSidebarOpen: boolean;
@@ -23,6 +23,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   // Initialize as false to match server, then update on mount
   const [isDark, setIsDark] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const themeSwitchTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -42,6 +43,14 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
+    return () => {
+      if (themeSwitchTimeoutRef.current !== null) {
+        window.clearTimeout(themeSwitchTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     if (!mounted) return;
     if (isDark) {
       document.documentElement.classList.add("dark");
@@ -53,7 +62,20 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   }, [isDark, mounted]);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    if (typeof window === 'undefined') return;
+    const root = document.documentElement;
+    root.classList.add("theme-switching");
+
+    if (themeSwitchTimeoutRef.current !== null) {
+      window.clearTimeout(themeSwitchTimeoutRef.current);
+    }
+
+    setIsDark((prev) => !prev);
+
+    themeSwitchTimeoutRef.current = window.setTimeout(() => {
+      root.classList.remove("theme-switching");
+      themeSwitchTimeoutRef.current = null;
+    }, 220);
   };
 
   return (
