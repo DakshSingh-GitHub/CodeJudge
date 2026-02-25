@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useEffect, useState, useRef, memo } from "react";
+import { anime, stagger } from "../app/lib/anime";
 import { getProblems } from "../app/lib/api";
 import { Filter, ChevronDown, Check, Sparkles, SlidersHorizontal } from "lucide-react";
 import { getSubmissions } from "../app/lib/storage";
@@ -27,6 +27,7 @@ const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSideb
     const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
     const [solvedProblemIds, setSolvedProblemIds] = useState<Set<string>>(new Set());
     const filterRef = useRef<HTMLDivElement>(null);
+    const listRef = useRef<HTMLUListElement>(null);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -125,30 +126,19 @@ const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSideb
         return matchesSearch && matchesDifficulty && matchesStatus;
     });
 
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.08,
-                delayChildren: 0.1
-            }
+    useEffect(() => {
+        if (!isLoading && listRef.current) {
+            anime({
+                targets: listRef.current.querySelectorAll('li'),
+                opacity: [0, 1],
+                translateX: [-10, 0],
+                translateY: [5, 0],
+                delay: stagger(50),
+                duration: 600,
+                easing: 'easeOutQuad'
+            });
         }
-    };
-
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, x: -10, y: 5 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            y: 0,
-            transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 12
-            }
-        }
-    };
+    }, [isLoading, filteredProblems.length]);
 
     const getDifficultyStyles = (difficulty?: string) => {
         const diff = (difficulty || "medium").toLowerCase();
@@ -174,11 +164,9 @@ const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSideb
                         </div>
                         Problems
                     </h2>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                    <button
                         onClick={() => setIsFilterModalOpen(true)}
-                        className={`p-2 rounded-lg transition-colors ${filters.difficulty.length > 0 || filters.status !== "all"
+                        className={`p-2 rounded-lg transition-all active:scale-95 ${filters.difficulty.length > 0 || filters.status !== "all"
                             ? "bg-indigo-100 text-indigo-600 dark:bg-indigo-500/20 dark:text-indigo-300 relative"
                             : "text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
                             }`}
@@ -187,7 +175,7 @@ const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSideb
                         {(filters.difficulty.length > 0 || filters.status !== "all") && (
                             <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-indigo-500 rounded-full" />
                         )}
-                    </motion.button>
+                    </button>
                 </div>
 
                 <div className="relative group">
@@ -220,76 +208,64 @@ const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSideb
             <div className="flex-1 overflow-y-auto overflow-x-hidden">
                 {isLoading ? (
                     <div className="flex items-center justify-center h-32 text-gray-500 dark:text-gray-400">
-                        <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                            className="w-6 h-6 border-2 border-indigo-500 border-t-transparent rounded-full"
+                        <div
+                            className="w-6 h-6 border-2 border-indigo-500 border-t-transparent rounded-full animate-spin"
                         />
                     </div>
                 ) : filteredProblems.length === 0 ? (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        className="flex items-center justify-center h-32 text-gray-500 dark:text-gray-400"
+                    <div
+                        className="flex items-center justify-center h-32 text-gray-500 dark:text-gray-400 transition-opacity duration-300"
                     >
                         No problems found
-                    </motion.div>
+                    </div>
                 ) : (
-                    <motion.ul
-                        key={filteredProblems.length}
-                        variants={containerVariants}
-                        initial="hidden"
-                        animate="visible"
+                    <ul
+                        ref={listRef}
                         className="space-y-2 p-3 pb-24"
                     >
-                        <AnimatePresence>
-                            {filteredProblems.map((problem) => (
-                                <motion.li
-                                    key={problem.id}
-                                    variants={itemVariants}
-                                    className="px-3"
+                        {filteredProblems.map((problem) => (
+                            <li
+                                key={problem.id}
+                                className="px-3 opacity-0"
+                            >
+                                <button
+                                    onClick={() => {
+                                        onSelect(problem.id);
+                                        if (window.innerWidth < 1024 && setIsSidebarOpen) {
+                                            setIsSidebarOpen(false);
+                                        }
+                                    }}
+                                    className={`w-full text-left px-3 py-4 rounded-2xl transition-all duration-300 flex justify-between items-center group relative border border-transparent ${selectedId === problem.id
+                                        ? "bg-white dark:bg-gray-800 shadow-xl shadow-indigo-500/10 border-indigo-200/50 dark:border-indigo-500/30 translate-x-1"
+                                        : "hover:bg-white/40 dark:hover:bg-gray-800/40 hover:border-white/20 dark:hover:border-white/5 hover:translate-x-1"
+                                        }`}
                                 >
-                                    <button
-                                        onClick={() => {
-                                            onSelect(problem.id);
-                                            if (window.innerWidth < 1024 && setIsSidebarOpen) {
-                                                setIsSidebarOpen(false);
-                                            }
-                                        }}
-                                        className={`w-full text-left px-3 py-4 rounded-2xl transition-all duration-300 flex justify-between items-center group relative border border-transparent ${selectedId === problem.id
-                                            ? "bg-white dark:bg-gray-800 shadow-xl shadow-indigo-500/10 border-indigo-200/50 dark:border-indigo-500/30 translate-x-1"
-                                            : "hover:bg-white/40 dark:hover:bg-gray-800/40 hover:border-white/20 dark:hover:border-white/5 hover:translate-x-1"
-                                            }`}
-                                    >
-                                        <div className="flex items-center gap-4 overflow-hidden">
-                                            <div className={`w-2 h-2 rounded-full shrink-0 transition-colors ${selectedId === problem.id ? "bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]" : "bg-gray-300 dark:bg-gray-700 group-hover:bg-indigo-400/50"}`} />
+                                    <div className="flex items-center gap-4 overflow-hidden">
+                                        <div className={`w-2 h-2 rounded-full shrink-0 transition-colors ${selectedId === problem.id ? "bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]" : "bg-gray-300 dark:bg-gray-700 group-hover:bg-indigo-400/50"}`} />
 
-                                            <div className="flex flex-col overflow-hidden">
-                                                <span className={`truncate text-sm font-semibold transition-colors ${selectedId === problem.id ? "text-indigo-900 dark:text-indigo-100" : "text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"}`}>
-                                                    {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        <div className="flex items-center gap-3 shrink-0">
-                                            {solvedProblemIds.has(problem.id) && (
-                                                <motion.div
-                                                    initial={{ scale: 0 }}
-                                                    animate={{ scale: 1 }}
-                                                    className="text-emerald-500"
-                                                >
-                                                    <Check className="w-4 h-4" />
-                                                </motion.div>
-                                            )}
-                                            <span className={`text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
-                                                {typeof problem.difficulty === 'string' ? problem.difficulty : JSON.stringify(problem.difficulty || "Medium")}
+                                        <div className="flex flex-col overflow-hidden">
+                                            <span className={`truncate text-sm font-semibold transition-colors ${selectedId === problem.id ? "text-indigo-900 dark:text-indigo-100" : "text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-gray-100"}`}>
+                                                {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
                                             </span>
                                         </div>
-                                    </button>
-                                </motion.li>
-                            ))}
-                        </AnimatePresence>
-                    </motion.ul>
+                                    </div>
+
+                                    <div className="flex items-center gap-3 shrink-0">
+                                        {solvedProblemIds.has(problem.id) && (
+                                            <div
+                                                className="text-emerald-500"
+                                            >
+                                                <Check className="w-4 h-4" />
+                                            </div>
+                                        )}
+                                        <span className={`text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider ${getDifficultyStyles(typeof problem.difficulty === 'string' ? problem.difficulty : 'medium')}`}>
+                                            {typeof problem.difficulty === 'string' ? problem.difficulty : JSON.stringify(problem.difficulty || "Medium")}
+                                        </span>
+                                    </div>
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
                 )}
             </div>
         </div>

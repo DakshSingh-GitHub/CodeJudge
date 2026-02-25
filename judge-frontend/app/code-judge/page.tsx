@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { anime } from "../lib/anime";
 import { getProblemById, submitCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
 import { Problem } from "../lib/types";
@@ -50,6 +50,44 @@ export default function Home() {
     const isResizingMain = useRef(false);
     const [isResizing, setIsResizing] = useState(false);
     const requestRef = useRef<number>(null);
+
+    const loaderTitleRef = useRef<HTMLDivElement>(null);
+    const loaderBarRef = useRef<HTMLDivElement>(null);
+    const verdictRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!isMounted && loaderTitleRef.current && loaderBarRef.current) {
+            anime({
+                targets: loaderTitleRef.current,
+                scale: [0.8, 1],
+                opacity: [0, 1],
+                duration: 500,
+                direction: 'alternate',
+                loop: true,
+                easing: 'easeInOutQuad'
+            });
+
+            anime({
+                targets: loaderBarRef.current,
+                translateX: ['-100%', '100%'],
+                duration: 1500,
+                loop: true,
+                easing: 'linear'
+            });
+        }
+    }, [isMounted]);
+
+    useEffect(() => {
+        if (result && verdictRef.current) {
+            anime({
+                targets: verdictRef.current,
+                translateY: [10, 0],
+                opacity: [0, 1],
+                duration: 400,
+                easing: 'easeOutQuad'
+            });
+        }
+    }, [result]);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -123,14 +161,6 @@ export default function Home() {
         document.body.style.cursor = "col-resize";
     }, []);
 
-    // State restoration on mount
-    useEffect(() => {
-        const lastProblemId = sessionStorage.getItem("last_selected_problem_id");
-        if (lastProblemId && !selectedProblemId) {
-            handleSelect(lastProblemId).catch(console.error);
-        }
-    }, [selectedProblemId, handleSelect]);
-
     // Save code changes
     useEffect(() => {
         if (selectedProblemId) {
@@ -164,6 +194,14 @@ export default function Home() {
             console.error("Failed to fetch problem", error);
         }
     }, []);
+
+    // State restoration on mount
+    useEffect(() => {
+        const lastProblemId = sessionStorage.getItem("last_selected_problem_id");
+        if (lastProblemId && !selectedProblemId) {
+            handleSelect(lastProblemId).catch(console.error);
+        }
+    }, [selectedProblemId, handleSelect]);
 
     const handleTest = useCallback(async () => {
         if (!selectedProblemId || !problem) return;
@@ -253,29 +291,20 @@ export default function Home() {
 
             {!isMounted ? (
                 <div className="flex-1 flex flex-col items-center justify-center bg-white dark:bg-gray-900 z-50">
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{
-                            duration: 0.5,
-                            repeat: Infinity,
-                            repeatType: "reverse"
-                        }}
+                    <div
+                        ref={loaderTitleRef}
                         className="text-2xl md:text-4xl font-black tracking-tighter bg-clip-text text-transparent bg-linear-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400"
                     >
                         {typeof TITLE === 'string' ? TITLE : JSON.stringify(TITLE || "Code Judge")}
-                    </motion.div>
-                    <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: "200px" }}
-                        className="h-1 bg-indigo-600 dark:bg-indigo-400 rounded-full mt-4 overflow-hidden"
+                    </div>
+                    <div
+                        className="h-1 bg-indigo-600 dark:bg-indigo-400 rounded-full mt-4 overflow-hidden w-[200px]"
                     >
-                        <motion.div
-                            animate={{ x: ["-100%", "100%"] }}
-                            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                        <div
+                            ref={loaderBarRef}
                             className="w-full h-full bg-white/30"
                         />
-                    </motion.div>
+                    </div>
                 </div>
             ) : (
                 <>
@@ -284,47 +313,38 @@ export default function Home() {
                         className={`flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4 relative z-10`}
                     >
                         {/* Left Sidebar - Problem List */}
-                        <AnimatePresence>
-                            {isSidebarOpen && (
-                                <motion.div
-                                    layout={!isResizing}
-                                    initial={{ width: 0, opacity: 0 }}
-                                    animate={{
-                                        width: isMobile ? "100%" : sidebarWidth + 20,
-                                        opacity: 1
-                                    }}
-                                    exit={{ width: 0, opacity: 0 }}
-                                    transition={isResizing ? { duration: 0 } : { duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                                    className="flex flex-col md:flex-row h-full overflow-hidden shrink-0"
-                                >
-                                    <aside
-                                        className="h-full overflow-hidden shrink-0 w-full md:pr-4"
-                                        style={{ width: isMobile ? "100%" : `${sidebarWidth}px` }}
-                                    >
-                                        <ProblemList
-                                            onSelect={handleSelect}
-                                            selectedId={selectedProblemId}
-                                            setIsSidebarOpen={setIsSidebarOpen}
-                                            searchQuery={searchQuery}
-                                            setSearchQuery={setSearchQuery}
-                                        />
-                                    </aside>
+                        <div
+                            className={`flex flex-col md:flex-row h-full overflow-hidden shrink-0 transition-all duration-400 ease-[0.4,0,0.2,1] ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                            style={{
+                                width: !isSidebarOpen ? 0 : (isMobile ? "100%" : sidebarWidth + 20),
+                                transition: isResizing ? 'none' : undefined
+                            }}
+                        >
+                            <aside
+                                className="h-full overflow-hidden shrink-0 w-full md:pr-4"
+                                style={{ width: isMobile ? "100%" : `${sidebarWidth}px` }}
+                            >
+                                <ProblemList
+                                    onSelect={handleSelect}
+                                    selectedId={selectedProblemId}
+                                    setIsSidebarOpen={setIsSidebarOpen}
+                                    searchQuery={searchQuery}
+                                    setSearchQuery={setSearchQuery}
+                                />
+                            </aside>
 
-                                    {/* Draggable Divider - Sidebar */}
-                                    <div
-                                        onMouseDown={handleMouseDownSidebar}
-                                        className="hidden md:block w-1.5 bg-transparent hover:bg-indigo-500/30 cursor-col-resize mx-0.5 ml-2 transition-colors duration-200 self-stretch rounded-full"
-                                    />
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                            {/* Draggable Divider - Sidebar */}
+                            <div
+                                onMouseDown={handleMouseDownSidebar}
+                                className="hidden md:block w-1.5 bg-transparent hover:bg-indigo-500/30 cursor-col-resize mx-0.5 ml-2 transition-colors duration-200 self-stretch rounded-full"
+                            />
+                        </div>
 
-                        <motion.div
-                            layout={!isResizing}
+                        <div
                             ref={mainContentRef}
                             data-content-area
-                            className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col lg:flex-row gap-4"
-                            transition={isResizing ? { duration: 0 } : { duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                            className={`flex-1 overflow-y-auto md:overflow-hidden flex flex-col lg:flex-row gap-4 transition-all duration-400 ease-[0.4,0,0.2,1]`}
+                            style={{ transition: isResizing ? 'none' : undefined }}
                         >
 
 
@@ -381,15 +401,11 @@ export default function Home() {
                                             >
                                                 {activeTab === tab && (
                                                     <>
-                                                        <motion.div
-                                                            layoutId="activeTabBackground"
+                                                        <div
                                                             className="absolute inset-0 -inset-x-3 bg-cyan-500/10 dark:bg-cyan-400/10 rounded-lg blur-sm"
-                                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                                         />
-                                                        <motion.div
-                                                            layoutId="activeTabUnderline"
+                                                        <div
                                                             className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-cyan-500 to-emerald-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"
-                                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                                                         />
                                                     </>
                                                 )}
@@ -458,93 +474,74 @@ export default function Home() {
                                             </div>
                                             <div className="w-full md:w-3/4 h-full">
                                                 <div className="p-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 h-full overflow-y-auto border border-gray-200 dark:border-gray-700 shadow-2xl custom-scrollbar transition-all duration-300">
-                                                    <AnimatePresence mode="wait">
-                                                        {!result ? (
-                                                            <motion.div
-                                                                key="empty"
-                                                                initial={{ opacity: 0 }}
-                                                                animate={{ opacity: 1 }}
-                                                                exit={{ opacity: 0 }}
-                                                                className="flex flex-col items-center justify-center h-full space-y-2"
-                                                            >
-                                                                <span className="text-2xl animate-bounce [animation-timing-function:cubic-bezier(.3,1.5,.7,1)]">😊</span>
-                                                                <p className="text-gray-500 dark:text-gray-400 italic text-center text-sm">
-                                                                    Happy coding! Think carefully before submission.
-                                                                    <br />
-                                                                    <span className="text-amber-400 text-xs mt-1">⚠️ Don&apos;t add Prompts to Input ⚠️</span>
-                                                                </p>
-                                                            </motion.div>
-                                                        ) : result.error ? (
-                                                            <motion.div
-                                                                key="error"
-                                                                initial={{ opacity: 0, scale: 0.95 }}
-                                                                animate={{ opacity: 1, scale: 1 }}
-                                                                className="flex items-center gap-2 text-red-400"
-                                                            >
-                                                                <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                                </svg>
-                                                                <p className="font-medium">{typeof result.error === 'string' ? result.error : JSON.stringify(result.error)}</p>
-                                                            </motion.div>
-                                                        ) : (
-                                                            <motion.div
-                                                                key="result"
-                                                                initial={{ opacity: 0, y: 10 }}
-                                                                animate={{ opacity: 1, y: 0 }}
-                                                                className="flex flex-col h-full justify-center"
-                                                            >
-                                                                <div className="space-y-4">
-                                                                    <div className="flex items-center gap-3">
-                                                                        <span className="text-xl font-bold text-gray-900 dark:text-gray-100">Verdict:</span>
-                                                                        <motion.span
-                                                                            initial={{ scale: 0.9, opacity: 0 }}
-                                                                            animate={{ scale: 1, opacity: 1 }}
-                                                                            className={`px-4 py-1.5 rounded-lg text-sm font-black uppercase tracking-wider ${result.final_status === "Accepted"
-                                                                                ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20"
-                                                                                : "bg-red-500/10 text-red-500 border border-red-500/20"
-                                                                                }`}
-                                                                        >
-                                                                            {result.final_status === "Accepted" ? "ACCEPTED" : result.final_status}
-                                                                        </motion.span>
-                                                                        {result.final_status === "Accepted" ? (
-                                                                            <motion.div
-                                                                                initial={{ scale: 0 }}
-                                                                                animate={{ scale: 1 }}
-                                                                                className="p-1 bg-emerald-500 rounded-full"
-                                                                            >
-                                                                                <Check className="w-4 h-4 text-white stroke-[3px]" />
-                                                                            </motion.div>
-                                                                        ) : (
-                                                                            <motion.div
-                                                                                initial={{ scale: 0 }}
-                                                                                animate={{ scale: 1 }}
-                                                                                className="p-1 bg-red-500 rounded-full"
-                                                                            >
-                                                                                <X className="w-4 h-4 text-white stroke-[3px]" />
-                                                                            </motion.div>
-                                                                        )}
-                                                                        <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">
-                                                                            ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
-                                                                        </span>
-                                                                    </div>
-
-                                                                    <motion.div
-                                                                        initial={{ width: 0 }}
-                                                                        animate={{ width: "100%" }}
-                                                                        transition={{ duration: 0.8, ease: "easeOut" }}
-                                                                        className={`h-1.5 rounded-full ${result.final_status === "Accepted"
-                                                                            ? "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
-                                                                            : "bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.4)]"
+                                                    {!result ? (
+                                                        <div
+                                                            className="flex flex-col items-center justify-center h-full space-y-2 animate-pulse"
+                                                        >
+                                                            <span className="text-2xl animate-bounce [animation-timing-function:cubic-bezier(.3,1.5,.7,1)]">😊</span>
+                                                            <p className="text-gray-500 dark:text-gray-400 italic text-center text-sm">
+                                                                Happy coding! Think carefully before submission.
+                                                                <br />
+                                                                <span className="text-amber-400 text-xs mt-1">⚠️ Don&apos;t add Prompts to Input ⚠️</span>
+                                                            </p>
+                                                        </div>
+                                                    ) : result.error ? (
+                                                        <div
+                                                            className="flex items-center gap-2 text-red-400"
+                                                        >
+                                                            <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                                            </svg>
+                                                            <p className="font-medium">{typeof result.error === 'string' ? result.error : JSON.stringify(result.error)}</p>
+                                                        </div>
+                                                    ) : (
+                                                        <div
+                                                            ref={verdictRef}
+                                                            className="flex flex-col h-full justify-center"
+                                                        >
+                                                            <div className="space-y-4">
+                                                                <div className="flex items-center gap-3">
+                                                                    <span className="text-xl font-bold text-gray-900 dark:text-gray-100">Verdict:</span>
+                                                                    <span
+                                                                        className={`px-4 py-1.5 rounded-lg text-sm font-black uppercase tracking-wider ${result.final_status === "Accepted"
+                                                                            ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20"
+                                                                            : "bg-red-500/10 text-red-500 border border-red-500/20"
                                                                             }`}
-                                                                    />
-
-                                                                    <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">
-                                                                        Passed {String(result.summary.passed ?? 0)} / {String(result.summary.total ?? 0)} test cases
-                                                                    </p>
+                                                                    >
+                                                                        {result.final_status === "Accepted" ? "ACCEPTED" : result.final_status}
+                                                                    </span>
+                                                                    {result.final_status === "Accepted" ? (
+                                                                        <div
+                                                                            className="p-1 bg-emerald-500 rounded-full"
+                                                                        >
+                                                                            <Check className="w-4 h-4 text-white stroke-[3px]" />
+                                                                        </div>
+                                                                    ) : (
+                                                                        <div
+                                                                            className="p-1 bg-red-500 rounded-full"
+                                                                        >
+                                                                            <X className="w-4 h-4 text-white stroke-[3px]" />
+                                                                        </div>
+                                                                    )}
+                                                                    <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                                                                        ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
+                                                                    </span>
                                                                 </div>
-                                                            </motion.div>
-                                                        )}
-                                                    </AnimatePresence>
+
+                                                                <div
+                                                                    className={`h-1.5 rounded-full transition-all duration-1000 ${result.final_status === "Accepted"
+                                                                        ? "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
+                                                                        : "bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.4)]"
+                                                                        }`}
+                                                                    style={{ width: '100%' }}
+                                                                />
+
+                                                                <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">
+                                                                    Passed {String(result.summary.passed ?? 0)} / {String(result.summary.total ?? 0)} test cases
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
@@ -567,7 +564,7 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
 
 

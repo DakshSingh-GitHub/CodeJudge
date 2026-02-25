@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { anime } from "../lib/anime";
 import { useAppContext } from "../lib/context";
 import { runCode } from "../lib/api";
 import { Play, Terminal, Cpu, AlertCircle, Loader2, MessageSquare, RotateCcw } from "lucide-react";
@@ -20,6 +20,10 @@ export default function CodeTestPage() {
     } | null>(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
+    
+    const leftPaneRef = useRef<HTMLDivElement>(null);
+    const rightPaneRef = useRef<HTMLDivElement>(null);
+    const outputRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setIsMounted(true);
@@ -43,6 +47,31 @@ export default function CodeTestPage() {
 
     useEffect(() => {
         if (isMounted) {
+            // Initial entrance animations
+            if (leftPaneRef.current) {
+                anime({
+                    targets: leftPaneRef.current,
+                    opacity: [0, 1],
+                    translateX: [-20, 0],
+                    duration: 600,
+                    easing: 'easeOutQuad'
+                });
+            }
+            if (rightPaneRef.current) {
+                anime({
+                    targets: rightPaneRef.current,
+                    opacity: [0, 1],
+                    translateX: [20, 0],
+                    duration: 600,
+                    delay: 100,
+                    easing: 'easeOutQuad'
+                });
+            }
+        }
+    }, [isMounted]);
+
+    useEffect(() => {
+        if (isMounted) {
             sessionStorage.setItem("code-ide-code", code);
         }
     }, [code, isMounted]);
@@ -57,6 +86,16 @@ export default function CodeTestPage() {
         if (isMounted) {
             if (output) {
                 sessionStorage.setItem("code-ide-output", JSON.stringify(output));
+                
+                if (outputRef.current) {
+                    anime({
+                        targets: outputRef.current,
+                        opacity: [0, 1],
+                        translateY: [10, 0],
+                        duration: 400,
+                        easing: 'easeOutQuad'
+                    });
+                }
             } else {
                 sessionStorage.removeItem("code-ide-output");
             }
@@ -110,11 +149,9 @@ export default function CodeTestPage() {
 
                 <div className="flex-1 flex flex-col lg:grid lg:grid-cols-12 gap-6 md:gap-8 min-h-0">
                     {/* Left Pane - Expanded Editor Section */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="lg:col-span-7 xl:col-span-8 flex flex-col bg-white dark:bg-gray-900 shadow-2xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 lg:h-full min-h-112.5 lg:min-h-0"
+                    <div
+                        ref={leftPaneRef}
+                        className="lg:col-span-7 xl:col-span-8 flex flex-col bg-white dark:bg-gray-900 shadow-2xl shadow-gray-200/50 dark:shadow-none rounded-4xl overflow-hidden border border-gray-100 dark:border-gray-800 lg:h-full min-h-112.5 lg:min-h-0 opacity-0"
                     >
                         <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between bg-gray-50/50 dark:bg-gray-900/50">
                             <div className="flex items-center gap-4">
@@ -131,24 +168,20 @@ export default function CodeTestPage() {
                             </div>
 
                             <div className="flex items-center gap-3">
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
+                                <button
                                     onClick={handleReset}
                                     disabled={isLoading}
                                     title="Reset IDE"
-                                    className="p-2 rounded-xl transition-all bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-100 dark:hover:border-blue-900/50 hover:shadow-sm"
+                                    className="p-2 rounded-xl transition-all bg-white dark:bg-gray-950 border border-gray-100 dark:border-gray-800 text-gray-400 dark:text-gray-500 hover:text-blue-500 dark:hover:text-blue-400 hover:border-blue-100 dark:hover:border-blue-900/50 hover:shadow-sm active:scale-95"
                                 >
                                     <RotateCcw className="w-4 h-4" />
-                                </motion.button>
+                                </button>
 
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
+                                <button
                                     onClick={handleRun}
                                     disabled={isLoading}
                                     title="Run Code"
-                                    className={`group relative p-2.5 rounded-xl transition-all shadow-lg overflow-hidden ${isLoading
+                                    className={`group relative p-2.5 rounded-xl transition-all shadow-lg overflow-hidden active:scale-95 ${isLoading
                                         ? "bg-gray-100 dark:bg-gray-800 text-gray-400"
                                         : "bg-emerald-600 text-white shadow-emerald-500/20 hover:bg-emerald-700"
                                         }`}
@@ -159,7 +192,7 @@ export default function CodeTestPage() {
                                     {!isLoading && (
                                         <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                                     )}
-                                </motion.button>
+                                </button>
                             </div>
                         </div>
                         <div className="flex-1 relative min-h-0">
@@ -170,14 +203,12 @@ export default function CodeTestPage() {
                                 isDark={isDark}
                             />
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Right Pane - Interaction & Result Panels */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className="lg:col-span-5 xl:col-span-4 flex flex-col gap-6 lg:h-full min-h-0"
+                    <div
+                        ref={rightPaneRef}
+                        className="lg:col-span-5 xl:col-span-4 flex flex-col gap-6 lg:h-full min-h-0 opacity-0"
                     >
                         {/* Desktop Title & Description Section - Hidden on mobile */}
                         <div className="hidden lg:flex flex-col gap-1 px-4 mb-2">
@@ -210,9 +241,7 @@ export default function CodeTestPage() {
                                 </div>
 
                                 {output && (
-                                    <motion.div
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
+                                    <div
                                         className="flex items-center gap-2"
                                     >
                                         <div className="px-2 py-1 rounded-lg bg-gray-100 dark:bg-gray-800 text-[10px] font-bold text-gray-500">
@@ -224,64 +253,52 @@ export default function CodeTestPage() {
                                             }`}>
                                             {output.status}
                                         </div>
-                                    </motion.div>
+                                    </div>
                                 )}
                             </div>
 
                             <div className="flex-1 p-6 relative flex flex-col min-h-0 bg-[radial-gradient(circle_at_bottom_right,var(--tw-gradient-stops))] from-indigo-500/5 via-transparent to-transparent">
-                                <AnimatePresence mode="wait">
-                                    {!output && !isLoading ? (
-                                        <motion.div
-                                            key="empty"
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            className="flex-1 flex flex-col items-center justify-center text-center opacity-40 overflow-hidden"
-                                        >
-                                            <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mb-4">
-                                                <Terminal className="w-6 h-6 text-gray-400" />
-                                            </div>
-                                            <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Waiting for Run</p>
-                                        </motion.div>
-                                    ) : isLoading ? (
-                                        <motion.div
-                                            key="loading"
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            className="flex-1 flex flex-col items-center justify-center space-y-4"
-                                        >
-                                            <div className="w-10 h-10 border-4 border-indigo-500/10 border-t-indigo-500 rounded-full animate-spin" />
-                                            <p className="text-xs font-bold text-indigo-500 uppercase tracking-widest animate-pulse">Running...</p>
-                                        </motion.div>
-                                    ) : (
-                                        <motion.div
-                                            key="result"
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            className="flex-1 flex flex-col min-h-0 overflow-hidden"
-                                        >
-                                            <div className="flex-1 overflow-auto rounded-2xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800/50 p-5 font-mono text-sm leading-relaxed custom-scrollbar">
-                                                {output?.stdout && (
-                                                    <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
-                                                        {output.stdout}
+                                {!output && !isLoading ? (
+                                    <div
+                                        className="flex-1 flex flex-col items-center justify-center text-center opacity-40 overflow-hidden"
+                                    >
+                                        <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-2xl flex items-center justify-center mb-4">
+                                            <Terminal className="w-6 h-6 text-gray-400" />
+                                        </div>
+                                        <p className="text-xs font-bold text-gray-500 uppercase tracking-widest">Waiting for Run</p>
+                                    </div>
+                                ) : isLoading ? (
+                                    <div
+                                        className="flex-1 flex flex-col items-center justify-center space-y-4"
+                                    >
+                                        <div className="w-10 h-10 border-4 border-indigo-500/10 border-t-indigo-500 rounded-full animate-spin" />
+                                        <p className="text-xs font-bold text-indigo-500 uppercase tracking-widest animate-pulse">Running...</p>
+                                    </div>
+                                ) : (
+                                    <div
+                                        ref={outputRef}
+                                        className="flex-1 flex flex-col min-h-0 overflow-hidden opacity-0"
+                                    >
+                                        <div className="flex-1 overflow-auto rounded-2xl bg-gray-50 dark:bg-black/20 border border-gray-100 dark:border-gray-800/50 p-5 font-mono text-sm leading-relaxed custom-scrollbar">
+                                            {output?.stdout && (
+                                                <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+                                                    {output.stdout}
+                                                </div>
+                                            )}
+                                            {output?.stderr && (
+                                                <div className="text-red-500 dark:text-red-400 whitespace-pre-wrap mt-2 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
+                                                    <div className="flex items-center gap-2 mb-2 text-[10px] font-black uppercase text-red-500 opacity-60">
+                                                        <AlertCircle className="w-3 h-3" /> Error Stream
                                                     </div>
-                                                )}
-                                                {output?.stderr && (
-                                                    <div className="text-red-500 dark:text-red-400 whitespace-pre-wrap mt-2 p-4 rounded-xl bg-red-500/5 border border-red-500/10">
-                                                        <div className="flex items-center gap-2 mb-2 text-[10px] font-black uppercase text-red-500 opacity-60">
-                                                            <AlertCircle className="w-3 h-3" /> Error Stream
-                                                        </div>
-                                                        {output.stderr}
-                                                    </div>
-                                                )}
-                                                {!output?.stdout && !output?.stderr && (
-                                                    <div className="text-gray-400 italic text-xs">No output returned.</div>
-                                                )}
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
+                                                    {output.stderr}
+                                                </div>
+                                            )}
+                                            {!output?.stdout && !output?.stderr && (
+                                                <div className="text-gray-400 italic text-xs">No output returned.</div>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
 
                                 <div className="mt-4 pt-4 border-t border-gray-50 dark:border-gray-800 flex items-center justify-between opacity-50 flex-none">
                                     <div className="flex items-center gap-2 font-mono text-[10px]">
@@ -292,7 +309,7 @@ export default function CodeTestPage() {
                                 </div>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
                 {/* Explicit spacer for mobile bottom padding to ensure scroll visibility */}
                 <div className="lg:hidden h-20 w-full flex-none" />

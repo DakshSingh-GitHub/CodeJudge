@@ -1,7 +1,7 @@
 "use client";
 
-import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import React, { memo, useEffect, useRef } from 'react';
+import { anime } from '../../app/lib/anime';
 import { History } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import NavDropdown from './NavDropdown';
@@ -19,22 +19,43 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
     const pathname = usePathname();
     const isCodeIDE = pathname === '/code-ide';
+    const headerRef = useRef<HTMLElement>(null);
+    const navItemsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (headerRef.current) {
+            anime({
+                targets: headerRef.current,
+                translateY: [-50, 0],
+                opacity: [0, 1],
+                duration: 600,
+                easing: 'easeOutQuad'
+            });
+        }
+        if (navItemsRef.current) {
+            anime({
+                targets: navItemsRef.current,
+                translateX: [-20, 0],
+                opacity: [0, 1],
+                delay: 200,
+                duration: 600,
+                easing: 'easeOutQuad'
+            });
+        }
+    }, []);
 
     return (
-        <motion.header
-            initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            className="bg-white/70 dark:bg-gray-950/70 backdrop-blur-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none border-b border-gray-100 dark:border-gray-800/50 px-4 py-3 md:px-8 md:py-4 transition-all duration-500 sticky top-0 z-50 shrink-0"
+        <header
+            ref={headerRef}
+            className="bg-white/70 dark:bg-gray-950/70 backdrop-blur-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-none border-b border-gray-100 dark:border-gray-800/50 px-4 py-3 md:px-8 md:py-4 transition-all duration-500 sticky top-0 z-50 shrink-0 opacity-0"
         >
             <div className="max-w-[1800px] mx-auto flex items-center justify-between md:px-10 px-0">
-                <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="flex items-center gap-4"
+                <div
+                    ref={navItemsRef}
+                    className="flex items-center gap-4 opacity-0"
                 >
                     <NavDropdown />
-                </motion.div>
+                </div>
                 <div className="flex items-center gap-3 md:gap-6">
                     {!isCodeIDE && (
                         <>
@@ -75,7 +96,7 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
                     <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
                 </div>
             </div>
-        </motion.header>
+        </header>
     );
 });
 NavBar.displayName = "NavBar";

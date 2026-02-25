@@ -2,8 +2,8 @@
 
 import { Submission } from "../../app/lib/storage";
 import { Trash2, AlertTriangle, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, memo } from "react";
+import { useState, memo, useEffect, useRef } from "react";
+import { anime, stagger } from "../../app/lib/anime";
 
 interface PastSubmissionsProps {
     submissions: Submission[];
@@ -13,6 +13,9 @@ interface PastSubmissionsProps {
 
 const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode, onDelete }: PastSubmissionsProps) {
     const [deletingId, setDeletingId] = useState<string | null>(null);
+    const listContainerRef = useRef<HTMLDivElement>(null);
+    const modalRef = useRef<HTMLDivElement>(null);
+    const modalOverlayRef = useRef<HTMLDivElement>(null);
 
     const handleDeleteClick = (e: React.MouseEvent, id: string) => {
         e.stopPropagation();
@@ -25,6 +28,42 @@ const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode,
             setDeletingId(null);
         }
     };
+
+    useEffect(() => {
+        if (submissions.length > 0 && listContainerRef.current) {
+            anime({
+                targets: listContainerRef.current.children,
+                opacity: [0, 1],
+                translateY: [20, 0],
+                delay: stagger(50),
+                duration: 500,
+                easing: 'easeOutQuad'
+            });
+        }
+    }, [submissions.length]);
+
+    useEffect(() => {
+        if (deletingId) {
+            if (modalOverlayRef.current) {
+                anime({
+                    targets: modalOverlayRef.current,
+                    opacity: [0, 1],
+                    duration: 300,
+                    easing: 'linear'
+                });
+            }
+            if (modalRef.current) {
+                anime({
+                    targets: modalRef.current,
+                    scale: [0.95, 1],
+                    translateY: [20, 0],
+                    opacity: [0, 1],
+                    duration: 400,
+                    easing: 'easeOutExpo'
+                });
+            }
+        }
+    }, [deletingId]);
 
     if (submissions.length === 0) {
         return (
@@ -42,11 +81,11 @@ const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode,
 
     return (
         <>
-            <div className="flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar">
+            <div ref={listContainerRef} className="flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar">
                 {submissions.map((sub) => (
                     <div
                         key={sub.id}
-                        className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-200 group relative hover:bg-white dark:hover:bg-gray-800"
+                        className="bg-white/60 dark:bg-gray-800/40 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-200 group relative hover:bg-white dark:hover:bg-gray-800 opacity-0"
                     >
                         <div className="flex items-center justify-between mb-3">
                             <div className="flex items-center gap-2">
@@ -96,7 +135,7 @@ const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode,
 
                         <div className="mt-3 w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1 overflow-hidden">
                             <div
-                                className={`h-full ${sub.final_status === "Accepted" ? "bg-green-500" : "bg-red-500"}`}
+                                className={`h-full transition-all duration-1000 ${sub.final_status === "Accepted" ? "bg-green-500" : "bg-red-500"}`}
                                 style={{ width: `${(sub.summary.passed / sub.summary.total) * 100}%` }}
                             />
                         </div>
@@ -104,56 +143,50 @@ const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode,
                 ))}
             </div>
 
-            <AnimatePresence>
-                {deletingId && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setDeletingId(null)}
-                            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
-                        />
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                            className="relative w-full max-w-sm bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 border border-gray-200 dark:border-gray-700"
-                        >
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/40 flex items-center justify-center shrink-0">
-                                    <AlertTriangle className="w-6 h-6 text-red-600 dark:text-red-400" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">Delete Submission?</h3>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">This action cannot be undone.</p>
-                                </div>
-                                <button
-                                    onClick={() => setDeletingId(null)}
-                                    className="ml-auto p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-                                >
-                                    <X className="w-5 h-5 text-gray-400" />
-                                </button>
+            {deletingId && (
+                <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                    <div
+                        ref={modalOverlayRef}
+                        onClick={() => setDeletingId(null)}
+                        className="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0"
+                    />
+                    <div
+                        ref={modalRef}
+                        className="relative w-full max-w-sm bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-6 border border-gray-200 dark:border-gray-700 opacity-0"
+                    >
+                        <div className="flex items-center gap-4 mb-4">
+                            <div className="w-12 h-12 rounded-full bg-red-100 dark:bg-red-900/40 flex items-center justify-center shrink-0">
+                                <AlertTriangle className="w-6 h-6 text-red-600 dark:text-red-400" />
                             </div>
+                            <div>
+                                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">Delete Submission?</h3>
+                                <p className="text-sm text-gray-500 dark:text-gray-400">This action cannot be undone.</p>
+                            </div>
+                            <button
+                                onClick={() => setDeletingId(null)}
+                                className="ml-auto p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                            >
+                                <X className="w-5 h-5 text-gray-400" />
+                            </button>
+                        </div>
 
-                            <div className="flex gap-3 mt-6">
-                                <button
-                                    onClick={() => setDeletingId(null)}
-                                    className="flex-1 px-4 py-2.5 rounded-xl font-bold bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
-                                >
-                                    Cancel
-                                </button>
-                                <button
-                                    onClick={confirmDelete}
-                                    className="flex-1 px-4 py-2.5 rounded-xl font-bold bg-red-600 text-white hover:bg-red-700 shadow-lg shadow-red-600/20 active:scale-95 transition-all"
-                                >
-                                    Delete
-                                </button>
-                            </div>
-                        </motion.div>
+                        <div className="flex gap-3 mt-6">
+                            <button
+                                onClick={() => setDeletingId(null)}
+                                className="flex-1 px-4 py-2.5 rounded-xl font-bold bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={confirmDelete}
+                                className="flex-1 px-4 py-2.5 rounded-xl font-bold bg-red-600 text-white hover:bg-red-700 shadow-lg shadow-red-600/20 active:scale-95 transition-all"
+                            >
+                                Delete
+                            </button>
+                        </div>
                     </div>
-                )}
-            </AnimatePresence>
+                </div>
+            )}
         </>
     );
 });
