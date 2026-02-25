@@ -77,18 +77,20 @@ class ProblemsListResponse(BaseModel):
     problems: List[ProblemSummary]
 
 # Helper Functions
+def normalize_judge_mode(raw_mode: Optional[str]) -> str:
+    mode = str(raw_mode or "").strip().upper()
+    if mode in ["ALL", "FIRST_FAIL"]:
+        return mode
+    return "ALL"
+
+
 def validate_problem_data(problem: dict) -> List[str]:
     errors = []
-    required_fields = ["id", "title", "description", "judge_mode", "sample_test_cases", "hidden_test_cases"]
+    required_fields = ["id", "title", "description"]
     
     for field in required_fields:
         if field not in problem:
             errors.append(f"Missing field: '{field}'")
-            
-    if "judge_mode" in problem:
-        mode = problem["judge_mode"].strip().upper()
-        if mode not in ["ALL", "FIRST_FAIL"]:
-            errors.append("judge_mode must be 'ALL' or 'FIRST_FAIL'")
             
     for tc_type in ["sample_test_cases", "hidden_test_cases"]:
         if tc_type in problem:
@@ -193,7 +195,7 @@ def submit(request_data: SubmitRequest):
     if errors:
         raise HTTPException(status_code=500, detail={"error": "Invalid problem definition", "details": errors})
 
-    judge_mode = problem.get("judge_mode", "ALL")
+    judge_mode = normalize_judge_mode(problem.get("judge_mode"))
     sample_tcs = problem.get("sample_test_cases", [])
     hidden_tcs = problem.get("hidden_test_cases", [])
     
@@ -202,6 +204,9 @@ def submit(request_data: SubmitRequest):
         judge_mode = "ALL" # Force ALL mode for testing samples
     else:
         test_cases = sample_tcs + hidden_tcs
+
+    if not test_cases:
+        raise HTTPException(status_code=500, detail={"error": "Invalid problem definition", "details": ["No test cases configured for this problem"]})
 
     result = run_code_multiple(
         code=code,

@@ -4,9 +4,9 @@
     "description": "Given a string s containing only three types of characters: '(', ')' and '*', return true if s is valid.",
     "input_format": "A single string s.",
     "output_format": "true or false.",
-    "constraints": {
+    "constraints": [
         "1 <= s.length <= 100"
-    },
+    ],
     "judge_mode": "FIRST_FAIL",
     "time_limit": 1,
     "sample_test_cases": [

@@ -281,6 +281,12 @@ export default function Home() {
             console.error("Failed to delete submission", error);
         }
     }, []);
+
+    const passedCount = Number(result?.summary?.passed ?? 0);
+    const totalCount = Number(result?.summary?.total ?? 0);
+    const progressPercent = totalCount > 0
+        ? Math.max(0, Math.min(100, (passedCount / totalCount) * 100))
+        : 0;
     
     return (
         <div className={`flex-1 flex flex-col min-h-0 bg-[#FAFAFA] dark:bg-[#0B0C15] text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans selection:bg-indigo-500/301`}>
@@ -533,7 +539,7 @@ export default function Home() {
                                                                         ? "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
                                                                         : "bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.4)]"
                                                                         }`}
-                                                                    style={{ width: '100%' }}
+                                                                    style={{ width: `${progressPercent}%` }}
                                                                 />
 
                                                                 <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">

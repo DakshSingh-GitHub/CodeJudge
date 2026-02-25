@@ -4,9 +4,9 @@
     "description": "The count-and-say sequence is a sequence of digit strings defined by the recursive formula: countAndSay(1) = \"1\", countAndSay(n) is the way you would \"say\" the digit string from countAndSay(n-1). Given a positive integer n, return the nth term of the count-and-say sequence.",
     "input_format": "A single integer n.",
     "output_format": "The nth term as a string.",
-    "constraints": {
+    "constraints": [
         "1 <= n <= 30"
-    },
+    ],
     "judge_mode": "FIRST_FAIL",
     "time_limit": 1,
     "sample_test_cases": [

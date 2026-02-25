@@ -4,9 +4,9 @@
     "description": "A valid IP address consists of exactly four integers separated by single dots. Each integer is between 0 and 255 (inclusive) and cannot have leading zeros (except for 0 itself). Given a string s containing only digits, return all possible valid IP addresses that can be formed by inserting dots into s. Return the addresses in any order.",
     "input_format": "A single string s.",
     "output_format": "All valid IP addresses, space-separated and sorted.",
-    "constraints": {
+    "constraints": [
         "1 <= s.length <= 20"
-    },
+    ],
     "judge_mode": "FIRST_FAIL",
     "time_limit": 1,
     "sample_test_cases": [

@@ -4,9 +4,9 @@
     "description": "Given a positive integer n, generate an n x n matrix filled with elements from 1 to n^2 in spiral order.",
     "input_format": "A single positive integer n.",
     "output_format": "The matrix row by row, each row elements separated by spaces, and each row on a new line.",
-    "constraints": {
+    "constraints": [
         "1 <= n <= 20"
-    },
+    ],
     "judge_mode": "FIRST_FAIL",
     "time_limit": 1,
     "sample_test_cases": [
