@@ -1,0 +1,662 @@
+{
+    "id": "shuffle_string",
+    "title": "Shuffle String",
+    "description": "You are given a string s and an integer array indices of the same length. The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string. Return the shuffled string.",
+    "input_format": "First line: string s. Second line: space-separated integers indices.",
+    "output_format": "The shuffled string.",
+    "constraints": {
+        "s.length": "s.length == indices.length",
+        "n": "1 <= n <= 100"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "codeleet\n4 5 6 7 0 2 1 3",
+            "output": "leetcode"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "qjf\n1 0 2",
+            "output": "jqf"
+        },
+        {
+            "input": "kqoact\n3 5 0 1 4 2",
+            "output": "oatkcq"
+        },
+        {
+            "input": "zcl\n1 0 2",
+            "output": "czl"
+        },
+        {
+            "input": "acd\n1 2 0",
+            "output": "dac"
+        },
+        {
+            "input": "kxmflxr\n2 3 6 4 0 1 5",
+            "output": "lxkxfrm"
+        },
+        {
+            "input": "cpjz\n2 0 3 1",
+            "output": "pzcj"
+        },
+        {
+            "input": "hodcavaect\n4 1 7 2 3 0 6 8 5 9",
+            "output": "vocahcadet"
+        },
+        {
+            "input": "turojvr\n6 3 1 2 0 5 4",
+            "output": "jrourvt"
+        },
+        {
+            "input": "gpahhtsb\n0 2 3 7 4 1 6 5",
+            "output": "gtpahbsh"
+        },
+        {
+            "input": "ufuajny\n1 0 3 5 4 2 6",
+            "output": "funujay"
+        },
+        {
+            "input": "ffj\n1 0 2",
+            "output": "ffj"
+        },
+        {
+            "input": "nwawkofv\n7 5 3 1 0 4 2 6",
+            "output": "kwfaowvn"
+        },
+        {
+            "input": "fufkeh\n3 1 5 4 2 0",
+            "output": "huefkf"
+        },
+        {
+            "input": "tsr\n2 1 0",
+            "output": "rst"
+        },
+        {
+            "input": "oxh\n1 0 2",
+            "output": "xoh"
+        },
+        {
+            "input": "hfyzngncjg\n0 8 7 2 9 3 6 1 4 5",
+            "output": "hczgjgnyfn"
+        },
+        {
+            "input": "vzaaxtog\n0 6 4 3 2 1 5 7",
+            "output": "vtxaaozg"
+        },
+        {
+            "input": "fcvphspte\n5 0 8 2 7 1 4 6 3",
+            "output": "cspepfthv"
+        },
+        {
+            "input": "ykviyaw\n6 4 3 0 5 2 1",
+            "output": "iwavkyy"
+        },
+        {
+            "input": "epciichrlj\n5 6 7 3 8 0 9 2 1 4",
+            "output": "clrijepcih"
+        },
+        {
+            "input": "cdyrv\n2 3 0 1 4",
+            "output": "yrcdv"
+        },
+        {
+            "input": "pordltgyft\n3 9 7 1 6 4 0 2 5 8",
+            "output": "gdyptflrto"
+        },
+        {
+            "input": "uzcxr\n4 2 1 0 3",
+            "output": "xczru"
+        },
+        {
+            "input": "jwodi\n2 1 3 0 4",
+            "output": "dwjoi"
+        },
+        {
+            "input": "zbcd\n1 0 3 2",
+            "output": "bzdc"
+        },
+        {
+            "input": "lidgdts\n4 6 3 5 1 0 2",
+            "output": "tdsdlgi"
+        },
+        {
+            "input": "mdaro\n4 3 1 2 0",
+            "output": "oardm"
+        },
+        {
+            "input": "gjggj\n2 3 0 1 4",
+            "output": "gggjj"
+        },
+        {
+            "input": "hzhdfrr\n0 3 2 5 1 4 6",
+            "output": "hfhzrdr"
+        },
+        {
+            "input": "ztr\n1 0 2",
+            "output": "tzr"
+        },
+        {
+            "input": "slhn\n1 3 2 0",
+            "output": "nshl"
+        },
+        {
+            "input": "ayez\n2 1 0 3",
+            "output": "eyaz"
+        },
+        {
+            "input": "odcfbyfqm\n4 8 7 6 3 5 1 2 0",
+            "output": "mfqboyfcd"
+        },
+        {
+            "input": "ywmlxfb\n6 1 0 3 5 4 2",
+            "output": "mwblfxy"
+        },
+        {
+            "input": "eqsc\n3 1 0 2",
+            "output": "sqce"
+        },
+        {
+            "input": "dtsyxh\n4 3 2 5 1 0",
+            "output": "hxstdy"
+        },
+        {
+            "input": "pwbmssh\n5 2 1 4 6 3 0",
+            "output": "hbwsmps"
+        },
+        {
+            "input": "xen\n1 0 2",
+            "output": "exn"
+        },
+        {
+            "input": "lpe\n2 0 1",
+            "output": "pel"
+        },
+        {
+            "input": "vlkayn\n1 0 2 5 4 3",
+            "output": "lvknya"
+        },
+        {
+            "input": "jil\n0 1 2",
+            "output": "jil"
+        },
+        {
+            "input": "tyrzmzq\n5 4 6 2 3 1 0",
+            "output": "qzzmytr"
+        },
+        {
+            "input": "tobewvaf\n3 1 2 7 4 6 5 0",
+            "output": "fobtwave"
+        },
+        {
+            "input": "wnri\n3 2 0 1",
+            "output": "rinw"
+        },
+        {
+            "input": "rsmkqbzgxs\n4 3 7 1 8 9 6 2 0 5",
+            "output": "xkgsrszmqb"
+        },
+        {
+            "input": "gqgx\n3 1 0 2",
+            "output": "gqxg"
+        },
+        {
+            "input": "cxrputckw\n5 3 4 0 7 8 6 1 2",
+            "output": "pkwxrccut"
+        },
+        {
+            "input": "hhutrqj\n4 5 6 0 3 1 2",
+            "output": "tqjrhhu"
+        },
+        {
+            "input": "nuoabwnzh\n0 4 7 2 8 1 5 6 3",
+            "output": "nwahunzob"
+        },
+        {
+            "input": "acecq\n1 4 3 0 2",
+            "output": "caqec"
+        },
+        {
+            "input": "chjey\n3 0 1 4 2",
+            "output": "hjyce"
+        },
+        {
+            "input": "hgmr\n2 0 3 1",
+            "output": "grhm"
+        },
+        {
+            "input": "odkmv\n0 1 4 2 3",
+            "output": "odmvk"
+        },
+        {
+            "input": "zmrlm\n2 1 4 3 0",
+            "output": "mmzlr"
+        },
+        {
+            "input": "trwjn\n4 1 2 0 3",
+            "output": "jrwnt"
+        },
+        {
+            "input": "npv\n0 1 2",
+            "output": "npv"
+        },
+        {
+            "input": "oveuruhrdh\n4 2 5 8 0 7 6 9 1 3",
+            "output": "rdvhoehuur"
+        },
+        {
+            "input": "pmoynf\n3 0 4 1 2 5",
+            "output": "mynpof"
+        },
+        {
+            "input": "jurdboo\n1 2 3 6 4 0 5",
+            "output": "ojurbod"
+        },
+        {
+            "input": "bkm\n1 0 2",
+            "output": "kbm"
+        },
+        {
+            "input": "vsz\n2 0 1",
+            "output": "szv"
+        },
+        {
+            "input": "shs\n1 2 0",
+            "output": "ssh"
+        },
+        {
+            "input": "ojtn\n1 0 3 2",
+            "output": "jont"
+        },
+        {
+            "input": "fztngbqxj\n7 0 6 4 5 1 2 3 8",
+            "output": "zbqxngtfj"
+        },
+        {
+            "input": "wdog\n3 2 1 0",
+            "output": "godw"
+        },
+        {
+            "input": "xteunkm\n1 5 3 0 2 6 4",
+            "output": "uxnemtk"
+        },
+        {
+            "input": "tpbvcakevk\n4 0 2 9 5 6 7 1 8 3",
+            "output": "pebktcakvv"
+        },
+        {
+            "input": "mrqo\n2 3 1 0",
+            "output": "oqmr"
+        },
+        {
+            "input": "zxkkfhjav\n4 5 2 1 8 7 6 0 3",
+            "output": "akkvzxjhf"
+        },
+        {
+            "input": "iiavrht\n4 0 3 1 5 2 6",
+            "output": "ivhairt"
+        },
+        {
+            "input": "rfazssh\n1 0 2 3 4 5 6",
+            "output": "frazssh"
+        },
+        {
+            "input": "pesfti\n0 1 3 5 2 4",
+            "output": "petsif"
+        },
+        {
+            "input": "ylq\n2 1 0",
+            "output": "qly"
+        },
+        {
+            "input": "ymwnoctp\n0 3 5 4 1 6 2 7",
+            "output": "yotmnwcp"
+        },
+        {
+            "input": "turcxdtcbj\n5 8 7 0 4 9 6 2 1 3",
+            "output": "cbcjxttrud"
+        },
+        {
+            "input": "cxiogwa\n2 3 5 0 4 6 1",
+            "output": "oacxgiw"
+        },
+        {
+            "input": "bqctoqv\n2 5 6 1 4 3 0",
+            "output": "vtbqoqc"
+        },
+        {
+            "input": "dvp\n1 2 0",
+            "output": "pdv"
+        },
+        {
+            "input": "ccgw\n2 3 1 0",
+            "output": "wgcc"
+        },
+        {
+            "input": "tzzxf\n1 2 3 4 0",
+            "output": "ftzzx"
+        },
+        {
+            "input": "sqlpc\n2 4 3 1 0",
+            "output": "cpslq"
+        },
+        {
+            "input": "wdycfjhhu\n5 3 0 1 7 4 6 2 8",
+            "output": "ychdjwhfu"
+        },
+        {
+            "input": "fggsq\n2 4 3 0 1",
+            "output": "sqfgg"
+        },
+        {
+            "input": "kpeiw\n0 2 3 1 4",
+            "output": "kipew"
+        },
+        {
+            "input": "qqzyqfpi\n2 0 1 5 7 6 3 4",
+            "output": "qzqpiyfq"
+        },
+        {
+            "input": "pirw\n1 0 2 3",
+            "output": "iprw"
+        },
+        {
+            "input": "uuxlchvxs\n8 6 1 4 5 2 7 3 0",
+            "output": "sxhxlcuvu"
+        },
+        {
+            "input": "uozwau\n2 3 1 0 5 4",
+            "output": "wzuoua"
+        },
+        {
+            "input": "vuaynixg\n6 1 7 2 4 5 0 3",
+            "output": "xuygniva"
+        },
+        {
+            "input": "vlavycj\n5 4 6 0 2 1 3",
+            "output": "vcyjlva"
+        },
+        {
+            "input": "awbbu\n0 3 1 4 2",
+            "output": "abuwb"
+        },
+        {
+            "input": "zenocmoqvj\n6 7 3 9 2 8 1 4 0 5",
+            "output": "vocnqjzemo"
+        },
+        {
+            "input": "gfe\n1 0 2",
+            "output": "fge"
+        },
+        {
+            "input": "jtc\n2 0 1",
+            "output": "tcj"
+        },
+        {
+            "input": "jqxd\n2 1 3 0",
+            "output": "dqjx"
+        },
+        {
+            "input": "pyykwup\n1 5 3 0 2 4 6",
+            "output": "kpwyuyp"
+        },
+        {
+            "input": "homoocizq\n3 4 8 7 1 0 2 6 5",
+            "output": "coihoqzom"
+        },
+        {
+            "input": "kygzessuue\n3 5 0 8 1 4 2 6 7 9",
+            "output": "gesksyuuze"
+        },
+        {
+            "input": "qjw\n0 1 2",
+            "output": "qjw"
+        },
+        {
+            "input": "lhdo\n1 0 2 3",
+            "output": "hldo"
+        },
+        {
+            "input": "nrijhw\n5 2 1 4 3 0",
+            "output": "wirhjn"
+        },
+        {
+            "input": "fwocgflqu\n1 6 7 0 4 8 3 5 2",
+            "output": "cfulgqwof"
+        },
+        {
+            "input": "qmovxvyb\n7 0 1 5 3 6 4 2",
+            "output": "mobxyvvq"
+        },
+        {
+            "input": "gau\n0 2 1",
+            "output": "gua"
+        },
+        {
+            "input": "jhhstnuqb\n4 1 0 5 7 8 2 6 3",
+            "output": "hhubjsqtn"
+        },
+        {
+            "input": "yhrhv\n1 2 0 4 3",
+            "output": "ryhvh"
+        },
+        {
+            "input": "satctdafvc\n5 6 4 8 3 2 9 1 7 0",
+            "output": "cfdttsavca"
+        },
+        {
+            "input": "lxwgedjq\n7 0 3 5 4 2 6 1",
+            "output": "xqdwegjl"
+        },
+        {
+            "input": "kjpsyhuw\n4 0 2 5 3 7 6 1",
+            "output": "jwpyksuh"
+        },
+        {
+            "input": "awluqlcexa\n2 7 1 0 8 9 6 3 5 4",
+            "output": "ulaeaxcwql"
+        },
+        {
+            "input": "psmq\n0 1 2 3",
+            "output": "psmq"
+        },
+        {
+            "input": "tgdfvyykbc\n8 9 6 7 3 4 0 2 5 1",
+            "output": "yckvybdftg"
+        },
+        {
+            "input": "hmv\n1 0 2",
+            "output": "mhv"
+        },
+        {
+            "input": "ljkd\n3 1 0 2",
+            "output": "kjdl"
+        },
+        {
+            "input": "kxgmxdp\n1 6 5 2 0 3 4",
+            "output": "xkmdpgx"
+        },
+        {
+            "input": "qsgf\n3 2 0 1",
+            "output": "gfsq"
+        },
+        {
+            "input": "hapgr\n0 2 3 4 1",
+            "output": "hrapg"
+        },
+        {
+            "input": "ncan\n0 1 3 2",
+            "output": "ncna"
+        },
+        {
+            "input": "acpoc\n3 4 0 2 1",
+            "output": "pcoac"
+        },
+        {
+            "input": "pbdqoi\n3 0 5 4 2 1",
+            "output": "biopqd"
+        },
+        {
+            "input": "norxq\n0 1 3 2 4",
+            "output": "noxrq"
+        },
+        {
+            "input": "nocfjlf\n2 3 1 5 4 6 0",
+            "output": "fcnojfl"
+        },
+        {
+            "input": "pytjfkdba\n4 5 2 3 0 8 7 1 6",
+            "output": "fbtjpyadk"
+        },
+        {
+            "input": "kzcyrcli\n0 4 7 6 3 5 1 2",
+            "output": "klirzcyc"
+        },
+        {
+            "input": "uyo\n2 0 1",
+            "output": "you"
+        },
+        {
+            "input": "cqzrqhohh\n0 1 8 2 7 3 6 4 5",
+            "output": "cqrhhhoqz"
+        },
+        {
+            "input": "wuinvybpx\n0 2 6 5 8 3 4 1 7",
+            "output": "wpuybnixv"
+        },
+        {
+            "input": "ypisik\n0 1 2 4 3 5",
+            "output": "ypiisk"
+        },
+        {
+            "input": "uzzoosa\n0 5 3 6 4 2 1",
+            "output": "uaszozo"
+        },
+        {
+            "input": "jby\n0 2 1",
+            "output": "jyb"
+        },
+        {
+            "input": "pfyyey\n4 0 1 3 5 2",
+            "output": "fyyype"
+        },
+        {
+            "input": "fgwjjta\n6 2 1 4 5 3 0",
+            "output": "awgtjjf"
+        },
+        {
+            "input": "rozayrmbf\n5 3 0 1 7 4 6 2 8",
+            "output": "zaborrmyf"
+        },
+        {
+            "input": "wjouyrdmzm\n5 1 2 8 9 0 7 3 4 6",
+            "output": "rjomzwmduy"
+        },
+        {
+            "input": "iaqvybw\n4 1 5 2 6 0 3",
+            "output": "bavwiqy"
+        },
+        {
+            "input": "wuhpw\n3 0 1 2 4",
+            "output": "uhpww"
+        },
+        {
+            "input": "mgmwjk\n2 3 0 5 1 4",
+            "output": "mjmgkw"
+        },
+        {
+            "input": "ccgx\n3 2 1 0",
+            "output": "xgcc"
+        },
+        {
+            "input": "yefyzcd\n1 0 6 5 3 4 2",
+            "output": "eydzcyf"
+        },
+        {
+            "input": "ijlsl\n2 4 3 1 0",
+            "output": "lsilj"
+        },
+        {
+            "input": "umho\n3 1 2 0",
+            "output": "omhu"
+        },
+        {
+            "input": "rogq\n3 1 0 2",
+            "output": "goqr"
+        },
+        {
+            "input": "wdwwhlbawj\n0 8 2 1 4 5 3 6 9 7",
+            "output": "wwwbhlajdw"
+        },
+        {
+            "input": "ade\n0 2 1",
+            "output": "aed"
+        },
+        {
+            "input": "ssxafxaydf\n1 8 5 4 3 7 0 6 9 2",
+            "output": "asffaxyxsd"
+        },
+        {
+            "input": "odhib\n3 0 1 4 2",
+            "output": "dhboi"
+        },
+        {
+            "input": "vpqpubmsny\n2 3 8 0 6 1 7 4 9 5",
+            "output": "pbvpsyumqn"
+        },
+        {
+            "input": "sejclm\n4 5 2 0 3 1",
+            "output": "cmjlse"
+        },
+        {
+            "input": "yojimggoj\n2 5 4 8 6 1 0 7 3",
+            "output": "ggyjjomoi"
+        },
+        {
+            "input": "nkmbjcjgwi\n4 0 9 7 5 8 6 1 2 3",
+            "output": "kgwinjjbcm"
+        },
+        {
+            "input": "fkvpvosg\n3 7 4 5 6 1 0 2",
+            "output": "sogfvpvk"
+        },
+        {
+            "input": "xwtju\n0 1 3 4 2",
+            "output": "xwutj"
+        },
+        {
+            "input": "vkssouoseg\n2 1 9 6 4 7 5 0 8 3",
+            "output": "skvgoosues"
+        },
+        {
+            "input": "fizufcjeys\n8 4 9 7 3 1 0 5 2 6",
+            "output": "jcyfiesufz"
+        },
+        {
+            "input": "zxlkqdgacp\n8 9 2 7 6 1 3 5 4 0",
+            "output": "pdlgcaqkzx"
+        },
+        {
+            "input": "vcvrvquvzb\n8 0 2 3 9 4 7 5 1 6",
+            "output": "czvrqvbuvv"
+        },
+        {
+            "input": "zmfrx\n3 2 0 1 4",
+            "output": "frmzx"
+        },
+        {
+            "input": "iuqhp\n4 3 1 0 2",
+            "output": "hqpui"
+        },
+        {
+            "input": "huwt\n0 1 3 2",
+            "output": "hutw"
+        },
+        {
+            "input": "rjmpqul\n6 0 3 4 2 5 1",
+            "output": "jlqmpur"
+        }
+    ],
+    "difficulty": "easy"
+}

@@ -1,0 +1,54 @@
+{
+    "id": "truncate_sentence",
+    "title": "Truncate Sentence",
+    "description": "A sentence is a list of words that are separated by a single space with no leading or trailing spaces. Each word consists of only uppercase and lowercase English letters. You are given a sentence s and an integer k. You want to truncate s such that it contains only the first k words. Return s after truncating it.",
+    "input_format": "First line: string s. Second line: integer k.",
+    "output_format": "The truncated sentence.",
+    "constraints": {
+        "s.length": "1 <= s.length <= 500",
+        "k": "1 <= k <= number of words in s"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "Hello how are you Contestant\n4",
+            "output": "Hello how are you"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "Hello World this is a test for truncation\n3",
+            "output": "Hello World this"
+        },
+        {
+            "input": "Hello World this is a test for truncation\n4",
+            "output": "Hello World this is"
+        },
+        {
+            "input": "Hello World this is a test for truncation\n5",
+            "output": "Hello World this is a"
+        },
+        {
+            "input": "Hello World this is a test for truncation\n6",
+            "output": "Hello World this is a test"
+        },
+        {
+            "input": "Hello World this is a test for truncation\n8",
+            "output": "Hello World this is a test for truncation"
+        },
+        {
+            "input": "Hello World this is a test for truncation\n7",
+            "output": "Hello World this is a test for"
+        },
+        {
+            "input": "Hello World this is a test for truncation\n1",
+            "output": "Hello"
+        },
+        {
+            "input": "Hello World this is a test for truncation\n2",
+            "output": "Hello World"
+        }
+    ],
+    "difficulty": "easy"
+}

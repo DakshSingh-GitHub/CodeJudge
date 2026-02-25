@@ -1,0 +1,21 @@
+{
+    "id": "pow_x_n",
+    "title": "Pow(x, n)",
+    "description": "Implement pow(x, n), which calculates x raised to the power n (i.e., x^n).",
+    "input_format": "A single line with float x and integer n separated by a space.",
+    "output_format": "A float, rounded to 5 decimal places.",
+    "constraints": {
+        "-100.0 < x < 100.0",
+        "-2^31 <= n <= 2^31 - 1"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "2.00000 10",
+            "output": "1024.00000"
+        }
+    ],
+    "hidden_test_cases": [],
+    "difficulty": "medium"
+}

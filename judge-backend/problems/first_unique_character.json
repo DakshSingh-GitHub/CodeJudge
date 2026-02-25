@@ -27,644 +27,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "bbacaaacbbaa",
+            "input": "aaaaab",
+            "output": "5"
+        },
+        {
+            "input": "bccabcabacba",
             "output": "-1"
         },
         {
-            "input": "bbabaaabcbcccbcaaabb",
+            "input": "acbacaa",
+            "output": "2"
+        },
+        {
+            "input": "bccacabbbcbaccca",
             "output": "-1"
         },
         {
-            "input": "bbabbcccbccbcaac",
+            "input": "baaab",
             "output": "-1"
         },
         {
-            "input": "bccca",
-            "output": "0"
-        },
-        {
-            "input": "aaaac",
-            "output": "4"
-        },
-        {
-            "input": "bbcbcaabca",
+            "input": "cbbbbbaccaaabaaaa",
             "output": "-1"
         },
         {
-            "input": "bbaac",
-            "output": "4"
-        },
-        {
-            "input": "cbcaabaacab",
-            "output": "-1"
-        },
-        {
-            "input": "aaabaa",
-            "output": "3"
-        },
-        {
-            "input": "bbbbaacb",
+            "input": "aacaccbaca",
             "output": "6"
         },
         {
-            "input": "bbbabcbccbb",
+            "input": "acacaabbbccac",
+            "output": "-1"
+        },
+        {
+            "input": "bcaccaacbbbcaacaaccb",
+            "output": "-1"
+        },
+        {
+            "input": "cbacbccacbba",
+            "output": "-1"
+        },
+        {
+            "input": "baccacaaabcccccaabb",
+            "output": "-1"
+        },
+        {
+            "input": "bbacbabacbcaaaca",
+            "output": "-1"
+        },
+        {
+            "input": "cbaabbbb",
+            "output": "0"
+        },
+        {
+            "input": "bacbbaacbbbbbbcaaca",
+            "output": "-1"
+        },
+        {
+            "input": "acbbacc",
+            "output": "-1"
+        },
+        {
+            "input": "ccccbbacbccb",
+            "output": "6"
+        },
+        {
+            "input": "acbbbbcbbacabbcbcc",
+            "output": "-1"
+        },
+        {
+            "input": "baaca",
+            "output": "0"
+        },
+        {
+            "input": "acaaaacbb",
+            "output": "-1"
+        },
+        {
+            "input": "cbcbccabc",
+            "output": "6"
+        },
+        {
+            "input": "cacccbbacaaa",
+            "output": "-1"
+        },
+        {
+            "input": "caabccacbaa",
+            "output": "-1"
+        },
+        {
+            "input": "abaccbaac",
+            "output": "-1"
+        },
+        {
+            "input": "bcaccaaccbaab",
+            "output": "-1"
+        },
+        {
+            "input": "accaaacbb",
+            "output": "-1"
+        },
+        {
+            "input": "cbbabacbb",
+            "output": "-1"
+        },
+        {
+            "input": "bcaabcacbaaaabccaab",
+            "output": "-1"
+        },
+        {
+            "input": "caacbabcacbcbcbbbcbc",
+            "output": "-1"
+        },
+        {
+            "input": "bbcabacacc",
+            "output": "-1"
+        },
+        {
+            "input": "cabcacabacacccbbc",
+            "output": "-1"
+        },
+        {
+            "input": "cbacbabcab",
+            "output": "-1"
+        },
+        {
+            "input": "caaacbbac",
+            "output": "-1"
+        },
+        {
+            "input": "cbaabaccbcbaabc",
+            "output": "-1"
+        },
+        {
+            "input": "bccbaaccaccab",
+            "output": "-1"
+        },
+        {
+            "input": "bacaabababbcabcab",
+            "output": "-1"
+        },
+        {
+            "input": "bacbcaaaacb",
+            "output": "-1"
+        },
+        {
+            "input": "abacccbcababbcbcaca",
+            "output": "-1"
+        },
+        {
+            "input": "ccababa",
+            "output": "-1"
+        },
+        {
+            "input": "baacccaccb",
+            "output": "-1"
+        },
+        {
+            "input": "aaabb",
+            "output": "-1"
+        },
+        {
+            "input": "cabaababacaaaccb",
+            "output": "-1"
+        },
+        {
+            "input": "cacbabac",
+            "output": "-1"
+        },
+        {
+            "input": "abacbbaabbcbaaaa",
+            "output": "-1"
+        },
+        {
+            "input": "acbcbbbcbaaaabacabba",
+            "output": "-1"
+        },
+        {
+            "input": "aaabacca",
             "output": "3"
         },
         {
-            "input": "cbacbba",
+            "input": "ccbacbcbacabbcbba",
             "output": "-1"
         },
         {
-            "input": "ccacabccba",
+            "input": "aaaabbb",
             "output": "-1"
         },
         {
-            "input": "abaaaabaa",
+            "input": "cbccabbbaacbbaa",
             "output": "-1"
         },
         {
-            "input": "cccabbbabbbabacaaba",
+            "input": "ccccccbbccccbcb",
             "output": "-1"
         },
         {
-            "input": "cbbcccacaa",
-            "output": "-1"
+            "input": "cccccbbabc",
+            "output": "7"
         },
         {
-            "input": "ccaac",
-            "output": "-1"
-        },
-        {
-            "input": "cabbaccbbcaaabacccc",
-            "output": "-1"
-        },
-        {
-            "input": "caacbbbbccbcaaa",
-            "output": "-1"
-        },
-        {
-            "input": "ccbacbbabcccbbaca",
-            "output": "-1"
-        },
-        {
-            "input": "babbcacccccbb",
-            "output": "-1"
-        },
-        {
-            "input": "cccbacccccabaaabcaa",
-            "output": "-1"
-        },
-        {
-            "input": "aaacbacbaac",
-            "output": "-1"
-        },
-        {
-            "input": "abbcc",
-            "output": "0"
-        },
-        {
-            "input": "aacccca",
-            "output": "-1"
-        },
-        {
-            "input": "bcababb",
+            "input": "babccc",
             "output": "1"
         },
         {
-            "input": "acbbbb",
-            "output": "0"
-        },
-        {
-            "input": "ccabcbaaccabc",
+            "input": "caaabcbcbaccbbbbaacb",
             "output": "-1"
         },
         {
-            "input": "bbbccbcbccac",
+            "input": "abaaabccacbbacaaaa",
+            "output": "-1"
+        },
+        {
+            "input": "bcccc",
+            "output": "0"
+        },
+        {
+            "input": "acabbbcaabccbacccaaa",
+            "output": "-1"
+        },
+        {
+            "input": "bcbccbbbcabaaabcaa",
+            "output": "-1"
+        },
+        {
+            "input": "cccbcaaaab",
+            "output": "-1"
+        },
+        {
+            "input": "bbccbabcaccaaa",
+            "output": "-1"
+        },
+        {
+            "input": "abccbcacabcccacc",
+            "output": "-1"
+        },
+        {
+            "input": "bacbabaabcbcacbb",
+            "output": "-1"
+        },
+        {
+            "input": "ccbccbbbccbcbbcbaac",
+            "output": "-1"
+        },
+        {
+            "input": "cbcaaa",
+            "output": "1"
+        },
+        {
+            "input": "bccaaccbbbbba",
+            "output": "-1"
+        },
+        {
+            "input": "cbbbcc",
+            "output": "-1"
+        },
+        {
+            "input": "babbba",
+            "output": "-1"
+        },
+        {
+            "input": "aabcabbcccaab",
+            "output": "-1"
+        },
+        {
+            "input": "abcca",
+            "output": "1"
+        },
+        {
+            "input": "baaaabccacabc",
+            "output": "-1"
+        },
+        {
+            "input": "aaaacbab",
+            "output": "4"
+        },
+        {
+            "input": "bbbccbb",
+            "output": "-1"
+        },
+        {
+            "input": "aacaacaabc",
+            "output": "8"
+        },
+        {
+            "input": "aaabababaaababcb",
+            "output": "14"
+        },
+        {
+            "input": "babcacaabccab",
+            "output": "-1"
+        },
+        {
+            "input": "accccabcbbabccabcbc",
+            "output": "-1"
+        },
+        {
+            "input": "bbabcb",
+            "output": "2"
+        },
+        {
+            "input": "bcabccb",
+            "output": "2"
+        },
+        {
+            "input": "acccaabcba",
+            "output": "-1"
+        },
+        {
+            "input": "ccabbbcbabbacaabb",
+            "output": "-1"
+        },
+        {
+            "input": "acbbabcabcbb",
+            "output": "-1"
+        },
+        {
+            "input": "aabcbabccbaaab",
+            "output": "-1"
+        },
+        {
+            "input": "abbaaaaccbab",
+            "output": "-1"
+        },
+        {
+            "input": "abbaccbabbbaaaa",
+            "output": "-1"
+        },
+        {
+            "input": "baaaa",
+            "output": "0"
+        },
+        {
+            "input": "cbbbcabbbacc",
+            "output": "-1"
+        },
+        {
+            "input": "baabccabccabca",
+            "output": "-1"
+        },
+        {
+            "input": "bbbcccaabaabb",
+            "output": "-1"
+        },
+        {
+            "input": "bbcccb",
+            "output": "-1"
+        },
+        {
+            "input": "cacac",
+            "output": "-1"
+        },
+        {
+            "input": "cbbcbabacac",
+            "output": "-1"
+        },
+        {
+            "input": "bbbccaaccccabaccaac",
+            "output": "-1"
+        },
+        {
+            "input": "abcaaabaabccbac",
+            "output": "-1"
+        },
+        {
+            "input": "cacabcabc",
+            "output": "-1"
+        },
+        {
+            "input": "caccccaccacccbcbaac",
+            "output": "-1"
+        },
+        {
+            "input": "bbbbbcaacbccaabababc",
+            "output": "-1"
+        },
+        {
+            "input": "cabacbaaabcbcababcac",
+            "output": "-1"
+        },
+        {
+            "input": "abbbbccbaacabcbc",
+            "output": "-1"
+        },
+        {
+            "input": "cbbacb",
+            "output": "3"
+        },
+        {
+            "input": "abcacbbbcaccabcbbaa",
+            "output": "-1"
+        },
+        {
+            "input": "bbbaabacbacaccaa",
+            "output": "-1"
+        },
+        {
+            "input": "abacbacccccaacc",
+            "output": "-1"
+        },
+        {
+            "input": "acbcaa",
+            "output": "2"
+        },
+        {
+            "input": "cccba",
+            "output": "3"
+        },
+        {
+            "input": "babbac",
+            "output": "5"
+        },
+        {
+            "input": "caccaaccacbcccc",
             "output": "10"
         },
         {
-            "input": "acaabbbacaacca",
+            "input": "abacbcaccabbbbaacbc",
             "output": "-1"
         },
         {
-            "input": "bbbacbabc",
+            "input": "bababccabbcbaa",
             "output": "-1"
         },
         {
-            "input": "cabcbabcabb",
+            "input": "cbacbabbacaca",
             "output": "-1"
         },
         {
-            "input": "caababbbab",
-            "output": "0"
-        },
-        {
-            "input": "cbcccaaabbbcaa",
+            "input": "bccacacbccbaccca",
             "output": "-1"
         },
         {
-            "input": "abaac",
+            "input": "cabcccb",
             "output": "1"
         },
         {
-            "input": "aabaabaabccabcba",
+            "input": "bbabcbaccbcabcc",
             "output": "-1"
         },
         {
-            "input": "baabac",
-            "output": "5"
-        },
-        {
-            "input": "ccbbbbabcbbccbacacb",
+            "input": "babaccaa",
             "output": "-1"
         },
         {
-            "input": "cccbbbccca",
+            "input": "abccbaaaaacbab",
+            "output": "-1"
+        },
+        {
+            "input": "ccbcacccacbccabbca",
+            "output": "-1"
+        },
+        {
+            "input": "baaccaabbb",
+            "output": "-1"
+        },
+        {
+            "input": "cacabc",
+            "output": "4"
+        },
+        {
+            "input": "bcaaccbbc",
+            "output": "-1"
+        },
+        {
+            "input": "aabaabbcbcbaa",
+            "output": "-1"
+        },
+        {
+            "input": "accbbacbbcbb",
+            "output": "-1"
+        },
+        {
+            "input": "abbbbacbbacb",
+            "output": "-1"
+        },
+        {
+            "input": "baccba",
+            "output": "-1"
+        },
+        {
+            "input": "cabcc",
+            "output": "1"
+        },
+        {
+            "input": "ccccaabcccbb",
+            "output": "-1"
+        },
+        {
+            "input": "aacccacccbaa",
             "output": "9"
         },
         {
-            "input": "cabccabaaccaa",
+            "input": "ccbcacbbbbccccc",
+            "output": "4"
+        },
+        {
+            "input": "baccab",
             "output": "-1"
         },
         {
-            "input": "abbaacbabbcabac",
+            "input": "cabcbacbcc",
             "output": "-1"
         },
         {
-            "input": "bcbcbcba",
-            "output": "7"
-        },
-        {
-            "input": "caccbabcacaabccb",
+            "input": "ccbcabbabbacababcbbb",
             "output": "-1"
         },
         {
-            "input": "aacccaaaaccbabacaa",
+            "input": "babbbba",
             "output": "-1"
         },
         {
-            "input": "baccabaccba",
+            "input": "bbabbccca",
             "output": "-1"
         },
         {
-            "input": "cbabaabbbaacabc",
+            "input": "bbcbbbcbcabbab",
             "output": "-1"
         },
         {
-            "input": "acacaa",
+            "input": "accbbabcaaa",
             "output": "-1"
         },
         {
-            "input": "bcbabaacbabbacabca",
+            "input": "cbbabbabacabaaa",
             "output": "-1"
         },
         {
-            "input": "abbabccbacbaca",
+            "input": "accaacaabc",
+            "output": "8"
+        },
+        {
+            "input": "ccbcababbcb",
             "output": "-1"
         },
         {
-            "input": "cacbaccb",
+            "input": "cbacabbcaacbaaccabab",
             "output": "-1"
         },
         {
-            "input": "acbcc",
+            "input": "bcbaccccabbb",
+            "output": "-1"
+        },
+        {
+            "input": "acbbcbbb",
             "output": "0"
         },
         {
-            "input": "cacacbccabaccccabbaa",
-            "output": "-1"
-        },
-        {
-            "input": "babbaabcccabcababb",
-            "output": "-1"
-        },
-        {
-            "input": "aaccbcaba",
-            "output": "-1"
-        },
-        {
-            "input": "babacbbcbaacca",
-            "output": "-1"
-        },
-        {
-            "input": "abcaaaac",
+            "input": "acbbbbaa",
             "output": "1"
         },
         {
-            "input": "bbbba",
-            "output": "4"
-        },
-        {
-            "input": "caacaacabaaaccbaba",
+            "input": "cacbabcbbcababcacbcb",
             "output": "-1"
         },
         {
-            "input": "aaaacbbccca",
+            "input": "bcaabbbabab",
+            "output": "1"
+        },
+        {
+            "input": "acaabcbbcbbacb",
             "output": "-1"
         },
         {
-            "input": "cbcacacabc",
+            "input": "baabaaa",
             "output": "-1"
         },
         {
-            "input": "bcabaaaac",
+            "input": "cbbcabaaaccccbbabc",
             "output": "-1"
         },
         {
-            "input": "aaccb",
-            "output": "4"
-        },
-        {
-            "input": "abbabcbb",
-            "output": "5"
-        },
-        {
-            "input": "bcaaaccac",
-            "output": "0"
-        },
-        {
-            "input": "abaabcacbcbc",
+            "input": "abbbaccbcaaacb",
             "output": "-1"
         },
         {
-            "input": "baccababcacababcbba",
+            "input": "bccbbbbbcbbccaaacaa",
             "output": "-1"
         },
         {
-            "input": "abbcac",
+            "input": "bcbbcabababbaab",
             "output": "-1"
         },
         {
-            "input": "aaccbbccbcaab",
+            "input": "babacbcbcccac",
             "output": "-1"
         },
         {
-            "input": "bcbabbbaabcccbacbb",
+            "input": "aacbacbcbababa",
             "output": "-1"
         },
         {
-            "input": "cabbaaaaaaaaaaacacac",
+            "input": "aaaccbaab",
             "output": "-1"
         },
         {
-            "input": "bacccccabcaccaca",
+            "input": "acbabcabbbcbccabccab",
             "output": "-1"
         },
         {
-            "input": "aacbacbabcbacaacbcba",
+            "input": "cabacbbbbaccacaac",
             "output": "-1"
         },
         {
-            "input": "babccaccabbcccbaabac",
+            "input": "abccacbccbbcab",
             "output": "-1"
         },
         {
-            "input": "bbaabbbcaacbbab",
+            "input": "cccaaabbccacccb",
             "output": "-1"
         },
         {
-            "input": "aacbb",
+            "input": "cabaaaaabbcbcabbbcc",
+            "output": "-1"
+        },
+        {
+            "input": "ccabba",
+            "output": "-1"
+        },
+        {
+            "input": "cbaaacbccacaaab",
+            "output": "-1"
+        },
+        {
+            "input": "bcababcbbac",
+            "output": "-1"
+        },
+        {
+            "input": "bbbccbaca",
+            "output": "-1"
+        },
+        {
+            "input": "bcccb",
+            "output": "-1"
+        },
+        {
+            "input": "bbcaba",
             "output": "2"
-        },
-        {
-            "input": "babcca",
-            "output": "-1"
-        },
-        {
-            "input": "abbabaaacaaaccabc",
-            "output": "-1"
-        },
-        {
-            "input": "acbaabac",
-            "output": "-1"
-        },
-        {
-            "input": "acaaccaacaaabaccabbb",
-            "output": "-1"
-        },
-        {
-            "input": "baaaaaacab",
-            "output": "7"
-        },
-        {
-            "input": "acaacaabbbbacaccb",
-            "output": "-1"
-        },
-        {
-            "input": "bbaabcbcbccbac",
-            "output": "-1"
-        },
-        {
-            "input": "ccbabccac",
-            "output": "-1"
-        },
-        {
-            "input": "abcbc",
-            "output": "0"
-        },
-        {
-            "input": "baaaabcaccccccba",
-            "output": "-1"
-        },
-        {
-            "input": "bbaacccaccabc",
-            "output": "-1"
-        },
-        {
-            "input": "bbaaa",
-            "output": "-1"
-        },
-        {
-            "input": "bbcaacabaaaacc",
-            "output": "-1"
-        },
-        {
-            "input": "bbacc",
-            "output": "2"
-        },
-        {
-            "input": "bccabcabbbcacaab",
-            "output": "-1"
-        },
-        {
-            "input": "babbbbcaababcbbbaa",
-            "output": "-1"
-        },
-        {
-            "input": "bcccabbbcbcccbc",
-            "output": "4"
-        },
-        {
-            "input": "accbbbabacbaaabbb",
-            "output": "-1"
-        },
-        {
-            "input": "caccabcaabbcab",
-            "output": "-1"
-        },
-        {
-            "input": "aababbcba",
-            "output": "6"
-        },
-        {
-            "input": "cbbcbcacbbab",
-            "output": "-1"
-        },
-        {
-            "input": "acbcaabcaa",
-            "output": "-1"
-        },
-        {
-            "input": "bbbcacbb",
-            "output": "4"
-        },
-        {
-            "input": "cbbbc",
-            "output": "-1"
-        },
-        {
-            "input": "bcaaacabcccccaacbbcb",
-            "output": "-1"
-        },
-        {
-            "input": "bbacabaababcbbcb",
-            "output": "-1"
-        },
-        {
-            "input": "bbbacbcacabcbaacbab",
-            "output": "-1"
-        },
-        {
-            "input": "abbabaac",
-            "output": "7"
-        },
-        {
-            "input": "aacaaacabcbbaaabba",
-            "output": "-1"
-        },
-        {
-            "input": "aaaccabaaab",
-            "output": "-1"
-        },
-        {
-            "input": "cccbcbacbbcaab",
-            "output": "-1"
-        },
-        {
-            "input": "acbcbbaccacaaabbbbb",
-            "output": "-1"
-        },
-        {
-            "input": "baacabc",
-            "output": "-1"
-        },
-        {
-            "input": "cacbcbaaacca",
-            "output": "-1"
-        },
-        {
-            "input": "abbaabcbcbabcbabac",
-            "output": "-1"
-        },
-        {
-            "input": "cbbccbcab",
-            "output": "7"
-        },
-        {
-            "input": "bbbcbbcb",
-            "output": "-1"
-        },
-        {
-            "input": "baabaccbaabbcbbabb",
-            "output": "-1"
-        },
-        {
-            "input": "cbbbbcabbbaccbacba",
-            "output": "-1"
-        },
-        {
-            "input": "ccbaacaccbbb",
-            "output": "-1"
-        },
-        {
-            "input": "aabcaacb",
-            "output": "-1"
-        },
-        {
-            "input": "bbbcacbbabaa",
-            "output": "-1"
-        },
-        {
-            "input": "caccaacbcabbcc",
-            "output": "-1"
-        },
-        {
-            "input": "caacacccbbacbcbcbcac",
-            "output": "-1"
-        },
-        {
-            "input": "caaaccccccbab",
-            "output": "-1"
-        },
-        {
-            "input": "bacbccbaaaca",
-            "output": "-1"
-        },
-        {
-            "input": "baccbabbbaabcc",
-            "output": "-1"
-        },
-        {
-            "input": "ccaaabbcabcac",
-            "output": "-1"
-        },
-        {
-            "input": "ccbabbcbaaaaaccbabaa",
-            "output": "-1"
-        },
-        {
-            "input": "accacbbaaacbababcbcb",
-            "output": "-1"
-        },
-        {
-            "input": "bbbbbabaaccaababc",
-            "output": "-1"
-        },
-        {
-            "input": "bbbcacc",
-            "output": "4"
-        },
-        {
-            "input": "caabcababbc",
-            "output": "-1"
-        },
-        {
-            "input": "baacbabacbabab",
-            "output": "-1"
-        },
-        {
-            "input": "bcabcab",
-            "output": "-1"
-        },
-        {
-            "input": "cbcacbcacbaacbbbac",
-            "output": "-1"
-        },
-        {
-            "input": "bbbcbacabaab",
-            "output": "-1"
-        },
-        {
-            "input": "aaccbababbaaccbb",
-            "output": "-1"
-        },
-        {
-            "input": "bbcaccbbbacaccbabb",
-            "output": "-1"
-        },
-        {
-            "input": "cbbabbbbca",
-            "output": "-1"
-        },
-        {
-            "input": "cbacccbaaaaca",
-            "output": "-1"
-        },
-        {
-            "input": "bcaacaa",
-            "output": "0"
-        },
-        {
-            "input": "cbaccbacabcacabb",
-            "output": "-1"
-        },
-        {
-            "input": "cbcbcbacabbccbb",
-            "output": "-1"
-        },
-        {
-            "input": "cccbbabcbacbb",
-            "output": "-1"
-        },
-        {
-            "input": "ccccab",
-            "output": "4"
-        },
-        {
-            "input": "acccbac",
-            "output": "4"
-        },
-        {
-            "input": "bccabc",
-            "output": "3"
-        },
-        {
-            "input": "bbccbaaccabbbc",
-            "output": "-1"
-        },
-        {
-            "input": "cacbbcacbabbbc",
-            "output": "-1"
-        },
-        {
-            "input": "cacbbc",
-            "output": "1"
-        },
-        {
-            "input": "cbaaacc",
-            "output": "1"
-        },
-        {
-            "input": "acbcbbcaababbacac",
-            "output": "-1"
-        },
-        {
-            "input": "bbcbc",
-            "output": "-1"
-        },
-        {
-            "input": "cccaaabacab",
-            "output": "-1"
-        },
-        {
-            "input": "bcabcbbccacb",
-            "output": "-1"
-        },
-        {
-            "input": "cababbcabaab",
-            "output": "-1"
-        },
-        {
-            "input": "cbbabcab",
-            "output": "-1"
-        },
-        {
-            "input": "abbbacacc",
-            "output": "-1"
-        },
-        {
-            "input": "acbbbbcccbc",
-            "output": "0"
-        },
-        {
-            "input": "cabbcaac",
-            "output": "-1"
-        },
-        {
-            "input": "cbbcbbccabcaa",
-            "output": "-1"
-        },
-        {
-            "input": "ccbaaacbacbb",
-            "output": "-1"
-        },
-        {
-            "input": "cacbaba",
-            "output": "-1"
-        },
-        {
-            "input": "abacbbaaacaacb",
-            "output": "-1"
         }
     ]
 }

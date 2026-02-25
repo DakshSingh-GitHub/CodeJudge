@@ -1,0 +1,661 @@
+{
+    "id": "sorting_the_sentence",
+    "title": "Sorting the Sentence",
+    "description": "A sentence is a list of words that are separated by a single space with no leading or trailing spaces. Each word consists of lowercase and uppercase English letters. A sentence can be shuffled by appending the 1-indexed word position to each word then rearranging the words in the sentence. Given a shuffled sentence s, reconstruct and return the original sentence.",
+    "input_format": "A single string s.",
+    "output_format": "The original sentence.",
+    "constraints": {
+        "s.length": "2 <= s.length <= 200"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "is2 sentence4 This1 a3",
+            "output": "This is a sentence"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "is5 sentence2 This3 case4 a6 test1",
+            "output": "test sentence This case is a"
+        },
+        {
+            "input": "sentence2 case3 a5 is1 This6 test4",
+            "output": "is sentence case test a This"
+        },
+        {
+            "input": "test4 a6 This3 case1 is5 sentence2",
+            "output": "case sentence This test is a"
+        },
+        {
+            "input": "test4 case1 a5 sentence2 is3 This6",
+            "output": "case sentence is test a This"
+        },
+        {
+            "input": "sentence1 a4 This3 test2 case6 is5",
+            "output": "sentence test This a is case"
+        },
+        {
+            "input": "sentence6 This5 is4 a3 case1 test2",
+            "output": "case test a is This sentence"
+        },
+        {
+            "input": "This3 case1 sentence5 is6 a2 test4",
+            "output": "case a This test sentence is"
+        },
+        {
+            "input": "This5 a4 sentence3 case6 is1 test2",
+            "output": "is test sentence a This case"
+        },
+        {
+            "input": "case4 is5 a6 sentence2 This3 test1",
+            "output": "test sentence This case is a"
+        },
+        {
+            "input": "test6 This3 is5 a1 case4 sentence2",
+            "output": "a sentence This case is test"
+        },
+        {
+            "input": "case3 is6 test4 This2 sentence5 a1",
+            "output": "a This case test sentence is"
+        },
+        {
+            "input": "test3 This4 sentence6 is5 a2 case1",
+            "output": "case a test This is sentence"
+        },
+        {
+            "input": "test4 case2 sentence1 is6 This5 a3",
+            "output": "sentence case a test This is"
+        },
+        {
+            "input": "test6 case4 This3 a2 is5 sentence1",
+            "output": "sentence a This case is test"
+        },
+        {
+            "input": "sentence1 test2 is5 a3 case6 This4",
+            "output": "sentence test a This is case"
+        },
+        {
+            "input": "a4 sentence3 case2 is6 This1 test5",
+            "output": "This case sentence a test is"
+        },
+        {
+            "input": "a1 sentence6 This5 is3 test2 case4",
+            "output": "a test is case This sentence"
+        },
+        {
+            "input": "is4 a6 case1 This5 test2 sentence3",
+            "output": "case test sentence is This a"
+        },
+        {
+            "input": "This6 case1 test3 sentence5 a4 is2",
+            "output": "case is test a sentence This"
+        },
+        {
+            "input": "This2 is1 a4 test5 sentence6 case3",
+            "output": "is This case a test sentence"
+        },
+        {
+            "input": "a6 test2 case1 is3 sentence4 This5",
+            "output": "case test is sentence This a"
+        },
+        {
+            "input": "a1 This3 test5 sentence4 case6 is2",
+            "output": "a is This sentence test case"
+        },
+        {
+            "input": "This6 test3 sentence5 is1 case4 a2",
+            "output": "is a test case sentence This"
+        },
+        {
+            "input": "sentence5 This6 is2 case3 a1 test4",
+            "output": "a is case test sentence This"
+        },
+        {
+            "input": "This3 sentence5 a1 case4 test6 is2",
+            "output": "a is This case sentence test"
+        },
+        {
+            "input": "This2 case3 test5 sentence4 is6 a1",
+            "output": "a This case sentence test is"
+        },
+        {
+            "input": "sentence3 is6 test2 This4 case5 a1",
+            "output": "a test sentence This case is"
+        },
+        {
+            "input": "sentence4 a5 case2 test1 is3 This6",
+            "output": "test case is sentence a This"
+        },
+        {
+            "input": "is3 This4 test6 case2 a5 sentence1",
+            "output": "sentence case is This a test"
+        },
+        {
+            "input": "sentence5 This1 case3 is2 test6 a4",
+            "output": "This is case a sentence test"
+        },
+        {
+            "input": "This3 sentence5 is1 a6 test2 case4",
+            "output": "is test This case sentence a"
+        },
+        {
+            "input": "sentence4 a5 This2 is6 test1 case3",
+            "output": "test This case sentence a is"
+        },
+        {
+            "input": "is1 sentence3 case4 test6 This2 a5",
+            "output": "is This sentence case a test"
+        },
+        {
+            "input": "test4 a1 This6 case3 is5 sentence2",
+            "output": "a sentence case test is This"
+        },
+        {
+            "input": "case5 This2 test6 a1 is4 sentence3",
+            "output": "a This sentence is case test"
+        },
+        {
+            "input": "a1 case5 is2 This6 test4 sentence3",
+            "output": "a is sentence test case This"
+        },
+        {
+            "input": "This6 sentence5 test4 case1 a3 is2",
+            "output": "case is a test sentence This"
+        },
+        {
+            "input": "test4 This5 case6 sentence3 a1 is2",
+            "output": "a is sentence test This case"
+        },
+        {
+            "input": "test6 sentence1 case4 This2 is3 a5",
+            "output": "sentence This is case a test"
+        },
+        {
+            "input": "This5 test3 is1 sentence2 case6 a4",
+            "output": "is sentence test a This case"
+        },
+        {
+            "input": "is5 case1 test6 a4 This2 sentence3",
+            "output": "case This sentence a is test"
+        },
+        {
+            "input": "test5 a3 sentence2 is6 case1 This4",
+            "output": "case sentence a This test is"
+        },
+        {
+            "input": "is2 test1 This5 sentence4 a3 case6",
+            "output": "test is a sentence This case"
+        },
+        {
+            "input": "a2 sentence5 This6 case3 is1 test4",
+            "output": "is a case test sentence This"
+        },
+        {
+            "input": "case4 This2 is3 test5 sentence1 a6",
+            "output": "sentence This is case test a"
+        },
+        {
+            "input": "sentence5 This2 is3 case1 a6 test4",
+            "output": "case This is test sentence a"
+        },
+        {
+            "input": "is6 case4 a1 sentence5 test2 This3",
+            "output": "a test This case sentence is"
+        },
+        {
+            "input": "is3 test2 case1 a4 This6 sentence5",
+            "output": "case test is a sentence This"
+        },
+        {
+            "input": "case2 a3 is1 This5 test6 sentence4",
+            "output": "is case a sentence This test"
+        },
+        {
+            "input": "is5 sentence2 This1 test6 case3 a4",
+            "output": "This sentence case a is test"
+        },
+        {
+            "input": "This1 a3 case6 is2 sentence4 test5",
+            "output": "This is a sentence test case"
+        },
+        {
+            "input": "This6 is3 test1 case5 sentence4 a2",
+            "output": "test a is sentence case This"
+        },
+        {
+            "input": "sentence6 is1 test3 a2 This4 case5",
+            "output": "is a test This case sentence"
+        },
+        {
+            "input": "This5 sentence4 is3 test2 a6 case1",
+            "output": "case test is sentence This a"
+        },
+        {
+            "input": "sentence3 is2 test4 case1 a5 This6",
+            "output": "case is sentence test a This"
+        },
+        {
+            "input": "test2 a3 This4 is5 case6 sentence1",
+            "output": "sentence test a This is case"
+        },
+        {
+            "input": "This4 case5 sentence2 a1 is3 test6",
+            "output": "a sentence is This case test"
+        },
+        {
+            "input": "case1 sentence5 is2 test4 a3 This6",
+            "output": "case is a test sentence This"
+        },
+        {
+            "input": "a5 This6 case2 is1 sentence4 test3",
+            "output": "is case test sentence a This"
+        },
+        {
+            "input": "a5 This4 is2 test6 sentence3 case1",
+            "output": "case is sentence This a test"
+        },
+        {
+            "input": "test5 This2 a6 sentence3 is4 case1",
+            "output": "case This sentence is test a"
+        },
+        {
+            "input": "This1 is3 case5 a4 sentence6 test2",
+            "output": "This test is a case sentence"
+        },
+        {
+            "input": "test5 case6 is3 This2 sentence4 a1",
+            "output": "a This is sentence test case"
+        },
+        {
+            "input": "sentence4 This2 case6 is3 a5 test1",
+            "output": "test This is sentence a case"
+        },
+        {
+            "input": "sentence1 a4 case2 is5 This3 test6",
+            "output": "sentence case This a is test"
+        },
+        {
+            "input": "case5 This4 a3 is6 test2 sentence1",
+            "output": "sentence test a This case is"
+        },
+        {
+            "input": "is1 a2 sentence5 This4 test3 case6",
+            "output": "is a test This sentence case"
+        },
+        {
+            "input": "sentence3 This4 test2 a1 case6 is5",
+            "output": "a test sentence This is case"
+        },
+        {
+            "input": "This1 test4 a5 is6 sentence3 case2",
+            "output": "This case sentence test a is"
+        },
+        {
+            "input": "sentence4 test1 case6 is5 This3 a2",
+            "output": "test a This sentence is case"
+        },
+        {
+            "input": "sentence5 is4 This1 test3 case6 a2",
+            "output": "This a test is sentence case"
+        },
+        {
+            "input": "is5 This3 a4 sentence1 case2 test6",
+            "output": "sentence case This a is test"
+        },
+        {
+            "input": "a4 This3 sentence1 case6 is5 test2",
+            "output": "sentence test This a is case"
+        },
+        {
+            "input": "test1 sentence3 case5 a2 is4 This6",
+            "output": "test a sentence is case This"
+        },
+        {
+            "input": "is4 sentence3 test5 This6 case2 a1",
+            "output": "a case sentence is test This"
+        },
+        {
+            "input": "test1 case2 is4 sentence6 a3 This5",
+            "output": "test case a is This sentence"
+        },
+        {
+            "input": "a2 is5 This4 sentence3 test1 case6",
+            "output": "test a sentence This is case"
+        },
+        {
+            "input": "This1 sentence2 a3 is4 case5 test6",
+            "output": "This sentence a is case test"
+        },
+        {
+            "input": "test6 a4 sentence5 case2 This1 is3",
+            "output": "This case is a sentence test"
+        },
+        {
+            "input": "is4 a3 This1 test2 sentence6 case5",
+            "output": "This test a is case sentence"
+        },
+        {
+            "input": "sentence2 test1 a3 case4 is5 This6",
+            "output": "test sentence a case is This"
+        },
+        {
+            "input": "case5 a1 This4 is3 sentence6 test2",
+            "output": "a test is This case sentence"
+        },
+        {
+            "input": "a1 test2 case5 sentence4 is6 This3",
+            "output": "a test This sentence case is"
+        },
+        {
+            "input": "test1 is2 case4 This3 a5 sentence6",
+            "output": "test is This case a sentence"
+        },
+        {
+            "input": "is4 test2 This3 sentence1 a6 case5",
+            "output": "sentence test This is case a"
+        },
+        {
+            "input": "case1 test4 This2 is3 sentence5 a6",
+            "output": "case This is test sentence a"
+        },
+        {
+            "input": "a3 This2 test6 sentence1 is4 case5",
+            "output": "sentence This a is case test"
+        },
+        {
+            "input": "case2 a3 is6 This5 sentence4 test1",
+            "output": "test case a sentence This is"
+        },
+        {
+            "input": "sentence3 is5 a4 case6 This1 test2",
+            "output": "This test sentence a is case"
+        },
+        {
+            "input": "sentence1 is6 This2 a3 case4 test5",
+            "output": "sentence This a case test is"
+        },
+        {
+            "input": "is6 This2 test1 sentence4 a3 case5",
+            "output": "test This a sentence case is"
+        },
+        {
+            "input": "This5 is6 a4 case2 test1 sentence3",
+            "output": "test case sentence a This is"
+        },
+        {
+            "input": "is6 This5 case2 sentence3 a1 test4",
+            "output": "a case sentence test This is"
+        },
+        {
+            "input": "case6 is4 sentence2 test5 a1 This3",
+            "output": "a sentence This is test case"
+        },
+        {
+            "input": "is2 a4 test3 This5 case1 sentence6",
+            "output": "case is test a This sentence"
+        },
+        {
+            "input": "test4 sentence3 a6 is1 This2 case5",
+            "output": "is This sentence test case a"
+        },
+        {
+            "input": "test3 sentence5 This4 a1 is2 case6",
+            "output": "a is test This sentence case"
+        },
+        {
+            "input": "test1 case6 a5 is3 sentence2 This4",
+            "output": "test sentence is This a case"
+        },
+        {
+            "input": "sentence5 a3 This4 test1 is2 case6",
+            "output": "test is a This sentence case"
+        },
+        {
+            "input": "case4 This3 test1 a2 is6 sentence5",
+            "output": "test a This case sentence is"
+        },
+        {
+            "input": "test3 is6 case1 sentence2 This5 a4",
+            "output": "case sentence test a This is"
+        },
+        {
+            "input": "is4 This2 case6 a3 test1 sentence5",
+            "output": "test This a is sentence case"
+        },
+        {
+            "input": "sentence4 case5 This2 is1 test6 a3",
+            "output": "is This a sentence case test"
+        },
+        {
+            "input": "a2 sentence1 test4 is3 case5 This6",
+            "output": "sentence a is test case This"
+        },
+        {
+            "input": "a2 This5 is1 test6 sentence3 case4",
+            "output": "is a sentence case This test"
+        },
+        {
+            "input": "a1 test5 sentence4 case6 is3 This2",
+            "output": "a This is sentence test case"
+        },
+        {
+            "input": "is5 This2 case1 sentence6 test3 a4",
+            "output": "case This test a is sentence"
+        },
+        {
+            "input": "test1 is5 sentence2 This4 a3 case6",
+            "output": "test sentence a This is case"
+        },
+        {
+            "input": "test5 a4 is2 This6 sentence3 case1",
+            "output": "case is sentence a test This"
+        },
+        {
+            "input": "test5 case2 This4 sentence1 a3 is6",
+            "output": "sentence case a This test is"
+        },
+        {
+            "input": "a4 is3 case2 sentence1 test6 This5",
+            "output": "sentence case is a This test"
+        },
+        {
+            "input": "sentence6 test1 is5 This4 a3 case2",
+            "output": "test case a This is sentence"
+        },
+        {
+            "input": "This1 test2 sentence6 case5 is4 a3",
+            "output": "This test a is case sentence"
+        },
+        {
+            "input": "a1 case4 sentence2 This5 is3 test6",
+            "output": "a sentence is case This test"
+        },
+        {
+            "input": "a5 This6 test1 is2 sentence4 case3",
+            "output": "test is case sentence a This"
+        },
+        {
+            "input": "test3 sentence4 case1 a2 is5 This6",
+            "output": "case a test sentence is This"
+        },
+        {
+            "input": "is6 case5 This3 a1 test4 sentence2",
+            "output": "a sentence This test case is"
+        },
+        {
+            "input": "is6 case1 This3 sentence2 a5 test4",
+            "output": "case sentence This test a is"
+        },
+        {
+            "input": "sentence6 is2 case1 This4 test5 a3",
+            "output": "case is a This test sentence"
+        },
+        {
+            "input": "a1 is2 This6 sentence3 case5 test4",
+            "output": "a is sentence test case This"
+        },
+        {
+            "input": "a4 is2 This6 sentence3 test1 case5",
+            "output": "test is sentence a case This"
+        },
+        {
+            "input": "case2 sentence4 a6 This3 test5 is1",
+            "output": "is case This sentence test a"
+        },
+        {
+            "input": "This2 sentence5 is4 a6 case1 test3",
+            "output": "case This test is sentence a"
+        },
+        {
+            "input": "test1 This5 sentence2 is3 case6 a4",
+            "output": "test sentence is a This case"
+        },
+        {
+            "input": "is3 This2 case1 a5 test6 sentence4",
+            "output": "case This is sentence a test"
+        },
+        {
+            "input": "test3 sentence2 case1 is5 This6 a4",
+            "output": "case sentence test a is This"
+        },
+        {
+            "input": "This5 test2 a3 case1 is4 sentence6",
+            "output": "case test a is This sentence"
+        },
+        {
+            "input": "sentence5 a4 This1 test3 is2 case6",
+            "output": "This is test a sentence case"
+        },
+        {
+            "input": "case1 a2 This3 sentence4 is5 test6",
+            "output": "case a This sentence is test"
+        },
+        {
+            "input": "is4 sentence3 This1 case2 test5 a6",
+            "output": "This case sentence is test a"
+        },
+        {
+            "input": "case4 is3 a6 sentence1 This2 test5",
+            "output": "sentence This is case test a"
+        },
+        {
+            "input": "sentence6 case2 This5 test4 a1 is3",
+            "output": "a case is test This sentence"
+        },
+        {
+            "input": "sentence1 case4 This2 a3 test5 is6",
+            "output": "sentence This a case test is"
+        },
+        {
+            "input": "case2 is3 test6 sentence4 This1 a5",
+            "output": "This case is sentence a test"
+        },
+        {
+            "input": "test2 a4 sentence6 This1 is5 case3",
+            "output": "This test case a is sentence"
+        },
+        {
+            "input": "This5 is2 case3 sentence4 test6 a1",
+            "output": "a is case sentence This test"
+        },
+        {
+            "input": "case4 a1 sentence5 This2 test3 is6",
+            "output": "a This test case sentence is"
+        },
+        {
+            "input": "sentence3 a6 case4 This1 test5 is2",
+            "output": "This is sentence case test a"
+        },
+        {
+            "input": "case3 test6 a5 sentence1 is4 This2",
+            "output": "sentence This case is a test"
+        },
+        {
+            "input": "a2 This4 case6 test1 sentence5 is3",
+            "output": "test a is This sentence case"
+        },
+        {
+            "input": "This4 sentence6 test1 a5 is2 case3",
+            "output": "test is case This a sentence"
+        },
+        {
+            "input": "case2 sentence1 a6 This5 test4 is3",
+            "output": "sentence case is test This a"
+        },
+        {
+            "input": "a2 case4 This6 sentence5 test3 is1",
+            "output": "is a test case sentence This"
+        },
+        {
+            "input": "is5 sentence2 a3 test4 This6 case1",
+            "output": "case sentence a test is This"
+        },
+        {
+            "input": "a4 This3 test2 case5 sentence1 is6",
+            "output": "sentence test This a case is"
+        },
+        {
+            "input": "test3 is4 a5 This6 case2 sentence1",
+            "output": "sentence case test is a This"
+        },
+        {
+            "input": "is2 This6 case5 sentence1 test3 a4",
+            "output": "sentence is test a case This"
+        },
+        {
+            "input": "a6 case3 This1 is4 sentence2 test5",
+            "output": "This sentence case is test a"
+        },
+        {
+            "input": "This4 case2 a3 is1 test6 sentence5",
+            "output": "is case a This sentence test"
+        },
+        {
+            "input": "is1 case3 This5 test4 a2 sentence6",
+            "output": "is a case test This sentence"
+        },
+        {
+            "input": "a3 sentence4 case2 test6 is5 This1",
+            "output": "This case a sentence is test"
+        },
+        {
+            "input": "sentence4 is3 test5 a1 This2 case6",
+            "output": "a This is sentence test case"
+        },
+        {
+            "input": "case1 a4 This6 sentence3 test2 is5",
+            "output": "case test sentence a is This"
+        },
+        {
+            "input": "a2 test4 is1 case3 sentence5 This6",
+            "output": "is a case test sentence This"
+        },
+        {
+            "input": "a2 This3 test1 case6 sentence4 is5",
+            "output": "test a This sentence is case"
+        },
+        {
+            "input": "case4 sentence3 test5 a2 is6 This1",
+            "output": "This a sentence case test is"
+        },
+        {
+            "input": "case1 test3 This2 a4 is6 sentence5",
+            "output": "case This test a sentence is"
+        },
+        {
+            "input": "This4 case3 test5 sentence6 a2 is1",
+            "output": "is a case This test sentence"
+        },
+        {
+            "input": "is2 test4 This5 sentence3 a6 case1",
+            "output": "case is sentence test This a"
+        },
+        {
+            "input": "a1 test6 sentence3 case5 This2 is4",
+            "output": "a This sentence is case test"
+        }
+    ],
+    "difficulty": "easy"
+}

@@ -21,44 +21,16 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "18",
-            "output": "4181"
+            "input": "17",
+            "output": "2584"
         },
         {
-            "input": "13",
-            "output": "377"
-        },
-        {
-            "input": "27",
-            "output": "317811"
-        },
-        {
-            "input": "5",
-            "output": "8"
+            "input": "19",
+            "output": "6765"
         },
         {
             "input": "8",
             "output": "34"
-        },
-        {
-            "input": "2",
-            "output": "2"
-        },
-        {
-            "input": "30",
-            "output": "1346269"
-        },
-        {
-            "input": "9",
-            "output": "55"
-        },
-        {
-            "input": "12",
-            "output": "233"
-        },
-        {
-            "input": "22",
-            "output": "28657"
         },
         {
             "input": "26",
@@ -69,28 +41,80 @@
             "output": "46368"
         },
         {
+            "input": "16",
+            "output": "1597"
+        },
+        {
+            "input": "5",
+            "output": "8"
+        },
+        {
+            "input": "22",
+            "output": "28657"
+        },
+        {
+            "input": "9",
+            "output": "55"
+        },
+        {
+            "input": "6",
+            "output": "13"
+        },
+        {
+            "input": "20",
+            "output": "10946"
+        },
+        {
+            "input": "7",
+            "output": "21"
+        },
+        {
+            "input": "27",
+            "output": "317811"
+        },
+        {
             "input": "24",
             "output": "75025"
         },
         {
-            "input": "14",
-            "output": "610"
+            "input": "12",
+            "output": "233"
         },
         {
-            "input": "17",
-            "output": "2584"
+            "input": "13",
+            "output": "377"
         },
         {
-            "input": "16",
-            "output": "1597"
+            "input": "10",
+            "output": "89"
         },
         {
             "input": "3",
             "output": "3"
         },
         {
-            "input": "10",
-            "output": "89"
+            "input": "25",
+            "output": "121393"
+        },
+        {
+            "input": "2",
+            "output": "2"
+        },
+        {
+            "input": "1",
+            "output": "1"
+        },
+        {
+            "input": "4",
+            "output": "5"
+        },
+        {
+            "input": "14",
+            "output": "610"
+        },
+        {
+            "input": "21",
+            "output": "17711"
         },
         {
             "input": "11",
@@ -101,44 +125,20 @@
             "output": "987"
         },
         {
-            "input": "19",
-            "output": "6765"
-        },
-        {
             "input": "28",
             "output": "514229"
         },
         {
-            "input": "6",
-            "output": "13"
-        },
-        {
-            "input": "1",
-            "output": "1"
-        },
-        {
-            "input": "7",
-            "output": "21"
-        },
-        {
-            "input": "21",
-            "output": "17711"
+            "input": "18",
+            "output": "4181"
         },
         {
             "input": "29",
             "output": "832040"
         },
         {
-            "input": "25",
-            "output": "121393"
-        },
-        {
-            "input": "20",
-            "output": "10946"
-        },
-        {
-            "input": "4",
-            "output": "5"
+            "input": "30",
+            "output": "1346269"
         }
     ],
     "difficulty": "medium"

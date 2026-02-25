@@ -1,0 +1,21 @@
+{
+    "id": "divide_two_integers",
+    "title": "Divide Two Integers",
+    "description": "Given two integers dividend and divisor, divide two integers without using multiplication, division, and mod operator. Return the quotient after dividing dividend by divisor.",
+    "input_format": "A single line with dividend and divisor separated by a space.",
+    "output_format": "The quotient as an integer.",
+    "constraints": {
+        "-2^31 <= dividend, divisor <= 2^31 - 1",
+        "divisor != 0"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "10 3",
+            "output": "3"
+        }
+    ],
+    "hidden_test_cases": [],
+    "difficulty": "medium"
+}

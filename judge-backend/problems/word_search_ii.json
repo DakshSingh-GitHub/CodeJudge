@@ -17,644 +17,644 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "4 4\na a c b\nd c b b\nd a a b\nb d a b\nbee pea",
+            "input": "4 4\nc e c e\nc b e d\nd c d a\ne a c c\nbee rain apple cat",
             "output": ""
         },
         {
-            "input": "4 4\na e d a\nc e b a\nc d c a\nb d a e\neat cat bee pea",
+            "input": "4 4\nb c e d\ne a b d\nb c c a\nc a e d\nbee oath eat pea",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne a e d\nb b e c\na a c b\nc a b a\napple bee cat",
             "output": "bee"
         },
         {
-            "input": "4 4\nd c b c\na b a a\ne d a d\nb d b a\npea oath rain",
+            "input": "4 4\nb c d c\nd d d e\nd b d e\nd b c b\noath eat pea",
             "output": ""
         },
         {
-            "input": "4 4\na c a a\nc b d a\nd e e c\na c c b\nrain apple pea",
+            "input": "4 4\na b b c\nd b e d\na a d b\na c c a\napple rain oath bee",
             "output": ""
         },
         {
-            "input": "4 4\nc b c c\nb b e c\nd b e e\nc d d c\neat oath rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne c d d\nc b e c\nc e d c\nd b d b\ncat oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd b d a\nb d b a\nc b d e\ne d c d\npea rain eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd a d c\nc e c e\ne e e e\na c d e\npea oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb b a d\na a e c\nc a c d\na e d c\neat pea apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb e c e\nc b d c\nb d b b\nb b b e\neat rain cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne a b e\nb a b b\ne d b e\na a b d\nrain bee oath cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb b c d\nc a e c\nc d d e\nd e a b\npea cat bee oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\na c b c\ne b b d\nc e c d\nd e e b\nrain pea apple oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne e c d\nd d e e\ne c b a\nd b d a\noath eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd c b d\nb a a a\nb b c e\ne e a a\noath eat rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne e a e\na a d d\nc d a c\na e b e\napple bee pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\nc e b a\na d e d\nc a e b\nb e e b\nbee apple",
+            "input": "4 4\nb b e c\na a d d\ne b d e\ne a a b\noath bee",
             "output": "bee"
         },
         {
-            "input": "4 4\nd a a a\ne a a c\ne c e b\ne d b c\noath apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne c b c\na a a b\na d e c\nb c e c\neat bee apple cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne b d e\na d e b\nc b c a\nc d d e\nrain eat bee pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd e b e\nc e c d\nb a a c\nb c e c\napple eat oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne a b b\nd c a d\nb a c d\nb c d e\nrain cat apple pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd c d a\nb d d a\nc a c c\na d e e\npea bee apple eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb b c e\nb c d d\nb c b d\nd a a b\nbee rain apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\na a b a\nc d e e\nb b a a\nd e b d\npea eat cat oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd c e a\nc e e a\nc b d a\na a a d\neat cat apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd c e c\nd c c b\na c e c\nc d b d\nbee pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\na a c a\na a b c\nb d d d\nd e e d\nrain eat oath apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb e b e\na c a d\nd d a b\na d a b\napple cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd a b c\nd c b d\nb e b d\nb a e c\nrain cat apple oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\na e a e\ne c e c\ne d e d\nb b e c\nrain eat apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\na e d d\nd d c b\nc d b e\na d a c\napple cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\na c c b\na c c c\nd e b d\ne d e a\neat oath apple bee",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb d a c\nb b a a\nc c c b\nc c e e\napple bee",
+            "input": "4 4\nd d d e\nc e d e\nd d a b\nd e a d\nrain bee apple",
             "output": "bee"
         },
         {
-            "input": "4 4\nd d b d\nc c e c\ne d d e\ne c b b\noath rain pea",
+            "input": "4 4\na b d e\nc e d e\ne c a a\na c a e\nbee cat rain eat",
             "output": ""
         },
         {
-            "input": "4 4\nb e e b\nd a d d\ne c e b\nc c e e\ncat bee eat pea",
+            "input": "4 4\nc b b b\nc e a b\ne e e a\nc b e e\noath pea rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb b d b\na d b d\nd d b d\na d c a\napple eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne d e d\ne b d b\ne a c b\na c b c\napple eat cat rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne e a b\nc e c e\ne d e b\nc c e c\nbee oath pea cat",
             "output": "bee"
         },
         {
-            "input": "4 4\nc e a e\ne b b c\nc d c c\nc d e a\neat oath",
+            "input": "4 4\na c b c\ne e a d\nd d d c\ne d c e\neat pea cat oath",
             "output": ""
         },
         {
-            "input": "4 4\nb e a b\nd d e b\nc d c b\nb b e d\neat apple rain oath",
+            "input": "4 4\nc e d b\na d e b\nb a a e\nb e d b\noath pea",
             "output": ""
         },
         {
-            "input": "4 4\na e e b\ne a e a\na d a c\ne d c c\npea apple eat",
+            "input": "4 4\nb e c a\nc e b e\na a b a\na d e d\napple eat rain cat",
             "output": ""
         },
         {
-            "input": "4 4\nb a d b\na a c c\na d a e\nd e b c\napple rain",
+            "input": "4 4\na b c c\nd d e c\nb c c a\nb e a d\nbee pea cat",
             "output": ""
         },
         {
-            "input": "4 4\nd e d e\ne c e d\nd b a c\ne c b e\nbee rain eat",
+            "input": "4 4\nb d d e\nb b a a\nb a e a\nb e c b\noath bee eat",
             "output": ""
         },
         {
-            "input": "4 4\na d e b\na e b c\nb b d a\ne b d c\nrain eat cat pea",
+            "input": "4 4\na e c c\nb b e c\nc c e c\nd e b e\nrain cat",
             "output": ""
         },
         {
-            "input": "4 4\nb e a c\ne e e d\na e a e\ne c e c\npea oath",
+            "input": "4 4\ne c e c\ne b a b\ne b e d\nc c c a\napple eat",
             "output": ""
         },
         {
-            "input": "4 4\nb e e a\nc c c b\na e a a\na b e e\nbee pea",
+            "input": "4 4\nd d c b\ne d b a\nd e e a\nd d e b\noath eat cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb a e a\nd c a c\nd a b a\nd c e a\nbee pea",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc b e e\ne a c d\nd a a a\na d d d\noath cat eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb d e a\nc a c e\nc d a c\ne e d d\noath eat cat apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd b e d\nd c a d\na d e c\nd a e e\nrain pea oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc d b c\na d d b\nd a c c\nd b d b\npea bee apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\na e d b\na e a a\nc a d c\na a c e\neat cat bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd b d e\nc d a e\ne c d d\nb d a a\npea rain oath eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb b b e\nc a c b\na a b a\nc a d b\napple cat rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb c b a\na c e d\nc d a a\nd d d c\napple eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb e a d\nb d b e\na d e c\na b a d\napple pea cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc a c e\nb c b e\nb b d a\nb e c c\npea apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne a c c\nd b d a\nd a a d\nd e e b\napple bee",
             "output": "bee"
         },
         {
-            "input": "4 4\na e e d\nd a b c\nd a a d\nb e e a\neat cat",
+            "input": "4 4\nd a e d\nd a e e\ne a d b\nd b a b\npea cat apple eat",
             "output": ""
         },
         {
-            "input": "4 4\nb c a a\ne b d d\na a b d\nc c d b\ncat apple eat",
+            "input": "4 4\ne d d a\na e c a\nb b c c\nb e c b\napple oath",
             "output": ""
         },
         {
-            "input": "4 4\nb d c c\nd e e a\nd b e c\na e e a\npea cat apple oath",
+            "input": "4 4\na b b d\na d b c\na a d b\nd e d e\nbee apple rain",
             "output": ""
         },
         {
-            "input": "4 4\nb a b e\nb a a a\nd e e d\ne c e c\neat apple oath cat",
+            "input": "4 4\na a a c\nc d c a\na c a e\ne e b c\npea cat apple rain",
             "output": ""
         },
         {
-            "input": "4 4\nb a a c\nc c a d\na c a b\nd b e b\neat apple cat oath",
+            "input": "4 4\nd c b d\ne c d d\nc b c d\nb c b d\noath cat",
             "output": ""
         },
         {
-            "input": "4 4\ne a a d\ne e e b\nd b e d\na a a c\neat cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\na b c b\nd a d c\nb d a d\nc e d e\ncat rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\nc c c c\ne c d c\nd a a c\ne e e d\neat apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne e e c\nd a c a\nc a d b\nc e a c\neat apple bee oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb c c e\nd b a d\nc c b c\nd c b d\napple oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd b c b\ne a c c\na e e c\nc d e e\nbee eat cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nc d d b\na a c c\na c b d\na a b e\nrain bee",
-            "output": ""
-        },
-        {
-            "input": "4 4\na c e b\nc a c b\na b d d\ne a c c\napple bee",
-            "output": ""
-        },
-        {
-            "input": "4 4\na b b d\na c e b\na c a a\ne d d e\noath rain apple cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb c c a\na a c d\na b d a\nb d c b\napple pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\na c d e\ne d c e\nc e a b\ne e b a\napple rain oath cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd b c d\na c b d\ne d c d\ne e a c\npea oath eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\na c b b\nb d e a\nb d c c\ne e c c\nbee cat pea apple",
+            "input": "4 4\na c d b\nb b d e\ne d a e\ne c d d\nbee eat",
             "output": "bee"
         },
         {
-            "input": "4 4\ne b a e\na b a e\nb a d b\na d a e\nbee pea oath apple",
+            "input": "4 4\nd c c e\nb c e c\nb e a b\ne b e e\nbee apple pea",
             "output": "bee"
         },
         {
-            "input": "4 4\nd c c d\ne d c d\ne d d c\ne c b e\noath bee",
+            "input": "4 4\nb d c c\nb d b b\nb d b d\nb a d d\neat cat bee apple",
             "output": ""
         },
         {
-            "input": "4 4\nb c b d\nc d b b\nd a b d\ne a e e\npea apple bee cat",
+            "input": "4 4\na c c b\nc d d a\nb b b a\na d b e\noath eat rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb a d a\ne b a e\nd e c a\nb b a b\ncat pea apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd b c c\nc a b a\ne c a a\nc e e e\ncat pea rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd d b a\nb d e b\nd b c a\nd b a a\neat pea",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd e b a\nd a c e\nc d a d\ne e a e\noath pea rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb c c d\nd a d a\nb d e c\na d a b\nrain pea eat cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb c a a\ne d d a\nc e d b\nd c b e\neat oath rain bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\na b d a\na b e a\nb b e c\ne b d b\ncat oath pea apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne b e e\ne b d a\nc b e e\ne b c d\noath eat rain cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd c b d\nd d a c\nb d c a\nd b d b\noath rain pea bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc e a e\nb b b a\nd e e b\nc a a a\ncat rain eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne d a b\nc e c c\nb d e c\nc c c d\neat apple pea",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc c c c\nd b a b\na b d b\nc d d c\nbee eat pea",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne e e b\nd d d c\nd e d d\ne a b d\napple bee cat oath",
             "output": "bee"
         },
         {
-            "input": "4 4\ne d b b\nc d b d\nd b a d\ne b e b\noath pea",
+            "input": "4 4\nc e c b\nb b b e\na a e b\ne e a a\noath rain cat apple",
             "output": ""
         },
         {
-            "input": "4 4\nb d d d\na e c a\nd b e b\nc a b d\ncat pea",
+            "input": "4 4\nc e d c\nb b d c\nd d b d\ne a b c\ncat rain",
             "output": ""
         },
         {
-            "input": "4 4\ne a a b\na d b c\nb a b e\nc a d c\noath rain bee eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd c d a\nc c d b\nd d a e\ne a c e\nbee eat",
+            "input": "4 4\nc e a d\nd e e d\nc a e e\ne e b a\nrain pea bee eat",
             "output": "bee"
         },
         {
-            "input": "4 4\nd b d e\nd c b a\ne b a e\na e c e\ncat apple",
+            "input": "4 4\nd e e b\ne a c e\na d d c\nb c a a\napple rain",
             "output": ""
         },
         {
-            "input": "4 4\na a b c\ne c b e\nc b a a\na d b e\noath rain pea",
+            "input": "4 4\na a a b\na e d b\nb a e c\nc a d a\nbee rain oath",
             "output": ""
         },
         {
-            "input": "4 4\na b d d\nb a d e\na a e a\na a c a\ncat pea eat apple",
+            "input": "4 4\na a c d\nc a e b\nb b d e\ne a e a\nbee cat",
             "output": ""
         },
         {
-            "input": "4 4\nb b b a\nd a e e\na c a d\ne a a c\ncat bee eat rain",
+            "input": "4 4\na c a b\ne d e d\na a c d\nd b c a\ncat rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\na a b a\na a a a\na c c b\na a c e\napple oath rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne b a a\ne a a a\na c d e\nb e b c\npea cat oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\na a e d\nd c c d\nc d a d\nb d e b\ncat bee apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb b a a\nb b a c\na d b d\nd c d c\napple rain cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd e d d\nd a e c\nc e a a\nb e c b\napple pea bee",
             "output": "bee"
         },
         {
-            "input": "4 4\na a d c\nd a a c\nb d b a\nb c d e\ncat pea apple eat",
+            "input": "4 4\nc e c a\na a c d\ne b c b\ne a b e\ncat apple",
             "output": ""
         },
         {
-            "input": "4 4\na b d e\nd d d e\nb a b a\nc a e a\nbee pea apple",
+            "input": "4 4\nc d b b\nc e a e\nd a d c\ne c e a\napple rain pea",
             "output": ""
         },
         {
-            "input": "4 4\nc a c c\nb c c a\na c e a\na a c a\napple pea eat",
+            "input": "4 4\nc c d e\ne b e d\na d c a\ne e e e\napple bee",
             "output": ""
         },
         {
-            "input": "4 4\nc c d e\nd d e d\nd b a b\nb e d e\neat oath bee",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb c c a\ne e a c\nb a e d\ne d c e\napple rain oath eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd c c b\ne b d e\nd c c d\na a c d\noath rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb e a b\nc d e c\nc e c a\ne b a a\nrain cat eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne c e d\ne d d b\ne b e b\nd c c c\napple cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd d c a\nd e a d\nb d d d\ne b d a\napple eat oath rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\nc b c c\nc d c d\ne c a c\ne c c b\napple bee rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb a c b\ne c b e\nb d a b\nd c a a\npea cat rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\nc d d c\nd d a c\nc a b e\na d b c\noath cat rain bee",
-            "output": ""
-        },
-        {
-            "input": "4 4\nc e d e\na b b a\na c d a\nd a d b\nrain pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\na e a e\nb d e a\nc d a e\nd a a e\napple cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd c e b\nb b c c\nb a c d\nd b c b\napple cat oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb c a a\nc b b e\ne b a e\na a b e\napple oath rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne e c a\nc a c a\ne c b b\nd b a d\noath eat cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne a b a\nd a a a\nb b b e\nd e b e\neat apple bee rain",
+            "input": "4 4\nd b d c\ne b e e\nb b b e\nc e a a\nbee cat apple",
             "output": "bee"
         },
         {
-            "input": "4 4\ne a a a\nb c e b\na d c c\na a d c\nbee pea",
+            "input": "4 4\na e e e\ne b a e\nd a a d\nc d c b\neat pea",
             "output": ""
         },
         {
-            "input": "4 4\nb b a c\nb a a c\ne c d d\nd a b c\napple cat",
+            "input": "4 4\nb a e d\ne e d c\na e d d\nc a c b\nrain cat apple",
             "output": ""
         },
         {
-            "input": "4 4\na e e e\nb c a a\nb e d a\nc a d e\noath apple rain",
+            "input": "4 4\na d c b\nd c d c\nc b e b\nb e d d\ncat pea",
             "output": ""
         },
         {
-            "input": "4 4\ne d e b\nc e b c\na b a a\nd c d c\nbee eat",
+            "input": "4 4\nc b d c\nc d b d\ne b e a\nd c b d\neat oath apple cat",
             "output": ""
         },
         {
-            "input": "4 4\nd d c d\nc a d a\ne c e d\nb a b c\ncat apple bee",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb d e d\nb e d a\na c a c\nc a d d\ncat oath rain eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb d c c\nc a d c\nb c e c\nd a d d\napple eat pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne d b e\ne a e e\nc d a c\na b b d\nbee cat",
+            "input": "4 4\ne a c d\nd e a e\ne d b a\na e e c\ncat rain bee",
             "output": "bee"
         },
         {
-            "input": "4 4\nb d c b\nd a c d\na a c c\nc e b a\npea bee oath",
+            "input": "4 4\ne c c e\nd a c d\nc a b e\ne b d c\nrain bee oath cat",
             "output": ""
         },
         {
-            "input": "4 4\ne d d a\na c c a\nd a e c\nd a b d\nrain apple",
+            "input": "4 4\nb b e a\nd b c e\nb d b b\ne b c b\napple cat rain",
             "output": ""
         },
         {
-            "input": "4 4\nd c e c\ne a d b\na b d a\nb d a c\noath cat pea",
+            "input": "4 4\na e a e\na b a e\nd b d e\na b c b\napple oath",
             "output": ""
         },
         {
-            "input": "4 4\nb d d e\nb c b b\nb c b d\nb d c b\nrain apple oath",
+            "input": "4 4\nb d b c\nc e b b\nc d e d\nd e a b\nbee pea eat",
             "output": ""
         },
         {
-            "input": "4 4\nd c a c\ne d b b\nb e d b\ne e b c\nrain pea bee",
+            "input": "4 4\ne b d d\na c c a\nc d b e\nb c a e\nbee rain",
             "output": "bee"
         },
         {
-            "input": "4 4\ne c d a\nb e a b\ne c a a\ne c e a\nrain bee",
+            "input": "4 4\nd b e c\nd a e e\nd c d a\na a c d\noath apple rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb a b a\nc c a c\nb d c b\nb d d d\nrain pea cat apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne a b a\nb b a c\ne a d c\nc d b c\npea bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd c b c\nc d b d\nd b b b\nd b d e\nbee oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd e c b\na c d e\nb c a b\nd c a e\neat bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd c a a\nc e e a\na b a d\ne c a a\nbee oath apple rain",
             "output": "bee"
         },
         {
-            "input": "4 4\nd c d e\nb d b a\nc a d c\nb d a c\nrain pea eat",
+            "input": "4 4\nc e c e\nc a c b\nd c c b\nd d c a\ncat eat",
             "output": ""
         },
         {
-            "input": "4 4\nb d a a\nc a b c\nb e b e\nc c b b\ncat apple rain",
+            "input": "4 4\nc c e a\na a a d\na a c e\nd e d a\nbee rain oath",
             "output": ""
         },
         {
-            "input": "4 4\na b c b\nc d a c\nb a b c\na b c c\nbee pea",
+            "input": "4 4\nb e c c\na b e a\nb c d e\nc c a a\npea bee",
             "output": ""
         },
         {
-            "input": "4 4\na b d d\nb b d d\nd d b c\nb b e a\npea apple",
+            "input": "4 4\nb e a b\nd c a e\nb e a b\na a e a\nrain oath apple",
             "output": ""
         },
         {
-            "input": "4 4\na a b c\na b a a\na a c d\nd e a c\nbee eat cat",
+            "input": "4 4\na d e b\na c d c\na a b e\na b d c\nrain apple bee pea",
             "output": ""
         },
         {
-            "input": "4 4\ne a c b\ne b c d\nd b b a\nd b b a\nrain cat",
+            "input": "4 4\ne c c c\na e e d\nc a e d\nc b a e\ncat oath eat apple",
             "output": ""
         },
         {
-            "input": "4 4\nc d e e\nd a c e\ne c b c\nd a d b\neat apple oath",
+            "input": "4 4\na d b a\nb b a a\nd b e d\nd d a a\noath apple rain",
             "output": ""
         },
         {
-            "input": "4 4\nb d c e\na c d e\nb a d e\nd b e b\napple bee eat",
+            "input": "4 4\nb d c e\na d c e\ne a b a\nb c d b\napple bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\na c d e\nb a b b\nc d e e\na a c b\ncat rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb e d b\ne a c b\ne c a e\nb a a c\npea cat apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb d d d\ne d d e\nc b b a\ne a c d\napple oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd c d a\nb e b a\nb c e a\nc a c c\neat cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne a b d\nc b c d\nc d a a\ne b e c\nrain pea apple oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\na b e b\na c a a\nb e c e\na e d e\napple oath eat cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc b b a\ne e b b\ne e e d\nd c a d\napple eat bee cat",
             "output": "bee"
         },
         {
-            "input": "4 4\nd d d c\nb b b e\nb c a d\nd b a c\neat bee pea",
+            "input": "4 4\nc e d a\nd a a c\ne b e e\nd d a e\npea rain oath",
             "output": ""
         },
         {
-            "input": "4 4\na b e e\nd c c d\nc a a d\nb b a a\napple rain cat pea",
+            "input": "4 4\na d b a\na e e c\nc c e b\na c a b\noath cat apple",
             "output": ""
         },
         {
-            "input": "4 4\ne c e e\ne c c c\ne e d c\nd c a c\napple rain cat pea",
+            "input": "4 4\nb a b e\nd d a e\nc d b e\nc b a e\ncat rain",
             "output": ""
         },
         {
-            "input": "4 4\nc a e e\ne d e d\na e d e\nc c c b\ncat oath rain apple",
+            "input": "4 4\nc c e b\nc b c c\ne b b a\ne e c a\npea oath",
             "output": ""
         },
         {
-            "input": "4 4\na e a c\na a b d\na b d c\nc c d c\neat pea",
+            "input": "4 4\ne e d c\nc d a a\nd e c a\na c c d\neat oath",
             "output": ""
         },
         {
-            "input": "4 4\nb e c d\ne e c e\nc e a b\nd d c e\noath eat apple",
+            "input": "4 4\ne e b a\na a c d\nd c d b\nd d d b\ncat apple rain",
             "output": ""
         },
         {
-            "input": "4 4\nc e d e\na a e b\nc b b b\ne b c e\nrain apple eat oath",
+            "input": "4 4\nd c b c\nd a d a\ne a e d\nd a b d\noath bee cat pea",
             "output": ""
         },
         {
-            "input": "4 4\nd a c c\nc d c d\na d e d\ne e c b\neat oath pea cat",
+            "input": "4 4\nb a c b\ne b e d\nb a d e\nd d e e\napple bee pea",
             "output": ""
         },
         {
-            "input": "4 4\ne e b a\nc e c b\na b a e\ne b b b\napple pea oath",
+            "input": "4 4\nb a d e\nb e b e\nc a a d\nd a b e\neat cat apple",
             "output": ""
         },
         {
-            "input": "4 4\nb c d e\ne c b b\nd d b e\nb b d c\npea bee eat cat",
+            "input": "4 4\ne c c d\nc d c e\na b b e\nd d a e\neat cat",
             "output": ""
         },
         {
-            "input": "4 4\nc e d b\ne c c c\ne a e a\nb d d c\ncat eat apple pea",
+            "input": "4 4\nd c e b\ne c b b\nc a e d\nc e c d\nbee rain oath pea",
             "output": ""
         },
         {
-            "input": "4 4\ne e c b\na a e e\nb a c d\ne c e d\noath pea cat rain",
+            "input": "4 4\nb e c b\nc a e c\nd c d d\na a b d\nrain cat",
             "output": ""
         },
         {
-            "input": "4 4\na e a a\nc d b e\nb e a e\ne e e a\nrain cat eat bee",
+            "input": "4 4\ne a e c\nc c e a\ne e d d\na a e b\ncat oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc e b d\na a b b\nd d b c\nd b a d\neat cat oath pea",
+            "output": ""
+        },
+        {
+            "input": "4 4\na d c c\nc d d e\nc e e c\nc e c d\npea rain bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne a e d\nd d a a\ne c e e\nc b e b\ncat eat apple bee",
             "output": "bee"
         },
         {
-            "input": "4 4\nd a d c\nb a b a\na e a a\ne b e e\nrain oath cat",
+            "input": "4 4\nd c e b\ne a b e\na a e d\nc a b e\ncat pea",
             "output": ""
         },
         {
-            "input": "4 4\nc e d e\nb c d c\nd e a e\ne d d e\napple rain oath",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd d d b\nc e c c\nb e a b\nc d d b\nrain apple cat eat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb d e c\ne b c d\na d a c\nc c e e\neat pea cat rain",
-            "output": ""
-        },
-        {
-            "input": "4 4\na b a d\na e a a\nd d c e\na c b b\napple pea cat bee",
-            "output": ""
-        },
-        {
-            "input": "4 4\na e a a\nd c d b\nb c d e\nd e b d\nbee cat eat pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb c b d\nc b e d\ne c d c\ne c d c\napple rain cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nb e a e\nc b d a\nd b e e\nc c e e\neat apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd a a b\nb a a e\nd e e c\nb b b a\ncat apple bee",
+            "input": "4 4\nb e e a\na a a d\nb e a a\nd b c e\npea bee apple eat",
             "output": "bee"
         },
         {
-            "input": "4 4\na a a c\nd d c e\nd c e a\na b c a\noath bee cat rain",
+            "input": "4 4\nb c c b\nd b d e\ne c e c\na c b c\neat rain",
             "output": ""
         },
         {
-            "input": "4 4\nc c e a\nb c b e\ne c e b\nb a e e\nrain cat",
+            "input": "4 4\ne d b b\na c a d\nc c e d\nb b a d\noath eat pea",
             "output": ""
         },
         {
-            "input": "4 4\na d d e\nc d a c\nc b a c\nd d a d\neat cat",
+            "input": "4 4\na a a b\nb e b b\ne c d d\nb e a e\nrain oath",
             "output": ""
         },
         {
-            "input": "4 4\nd b b d\nb d b a\ne e c d\nc d b e\npea apple",
+            "input": "4 4\nc b e a\na b d c\nd e c d\na b d d\ncat bee apple",
             "output": ""
         },
         {
-            "input": "4 4\nd a d b\ne b d e\nd a a c\nb a a e\nbee apple",
+            "input": "4 4\nc d a b\na c d a\na d d a\nb d d d\noath apple rain",
             "output": ""
         },
         {
-            "input": "4 4\nd c c b\nc b e d\na b d c\nb e b c\neat apple pea oath",
+            "input": "4 4\nd a b c\ne e a a\nd e b c\ne c d d\napple oath rain",
             "output": ""
         },
         {
-            "input": "4 4\ne d b d\nc b c a\ne b d b\nd d e b\neat pea bee rain",
+            "input": "4 4\nb b a d\nc d c d\nd b b b\na e b a\ncat bee",
             "output": ""
         },
         {
-            "input": "4 4\nb c a d\na e e d\nb c b b\nb c d a\noath apple pea rain",
+            "input": "4 4\nc c a d\na b d a\ne e b a\ne b a e\noath cat pea",
             "output": ""
         },
         {
-            "input": "4 4\nc e e c\ne a c a\na c d d\nc c e a\neat bee",
+            "input": "4 4\nb a a b\nd d c e\nc e e c\nb a b b\ncat apple pea",
             "output": ""
         },
         {
-            "input": "4 4\nb c c b\nd d d b\na e b b\nc c d d\nrain pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne a d a\nd b e e\nb e b e\na a e c\napple oath bee pea",
+            "input": "4 4\ne a a b\nd e a a\ne e e d\nc e b b\noath eat bee",
             "output": "bee"
         },
         {
-            "input": "4 4\nb a b d\na a b d\nd c b b\nb e b b\ncat pea bee",
+            "input": "4 4\ne d d c\nd e c d\nd e b d\nd b b a\neat oath",
             "output": ""
         },
         {
-            "input": "4 4\na d b e\na a e b\na e e b\ne e c b\nbee oath apple cat",
+            "input": "4 4\ne d e e\ne d d a\nb b a a\na e b c\nrain eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd d a e\nd c c d\nb e c e\ne c d c\nrain bee eat oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\na e b a\nc c a a\ne e d b\nc d b c\neat oath",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd c d c\nc a c d\nc e b c\nb b a d\nbee pea eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb e c c\ne b c a\nc b a a\nd c b b\napple bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc a a c\ne b a e\ne c d c\nd e e a\ncat oath bee",
             "output": "bee"
         },
         {
-            "input": "4 4\na d a e\ne c c a\nc e d e\nc c e e\noath apple bee",
+            "input": "4 4\nc c a d\nd a d d\nc e d c\nd a c c\npea eat oath apple",
             "output": ""
         },
         {
-            "input": "4 4\ne a b e\nc c d d\nc d d a\ne b d c\nbee rain oath pea",
-            "output": ""
-        },
-        {
-            "input": "4 4\ne c e d\nb a a a\nd b a e\na a c e\noath eat bee apple",
-            "output": ""
-        },
-        {
-            "input": "4 4\na d b e\nc d a a\na d b a\na e e a\nrain cat",
-            "output": ""
-        },
-        {
-            "input": "4 4\nd a d d\ne b e e\nc d c a\na b a c\nbee oath",
+            "input": "4 4\ne e a a\nb a b c\nd e e b\ne a e a\noath rain cat bee",
             "output": "bee"
         },
         {
-            "input": "4 4\ne c c b\nc d a e\nd d d b\na e b a\neat oath cat",
+            "input": "4 4\ne c c a\ne d d d\na b c e\nd d a b\npea eat rain",
             "output": ""
         },
         {
-            "input": "4 4\na c a d\nb b a e\ne c e a\nd c d d\npea bee apple rain",
+            "input": "4 4\ne b c a\ne d d b\nd d a c\nc e a d\ncat pea oath eat",
             "output": ""
         },
         {
-            "input": "4 4\nc d c b\nd a b b\nd d b a\nb c c a\nrain apple",
+            "input": "4 4\na e d c\nc e e a\nd c a b\nc c d c\neat bee",
             "output": ""
         },
         {
-            "input": "4 4\nb c c b\ne c c a\ne c c c\nb c e e\neat oath bee rain",
+            "input": "4 4\nd a e e\nd e a b\nd c b a\nb b c e\npea eat bee apple",
             "output": "bee"
         },
         {
-            "input": "4 4\nc e b b\nb a c c\nc b c b\nb d b b\npea apple",
+            "input": "4 4\na d e d\na c b b\nd e d c\nc a d d\nbee oath rain cat",
             "output": ""
         },
         {
-            "input": "4 4\nc d a b\nc d e d\nc e c b\na a b c\neat bee cat",
+            "input": "4 4\ne a a e\na a c d\ne a a d\nb a a b\nbee oath apple eat",
             "output": ""
         },
         {
-            "input": "4 4\na e c a\na c b a\nd a c e\ne e b b\neat cat oath bee",
+            "input": "4 4\nb d c a\nc c e e\nd a c b\nd b d d\npea eat oath rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\na c b a\nd e c b\na d b b\nc c c e\ncat apple bee eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc b d b\nd d c b\nd e e d\nd c e a\npea eat bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne d c c\ne a d a\ne b d b\nc e e c\napple rain oath pea",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc b c a\nc a b b\nd d a e\nc c a b\npea apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\na d c a\ne c e b\ne c d c\na d c d\noath eat pea apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc a a e\nb c e a\nb a e e\ne a b b\neat cat bee apple",
             "output": "bee"
+        },
+        {
+            "input": "4 4\nb c e c\nb a b e\nc c b e\nc c a e\neat oath rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb a a e\nb c e a\nd a d e\ne a a c\nrain apple",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd d d b\nb b d d\na b c d\na c d a\nrain eat cat",
+            "output": ""
+        },
+        {
+            "input": "4 4\nb c b c\nc a b d\na e a d\nc a a e\neat pea apple rain",
+            "output": ""
+        },
+        {
+            "input": "4 4\nd b a c\ne a e c\na e d a\ne b b d\nbee rain cat eat",
+            "output": ""
+        },
+        {
+            "input": "4 4\ne e b a\nd c c b\nd a e c\nb d b d\nbee oath pea apple",
+            "output": "bee"
+        },
+        {
+            "input": "4 4\na a e a\ne e d e\nb e d a\na d a e\neat pea apple bee",
+            "output": "bee"
+        },
+        {
+            "input": "4 4\na c e b\nb a a a\nd e c d\na d c c\napple eat bee",
+            "output": ""
+        },
+        {
+            "input": "4 4\nc e b a\ne a e b\na e d e\ne a b b\npea oath",
+            "output": ""
         }
     ],
     "difficulty": "hard"

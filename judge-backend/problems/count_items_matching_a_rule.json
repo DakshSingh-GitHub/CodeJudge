@@ -1,0 +1,661 @@
+{
+    "id": "count_items_matching_a_rule",
+    "title": "Count Items Matching a Rule",
+    "description": "You are given an array items, where each items[i] = [typei, colori, namei] describes the type, color, and name of the ith item. You are also given a rule represented by two strings, ruleKey and ruleValue. Return the number of items that match the rule.",
+    "input_format": "First line: n. Subsequent n lines: type color name. Last two lines: ruleKey and ruleValue.",
+    "output_format": "An integer representing the count.",
+    "constraints": {
+        "n": "1 <= n <= 10^4"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "3\nphone blue pixel\ncomputer silver lenovo\nphone gold iphone\ncolor\nsilver",
+            "output": "1"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "7\ncomputer silver lenovo\ncomputer gold lenovo\nphone gold pixel\nphone gold lenovo\nphone gold pixel\ncomputer gold iphone\nphone silver iphone\ncolor\npixel",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone blue lenovo\nphone blue pixel\nphone blue lenovo\nphone gold iphone\nphone silver iphone\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "6\ncomputer blue iphone\nphone gold iphone\nphone blue iphone\nphone blue pixel\nphone blue lenovo\nphone silver pixel\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "4\ncomputer silver iphone\ncomputer gold pixel\nphone blue pixel\nphone blue lenovo\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone silver pixel\nphone blue lenovo\nphone silver iphone\nphone gold lenovo\nphone blue pixel\nphone gold pixel\nname\nlenovo",
+            "output": "2"
+        },
+        {
+            "input": "7\nphone gold iphone\nphone gold lenovo\nphone gold pixel\ncomputer gold pixel\nphone gold lenovo\ncomputer silver lenovo\nphone silver lenovo\ntype\nphone",
+            "output": "5"
+        },
+        {
+            "input": "10\nphone blue iphone\ncomputer blue iphone\nphone blue pixel\nphone blue lenovo\nphone silver lenovo\nphone silver iphone\nphone blue pixel\ncomputer blue pixel\ncomputer gold lenovo\nphone silver lenovo\ntype\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone gold lenovo\nphone gold lenovo\nphone silver pixel\nphone blue pixel\nphone blue iphone\ncomputer gold lenovo\nname\npixel",
+            "output": "2"
+        },
+        {
+            "input": "8\nphone silver pixel\nphone gold pixel\nphone silver pixel\nphone gold lenovo\nphone gold pixel\nphone gold iphone\nphone silver iphone\nphone gold pixel\ncolor\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone silver pixel\nphone blue lenovo\ncomputer silver pixel\nphone blue pixel\nphone silver iphone\nphone blue iphone\ncomputer gold lenovo\nphone silver lenovo\ncomputer blue pixel\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver iphone\ncomputer silver lenovo\ncomputer silver iphone\ncomputer silver lenovo\nphone silver iphone\nname\nblue",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone gold lenovo\nphone silver lenovo\nphone blue lenovo\ncomputer silver lenovo\nphone silver lenovo\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone gold lenovo\nphone blue lenovo\ncomputer gold lenovo\nphone gold iphone\nphone gold pixel\nphone gold lenovo\nphone gold iphone\nphone silver pixel\nphone silver iphone\nphone silver iphone\ncolor\npixel",
+            "output": "0"
+        },
+        {
+            "input": "8\ncomputer silver iphone\nphone blue iphone\nphone silver iphone\nphone silver lenovo\nphone gold lenovo\nphone silver lenovo\ncomputer blue iphone\nphone silver iphone\ncolor\npixel",
+            "output": "0"
+        },
+        {
+            "input": "9\ncomputer silver iphone\nphone blue lenovo\nphone gold iphone\nphone gold pixel\nphone silver pixel\nphone silver iphone\nphone blue iphone\nphone blue pixel\ncomputer blue pixel\ncolor\nblue",
+            "output": "4"
+        },
+        {
+            "input": "10\nphone gold lenovo\ncomputer silver pixel\nphone silver lenovo\nphone silver pixel\nphone blue lenovo\ncomputer silver lenovo\nphone gold iphone\nphone gold lenovo\nphone silver iphone\ncomputer gold pixel\ncolor\niphone",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone blue iphone\ncomputer gold lenovo\nphone silver pixel\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone gold lenovo\ncomputer blue pixel\ncomputer blue pixel\ncomputer blue lenovo\nphone gold iphone\nphone blue iphone\nphone silver iphone\ncomputer silver iphone\nphone gold pixel\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone gold lenovo\ncomputer gold pixel\nphone gold lenovo\nphone gold lenovo\ncomputer blue lenovo\nphone blue iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone gold lenovo\ncomputer gold iphone\nphone silver lenovo\ntype\nblue",
+            "output": "0"
+        },
+        {
+            "input": "6\ncomputer gold pixel\nphone silver iphone\nphone silver lenovo\nphone gold lenovo\ncomputer blue pixel\nphone blue lenovo\nname\npixel",
+            "output": "2"
+        },
+        {
+            "input": "10\nphone gold lenovo\nphone gold pixel\ncomputer blue pixel\nphone blue pixel\nphone silver pixel\ncomputer silver iphone\ncomputer gold lenovo\ncomputer silver pixel\nphone gold lenovo\ncomputer blue iphone\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone silver lenovo\ncomputer silver iphone\ncomputer silver pixel\ntype\ngold",
+            "output": "0"
+        },
+        {
+            "input": "7\nphone gold lenovo\nphone silver lenovo\nphone gold lenovo\ncomputer gold pixel\nphone gold iphone\ncomputer silver pixel\nphone blue iphone\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "6\ncomputer silver iphone\nphone blue iphone\nphone silver pixel\nphone blue pixel\ncomputer gold lenovo\nphone gold iphone\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "6\ncomputer gold iphone\ncomputer gold iphone\ncomputer blue pixel\nphone gold lenovo\ncomputer gold pixel\nphone silver iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone silver iphone\ncomputer silver iphone\nphone silver pixel\nphone blue pixel\ncomputer blue lenovo\nphone silver lenovo\ncolor\niphone",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone silver iphone\ncomputer blue iphone\nphone gold iphone\nphone gold pixel\ncolor\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "8\ncomputer blue lenovo\nphone silver pixel\nphone blue lenovo\nphone gold pixel\nphone silver pixel\ncomputer gold pixel\nphone gold iphone\ncomputer silver iphone\ntype\ngold",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone gold iphone\ncomputer blue pixel\nphone gold lenovo\nphone silver lenovo\nphone silver pixel\nphone gold iphone\ncomputer silver pixel\ncomputer blue iphone\nphone silver pixel\ntype\ncomputer",
+            "output": "3"
+        },
+        {
+            "input": "8\nphone silver iphone\nphone gold iphone\nphone silver lenovo\ncomputer blue iphone\nphone gold iphone\nphone gold pixel\nphone silver pixel\nphone silver pixel\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "9\ncomputer gold lenovo\ncomputer gold lenovo\nphone blue lenovo\ncomputer silver pixel\ncomputer silver lenovo\ncomputer blue iphone\nphone silver iphone\nphone silver iphone\ncomputer gold iphone\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone blue lenovo\nphone blue lenovo\nphone silver iphone\ncomputer gold iphone\ncomputer blue iphone\nphone gold pixel\ncomputer gold pixel\ncomputer gold iphone\nphone silver lenovo\nname\npixel",
+            "output": "2"
+        },
+        {
+            "input": "6\ncomputer gold lenovo\nphone silver iphone\ncomputer silver lenovo\nphone gold iphone\ncomputer silver lenovo\nphone blue pixel\nname\niphone",
+            "output": "2"
+        },
+        {
+            "input": "10\nphone silver pixel\ncomputer gold pixel\ncomputer blue lenovo\nphone silver lenovo\nphone blue iphone\nphone silver iphone\ncomputer silver pixel\ncomputer silver lenovo\nphone gold lenovo\nphone gold iphone\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "4\ncomputer silver iphone\ncomputer silver pixel\nphone gold pixel\nphone silver lenovo\ncolor\ngold",
+            "output": "1"
+        },
+        {
+            "input": "10\ncomputer gold iphone\nphone blue pixel\nphone blue pixel\nphone gold pixel\ncomputer blue lenovo\nphone silver pixel\ncomputer silver iphone\ncomputer silver iphone\nphone silver pixel\nphone silver iphone\ncolor\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "5\ncomputer gold pixel\nphone silver pixel\nphone silver pixel\ncomputer silver lenovo\ncomputer blue lenovo\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone blue lenovo\ncomputer gold iphone\nphone blue pixel\nphone gold iphone\nphone gold pixel\nphone silver lenovo\ncomputer blue lenovo\ncomputer silver pixel\ncolor\npixel",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone silver iphone\nphone gold pixel\nphone silver lenovo\nphone silver iphone\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone blue iphone\nphone blue iphone\ncomputer blue iphone\ncomputer gold lenovo\nname\nlenovo",
+            "output": "1"
+        },
+        {
+            "input": "5\nphone gold iphone\ncomputer gold pixel\nphone gold lenovo\nphone gold iphone\ncomputer blue pixel\ncolor\ngold",
+            "output": "4"
+        },
+        {
+            "input": "7\nphone gold pixel\nphone blue pixel\ncomputer blue lenovo\ncomputer gold lenovo\ncomputer blue iphone\nphone blue iphone\ncomputer silver iphone\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "7\ncomputer silver pixel\nphone gold pixel\nphone silver pixel\nphone gold iphone\ncomputer gold lenovo\ncomputer silver lenovo\nphone blue iphone\ncolor\nsilver",
+            "output": "3"
+        },
+        {
+            "input": "3\nphone gold pixel\nphone silver iphone\nphone gold iphone\ncolor\nsilver",
+            "output": "1"
+        },
+        {
+            "input": "7\nphone silver pixel\ncomputer silver pixel\ncomputer gold iphone\nphone blue lenovo\nphone gold pixel\nphone gold lenovo\nphone gold lenovo\ncolor\ngold",
+            "output": "4"
+        },
+        {
+            "input": "6\nphone silver lenovo\nphone blue lenovo\nphone blue iphone\ncomputer gold iphone\ncomputer blue iphone\nphone gold pixel\ntype\ngold",
+            "output": "0"
+        },
+        {
+            "input": "4\ncomputer silver pixel\nphone blue lenovo\nphone blue pixel\ncomputer blue lenovo\nname\npixel",
+            "output": "2"
+        },
+        {
+            "input": "10\nphone blue lenovo\nphone silver lenovo\nphone blue iphone\nphone blue iphone\nphone gold iphone\nphone silver lenovo\nphone blue pixel\ncomputer gold iphone\ncomputer silver lenovo\ncomputer blue iphone\ncolor\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone silver lenovo\nphone gold lenovo\nphone silver iphone\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone blue pixel\ncomputer gold lenovo\nphone silver pixel\ncomputer blue pixel\nphone silver lenovo\ntype\nphone",
+            "output": "3"
+        },
+        {
+            "input": "6\nphone gold iphone\ncomputer gold iphone\ncomputer blue iphone\nphone gold pixel\ncomputer blue iphone\nphone gold iphone\nname\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone blue iphone\nphone blue pixel\nphone gold lenovo\nphone blue lenovo\nphone gold iphone\ntype\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone blue pixel\nphone blue iphone\nphone silver lenovo\ncomputer blue lenovo\nphone silver lenovo\nname\niphone",
+            "output": "1"
+        },
+        {
+            "input": "8\nphone gold pixel\ncomputer silver iphone\ncomputer gold lenovo\ncomputer blue iphone\nphone silver lenovo\ncomputer blue pixel\nphone silver pixel\nphone silver pixel\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver pixel\ncomputer silver iphone\ncomputer gold iphone\nphone blue lenovo\ncomputer gold pixel\ntype\ngold",
+            "output": "0"
+        },
+        {
+            "input": "4\ncomputer blue iphone\nphone silver pixel\nphone silver iphone\nphone blue pixel\ntype\ngold",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone blue iphone\nphone gold pixel\nphone blue iphone\nphone silver iphone\ntype\nphone",
+            "output": "4"
+        },
+        {
+            "input": "9\nphone blue lenovo\nphone blue pixel\ncomputer blue pixel\nphone silver iphone\nphone blue iphone\ncomputer gold lenovo\nphone silver iphone\nphone blue lenovo\nphone silver iphone\nname\niphone",
+            "output": "4"
+        },
+        {
+            "input": "5\ncomputer gold pixel\ncomputer blue lenovo\ncomputer gold iphone\ncomputer silver iphone\nphone blue iphone\nname\niphone",
+            "output": "3"
+        },
+        {
+            "input": "6\ncomputer gold pixel\nphone blue pixel\nphone gold pixel\nphone gold lenovo\ncomputer gold iphone\ncomputer blue iphone\nname\npixel",
+            "output": "3"
+        },
+        {
+            "input": "9\ncomputer silver pixel\ncomputer blue lenovo\nphone silver iphone\ncomputer silver lenovo\ncomputer silver iphone\ncomputer silver pixel\ncomputer silver iphone\nphone silver lenovo\nphone blue pixel\ncolor\npixel",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone gold iphone\nphone gold pixel\nphone silver lenovo\nphone blue lenovo\ncomputer blue iphone\nphone blue iphone\ncomputer gold iphone\ncomputer silver lenovo\nphone silver iphone\ncomputer blue iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone silver iphone\nphone silver pixel\nphone silver lenovo\ncomputer silver lenovo\nphone gold pixel\nphone gold pixel\nphone gold iphone\ncomputer gold iphone\ntype\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone silver pixel\ncomputer blue lenovo\nphone gold lenovo\nphone silver lenovo\nphone silver lenovo\ncomputer blue lenovo\ncomputer gold iphone\nphone gold lenovo\nphone silver lenovo\ncomputer gold iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver lenovo\nphone silver iphone\nphone silver iphone\ncomputer silver iphone\nphone silver pixel\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone blue iphone\nphone blue iphone\nphone silver iphone\nphone gold pixel\nphone gold lenovo\nname\npixel",
+            "output": "1"
+        },
+        {
+            "input": "3\ncomputer blue iphone\nphone gold lenovo\nphone blue iphone\ncolor\ngold",
+            "output": "1"
+        },
+        {
+            "input": "3\ncomputer silver pixel\ncomputer silver iphone\nphone blue pixel\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "7\nphone silver lenovo\nphone silver iphone\nphone gold lenovo\nphone silver iphone\ncomputer gold iphone\nphone blue iphone\nphone gold lenovo\ntype\ncomputer",
+            "output": "1"
+        },
+        {
+            "input": "7\ncomputer blue pixel\nphone silver pixel\ncomputer blue iphone\ncomputer silver pixel\nphone gold lenovo\nphone gold pixel\nphone silver lenovo\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone gold iphone\nphone gold lenovo\nphone gold iphone\ncomputer gold lenovo\nphone blue lenovo\ncomputer gold lenovo\ntype\nphone",
+            "output": "4"
+        },
+        {
+            "input": "10\ncomputer blue pixel\ncomputer gold iphone\nphone gold iphone\nphone blue lenovo\nphone gold iphone\nphone blue pixel\nphone blue iphone\nphone silver pixel\nphone blue pixel\nphone silver pixel\ncolor\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone gold pixel\nphone gold iphone\ncomputer blue lenovo\nphone blue pixel\ncomputer blue pixel\nphone silver iphone\nphone blue lenovo\nphone silver iphone\ncomputer silver iphone\ntype\ncomputer",
+            "output": "3"
+        },
+        {
+            "input": "8\ncomputer blue pixel\nphone blue lenovo\ncomputer blue pixel\ncomputer silver iphone\ncomputer gold lenovo\nphone blue lenovo\nphone blue lenovo\nphone blue pixel\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "6\ncomputer blue pixel\ncomputer silver pixel\ncomputer blue iphone\ncomputer blue iphone\nphone silver lenovo\nphone blue lenovo\nname\npixel",
+            "output": "2"
+        },
+        {
+            "input": "3\ncomputer silver lenovo\nphone silver iphone\nphone silver lenovo\ncolor\npixel",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone blue pixel\ncomputer silver pixel\ncomputer blue lenovo\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone blue lenovo\ncomputer gold iphone\ncomputer silver iphone\nphone silver lenovo\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "7\ncomputer blue lenovo\nphone gold iphone\nphone gold iphone\nphone blue pixel\nphone silver lenovo\nphone blue pixel\nphone blue lenovo\nname\npixel",
+            "output": "2"
+        },
+        {
+            "input": "8\nphone gold pixel\nphone gold pixel\ncomputer silver pixel\ncomputer blue iphone\ncomputer blue lenovo\nphone silver pixel\nphone silver pixel\ncomputer silver iphone\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone blue pixel\ncomputer blue iphone\nphone silver lenovo\ncomputer gold lenovo\nphone gold pixel\ntype\nphone",
+            "output": "3"
+        },
+        {
+            "input": "6\nphone gold pixel\nphone gold lenovo\nphone gold iphone\nphone gold iphone\nphone silver pixel\nphone silver pixel\nname\ngold",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone silver pixel\nphone blue pixel\nphone blue iphone\ncomputer blue lenovo\nphone blue lenovo\ncomputer gold iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone blue lenovo\nphone silver lenovo\nphone gold iphone\nphone gold pixel\nphone gold pixel\ncomputer blue pixel\ncomputer gold pixel\nphone silver pixel\nphone gold lenovo\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone silver lenovo\ncomputer silver lenovo\nphone gold lenovo\ncolor\ngold",
+            "output": "1"
+        },
+        {
+            "input": "8\nphone silver iphone\nphone gold pixel\nphone gold pixel\nphone gold pixel\nphone gold pixel\nphone blue iphone\nphone silver lenovo\nphone silver lenovo\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone gold lenovo\nphone blue iphone\nphone blue iphone\ncomputer silver iphone\nphone gold pixel\nphone blue iphone\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone gold lenovo\ncomputer gold lenovo\ncomputer blue iphone\nphone silver pixel\ncomputer gold pixel\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "7\ncomputer silver pixel\nphone blue lenovo\nphone silver pixel\nphone silver iphone\nphone silver iphone\nphone gold pixel\ncomputer silver lenovo\nname\niphone",
+            "output": "2"
+        },
+        {
+            "input": "8\ncomputer silver lenovo\ncomputer blue lenovo\nphone blue pixel\nphone silver pixel\ncomputer blue lenovo\ncomputer gold lenovo\nphone gold iphone\nphone silver iphone\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone silver lenovo\nphone silver iphone\nphone gold lenovo\nphone silver lenovo\ntype\ngold",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone gold pixel\nphone blue iphone\ncomputer gold pixel\nphone silver lenovo\ncomputer silver pixel\ncomputer silver pixel\ncomputer gold lenovo\nphone blue iphone\nphone gold lenovo\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "7\ncomputer blue pixel\ncomputer silver iphone\ncomputer silver iphone\nphone gold iphone\nphone silver pixel\nphone silver iphone\nphone silver lenovo\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone gold pixel\ncomputer silver pixel\nphone gold lenovo\nphone silver pixel\ncolor\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone silver iphone\ncomputer silver iphone\nphone gold pixel\nphone blue pixel\nphone silver pixel\ncomputer blue iphone\nphone silver pixel\nphone silver lenovo\nphone gold pixel\ntype\nphone",
+            "output": "7"
+        },
+        {
+            "input": "6\nphone gold iphone\nphone gold pixel\nphone blue lenovo\nphone blue pixel\nphone blue pixel\nphone gold pixel\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone blue lenovo\nphone blue iphone\nphone gold iphone\nphone gold lenovo\nphone silver lenovo\ncomputer silver iphone\nphone blue pixel\nphone gold lenovo\nphone blue iphone\nphone gold pixel\ncolor\nsilver",
+            "output": "2"
+        },
+        {
+            "input": "4\ncomputer blue iphone\nphone gold iphone\ncomputer gold lenovo\ncomputer silver lenovo\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone blue lenovo\nphone blue lenovo\nphone silver pixel\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone gold pixel\nphone gold pixel\nphone gold iphone\ncomputer blue pixel\nphone blue lenovo\nphone blue pixel\nphone blue iphone\ncomputer gold pixel\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "8\ncomputer blue pixel\nphone gold pixel\nphone silver pixel\ncomputer gold lenovo\ncomputer blue pixel\ncomputer silver iphone\nphone gold iphone\nphone blue pixel\nname\nlenovo",
+            "output": "1"
+        },
+        {
+            "input": "8\nphone gold pixel\nphone silver iphone\nphone blue pixel\nphone silver pixel\nphone silver pixel\ncomputer silver iphone\ncomputer blue pixel\ncomputer gold lenovo\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone gold iphone\ncomputer gold lenovo\ncomputer gold iphone\ncomputer gold pixel\nphone blue pixel\ncomputer gold lenovo\ncomputer gold iphone\nphone silver iphone\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone silver iphone\ncomputer blue iphone\nphone gold lenovo\nphone gold pixel\nphone blue lenovo\nphone silver pixel\nphone silver pixel\ncomputer silver pixel\ncomputer gold pixel\ncomputer gold lenovo\nname\niphone",
+            "output": "2"
+        },
+        {
+            "input": "3\nphone silver iphone\nphone silver pixel\ncomputer gold iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone blue pixel\nphone blue iphone\ncomputer silver pixel\nphone blue iphone\nphone blue lenovo\nphone silver lenovo\ncomputer silver lenovo\ncomputer blue lenovo\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "7\nphone silver lenovo\nphone blue pixel\nphone gold lenovo\ncomputer gold pixel\nphone blue lenovo\ncomputer gold iphone\nphone silver iphone\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "5\ncomputer blue pixel\ncomputer blue lenovo\ncomputer silver iphone\nphone gold lenovo\nphone silver iphone\nname\ngold",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone gold lenovo\nphone silver iphone\nphone gold lenovo\nphone silver lenovo\nphone blue lenovo\nphone gold lenovo\ncomputer blue pixel\nphone gold lenovo\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "8\ncomputer blue pixel\nphone gold iphone\nphone silver iphone\nphone gold lenovo\nphone silver iphone\ncomputer blue lenovo\nphone gold iphone\nphone blue lenovo\ncolor\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver lenovo\ncomputer gold lenovo\ncomputer silver lenovo\nphone gold iphone\nphone gold lenovo\nname\nblue",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone blue pixel\ncomputer silver iphone\nphone blue lenovo\ncomputer gold lenovo\nphone silver lenovo\nphone gold pixel\nphone blue pixel\nphone silver lenovo\ncomputer silver lenovo\ncomputer blue iphone\ntype\nphone",
+            "output": "6"
+        },
+        {
+            "input": "10\ncomputer blue pixel\ncomputer gold iphone\nphone silver iphone\nphone blue pixel\nphone silver iphone\ncomputer silver lenovo\ncomputer silver iphone\nphone blue iphone\nphone gold pixel\nphone silver pixel\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver iphone\nphone gold iphone\nphone blue iphone\ncomputer silver iphone\nphone blue lenovo\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone silver iphone\nphone gold iphone\nphone silver iphone\nphone gold iphone\nphone blue lenovo\nphone silver pixel\nphone gold pixel\nphone blue pixel\nphone silver iphone\nname\niphone",
+            "output": "5"
+        },
+        {
+            "input": "4\nphone blue iphone\ncomputer blue pixel\ncomputer silver pixel\ncomputer silver pixel\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone silver lenovo\ncomputer gold iphone\nphone blue lenovo\ncomputer silver iphone\ncolor\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone gold pixel\nphone silver lenovo\ncomputer gold lenovo\ntype\nphone",
+            "output": "2"
+        },
+        {
+            "input": "7\nphone silver iphone\nphone blue iphone\ncomputer silver lenovo\nphone blue lenovo\nphone blue lenovo\nphone gold pixel\ncomputer silver iphone\ncolor\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver lenovo\nphone silver pixel\ncomputer blue lenovo\nphone silver iphone\nphone silver iphone\nname\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone gold pixel\nphone silver pixel\ncomputer gold lenovo\ncomputer silver lenovo\ncomputer silver iphone\nphone silver iphone\nphone silver iphone\nphone gold pixel\nphone gold pixel\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone gold lenovo\nphone silver iphone\nphone gold pixel\nphone gold pixel\ncomputer blue lenovo\nphone blue pixel\nname\npixel",
+            "output": "3"
+        },
+        {
+            "input": "8\ncomputer silver pixel\nphone gold iphone\ncomputer blue lenovo\ncomputer gold pixel\nphone silver lenovo\nphone gold iphone\nphone gold pixel\nphone blue lenovo\ncolor\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver lenovo\ncomputer blue lenovo\nphone silver lenovo\nphone silver lenovo\nphone silver pixel\ntype\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "5\nphone silver pixel\nphone gold iphone\ncomputer gold pixel\nphone gold lenovo\nphone silver pixel\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone blue pixel\nphone gold pixel\nphone silver pixel\nphone blue pixel\nphone silver pixel\ncomputer silver lenovo\ntype\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "4\nphone blue pixel\nphone silver lenovo\nphone gold lenovo\nphone gold pixel\nname\niphone",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone silver lenovo\nphone blue lenovo\nphone silver iphone\nphone blue lenovo\nphone silver lenovo\ncomputer blue lenovo\nphone gold lenovo\nphone gold lenovo\ncomputer blue pixel\nphone silver lenovo\ncolor\ncomputer",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone silver pixel\ncomputer blue lenovo\nphone blue lenovo\nphone blue lenovo\nphone silver iphone\nphone silver lenovo\ncomputer blue pixel\nphone blue pixel\nname\nlenovo",
+            "output": "4"
+        },
+        {
+            "input": "3\nphone silver iphone\nphone blue lenovo\ncomputer silver lenovo\ntype\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "9\ncomputer silver lenovo\nphone blue iphone\nphone silver iphone\nphone silver iphone\nphone blue lenovo\nphone silver pixel\nphone gold lenovo\nphone silver lenovo\ncomputer blue iphone\ntype\nphone",
+            "output": "7"
+        },
+        {
+            "input": "5\ncomputer silver pixel\nphone gold lenovo\nphone gold pixel\ncomputer silver iphone\nphone blue iphone\ncolor\npixel",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone silver iphone\ncomputer blue iphone\ncomputer silver iphone\ncomputer gold lenovo\nphone gold lenovo\ncomputer blue lenovo\ntype\nphone",
+            "output": "2"
+        },
+        {
+            "input": "9\ncomputer silver pixel\nphone gold pixel\nphone blue lenovo\nphone silver iphone\ncomputer gold iphone\nphone silver iphone\nphone blue iphone\nphone silver iphone\nphone blue iphone\nname\nlenovo",
+            "output": "1"
+        },
+        {
+            "input": "6\nphone gold pixel\nphone silver pixel\nphone silver lenovo\nphone gold lenovo\nphone silver pixel\nphone blue iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone blue lenovo\nphone silver pixel\ncomputer silver pixel\ncomputer silver iphone\nphone silver pixel\nphone silver iphone\ncomputer blue iphone\ncomputer blue lenovo\ntype\nphone",
+            "output": "4"
+        },
+        {
+            "input": "10\nphone blue lenovo\ncomputer silver pixel\nphone silver lenovo\ncomputer silver lenovo\nphone silver pixel\ncomputer blue lenovo\ncomputer blue iphone\ncomputer blue lenovo\ncomputer gold lenovo\ncomputer silver pixel\ntype\nphone",
+            "output": "3"
+        },
+        {
+            "input": "8\ncomputer blue pixel\nphone silver iphone\nphone blue pixel\nphone silver lenovo\ncomputer gold pixel\ncomputer silver iphone\nphone gold pixel\nphone gold pixel\ntype\nphone",
+            "output": "5"
+        },
+        {
+            "input": "4\nphone silver pixel\nphone silver pixel\ncomputer blue lenovo\nphone silver iphone\ncolor\nsilver",
+            "output": "3"
+        },
+        {
+            "input": "6\nphone blue iphone\nphone gold iphone\nphone blue pixel\nphone gold pixel\ncomputer gold iphone\nphone blue iphone\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "3\ncomputer gold iphone\nphone blue pixel\nphone blue lenovo\nname\niphone",
+            "output": "1"
+        },
+        {
+            "input": "3\nphone blue pixel\nphone gold pixel\nphone silver lenovo\ntype\nblue",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone blue iphone\nphone silver iphone\ncomputer blue lenovo\nphone blue iphone\nphone silver pixel\nphone blue lenovo\ncomputer gold iphone\nphone blue lenovo\ncomputer blue pixel\nphone silver pixel\ncolor\nlenovo",
+            "output": "0"
+        },
+        {
+            "input": "4\ncomputer silver lenovo\nphone blue iphone\nphone silver lenovo\nphone gold lenovo\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone silver pixel\nphone silver pixel\nphone gold pixel\ncomputer blue lenovo\ncomputer gold iphone\nphone silver lenovo\nphone blue pixel\nphone gold pixel\ncomputer gold iphone\nname\ngold",
+            "output": "0"
+        },
+        {
+            "input": "8\nphone blue pixel\nphone silver iphone\ncomputer gold pixel\ncomputer gold lenovo\nphone gold iphone\nphone silver pixel\nphone blue lenovo\nphone silver iphone\nname\nlenovo",
+            "output": "2"
+        },
+        {
+            "input": "9\nphone silver iphone\nphone blue iphone\nphone gold lenovo\nphone blue iphone\ncomputer silver lenovo\nphone blue pixel\nphone blue lenovo\nphone silver iphone\nphone gold pixel\ntype\ngold",
+            "output": "0"
+        },
+        {
+            "input": "6\ncomputer blue lenovo\ncomputer gold pixel\ncomputer gold lenovo\nphone silver pixel\nphone gold iphone\nphone gold iphone\nname\nblue",
+            "output": "0"
+        },
+        {
+            "input": "9\ncomputer gold pixel\nphone gold lenovo\ncomputer blue pixel\ncomputer blue pixel\nphone silver pixel\nphone gold pixel\ncomputer silver lenovo\nphone blue pixel\ncomputer gold iphone\ntype\nphone",
+            "output": "4"
+        },
+        {
+            "input": "8\ncomputer silver iphone\nphone silver pixel\nphone silver iphone\nphone blue iphone\ncomputer silver lenovo\nphone gold lenovo\nphone gold iphone\nphone silver iphone\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone gold iphone\nphone silver iphone\ncomputer gold iphone\nphone silver lenovo\ncomputer gold iphone\nphone gold lenovo\ntype\niphone",
+            "output": "0"
+        },
+        {
+            "input": "5\ncomputer silver lenovo\nphone blue iphone\ncomputer silver lenovo\ncomputer silver lenovo\nphone gold lenovo\nname\npixel",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone silver pixel\nphone gold pixel\nphone silver pixel\nphone silver pixel\ncomputer silver lenovo\ncomputer silver iphone\nname\nphone",
+            "output": "0"
+        },
+        {
+            "input": "9\ncomputer gold lenovo\nphone gold pixel\nphone gold iphone\nphone gold pixel\nphone blue pixel\nphone blue pixel\ncomputer silver lenovo\nphone blue iphone\ncomputer blue lenovo\ncolor\nphone",
+            "output": "0"
+        },
+        {
+            "input": "9\nphone blue pixel\nphone silver pixel\nphone blue iphone\nphone gold pixel\nphone blue iphone\nphone blue lenovo\nphone blue lenovo\nphone gold pixel\ncomputer blue lenovo\ntype\nblue",
+            "output": "0"
+        },
+        {
+            "input": "6\nphone gold pixel\ncomputer blue iphone\nphone silver iphone\nphone blue lenovo\nphone gold lenovo\nphone silver pixel\ntype\nphone",
+            "output": "5"
+        },
+        {
+            "input": "10\nphone gold pixel\nphone silver iphone\nphone gold lenovo\nphone silver iphone\ncomputer gold iphone\nphone blue pixel\ncomputer silver lenovo\nphone gold iphone\nphone gold pixel\ncomputer silver iphone\nname\nblue",
+            "output": "0"
+        },
+        {
+            "input": "10\nphone blue iphone\nphone gold iphone\nphone blue lenovo\nphone gold lenovo\ncomputer blue pixel\nphone silver pixel\ncomputer blue lenovo\nphone gold pixel\nphone gold iphone\nphone silver pixel\nname\nsilver",
+            "output": "0"
+        },
+        {
+            "input": "3\nphone silver pixel\ncomputer blue lenovo\ncomputer blue iphone\nname\nsilver",
+            "output": "0"
+        }
+    ],
+    "difficulty": "easy"
+}

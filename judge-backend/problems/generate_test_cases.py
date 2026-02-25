@@ -2934,6 +2934,283 @@ def solve_house_robber_ii():
     else: ans = max(rob_linear(nums[1:]), rob_linear(nums[:-1]))
     return " ".join(map(str, nums)), str(ans)
 
+def solve_goal_parser_interpretation():
+    s_pool = ["G", "()", "(al)"]
+    s = "".join(random.choices(s_pool, k=random.randint(1, 10)))
+    res = s.replace("()", "o").replace("(al)", "al")
+    return s, res
+
+def solve_shuffle_string():
+    s_len = random.randint(3, 10)
+    s = "".join(random.choices("abcdefghijklmnopqrstuvwxyz", k=s_len))
+    indices = list(range(s_len))
+    random.shuffle(indices)
+    res = [""] * s_len
+    for i, idx in enumerate(indices):
+        res[idx] = s[i]
+    return f"{s}\n{' '.join(map(str, indices))}", "".join(res)
+
+def solve_count_items_matching_a_rule():
+    items = []
+    n = random.randint(3, 10)
+    types = ["phone", "computer", "phone"]
+    colors = ["blue", "silver", "gold"]
+    names = ["pixel", "lenovo", "iphone"]
+    for _ in range(n):
+        items.append([random.choice(types), random.choice(colors), random.choice(names)])
+    
+    ruleKey = random.choice(["type", "color", "name"])
+    ruleValue = random.choice(types + colors + names)
+    
+    key_idx = {"type": 0, "color": 1, "name": 2}[ruleKey]
+    count = sum(1 for item in items if item[key_idx] == ruleValue)
+    
+    input_str = f"{n}\n" + "\n".join(" ".join(row) for row in items) + f"\n{ruleKey}\n{ruleValue}"
+    return input_str, str(count)
+
+def solve_sorting_the_sentence():
+    words = ["This", "is", "a", "sentence", "test", "case"]
+    random.shuffle(words)
+    s = " ".join([f"{word}{i+1}" for i, word in enumerate(words)])
+    # The above is already sorted by number, let's shuffle actual input
+    parts = s.split()
+    random.shuffle(parts)
+    input_s = " ".join(parts)
+    return input_s, " ".join(words)
+
+def solve_truncate_sentence():
+    words = ["Hello", "World", "this", "is", "a", "test", "for", "truncation"]
+    s = " ".join(words)
+    k = random.randint(1, len(words))
+    res = " ".join(words[:k])
+    return f"{s}\n{k}", res
+
+def solve_rings_and_rods():
+    n = random.randint(1, 10)
+    colors = "RGB"
+    s_list = []
+    rods = {}
+    for _ in range(n):
+        c = random.choice(colors)
+        r = random.randint(0, 9)
+        s_list.append(f"{c}{r}")
+        if r not in rods: rods[r] = set()
+        rods[r].add(c)
+    
+    count = sum(1 for r in rods if len(rods[r]) == 3)
+    return "".join(s_list), str(count)
+
+def solve_cells_in_a_range():
+    c1 = random.randint(0, 5)
+    r1 = random.randint(1, 5)
+    c2 = random.randint(c1, 5)
+    r2 = random.randint(r1, 5)
+    
+    start = f"{chr(ord('A') + c1)}{r1}"
+    end = f"{chr(ord('A') + c2)}{r2}"
+    
+    res = []
+    for c in range(c1, c2 + 1):
+        for r in range(r1, r2 + 1):
+            res.append(f"{chr(ord('A') + c)}{r}")
+    return f"{start}:{end}", " ".join(res)
+
+def solve_find_the_difference_of_two_arrays():
+    n1, n2 = random.randint(3, 10), random.randint(3, 10)
+    nums1 = [random.randint(-10, 10) for _ in range(n1)]
+    nums2 = [random.randint(-10, 10) for _ in range(n2)]
+    
+    s1, s2 = set(nums1), set(nums2)
+    res1 = sorted(list(s1 - s2))
+    res2 = sorted(list(s2 - s1))
+    
+    input_str = " ".join(map(str, nums1)) + "\n" + " ".join(map(str, nums2))
+    output_str = " ".join(map(str, res1)) + "\n" + " ".join(map(str, res2))
+    return input_str, output_str
+
+def solve_final_value_of_variable():
+    n = random.randint(3, 10)
+    ops_pool = ["++X", "X++", "--X", "X--"]
+    ops = random.choices(ops_pool, k=n)
+    x = 0
+    for op in ops:
+        if "+" in op: x += 1
+        else: x -= 1
+    return f"{n}\n" + " ".join(ops), str(x)
+
+def solve_minimum_sum_of_four_digit_number():
+    num = random.randint(1000, 9999)
+    digits = sorted(list(str(num)))
+    # For min sum, pair smallest with largest etc.
+    # Digits are d1, d2, d3, d4 sorted.
+    # Two numbers: d1d3 and d2d4 (or vice versa)
+    n1 = int(digits[0] + digits[2])
+    n2 = int(digits[1] + digits[3])
+    return str(num), str(n1 + n2)
+
+
+def solve_divide_two_integers():
+    dividend = random.randint(-100, 100)
+    divisor = random.choice([x for x in range(-10, 11) if x != 0])
+    res = int(dividend / divisor)
+    # Handle overflow
+    if res > 2**31 - 1: res = 2**31 - 1
+    if res < -2**31: res = -2**31
+    return f"{dividend} {divisor}", str(res)
+
+def solve_valid_sudoku():
+    # Generate a mostly empty valid board
+    board = [["." for _ in range(9)] for _ in range(9)]
+    n = random.randint(5, 10)
+    def is_valid(r, c, val):
+        for i in range(9):
+            if board[r][i] == val or board[i][c] == val: return False
+        sr, sc = (r // 3) * 3, (c // 3) * 3
+        for i in range(sr, sr + 3):
+            for j in range(sc, sc + 3):
+                if board[i][j] == val: return False
+        return True
+
+    count = 0
+    while count < n:
+        r, c = random.randint(0, 8), random.randint(0, 8)
+        val = str(random.randint(1, 9))
+        if board[r][c] == "." and is_valid(r, c, val):
+            board[r][c] = val
+            count += 1
+            
+    res = "true" # Since we built it valid
+    input_str = "\n".join(" ".join(row) for row in board)
+    return input_str, res
+
+def solve_count_and_say():
+    n = random.randint(1, 10)
+    res = "1"
+    for _ in range(n - 1):
+        next_res = ""
+        i = 0
+        while i < len(res):
+            count = 1
+            while i + 1 < len(res) and res[i] == res[i+1]:
+                count += 1
+                i += 1
+            next_res += str(count) + res[i]
+            i += 1
+        res = next_res
+    return str(n), res
+
+def solve_pow_x_n():
+    x = round(random.uniform(-10, 10), 2)
+    n = random.randint(-5, 10)
+    try:
+        res = x ** n
+    except ZeroDivisionError:
+        res = 0.0
+    return f"{x} {n}", f"{res:.5f}"
+
+def solve_multiply_strings():
+    num1 = str(random.randint(1, 1000))
+    num2 = str(random.randint(1, 1000))
+    res = str(int(num1) * int(num2))
+    return f"{num1}\n{num2}", res
+
+def solve_spiral_matrix_ii():
+    n = random.randint(1, 5)
+    matrix = [[0] * n for _ in range(n)]
+    top, bottom, left, right = 0, n - 1, 0, n - 1
+    num = 1
+    while num <= n * n:
+        for i in range(left, right + 1):
+            matrix[top][i] = num
+            num += 1
+        top += 1
+        for i in range(top, bottom + 1):
+            matrix[i][right] = num
+            num += 1
+        right -= 1
+        for i in range(right, left - 1, -1):
+            matrix[bottom][i] = num
+            num += 1
+        bottom -= 1
+        for i in range(bottom, top - 1, -1):
+            matrix[i][left] = num
+            num += 1
+        left += 1
+    input_str = str(n)
+    output_str = "\n".join(" ".join(map(str, row)) for row in matrix)
+    return input_str, output_str
+
+def solve_permutation_sequence():
+    n = random.randint(1, 5)
+    import math
+    k = random.randint(1, math.factorial(n))
+    
+    nums = list(range(1, n + 1))
+    res = ""
+    k -= 1
+    for i in range(n, 0, -1):
+        fact = math.factorial(i-1)
+        idx = k // fact
+        res += str(nums.pop(idx))
+        k %= fact
+    return f"{n} {k+1}", res
+
+def solve_minimum_size_subarray_sum():
+    n = random.randint(5, 15)
+    nums = [random.randint(1, 20) for _ in range(n)]
+    target = random.randint(20, 100)
+    
+    res = float('inf')
+    left = 0
+    curr_sum = 0
+    for right in range(n):
+        curr_sum += nums[right]
+        while curr_sum >= target:
+            res = min(res, right - left + 1)
+            curr_sum -= nums[left]
+            left += 1
+    ans = 0 if res == float('inf') else res
+    return f"{target}\n" + " ".join(map(str, nums)), str(ans)
+
+def solve_restore_ip_addresses():
+    s_len = random.randint(4, 12)
+    s = "".join(random.choices("0123456789", k=s_len))
+    
+    res = []
+    def backtrack(start, parts):
+        if len(parts) == 4:
+            if start == len(s): res.append(".".join(parts))
+            return
+        for length in range(1, 4):
+            if start + length > len(s): break
+            part = s[start : start + length]
+            if (part.startswith("0") and len(part) > 1) or int(part) > 255: continue
+            backtrack(start + length, parts + [part])
+    backtrack(0, [])
+    return s, " ".join(sorted(res))
+
+def solve_valid_parenthesis_string():
+    s_len = random.randint(5, 15)
+    s = "".join(random.choices("()*", k=s_len))
+    
+    cmin, cmax = 0, 0
+    possible = True
+    for char in s:
+        if char == '(':
+            cmax += 1
+            cmin += 1
+        elif char == ')':
+            cmax -= 1
+            cmin = max(0, cmin - 1)
+        elif char == '*':
+            cmax += 1
+            cmin = max(0, cmin - 1)
+        if cmax < 0:
+            possible = False
+            break
+    if cmin > 0: possible = False
+    return s, "true" if possible else "false"
+
 
 SOLVERS = {
     "area_of_a_rectangle": solve_area_of_a_rectangle,
@@ -3146,6 +3423,26 @@ SOLVERS = {
     "burst_balloons": solve_burst_balloons,
     "count_of_smaller_numbers_after_self": solve_count_smaller_numbers,
     "house_robber_ii": solve_house_robber_ii,
+    "goal_parser_interpretation": solve_goal_parser_interpretation,
+    "shuffle_string": solve_shuffle_string,
+    "count_items_matching_a_rule": solve_count_items_matching_a_rule,
+    "sorting_the_sentence": solve_sorting_the_sentence,
+    "truncate_sentence": solve_truncate_sentence,
+    "rings_and_rods": solve_rings_and_rods,
+    "cells_in_a_range_on_an_excel_sheet": solve_cells_in_a_range,
+    "find_the_difference_of_two_arrays": solve_find_the_difference_of_two_arrays,
+    "final_value_of_variable_after_performing_operations": solve_final_value_of_variable,
+    "minimum_sum_of_four_digit_number_after_splitting_digits": solve_minimum_sum_of_four_digit_number,
+    "divide_two_integers": solve_divide_two_integers,
+    "valid_sudoku": solve_valid_sudoku,
+    "count_and_say": solve_count_and_say,
+    "pow_x_n": solve_pow_x_n,
+    "multiply_strings": solve_multiply_strings,
+    "spiral_matrix_ii": solve_spiral_matrix_ii,
+    "permutation_sequence": solve_permutation_sequence,
+    "minimum_size_subarray_sum": solve_minimum_size_subarray_sum,
+    "restore_ip_addresses": solve_restore_ip_addresses,
+    "valid_parenthesis_string": solve_valid_parenthesis_string,
 }
 
 HARD_PROBLEMS = {

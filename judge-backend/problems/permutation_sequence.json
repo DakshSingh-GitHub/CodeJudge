@@ -1,0 +1,21 @@
+{
+    "id": "permutation_sequence",
+    "title": "Permutation Sequence",
+    "description": "The set [1, 2, 3, ..., n] contains a total of n! unique permutations. Given n and k, return the kth permutation sequence.",
+    "input_format": "Two integers: n and k.",
+    "output_format": "The kth permutation sequence as a string.",
+    "constraints": {
+        "1 <= n <= 9",
+        "1 <= k <= n!"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "3 3",
+            "output": "213"
+        }
+    ],
+    "hidden_test_cases": [],
+    "difficulty": "medium"
+}

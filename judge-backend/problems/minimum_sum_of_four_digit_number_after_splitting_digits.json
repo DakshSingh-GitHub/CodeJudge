@@ -1,0 +1,661 @@
+{
+    "id": "minimum_sum_of_four_digit_number_after_splitting_digits",
+    "title": "Minimum Sum of Four Digit Number After Splitting Digits",
+    "description": "You are given a positive integer num consisting of exactly four digits. Split num into two new integers new1 and new2 by using the digits found in num. Leading zeros are allowed in new1 and new2, and all the digits found in num must be used. Return the minimum possible sum of new1 and new2.",
+    "input_format": "A single 4-digit integer.",
+    "output_format": "The minimum sum.",
+    "constraints": {
+        "num": "1000 <= num <= 9999"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "2932",
+            "output": "52"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "1940",
+            "output": "23"
+        },
+        {
+            "input": "9583",
+            "output": "97"
+        },
+        {
+            "input": "9985",
+            "output": "148"
+        },
+        {
+            "input": "5891",
+            "output": "77"
+        },
+        {
+            "input": "4525",
+            "output": "70"
+        },
+        {
+            "input": "3335",
+            "output": "68"
+        },
+        {
+            "input": "4202",
+            "output": "26"
+        },
+        {
+            "input": "6972",
+            "output": "96"
+        },
+        {
+            "input": "2336",
+            "output": "59"
+        },
+        {
+            "input": "8599",
+            "output": "148"
+        },
+        {
+            "input": "4197",
+            "output": "66"
+        },
+        {
+            "input": "6688",
+            "output": "136"
+        },
+        {
+            "input": "2848",
+            "output": "76"
+        },
+        {
+            "input": "5067",
+            "output": "63"
+        },
+        {
+            "input": "4984",
+            "output": "97"
+        },
+        {
+            "input": "8538",
+            "output": "96"
+        },
+        {
+            "input": "4756",
+            "output": "103"
+        },
+        {
+            "input": "9856",
+            "output": "127"
+        },
+        {
+            "input": "3668",
+            "output": "104"
+        },
+        {
+            "input": "7366",
+            "output": "103"
+        },
+        {
+            "input": "8692",
+            "output": "97"
+        },
+        {
+            "input": "6378",
+            "output": "105"
+        },
+        {
+            "input": "6109",
+            "output": "25"
+        },
+        {
+            "input": "4327",
+            "output": "61"
+        },
+        {
+            "input": "7267",
+            "output": "94"
+        },
+        {
+            "input": "4349",
+            "output": "83"
+        },
+        {
+            "input": "1396",
+            "output": "55"
+        },
+        {
+            "input": "6775",
+            "output": "124"
+        },
+        {
+            "input": "6035",
+            "output": "41"
+        },
+        {
+            "input": "9156",
+            "output": "75"
+        },
+        {
+            "input": "7594",
+            "output": "106"
+        },
+        {
+            "input": "3351",
+            "output": "48"
+        },
+        {
+            "input": "7566",
+            "output": "123"
+        },
+        {
+            "input": "1893",
+            "output": "57"
+        },
+        {
+            "input": "1226",
+            "output": "38"
+        },
+        {
+            "input": "7708",
+            "output": "85"
+        },
+        {
+            "input": "1710",
+            "output": "18"
+        },
+        {
+            "input": "3136",
+            "output": "49"
+        },
+        {
+            "input": "3437",
+            "output": "71"
+        },
+        {
+            "input": "3957",
+            "output": "96"
+        },
+        {
+            "input": "4139",
+            "output": "53"
+        },
+        {
+            "input": "8822",
+            "output": "56"
+        },
+        {
+            "input": "8199",
+            "output": "108"
+        },
+        {
+            "input": "7251",
+            "output": "42"
+        },
+        {
+            "input": "8957",
+            "output": "137"
+        },
+        {
+            "input": "3942",
+            "output": "63"
+        },
+        {
+            "input": "7296",
+            "output": "96"
+        },
+        {
+            "input": "9778",
+            "output": "157"
+        },
+        {
+            "input": "8182",
+            "output": "46"
+        },
+        {
+            "input": "8545",
+            "output": "103"
+        },
+        {
+            "input": "9406",
+            "output": "55"
+        },
+        {
+            "input": "4986",
+            "output": "117"
+        },
+        {
+            "input": "4712",
+            "output": "41"
+        },
+        {
+            "input": "6033",
+            "output": "39"
+        },
+        {
+            "input": "1875",
+            "output": "75"
+        },
+        {
+            "input": "7952",
+            "output": "86"
+        },
+        {
+            "input": "3191",
+            "output": "32"
+        },
+        {
+            "input": "7870",
+            "output": "85"
+        },
+        {
+            "input": "2274",
+            "output": "51"
+        },
+        {
+            "input": "3281",
+            "output": "41"
+        },
+        {
+            "input": "7950",
+            "output": "66"
+        },
+        {
+            "input": "7317",
+            "output": "54"
+        },
+        {
+            "input": "6287",
+            "output": "95"
+        },
+        {
+            "input": "8551",
+            "output": "73"
+        },
+        {
+            "input": "7436",
+            "output": "83"
+        },
+        {
+            "input": "9482",
+            "output": "77"
+        },
+        {
+            "input": "1173",
+            "output": "30"
+        },
+        {
+            "input": "4644",
+            "output": "90"
+        },
+        {
+            "input": "8173",
+            "output": "55"
+        },
+        {
+            "input": "7530",
+            "output": "42"
+        },
+        {
+            "input": "6484",
+            "output": "94"
+        },
+        {
+            "input": "6995",
+            "output": "128"
+        },
+        {
+            "input": "6188",
+            "output": "86"
+        },
+        {
+            "input": "5272",
+            "output": "52"
+        },
+        {
+            "input": "9757",
+            "output": "136"
+        },
+        {
+            "input": "2405",
+            "output": "29"
+        },
+        {
+            "input": "8037",
+            "output": "45"
+        },
+        {
+            "input": "6641",
+            "output": "62"
+        },
+        {
+            "input": "2464",
+            "output": "70"
+        },
+        {
+            "input": "6841",
+            "output": "64"
+        },
+        {
+            "input": "2998",
+            "output": "118"
+        },
+        {
+            "input": "7141",
+            "output": "31"
+        },
+        {
+            "input": "7956",
+            "output": "126"
+        },
+        {
+            "input": "7859",
+            "output": "137"
+        },
+        {
+            "input": "7243",
+            "output": "61"
+        },
+        {
+            "input": "4541",
+            "output": "59"
+        },
+        {
+            "input": "9264",
+            "output": "75"
+        },
+        {
+            "input": "4516",
+            "output": "61"
+        },
+        {
+            "input": "2115",
+            "output": "27"
+        },
+        {
+            "input": "7980",
+            "output": "87"
+        },
+        {
+            "input": "3835",
+            "output": "73"
+        },
+        {
+            "input": "2122",
+            "output": "34"
+        },
+        {
+            "input": "3323",
+            "output": "56"
+        },
+        {
+            "input": "7563",
+            "output": "93"
+        },
+        {
+            "input": "4220",
+            "output": "26"
+        },
+        {
+            "input": "6245",
+            "output": "71"
+        },
+        {
+            "input": "1287",
+            "output": "45"
+        },
+        {
+            "input": "4034",
+            "output": "38"
+        },
+        {
+            "input": "7372",
+            "output": "64"
+        },
+        {
+            "input": "3279",
+            "output": "66"
+        },
+        {
+            "input": "4263",
+            "output": "60"
+        },
+        {
+            "input": "5252",
+            "output": "50"
+        },
+        {
+            "input": "8322",
+            "output": "51"
+        },
+        {
+            "input": "7919",
+            "output": "98"
+        },
+        {
+            "input": "8612",
+            "output": "44"
+        },
+        {
+            "input": "2026",
+            "output": "28"
+        },
+        {
+            "input": "8908",
+            "output": "97"
+        },
+        {
+            "input": "3642",
+            "output": "60"
+        },
+        {
+            "input": "5984",
+            "output": "107"
+        },
+        {
+            "input": "6527",
+            "output": "83"
+        },
+        {
+            "input": "6683",
+            "output": "104"
+        },
+        {
+            "input": "9649",
+            "output": "118"
+        },
+        {
+            "input": "1877",
+            "output": "95"
+        },
+        {
+            "input": "3452",
+            "output": "59"
+        },
+        {
+            "input": "3809",
+            "output": "47"
+        },
+        {
+            "input": "3607",
+            "output": "43"
+        },
+        {
+            "input": "8903",
+            "output": "47"
+        },
+        {
+            "input": "6057",
+            "output": "63"
+        },
+        {
+            "input": "2809",
+            "output": "37"
+        },
+        {
+            "input": "5466",
+            "output": "102"
+        },
+        {
+            "input": "3868",
+            "output": "106"
+        },
+        {
+            "input": "6926",
+            "output": "95"
+        },
+        {
+            "input": "2818",
+            "output": "46"
+        },
+        {
+            "input": "6754",
+            "output": "103"
+        },
+        {
+            "input": "8625",
+            "output": "84"
+        },
+        {
+            "input": "8786",
+            "output": "146"
+        },
+        {
+            "input": "9549",
+            "output": "108"
+        },
+        {
+            "input": "3553",
+            "output": "70"
+        },
+        {
+            "input": "3964",
+            "output": "85"
+        },
+        {
+            "input": "3679",
+            "output": "106"
+        },
+        {
+            "input": "6041",
+            "output": "20"
+        },
+        {
+            "input": "6121",
+            "output": "28"
+        },
+        {
+            "input": "2868",
+            "output": "96"
+        },
+        {
+            "input": "8236",
+            "output": "64"
+        },
+        {
+            "input": "1721",
+            "output": "29"
+        },
+        {
+            "input": "9269",
+            "output": "98"
+        },
+        {
+            "input": "4130",
+            "output": "17"
+        },
+        {
+            "input": "9276",
+            "output": "96"
+        },
+        {
+            "input": "6436",
+            "output": "82"
+        },
+        {
+            "input": "8697",
+            "output": "147"
+        },
+        {
+            "input": "2146",
+            "output": "40"
+        },
+        {
+            "input": "6866",
+            "output": "134"
+        },
+        {
+            "input": "5649",
+            "output": "105"
+        },
+        {
+            "input": "9026",
+            "output": "35"
+        },
+        {
+            "input": "6223",
+            "output": "49"
+        },
+        {
+            "input": "3689",
+            "output": "107"
+        },
+        {
+            "input": "5746",
+            "output": "103"
+        },
+        {
+            "input": "2648",
+            "output": "74"
+        },
+        {
+            "input": "5748",
+            "output": "105"
+        },
+        {
+            "input": "2412",
+            "output": "36"
+        },
+        {
+            "input": "4248",
+            "output": "72"
+        },
+        {
+            "input": "1698",
+            "output": "87"
+        },
+        {
+            "input": "9212",
+            "output": "41"
+        },
+        {
+            "input": "2112",
+            "output": "24"
+        },
+        {
+            "input": "6890",
+            "output": "77"
+        },
+        {
+            "input": "9880",
+            "output": "97"
+        },
+        {
+            "input": "9905",
+            "output": "68"
+        },
+        {
+            "input": "5795",
+            "output": "116"
+        },
+        {
+            "input": "8402",
+            "output": "32"
+        },
+        {
+            "input": "5475",
+            "output": "102"
+        }
+    ],
+    "difficulty": "easy"
+}

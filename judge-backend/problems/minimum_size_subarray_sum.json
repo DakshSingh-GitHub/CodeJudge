@@ -1,0 +1,22 @@
+{
+    "id": "minimum_size_subarray_sum",
+    "title": "Minimum Size Subarray Sum",
+    "description": "Given an array of positive integers nums and a positive integer target, return the minimal length of a contiguous subarray of which the sum is greater than or equal to target. If there is no such subarray, return 0 instead.",
+    "input_format": "First line: target. Second line: space-separated integers nums.",
+    "output_format": "An integer representing the minimal length.",
+    "constraints": {
+        "1 <= target <= 10^9",
+        "1 <= nums.length <= 10^5",
+        "1 <= nums[i] <= 10^4"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "7\n2 3 1 2 4 3",
+            "output": "2"
+        }
+    ],
+    "hidden_test_cases": [],
+    "difficulty": "medium"
+}

@@ -1,0 +1,661 @@
+{
+    "id": "multiply_strings",
+    "title": "Multiply Strings",
+    "description": "Given two non-negative integers num1 and num2 represented as strings, return the product of num1 and num2, also represented as a string.",
+    "input_format": "Two lines, each containing a string representing a non-negative integer.",
+    "output_format": "A string representing the product.",
+    "constraints": {
+        "num1.length, num2.length": "1 <= num1.length, num2.length <= 200"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "123\n456",
+            "output": "56088"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "334\n403",
+            "output": "134602"
+        },
+        {
+            "input": "459\n93",
+            "output": "42687"
+        },
+        {
+            "input": "62\n505",
+            "output": "31310"
+        },
+        {
+            "input": "564\n112",
+            "output": "63168"
+        },
+        {
+            "input": "488\n819",
+            "output": "399672"
+        },
+        {
+            "input": "76\n686",
+            "output": "52136"
+        },
+        {
+            "input": "104\n72",
+            "output": "7488"
+        },
+        {
+            "input": "161\n454",
+            "output": "73094"
+        },
+        {
+            "input": "187\n102",
+            "output": "19074"
+        },
+        {
+            "input": "482\n94",
+            "output": "45308"
+        },
+        {
+            "input": "111\n73",
+            "output": "8103"
+        },
+        {
+            "input": "118\n235",
+            "output": "27730"
+        },
+        {
+            "input": "135\n224",
+            "output": "30240"
+        },
+        {
+            "input": "104\n912",
+            "output": "94848"
+        },
+        {
+            "input": "247\n567",
+            "output": "140049"
+        },
+        {
+            "input": "653\n402",
+            "output": "262506"
+        },
+        {
+            "input": "262\n156",
+            "output": "40872"
+        },
+        {
+            "input": "67\n181",
+            "output": "12127"
+        },
+        {
+            "input": "91\n77",
+            "output": "7007"
+        },
+        {
+            "input": "915\n965",
+            "output": "882975"
+        },
+        {
+            "input": "547\n855",
+            "output": "467685"
+        },
+        {
+            "input": "655\n905",
+            "output": "592775"
+        },
+        {
+            "input": "641\n281",
+            "output": "180121"
+        },
+        {
+            "input": "589\n845",
+            "output": "497705"
+        },
+        {
+            "input": "738\n565",
+            "output": "416970"
+        },
+        {
+            "input": "587\n730",
+            "output": "428510"
+        },
+        {
+            "input": "140\n324",
+            "output": "45360"
+        },
+        {
+            "input": "823\n892",
+            "output": "734116"
+        },
+        {
+            "input": "114\n762",
+            "output": "86868"
+        },
+        {
+            "input": "552\n144",
+            "output": "79488"
+        },
+        {
+            "input": "971\n983",
+            "output": "954493"
+        },
+        {
+            "input": "928\n195",
+            "output": "180960"
+        },
+        {
+            "input": "604\n777",
+            "output": "469308"
+        },
+        {
+            "input": "994\n773",
+            "output": "768362"
+        },
+        {
+            "input": "282\n344",
+            "output": "97008"
+        },
+        {
+            "input": "953\n540",
+            "output": "514620"
+        },
+        {
+            "input": "459\n833",
+            "output": "382347"
+        },
+        {
+            "input": "375\n751",
+            "output": "281625"
+        },
+        {
+            "input": "711\n259",
+            "output": "184149"
+        },
+        {
+            "input": "979\n859",
+            "output": "840961"
+        },
+        {
+            "input": "522\n909",
+            "output": "474498"
+        },
+        {
+            "input": "738\n721",
+            "output": "532098"
+        },
+        {
+            "input": "66\n728",
+            "output": "48048"
+        },
+        {
+            "input": "667\n161",
+            "output": "107387"
+        },
+        {
+            "input": "695\n965",
+            "output": "670675"
+        },
+        {
+            "input": "787\n778",
+            "output": "612286"
+        },
+        {
+            "input": "523\n976",
+            "output": "510448"
+        },
+        {
+            "input": "169\n730",
+            "output": "123370"
+        },
+        {
+            "input": "887\n660",
+            "output": "585420"
+        },
+        {
+            "input": "515\n1",
+            "output": "515"
+        },
+        {
+            "input": "911\n486",
+            "output": "442746"
+        },
+        {
+            "input": "366\n470",
+            "output": "172020"
+        },
+        {
+            "input": "35\n577",
+            "output": "20195"
+        },
+        {
+            "input": "720\n461",
+            "output": "331920"
+        },
+        {
+            "input": "231\n153",
+            "output": "35343"
+        },
+        {
+            "input": "954\n949",
+            "output": "905346"
+        },
+        {
+            "input": "800\n624",
+            "output": "499200"
+        },
+        {
+            "input": "628\n739",
+            "output": "464092"
+        },
+        {
+            "input": "964\n680",
+            "output": "655520"
+        },
+        {
+            "input": "10\n468",
+            "output": "4680"
+        },
+        {
+            "input": "204\n296",
+            "output": "60384"
+        },
+        {
+            "input": "35\n200",
+            "output": "7000"
+        },
+        {
+            "input": "146\n317",
+            "output": "46282"
+        },
+        {
+            "input": "538\n708",
+            "output": "380904"
+        },
+        {
+            "input": "433\n183",
+            "output": "79239"
+        },
+        {
+            "input": "89\n138",
+            "output": "12282"
+        },
+        {
+            "input": "371\n507",
+            "output": "188097"
+        },
+        {
+            "input": "512\n758",
+            "output": "388096"
+        },
+        {
+            "input": "638\n106",
+            "output": "67628"
+        },
+        {
+            "input": "83\n576",
+            "output": "47808"
+        },
+        {
+            "input": "628\n321",
+            "output": "201588"
+        },
+        {
+            "input": "635\n210",
+            "output": "133350"
+        },
+        {
+            "input": "399\n525",
+            "output": "209475"
+        },
+        {
+            "input": "371\n399",
+            "output": "148029"
+        },
+        {
+            "input": "753\n260",
+            "output": "195780"
+        },
+        {
+            "input": "982\n951",
+            "output": "933882"
+        },
+        {
+            "input": "940\n237",
+            "output": "222780"
+        },
+        {
+            "input": "559\n961",
+            "output": "537199"
+        },
+        {
+            "input": "755\n998",
+            "output": "753490"
+        },
+        {
+            "input": "855\n255",
+            "output": "218025"
+        },
+        {
+            "input": "1\n476",
+            "output": "476"
+        },
+        {
+            "input": "458\n562",
+            "output": "257396"
+        },
+        {
+            "input": "565\n454",
+            "output": "256510"
+        },
+        {
+            "input": "543\n514",
+            "output": "279102"
+        },
+        {
+            "input": "154\n40",
+            "output": "6160"
+        },
+        {
+            "input": "643\n520",
+            "output": "334360"
+        },
+        {
+            "input": "369\n639",
+            "output": "235791"
+        },
+        {
+            "input": "963\n369",
+            "output": "355347"
+        },
+        {
+            "input": "915\n113",
+            "output": "103395"
+        },
+        {
+            "input": "777\n578",
+            "output": "449106"
+        },
+        {
+            "input": "655\n298",
+            "output": "195190"
+        },
+        {
+            "input": "77\n554",
+            "output": "42658"
+        },
+        {
+            "input": "217\n688",
+            "output": "149296"
+        },
+        {
+            "input": "216\n757",
+            "output": "163512"
+        },
+        {
+            "input": "480\n948",
+            "output": "455040"
+        },
+        {
+            "input": "863\n570",
+            "output": "491910"
+        },
+        {
+            "input": "904\n944",
+            "output": "853376"
+        },
+        {
+            "input": "479\n249",
+            "output": "119271"
+        },
+        {
+            "input": "297\n41",
+            "output": "12177"
+        },
+        {
+            "input": "43\n326",
+            "output": "14018"
+        },
+        {
+            "input": "689\n919",
+            "output": "633191"
+        },
+        {
+            "input": "689\n875",
+            "output": "602875"
+        },
+        {
+            "input": "496\n68",
+            "output": "33728"
+        },
+        {
+            "input": "860\n341",
+            "output": "293260"
+        },
+        {
+            "input": "249\n593",
+            "output": "147657"
+        },
+        {
+            "input": "512\n959",
+            "output": "491008"
+        },
+        {
+            "input": "147\n210",
+            "output": "30870"
+        },
+        {
+            "input": "442\n891",
+            "output": "393822"
+        },
+        {
+            "input": "644\n572",
+            "output": "368368"
+        },
+        {
+            "input": "835\n279",
+            "output": "232965"
+        },
+        {
+            "input": "441\n183",
+            "output": "80703"
+        },
+        {
+            "input": "351\n278",
+            "output": "97578"
+        },
+        {
+            "input": "748\n388",
+            "output": "290224"
+        },
+        {
+            "input": "239\n456",
+            "output": "108984"
+        },
+        {
+            "input": "75\n979",
+            "output": "73425"
+        },
+        {
+            "input": "152\n651",
+            "output": "98952"
+        },
+        {
+            "input": "626\n279",
+            "output": "174654"
+        },
+        {
+            "input": "170\n945",
+            "output": "160650"
+        },
+        {
+            "input": "733\n656",
+            "output": "480848"
+        },
+        {
+            "input": "315\n315",
+            "output": "99225"
+        },
+        {
+            "input": "863\n416",
+            "output": "359008"
+        },
+        {
+            "input": "202\n410",
+            "output": "82820"
+        },
+        {
+            "input": "820\n953",
+            "output": "781460"
+        },
+        {
+            "input": "844\n460",
+            "output": "388240"
+        },
+        {
+            "input": "983\n425",
+            "output": "417775"
+        },
+        {
+            "input": "737\n668",
+            "output": "492316"
+        },
+        {
+            "input": "102\n113",
+            "output": "11526"
+        },
+        {
+            "input": "708\n248",
+            "output": "175584"
+        },
+        {
+            "input": "79\n88",
+            "output": "6952"
+        },
+        {
+            "input": "392\n949",
+            "output": "372008"
+        },
+        {
+            "input": "419\n671",
+            "output": "281149"
+        },
+        {
+            "input": "44\n288",
+            "output": "12672"
+        },
+        {
+            "input": "607\n888",
+            "output": "539016"
+        },
+        {
+            "input": "597\n376",
+            "output": "224472"
+        },
+        {
+            "input": "571\n57",
+            "output": "32547"
+        },
+        {
+            "input": "560\n192",
+            "output": "107520"
+        },
+        {
+            "input": "316\n956",
+            "output": "302096"
+        },
+        {
+            "input": "591\n677",
+            "output": "400107"
+        },
+        {
+            "input": "625\n924",
+            "output": "577500"
+        },
+        {
+            "input": "874\n453",
+            "output": "395922"
+        },
+        {
+            "input": "228\n668",
+            "output": "152304"
+        },
+        {
+            "input": "903\n682",
+            "output": "615846"
+        },
+        {
+            "input": "113\n811",
+            "output": "91643"
+        },
+        {
+            "input": "857\n512",
+            "output": "438784"
+        },
+        {
+            "input": "204\n49",
+            "output": "9996"
+        },
+        {
+            "input": "323\n185",
+            "output": "59755"
+        },
+        {
+            "input": "848\n237",
+            "output": "200976"
+        },
+        {
+            "input": "455\n957",
+            "output": "435435"
+        },
+        {
+            "input": "620\n942",
+            "output": "584040"
+        },
+        {
+            "input": "569\n628",
+            "output": "357332"
+        },
+        {
+            "input": "625\n970",
+            "output": "606250"
+        },
+        {
+            "input": "996\n723",
+            "output": "720108"
+        },
+        {
+            "input": "622\n422",
+            "output": "262484"
+        },
+        {
+            "input": "620\n621",
+            "output": "385020"
+        },
+        {
+            "input": "462\n968",
+            "output": "447216"
+        },
+        {
+            "input": "521\n959",
+            "output": "499639"
+        },
+        {
+            "input": "684\n62",
+            "output": "42408"
+        },
+        {
+            "input": "804\n442",
+            "output": "355368"
+        },
+        {
+            "input": "266\n76",
+            "output": "20216"
+        },
+        {
+            "input": "278\n490",
+            "output": "136220"
+        }
+    ],
+    "difficulty": "medium"
+}

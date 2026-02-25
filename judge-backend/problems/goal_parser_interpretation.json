@@ -1,0 +1,661 @@
+{
+    "id": "goal_parser_interpretation",
+    "title": "Goal Parser Interpretation",
+    "description": "You own a Goal Parser that can interpret a string command. The command consists of an alphabet of \"G\", \"()\" and/or \"(al)\" in some order. The Goal Parser will interpret \"G\" as the string \"G\", \"()\" as the string \"o\", and \"(al)\" as the string \"al\".",
+    "input_format": "A single string command.",
+    "output_format": "The interpreted string.",
+    "constraints": {
+        "command.length": "1 <= command.length <= 100"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "G()(al)",
+            "output": "Goal"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "GG()()(al)()",
+            "output": "GGooalo"
+        },
+        {
+            "input": "GG()(al)G()()(al)()",
+            "output": "GGoalGooalo"
+        },
+        {
+            "input": "(al)G(al)(al)",
+            "output": "alGalal"
+        },
+        {
+            "input": "GGG()",
+            "output": "GGGo"
+        },
+        {
+            "input": "()(al)G()(al)(al)",
+            "output": "oalGoalal"
+        },
+        {
+            "input": "()GG(al)()GGG",
+            "output": "oGGaloGGG"
+        },
+        {
+            "input": "(al)(al)",
+            "output": "alal"
+        },
+        {
+            "input": "G",
+            "output": "G"
+        },
+        {
+            "input": "(al)()G",
+            "output": "aloG"
+        },
+        {
+            "input": "(al)()G()(al)(al)(al)(al)",
+            "output": "aloGoalalalal"
+        },
+        {
+            "input": "(al)(al)(al)(al)(al)GG",
+            "output": "alalalalalGG"
+        },
+        {
+            "input": "G(al)()(al)(al)",
+            "output": "Galoalal"
+        },
+        {
+            "input": "()(al)GG(al)GG",
+            "output": "oalGGalGG"
+        },
+        {
+            "input": "()(al)",
+            "output": "oal"
+        },
+        {
+            "input": "(al)(al)G(al)(al)",
+            "output": "alalGalal"
+        },
+        {
+            "input": "(al)(al)GG(al)()()(al)(al)",
+            "output": "alalGGalooalal"
+        },
+        {
+            "input": "()G(al)(al)(al)G(al)",
+            "output": "oGalalalGal"
+        },
+        {
+            "input": "(al)(al)GG",
+            "output": "alalGG"
+        },
+        {
+            "input": "GG()(al)G",
+            "output": "GGoalG"
+        },
+        {
+            "input": "(al)G()(al)GG(al)",
+            "output": "alGoalGGal"
+        },
+        {
+            "input": "(al)GGG",
+            "output": "alGGG"
+        },
+        {
+            "input": "G(al)(al)()",
+            "output": "Galalo"
+        },
+        {
+            "input": "GG(al)()()(al)()(al)",
+            "output": "GGalooaloal"
+        },
+        {
+            "input": "G(al)GG()()",
+            "output": "GalGGoo"
+        },
+        {
+            "input": "G(al)G",
+            "output": "GalG"
+        },
+        {
+            "input": "G()G",
+            "output": "GoG"
+        },
+        {
+            "input": "(al)GG()G()",
+            "output": "alGGoGo"
+        },
+        {
+            "input": "()(al)(al)GG",
+            "output": "oalalGG"
+        },
+        {
+            "input": "G(al)(al)G(al)(al)()",
+            "output": "GalalGalalo"
+        },
+        {
+            "input": "(al)()(al)(al)G()GGGG",
+            "output": "aloalalGoGGGG"
+        },
+        {
+            "input": "(al)GG()(al)()",
+            "output": "alGGoalo"
+        },
+        {
+            "input": "(al)(al)G(al)",
+            "output": "alalGal"
+        },
+        {
+            "input": "()()G",
+            "output": "ooG"
+        },
+        {
+            "input": "GG(al)()()G",
+            "output": "GGalooG"
+        },
+        {
+            "input": "(al)(al)(al)()G",
+            "output": "alalaloG"
+        },
+        {
+            "input": "(al)()()()G()(al)",
+            "output": "aloooGoal"
+        },
+        {
+            "input": "G(al)G()()()(al)(al)()G",
+            "output": "GalGoooalaloG"
+        },
+        {
+            "input": "(al)(al)G()G()()G(al)",
+            "output": "alalGoGooGal"
+        },
+        {
+            "input": "()(al)G()(al)",
+            "output": "oalGoal"
+        },
+        {
+            "input": "(al)(al)(al)G(al)",
+            "output": "alalalGal"
+        },
+        {
+            "input": "()G(al)G(al)()",
+            "output": "oGalGalo"
+        },
+        {
+            "input": "()(al)()()G()G(al)",
+            "output": "oalooGoGal"
+        },
+        {
+            "input": "G()()",
+            "output": "Goo"
+        },
+        {
+            "input": "()()(al)G(al)()GG(al)",
+            "output": "ooalGaloGGal"
+        },
+        {
+            "input": "(al)()(al)()()",
+            "output": "aloaloo"
+        },
+        {
+            "input": "(al)(al)()(al)G",
+            "output": "alaloalG"
+        },
+        {
+            "input": "G()(al)",
+            "output": "Goal"
+        },
+        {
+            "input": "G()(al)(al)()(al)",
+            "output": "Goalaloal"
+        },
+        {
+            "input": "()G(al)(al)G",
+            "output": "oGalalG"
+        },
+        {
+            "input": "GG(al)GG",
+            "output": "GGalGG"
+        },
+        {
+            "input": "()GGG()()G",
+            "output": "oGGGooG"
+        },
+        {
+            "input": "G()G()()()GG",
+            "output": "GoGoooGG"
+        },
+        {
+            "input": "G(al)",
+            "output": "Gal"
+        },
+        {
+            "input": "()()()",
+            "output": "ooo"
+        },
+        {
+            "input": "G()(al)()()()()",
+            "output": "Goaloooo"
+        },
+        {
+            "input": "(al)G()(al)()G()()()",
+            "output": "alGoaloGooo"
+        },
+        {
+            "input": "G(al)(al)(al)G",
+            "output": "GalalalG"
+        },
+        {
+            "input": "(al)()(al)(al)()(al)G",
+            "output": "aloalaloalG"
+        },
+        {
+            "input": "()(al)()G()()GGG",
+            "output": "oaloGooGGG"
+        },
+        {
+            "input": "()(al)()(al)()(al)()G(al)()",
+            "output": "oaloaloaloGalo"
+        },
+        {
+            "input": "G()(al)G()()()",
+            "output": "GoalGooo"
+        },
+        {
+            "input": "(al)(al)()G(al)",
+            "output": "alaloGal"
+        },
+        {
+            "input": "()()(al)GGG(al)()G(al)",
+            "output": "ooalGGGaloGal"
+        },
+        {
+            "input": "G(al)G(al)(al)",
+            "output": "GalGalal"
+        },
+        {
+            "input": "()()(al)G(al)(al)()",
+            "output": "ooalGalalo"
+        },
+        {
+            "input": "G(al)G(al)G()()G(al)",
+            "output": "GalGalGooGal"
+        },
+        {
+            "input": "(al)G",
+            "output": "alG"
+        },
+        {
+            "input": "G(al)G()",
+            "output": "GalGo"
+        },
+        {
+            "input": "()G(al)G(al)()G(al)GG",
+            "output": "oGalGaloGalGG"
+        },
+        {
+            "input": "()(al)(al)(al)",
+            "output": "oalalal"
+        },
+        {
+            "input": "()(al)(al)(al)GG",
+            "output": "oalalalGG"
+        },
+        {
+            "input": "(al)(al)G()(al)G(al)()G",
+            "output": "alalGoalGaloG"
+        },
+        {
+            "input": "(al)(al)()()(al)",
+            "output": "alalooal"
+        },
+        {
+            "input": "()()(al)(al)G()()()G",
+            "output": "ooalalGoooG"
+        },
+        {
+            "input": "()GG()G",
+            "output": "oGGoG"
+        },
+        {
+            "input": "()(al)()(al)G()G",
+            "output": "oaloalGoG"
+        },
+        {
+            "input": "()(al)GGG",
+            "output": "oalGGG"
+        },
+        {
+            "input": "(al)GGG(al)()(al)()G",
+            "output": "alGGGaloaloG"
+        },
+        {
+            "input": "GG()()G(al)",
+            "output": "GGooGal"
+        },
+        {
+            "input": "()",
+            "output": "o"
+        },
+        {
+            "input": "GG()(al)",
+            "output": "GGoal"
+        },
+        {
+            "input": "G(al)()G()",
+            "output": "GaloGo"
+        },
+        {
+            "input": "(al)GG()GGGG",
+            "output": "alGGoGGGG"
+        },
+        {
+            "input": "()(al)()(al)(al)()()",
+            "output": "oaloalaloo"
+        },
+        {
+            "input": "GG()()(al)()(al)GG",
+            "output": "GGooaloalGG"
+        },
+        {
+            "input": "G()(al)()G(al)(al)GG(al)",
+            "output": "GoaloGalalGGal"
+        },
+        {
+            "input": "G()",
+            "output": "Go"
+        },
+        {
+            "input": "()()(al)",
+            "output": "ooal"
+        },
+        {
+            "input": "(al)G(al)(al)GGGG(al)G",
+            "output": "alGalalGGGGalG"
+        },
+        {
+            "input": "(al)GG(al)(al)G(al)(al)GG",
+            "output": "alGGalalGalalGG"
+        },
+        {
+            "input": "G(al)()()()",
+            "output": "Galooo"
+        },
+        {
+            "input": "()(al)()G(al)(al)()",
+            "output": "oaloGalalo"
+        },
+        {
+            "input": "()(al)()G(al)()",
+            "output": "oaloGalo"
+        },
+        {
+            "input": "()(al)G()()()(al)G(al)()",
+            "output": "oalGoooalGalo"
+        },
+        {
+            "input": "(al)()(al)(al)GG()(al)G()",
+            "output": "aloalalGGoalGo"
+        },
+        {
+            "input": "(al)(al)(al)(al)()(al)",
+            "output": "alalalaloal"
+        },
+        {
+            "input": "()G(al)(al)",
+            "output": "oGalal"
+        },
+        {
+            "input": "()G(al)()(al)()(al)",
+            "output": "oGaloaloal"
+        },
+        {
+            "input": "()GGG",
+            "output": "oGGG"
+        },
+        {
+            "input": "()()G(al)(al)GG",
+            "output": "ooGalalGG"
+        },
+        {
+            "input": "GG()()()()",
+            "output": "GGoooo"
+        },
+        {
+            "input": "GGG()(al)G",
+            "output": "GGGoalG"
+        },
+        {
+            "input": "()GGG()GG(al)()",
+            "output": "oGGGoGGalo"
+        },
+        {
+            "input": "G(al)()",
+            "output": "Galo"
+        },
+        {
+            "input": "(al)(al)(al)()()(al)G()G",
+            "output": "alalalooalGoG"
+        },
+        {
+            "input": "()(al)G(al)()()()",
+            "output": "oalGalooo"
+        },
+        {
+            "input": "GG()G(al)()()GG(al)",
+            "output": "GGoGalooGGal"
+        },
+        {
+            "input": "G()(al)()GG(al)",
+            "output": "GoaloGGal"
+        },
+        {
+            "input": "()G()()G(al)",
+            "output": "oGooGal"
+        },
+        {
+            "input": "(al)",
+            "output": "al"
+        },
+        {
+            "input": "(al)G()()(al)G",
+            "output": "alGooalG"
+        },
+        {
+            "input": "G()(al)G()(al)",
+            "output": "GoalGoal"
+        },
+        {
+            "input": "(al)GG",
+            "output": "alGG"
+        },
+        {
+            "input": "G()()(al)G(al)GG",
+            "output": "GooalGalGG"
+        },
+        {
+            "input": "()()",
+            "output": "oo"
+        },
+        {
+            "input": "()GGG(al)()G()G(al)",
+            "output": "oGGGaloGoGal"
+        },
+        {
+            "input": "()(al)()()GGG()()",
+            "output": "oalooGGGoo"
+        },
+        {
+            "input": "()G(al)()()()(al)",
+            "output": "oGaloooal"
+        },
+        {
+            "input": "GGGGG()()()()G",
+            "output": "GGGGGooooG"
+        },
+        {
+            "input": "(al)G()()(al)GG()",
+            "output": "alGooalGGo"
+        },
+        {
+            "input": "G(al)G(al)G",
+            "output": "GalGalG"
+        },
+        {
+            "input": "()(al)()()G(al)",
+            "output": "oalooGal"
+        },
+        {
+            "input": "GG()()",
+            "output": "GGoo"
+        },
+        {
+            "input": "()GGGG()",
+            "output": "oGGGGo"
+        },
+        {
+            "input": "(al)()GG()()(al)(al)(al)(al)",
+            "output": "aloGGooalalalal"
+        },
+        {
+            "input": "()(al)()G(al)G(al)G",
+            "output": "oaloGalGalG"
+        },
+        {
+            "input": "G()(al)()()(al)",
+            "output": "Goalooal"
+        },
+        {
+            "input": "G()GG(al)",
+            "output": "GoGGal"
+        },
+        {
+            "input": "()G()(al)G()G()()()",
+            "output": "oGoalGoGooo"
+        },
+        {
+            "input": "()(al)G",
+            "output": "oalG"
+        },
+        {
+            "input": "G(al)(al)()()(al)(al)",
+            "output": "Galalooalal"
+        },
+        {
+            "input": "()()()G()(al)G()G",
+            "output": "oooGoalGoG"
+        },
+        {
+            "input": "(al)G(al)G(al)(al)(al)(al)(al)()",
+            "output": "alGalGalalalalalo"
+        },
+        {
+            "input": "()(al)(al)",
+            "output": "oalal"
+        },
+        {
+            "input": "(al)()",
+            "output": "alo"
+        },
+        {
+            "input": "(al)GGGG()",
+            "output": "alGGGGo"
+        },
+        {
+            "input": "()G()()G",
+            "output": "oGooG"
+        },
+        {
+            "input": "(al)()GG(al)",
+            "output": "aloGGal"
+        },
+        {
+            "input": "(al)()G(al)(al)",
+            "output": "aloGalal"
+        },
+        {
+            "input": "()(al)G()GGG(al)()",
+            "output": "oalGoGGGalo"
+        },
+        {
+            "input": "G()()GG(al)",
+            "output": "GooGGal"
+        },
+        {
+            "input": "()()G(al)",
+            "output": "ooGal"
+        },
+        {
+            "input": "()G(al)GGG(al)",
+            "output": "oGalGGGal"
+        },
+        {
+            "input": "()(al)GG",
+            "output": "oalGG"
+        },
+        {
+            "input": "(al)(al)()(al)()",
+            "output": "alaloalo"
+        },
+        {
+            "input": "G()G()()",
+            "output": "GoGoo"
+        },
+        {
+            "input": "G(al)(al)(al)G(al)G()(al)G",
+            "output": "GalalalGalGoalG"
+        },
+        {
+            "input": "()()()G(al)()(al)",
+            "output": "oooGaloal"
+        },
+        {
+            "input": "()G()()(al)",
+            "output": "oGooal"
+        },
+        {
+            "input": "G()(al)G()(al)()",
+            "output": "GoalGoalo"
+        },
+        {
+            "input": "()GG(al)",
+            "output": "oGGal"
+        },
+        {
+            "input": "(al)()(al)(al)G()()",
+            "output": "aloalalGoo"
+        },
+        {
+            "input": "G(al)()()()()",
+            "output": "Galoooo"
+        },
+        {
+            "input": "(al)G()()()GGG()",
+            "output": "alGoooGGGo"
+        },
+        {
+            "input": "G()G(al)(al)",
+            "output": "GoGalal"
+        },
+        {
+            "input": "()G()(al)(al)G()GG",
+            "output": "oGoalalGoGG"
+        },
+        {
+            "input": "G(al)()G",
+            "output": "GaloG"
+        },
+        {
+            "input": "()()G(al)G()G(al)()()",
+            "output": "ooGalGoGaloo"
+        },
+        {
+            "input": "()GG(al)()()(al)G(al)",
+            "output": "oGGalooalGal"
+        },
+        {
+            "input": "G()(al)()",
+            "output": "Goalo"
+        }
+    ],
+    "difficulty": "easy"
+}

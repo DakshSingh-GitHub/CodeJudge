@@ -1,0 +1,662 @@
+{
+    "id": "rings_and_rods",
+    "title": "Rings and Rods",
+    "description": "There are n rings and each ring is either red, green, or blue. The rings are placed onto ten rods labeled from 0 to 9. You are given a string rings of length 2n that describes the n rings that are placed onto the rods. Return the number of rods that have all three colors of rings on them.",
+    "input_format": "A single string rings of length 2n.",
+    "output_format": "An integer representing the count.",
+    "constraints": {
+        "rings.length": "2 * n",
+        "n": "1 <= n <= 100"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "B0B6G0R6R0R6G9",
+            "output": "1"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "R6",
+            "output": "0"
+        },
+        {
+            "input": "R0B2",
+            "output": "0"
+        },
+        {
+            "input": "G5R6B4G2R0G3G7",
+            "output": "0"
+        },
+        {
+            "input": "G9B7B7G8B4",
+            "output": "0"
+        },
+        {
+            "input": "R2R4G1G6R0G6B1R9B5R9",
+            "output": "0"
+        },
+        {
+            "input": "R3R9G9R4R5R9B9G5B4G2",
+            "output": "1"
+        },
+        {
+            "input": "G6R2B3R3B5",
+            "output": "0"
+        },
+        {
+            "input": "R8G0",
+            "output": "0"
+        },
+        {
+            "input": "G5R6R3G7B2",
+            "output": "0"
+        },
+        {
+            "input": "R6G8",
+            "output": "0"
+        },
+        {
+            "input": "G9B4B7B0G9",
+            "output": "0"
+        },
+        {
+            "input": "B6R7B1B5G7",
+            "output": "0"
+        },
+        {
+            "input": "B8B5B0R1B1R7R9R4G1B2",
+            "output": "1"
+        },
+        {
+            "input": "R4G3G9R3R4G9R3R7G2",
+            "output": "0"
+        },
+        {
+            "input": "G6G6B1G4B9G0B1R1G7",
+            "output": "0"
+        },
+        {
+            "input": "R7R4B9G2G8R2G8G0",
+            "output": "0"
+        },
+        {
+            "input": "R7R3R7B2R0R6R3",
+            "output": "0"
+        },
+        {
+            "input": "G0",
+            "output": "0"
+        },
+        {
+            "input": "B9B1B0R0B0R0",
+            "output": "0"
+        },
+        {
+            "input": "G0B5B6",
+            "output": "0"
+        },
+        {
+            "input": "R4B0G9G5",
+            "output": "0"
+        },
+        {
+            "input": "G9R7R7R0B0G3G7G2R7R6",
+            "output": "0"
+        },
+        {
+            "input": "R3G2B8B5",
+            "output": "0"
+        },
+        {
+            "input": "B2R5B5G8",
+            "output": "0"
+        },
+        {
+            "input": "G0G6B0R8R1B2R1R0",
+            "output": "1"
+        },
+        {
+            "input": "B0R8R8G1B7R6G4R7G7G1",
+            "output": "1"
+        },
+        {
+            "input": "B5R1B3R2B1B4R5G4R7",
+            "output": "0"
+        },
+        {
+            "input": "R8B7B1R6R9G7G0R2",
+            "output": "0"
+        },
+        {
+            "input": "G4B7G0G3G2B8G5",
+            "output": "0"
+        },
+        {
+            "input": "B5G6G6G6R5R3R4G7R2",
+            "output": "0"
+        },
+        {
+            "input": "R6G7G4G5G9G5R8R0R2",
+            "output": "0"
+        },
+        {
+            "input": "R0G6G0G5G4B8G9B8",
+            "output": "0"
+        },
+        {
+            "input": "B7G2G0R4R8G6R8",
+            "output": "0"
+        },
+        {
+            "input": "R8B2R8B8",
+            "output": "0"
+        },
+        {
+            "input": "R5B7",
+            "output": "0"
+        },
+        {
+            "input": "G6B1G2G2R7B9G3",
+            "output": "0"
+        },
+        {
+            "input": "R2G7G0R6R2B6",
+            "output": "0"
+        },
+        {
+            "input": "G2B8",
+            "output": "0"
+        },
+        {
+            "input": "B2",
+            "output": "0"
+        },
+        {
+            "input": "G1B5B9G9G7",
+            "output": "0"
+        },
+        {
+            "input": "R3G5G9",
+            "output": "0"
+        },
+        {
+            "input": "G4",
+            "output": "0"
+        },
+        {
+            "input": "R1R0R2G8",
+            "output": "0"
+        },
+        {
+            "input": "R8B5G2",
+            "output": "0"
+        },
+        {
+            "input": "B8B0",
+            "output": "0"
+        },
+        {
+            "input": "G0G8B9B8B8B6R6R9G7",
+            "output": "0"
+        },
+        {
+            "input": "B4B0",
+            "output": "0"
+        },
+        {
+            "input": "R4B8R8G3B4G0R1R5B4G1",
+            "output": "0"
+        },
+        {
+            "input": "R2R2G9R1G4R9G2G4",
+            "output": "0"
+        },
+        {
+            "input": "G9G8R9G7B3R1",
+            "output": "0"
+        },
+        {
+            "input": "B3R4B6R9B4R3R9R6B6G6",
+            "output": "1"
+        },
+        {
+            "input": "B8G6B2G0",
+            "output": "0"
+        },
+        {
+            "input": "G3R9R8",
+            "output": "0"
+        },
+        {
+            "input": "R0",
+            "output": "0"
+        },
+        {
+            "input": "B4B1B7",
+            "output": "0"
+        },
+        {
+            "input": "G6G5",
+            "output": "0"
+        },
+        {
+            "input": "B1B1G5R6R1B6B9R7",
+            "output": "0"
+        },
+        {
+            "input": "G9B1",
+            "output": "0"
+        },
+        {
+            "input": "B6R3R2B8B8G8R1R7G6",
+            "output": "0"
+        },
+        {
+            "input": "G2G2R2B2G3R8B1R4",
+            "output": "1"
+        },
+        {
+            "input": "G8B4B3R1R8",
+            "output": "0"
+        },
+        {
+            "input": "R6R8",
+            "output": "0"
+        },
+        {
+            "input": "G0G5G0G7",
+            "output": "0"
+        },
+        {
+            "input": "R2G9R1B8R5",
+            "output": "0"
+        },
+        {
+            "input": "R5R7R2B8B5B3B1R1",
+            "output": "0"
+        },
+        {
+            "input": "G3G1B3R6R1",
+            "output": "0"
+        },
+        {
+            "input": "B5R5G1B5G2G2",
+            "output": "0"
+        },
+        {
+            "input": "G9R6B2R4G3B7R4B4",
+            "output": "0"
+        },
+        {
+            "input": "B8R0B8",
+            "output": "0"
+        },
+        {
+            "input": "G3",
+            "output": "0"
+        },
+        {
+            "input": "G8B7G3B6B6R0",
+            "output": "0"
+        },
+        {
+            "input": "B9B9G9G2R1G4B1R8",
+            "output": "0"
+        },
+        {
+            "input": "B0G2B6",
+            "output": "0"
+        },
+        {
+            "input": "B1B0",
+            "output": "0"
+        },
+        {
+            "input": "R5B9",
+            "output": "0"
+        },
+        {
+            "input": "R3G1R4B0B4B2B0G2R0",
+            "output": "0"
+        },
+        {
+            "input": "B9G1G5B9B5G8B2",
+            "output": "0"
+        },
+        {
+            "input": "B1R2B1B9G2R4",
+            "output": "0"
+        },
+        {
+            "input": "R3G0G0G4G4R4R8",
+            "output": "0"
+        },
+        {
+            "input": "B9G6R9B3G9R3B1R1R4",
+            "output": "1"
+        },
+        {
+            "input": "G9B9G2G4R2B0R4",
+            "output": "0"
+        },
+        {
+            "input": "G4G6G9G6B0G5",
+            "output": "0"
+        },
+        {
+            "input": "R8R9R7B7B9B5R5R4B8G6",
+            "output": "0"
+        },
+        {
+            "input": "G5R1",
+            "output": "0"
+        },
+        {
+            "input": "G2G0G7G5R7G1R6B9",
+            "output": "0"
+        },
+        {
+            "input": "G9R0G1G1R9B0",
+            "output": "0"
+        },
+        {
+            "input": "R0R7R1G6R4",
+            "output": "0"
+        },
+        {
+            "input": "R9G9G1",
+            "output": "0"
+        },
+        {
+            "input": "R8R6R7R0R2B5B8G0",
+            "output": "0"
+        },
+        {
+            "input": "G6G7B2",
+            "output": "0"
+        },
+        {
+            "input": "G2G0R6G8G5R9R0R0",
+            "output": "0"
+        },
+        {
+            "input": "B1B1R9B0B7G6B3",
+            "output": "0"
+        },
+        {
+            "input": "G6",
+            "output": "0"
+        },
+        {
+            "input": "R9B3",
+            "output": "0"
+        },
+        {
+            "input": "G9B0G5R1B2B3R7",
+            "output": "0"
+        },
+        {
+            "input": "G3R2B9",
+            "output": "0"
+        },
+        {
+            "input": "B0R5",
+            "output": "0"
+        },
+        {
+            "input": "B7G3G8",
+            "output": "0"
+        },
+        {
+            "input": "R3R2R3G3G5R3R6G6",
+            "output": "0"
+        },
+        {
+            "input": "R2B4R2B2R5",
+            "output": "0"
+        },
+        {
+            "input": "B0R5G7B8R4R6B9B7",
+            "output": "0"
+        },
+        {
+            "input": "B5",
+            "output": "0"
+        },
+        {
+            "input": "R5R3G2",
+            "output": "0"
+        },
+        {
+            "input": "R0B2G6R8R7G7",
+            "output": "0"
+        },
+        {
+            "input": "B1R5G5",
+            "output": "0"
+        },
+        {
+            "input": "R4B9",
+            "output": "0"
+        },
+        {
+            "input": "G7G9G8G4",
+            "output": "0"
+        },
+        {
+            "input": "G5B9G3R4R1G4R4G3B5B9",
+            "output": "0"
+        },
+        {
+            "input": "G0G4G7G3R1G0",
+            "output": "0"
+        },
+        {
+            "input": "B1G4G6G2G5G5",
+            "output": "0"
+        },
+        {
+            "input": "R2B7R2R7B8R2R6B7",
+            "output": "0"
+        },
+        {
+            "input": "B2R6B0G7B0G5R7R8R3",
+            "output": "0"
+        },
+        {
+            "input": "B3R6G5R0G5R9",
+            "output": "0"
+        },
+        {
+            "input": "R3G0G8G5R7R8B5R0",
+            "output": "0"
+        },
+        {
+            "input": "R5R5G9",
+            "output": "0"
+        },
+        {
+            "input": "B0R6G1B4",
+            "output": "0"
+        },
+        {
+            "input": "B6R1G4B7B8R0R0B5G9G5",
+            "output": "0"
+        },
+        {
+            "input": "B7B9G2B2R2",
+            "output": "1"
+        },
+        {
+            "input": "B7B3",
+            "output": "0"
+        },
+        {
+            "input": "B0R0B9",
+            "output": "0"
+        },
+        {
+            "input": "G8G1R5R8G1G3R3G9B6",
+            "output": "0"
+        },
+        {
+            "input": "R3B8G8R2R7",
+            "output": "0"
+        },
+        {
+            "input": "R1G3G5G3G4B4R9R6",
+            "output": "0"
+        },
+        {
+            "input": "G5R2",
+            "output": "0"
+        },
+        {
+            "input": "R1B1B8G3B8R0G1G4B2G3",
+            "output": "1"
+        },
+        {
+            "input": "G7B5R6R6R3G4",
+            "output": "0"
+        },
+        {
+            "input": "B5G8G1R5B4",
+            "output": "0"
+        },
+        {
+            "input": "B2B4",
+            "output": "0"
+        },
+        {
+            "input": "G0B2G6B8G8B1G8",
+            "output": "0"
+        },
+        {
+            "input": "G3R3R2B3B5G1B7R8B6",
+            "output": "1"
+        },
+        {
+            "input": "R2R2R2G6G7B3",
+            "output": "0"
+        },
+        {
+            "input": "B7B1",
+            "output": "0"
+        },
+        {
+            "input": "G7G0B7",
+            "output": "0"
+        },
+        {
+            "input": "B5G4B1G9R2R9G7",
+            "output": "0"
+        },
+        {
+            "input": "R7G4G1B1",
+            "output": "0"
+        },
+        {
+            "input": "B1B5",
+            "output": "0"
+        },
+        {
+            "input": "B7R4G2R2B4",
+            "output": "0"
+        },
+        {
+            "input": "R3",
+            "output": "0"
+        },
+        {
+            "input": "B2R1B0B2G9R0R9",
+            "output": "0"
+        },
+        {
+            "input": "R5G6",
+            "output": "0"
+        },
+        {
+            "input": "R9G8R5R8G1G9",
+            "output": "0"
+        },
+        {
+            "input": "B7G4",
+            "output": "0"
+        },
+        {
+            "input": "G0R6B8",
+            "output": "0"
+        },
+        {
+            "input": "G6B0B2",
+            "output": "0"
+        },
+        {
+            "input": "G0B2B5G9B2G1",
+            "output": "0"
+        },
+        {
+            "input": "G3B2R0R4B8R6B0",
+            "output": "0"
+        },
+        {
+            "input": "R0R3B1G9R0R0R8R6G6B4",
+            "output": "0"
+        },
+        {
+            "input": "R6R7G0B7R3B3B6G3R6",
+            "output": "1"
+        },
+        {
+            "input": "B8G3R0",
+            "output": "0"
+        },
+        {
+            "input": "B6",
+            "output": "0"
+        },
+        {
+            "input": "B3R2B3",
+            "output": "0"
+        },
+        {
+            "input": "R0R5R9R5B2R5",
+            "output": "0"
+        },
+        {
+            "input": "B0R6B2B3G2R0",
+            "output": "0"
+        },
+        {
+            "input": "G0R0G6B5R1R7B0",
+            "output": "1"
+        },
+        {
+            "input": "B4R8R8B2",
+            "output": "0"
+        },
+        {
+            "input": "R8B7",
+            "output": "0"
+        },
+        {
+            "input": "R7R1G4",
+            "output": "0"
+        },
+        {
+            "input": "G8R2R7G9B4",
+            "output": "0"
+        },
+        {
+            "input": "R8B5",
+            "output": "0"
+        },
+        {
+            "input": "R7B1",
+            "output": "0"
+        }
+    ],
+    "difficulty": "easy"
+}

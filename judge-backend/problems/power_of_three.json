@@ -26,439 +26,7 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "81",
-            "output": "true"
-        },
-        {
-            "input": "2224",
-            "output": "false"
-        },
-        {
-            "input": "7032",
-            "output": "false"
-        },
-        {
-            "input": "670",
-            "output": "false"
-        },
-        {
-            "input": "2187",
-            "output": "true"
-        },
-        {
-            "input": "2406",
-            "output": "false"
-        },
-        {
-            "input": "8970",
-            "output": "false"
-        },
-        {
-            "input": "19683",
-            "output": "true"
-        },
-        {
-            "input": "7389",
-            "output": "false"
-        },
-        {
-            "input": "9821",
-            "output": "false"
-        },
-        {
-            "input": "43046721",
-            "output": "true"
-        },
-        {
-            "input": "4686",
-            "output": "false"
-        },
-        {
-            "input": "1162261467",
-            "output": "true"
-        },
-        {
-            "input": "9535",
-            "output": "false"
-        },
-        {
-            "input": "14348907",
-            "output": "true"
-        },
-        {
-            "input": "129140163",
-            "output": "true"
-        },
-        {
-            "input": "2982",
-            "output": "false"
-        },
-        {
-            "input": "9",
-            "output": "true"
-        },
-        {
-            "input": "243",
-            "output": "true"
-        },
-        {
-            "input": "2587",
-            "output": "false"
-        },
-        {
-            "input": "1175",
-            "output": "false"
-        },
-        {
-            "input": "4637",
-            "output": "false"
-        },
-        {
-            "input": "531441",
-            "output": "true"
-        },
-        {
-            "input": "8746",
-            "output": "false"
-        },
-        {
-            "input": "6837",
-            "output": "false"
-        },
-        {
-            "input": "387420489",
-            "output": "true"
-        },
-        {
-            "input": "3646",
-            "output": "false"
-        },
-        {
-            "input": "4000",
-            "output": "false"
-        },
-        {
-            "input": "5461",
-            "output": "false"
-        },
-        {
-            "input": "729",
-            "output": "true"
-        },
-        {
-            "input": "3198",
-            "output": "false"
-        },
-        {
-            "input": "7597",
-            "output": "false"
-        },
-        {
-            "input": "9330",
-            "output": "false"
-        },
-        {
-            "input": "177147",
-            "output": "true"
-        },
-        {
-            "input": "9403",
-            "output": "false"
-        },
-        {
-            "input": "6580",
-            "output": "false"
-        },
-        {
-            "input": "7472",
-            "output": "false"
-        },
-        {
-            "input": "1591",
-            "output": "false"
-        },
-        {
-            "input": "9098",
-            "output": "false"
-        },
-        {
-            "input": "3233",
-            "output": "false"
-        },
-        {
-            "input": "27",
-            "output": "true"
-        },
-        {
-            "input": "4721",
-            "output": "false"
-        },
-        {
-            "input": "6084",
-            "output": "false"
-        },
-        {
-            "input": "4141",
-            "output": "false"
-        },
-        {
-            "input": "7714",
-            "output": "false"
-        },
-        {
-            "input": "921",
-            "output": "false"
-        },
-        {
-            "input": "8356",
-            "output": "false"
-        },
-        {
-            "input": "3",
-            "output": "true"
-        },
-        {
-            "input": "1",
-            "output": "true"
-        },
-        {
-            "input": "7006",
-            "output": "false"
-        },
-        {
-            "input": "6417",
-            "output": "false"
-        },
-        {
-            "input": "8833",
-            "output": "false"
-        },
-        {
-            "input": "3154",
-            "output": "false"
-        },
-        {
-            "input": "1594323",
-            "output": "true"
-        },
-        {
-            "input": "9948",
-            "output": "false"
-        },
-        {
-            "input": "2772",
-            "output": "false"
-        },
-        {
-            "input": "3476",
-            "output": "false"
-        },
-        {
-            "input": "4517",
-            "output": "false"
-        },
-        {
-            "input": "5474",
-            "output": "false"
-        },
-        {
-            "input": "5175",
-            "output": "false"
-        },
-        {
-            "input": "4512",
-            "output": "false"
-        },
-        {
-            "input": "1122",
-            "output": "false"
-        },
-        {
-            "input": "3376",
-            "output": "false"
-        },
-        {
-            "input": "222",
-            "output": "false"
-        },
-        {
-            "input": "1057",
-            "output": "false"
-        },
-        {
-            "input": "3220",
-            "output": "false"
-        },
-        {
-            "input": "3224",
-            "output": "false"
-        },
-        {
-            "input": "59049",
-            "output": "true"
-        },
-        {
-            "input": "4943",
-            "output": "false"
-        },
-        {
-            "input": "594",
-            "output": "false"
-        },
-        {
-            "input": "5781",
-            "output": "false"
-        },
-        {
-            "input": "5414",
-            "output": "false"
-        },
-        {
-            "input": "434",
-            "output": "false"
-        },
-        {
-            "input": "8661",
-            "output": "false"
-        },
-        {
-            "input": "533",
-            "output": "false"
-        },
-        {
-            "input": "411",
-            "output": "false"
-        },
-        {
-            "input": "4256",
-            "output": "false"
-        },
-        {
-            "input": "6157",
-            "output": "false"
-        },
-        {
-            "input": "2545",
-            "output": "false"
-        },
-        {
-            "input": "6996",
-            "output": "false"
-        },
-        {
-            "input": "1018",
-            "output": "false"
-        },
-        {
-            "input": "6175",
-            "output": "false"
-        },
-        {
-            "input": "288",
-            "output": "false"
-        },
-        {
-            "input": "7750",
-            "output": "false"
-        },
-        {
-            "input": "6124",
-            "output": "false"
-        },
-        {
-            "input": "6561",
-            "output": "true"
-        },
-        {
-            "input": "8604",
-            "output": "false"
-        },
-        {
-            "input": "1176",
-            "output": "false"
-        },
-        {
-            "input": "2123",
-            "output": "false"
-        },
-        {
-            "input": "3873",
-            "output": "false"
-        },
-        {
-            "input": "45",
-            "output": "false"
-        },
-        {
-            "input": "1988",
-            "output": "false"
-        },
-        {
-            "input": "9954",
-            "output": "false"
-        },
-        {
-            "input": "8208",
-            "output": "false"
-        },
-        {
-            "input": "9361",
-            "output": "false"
-        },
-        {
-            "input": "6747",
-            "output": "false"
-        },
-        {
-            "input": "2898",
-            "output": "false"
-        },
-        {
-            "input": "1346",
-            "output": "false"
-        },
-        {
-            "input": "6247",
-            "output": "false"
-        },
-        {
-            "input": "6526",
-            "output": "false"
-        },
-        {
-            "input": "382",
-            "output": "false"
-        },
-        {
-            "input": "3440",
-            "output": "false"
-        },
-        {
-            "input": "2040",
-            "output": "false"
-        },
-        {
-            "input": "8853",
-            "output": "false"
-        },
-        {
-            "input": "553",
-            "output": "false"
-        },
-        {
-            "input": "4196",
-            "output": "false"
-        },
-        {
-            "input": "6850",
-            "output": "false"
-        },
-        {
-            "input": "4885",
-            "output": "false"
-        },
-        {
-            "input": "6608",
+            "input": "4789",
             "output": "false"
         },
         {
@@ -466,159 +34,435 @@
             "output": "true"
         },
         {
-            "input": "4171",
+            "input": "1882",
             "output": "false"
         },
         {
-            "input": "348",
+            "input": "2971",
             "output": "false"
         },
         {
-            "input": "511",
+            "input": "3187",
             "output": "false"
         },
         {
-            "input": "1179",
+            "input": "1",
+            "output": "true"
+        },
+        {
+            "input": "2187",
+            "output": "true"
+        },
+        {
+            "input": "6561",
+            "output": "true"
+        },
+        {
+            "input": "1665",
             "output": "false"
         },
         {
-            "input": "8219",
+            "input": "1594323",
+            "output": "true"
+        },
+        {
+            "input": "8714",
             "output": "false"
         },
         {
-            "input": "4584",
+            "input": "129140163",
+            "output": "true"
+        },
+        {
+            "input": "19683",
+            "output": "true"
+        },
+        {
+            "input": "9529",
             "output": "false"
         },
         {
-            "input": "2991",
+            "input": "6802",
             "output": "false"
         },
         {
-            "input": "6981",
+            "input": "4620",
             "output": "false"
         },
         {
-            "input": "7823",
+            "input": "27",
+            "output": "true"
+        },
+        {
+            "input": "531441",
+            "output": "true"
+        },
+        {
+            "input": "387420489",
+            "output": "true"
+        },
+        {
+            "input": "43046721",
+            "output": "true"
+        },
+        {
+            "input": "729",
+            "output": "true"
+        },
+        {
+            "input": "3554",
             "output": "false"
         },
         {
-            "input": "7787",
+            "input": "6117",
             "output": "false"
         },
         {
-            "input": "7373",
+            "input": "2725",
             "output": "false"
         },
         {
-            "input": "1904",
+            "input": "59049",
+            "output": "true"
+        },
+        {
+            "input": "8521",
             "output": "false"
         },
         {
-            "input": "1193",
+            "input": "9",
+            "output": "true"
+        },
+        {
+            "input": "7820",
             "output": "false"
         },
         {
-            "input": "4809",
+            "input": "5542",
             "output": "false"
         },
         {
-            "input": "5792",
+            "input": "3585",
             "output": "false"
         },
         {
-            "input": "2345",
+            "input": "2872",
             "output": "false"
         },
         {
-            "input": "807",
+            "input": "4100",
             "output": "false"
         },
         {
-            "input": "3586",
+            "input": "1196",
             "output": "false"
         },
         {
-            "input": "1354",
+            "input": "6447",
             "output": "false"
         },
         {
-            "input": "5103",
+            "input": "4248",
             "output": "false"
         },
         {
-            "input": "8492",
+            "input": "81",
+            "output": "true"
+        },
+        {
+            "input": "4322",
             "output": "false"
         },
         {
-            "input": "6111",
+            "input": "8865",
             "output": "false"
         },
         {
-            "input": "7085",
+            "input": "989",
             "output": "false"
         },
         {
-            "input": "7419",
+            "input": "1975",
             "output": "false"
         },
         {
-            "input": "9815",
+            "input": "5742",
             "output": "false"
         },
         {
-            "input": "5495",
+            "input": "8153",
             "output": "false"
         },
         {
-            "input": "1045",
+            "input": "8905",
             "output": "false"
         },
         {
-            "input": "8741",
+            "input": "1577",
             "output": "false"
         },
         {
-            "input": "7470",
+            "input": "2817",
             "output": "false"
         },
         {
-            "input": "8860",
+            "input": "505",
             "output": "false"
         },
         {
-            "input": "1632",
+            "input": "1162261467",
+            "output": "true"
+        },
+        {
+            "input": "3",
+            "output": "true"
+        },
+        {
+            "input": "5613",
             "output": "false"
         },
         {
-            "input": "8039",
+            "input": "6986",
             "output": "false"
         },
         {
-            "input": "3124",
+            "input": "3450",
             "output": "false"
         },
         {
-            "input": "3028",
+            "input": "372",
             "output": "false"
         },
         {
-            "input": "7530",
+            "input": "5818",
             "output": "false"
         },
         {
-            "input": "635",
+            "input": "245",
             "output": "false"
         },
         {
-            "input": "7264",
+            "input": "8240",
             "output": "false"
         },
         {
-            "input": "9645",
+            "input": "6889",
             "output": "false"
         },
         {
-            "input": "8866",
+            "input": "4929",
+            "output": "false"
+        },
+        {
+            "input": "7019",
+            "output": "false"
+        },
+        {
+            "input": "8453",
+            "output": "false"
+        },
+        {
+            "input": "177147",
+            "output": "true"
+        },
+        {
+            "input": "243",
+            "output": "true"
+        },
+        {
+            "input": "6112",
+            "output": "false"
+        },
+        {
+            "input": "9457",
+            "output": "false"
+        },
+        {
+            "input": "9598",
+            "output": "false"
+        },
+        {
+            "input": "8799",
+            "output": "false"
+        },
+        {
+            "input": "2418",
+            "output": "false"
+        },
+        {
+            "input": "4619",
+            "output": "false"
+        },
+        {
+            "input": "5934",
+            "output": "false"
+        },
+        {
+            "input": "3883",
+            "output": "false"
+        },
+        {
+            "input": "14348907",
+            "output": "true"
+        },
+        {
+            "input": "1667",
+            "output": "false"
+        },
+        {
+            "input": "6832",
+            "output": "false"
+        },
+        {
+            "input": "5089",
+            "output": "false"
+        },
+        {
+            "input": "2468",
+            "output": "false"
+        },
+        {
+            "input": "2093",
+            "output": "false"
+        },
+        {
+            "input": "4979",
+            "output": "false"
+        },
+        {
+            "input": "7287",
+            "output": "false"
+        },
+        {
+            "input": "1743",
+            "output": "false"
+        },
+        {
+            "input": "5837",
+            "output": "false"
+        },
+        {
+            "input": "80",
+            "output": "false"
+        },
+        {
+            "input": "7704",
+            "output": "false"
+        },
+        {
+            "input": "3261",
+            "output": "false"
+        },
+        {
+            "input": "663",
+            "output": "false"
+        },
+        {
+            "input": "1761",
+            "output": "false"
+        },
+        {
+            "input": "3872",
+            "output": "false"
+        },
+        {
+            "input": "9804",
+            "output": "false"
+        },
+        {
+            "input": "9646",
+            "output": "false"
+        },
+        {
+            "input": "2567",
+            "output": "false"
+        },
+        {
+            "input": "4259",
+            "output": "false"
+        },
+        {
+            "input": "8368",
+            "output": "false"
+        },
+        {
+            "input": "8164",
+            "output": "false"
+        },
+        {
+            "input": "8941",
+            "output": "false"
+        },
+        {
+            "input": "2087",
+            "output": "false"
+        },
+        {
+            "input": "5865",
+            "output": "false"
+        },
+        {
+            "input": "9402",
+            "output": "false"
+        },
+        {
+            "input": "3919",
+            "output": "false"
+        },
+        {
+            "input": "2962",
+            "output": "false"
+        },
+        {
+            "input": "8767",
+            "output": "false"
+        },
+        {
+            "input": "449",
+            "output": "false"
+        },
+        {
+            "input": "5221",
+            "output": "false"
+        },
+        {
+            "input": "3877",
+            "output": "false"
+        },
+        {
+            "input": "7008",
+            "output": "false"
+        },
+        {
+            "input": "6260",
+            "output": "false"
+        },
+        {
+            "input": "6037",
+            "output": "false"
+        },
+        {
+            "input": "2312",
+            "output": "false"
+        },
+        {
+            "input": "2250",
+            "output": "false"
+        },
+        {
+            "input": "9672",
+            "output": "false"
+        },
+        {
+            "input": "6286",
+            "output": "false"
+        },
+        {
+            "input": "1312",
+            "output": "false"
+        },
+        {
+            "input": "3815",
             "output": "false"
         },
         {
@@ -626,43 +470,199 @@
             "output": "false"
         },
         {
-            "input": "4147",
+            "input": "9456",
             "output": "false"
         },
         {
-            "input": "7090",
+            "input": "4065",
             "output": "false"
         },
         {
-            "input": "5917",
+            "input": "6964",
             "output": "false"
         },
         {
-            "input": "9874",
+            "input": "191",
             "output": "false"
         },
         {
-            "input": "8040",
+            "input": "9582",
             "output": "false"
         },
         {
-            "input": "4117",
+            "input": "3976",
             "output": "false"
         },
         {
-            "input": "4148",
+            "input": "4804",
             "output": "false"
         },
         {
-            "input": "9551",
+            "input": "1859",
             "output": "false"
         },
         {
-            "input": "4287",
+            "input": "3973",
             "output": "false"
         },
         {
-            "input": "1083",
+            "input": "4543",
+            "output": "false"
+        },
+        {
+            "input": "7088",
+            "output": "false"
+        },
+        {
+            "input": "1932",
+            "output": "false"
+        },
+        {
+            "input": "1951",
+            "output": "false"
+        },
+        {
+            "input": "107",
+            "output": "false"
+        },
+        {
+            "input": "2601",
+            "output": "false"
+        },
+        {
+            "input": "4845",
+            "output": "false"
+        },
+        {
+            "input": "3447",
+            "output": "false"
+        },
+        {
+            "input": "8509",
+            "output": "false"
+        },
+        {
+            "input": "9126",
+            "output": "false"
+        },
+        {
+            "input": "-93",
+            "output": "false"
+        },
+        {
+            "input": "2772",
+            "output": "false"
+        },
+        {
+            "input": "3576",
+            "output": "false"
+        },
+        {
+            "input": "9949",
+            "output": "false"
+        },
+        {
+            "input": "16",
+            "output": "false"
+        },
+        {
+            "input": "4754",
+            "output": "false"
+        },
+        {
+            "input": "4094",
+            "output": "false"
+        },
+        {
+            "input": "2090",
+            "output": "false"
+        },
+        {
+            "input": "6782",
+            "output": "false"
+        },
+        {
+            "input": "6862",
+            "output": "false"
+        },
+        {
+            "input": "8558",
+            "output": "false"
+        },
+        {
+            "input": "9526",
+            "output": "false"
+        },
+        {
+            "input": "4596",
+            "output": "false"
+        },
+        {
+            "input": "9771",
+            "output": "false"
+        },
+        {
+            "input": "2355",
+            "output": "false"
+        },
+        {
+            "input": "9483",
+            "output": "false"
+        },
+        {
+            "input": "5952",
+            "output": "false"
+        },
+        {
+            "input": "7656",
+            "output": "false"
+        },
+        {
+            "input": "7449",
+            "output": "false"
+        },
+        {
+            "input": "2851",
+            "output": "false"
+        },
+        {
+            "input": "7800",
+            "output": "false"
+        },
+        {
+            "input": "2059",
+            "output": "false"
+        },
+        {
+            "input": "9609",
+            "output": "false"
+        },
+        {
+            "input": "7563",
+            "output": "false"
+        },
+        {
+            "input": "5783",
+            "output": "false"
+        },
+        {
+            "input": "3299",
+            "output": "false"
+        },
+        {
+            "input": "101",
+            "output": "false"
+        },
+        {
+            "input": "8008",
+            "output": "false"
+        },
+        {
+            "input": "7853",
+            "output": "false"
+        },
+        {
+            "input": "2807",
             "output": "false"
         }
     ]
