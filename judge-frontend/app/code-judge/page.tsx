@@ -282,6 +282,11 @@ export default function Home() {
         }
     }, []);
 
+    const handleMobileTabChange = useCallback((tab: "problem" | "code" | "submissions") => {
+        setMobileTab(tab);
+        setIsSidebarOpen(false);
+    }, [setIsSidebarOpen]);
+
     const passedCount = Number(result?.summary?.passed ?? 0);
     const totalCount = Number(result?.summary?.total ?? 0);
     const progressPercent = totalCount > 0
@@ -304,7 +309,7 @@ export default function Home() {
                         {typeof TITLE === 'string' ? TITLE : JSON.stringify(TITLE || "Code Judge")}
                     </div>
                     <div
-                        className="h-1 bg-indigo-600 dark:bg-indigo-400 rounded-full mt-4 overflow-hidden w-[200px]"
+                        className="h-1 bg-indigo-600 dark:bg-indigo-400 rounded-full mt-4 overflow-hidden w-50"
                     >
                         <div
                             ref={loaderBarRef}
@@ -323,6 +328,7 @@ export default function Home() {
                             className={`flex flex-col md:flex-row h-full overflow-hidden shrink-0 transition-all duration-400 ease-[0.4,0,0.2,1] ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                             style={{
                                 width: !isSidebarOpen ? 0 : (isMobile ? "100%" : sidebarWidth + 20),
+                                height: isMobile ? (!isSidebarOpen ? 0 : "100%") : "100%",
                                 transition: isResizing ? 'none' : undefined
                             }}
                         >
@@ -579,7 +585,7 @@ export default function Home() {
                             <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
                                 <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
                                     <button
-                                        onClick={() => setMobileTab("problem")}
+                                        onClick={() => handleMobileTabChange("problem")}
                                         className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "problem"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
@@ -589,7 +595,7 @@ export default function Home() {
                                         <span className="text-[10px] font-bold tracking-wide">Problem</span>
                                     </button>
                                     <button
-                                        onClick={() => setMobileTab("code")}
+                                        onClick={() => handleMobileTabChange("code")}
                                         className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "code"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
@@ -599,7 +605,7 @@ export default function Home() {
                                         <span className="text-[10px] font-bold tracking-wide">Code</span>
                                     </button>
                                     <button
-                                        onClick={() => setMobileTab("submissions")}
+                                        onClick={() => handleMobileTabChange("submissions")}
                                         className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "submissions"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
