@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { History } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
@@ -16,7 +16,7 @@ interface NavBarProps {
     toggleTheme: () => void;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
+const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
     const pathname = usePathname();
     const isCodeIDE = pathname === '/code-ide';
 
@@ -77,6 +77,7 @@ const NavBar: React.FC<NavBarProps> = ({ isSidebarOpen, setIsSidebarOpen, isSubm
             </div>
         </motion.header>
     );
-};
+});
+NavBar.displayName = "NavBar";
 
 export default NavBar;

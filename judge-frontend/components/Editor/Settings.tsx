@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { memo } from 'react';
 import LanguageSelector from './LanguageSelector';
 
 interface SettingsProps {
@@ -8,7 +8,7 @@ interface SettingsProps {
     setFontSize: (size: number) => void;
 }
 
-const Settings = ({ fontSize, setFontSize }: SettingsProps) => {
+const Settings = memo(({ fontSize, setFontSize }: SettingsProps) => {
     return (
         <div className="flex items-center gap-3">
             <LanguageSelector />
@@ -48,6 +48,7 @@ const Settings = ({ fontSize, setFontSize }: SettingsProps) => {
             </div>
         </div>
     );
-};
+});
+Settings.displayName = "Settings";
 
 export default Settings;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getProblemById, submitCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
@@ -48,25 +48,37 @@ export default function Home() {
     const [mainContentWidth, setMainContentWidth] = useState(50); // percentage
     const isResizingSidebar = useRef(false);
     const isResizingMain = useRef(false);
+    const [isResizing, setIsResizing] = useState(false);
+    const requestRef = useRef<number>(null);
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            if (isResizingSidebar.current) {
-                const newWidth = Math.max(200, Math.min(600, e.clientX - 16));
-                setSidebarWidth(newWidth);
-            }
-            if (isResizingMain.current && mainContentRef.current) {
-                const rect = mainContentRef.current.getBoundingClientRect();
-                const relativeX = e.clientX - rect.left;
-                const newPercentage = Math.max(20, Math.min(80, (relativeX / rect.width) * 100));
-                setMainContentWidth(newPercentage);
-            }
+            if (requestRef.current) return;
+
+            requestRef.current = requestAnimationFrame(() => {
+                if (isResizingSidebar.current) {
+                    const newWidth = Math.max(200, Math.min(600, e.clientX - 16));
+                    setSidebarWidth(newWidth);
+                }
+                if (isResizingMain.current && mainContentRef.current) {
+                    const rect = mainContentRef.current.getBoundingClientRect();
+                    const relativeX = e.clientX - rect.left;
+                    const newPercentage = Math.max(20, Math.min(80, (relativeX / rect.width) * 100));
+                    setMainContentWidth(newPercentage);
+                }
+                requestRef.current = null;
+            });
         };
 
         const handleMouseUp = () => {
             isResizingSidebar.current = false;
             isResizingMain.current = false;
+            setIsResizing(false);
             document.body.style.cursor = "default";
+            if (requestRef.current) {
+                cancelAnimationFrame(requestRef.current);
+                requestRef.current = null;
+            }
         };
 
         const checkScreenSize = () => {
@@ -97,17 +109,19 @@ export default function Home() {
         };
     }, [isMobile, isMounted, setIsSidebarOpen]);
 
-    const handleMouseDownSidebar = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouseDownSidebar = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         isResizingSidebar.current = true;
+        setIsResizing(true);
         document.body.style.cursor = "col-resize";
-    };
+    }, []);
 
-    const handleMouseDownMain = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouseDownMain = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         isResizingMain.current = true;
+        setIsResizing(true);
         document.body.style.cursor = "col-resize";
-    };
+    }, []);
 
     // State restoration on mount
     useEffect(() => {
@@ -115,7 +129,7 @@ export default function Home() {
         if (lastProblemId && !selectedProblemId) {
             handleSelect(lastProblemId).catch(console.error);
         }
-    }, [selectedProblemId]);
+    }, [selectedProblemId, handleSelect]);
 
     // Save code changes
     useEffect(() => {
@@ -124,7 +138,7 @@ export default function Home() {
         }
     }, [code, selectedProblemId]);
 
-    async function handleSelect(id: string) {
+    const handleSelect = useCallback(async (id: string) => {
         setSelectedProblemId(id);
         if (id) {
             sessionStorage.setItem("last_selected_problem_id", id);
@@ -149,9 +163,9 @@ export default function Home() {
         } catch (error) {
             console.error("Failed to fetch problem", error);
         }
-    }
+    }, []);
 
-    async function handleTest() {
+    const handleTest = useCallback(async () => {
         if (!selectedProblemId || !problem) return;
 
         setIsSubmitting(true);
@@ -184,9 +198,9 @@ export default function Home() {
         } finally {
             setIsSubmitting(false);
         }
-    }
+    }, [code, problem, selectedProblemId]);
 
-    async function handleSubmit() {
+    const handleSubmit = useCallback(async () => {
         if (!selectedProblemId || !problem) return;
 
         setIsSubmitting(true);
@@ -219,16 +233,16 @@ export default function Home() {
         } finally {
             setIsSubmitting(false);
         }
-    }
+    }, [code, problem, selectedProblemId]);
 
-    async function handleDeleteSubmission(id: string) {
+    const handleDeleteSubmission = useCallback(async (id: string) => {
         try {
             await deleteSubmission(id);
             setPastSubmissions(prev => prev.filter(sub => sub.id !== id));
         } catch (error) {
             console.error("Failed to delete submission", error);
         }
-    }
+    }, []);
     
     return (
         <div className={`flex-1 flex flex-col min-h-0 bg-[#FAFAFA] dark:bg-[#0B0C15] text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans selection:bg-indigo-500/301`}>
@@ -273,14 +287,14 @@ export default function Home() {
                         <AnimatePresence>
                             {isSidebarOpen && (
                                 <motion.div
-                                    layout
+                                    layout={!isResizing}
                                     initial={{ width: 0, opacity: 0 }}
                                     animate={{
                                         width: isMobile ? "100%" : sidebarWidth + 20,
                                         opacity: 1
                                     }}
                                     exit={{ width: 0, opacity: 0 }}
-                                    transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                                    transition={isResizing ? { duration: 0 } : { duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                                     className="flex flex-col md:flex-row h-full overflow-hidden shrink-0"
                                 >
                                     <aside
@@ -306,11 +320,11 @@ export default function Home() {
                         </AnimatePresence>
 
                         <motion.div
-                            layout
+                            layout={!isResizing}
                             ref={mainContentRef}
                             data-content-area
                             className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col lg:flex-row gap-4"
-                            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                            transition={isResizing ? { duration: 0 } : { duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                         >
 
 

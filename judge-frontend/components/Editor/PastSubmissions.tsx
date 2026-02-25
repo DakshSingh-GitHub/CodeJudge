@@ -3,7 +3,7 @@
 import { Submission } from "../../app/lib/storage";
 import { Trash2, AlertTriangle, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, memo } from "react";
 
 interface PastSubmissionsProps {
     submissions: Submission[];
@@ -11,7 +11,7 @@ interface PastSubmissionsProps {
     onDelete: (id: string) => void;
 }
 
-export default function PastSubmissions({ submissions, onLoadCode, onDelete }: PastSubmissionsProps) {
+const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode, onDelete }: PastSubmissionsProps) {
     const [deletingId, setDeletingId] = useState<string | null>(null);
 
     const handleDeleteClick = (e: React.MouseEvent, id: string) => {
@@ -156,4 +156,7 @@ export default function PastSubmissions({ submissions, onLoadCode, onDelete }: P
             </AnimatePresence>
         </>
     );
-}
+});
+PastSubmissions.displayName = "PastSubmissions";
+
+export default PastSubmissions;

@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { memo } from 'react';
 import { useRouter } from 'next/navigation';
 import { Terminal, ExternalLink, Settings as SettingsIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -12,7 +12,7 @@ interface ToolbarProps {
     setFontSize: (size: number) => void;
 }
 
-const Toolbar = ({ code, fontSize, setFontSize }: ToolbarProps) => {
+const Toolbar = memo(({ code, fontSize, setFontSize }: ToolbarProps) => {
     const router = useRouter();
 
     const handleTryInCodeIDE = () => {
@@ -40,6 +40,7 @@ const Toolbar = ({ code, fontSize, setFontSize }: ToolbarProps) => {
             </div>
         </div>
     );
-};
+});
+Toolbar.displayName = "Toolbar";
 
 export default Toolbar;

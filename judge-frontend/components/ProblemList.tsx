@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, memo } from "react";
 import { getProblems } from "../app/lib/api";
 import { Filter, ChevronDown, Check, Sparkles, SlidersHorizontal } from "lucide-react";
 import { getSubmissions } from "../app/lib/storage";
@@ -17,7 +17,7 @@ interface ProblemListProps {
     setSearchQuery: (query: string) => void;
 }
 
-export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, searchQuery, setSearchQuery }: ProblemListProps) {
+const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSidebarOpen, searchQuery, setSearchQuery }: ProblemListProps) {
     const [problems, setProblems] = useState<Problem[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [filters, setFilters] = useState<{ difficulty: string[]; status: "all" | "solved" | "unsolved" }>({
@@ -294,4 +294,7 @@ export default function ProblemList({ onSelect, selectedId, setIsSidebarOpen, se
             </div>
         </div>
     );
-}
+});
+ProblemList.displayName = "ProblemList";
+
+export default ProblemList;

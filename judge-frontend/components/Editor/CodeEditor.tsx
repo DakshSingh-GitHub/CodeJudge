@@ -1,7 +1,7 @@
 "use client";
 
 import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import Toolbar from "./Toolbar";
 import { DEEP_SPACE_THEME, PYTHON_SNIPPETS } from "../../app/lib/editor-config";
 
@@ -12,7 +12,7 @@ interface CodeEditorProps {
     isDark?: boolean;
 }
 
-export default function CodeEditor({
+const CodeEditor = memo(function CodeEditor({
     code,
     setCode,
     isDisabled = false,
@@ -126,4 +126,7 @@ export default function CodeEditor({
             )}
         </div>
     );
-}
+});
+CodeEditor.displayName = "CodeEditor";
+
+export default CodeEditor;

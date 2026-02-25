@@ -1,8 +1,8 @@
 "use client";
 
-import React from 'react';
+import React, { memo } from 'react';
 
-const LanguageSelector = () => {
+const LanguageSelector = memo(() => {
   return (
     <div className="flex items-center gap-2">
       <div className="relative">
@@ -19,6 +19,7 @@ const LanguageSelector = () => {
       </div>
     </div>
   );
-};
+});
+LanguageSelector.displayName = "LanguageSelector";
 
 export default LanguageSelector;

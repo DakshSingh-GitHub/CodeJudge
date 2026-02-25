@@ -1,12 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { Problem } from "../app/lib/types";
 import { Sparkles, Terminal } from "lucide-react";
+import { memo } from "react";
 
 interface ProblemViewerProps {
     problem: Problem | null;
 }
 
-export default function ProblemViewer({ problem }: ProblemViewerProps) {
+const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProps) {
     return (
         <AnimatePresence mode="wait">
             {!problem ? (
@@ -161,4 +162,7 @@ export default function ProblemViewer({ problem }: ProblemViewerProps) {
             )}
         </AnimatePresence>
     );
-}
+});
+ProblemViewer.displayName = "ProblemViewer";
+
+export default ProblemViewer;
