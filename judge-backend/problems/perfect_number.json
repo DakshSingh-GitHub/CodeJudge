@@ -22,11 +22,31 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "111",
+            "input": "857",
             "output": "No"
         },
         {
-            "input": "774",
+            "input": "201",
+            "output": "No"
+        },
+        {
+            "input": "980",
+            "output": "No"
+        },
+        {
+            "input": "781",
+            "output": "No"
+        },
+        {
+            "input": "6",
+            "output": "Yes"
+        },
+        {
+            "input": "8128",
+            "output": "Yes"
+        },
+        {
+            "input": "220",
             "output": "No"
         },
         {
@@ -34,19 +54,11 @@
             "output": "Yes"
         },
         {
-            "input": "6",
-            "output": "Yes"
-        },
-        {
-            "input": "58",
+            "input": "696",
             "output": "No"
         },
         {
-            "input": "788",
-            "output": "No"
-        },
-        {
-            "input": "970",
+            "input": "327",
             "output": "No"
         },
         {
@@ -54,387 +66,7 @@
             "output": "Yes"
         },
         {
-            "input": "600",
-            "output": "No"
-        },
-        {
-            "input": "82",
-            "output": "No"
-        },
-        {
-            "input": "968",
-            "output": "No"
-        },
-        {
-            "input": "8128",
-            "output": "Yes"
-        },
-        {
-            "input": "907",
-            "output": "No"
-        },
-        {
-            "input": "191",
-            "output": "No"
-        },
-        {
-            "input": "871",
-            "output": "No"
-        },
-        {
-            "input": "339",
-            "output": "No"
-        },
-        {
-            "input": "438",
-            "output": "No"
-        },
-        {
-            "input": "9",
-            "output": "No"
-        },
-        {
-            "input": "323",
-            "output": "No"
-        },
-        {
-            "input": "77",
-            "output": "No"
-        },
-        {
-            "input": "780",
-            "output": "No"
-        },
-        {
-            "input": "425",
-            "output": "No"
-        },
-        {
-            "input": "905",
-            "output": "No"
-        },
-        {
-            "input": "527",
-            "output": "No"
-        },
-        {
-            "input": "769",
-            "output": "No"
-        },
-        {
-            "input": "951",
-            "output": "No"
-        },
-        {
-            "input": "415",
-            "output": "No"
-        },
-        {
-            "input": "619",
-            "output": "No"
-        },
-        {
-            "input": "186",
-            "output": "No"
-        },
-        {
-            "input": "712",
-            "output": "No"
-        },
-        {
-            "input": "181",
-            "output": "No"
-        },
-        {
-            "input": "793",
-            "output": "No"
-        },
-        {
-            "input": "286",
-            "output": "No"
-        },
-        {
-            "input": "420",
-            "output": "No"
-        },
-        {
-            "input": "436",
-            "output": "No"
-        },
-        {
-            "input": "845",
-            "output": "No"
-        },
-        {
-            "input": "826",
-            "output": "No"
-        },
-        {
-            "input": "239",
-            "output": "No"
-        },
-        {
-            "input": "318",
-            "output": "No"
-        },
-        {
-            "input": "152",
-            "output": "No"
-        },
-        {
-            "input": "297",
-            "output": "No"
-        },
-        {
-            "input": "588",
-            "output": "No"
-        },
-        {
-            "input": "681",
-            "output": "No"
-        },
-        {
-            "input": "804",
-            "output": "No"
-        },
-        {
-            "input": "558",
-            "output": "No"
-        },
-        {
-            "input": "957",
-            "output": "No"
-        },
-        {
-            "input": "869",
-            "output": "No"
-        },
-        {
-            "input": "608",
-            "output": "No"
-        },
-        {
-            "input": "722",
-            "output": "No"
-        },
-        {
-            "input": "80",
-            "output": "No"
-        },
-        {
-            "input": "734",
-            "output": "No"
-        },
-        {
-            "input": "406",
-            "output": "No"
-        },
-        {
-            "input": "966",
-            "output": "No"
-        },
-        {
-            "input": "610",
-            "output": "No"
-        },
-        {
-            "input": "16",
-            "output": "No"
-        },
-        {
-            "input": "315",
-            "output": "No"
-        },
-        {
-            "input": "203",
-            "output": "No"
-        },
-        {
-            "input": "956",
-            "output": "No"
-        },
-        {
-            "input": "183",
-            "output": "No"
-        },
-        {
-            "input": "126",
-            "output": "No"
-        },
-        {
-            "input": "435",
-            "output": "No"
-        },
-        {
-            "input": "865",
-            "output": "No"
-        },
-        {
-            "input": "85",
-            "output": "No"
-        },
-        {
-            "input": "67",
-            "output": "No"
-        },
-        {
-            "input": "628",
-            "output": "No"
-        },
-        {
-            "input": "91",
-            "output": "No"
-        },
-        {
-            "input": "150",
-            "output": "No"
-        },
-        {
-            "input": "759",
-            "output": "No"
-        },
-        {
-            "input": "163",
-            "output": "No"
-        },
-        {
-            "input": "657",
-            "output": "No"
-        },
-        {
-            "input": "395",
-            "output": "No"
-        },
-        {
-            "input": "666",
-            "output": "No"
-        },
-        {
-            "input": "936",
-            "output": "No"
-        },
-        {
-            "input": "473",
-            "output": "No"
-        },
-        {
-            "input": "789",
-            "output": "No"
-        },
-        {
-            "input": "178",
-            "output": "No"
-        },
-        {
-            "input": "755",
-            "output": "No"
-        },
-        {
-            "input": "851",
-            "output": "No"
-        },
-        {
-            "input": "306",
-            "output": "No"
-        },
-        {
-            "input": "397",
-            "output": "No"
-        },
-        {
-            "input": "366",
-            "output": "No"
-        },
-        {
-            "input": "913",
-            "output": "No"
-        },
-        {
-            "input": "552",
-            "output": "No"
-        },
-        {
-            "input": "832",
-            "output": "No"
-        },
-        {
-            "input": "246",
-            "output": "No"
-        },
-        {
-            "input": "356",
-            "output": "No"
-        },
-        {
-            "input": "679",
-            "output": "No"
-        },
-        {
-            "input": "147",
-            "output": "No"
-        },
-        {
-            "input": "827",
-            "output": "No"
-        },
-        {
-            "input": "346",
-            "output": "No"
-        },
-        {
-            "input": "642",
-            "output": "No"
-        },
-        {
-            "input": "223",
-            "output": "No"
-        },
-        {
-            "input": "884",
-            "output": "No"
-        },
-        {
-            "input": "15",
-            "output": "No"
-        },
-        {
-            "input": "276",
-            "output": "No"
-        },
-        {
-            "input": "301",
-            "output": "No"
-        },
-        {
-            "input": "880",
-            "output": "No"
-        },
-        {
-            "input": "870",
-            "output": "No"
-        },
-        {
-            "input": "507",
-            "output": "No"
-        },
-        {
-            "input": "440",
-            "output": "No"
-        },
-        {
-            "input": "400",
-            "output": "No"
-        },
-        {
-            "input": "371",
-            "output": "No"
-        },
-        {
-            "input": "510",
-            "output": "No"
-        },
-        {
-            "input": "45",
+            "input": "547",
             "output": "No"
         },
         {
@@ -442,87 +74,7 @@
             "output": "No"
         },
         {
-            "input": "992",
-            "output": "No"
-        },
-        {
-            "input": "20",
-            "output": "No"
-        },
-        {
-            "input": "625",
-            "output": "No"
-        },
-        {
-            "input": "521",
-            "output": "No"
-        },
-        {
-            "input": "536",
-            "output": "No"
-        },
-        {
-            "input": "437",
-            "output": "No"
-        },
-        {
-            "input": "643",
-            "output": "No"
-        },
-        {
-            "input": "550",
-            "output": "No"
-        },
-        {
-            "input": "999",
-            "output": "No"
-        },
-        {
-            "input": "379",
-            "output": "No"
-        },
-        {
-            "input": "458",
-            "output": "No"
-        },
-        {
-            "input": "768",
-            "output": "No"
-        },
-        {
-            "input": "360",
-            "output": "No"
-        },
-        {
-            "input": "515",
-            "output": "No"
-        },
-        {
-            "input": "104",
-            "output": "No"
-        },
-        {
-            "input": "170",
-            "output": "No"
-        },
-        {
-            "input": "466",
-            "output": "No"
-        },
-        {
-            "input": "933",
-            "output": "No"
-        },
-        {
-            "input": "337",
-            "output": "No"
-        },
-        {
-            "input": "76",
-            "output": "No"
-        },
-        {
-            "input": "267",
+            "input": "513",
             "output": "No"
         },
         {
@@ -530,47 +82,95 @@
             "output": "No"
         },
         {
-            "input": "802",
+            "input": "918",
             "output": "No"
         },
         {
-            "input": "554",
+            "input": "588",
             "output": "No"
         },
         {
-            "input": "403",
+            "input": "690",
             "output": "No"
         },
         {
-            "input": "188",
+            "input": "74",
             "output": "No"
         },
         {
-            "input": "534",
+            "input": "818",
             "output": "No"
         },
         {
-            "input": "861",
+            "input": "529",
             "output": "No"
         },
         {
-            "input": "831",
+            "input": "22",
             "output": "No"
         },
         {
-            "input": "60",
+            "input": "955",
             "output": "No"
         },
         {
-            "input": "258",
+            "input": "62",
             "output": "No"
         },
         {
-            "input": "461",
+            "input": "562",
             "output": "No"
         },
         {
-            "input": "863",
+            "input": "438",
+            "output": "No"
+        },
+        {
+            "input": "328",
+            "output": "No"
+        },
+        {
+            "input": "314",
+            "output": "No"
+        },
+        {
+            "input": "243",
+            "output": "No"
+        },
+        {
+            "input": "498",
+            "output": "No"
+        },
+        {
+            "input": "916",
+            "output": "No"
+        },
+        {
+            "input": "99",
+            "output": "No"
+        },
+        {
+            "input": "153",
+            "output": "No"
+        },
+        {
+            "input": "368",
+            "output": "No"
+        },
+        {
+            "input": "359",
+            "output": "No"
+        },
+        {
+            "input": "277",
+            "output": "No"
+        },
+        {
+            "input": "366",
+            "output": "No"
+        },
+        {
+            "input": "817",
             "output": "No"
         },
         {
@@ -578,43 +178,15 @@
             "output": "No"
         },
         {
-            "input": "349",
+            "input": "126",
             "output": "No"
         },
         {
-            "input": "52",
+            "input": "958",
             "output": "No"
         },
         {
-            "input": "946",
-            "output": "No"
-        },
-        {
-            "input": "404",
-            "output": "No"
-        },
-        {
-            "input": "950",
-            "output": "No"
-        },
-        {
-            "input": "854",
-            "output": "No"
-        },
-        {
-            "input": "212",
-            "output": "No"
-        },
-        {
-            "input": "143",
-            "output": "No"
-        },
-        {
-            "input": "953",
-            "output": "No"
-        },
-        {
-            "input": "744",
+            "input": "671",
             "output": "No"
         },
         {
@@ -622,43 +194,471 @@
             "output": "No"
         },
         {
-            "input": "532",
+            "input": "461",
             "output": "No"
         },
         {
-            "input": "357",
+            "input": "380",
             "output": "No"
         },
         {
-            "input": "574",
+            "input": "78",
             "output": "No"
         },
         {
-            "input": "763",
+            "input": "693",
             "output": "No"
         },
         {
-            "input": "909",
+            "input": "324",
             "output": "No"
         },
         {
-            "input": "587",
+            "input": "206",
             "output": "No"
         },
         {
-            "input": "859",
+            "input": "879",
             "output": "No"
         },
         {
-            "input": "37",
+            "input": "593",
             "output": "No"
         },
         {
-            "input": "32",
+            "input": "198",
             "output": "No"
         },
         {
-            "input": "717",
+            "input": "113",
+            "output": "No"
+        },
+        {
+            "input": "972",
+            "output": "No"
+        },
+        {
+            "input": "731",
+            "output": "No"
+        },
+        {
+            "input": "105",
+            "output": "No"
+        },
+        {
+            "input": "637",
+            "output": "No"
+        },
+        {
+            "input": "570",
+            "output": "No"
+        },
+        {
+            "input": "441",
+            "output": "No"
+        },
+        {
+            "input": "831",
+            "output": "No"
+        },
+        {
+            "input": "981",
+            "output": "No"
+        },
+        {
+            "input": "61",
+            "output": "No"
+        },
+        {
+            "input": "819",
+            "output": "No"
+        },
+        {
+            "input": "880",
+            "output": "No"
+        },
+        {
+            "input": "534",
+            "output": "No"
+        },
+        {
+            "input": "116",
+            "output": "No"
+        },
+        {
+            "input": "892",
+            "output": "No"
+        },
+        {
+            "input": "565",
+            "output": "No"
+        },
+        {
+            "input": "125",
+            "output": "No"
+        },
+        {
+            "input": "954",
+            "output": "No"
+        },
+        {
+            "input": "757",
+            "output": "No"
+        },
+        {
+            "input": "801",
+            "output": "No"
+        },
+        {
+            "input": "712",
+            "output": "No"
+        },
+        {
+            "input": "674",
+            "output": "No"
+        },
+        {
+            "input": "921",
+            "output": "No"
+        },
+        {
+            "input": "789",
+            "output": "No"
+        },
+        {
+            "input": "23",
+            "output": "No"
+        },
+        {
+            "input": "661",
+            "output": "No"
+        },
+        {
+            "input": "843",
+            "output": "No"
+        },
+        {
+            "input": "644",
+            "output": "No"
+        },
+        {
+            "input": "890",
+            "output": "No"
+        },
+        {
+            "input": "143",
+            "output": "No"
+        },
+        {
+            "input": "482",
+            "output": "No"
+        },
+        {
+            "input": "152",
+            "output": "No"
+        },
+        {
+            "input": "56",
+            "output": "No"
+        },
+        {
+            "input": "898",
+            "output": "No"
+        },
+        {
+            "input": "53",
+            "output": "No"
+        },
+        {
+            "input": "605",
+            "output": "No"
+        },
+        {
+            "input": "720",
+            "output": "No"
+        },
+        {
+            "input": "803",
+            "output": "No"
+        },
+        {
+            "input": "537",
+            "output": "No"
+        },
+        {
+            "input": "772",
+            "output": "No"
+        },
+        {
+            "input": "561",
+            "output": "No"
+        },
+        {
+            "input": "209",
+            "output": "No"
+        },
+        {
+            "input": "331",
+            "output": "No"
+        },
+        {
+            "input": "387",
+            "output": "No"
+        },
+        {
+            "input": "678",
+            "output": "No"
+        },
+        {
+            "input": "548",
+            "output": "No"
+        },
+        {
+            "input": "363",
+            "output": "No"
+        },
+        {
+            "input": "826",
+            "output": "No"
+        },
+        {
+            "input": "795",
+            "output": "No"
+        },
+        {
+            "input": "139",
+            "output": "No"
+        },
+        {
+            "input": "30",
+            "output": "No"
+        },
+        {
+            "input": "325",
+            "output": "No"
+        },
+        {
+            "input": "517",
+            "output": "No"
+        },
+        {
+            "input": "707",
+            "output": "No"
+        },
+        {
+            "input": "309",
+            "output": "No"
+        },
+        {
+            "input": "539",
+            "output": "No"
+        },
+        {
+            "input": "443",
+            "output": "No"
+        },
+        {
+            "input": "613",
+            "output": "No"
+        },
+        {
+            "input": "385",
+            "output": "No"
+        },
+        {
+            "input": "886",
+            "output": "No"
+        },
+        {
+            "input": "567",
+            "output": "No"
+        },
+        {
+            "input": "476",
+            "output": "No"
+        },
+        {
+            "input": "14",
+            "output": "No"
+        },
+        {
+            "input": "988",
+            "output": "No"
+        },
+        {
+            "input": "805",
+            "output": "No"
+        },
+        {
+            "input": "502",
+            "output": "No"
+        },
+        {
+            "input": "367",
+            "output": "No"
+        },
+        {
+            "input": "969",
+            "output": "No"
+        },
+        {
+            "input": "26",
+            "output": "No"
+        },
+        {
+            "input": "888",
+            "output": "No"
+        },
+        {
+            "input": "777",
+            "output": "No"
+        },
+        {
+            "input": "552",
+            "output": "No"
+        },
+        {
+            "input": "764",
+            "output": "No"
+        },
+        {
+            "input": "970",
+            "output": "No"
+        },
+        {
+            "input": "96",
+            "output": "No"
+        },
+        {
+            "input": "369",
+            "output": "No"
+        },
+        {
+            "input": "135",
+            "output": "No"
+        },
+        {
+            "input": "240",
+            "output": "No"
+        },
+        {
+            "input": "237",
+            "output": "No"
+        },
+        {
+            "input": "782",
+            "output": "No"
+        },
+        {
+            "input": "490",
+            "output": "No"
+        },
+        {
+            "input": "134",
+            "output": "No"
+        },
+        {
+            "input": "413",
+            "output": "No"
+        },
+        {
+            "input": "922",
+            "output": "No"
+        },
+        {
+            "input": "488",
+            "output": "No"
+        },
+        {
+            "input": "873",
+            "output": "No"
+        },
+        {
+            "input": "746",
+            "output": "No"
+        },
+        {
+            "input": "151",
+            "output": "No"
+        },
+        {
+            "input": "348",
+            "output": "No"
+        },
+        {
+            "input": "165",
+            "output": "No"
+        },
+        {
+            "input": "652",
+            "output": "No"
+        },
+        {
+            "input": "910",
+            "output": "No"
+        },
+        {
+            "input": "714",
+            "output": "No"
+        },
+        {
+            "input": "656",
+            "output": "No"
+        },
+        {
+            "input": "417",
+            "output": "No"
+        },
+        {
+            "input": "821",
+            "output": "No"
+        },
+        {
+            "input": "435",
+            "output": "No"
+        },
+        {
+            "input": "869",
+            "output": "No"
+        },
+        {
+            "input": "305",
+            "output": "No"
+        },
+        {
+            "input": "303",
+            "output": "No"
+        },
+        {
+            "input": "591",
+            "output": "No"
+        },
+        {
+            "input": "804",
+            "output": "No"
+        },
+        {
+            "input": "557",
+            "output": "No"
+        },
+        {
+            "input": "601",
+            "output": "No"
+        },
+        {
+            "input": "289",
+            "output": "No"
+        },
+        {
+            "input": "428",
+            "output": "No"
+        },
+        {
+            "input": "759",
+            "output": "No"
+        },
+        {
+            "input": "998",
             "output": "No"
         }
     ]

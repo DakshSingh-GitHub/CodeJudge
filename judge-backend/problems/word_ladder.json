@@ -1,0 +1,662 @@
+{
+    "id": "word_ladder",
+    "title": "Word Ladder",
+    "description": "A transformation sequence from word beginWord to word endWord using a dictionary wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that every adjacent pair of words differs by a single letter. Return the number of words in the shortest transformation sequence.",
+    "input_format": "First line: beginWord. Second line: endWord. Third line: space-separated wordList.",
+    "output_format": "A single integer.",
+    "constraints": {
+        "word.length": "1 <= word.length <= 10",
+        "wordList.length": "1 <= wordList.length <= 5000"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "hit\ncog\nhot dot dog lot log cog",
+            "output": "5"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "hit\ncog\ndot hit dog lot log cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot hot big bit dog hit lot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndog cog hot hit lot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig lot dog hot log hit dot bit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot dot log big cog bit hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot dot dog big log cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot big log bit dog cog hit dot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig hot hit bit dog dot lot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot cog hit big",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot dog cog hit dot bit log hot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig bit dot hit log dog hot lot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit lot dot dog cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot dog log cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhot cog big bit log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhot dog lot log bit big dot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit hot dot log big hit dog cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog lot hot dog hit log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit lot big dog cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog hit big dot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig bit hot lot log dog dot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot hot log dog dot big bit hit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog hit dog lot bit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhot hit dog bit cog dot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog hot dog dot hit bit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog bit hit hot lot dog cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog hit big bit hot lot dot dog cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig bit hot log dog cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhit cog lot log hot dot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndog lot log bit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog bit hit lot log dot cog big",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog dot log hit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog cog big log bit lot hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbit hot dot hit log cog dog lot big",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog big bit cog dog hit hot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlog dot hot big lot dog cog hit bit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog lot big bit cog hit dog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog big hot log cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog big dot hot dog bit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig dot dog lot bit hit log cog hot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit log lot big dog cog hot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit lot cog bit hot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog hot hit dot dog big lot bit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog log bit hit lot big dot dog hot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit big hit hot lot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog lot hit dot big bit hot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndot hit cog dog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot bit cog hot big dog log lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot hot hit cog big dog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot cog big dog hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot hit hot cog log big bit lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndog dot big log bit hit hot cog lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndot bit lot log big cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog bit hot hit lot cog big log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit lot cog dot big hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog cog bit hit lot log hot dot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot bit dot big dog cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog dog hot log big",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot dog log hot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot log cog hot big dot hit bit dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig dog hot cog dot log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot bit log cog hot dog hit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot big dot hot log cog dog hit bit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot big lot hit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlog lot bit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot cog dog hot lot hit bit big",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog hit big dot lot hot bit dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndog hot log cog bit lot hit dot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog bit log big",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbit hit dog big dot lot cog log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig bit dog hit cog dot lot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot cog bit hot big",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot bit hot dot log cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot dog bit lot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot bit hit big log dog cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhit dot cog dog lot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog big log dot lot bit hot hit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit big dot bit log lot cog hot dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit dot cog log lot dog hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhot big bit dot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlog dog big cog dot hot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit dot dog hot log big lot hit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog hot lot log dot bit hit dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot big bit lot cog dog log dot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot hot hit dog dot bit cog big log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndog hit lot cog bit hot dot big",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig bit cog hot log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhit hot cog bit big dog log dot lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit lot hot dot log cog dog big",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit cog hot dog hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog bit hot hit log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog cog big hit dot bit hot lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndot dog cog lot hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbit lot hit hot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog bit cog log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot cog lot bit log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot bit hit cog hot log lot dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit dot log hit cog dog big",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbit big hot log hit dog cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot dot bit hot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhit bit hot lot dot log big cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig hot bit cog log dog hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbit dot lot cog hit hot big log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndot dog cog log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot big dot cog bit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot hit cog bit log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig cog dog hot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig log lot dot hot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog big hot hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhot log lot cog dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit hot log lot hit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig hot log bit cog dot dog lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndot big hot bit hit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhit log bit hot dog lot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbit dog big cog lot hot log dot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot big bit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlog big dog dot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog lot dot bit big hit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot cog big log hot bit dog hit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndot cog hit dog hot big bit lot log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot cog bit hit dog lot big log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog lot cog hit dog big dot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog hot dog big log dot lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot dot dog big bit cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndot big hot cog hit lot bit log",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit lot dot bit hot dog big cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog hot cog bit lot dog hit big dot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndog hot dot big bit log lot hit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig hit dog bit hot lot dot log cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot bit dog big cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlog cog big bit dot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ndog bit cog hot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhot dot dog bit big cog lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig lot dog hit hot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nhit dog log dot hot cog lot bit big",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit big log hot dot bit cog dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndog hit cog log big dot lot bit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlog dog dot hot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog cog bit lot big dog hit hot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog hit dot hot bit dog cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig lot log dot cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlot hot cog hit log big dot bit dog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog lot bit big dog cog",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog hit lot big dot",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig log dot bit dog hot hit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhot lot dot bit big cog hit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\ncog log bit hot big dog lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot log hot hit dog bit dot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig cog dog log hit bit dot hot lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit big bit dog cog log dot hot lot",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit dot big cog lot log",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nlog dot hit bit dog lot hot big cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nhit hot big log lot dot cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog hot bit dot dog lot hit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ncog log lot hot hit",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\ndot cog hot big bit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbig hot hit lot log dog dot bit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlot dot hot bit log cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nlog dot hot lot hit cog",
+            "output": "5"
+        },
+        {
+            "input": "hit\ncog\nbig hit cog lot bit",
+            "output": "0"
+        },
+        {
+            "input": "hit\ncog\nbit dot lot cog big log",
+            "output": "0"
+        }
+    ],
+    "difficulty": "hard"
+}

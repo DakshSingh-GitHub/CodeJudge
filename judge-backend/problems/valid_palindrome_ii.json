@@ -26,115 +26,27 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "bcaccbbccacb",
+            "input": "zaaaaa",
             "output": "Yes"
         },
         {
-            "input": "babaazab",
-            "output": "No"
-        },
-        {
-            "input": "acbababcbababca",
+            "input": "bacaaaazcab",
             "output": "Yes"
         },
         {
-            "input": "bbczccacbb",
-            "output": "No"
-        },
-        {
-            "input": "bcccbbccbbcccb",
+            "input": "caaaaaac",
             "output": "Yes"
         },
         {
-            "input": "baabccbazb",
-            "output": "No"
-        },
-        {
-            "input": "aaaabaaaaabaaaa",
+            "input": "bbbabbb",
             "output": "Yes"
         },
         {
-            "input": "aabacbaabcabaa",
+            "input": "ccacabbacacc",
             "output": "Yes"
         },
         {
-            "input": "acczacaacca",
-            "output": "No"
-        },
-        {
-            "input": "aczbbbca",
-            "output": "Yes"
-        },
-        {
-            "input": "cbacabacabacabc",
-            "output": "Yes"
-        },
-        {
-            "input": "caaaac",
-            "output": "Yes"
-        },
-        {
-            "input": "accccccccza",
-            "output": "Yes"
-        },
-        {
-            "input": "cbcazacabacbc",
-            "output": "No"
-        },
-        {
-            "input": "abbbacabacabbba",
-            "output": "Yes"
-        },
-        {
-            "input": "ccazcc",
-            "output": "Yes"
-        },
-        {
-            "input": "cbbcbazbcbbc",
-            "output": "Yes"
-        },
-        {
-            "input": "acbbacabzcabbca",
-            "output": "No"
-        },
-        {
-            "input": "czbaaabac",
-            "output": "No"
-        },
-        {
-            "input": "abzba",
-            "output": "Yes"
-        },
-        {
-            "input": "czcacabbacaccc",
-            "output": "No"
-        },
-        {
-            "input": "caccbbzbbccac",
-            "output": "Yes"
-        },
-        {
-            "input": "ccbcbcbcc",
-            "output": "Yes"
-        },
-        {
-            "input": "caabbabbabbazc",
-            "output": "No"
-        },
-        {
-            "input": "azccccaaaccccca",
-            "output": "No"
-        },
-        {
-            "input": "cabbac",
-            "output": "Yes"
-        },
-        {
-            "input": "acacacaca",
-            "output": "Yes"
-        },
-        {
-            "input": "bcbcb",
+            "input": "accbbbcbcbbbcca",
             "output": "Yes"
         },
         {
@@ -142,287 +54,163 @@
             "output": "Yes"
         },
         {
-            "input": "cbccbc",
+            "input": "abacccbbbcccaba",
             "output": "Yes"
         },
         {
-            "input": "cbaaaabc",
-            "output": "Yes"
-        },
-        {
-            "input": "cabbbac",
-            "output": "Yes"
-        },
-        {
-            "input": "aaabacccabaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "abcbcba",
-            "output": "Yes"
-        },
-        {
-            "input": "cacbbbbbczc",
+            "input": "cacaz",
             "output": "No"
         },
         {
-            "input": "aaazaccaaaaa",
+            "input": "aacbbcaa",
+            "output": "Yes"
+        },
+        {
+            "input": "cbababc",
+            "output": "Yes"
+        },
+        {
+            "input": "aabbaa",
+            "output": "Yes"
+        },
+        {
+            "input": "bcabcbacb",
+            "output": "Yes"
+        },
+        {
+            "input": "cacbaaccaabcac",
+            "output": "Yes"
+        },
+        {
+            "input": "acaacaacaaca",
+            "output": "Yes"
+        },
+        {
+            "input": "bzaababaaab",
             "output": "No"
         },
         {
-            "input": "caabzaac",
-            "output": "Yes"
-        },
-        {
-            "input": "acaazca",
-            "output": "Yes"
-        },
-        {
-            "input": "bbabaaababz",
+            "input": "zaabcbbbcbaab",
             "output": "No"
         },
         {
-            "input": "bcbbabaababbcb",
+            "input": "aazaaa",
             "output": "Yes"
         },
         {
-            "input": "zbcba",
+            "input": "baacaab",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbbaccaccazbcc",
             "output": "No"
         },
         {
-            "input": "aazaa",
-            "output": "Yes"
-        },
-        {
-            "input": "azcaa",
+            "input": "cazbccbccbaac",
             "output": "No"
         },
         {
-            "input": "acaabbcccbbaaca",
+            "input": "bcbcb",
             "output": "Yes"
         },
         {
-            "input": "bcacbbcacz",
+            "input": "ccaacc",
+            "output": "Yes"
+        },
+        {
+            "input": "cbbbabbbc",
+            "output": "Yes"
+        },
+        {
+            "input": "babcacbab",
+            "output": "Yes"
+        },
+        {
+            "input": "bbaaaaaabb",
+            "output": "Yes"
+        },
+        {
+            "input": "baabaab",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbabbabcb",
+            "output": "Yes"
+        },
+        {
+            "input": "abcacba",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbbcccccbbcb",
+            "output": "Yes"
+        },
+        {
+            "input": "bccabaacaabaccb",
+            "output": "Yes"
+        },
+        {
+            "input": "aczcaaccca",
             "output": "No"
         },
         {
-            "input": "cccbaaabccc",
+            "input": "bbbccaccbbb",
             "output": "Yes"
         },
         {
-            "input": "bcabbabzacb",
+            "input": "zcbacaccacabca",
             "output": "No"
         },
         {
-            "input": "azccaacaaccba",
+            "input": "cbababcbababc",
+            "output": "Yes"
+        },
+        {
+            "input": "baabbaczabbaab",
+            "output": "Yes"
+        },
+        {
+            "input": "ababa",
+            "output": "Yes"
+        },
+        {
+            "input": "aacbcaa",
+            "output": "Yes"
+        },
+        {
+            "input": "cacbaacaabcac",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbcbbcbcb",
+            "output": "Yes"
+        },
+        {
+            "input": "caaac",
+            "output": "Yes"
+        },
+        {
+            "input": "aaczbbbbbcaa",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaaabccbaaaaz",
             "output": "No"
         },
         {
-            "input": "bazbab",
+            "input": "bbbbz",
             "output": "Yes"
         },
         {
-            "input": "bccacaacaccb",
-            "output": "Yes"
-        },
-        {
-            "input": "aaaccbcbcbzcaaa",
+            "input": "zcbbcc",
             "output": "No"
         },
         {
-            "input": "aaabbbaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "aabaa",
-            "output": "Yes"
-        },
-        {
-            "input": "bbcabaczb",
+            "input": "caacbzaac",
             "output": "No"
         },
         {
-            "input": "cbbbbz",
-            "output": "No"
-        },
-        {
-            "input": "bcbzb",
-            "output": "No"
-        },
-        {
-            "input": "bzcbccaccbcab",
-            "output": "No"
-        },
-        {
-            "input": "bbzabb",
-            "output": "Yes"
-        },
-        {
-            "input": "acbcbbbbbcbca",
-            "output": "Yes"
-        },
-        {
-            "input": "acbacacabca",
-            "output": "Yes"
-        },
-        {
-            "input": "acccaaccca",
-            "output": "Yes"
-        },
-        {
-            "input": "aacabbabbacaa",
-            "output": "Yes"
-        },
-        {
-            "input": "zcccccc",
-            "output": "Yes"
-        },
-        {
-            "input": "baaacaacaacazab",
-            "output": "No"
-        },
-        {
-            "input": "acccbacabzcca",
-            "output": "No"
-        },
-        {
-            "input": "cbacbzbcabc",
-            "output": "Yes"
-        },
-        {
-            "input": "zbbbb",
-            "output": "Yes"
-        },
-        {
-            "input": "cbccccbc",
-            "output": "Yes"
-        },
-        {
-            "input": "bbaabb",
-            "output": "Yes"
-        },
-        {
-            "input": "cazaabac",
-            "output": "No"
-        },
-        {
-            "input": "bzcbb",
-            "output": "No"
-        },
-        {
-            "input": "azbba",
-            "output": "Yes"
-        },
-        {
-            "input": "bbbbbazbbbbb",
-            "output": "Yes"
-        },
-        {
-            "input": "abaaabzaaba",
-            "output": "No"
-        },
-        {
-            "input": "bbaccaaccabb",
-            "output": "Yes"
-        },
-        {
-            "input": "ccccacaczcc",
-            "output": "No"
-        },
-        {
-            "input": "ccaaaabbaaaacc",
-            "output": "Yes"
-        },
-        {
-            "input": "baccccccab",
-            "output": "Yes"
-        },
-        {
-            "input": "accabcbacca",
-            "output": "Yes"
-        },
-        {
-            "input": "aabbzaa",
-            "output": "Yes"
-        },
-        {
-            "input": "caccaaaccac",
-            "output": "Yes"
-        },
-        {
-            "input": "zbabc",
-            "output": "No"
-        },
-        {
-            "input": "cabac",
-            "output": "Yes"
-        },
-        {
-            "input": "ccbzbcc",
-            "output": "Yes"
-        },
-        {
-            "input": "bcazb",
-            "output": "No"
-        },
-        {
-            "input": "abccbaaabccba",
-            "output": "Yes"
-        },
-        {
-            "input": "bcbccbzb",
-            "output": "No"
-        },
-        {
-            "input": "cczcacc",
-            "output": "No"
-        },
-        {
-            "input": "aaabcczaccbaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "abbaabba",
-            "output": "Yes"
-        },
-        {
-            "input": "abccccba",
-            "output": "Yes"
-        },
-        {
-            "input": "accabaaaabacca",
-            "output": "Yes"
-        },
-        {
-            "input": "aaaaaccaaaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "abcaabbaacba",
-            "output": "Yes"
-        },
-        {
-            "input": "cczabcc",
-            "output": "No"
-        },
-        {
-            "input": "aaaacbcccbcaaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "zccbcbaabcbcca",
-            "output": "No"
-        },
-        {
-            "input": "abbccbbbccbba",
-            "output": "Yes"
-        },
-        {
-            "input": "bbabbcacbbazb",
-            "output": "No"
-        },
-        {
-            "input": "cbazaacabc",
+            "input": "aazbbbcaa",
             "output": "No"
         },
         {
@@ -430,183 +218,135 @@
             "output": "Yes"
         },
         {
-            "input": "baaazaaaab",
-            "output": "Yes"
-        },
-        {
-            "input": "cabacabbacabac",
-            "output": "Yes"
-        },
-        {
-            "input": "abbaazabba",
-            "output": "Yes"
-        },
-        {
-            "input": "cbbbaabbzc",
+            "input": "aaaabcaacbaaza",
             "output": "No"
         },
         {
-            "input": "caccac",
-            "output": "Yes"
-        },
-        {
-            "input": "ccaazabbaaaacc",
+            "input": "ccbacazcc",
             "output": "No"
         },
         {
-            "input": "acabbabbaca",
-            "output": "Yes"
-        },
-        {
-            "input": "baabcbaab",
-            "output": "Yes"
-        },
-        {
-            "input": "baabbaab",
-            "output": "Yes"
-        },
-        {
-            "input": "cbcbc",
-            "output": "Yes"
-        },
-        {
-            "input": "babaccabab",
-            "output": "Yes"
-        },
-        {
-            "input": "aacbcaaaacbcaa",
-            "output": "Yes"
-        },
-        {
-            "input": "abcabaabazba",
+            "input": "cbbbz",
             "output": "No"
         },
         {
-            "input": "caccaabaaccac",
+            "input": "abbcbcabacbcbba",
             "output": "Yes"
         },
         {
-            "input": "czcaaccc",
+            "input": "ccbazabcc",
+            "output": "Yes"
+        },
+        {
+            "input": "accbbbzbcca",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbaccaaccabcc",
+            "output": "Yes"
+        },
+        {
+            "input": "abbbz",
             "output": "No"
         },
         {
-            "input": "azacacaba",
+            "input": "accbbcbbccz",
             "output": "No"
         },
         {
-            "input": "bbabababb",
+            "input": "abcbcba",
             "output": "Yes"
         },
         {
-            "input": "aaccaa",
+            "input": "cacbaccaccabcac",
             "output": "Yes"
         },
         {
-            "input": "bababbabaz",
+            "input": "bbzabbb",
             "output": "No"
         },
         {
-            "input": "aacbaaabcaa",
+            "input": "aabacabaa",
             "output": "Yes"
         },
         {
-            "input": "abaabzcbaaba",
+            "input": "cbcaccbbbccacbc",
             "output": "Yes"
         },
         {
-            "input": "accbcca",
+            "input": "cacbzcbcac",
             "output": "Yes"
         },
         {
-            "input": "acccbcaaacbccca",
-            "output": "Yes"
-        },
-        {
-            "input": "cbacccccabc",
-            "output": "Yes"
-        },
-        {
-            "input": "cbbacabbc",
-            "output": "Yes"
-        },
-        {
-            "input": "bacaczacab",
-            "output": "Yes"
-        },
-        {
-            "input": "bcaccabaccacb",
-            "output": "Yes"
-        },
-        {
-            "input": "caabccbaac",
-            "output": "Yes"
-        },
-        {
-            "input": "caacaaacaac",
-            "output": "Yes"
-        },
-        {
-            "input": "bbbabcabacbabbb",
-            "output": "Yes"
-        },
-        {
-            "input": "cazac",
-            "output": "Yes"
-        },
-        {
-            "input": "azaaca",
+            "input": "acacz",
             "output": "No"
         },
         {
-            "input": "acacbaccabzaca",
+            "input": "aacbbababbcza",
             "output": "No"
         },
         {
-            "input": "azbbccccbbba",
+            "input": "cbzcbaccabccbc",
             "output": "No"
         },
         {
-            "input": "ccbbcz",
+            "input": "bbccccczcbb",
+            "output": "Yes"
+        },
+        {
+            "input": "baccaz",
             "output": "No"
         },
         {
-            "input": "ccababacc",
-            "output": "Yes"
-        },
-        {
-            "input": "abacaccccacaba",
-            "output": "Yes"
-        },
-        {
-            "input": "bcabaaabacb",
-            "output": "Yes"
-        },
-        {
-            "input": "aczca",
-            "output": "Yes"
-        },
-        {
-            "input": "cczbcbbbbbcbacc",
+            "input": "cazcabccbaccac",
             "output": "No"
         },
         {
-            "input": "accccca",
+            "input": "bccazaaccb",
             "output": "Yes"
         },
         {
-            "input": "cabbcbabcbbac",
+            "input": "cbabcaaazacbabc",
             "output": "Yes"
         },
         {
-            "input": "bcaaaaaaacb",
+            "input": "acaabbcbbaaca",
             "output": "Yes"
         },
         {
-            "input": "cbcccccccbc",
+            "input": "cbbazacacaaabbc",
+            "output": "No"
+        },
+        {
+            "input": "cbaaaaaabc",
             "output": "Yes"
         },
         {
-            "input": "bcabbaabbacb",
+            "input": "cbbbzbc",
+            "output": "Yes"
+        },
+        {
+            "input": "aacaccbbccacaa",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbzbcc",
+            "output": "Yes"
+        },
+        {
+            "input": "aaaccbbccaaa",
+            "output": "Yes"
+        },
+        {
+            "input": "abzba",
+            "output": "Yes"
+        },
+        {
+            "input": "cacacac",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbabbabbb",
             "output": "Yes"
         },
         {
@@ -614,56 +354,316 @@
             "output": "Yes"
         },
         {
-            "input": "acaaaca",
-            "output": "Yes"
-        },
-        {
-            "input": "aaaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "abccba",
-            "output": "Yes"
-        },
-        {
-            "input": "acacbbbbbbbcaza",
+            "input": "bbabcbzbabb",
             "output": "No"
         },
         {
-            "input": "abccabaczba",
+            "input": "acabzaca",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbcaaaaaacbcc",
+            "output": "Yes"
+        },
+        {
+            "input": "abcabzacba",
+            "output": "Yes"
+        },
+        {
+            "input": "baaaab",
+            "output": "Yes"
+        },
+        {
+            "input": "cbzacaaacacbc",
             "output": "No"
         },
         {
-            "input": "caabcbbczaac",
+            "input": "cazaaac",
+            "output": "Yes"
+        },
+        {
+            "input": "ccacz",
             "output": "No"
         },
         {
-            "input": "ccacc",
+            "input": "bbcbcbcbb",
             "output": "Yes"
         },
         {
-            "input": "aaacccczcccaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "bzbbbbbb",
-            "output": "Yes"
-        },
-        {
-            "input": "aaaaaa",
-            "output": "Yes"
-        },
-        {
-            "input": "abababababa",
-            "output": "Yes"
-        },
-        {
-            "input": "acaccabbaccaza",
+            "input": "bzaacb",
             "output": "No"
         },
         {
-            "input": "aaabbbaaz",
+            "input": "bccbabcacbzbccb",
             "output": "No"
+        },
+        {
+            "input": "cbzabc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcbbbbczb",
+            "output": "No"
+        },
+        {
+            "input": "acaaaaaaca",
+            "output": "Yes"
+        },
+        {
+            "input": "caaaaac",
+            "output": "Yes"
+        },
+        {
+            "input": "babbababababbzb",
+            "output": "No"
+        },
+        {
+            "input": "cccbbccz",
+            "output": "No"
+        },
+        {
+            "input": "caacbbcaac",
+            "output": "Yes"
+        },
+        {
+            "input": "babcbbbcbab",
+            "output": "Yes"
+        },
+        {
+            "input": "aacccbbcccza",
+            "output": "No"
+        },
+        {
+            "input": "cbacccabc",
+            "output": "Yes"
+        },
+        {
+            "input": "bccbbbccb",
+            "output": "Yes"
+        },
+        {
+            "input": "azaaaabbaaaaca",
+            "output": "No"
+        },
+        {
+            "input": "ccccbcccc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbcc",
+            "output": "Yes"
+        },
+        {
+            "input": "caabaac",
+            "output": "Yes"
+        },
+        {
+            "input": "cccbaabccc",
+            "output": "Yes"
+        },
+        {
+            "input": "bbbbcbbbb",
+            "output": "Yes"
+        },
+        {
+            "input": "aaazccbaaa",
+            "output": "No"
+        },
+        {
+            "input": "abcaacba",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcbb",
+            "output": "Yes"
+        },
+        {
+            "input": "babbbabbbab",
+            "output": "Yes"
+        },
+        {
+            "input": "zcbca",
+            "output": "No"
+        },
+        {
+            "input": "caaaaaz",
+            "output": "No"
+        },
+        {
+            "input": "acaaaaca",
+            "output": "Yes"
+        },
+        {
+            "input": "zacccab",
+            "output": "No"
+        },
+        {
+            "input": "ababz",
+            "output": "No"
+        },
+        {
+            "input": "bbbccbbb",
+            "output": "Yes"
+        },
+        {
+            "input": "bcacccccacb",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbabbbabcc",
+            "output": "Yes"
+        },
+        {
+            "input": "bzcccb",
+            "output": "Yes"
+        },
+        {
+            "input": "cccbbzcc",
+            "output": "No"
+        },
+        {
+            "input": "abccbbccbz",
+            "output": "No"
+        },
+        {
+            "input": "cbbbbzc",
+            "output": "Yes"
+        },
+        {
+            "input": "ccabacc",
+            "output": "Yes"
+        },
+        {
+            "input": "bccccb",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcccbcbcccbb",
+            "output": "Yes"
+        },
+        {
+            "input": "cabccaaccbac",
+            "output": "Yes"
+        },
+        {
+            "input": "caczc",
+            "output": "No"
+        },
+        {
+            "input": "bacacaacacab",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbcababacbcb",
+            "output": "Yes"
+        },
+        {
+            "input": "ccbabzc",
+            "output": "No"
+        },
+        {
+            "input": "bzbbbbbbbbcb",
+            "output": "No"
+        },
+        {
+            "input": "abbacbcabba",
+            "output": "Yes"
+        },
+        {
+            "input": "cbczccbc",
+            "output": "Yes"
+        },
+        {
+            "input": "cccaaaaaccc",
+            "output": "Yes"
+        },
+        {
+            "input": "cacaabababaacac",
+            "output": "Yes"
+        },
+        {
+            "input": "acbbbcbzcbbbca",
+            "output": "Yes"
+        },
+        {
+            "input": "czbbbcbbbcc",
+            "output": "No"
+        },
+        {
+            "input": "babccaaccbab",
+            "output": "Yes"
+        },
+        {
+            "input": "abbbbbba",
+            "output": "Yes"
+        },
+        {
+            "input": "zcaabbcacbbaacb",
+            "output": "No"
+        },
+        {
+            "input": "aabbaabbaa",
+            "output": "Yes"
+        },
+        {
+            "input": "bbcbbcbcbcbbcbz",
+            "output": "No"
+        },
+        {
+            "input": "abbacbcabza",
+            "output": "No"
+        },
+        {
+            "input": "aacbaaabcaa",
+            "output": "Yes"
+        },
+        {
+            "input": "acbcbcbca",
+            "output": "Yes"
+        },
+        {
+            "input": "bcccbacacabcccb",
+            "output": "Yes"
+        },
+        {
+            "input": "cbcbc",
+            "output": "Yes"
+        },
+        {
+            "input": "caabbaabaabbaac",
+            "output": "Yes"
+        },
+        {
+            "input": "cabaabbaabac",
+            "output": "Yes"
+        },
+        {
+            "input": "zbcbcbbcbcbc",
+            "output": "No"
+        },
+        {
+            "input": "acabcacbcacbaca",
+            "output": "Yes"
+        },
+        {
+            "input": "cabcabbacbac",
+            "output": "Yes"
+        },
+        {
+            "input": "cabbccccbbac",
+            "output": "Yes"
+        },
+        {
+            "input": "aazbaaa",
+            "output": "No"
+        },
+        {
+            "input": "acbcbbccbbcbca",
+            "output": "Yes"
+        },
+        {
+            "input": "caabbbbbbaac",
+            "output": "Yes"
         }
     ]
 }

@@ -1,0 +1,662 @@
+{
+    "id": "top_k_frequent_words",
+    "title": "Top K Frequent Words",
+    "description": "Given an array of strings words and an integer k, return the k most frequent strings.",
+    "input_format": "First line: space-separated words. Second line: integer k.",
+    "output_format": "A space-separated string of words, sorted by frequency (desc) then lexicographical (asc).",
+    "constraints": {
+        "words.length": "1 <= words.length <= 500",
+        "k": "1 <= k <= unique words"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "i love leetcode i love coding\n2",
+            "output": "i love"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "love leetcode i coding banana leetcode\n2",
+            "output": "leetcode banana"
+        },
+        {
+            "input": "i leetcode coding coding leetcode coding apple apple i love\n2",
+            "output": "coding apple"
+        },
+        {
+            "input": "i i i banana cherry cherry love coding banana coding\n3",
+            "output": "i banana cherry"
+        },
+        {
+            "input": "cherry apple cherry i leetcode leetcode banana\n3",
+            "output": "cherry leetcode apple"
+        },
+        {
+            "input": "i i leetcode apple love leetcode love leetcode\n4",
+            "output": "leetcode i love apple"
+        },
+        {
+            "input": "cherry leetcode cherry love love i apple\n3",
+            "output": "cherry love apple"
+        },
+        {
+            "input": "i banana i apple coding\n4",
+            "output": "i apple banana coding"
+        },
+        {
+            "input": "i apple cherry i i banana banana banana cherry banana\n2",
+            "output": "banana i"
+        },
+        {
+            "input": "love i cherry apple i i\n3",
+            "output": "i apple cherry"
+        },
+        {
+            "input": "i love leetcode i i\n2",
+            "output": "i leetcode"
+        },
+        {
+            "input": "i apple love coding i coding banana banana love i\n1",
+            "output": "i"
+        },
+        {
+            "input": "coding love love love coding love\n2",
+            "output": "love coding"
+        },
+        {
+            "input": "cherry love i i coding love i\n3",
+            "output": "i love cherry"
+        },
+        {
+            "input": "love leetcode i coding love\n4",
+            "output": "love coding i leetcode"
+        },
+        {
+            "input": "coding leetcode i love apple leetcode banana\n2",
+            "output": "leetcode apple"
+        },
+        {
+            "input": "i coding apple coding coding love cherry apple\n4",
+            "output": "coding apple cherry i"
+        },
+        {
+            "input": "coding i cherry leetcode i coding coding love\n5",
+            "output": "coding i cherry leetcode love"
+        },
+        {
+            "input": "love cherry leetcode banana i leetcode love coding banana apple\n5",
+            "output": "banana leetcode love apple cherry"
+        },
+        {
+            "input": "apple coding love i leetcode leetcode coding\n4",
+            "output": "coding leetcode apple i"
+        },
+        {
+            "input": "apple cherry cherry cherry cherry cherry banana i love love\n2",
+            "output": "cherry love"
+        },
+        {
+            "input": "leetcode love love love i\n3",
+            "output": "love i leetcode"
+        },
+        {
+            "input": "cherry i apple cherry cherry love coding i cherry i\n2",
+            "output": "cherry i"
+        },
+        {
+            "input": "i apple cherry love love banana apple i banana coding\n2",
+            "output": "apple banana"
+        },
+        {
+            "input": "cherry i love banana love\n4",
+            "output": "love banana cherry i"
+        },
+        {
+            "input": "i i cherry i coding cherry banana\n3",
+            "output": "i cherry banana"
+        },
+        {
+            "input": "apple banana love love coding i love apple love cherry\n4",
+            "output": "love apple banana cherry"
+        },
+        {
+            "input": "love i leetcode love love i leetcode i coding\n2",
+            "output": "i love"
+        },
+        {
+            "input": "coding i i coding apple love love i i i\n4",
+            "output": "i coding love apple"
+        },
+        {
+            "input": "love coding cherry cherry coding coding banana\n2",
+            "output": "coding cherry"
+        },
+        {
+            "input": "i love banana i banana cherry leetcode cherry\n2",
+            "output": "banana cherry"
+        },
+        {
+            "input": "i i i apple i banana\n2",
+            "output": "i apple"
+        },
+        {
+            "input": "cherry leetcode i love coding cherry apple i\n5",
+            "output": "cherry i apple coding leetcode"
+        },
+        {
+            "input": "i love love leetcode leetcode apple coding\n4",
+            "output": "leetcode love apple coding"
+        },
+        {
+            "input": "love i leetcode love leetcode love\n3",
+            "output": "love leetcode i"
+        },
+        {
+            "input": "leetcode love love love coding banana leetcode love\n2",
+            "output": "love leetcode"
+        },
+        {
+            "input": "love i love i love cherry love love love i\n2",
+            "output": "love i"
+        },
+        {
+            "input": "apple leetcode cherry banana leetcode love i\n5",
+            "output": "leetcode apple banana cherry i"
+        },
+        {
+            "input": "love leetcode leetcode banana cherry banana love i cherry\n2",
+            "output": "banana cherry"
+        },
+        {
+            "input": "banana i cherry coding i love i banana banana love\n3",
+            "output": "banana i love"
+        },
+        {
+            "input": "love love coding leetcode coding banana coding i i apple\n1",
+            "output": "coding"
+        },
+        {
+            "input": "leetcode i love banana cherry apple love coding\n5",
+            "output": "love apple banana cherry coding"
+        },
+        {
+            "input": "apple leetcode love love apple i coding love cherry\n6",
+            "output": "love apple cherry coding i leetcode"
+        },
+        {
+            "input": "cherry love leetcode love cherry love i leetcode apple\n5",
+            "output": "love cherry leetcode apple i"
+        },
+        {
+            "input": "apple i love cherry leetcode leetcode\n3",
+            "output": "leetcode apple cherry"
+        },
+        {
+            "input": "cherry love love cherry banana i cherry\n3",
+            "output": "cherry love banana"
+        },
+        {
+            "input": "coding i love i leetcode i\n4",
+            "output": "i coding leetcode love"
+        },
+        {
+            "input": "coding leetcode love leetcode cherry i\n5",
+            "output": "leetcode cherry coding i love"
+        },
+        {
+            "input": "i cherry cherry banana banana coding coding\n1",
+            "output": "banana"
+        },
+        {
+            "input": "i i love i i love love\n1",
+            "output": "i"
+        },
+        {
+            "input": "i i i i apple love i i leetcode\n1",
+            "output": "i"
+        },
+        {
+            "input": "leetcode i love coding i cherry apple love\n1",
+            "output": "i"
+        },
+        {
+            "input": "leetcode i coding coding coding\n2",
+            "output": "coding i"
+        },
+        {
+            "input": "apple love apple leetcode cherry coding apple love i\n3",
+            "output": "apple love cherry"
+        },
+        {
+            "input": "love apple banana apple leetcode love i i\n1",
+            "output": "apple"
+        },
+        {
+            "input": "love coding i i banana leetcode\n5",
+            "output": "i banana coding leetcode love"
+        },
+        {
+            "input": "love cherry banana i leetcode cherry banana\n3",
+            "output": "banana cherry i"
+        },
+        {
+            "input": "love banana leetcode leetcode apple\n4",
+            "output": "leetcode apple banana love"
+        },
+        {
+            "input": "i leetcode cherry love love\n3",
+            "output": "love cherry i"
+        },
+        {
+            "input": "banana i leetcode cherry i i i love\n4",
+            "output": "i banana cherry leetcode"
+        },
+        {
+            "input": "leetcode apple leetcode love love\n1",
+            "output": "leetcode"
+        },
+        {
+            "input": "leetcode love i banana banana leetcode apple cherry cherry\n5",
+            "output": "banana cherry leetcode apple i"
+        },
+        {
+            "input": "love coding leetcode banana love coding\n1",
+            "output": "coding"
+        },
+        {
+            "input": "coding leetcode i leetcode i love\n2",
+            "output": "i leetcode"
+        },
+        {
+            "input": "banana coding coding love love cherry i love banana banana\n3",
+            "output": "banana love coding"
+        },
+        {
+            "input": "leetcode i coding cherry coding coding apple leetcode i\n2",
+            "output": "coding i"
+        },
+        {
+            "input": "leetcode coding i love leetcode love banana love\n5",
+            "output": "love leetcode banana coding i"
+        },
+        {
+            "input": "cherry cherry apple coding i love\n2",
+            "output": "cherry apple"
+        },
+        {
+            "input": "apple leetcode cherry coding love apple coding love\n4",
+            "output": "apple coding love cherry"
+        },
+        {
+            "input": "banana cherry apple apple banana love apple\n2",
+            "output": "apple banana"
+        },
+        {
+            "input": "apple leetcode cherry leetcode leetcode cherry love coding love cherry\n1",
+            "output": "cherry"
+        },
+        {
+            "input": "love leetcode apple leetcode apple\n1",
+            "output": "apple"
+        },
+        {
+            "input": "love love cherry i coding apple i love\n1",
+            "output": "love"
+        },
+        {
+            "input": "coding love banana leetcode coding i cherry\n2",
+            "output": "coding banana"
+        },
+        {
+            "input": "i cherry banana apple coding coding cherry i i love\n5",
+            "output": "i cherry coding apple banana"
+        },
+        {
+            "input": "i love banana banana banana coding banana i love apple\n1",
+            "output": "banana"
+        },
+        {
+            "input": "love i apple i love\n2",
+            "output": "i love"
+        },
+        {
+            "input": "i coding cherry cherry i apple love banana\n2",
+            "output": "cherry i"
+        },
+        {
+            "input": "banana i coding apple love cherry\n4",
+            "output": "apple banana cherry coding"
+        },
+        {
+            "input": "love i i apple love\n1",
+            "output": "i"
+        },
+        {
+            "input": "love i i love coding banana coding love\n2",
+            "output": "love coding"
+        },
+        {
+            "input": "coding banana i leetcode i i i banana\n4",
+            "output": "i banana coding leetcode"
+        },
+        {
+            "input": "apple leetcode i leetcode apple\n3",
+            "output": "apple leetcode i"
+        },
+        {
+            "input": "apple cherry apple banana apple leetcode leetcode i\n5",
+            "output": "apple leetcode banana cherry i"
+        },
+        {
+            "input": "i cherry i banana cherry\n2",
+            "output": "cherry i"
+        },
+        {
+            "input": "apple cherry love leetcode cherry leetcode leetcode banana\n2",
+            "output": "leetcode cherry"
+        },
+        {
+            "input": "leetcode i apple apple i i i cherry\n3",
+            "output": "i apple cherry"
+        },
+        {
+            "input": "i apple coding banana banana i i leetcode i coding\n2",
+            "output": "i banana"
+        },
+        {
+            "input": "love cherry coding love leetcode\n1",
+            "output": "love"
+        },
+        {
+            "input": "apple coding apple coding i cherry banana coding\n1",
+            "output": "coding"
+        },
+        {
+            "input": "coding love cherry coding love coding cherry\n3",
+            "output": "coding cherry love"
+        },
+        {
+            "input": "leetcode i banana leetcode i\n3",
+            "output": "i leetcode banana"
+        },
+        {
+            "input": "coding coding love love cherry apple\n1",
+            "output": "coding"
+        },
+        {
+            "input": "banana i apple leetcode leetcode cherry apple coding love i\n1",
+            "output": "apple"
+        },
+        {
+            "input": "love i love i love leetcode leetcode\n2",
+            "output": "love i"
+        },
+        {
+            "input": "cherry coding apple i apple i cherry\n1",
+            "output": "apple"
+        },
+        {
+            "input": "love i cherry banana i leetcode cherry i banana\n2",
+            "output": "i banana"
+        },
+        {
+            "input": "banana love leetcode love cherry i\n4",
+            "output": "love banana cherry i"
+        },
+        {
+            "input": "cherry i coding cherry i\n2",
+            "output": "cherry i"
+        },
+        {
+            "input": "i cherry banana banana i i\n1",
+            "output": "i"
+        },
+        {
+            "input": "cherry banana cherry i coding\n1",
+            "output": "cherry"
+        },
+        {
+            "input": "love love cherry leetcode leetcode cherry\n3",
+            "output": "cherry leetcode love"
+        },
+        {
+            "input": "cherry apple love leetcode leetcode\n2",
+            "output": "leetcode apple"
+        },
+        {
+            "input": "i love banana love apple\n4",
+            "output": "love apple banana i"
+        },
+        {
+            "input": "love i love love i i cherry\n1",
+            "output": "i"
+        },
+        {
+            "input": "apple love apple apple i apple i cherry coding\n5",
+            "output": "apple i cherry coding love"
+        },
+        {
+            "input": "banana love i banana cherry coding banana i i coding\n2",
+            "output": "banana i"
+        },
+        {
+            "input": "banana love love cherry cherry i cherry coding apple\n6",
+            "output": "cherry love apple banana coding i"
+        },
+        {
+            "input": "i banana banana love i\n1",
+            "output": "banana"
+        },
+        {
+            "input": "leetcode i coding cherry i\n4",
+            "output": "i cherry coding leetcode"
+        },
+        {
+            "input": "banana cherry i coding i i cherry apple coding\n3",
+            "output": "i cherry coding"
+        },
+        {
+            "input": "cherry banana love leetcode coding cherry i coding\n1",
+            "output": "cherry"
+        },
+        {
+            "input": "coding cherry leetcode love i coding\n4",
+            "output": "coding cherry i leetcode"
+        },
+        {
+            "input": "banana apple coding love coding leetcode i leetcode banana\n2",
+            "output": "banana coding"
+        },
+        {
+            "input": "cherry coding cherry apple i leetcode apple\n1",
+            "output": "apple"
+        },
+        {
+            "input": "leetcode leetcode apple i coding i\n3",
+            "output": "i leetcode apple"
+        },
+        {
+            "input": "i coding i i apple coding\n1",
+            "output": "i"
+        },
+        {
+            "input": "coding coding love i love\n1",
+            "output": "coding"
+        },
+        {
+            "input": "i i coding i apple cherry coding love cherry\n2",
+            "output": "i cherry"
+        },
+        {
+            "input": "i leetcode i coding i love\n1",
+            "output": "i"
+        },
+        {
+            "input": "leetcode i apple love banana\n5",
+            "output": "apple banana i leetcode love"
+        },
+        {
+            "input": "leetcode coding i cherry apple\n4",
+            "output": "apple cherry coding i"
+        },
+        {
+            "input": "i apple cherry banana leetcode coding love cherry love\n1",
+            "output": "cherry"
+        },
+        {
+            "input": "apple coding cherry love love i banana leetcode love\n1",
+            "output": "love"
+        },
+        {
+            "input": "apple cherry leetcode coding love\n1",
+            "output": "apple"
+        },
+        {
+            "input": "apple coding leetcode i leetcode i coding leetcode apple leetcode\n2",
+            "output": "leetcode apple"
+        },
+        {
+            "input": "i leetcode leetcode banana i banana i\n2",
+            "output": "i banana"
+        },
+        {
+            "input": "leetcode love i i leetcode i i leetcode i banana\n3",
+            "output": "i leetcode banana"
+        },
+        {
+            "input": "leetcode love i i cherry coding\n2",
+            "output": "i cherry"
+        },
+        {
+            "input": "apple coding love i love\n1",
+            "output": "love"
+        },
+        {
+            "input": "i coding apple love banana leetcode cherry banana\n2",
+            "output": "banana apple"
+        },
+        {
+            "input": "love i coding i apple banana\n3",
+            "output": "i apple banana"
+        },
+        {
+            "input": "leetcode i banana banana love i\n1",
+            "output": "banana"
+        },
+        {
+            "input": "leetcode love cherry cherry cherry i banana cherry leetcode love\n5",
+            "output": "cherry leetcode love banana i"
+        },
+        {
+            "input": "banana apple cherry leetcode coding love\n1",
+            "output": "apple"
+        },
+        {
+            "input": "cherry banana i love cherry coding\n3",
+            "output": "cherry banana coding"
+        },
+        {
+            "input": "cherry coding leetcode apple cherry coding i leetcode i\n4",
+            "output": "cherry coding i leetcode"
+        },
+        {
+            "input": "apple banana coding cherry cherry\n3",
+            "output": "cherry apple banana"
+        },
+        {
+            "input": "banana i apple leetcode i apple leetcode leetcode love\n4",
+            "output": "leetcode apple i banana"
+        },
+        {
+            "input": "love love love banana coding i\n1",
+            "output": "love"
+        },
+        {
+            "input": "love cherry cherry coding banana love apple cherry apple\n2",
+            "output": "cherry apple"
+        },
+        {
+            "input": "love leetcode apple coding coding cherry cherry love\n2",
+            "output": "cherry coding"
+        },
+        {
+            "input": "love banana apple i apple leetcode\n5",
+            "output": "apple banana i leetcode love"
+        },
+        {
+            "input": "apple love apple banana cherry i cherry love coding i\n5",
+            "output": "apple cherry i love banana"
+        },
+        {
+            "input": "coding i apple apple love i coding love\n4",
+            "output": "apple coding i love"
+        },
+        {
+            "input": "love love i banana i apple love i\n1",
+            "output": "i"
+        },
+        {
+            "input": "leetcode cherry i i apple\n2",
+            "output": "i apple"
+        },
+        {
+            "input": "banana banana love banana love apple leetcode banana\n3",
+            "output": "banana love apple"
+        },
+        {
+            "input": "cherry cherry coding love love coding leetcode i\n1",
+            "output": "cherry"
+        },
+        {
+            "input": "i cherry love banana i coding apple\n6",
+            "output": "i apple banana cherry coding love"
+        },
+        {
+            "input": "banana i leetcode i leetcode banana cherry cherry love cherry\n1",
+            "output": "cherry"
+        },
+        {
+            "input": "love i love i i love love banana i\n3",
+            "output": "i love banana"
+        },
+        {
+            "input": "love coding leetcode i cherry leetcode banana coding\n3",
+            "output": "coding leetcode banana"
+        },
+        {
+            "input": "leetcode cherry banana leetcode leetcode coding i\n5",
+            "output": "leetcode banana cherry coding i"
+        },
+        {
+            "input": "leetcode coding love i love\n2",
+            "output": "love coding"
+        },
+        {
+            "input": "i love apple love apple i\n2",
+            "output": "apple i"
+        },
+        {
+            "input": "i love i i leetcode i i love banana\n1",
+            "output": "i"
+        },
+        {
+            "input": "coding coding coding coding coding cherry i i\n1",
+            "output": "coding"
+        },
+        {
+            "input": "apple love love apple coding banana apple love\n2",
+            "output": "apple love"
+        },
+        {
+            "input": "cherry i cherry cherry coding love\n4",
+            "output": "cherry coding i love"
+        },
+        {
+            "input": "i coding love i love i i\n3",
+            "output": "i love coding"
+        }
+    ],
+    "difficulty": "medium"
+}

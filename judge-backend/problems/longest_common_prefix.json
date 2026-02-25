@@ -23,583 +23,31 @@
     ],
     "hidden_test_cases": [
         {
+            "input": "dog interval",
+            "output": ""
+        },
+        {
             "input": "racecar",
             "output": "racecar"
         },
         {
-            "input": "flow interval flower flow inter",
+            "input": "car racecar car",
             "output": ""
         },
         {
-            "input": "car car interval inter racecar",
+            "input": "intermediate flower flower racecar",
             "output": ""
         },
         {
-            "input": "interval flight racecar flower flower",
+            "input": "racecar car racecar interval racecar",
             "output": ""
         },
         {
-            "input": "flight",
-            "output": "flight"
-        },
-        {
-            "input": "inter dog car flow car",
-            "output": ""
-        },
-        {
-            "input": "flight racecar racecar inter",
-            "output": ""
-        },
-        {
-            "input": "dog interval car flow",
-            "output": ""
-        },
-        {
-            "input": "intermediate interval inter",
-            "output": "inter"
-        },
-        {
-            "input": "flower",
-            "output": "flower"
-        },
-        {
-            "input": "intermediate flower dog",
-            "output": ""
-        },
-        {
-            "input": "flow interval",
-            "output": ""
-        },
-        {
-            "input": "racecar flower",
-            "output": ""
-        },
-        {
-            "input": "flow inter flight intermediate",
-            "output": ""
-        },
-        {
-            "input": "flow dog intermediate flow",
-            "output": ""
-        },
-        {
-            "input": "inter car",
-            "output": ""
-        },
-        {
-            "input": "flight flower racecar",
-            "output": ""
-        },
-        {
-            "input": "intermediate inter car dog racecar",
-            "output": ""
-        },
-        {
-            "input": "interval flower",
-            "output": ""
-        },
-        {
-            "input": "interval car dog interval dog",
-            "output": ""
-        },
-        {
-            "input": "intermediate inter flower",
-            "output": ""
-        },
-        {
-            "input": "interval intermediate racecar",
-            "output": ""
-        },
-        {
-            "input": "flight flow dog dog dog",
-            "output": ""
-        },
-        {
-            "input": "inter inter intermediate flower",
-            "output": ""
-        },
-        {
-            "input": "interval flower inter",
-            "output": ""
-        },
-        {
-            "input": "interval",
-            "output": "interval"
-        },
-        {
-            "input": "car flow flight dog",
-            "output": ""
-        },
-        {
-            "input": "dog dog interval",
-            "output": ""
-        },
-        {
-            "input": "racecar inter",
-            "output": ""
-        },
-        {
-            "input": "dog racecar interval dog inter",
-            "output": ""
-        },
-        {
-            "input": "dog intermediate racecar flight",
-            "output": ""
-        },
-        {
-            "input": "flower inter flight",
-            "output": ""
-        },
-        {
-            "input": "racecar flower inter",
-            "output": ""
-        },
-        {
-            "input": "intermediate flight intermediate flower inter",
-            "output": ""
-        },
-        {
-            "input": "car intermediate interval",
-            "output": ""
-        },
-        {
-            "input": "inter intermediate",
-            "output": "inter"
-        },
-        {
-            "input": "flower flower interval flight flight",
-            "output": ""
-        },
-        {
-            "input": "interval intermediate intermediate intermediate",
-            "output": "inter"
-        },
-        {
-            "input": "car car flight interval intermediate",
-            "output": ""
-        },
-        {
-            "input": "racecar car flower flower",
-            "output": ""
-        },
-        {
-            "input": "flow dog",
-            "output": ""
-        },
-        {
-            "input": "dog dog dog",
-            "output": "dog"
-        },
-        {
-            "input": "flight racecar",
-            "output": ""
-        },
-        {
-            "input": "racecar flight",
-            "output": ""
-        },
-        {
-            "input": "inter inter flower intermediate",
-            "output": ""
-        },
-        {
-            "input": "intermediate inter car inter racecar",
-            "output": ""
-        },
-        {
-            "input": "flower car",
-            "output": ""
-        },
-        {
-            "input": "flight flow racecar racecar",
-            "output": ""
-        },
-        {
-            "input": "inter intermediate flow flow flight",
-            "output": ""
-        },
-        {
-            "input": "flow",
-            "output": "flow"
-        },
-        {
-            "input": "intermediate racecar",
-            "output": ""
-        },
-        {
-            "input": "racecar dog car racecar",
-            "output": ""
-        },
-        {
-            "input": "intermediate intermediate",
-            "output": "intermediate"
-        },
-        {
-            "input": "racecar flow racecar dog",
-            "output": ""
-        },
-        {
-            "input": "racecar intermediate interval interval",
-            "output": ""
-        },
-        {
-            "input": "interval inter flower racecar racecar",
-            "output": ""
-        },
-        {
-            "input": "interval intermediate inter flight interval",
-            "output": ""
-        },
-        {
-            "input": "inter racecar interval",
-            "output": ""
-        },
-        {
-            "input": "car intermediate inter interval",
-            "output": ""
-        },
-        {
-            "input": "flower dog racecar flight flower",
-            "output": ""
-        },
-        {
-            "input": "inter flight inter inter flower",
-            "output": ""
-        },
-        {
-            "input": "inter inter flower flight",
-            "output": ""
-        },
-        {
-            "input": "car racecar car racecar",
-            "output": ""
-        },
-        {
-            "input": "flow inter",
-            "output": ""
-        },
-        {
-            "input": "racecar racecar flight racecar",
-            "output": ""
-        },
-        {
-            "input": "interval interval dog racecar flower",
-            "output": ""
-        },
-        {
-            "input": "intermediate dog",
-            "output": ""
-        },
-        {
-            "input": "dog flow car flow dog",
-            "output": ""
-        },
-        {
-            "input": "flower intermediate intermediate flower",
-            "output": ""
-        },
-        {
-            "input": "racecar racecar",
-            "output": "racecar"
-        },
-        {
-            "input": "car racecar intermediate interval flower",
-            "output": ""
-        },
-        {
-            "input": "flower racecar dog",
-            "output": ""
-        },
-        {
-            "input": "flight interval",
-            "output": ""
-        },
-        {
-            "input": "dog racecar racecar flower",
-            "output": ""
-        },
-        {
-            "input": "dog",
-            "output": "dog"
-        },
-        {
-            "input": "racecar interval",
-            "output": ""
-        },
-        {
-            "input": "flower dog dog",
-            "output": ""
-        },
-        {
-            "input": "car intermediate intermediate racecar interval",
-            "output": ""
-        },
-        {
-            "input": "car flow flower car",
-            "output": ""
-        },
-        {
-            "input": "flower flight dog intermediate flight",
-            "output": ""
-        },
-        {
-            "input": "flight intermediate flight",
-            "output": ""
-        },
-        {
-            "input": "intermediate",
-            "output": "intermediate"
-        },
-        {
-            "input": "interval interval flower",
-            "output": ""
-        },
-        {
-            "input": "interval flow flow",
-            "output": ""
-        },
-        {
-            "input": "inter dog interval racecar",
-            "output": ""
-        },
-        {
-            "input": "flower car flight intermediate racecar",
-            "output": ""
-        },
-        {
-            "input": "flower interval interval flight",
-            "output": ""
-        },
-        {
-            "input": "dog flower flow",
-            "output": ""
-        },
-        {
-            "input": "car",
-            "output": "car"
-        },
-        {
-            "input": "dog flight flow intermediate flower",
-            "output": ""
-        },
-        {
-            "input": "car interval",
-            "output": ""
-        },
-        {
-            "input": "intermediate car intermediate interval dog",
-            "output": ""
-        },
-        {
-            "input": "flower flow intermediate inter intermediate",
-            "output": ""
-        },
-        {
-            "input": "intermediate intermediate intermediate",
-            "output": "intermediate"
-        },
-        {
-            "input": "dog flower",
-            "output": ""
-        },
-        {
-            "input": "racecar flow",
-            "output": ""
-        },
-        {
-            "input": "dog dog",
-            "output": "dog"
-        },
-        {
-            "input": "car dog car dog",
-            "output": ""
-        },
-        {
-            "input": "car car flight flow interval",
-            "output": ""
-        },
-        {
-            "input": "flight car car flow",
-            "output": ""
-        },
-        {
-            "input": "flight flower",
-            "output": "fl"
-        },
-        {
-            "input": "flow flow flower flight interval",
-            "output": ""
-        },
-        {
-            "input": "flight flow dog",
-            "output": ""
-        },
-        {
-            "input": "flight flow",
-            "output": "fl"
-        },
-        {
-            "input": "car intermediate inter inter inter",
-            "output": ""
-        },
-        {
-            "input": "flow inter dog inter",
-            "output": ""
-        },
-        {
-            "input": "inter flow car",
-            "output": ""
-        },
-        {
-            "input": "flight flight flower",
-            "output": "fl"
-        },
-        {
-            "input": "dog flow intermediate car flow",
-            "output": ""
-        },
-        {
-            "input": "flower flow interval",
-            "output": ""
-        },
-        {
-            "input": "flower flower",
-            "output": "flower"
-        },
-        {
-            "input": "intermediate car flight racecar interval",
-            "output": ""
-        },
-        {
-            "input": "flight intermediate flower racecar",
-            "output": ""
-        },
-        {
-            "input": "flow flow inter",
-            "output": ""
-        },
-        {
-            "input": "flow car flow dog",
-            "output": ""
-        },
-        {
-            "input": "car racecar flower dog",
-            "output": ""
-        },
-        {
-            "input": "flow inter intermediate",
-            "output": ""
-        },
-        {
-            "input": "racecar flow racecar",
-            "output": ""
-        },
-        {
-            "input": "dog flower flight intermediate",
-            "output": ""
-        },
-        {
-            "input": "flight flight flow racecar dog",
-            "output": ""
-        },
-        {
-            "input": "flower flower interval inter interval",
-            "output": ""
-        },
-        {
-            "input": "flight car",
-            "output": ""
-        },
-        {
-            "input": "interval inter flight interval flight",
-            "output": ""
-        },
-        {
-            "input": "flow racecar",
-            "output": ""
-        },
-        {
-            "input": "inter flight",
-            "output": ""
-        },
-        {
-            "input": "dog flow",
-            "output": ""
-        },
-        {
-            "input": "interval inter inter dog flow",
-            "output": ""
-        },
-        {
-            "input": "inter flow flower",
-            "output": ""
-        },
-        {
-            "input": "inter dog inter",
-            "output": ""
-        },
-        {
-            "input": "flight car flower interval flower",
-            "output": ""
-        },
-        {
-            "input": "intermediate racecar flight intermediate",
-            "output": ""
-        },
-        {
-            "input": "dog flower inter dog",
-            "output": ""
-        },
-        {
-            "input": "dog racecar interval interval interval",
-            "output": ""
-        },
-        {
-            "input": "inter dog car intermediate",
-            "output": ""
-        },
-        {
-            "input": "car flight",
-            "output": ""
-        },
-        {
-            "input": "flow car racecar",
-            "output": ""
-        },
-        {
-            "input": "interval flow",
-            "output": ""
-        },
-        {
-            "input": "inter interval flow",
-            "output": ""
-        },
-        {
-            "input": "racecar interval inter interval",
-            "output": ""
-        },
-        {
-            "input": "inter car intermediate",
-            "output": ""
-        },
-        {
-            "input": "flow interval dog car",
-            "output": ""
-        },
-        {
-            "input": "flower interval interval intermediate",
-            "output": ""
-        },
-        {
-            "input": "car dog",
-            "output": ""
-        },
-        {
-            "input": "intermediate flower",
+            "input": "flow car interval flow",
             "output": ""
         },
         {
-            "input": "dog car flight dog flight",
+            "input": "dog car",
             "output": ""
         },
         {
@@ -607,60 +55,612 @@
             "output": "inter"
         },
         {
-            "input": "flow flower flower",
+            "input": "flower flower",
+            "output": "flower"
+        },
+        {
+            "input": "flight racecar",
+            "output": ""
+        },
+        {
+            "input": "racecar dog dog",
+            "output": ""
+        },
+        {
+            "input": "car intermediate racecar flow",
+            "output": ""
+        },
+        {
+            "input": "interval dog flower intermediate flow",
+            "output": ""
+        },
+        {
+            "input": "interval flow intermediate",
+            "output": ""
+        },
+        {
+            "input": "interval racecar",
+            "output": ""
+        },
+        {
+            "input": "interval intermediate flower flower flow",
+            "output": ""
+        },
+        {
+            "input": "dog flower flower flight",
+            "output": ""
+        },
+        {
+            "input": "flower",
+            "output": "flower"
+        },
+        {
+            "input": "intermediate dog",
+            "output": ""
+        },
+        {
+            "input": "car dog",
+            "output": ""
+        },
+        {
+            "input": "interval racecar interval car",
+            "output": ""
+        },
+        {
+            "input": "interval flower",
+            "output": ""
+        },
+        {
+            "input": "inter inter flight car",
+            "output": ""
+        },
+        {
+            "input": "interval flight inter flow",
+            "output": ""
+        },
+        {
+            "input": "flow",
             "output": "flow"
         },
         {
-            "input": "car car racecar interval interval",
+            "input": "dog racecar flower racecar racecar",
             "output": ""
         },
         {
-            "input": "flight interval car intermediate",
+            "input": "intermediate flight interval car",
             "output": ""
         },
         {
-            "input": "interval racecar racecar racecar intermediate",
+            "input": "interval",
+            "output": "interval"
+        },
+        {
+            "input": "flight",
+            "output": "flight"
+        },
+        {
+            "input": "car flow interval dog",
             "output": ""
         },
         {
-            "input": "flower flow",
+            "input": "dog flow intermediate flower",
+            "output": ""
+        },
+        {
+            "input": "interval car intermediate intermediate dog",
+            "output": ""
+        },
+        {
+            "input": "racecar interval",
+            "output": ""
+        },
+        {
+            "input": "racecar intermediate racecar",
+            "output": ""
+        },
+        {
+            "input": "dog inter dog intermediate interval",
+            "output": ""
+        },
+        {
+            "input": "intermediate flower flow interval",
+            "output": ""
+        },
+        {
+            "input": "intermediate flow flower",
+            "output": ""
+        },
+        {
+            "input": "interval racecar intermediate",
+            "output": ""
+        },
+        {
+            "input": "flower intermediate intermediate intermediate intermediate",
+            "output": ""
+        },
+        {
+            "input": "car",
+            "output": "car"
+        },
+        {
+            "input": "racecar car flight flow dog",
+            "output": ""
+        },
+        {
+            "input": "racecar flow flow",
+            "output": ""
+        },
+        {
+            "input": "intermediate flight flight racecar",
+            "output": ""
+        },
+        {
+            "input": "intermediate flight flow",
+            "output": ""
+        },
+        {
+            "input": "racecar car",
+            "output": ""
+        },
+        {
+            "input": "flight flower flow flight racecar",
+            "output": ""
+        },
+        {
+            "input": "flow flower",
             "output": "flow"
         },
         {
-            "input": "dog inter flower intermediate dog",
+            "input": "inter interval dog racecar",
             "output": ""
         },
         {
-            "input": "flower dog flight",
+            "input": "intermediate flow",
             "output": ""
         },
         {
-            "input": "flow intermediate flow",
+            "input": "interval intermediate interval car flow",
             "output": ""
         },
         {
-            "input": "intermediate car racecar flower intermediate",
+            "input": "car racecar",
             "output": ""
         },
         {
-            "input": "flight car flow",
+            "input": "flow inter flow flow racecar",
             "output": ""
         },
         {
-            "input": "interval dog flow interval dog",
+            "input": "intermediate interval inter inter",
+            "output": "inter"
+        },
+        {
+            "input": "flow flow flight interval flow",
             "output": ""
         },
         {
-            "input": "car racecar intermediate",
+            "input": "inter flower car flower",
             "output": ""
         },
         {
-            "input": "inter intermediate flight intermediate inter",
+            "input": "inter intermediate",
+            "output": "inter"
+        },
+        {
+            "input": "intermediate flow dog",
             "output": ""
         },
         {
-            "input": "dog intermediate dog car",
+            "input": "flight flight flow flight inter",
             "output": ""
+        },
+        {
+            "input": "intermediate intermediate inter",
+            "output": "inter"
+        },
+        {
+            "input": "racecar intermediate intermediate",
+            "output": ""
+        },
+        {
+            "input": "interval flower flow flight",
+            "output": ""
+        },
+        {
+            "input": "intermediate racecar intermediate",
+            "output": ""
+        },
+        {
+            "input": "flower dog racecar",
+            "output": ""
+        },
+        {
+            "input": "flow flower flight intermediate",
+            "output": ""
+        },
+        {
+            "input": "inter car racecar",
+            "output": ""
+        },
+        {
+            "input": "flight interval flow",
+            "output": ""
+        },
+        {
+            "input": "intermediate flower interval",
+            "output": ""
+        },
+        {
+            "input": "racecar inter interval",
+            "output": ""
+        },
+        {
+            "input": "car dog racecar interval flow",
+            "output": ""
+        },
+        {
+            "input": "dog inter intermediate flower inter",
+            "output": ""
+        },
+        {
+            "input": "car flower flow",
+            "output": ""
+        },
+        {
+            "input": "intermediate flow racecar intermediate",
+            "output": ""
+        },
+        {
+            "input": "inter intermediate flower car",
+            "output": ""
+        },
+        {
+            "input": "intermediate interval",
+            "output": "inter"
+        },
+        {
+            "input": "interval racecar racecar car",
+            "output": ""
+        },
+        {
+            "input": "car flight intermediate dog",
+            "output": ""
+        },
+        {
+            "input": "car inter flow flower car",
+            "output": ""
+        },
+        {
+            "input": "interval intermediate car",
+            "output": ""
+        },
+        {
+            "input": "inter racecar racecar inter inter",
+            "output": ""
+        },
+        {
+            "input": "flower intermediate",
+            "output": ""
+        },
+        {
+            "input": "inter interval flight flight interval",
+            "output": ""
+        },
+        {
+            "input": "inter inter flower racecar flow",
+            "output": ""
+        },
+        {
+            "input": "intermediate flight dog",
+            "output": ""
+        },
+        {
+            "input": "car inter inter inter",
+            "output": ""
+        },
+        {
+            "input": "flower flower flower flight",
+            "output": "fl"
+        },
+        {
+            "input": "intermediate inter",
+            "output": "inter"
+        },
+        {
+            "input": "flight dog interval flight",
+            "output": ""
+        },
+        {
+            "input": "interval flight racecar",
+            "output": ""
+        },
+        {
+            "input": "interval racecar dog intermediate",
+            "output": ""
+        },
+        {
+            "input": "interval racecar flight inter",
+            "output": ""
+        },
+        {
+            "input": "racecar flight inter flight",
+            "output": ""
+        },
+        {
+            "input": "car flight car",
+            "output": ""
+        },
+        {
+            "input": "flight interval",
+            "output": ""
+        },
+        {
+            "input": "flight inter interval flight car",
+            "output": ""
+        },
+        {
+            "input": "racecar dog",
+            "output": ""
+        },
+        {
+            "input": "flow interval car intermediate",
+            "output": ""
+        },
+        {
+            "input": "racecar flow flight",
+            "output": ""
+        },
+        {
+            "input": "intermediate car",
+            "output": ""
+        },
+        {
+            "input": "flower dog flower racecar",
+            "output": ""
+        },
+        {
+            "input": "flight flower dog racecar",
+            "output": ""
+        },
+        {
+            "input": "interval flight interval",
+            "output": ""
+        },
+        {
+            "input": "dog interval racecar flow",
+            "output": ""
+        },
+        {
+            "input": "car car flower intermediate car",
+            "output": ""
+        },
+        {
+            "input": "racecar racecar inter",
+            "output": ""
+        },
+        {
+            "input": "car racecar racecar racecar inter",
+            "output": ""
+        },
+        {
+            "input": "flower interval car intermediate",
+            "output": ""
+        },
+        {
+            "input": "flow flight interval dog flower",
+            "output": ""
+        },
+        {
+            "input": "flow racecar flow flow flight",
+            "output": ""
+        },
+        {
+            "input": "inter racecar interval racecar flight",
+            "output": ""
+        },
+        {
+            "input": "inter flow car",
+            "output": ""
+        },
+        {
+            "input": "interval inter flower flower flight",
+            "output": ""
+        },
+        {
+            "input": "racecar racecar flower flight interval",
+            "output": ""
+        },
+        {
+            "input": "interval intermediate intermediate car dog",
+            "output": ""
+        },
+        {
+            "input": "inter racecar",
+            "output": ""
+        },
+        {
+            "input": "intermediate flower racecar intermediate dog",
+            "output": ""
+        },
+        {
+            "input": "interval flow",
+            "output": ""
+        },
+        {
+            "input": "interval car flight flight intermediate",
+            "output": ""
+        },
+        {
+            "input": "inter dog inter intermediate dog",
+            "output": ""
+        },
+        {
+            "input": "flower intermediate flight inter flower",
+            "output": ""
+        },
+        {
+            "input": "flight car interval racecar flow",
+            "output": ""
+        },
+        {
+            "input": "intermediate flower racecar flower flower",
+            "output": ""
+        },
+        {
+            "input": "interval car flower intermediate",
+            "output": ""
+        },
+        {
+            "input": "dog intermediate intermediate car flight",
+            "output": ""
+        },
+        {
+            "input": "inter racecar flower intermediate racecar",
+            "output": ""
+        },
+        {
+            "input": "flight flow flower",
+            "output": "fl"
+        },
+        {
+            "input": "inter inter car inter",
+            "output": ""
+        },
+        {
+            "input": "flight racecar racecar racecar inter",
+            "output": ""
+        },
+        {
+            "input": "racecar inter inter",
+            "output": ""
+        },
+        {
+            "input": "flower flower flower dog",
+            "output": ""
+        },
+        {
+            "input": "car dog dog",
+            "output": ""
+        },
+        {
+            "input": "flight flow dog intermediate flight",
+            "output": ""
+        },
+        {
+            "input": "racecar car flight racecar dog",
+            "output": ""
+        },
+        {
+            "input": "racecar flow flower flight flower",
+            "output": ""
+        },
+        {
+            "input": "dog flow intermediate",
+            "output": ""
+        },
+        {
+            "input": "interval flight flow intermediate flight",
+            "output": ""
+        },
+        {
+            "input": "inter flower car",
+            "output": ""
+        },
+        {
+            "input": "interval flight",
+            "output": ""
+        },
+        {
+            "input": "intermediate car racecar intermediate",
+            "output": ""
+        },
+        {
+            "input": "flow flower intermediate car",
+            "output": ""
+        },
+        {
+            "input": "dog racecar",
+            "output": ""
+        },
+        {
+            "input": "racecar inter flower inter",
+            "output": ""
+        },
+        {
+            "input": "flow car flower flower racecar",
+            "output": ""
+        },
+        {
+            "input": "flow car flight dog",
+            "output": ""
+        },
+        {
+            "input": "interval car intermediate flower flower",
+            "output": ""
+        },
+        {
+            "input": "racecar intermediate racecar intermediate",
+            "output": ""
+        },
+        {
+            "input": "dog flower",
+            "output": ""
+        },
+        {
+            "input": "flower dog car car",
+            "output": ""
+        },
+        {
+            "input": "dog inter flow interval flower",
+            "output": ""
+        },
+        {
+            "input": "dog flight flower",
+            "output": ""
+        },
+        {
+            "input": "flower flight flower interval",
+            "output": ""
+        },
+        {
+            "input": "racecar dog dog racecar interval",
+            "output": ""
+        },
+        {
+            "input": "flow flow",
+            "output": "flow"
+        },
+        {
+            "input": "flight intermediate racecar flight",
+            "output": ""
+        },
+        {
+            "input": "interval intermediate dog",
+            "output": ""
+        },
+        {
+            "input": "interval flow flight inter flow",
+            "output": ""
+        },
+        {
+            "input": "inter inter flow",
+            "output": ""
+        },
+        {
+            "input": "flight interval inter racecar interval",
+            "output": ""
+        },
+        {
+            "input": "inter dog flower",
+            "output": ""
+        },
+        {
+            "input": "dog flight inter inter",
+            "output": ""
+        },
+        {
+            "input": "inter interval",
+            "output": "inter"
         }
     ]
 }

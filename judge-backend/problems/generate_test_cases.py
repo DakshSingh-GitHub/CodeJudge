@@ -2510,10 +2510,429 @@ def solve_partition_equal_subset_sum():
             for i in range(target, x - 1, -1):
                 dp[i] = dp[i] or dp[i-x]
         res = "true" if dp[target] else "false"
-    return " ".join(map(str, nums)), res
+def solve_generate_parentheses():
+    n = random.randint(1, 4)
+    res = []
+    def backtrack(S = '', left = 0, right = 0):
+        if len(S) == 2 * n:
+            res.append(S)
+            return
+        if left < n:
+            backtrack(S + '(', left + 1, right)
+        if right < left:
+            backtrack(S + ')', left, right + 1)
+    backtrack()
+    return str(n), " ".join(res)
 
+def solve_maximal_rectangle():
+    rows, cols = random.randint(2, 6), random.randint(2, 6)
+    matrix = [[random.choice(["0", "1"]) for _ in range(cols)] for _ in range(rows)]
+    
+    if not matrix: return "", "0"
+    max_area = 0
+    heights = [0] * cols
+    for row in matrix:
+        for i in range(cols):
+            heights[i] = heights[i] + 1 if row[i] == '1' else 0
+        
+        stack = [-1]
+        for i in range(cols):
+            while stack[-1] != -1 and heights[stack[-1]] >= heights[i]:
+                h = heights[stack.pop()]
+                w = i - stack[-1] - 1
+                max_area = max(max_area, h * w)
+            stack.append(i)
+        while stack[-1] != -1:
+            h = heights[stack.pop()]
+            w = cols - stack[-1] - 1
+            max_area = max(max_area, h * w)
+            
+    input_str = f"{rows} {cols}\n" + "\n".join(" ".join(row) for row in matrix)
+    return input_str, str(max_area)
 
+def solve_word_search_ii():
+    m, n = 4, 4
+    board = [[random.choice("abcde") for _ in range(n)] for _ in range(m)]
+    words_pool = ["eat", "oath", "pea", "rain", "apple", "bee", "cat"]
+    words = random.sample(words_pool, random.randint(2, 4))
+    
+    def findWords(board, words):
+        res = []
+        for word in words:
+            if exists(board, word):
+                res.append(word)
+        return sorted(res)
 
+    def exists(board, word):
+        for i in range(len(board)):
+            for j in range(len(board[0])):
+                if dfs(board, word, i, j, 0, set()): return True
+        return False
+
+    def dfs(board, word, r, c, idx, visited):
+        if idx == len(word): return True
+        if r < 0 or r >= len(board) or c < 0 or c >= len(board[0]) or \
+           (r, c) in visited or board[r][c] != word[idx]:
+            return False
+        visited.add((r, c))
+        res = any(dfs(board, word, r+dr, c+dc, idx+1, visited) for dr, dc in [(0,1),(0,-1),(1,0),(-1,0)])
+        visited.remove((r, c))
+        return res
+
+    found = findWords(board, words)
+    board_str = "\n".join(" ".join(row) for row in board)
+    return f"{m} {n}\n{board_str}\n{' '.join(words)}", " ".join(found)
+
+def solve_longest_substring_at_most_k_distinct():
+    s_len = random.randint(5, 20)
+    s = "".join(random.choices("abcde", k=s_len))
+    k = random.randint(1, 3)
+    
+    max_len = 0
+    start = 0
+    counts = {}
+    for end in range(len(s)):
+        counts[s[end]] = counts.get(s[end], 0) + 1
+        while len(counts) > k:
+            counts[s[start]] -= 1
+            if counts[s[start]] == 0: del counts[s[start]]
+            start += 1
+        max_len = max(max_len, end - start + 1)
+    return f"{s}\n{k}", str(max_len)
+
+def solve_longest_repeating_character_replacement():
+    s_len = random.randint(5, 20)
+    s = "".join(random.choices("ABC", k=s_len))
+    k = random.randint(1, 5)
+    
+    max_len = 0
+    max_freq = 0
+    start = 0
+    counts = {}
+    for end in range(len(s)):
+        counts[s[end]] = counts.get(s[end], 0) + 1
+        max_freq = max(max_freq, counts[s[end]])
+        if (end - start + 1) - max_freq > k:
+            counts[s[start]] -= 1
+            start += 1
+        max_len = max(max_len, end - start + 1)
+    return f"{s}\n{k}", str(max_len)
+
+def solve_minimum_window_substring():
+    s_len = random.randint(5, 20)
+    t_len = random.randint(2, 5)
+    s = "".join(random.choices("abcdef", k=s_len))
+    if random.random() < 0.5:
+        t = "".join(random.choices(s, k=t_len))
+    else:
+        t = "".join(random.choices("abcdef", k=t_len))
+        
+    def minWindow(s, t):
+        if not t or not s: return ""
+        from collections import Counter
+        dict_t = Counter(t)
+        required = len(dict_t)
+        l, r = 0, 0
+        formed = 0
+        window_counts = {}
+        ans = float("inf"), None, None
+        while r < len(s):
+            char = s[r]
+            window_counts[char] = window_counts.get(char, 0) + 1
+            if char in dict_t and window_counts[char] == dict_t[char]:
+                formed += 1
+            while l <= r and formed == required:
+                char = s[l]
+                if r - l + 1 < ans[0]:
+                    ans = (r - l + 1, l, r)
+                window_counts[char] -= 1
+                if char in dict_t and window_counts[char] < dict_t[char]:
+                    formed -= 1
+                l += 1    
+            r += 1
+        return "" if ans[0] == float("inf") else s[ans[1] : ans[2] + 1]
+
+    return f"{s}\n{t}", minWindow(s, t)
+
+def solve_permutation_in_string():
+    s1_len = random.randint(2, 5)
+    s2_len = random.randint(5, 15)
+    s1 = "".join(random.choices("abc", k=s1_len))
+    if random.random() < 0.5:
+        # Construct valid
+        start = random.randint(0, s2_len - s1_len)
+        s2_list = random.choices("abc", k=s2_len)
+        s1_perm = list(s1)
+        random.shuffle(s1_perm)
+        s2_list[start:start+s1_len] = s1_perm
+        s2 = "".join(s2_list)
+    else:
+        s2 = "".join(random.choices("abc", k=s2_len))
+        
+    from collections import Counter
+    c1 = Counter(s1)
+    n1 = len(s1)
+    found = False
+    for i in range(len(s2) - n1 + 1):
+        if Counter(s2[i:i+n1]) == c1:
+            found = True
+            break
+    return f"{s1}\n{s2}", "true" if found else "false"
+
+def solve_find_all_anagrams():
+    s_len = random.randint(5, 20)
+    p_len = random.randint(2, 5)
+    p = "".join(random.choices("abc", k=p_len))
+    s = "".join(random.choices("abc", k=s_len))
+    
+    from collections import Counter
+    cp = Counter(p)
+    res = []
+    for i in range(len(s) - p_len + 1):
+        if Counter(s[i:i+p_len]) == cp:
+            res.append(i)
+    return f"{s}\n{p}", " ".join(map(str, res))
+
+def solve_top_k_frequent_words():
+    words_pool = ["i", "love", "leetcode", "i", "love", "coding", "apple", "banana", "cherry"]
+    n = random.randint(5, 10)
+    words = random.choices(words_pool, k=n)
+    k = random.randint(1, len(set(words)))
+    
+    from collections import Counter
+    count = Counter(words)
+    candidates = list(count.keys())
+    candidates.sort(key=lambda w: (-count[w], w))
+    res = candidates[:k]
+    return f"{' '.join(words)}\n{k}", " ".join(res)
+
+def solve_reorganize_string():
+    s_len = random.randint(3, 10)
+    s = "".join(random.choices("aaabcc", k=s_len))
+    
+    from collections import Counter
+    import heapq
+    count = Counter(s)
+    max_heap = [(-v, k) for k, v in count.items()]
+    heapq.heapify(max_heap)
+    
+    res = []
+    prev_count, prev_char = 0, ''
+    while max_heap:
+        c, char = heapq.heappop(max_heap)
+        res.append(char)
+        if prev_count < 0:
+            heapq.heappush(max_heap, (prev_count, prev_char))
+        c += 1
+        prev_count, prev_char = c, char
+        
+    final = "".join(res)
+    if len(final) != len(s): return s, ""
+    return s, final
+def solve_k_closest_points_to_origin():
+    n = random.randint(3, 10)
+    k = random.randint(1, n)
+    points = [[random.randint(-10, 10), random.randint(-10, 10)] for _ in range(n)]
+    
+    def dist(p): return p[0]**2 + p[1]**2
+    points.sort(key=dist)
+    res = points[:k]
+    res.sort()
+    
+    input_str = f"{n} {k}\n" + "\n".join(f"{p[0]} {p[1]}" for p in points)
+    output_str = "\n".join(f"{p[0]} {p[1]}" for p in res)
+    return input_str, output_str
+
+def solve_task_scheduler():
+    n = random.randint(1, 10)
+    tasks = random.choices("ABCDEFG", k=n)
+    n_cool = random.randint(0, 3)
+    
+    from collections import Counter
+    counts = Counter(tasks)
+    max_f = max(counts.values())
+    max_f_tasks = sum(1 for f in counts.values() if f == max_f)
+    res = max(len(tasks), (max_f - 1) * (n_cool + 1) + max_f_tasks)
+    return f"{' '.join(tasks)}\n{n_cool}", str(res)
+
+def solve_meeting_rooms_ii():
+    n = random.randint(1, 10)
+    intervals = []
+    for _ in range(n):
+        s = random.randint(0, 50)
+        e = s + random.randint(1, 20)
+        intervals.append([s, e])
+    
+    starts = sorted([i[0] for i in intervals])
+    ends = sorted([i[1] for i in intervals])
+    res = 0
+    used = 0
+    s_ptr, e_ptr = 0, 0
+    while s_ptr < n:
+        if starts[s_ptr] < ends[e_ptr]:
+            used += 1
+            s_ptr += 1
+        else:
+            used -= 1
+            e_ptr += 1
+        res = max(res, used)
+    
+    input_str = f"{n}\n" + "\n".join(f"{i[0]} {i[1]}" for i in intervals)
+    return input_str, str(res)
+
+def solve_employee_free_time():
+    num_emp = random.randint(1, 3)
+    schedule = []
+    for _ in range(num_emp):
+        emp_intervals = []
+        curr = random.randint(0, 10)
+        for _ in range(random.randint(1, 3)):
+            s = curr + random.randint(1, 5)
+            e = s + random.randint(1, 5)
+            emp_intervals.append([s, e])
+            curr = e
+        schedule.append(emp_intervals)
+    
+    all_intervals = []
+    for emp in schedule: all_intervals.extend(emp)
+    all_intervals.sort(key=lambda x: x[0])
+    
+    free = []
+    if not all_intervals: return "", ""
+    merged_end = all_intervals[0][1]
+    for i in range(1, len(all_intervals)):
+        if all_intervals[i][0] > merged_end:
+            free.append([merged_end, all_intervals[i][0]])
+        merged_end = max(merged_end, all_intervals[i][1])
+        
+    input_str = f"{num_emp}\n"
+    for emp in schedule:
+        input_str += str(len(emp)) + "\n" + "\n".join(f"{i[0]} {i[1]}" for i in emp) + "\n"
+    
+    output_str = "\n".join(f"{f[0]} {f[1]}" for f in free)
+    return input_str.strip(), output_str
+
+def solve_longest_increasing_path():
+    m, n = 3, 3
+    matrix = [[random.randint(1, 20) for _ in range(n)] for _ in range(m)]
+    
+    memo = {}
+    def dfs(r, c):
+        if (r, c) in memo: return memo[(r, c)]
+        res = 1
+        for dr, dc in [(0,1),(0,-1),(1,0),(-1,0)]:
+            nr, nc = r+dr, c+dc
+            if 0 <= nr < m and 0 <= nc < n and matrix[nr][nc] > matrix[r][c]:
+                res = max(res, 1 + dfs(nr, nc))
+        memo[(r, c)] = res
+        return res
+        
+    ans = max(dfs(r, c) for r in range(m) for c in range(n))
+    input_str = f"{m} {n}\n" + "\n".join(" ".join(map(str, row)) for row in matrix)
+    return input_str, str(ans)
+
+def solve_word_ladder():
+    words = ["hot", "dot", "dog", "lot", "log", "cog", "hit", "bit", "big"]
+    begin = "hit"
+    end = "cog"
+    wordList = random.sample(words, random.randint(4, len(words)))
+    if end not in wordList: wordList.append(end)
+    
+    def ladderLength(beginWord, endWord, wordList):
+        wordSet = set(wordList)
+        if endWord not in wordSet: return 0
+        from collections import deque
+        queue = deque([(beginWord, 1)])
+        visited = {beginWord}
+        while queue:
+            word, dist = queue.popleft()
+            if word == endWord: return dist
+            for i in range(len(word)):
+                for c in 'abcdefghijklmnopqrstuvwxyz':
+                    next_word = word[:i] + c + word[i+1:]
+                    if next_word in wordSet and next_word not in visited:
+                        visited.add(next_word)
+                        queue.append((next_word, dist + 1))
+        return 0
+
+    return f"{begin}\n{end}\n{' '.join(wordList)}", str(ladderLength(begin, end, wordList))
+
+def solve_skyline_problem():
+    n = random.randint(2, 4)
+    buildings = []
+    for _ in range(n):
+        l = random.randint(0, 20)
+        r = l + random.randint(1, 100)
+        h = random.randint(1, 20)
+        buildings.append([l, r, h])
+    
+    events = []
+    for l, r, h in buildings:
+        events.append((l, -h))
+        events.append((r, h))
+    events.sort()
+    
+    res = []
+    max_heap = [0]
+    import heapq
+    prev_max = 0
+    for x, h in events:
+        if h < 0: heapq.heappush(max_heap, h)
+        else:
+            max_heap.remove(-h)
+            heapq.heapify(max_heap)
+        
+        curr_max = -max_heap[0]
+        if curr_max != prev_max:
+            res.append([x, curr_max])
+            prev_max = curr_max
+            
+    input_str = f"{n}\n" + "\n".join(f"{b[0]} {b[1]} {b[2]}" for b in buildings)
+    output_str = "\n".join(f"{p[0]} {p[1]}" for p in res)
+    return input_str, output_str
+
+def solve_burst_balloons():
+    n_in = random.randint(1, 5)
+    nums = [random.randint(1, 10) for _ in range(n_in)]
+    
+    def maxCoins(nums):
+        nums = [1] + nums + [1]
+        n_len = len(nums)
+        dp = [[0] * n_len for _ in range(n_len)]
+        for length in range(1, n_len - 1):
+            for i in range(1, n_len - length):
+                j = i + length - 1
+                for k in range(i, j + 1):
+                    dp[i][j] = max(dp[i][j], dp[i][k-1] + nums[i-1]*nums[k]*nums[j+1] + dp[k+1][j])
+        return dp[1][n_len-2]
+
+    return " ".join(map(str, nums)), str(maxCoins(nums))
+
+def solve_count_smaller_numbers():
+    n = random.randint(1, 10)
+    nums = [random.randint(-10, 10) for _ in range(n)]
+    
+    res = []
+    for i in range(n):
+        count = 0
+        for j in range(i + 1, n):
+            if nums[j] < nums[i]: count += 1
+        res.append(count)
+    return " ".join(map(str, nums)), " ".join(map(str, res))
+
+def solve_house_robber_ii():
+    n = random.randint(1, 15)
+    nums = [random.randint(0, 100) for _ in range(n)]
+    
+    def rob_linear(arr):
+        p2, p1 = 0, 0
+        for x in arr: p2, p1 = p1, max(p1, p2 + x)
+        return p1
+        
+    if not nums: ans = 0
+    elif len(nums) == 1: ans = nums[0]
+    else: ans = max(rob_linear(nums[1:]), rob_linear(nums[:-1]))
+    return " ".join(map(str, nums)), str(ans)
 
 
 SOLVERS = {
@@ -2707,6 +3126,26 @@ SOLVERS = {
     "find_the_highest_altitude": solve_find_the_highest_altitude,
     "maximal_square": solve_maximal_square,
     "partition_equal_subset_sum": solve_partition_equal_subset_sum,
+    "generate_parentheses": solve_generate_parentheses,
+    "maximal_rectangle": solve_maximal_rectangle,
+    "word_search_ii": solve_word_search_ii,
+    "longest_substring_with_at_most_k_distinct_characters": solve_longest_substring_at_most_k_distinct,
+    "longest_repeating_character_replacement": solve_longest_repeating_character_replacement,
+    "minimum_window_substring": solve_minimum_window_substring,
+    "permutation_in_string": solve_permutation_in_string,
+    "find_all_anagrams_in_a_string": solve_find_all_anagrams,
+    "top_k_frequent_words": solve_top_k_frequent_words,
+    "reorganize_string": solve_reorganize_string,
+    "k_closest_points_to_origin": solve_k_closest_points_to_origin,
+    "task_scheduler": solve_task_scheduler,
+    "meeting_rooms_ii": solve_meeting_rooms_ii,
+    "employee_free_time": solve_employee_free_time,
+    "longest_increasing_path_in_a_matrix": solve_longest_increasing_path,
+    "word_ladder": solve_word_ladder,
+    "skyline_problem": solve_skyline_problem,
+    "burst_balloons": solve_burst_balloons,
+    "count_of_smaller_numbers_after_self": solve_count_smaller_numbers,
+    "house_robber_ii": solve_house_robber_ii,
 }
 
 HARD_PROBLEMS = {
@@ -2743,6 +3182,26 @@ HARD_PROBLEMS = {
     "find_the_duplicate_number",
     "maximal_square",
     "partition_equal_subset_sum",
+    "generate_parentheses",
+    "maximal_rectangle",
+    "word_search_ii",
+    "longest_substring_with_at_most_k_distinct_characters",
+    "longest_repeating_character_replacement",
+    "minimum_window_substring",
+    "permutation_in_string",
+    "find_all_anagrams_in_a_string",
+    "top_k_frequent_words",
+    "reorganize_string",
+    "k_closest_points_to_origin",
+    "task_scheduler",
+    "meeting_rooms_ii",
+    "employee_free_time",
+    "longest_increasing_path_in_a_matrix",
+    "word_ladder",
+    "skyline_problem",
+    "burst_balloons",
+    "count_of_smaller_numbers_after_self",
+    "house_robber_ii",
 }
 
 def main():

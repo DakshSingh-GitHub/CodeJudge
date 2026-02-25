@@ -1,0 +1,37 @@
+{
+    "id": "generate_parentheses",
+    "title": "Generate Parentheses",
+    "description": "Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.",
+    "input_format": "A single integer n.",
+    "output_format": "A space-separated string of all well-formed parentheses combinations.",
+    "constraints": {
+        "n": "1 <= n <= 8"
+    },
+    "judge_mode": "FIRST_FAIL",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "3",
+            "output": "((())) (()()) (())() ()(()) ()()()"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "1",
+            "output": "()"
+        },
+        {
+            "input": "2",
+            "output": "(()) ()()"
+        },
+        {
+            "input": "4",
+            "output": "(((()))) ((()())) ((())()) ((()))() (()(())) (()()()) (()())() (())(()) (())()() ()((())) ()(()()) ()(())() ()()(()) ()()()()"
+        },
+        {
+            "input": "3",
+            "output": "((())) (()()) (())() ()(()) ()()()"
+        }
+    ],
+    "difficulty": "hard"
+}

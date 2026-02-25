@@ -23,635 +23,91 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "10 5 5 5 10 5 10 5 5 5 10 5 10 5 5 10 5 5 5 20",
+            "input": "5 10 20 20 5 5 5 5 5 5 10 20 5 20 10",
             "output": "false"
         },
         {
-            "input": "10 20 5 5 5 10 5 10 5 5 10 10 10 5",
+            "input": "20 5 5 10",
             "output": "false"
         },
         {
-            "input": "5 5 5 5 10 5 5 5 5 5 20 5 10 20",
+            "input": "5 5 10 5",
             "output": "true"
         },
         {
-            "input": "5 5 5 5 10 5 5 5 10 5 5 10 10 10 10 5",
+            "input": "5 5 5 5 5 10 10 5 10",
             "output": "true"
         },
         {
-            "input": "10 5",
+            "input": "5 20 20 5 10 10 10 5 10 10 5 10 5 5 5 10 5",
             "output": "false"
         },
         {
-            "input": "5 5 5 5 10 10 10",
+            "input": "10 10 10 10 5 5 5 10 5 20 10 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 5 10 10 10 10 10 5 20 10 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 10 5 20 5 10 10 20 5 5 5 20 5 20 5 10 5 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 10 10 20 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 5 5",
             "output": "true"
-        },
-        {
-            "input": "5 20 10 10 5 20 10 10 10 5 5 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 10 10 20 5",
-            "output": "true"
-        },
-        {
-            "input": "10 10 5 10 10 5 5 5 20 5 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 20 10 10 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 20 10 5 5 5 10 5 10 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 5 5 10 10 10 5 10 5 5 10 5 5",
-            "output": "true"
-        },
-        {
-            "input": "10 10",
-            "output": "false"
-        },
-        {
-            "input": "10 10 10 5 10 5 10 10 5 5 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 5 10 10 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "10 5 5 10 5 5 10 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "10 20 5 5 10 5 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 5 10 5 5 5 5 10 5 10 10 5 10 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 10 10 5 5 5 5 5 20 10 5 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 10 5 10 5 5 5 5 5 10 5 5 5 5 5 5 10 10 10",
-            "output": "true"
-        },
-        {
-            "input": "10 10 20 20 20 10 5 5 10 5 5 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 5 5 10 10 10 5 5 10 5 5",
-            "output": "false"
         },
         {
             "input": "5 10",
             "output": "true"
         },
         {
-            "input": "20 5 5 5 5 20 5 5 10 10 5 20 5 10 5 10 5 20 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 10 20 5 20 5 10 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 20 5 5 10 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 10 20",
+            "input": "5 5 5 10",
             "output": "true"
         },
         {
-            "input": "5 10 10 5 5 5 20 10 5 5 10",
+            "input": "10 5 20 5 5 20 10",
             "output": "false"
         },
         {
-            "input": "5 5 20 5 10 5 10 5 5 10",
+            "input": "5 20 10 10 10 10 10 5 20 10 10 10 5 5",
             "output": "false"
         },
         {
-            "input": "20 20 10 10 20 5 20 10 10 20 5 5 10",
+            "input": "20 10 5 5 5 5 10 5 5 5 10 20 10 20 5 10 5 5 10",
             "output": "false"
         },
         {
-            "input": "5 10 5 20 10 10 5 5 5 10 5 10 5 5 5 5 10 5",
+            "input": "10 5 5 5 20 5 5 5",
             "output": "false"
         },
         {
-            "input": "10 5 5 5 5 20 5 10 20 5 10 20 20 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 20 5 5",
+            "input": "5 5 5 10 10 5 10 5 5 10 10 5 10 5",
             "output": "true"
-        },
-        {
-            "input": "10 5 5 5 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 20 5 5 5 5 5 10 5 5 5 5 5",
-            "output": "false"
         },
         {
             "input": "5",
             "output": "true"
         },
         {
-            "input": "5 5 5 10 10 10 5 5 10 5 10 5 20",
+            "input": "5 10 10 10 5 5 5 10 5 5 5 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 10 5 5",
             "output": "true"
         },
         {
-            "input": "5 10 5 5 10 5 5 5 20 5 5 5 5 10",
+            "input": "5 5 5 5 5 5 5 5 5 10 20 5 10 5 10 10 5 5 10",
             "output": "true"
         },
         {
-            "input": "5 5 5 5 5 5 10 10",
-            "output": "true"
-        },
-        {
-            "input": "20 5 10 5 5 5 5 5 5 10 5 5 5 5 5 5 5 10 10 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 20 5 5 10 10 5 5 5 5 10 5 10 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 10 5 5 10 10 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 20 5 5 5 10 5 10 5 10 5 10 10 5 10 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 10 5 5 5 10 20 5 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 5 5 5 10 10 5 5",
-            "output": "true"
-        },
-        {
-            "input": "5 10 5 5 10 5 20 5 5 20 5 5 10 10 5",
-            "output": "true"
-        },
-        {
-            "input": "10 5 5 5 5 5 5 5 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 10 10 10 10 10 5 20 5 10 10 10 20",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 10 10 5 10 5 5 10 20 10 10 5 5 5 10 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 20 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 5 5 5 10 5",
-            "output": "true"
-        },
-        {
-            "input": "5 10 10 5 5 10 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 20",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "5 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 10 10",
-            "output": "true"
-        },
-        {
-            "input": "10 5 20 10 10 5 5 5 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "20 5 5 10 10 10 10 5 10 10 5 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 5 5 10 10 5 5 5 5 5 5",
-            "output": "true"
-        },
-        {
-            "input": "10 10 5 10 10 5 20 5 5 5 5 20 10 20 5 5 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 20 5 20 5 5 10 5 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 5 5 10 5 10 10 20 5 10 5 20 5 10 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 10 10 5 5 10 10 10 20 20 10 10 5 10 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 5 5 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "20 10 5 5 5 5 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 10 20 20 5 10 10 5 5 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 5 10 5 5 5 5 20 5 10",
-            "output": "true"
-        },
-        {
-            "input": "10 10 10 10 10 5 5 5 10 10 5 10 20 5 10 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 10 5 5 5 5 10 10 5 10 5 5 5 10 5 5 5 20 5",
-            "output": "false"
-        },
-        {
-            "input": "10 20 10 10 5 5 5 5 10 5 10 20 10 5 5 5 10 20 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 10 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 10 5 5 5 5 10 20 10 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 5 5 10 5 5 5 5 5 20 10 5 10 10 5 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 5 5 5 5 10 5 20 10 5 10 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "5 20 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 10 5 10 5 5 5 20 5 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 5 5 10 10 10 10 10 20 10 10 5",
-            "output": "false"
-        },
-        {
-            "input": "10 10 5 5 5 5 10 10 5 10 5 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 5 10 5 5 5 5 5 5 10 5 5 10 5",
-            "output": "true"
-        },
-        {
-            "input": "5 10 5 5 5 5 5 5 10 10 5 5 5",
-            "output": "true"
-        },
-        {
-            "input": "10 5 5 10 5 20 10 10 5 10 10 5 5 5 20 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 10 5 10 20",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 5 5 5 5 5 10 10 10 5 5 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "5 10 5 10 10 5 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "10 10 5 5 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 10 5 20 10 20 5 5 20 20 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 5 5 10 5 10 20 10",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 10 10 5 10 5 5 10 20 10 10 5 10 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 20 5 10 20 5 5 10 5 10 5 5 5 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 10 5 20 10 20 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 10 5 10 5 20 10 5 20 5 5 5 5 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "20 5 5 20",
-            "output": "false"
-        },
-        {
-            "input": "5 10 10 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 10 5 5 5 10 5 5 5 20 10 20 5 10 10 20",
-            "output": "true"
-        },
-        {
-            "input": "5 10 10 5 5 5 5 5 5 5 5 5 10 5 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 5 5 5 10 5 5 5 5 5 5 20 5 5 10 10",
-            "output": "true"
-        },
-        {
-            "input": "5 10 5 5 10 5 10 10 5 5 5 5 20 5 10 10",
-            "output": "true"
-        },
-        {
-            "input": "5 10 20 10 5 10 5 5 10 5 10 5 5 20 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 10 5 5 10 10 20 20 20 20 5 5 5 20 10 5 5 20",
-            "output": "false"
-        },
-        {
-            "input": "20 5 5 20 5 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 20",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "10 5 10 10 5 5 5 5 5 5 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 5 5 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 5 10 10 5 10 10 10 10 5 5 5 5 20 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 10 10 5 5 10 10 5",
-            "output": "false"
-        },
-        {
-            "input": "20 5 10 20 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 10 10 5 5 5 10 5 5 5 5 5 5 5 20",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 5 5 5 5 5 5 5 10 10 20 5",
-            "output": "true"
-        },
-        {
-            "input": "10 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "10 20 10 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 10 5",
-            "output": "true"
-        },
-        {
-            "input": "10 10 10",
-            "output": "false"
-        },
-        {
-            "input": "10 10 10 5 10 10 5 5 5 5 5 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 10 5 20 5 5 5 10 5 5 10 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 5 20",
-            "output": "false"
-        },
-        {
-            "input": "10 5 20 10 20 5 5 10 5 20 5 5 10 5 10 5 5 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "5 10 10 10 5 5 5 10 20 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "20 10 5 5 10 10 5 5 5 10 5 5 5 5 20",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 10 10 20",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 5 5",
-            "output": "true"
-        },
-        {
-            "input": "10 5 10 5 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 10 10 20 5 10 10 5 10 10 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 10 5 5 10 10 5 10 10 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 10 5 5 10 5 10 10 5 5 10 5 5 10",
-            "output": "true"
-        },
-        {
-            "input": "10 10 5 5 10 5 5 5 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 10 10 5 20 5 10 5 5 10 20 20 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 10 5 20 5 5 5 5 5 5 10 20 5 10",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 5 10 5 5 10 5 20 10 10 5 20 5 5 10 10 10 10",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 5 5 5 5 20",
-            "output": "true"
-        },
-        {
-            "input": "10 5 10 10 20 20 20 10 5 10 5 5 10 5 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "20 20 5 5 10 10 5 10 10 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 5 5 5 5 5 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 10 5 5 5 5 5 5 10 5 5 10 10 10 10 5 10",
-            "output": "true"
-        },
-        {
-            "input": "10 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 10 5 5 5 5 5 10 5 10 5 10 20 10 20",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 10 10 10 5 10 5 20 5 5 10 5 5 5 5",
-            "output": "true"
-        },
-        {
-            "input": "10 5 5 10 5 10 5 20 5 5 5 5 10 5 5 10",
-            "output": "false"
-        },
-        {
-            "input": "5 10 20 10 10 10",
-            "output": "false"
-        },
-        {
-            "input": "5 20 5 20 10 20",
-            "output": "false"
-        },
-        {
-            "input": "10 5 10 5 5 10 10 5 5 5 10 5 10 20 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 20 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 5 10 20 5 5 5 5 10 10 5 5 5",
-            "output": "true"
-        },
-        {
-            "input": "5 10 5 5 10 5 5 20 10 10 10 5 5 10 10 10 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 20 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 20 5 10 5 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 10 5 5 20 5",
-            "output": "true"
-        },
-        {
-            "input": "5 5 5 5 5 5 5 10 5 10 5 5 5 5 10 5 5 10 5 10",
-            "output": "true"
-        },
-        {
-            "input": "10 10 5 20 10 10 5 5 20 5 10 5 5 5 5",
-            "output": "false"
-        },
-        {
-            "input": "10 5 10 10 10",
-            "output": "false"
-        },
-        {
-            "input": "20 5 5 10 5 5 5 5 10 5 20 5 20 10 5 5",
-            "output": "false"
-        },
-        {
-            "input": "5 5 5 5 10 5 20 5 10 5 5 10 10 10 20",
-            "output": "true"
-        },
-        {
-            "input": "10 5 10 10",
-            "output": "false"
-        },
-        {
-            "input": "20 5 5 5 10 5 20 5 20 10 10 5 5 10",
+            "input": "10 5 10 5 5 5 5 20 5 5 10 10 20 10 5 10 10",
             "output": "false"
         },
         {
@@ -659,7 +115,551 @@
             "output": "true"
         },
         {
-            "input": "5 5 5 10 5 10 10 5 5 5 5",
+            "input": "5 5 10 5 5 10 10 5 10 5 10 20 5 10 5 10",
+            "output": "true"
+        },
+        {
+            "input": "10 5 10 20 5 20 10 5 20 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 10 20 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 20 5 5 5 10 5 5 10 5 5 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 10 5 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 5 10 5 10 10 10 10 5 10 5 10 20 5 5 10",
+            "output": "true"
+        },
+        {
+            "input": "10 5 20 5 5 5 5 5 10 5 10 5 5 10 5 20 10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 10 5 5 20 10 5 20 5 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 20 5 5 5 10 10 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 10 5 10 5 20 5 5 10 5 5 20 5",
+            "output": "true"
+        },
+        {
+            "input": "20 5 10 10 5 10 10 10 5 5 10 10 5 5 5 10 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 10 20",
+            "output": "false"
+        },
+        {
+            "input": "10 10 5 5 5 10 10 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 20 20 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 5 5 5 5 10 5 10 5 10 10 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "10 10 5 5 10 5 10 10 5 5 5 5 10 10 5 20 5 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 5 10 10 5 5 10 10 5 5 5 5 5 5 10 5 10",
+            "output": "true"
+        },
+        {
+            "input": "10 5 5 5 10 10 5 5 5 20 5 10 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 10 5 10 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 10 5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 10 5 5 5 10 5 5 5 5 5 10",
+            "output": "true"
+        },
+        {
+            "input": "5 20",
+            "output": "false"
+        },
+        {
+            "input": "5 10 20 10 10 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 20",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 5 5 10 5 5 20 5 10 5 20",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 10 10 10 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "20 5 20 5 5 5 10 5 5 10 5 10 5 5 5 10 5 20",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 10 5 20 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 20 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 20 5 20 10 5 5 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 5 20 10 10 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 10 5 5 10 5 5 20 5 10 5 20 5 20 10 5 5 20 5",
+            "output": "true"
+        },
+        {
+            "input": "20 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 5 10 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 5 5 10 5 5 10 10 10 20 5 10",
+            "output": "true"
+        },
+        {
+            "input": "10 5 10 10 20 5 5 5 5 5 10 5 10 5 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 10 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 20 5 5 5 10 20 10 20 5 10 20 10 10",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 10 20 10 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 10 5",
+            "output": "true"
+        },
+        {
+            "input": "10 10 5 10 10 20 20",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 5 10 5 5 5 5 10 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 10 20 5 10 5 10 5 10 5 10 10 5 20 20 10",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 20",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 5 20 5 10 5 5 5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 10 10 20 10 5 10 5 10 10 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 10 10 5 10 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 5 10 20 10 5 5 5 10 10 20",
+            "output": "true"
+        },
+        {
+            "input": "20 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 5 5 5 5 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 10 5 5 10 20 10 10 10 10 5 5 5 5 10 5 20",
+            "output": "false"
+        },
+        {
+            "input": "10 5 10 5 5 5 20 10 5 5 5 5 5 10 10",
+            "output": "false"
+        },
+        {
+            "input": "10 10 5 5 5 10 5 10 5 5 5 10 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 20 5 5 5 10 10 5 20 20 10 5 5 10 10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 5 20 5 10 5 5 5 5 10 5 5 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 10 5 5 10 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 10 5 5 10 10 5 20 5 5 10 10",
+            "output": "true"
+        },
+        {
+            "input": "5 10 10 5 5 5 5 20 5 5 10 20 5 10 5 5 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 10 5 5 5 5 5 5 10 10 20 10",
+            "output": "true"
+        },
+        {
+            "input": "5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 10 5 20 5 10 10 5 20",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 10 5 5 5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 20 10 5 5 10 5 5 20 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 10 5 5 5 5 5 20 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 20 5 5 5 5 5 5 10 5 5 20 5 5",
+            "output": "true"
+        },
+        {
+            "input": "10 5 5 10 10 10 20 5 20 20 5 5",
+            "output": "false"
+        },
+        {
+            "input": "20 5 5 10 5 10 5 5 20 5 10 5 20 5 10 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 10 10 20 5 5 5 10 20 5 5 5 5 20 5 10 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 20 5 5 10 10 5 5 5 5 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 5 5 20 10 20 10 5 10 10 10 5 5 5 5 20",
+            "output": "false"
+        },
+        {
+            "input": "5 20 5 10 10 10 5 10 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 10 10 5",
+            "output": "false"
+        },
+        {
+            "input": "20 10 5 5 10 5 5 10 5 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 5 10 5 5 5 5 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 5 10 20 5 10 5 5 5 5 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 10 5 5 5 5 5 5 5 10 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 10 10 10 10 10 5 5 10 10 5 10 5 10 5 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 5 5 5 5 5 20 5 5 10 5 5 5 10 5 5",
+            "output": "true"
+        },
+        {
+            "input": "10 5 5 5 10 10 10 5 5 5 5 20 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 10 10 5 5 10 5 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 10 5 5 10 5 5 5 5 10 10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 20 5 5 5 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 10 5 10 20 5 10 5 5 10 5 5 10 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "20 5 5 10 5 10 20 10 5 5 5 5 5 5 20 10 5 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 20 20 5 10 10 5",
+            "output": "false"
+        },
+        {
+            "input": "20 10 5 5 5 10 5 5 5 5 10 5 20 20 10 10 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "20 5 5 5 10 20 10 5 10 10 5 5 5 5 5 5 20 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 20 10 20 5 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 20 10 10 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 5 20 5 20 10 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 10 5 5 5 10 5 20 5 5 5 20 10 20 20 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 10 5 5 5 10 5 5",
+            "output": "true"
+        },
+        {
+            "input": "20 20 10 5 10 5 5 10 5 5 5 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 10 20 5 10 5 20 5 10 5",
+            "output": "true"
+        },
+        {
+            "input": "10 10 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 20",
+            "output": "false"
+        },
+        {
+            "input": "10 10 10 10 5 5 5 20 20 10 10 5 5 5 5 20",
+            "output": "false"
+        },
+        {
+            "input": "5 20 5 5 10 20 10 10 5 5 5 5 10 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 20 10 5 5 10 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 20 5 5 10 5 20 10 10 5 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 10 5 20 5 20 20 5 10 5 10 5 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 10 10 5 5 10 20 20 5 5 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 5 5 5 10",
+            "output": "true"
+        },
+        {
+            "input": "10 5 5 5 5 5 10 5 5 5 10 10 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "10 10 10 5 5 5 5 20",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 5 20 5 10 10 5 20 5 20 10 5 20 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 5 5 5 5 5 10 5 5 10 5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 10 5 5 5 10 5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "10 10 10 10 5 20 5 10 10 5 10 5 10 10 5 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 10 5 5 20 5 5 10 10",
+            "output": "true"
+        },
+        {
+            "input": "10 10 10 10 5 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 10 5 5 20 10 5 10 20 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 5 5 5 10 5 10 5 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 5 5 5 5 5 5 5 10 10 5 10 5 20",
+            "output": "true"
+        },
+        {
+            "input": "5 10 20 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 5 5 10 20 5 10 5 5 5 5 5 20 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 5 10 5 5 5 5 5 10 5 20 10 5 10 10",
+            "output": "true"
+        },
+        {
+            "input": "5 5 5 20 10 10 10 10 5",
+            "output": "false"
+        },
+        {
+            "input": "20 5 10 5 10 5 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "10 10 20 10 5 10 5 5 10 20 5 10 10 5 10 10 5 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 5 10 5 10 10 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 10 5 5 5 5 5 10 5 5 5 5",
+            "output": "true"
+        },
+        {
+            "input": "5 5 10 20 5 5 5 5 5 5 5 20 10 5",
+            "output": "true"
+        },
+        {
+            "input": "5 10 20 20 5 5 5 10 10 5 20 5 5 5 20 20 5 10 5 10",
+            "output": "false"
+        },
+        {
+            "input": "10 5 5 10 10 10 5 5 5 5 10",
+            "output": "false"
+        },
+        {
+            "input": "20 5 20 5",
+            "output": "false"
+        },
+        {
+            "input": "10 10 20 5 20 5 5 5 5 5 10 10 5 5 5 5 5 10 5",
+            "output": "false"
+        },
+        {
+            "input": "5 5 10 5 5 10 20 5 5 10 20 5",
             "output": "true"
         }
     ]

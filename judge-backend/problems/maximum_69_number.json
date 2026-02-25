@@ -10,11 +10,91 @@
     "sample_output": "9969",
     "hidden_test_cases": [
         {
+            "input": "66",
+            "output": "96"
+        },
+        {
+            "input": "66699",
+            "output": "96699"
+        },
+        {
+            "input": "96",
+            "output": "99"
+        },
+        {
+            "input": "9",
+            "output": "9"
+        },
+        {
+            "input": "669",
+            "output": "969"
+        },
+        {
+            "input": "6669",
+            "output": "9669"
+        },
+        {
+            "input": "96666",
+            "output": "99666"
+        },
+        {
+            "input": "9666",
+            "output": "9966"
+        },
+        {
+            "input": "6",
+            "output": "9"
+        },
+        {
+            "input": "9696",
+            "output": "9996"
+        },
+        {
             "input": "99",
             "output": "99"
         },
         {
-            "input": "6996",
+            "input": "6696",
+            "output": "9696"
+        },
+        {
+            "input": "699",
+            "output": "999"
+        },
+        {
+            "input": "6999",
+            "output": "9999"
+        },
+        {
+            "input": "99696",
+            "output": "99996"
+        },
+        {
+            "input": "66696",
+            "output": "96696"
+        },
+        {
+            "input": "66969",
+            "output": "96969"
+        },
+        {
+            "input": "99966",
+            "output": "99996"
+        },
+        {
+            "input": "69669",
+            "output": "99669"
+        },
+        {
+            "input": "6666",
+            "output": "9666"
+        },
+        {
+            "input": "9699",
+            "output": "9999"
+        },
+        {
+            "input": "9966",
             "output": "9996"
         },
         {
@@ -26,96 +106,116 @@
             "output": "99996"
         },
         {
-            "input": "966",
-            "output": "996"
+            "input": "969",
+            "output": "999"
         },
         {
             "input": "69",
             "output": "99"
         },
         {
-            "input": "6966",
-            "output": "9966"
+            "input": "69696",
+            "output": "99696"
         },
         {
-            "input": "6",
-            "output": "9"
-        },
-        {
-            "input": "96996",
-            "output": "99996"
-        },
-        {
-            "input": "9",
-            "output": "9"
-        },
-        {
-            "input": "99666",
-            "output": "99966"
-        },
-        {
-            "input": "9699",
-            "output": "9999"
-        },
-        {
-            "input": "6669",
-            "output": "9669"
-        },
-        {
-            "input": "96",
-            "output": "99"
-        },
-        {
-            "input": "6666",
-            "output": "9666"
-        },
-        {
-            "input": "69669",
-            "output": "99669"
-        },
-        {
-            "input": "96666",
-            "output": "99666"
-        },
-        {
-            "input": "66",
-            "output": "96"
+            "input": "6996",
+            "output": "9996"
         },
         {
             "input": "9996",
             "output": "9999"
         },
         {
-            "input": "69999",
+            "input": "96699",
+            "output": "99699"
+        },
+        {
+            "input": "6699",
+            "output": "9699"
+        },
+        {
+            "input": "966",
+            "output": "996"
+        },
+        {
+            "input": "99969",
             "output": "99999"
+        },
+        {
+            "input": "9669",
+            "output": "9969"
+        },
+        {
+            "input": "99996",
+            "output": "99999"
+        },
+        {
+            "input": "996",
+            "output": "999"
+        },
+        {
+            "input": "999",
+            "output": "999"
+        },
+        {
+            "input": "69666",
+            "output": "99666"
+        },
+        {
+            "input": "69969",
+            "output": "99969"
+        },
+        {
+            "input": "66999",
+            "output": "96999"
+        },
+        {
+            "input": "99669",
+            "output": "99969"
+        },
+        {
+            "input": "666",
+            "output": "966"
+        },
+        {
+            "input": "96696",
+            "output": "99696"
+        },
+        {
+            "input": "6969",
+            "output": "9969"
+        },
+        {
+            "input": "96966",
+            "output": "99966"
+        },
+        {
+            "input": "99666",
+            "output": "99966"
+        },
+        {
+            "input": "69699",
+            "output": "99699"
+        },
+        {
+            "input": "6966",
+            "output": "9966"
         },
         {
             "input": "99999",
             "output": "99999"
         },
         {
-            "input": "99696",
-            "output": "99996"
+            "input": "96669",
+            "output": "99669"
         },
         {
-            "input": "99699",
+            "input": "69999",
             "output": "99999"
-        },
-        {
-            "input": "969",
-            "output": "999"
         },
         {
             "input": "96999",
             "output": "99999"
-        },
-        {
-            "input": "9966",
-            "output": "9996"
-        },
-        {
-            "input": "699",
-            "output": "999"
         },
         {
             "input": "69966",
@@ -126,128 +226,32 @@
             "output": "996"
         },
         {
-            "input": "99966",
-            "output": "99996"
+            "input": "66669",
+            "output": "96669"
         },
         {
-            "input": "999",
-            "output": "999"
-        },
-        {
-            "input": "96696",
-            "output": "99696"
-        },
-        {
-            "input": "69696",
-            "output": "99696"
-        },
-        {
-            "input": "6969",
-            "output": "9969"
-        },
-        {
-            "input": "96969",
-            "output": "99969"
-        },
-        {
-            "input": "996",
-            "output": "999"
-        },
-        {
-            "input": "96966",
-            "output": "99966"
-        },
-        {
-            "input": "9666",
-            "output": "9966"
-        },
-        {
-            "input": "66996",
-            "output": "96996"
-        },
-        {
-            "input": "669",
-            "output": "969"
-        },
-        {
-            "input": "666",
-            "output": "966"
-        },
-        {
-            "input": "99969",
+            "input": "99699",
             "output": "99999"
         },
         {
-            "input": "6696",
-            "output": "9696"
-        },
-        {
-            "input": "69969",
-            "output": "99969"
+            "input": "96996",
+            "output": "99996"
         },
         {
             "input": "9999",
             "output": "9999"
         },
         {
-            "input": "66966",
-            "output": "96966"
-        },
-        {
-            "input": "6699",
-            "output": "9699"
-        },
-        {
-            "input": "66969",
-            "output": "96969"
-        },
-        {
-            "input": "9669",
-            "output": "9969"
-        },
-        {
-            "input": "6999",
-            "output": "9999"
-        },
-        {
-            "input": "99996",
-            "output": "99999"
-        },
-        {
-            "input": "96699",
-            "output": "99699"
-        },
-        {
-            "input": "66669",
-            "output": "96669"
-        },
-        {
-            "input": "66696",
-            "output": "96696"
-        },
-        {
-            "input": "69666",
-            "output": "99666"
-        },
-        {
-            "input": "9696",
-            "output": "9996"
-        },
-        {
-            "input": "66999",
-            "output": "96999"
-        },
-        {
-            "input": "69699",
-            "output": "99699"
+            "input": "96969",
+            "output": "99969"
         },
         {
             "input": "66666",
             "output": "96666"
         },
         {
-            "input": "66699",
-            "output": "96699"
+            "input": "66966",
+            "output": "96966"
         }
     ]
 }

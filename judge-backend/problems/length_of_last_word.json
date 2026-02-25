@@ -24,335 +24,27 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "moon Hello Hello to to",
-            "output": "2"
-        },
-        {
-            "input": "to apple ",
-            "output": "5"
-        },
-        {
-            "input": "apple fly fly    ",
+            "input": "World World me the",
             "output": "3"
         },
         {
-            "input": "fly banana moon",
-            "output": "4"
+            "input": "banana fly moon to    ",
+            "output": "2"
         },
         {
-            "input": "World World",
+            "input": "me Hello apple apple   ",
             "output": "5"
         },
         {
-            "input": "to",
-            "output": "2"
-        },
-        {
-            "input": "fly moon me me me",
-            "output": "2"
-        },
-        {
-            "input": "banana the banana     ",
+            "input": "banana ",
             "output": "6"
         },
         {
-            "input": "to fly banana",
-            "output": "6"
-        },
-        {
-            "input": "to Hello me ",
-            "output": "2"
-        },
-        {
-            "input": "banana    ",
-            "output": "6"
-        },
-        {
-            "input": "the to apple me Hello",
+            "input": "World Hello fly World ",
             "output": "5"
         },
         {
-            "input": "fly",
-            "output": "3"
-        },
-        {
-            "input": "to fly World",
-            "output": "5"
-        },
-        {
-            "input": "apple apple the",
-            "output": "3"
-        },
-        {
-            "input": "moon banana to me Hello",
-            "output": "5"
-        },
-        {
-            "input": "to World",
-            "output": "5"
-        },
-        {
-            "input": "moon",
-            "output": "4"
-        },
-        {
-            "input": "Hello fly apple apple",
-            "output": "5"
-        },
-        {
-            "input": "the banana me moon   ",
-            "output": "4"
-        },
-        {
-            "input": "banana World fly",
-            "output": "3"
-        },
-        {
-            "input": "me me Hello World to",
-            "output": "2"
-        },
-        {
-            "input": "the",
-            "output": "3"
-        },
-        {
-            "input": "to   ",
-            "output": "2"
-        },
-        {
-            "input": "apple   ",
-            "output": "5"
-        },
-        {
-            "input": "apple Hello     ",
-            "output": "5"
-        },
-        {
-            "input": "banana World    ",
-            "output": "5"
-        },
-        {
-            "input": "moon fly fly apple",
-            "output": "5"
-        },
-        {
-            "input": "apple the Hello banana ",
-            "output": "6"
-        },
-        {
-            "input": "banana banana apple moon",
-            "output": "4"
-        },
-        {
-            "input": "me moon the fly World  ",
-            "output": "5"
-        },
-        {
-            "input": "the     ",
-            "output": "3"
-        },
-        {
-            "input": "the    ",
-            "output": "3"
-        },
-        {
-            "input": "to to fly",
-            "output": "3"
-        },
-        {
-            "input": "me the apple   ",
-            "output": "5"
-        },
-        {
-            "input": "banana apple fly the",
-            "output": "3"
-        },
-        {
-            "input": "Hello me",
-            "output": "2"
-        },
-        {
-            "input": "moon  ",
-            "output": "4"
-        },
-        {
-            "input": "fly World apple to     ",
-            "output": "2"
-        },
-        {
-            "input": "the   ",
-            "output": "3"
-        },
-        {
-            "input": "me fly fly to    ",
-            "output": "2"
-        },
-        {
-            "input": "banana apple moon",
-            "output": "4"
-        },
-        {
-            "input": "fly the the",
-            "output": "3"
-        },
-        {
-            "input": "Hello moon banana me   ",
-            "output": "2"
-        },
-        {
-            "input": "banana",
-            "output": "6"
-        },
-        {
-            "input": "banana moon Hello",
-            "output": "5"
-        },
-        {
-            "input": "Hello Hello Hello apple World  ",
-            "output": "5"
-        },
-        {
-            "input": "the apple apple",
-            "output": "5"
-        },
-        {
-            "input": "the banana",
-            "output": "6"
-        },
-        {
-            "input": "World",
-            "output": "5"
-        },
-        {
-            "input": "World fly World",
-            "output": "5"
-        },
-        {
-            "input": "apple Hello    ",
-            "output": "5"
-        },
-        {
-            "input": "banana apple World World",
-            "output": "5"
-        },
-        {
-            "input": "apple me apple to    ",
-            "output": "2"
-        },
-        {
-            "input": "me fly",
-            "output": "3"
-        },
-        {
-            "input": "moon moon  ",
-            "output": "4"
-        },
-        {
-            "input": "apple to",
-            "output": "2"
-        },
-        {
-            "input": "moon    ",
-            "output": "4"
-        },
-        {
-            "input": "to Hello the me moon ",
-            "output": "4"
-        },
-        {
-            "input": "Hello moon",
-            "output": "4"
-        },
-        {
-            "input": "me World",
-            "output": "5"
-        },
-        {
-            "input": "to apple apple me to     ",
-            "output": "2"
-        },
-        {
-            "input": "moon apple banana to Hello",
-            "output": "5"
-        },
-        {
-            "input": "to moon the Hello fly  ",
-            "output": "3"
-        },
-        {
-            "input": "banana the Hello",
-            "output": "5"
-        },
-        {
-            "input": "the to moon moon to    ",
-            "output": "2"
-        },
-        {
-            "input": "the the moon Hello   ",
-            "output": "5"
-        },
-        {
-            "input": "me the to moon",
-            "output": "4"
-        },
-        {
-            "input": "banana to     ",
-            "output": "2"
-        },
-        {
-            "input": "to apple moon fly moon ",
-            "output": "4"
-        },
-        {
-            "input": "apple moon  ",
-            "output": "4"
-        },
-        {
-            "input": "World fly  ",
-            "output": "3"
-        },
-        {
-            "input": "the World",
-            "output": "5"
-        },
-        {
-            "input": "Hello banana me me",
-            "output": "2"
-        },
-        {
-            "input": "banana  ",
-            "output": "6"
-        },
-        {
-            "input": "World World Hello banana apple",
-            "output": "5"
-        },
-        {
-            "input": "moon Hello fly     ",
-            "output": "3"
-        },
-        {
-            "input": "banana the apple",
-            "output": "5"
-        },
-        {
-            "input": "World me apple",
-            "output": "5"
-        },
-        {
-            "input": "to to apple banana",
-            "output": "6"
-        },
-        {
-            "input": "me moon me fly",
-            "output": "3"
-        },
-        {
-            "input": "to Hello apple",
-            "output": "5"
-        },
-        {
-            "input": "fly Hello apple banana Hello",
+            "input": "apple",
             "output": "5"
         },
         {
@@ -360,308 +52,616 @@
             "output": "5"
         },
         {
-            "input": "moon me    ",
-            "output": "2"
-        },
-        {
-            "input": "Hello banana banana",
-            "output": "6"
-        },
-        {
-            "input": "Hello moon World",
-            "output": "5"
-        },
-        {
-            "input": "me to to moon banana   ",
-            "output": "6"
-        },
-        {
-            "input": "the Hello me me   ",
-            "output": "2"
-        },
-        {
-            "input": "me ",
-            "output": "2"
-        },
-        {
-            "input": "banana apple banana     ",
-            "output": "6"
-        },
-        {
-            "input": "me the",
+            "input": "World me World fly",
             "output": "3"
         },
         {
-            "input": "to World banana apple",
+            "input": "fly to fly Hello",
             "output": "5"
         },
         {
-            "input": "banana Hello to fly banana",
+            "input": "me Hello banana moon",
+            "output": "4"
+        },
+        {
+            "input": "World me   ",
+            "output": "2"
+        },
+        {
+            "input": "to banana",
             "output": "6"
         },
         {
-            "input": "moon Hello World   ",
-            "output": "5"
+            "input": "banana Hello to",
+            "output": "2"
         },
         {
-            "input": "the apple the banana the",
+            "input": "World the",
             "output": "3"
         },
         {
-            "input": "apple the banana",
+            "input": "banana Hello ",
+            "output": "5"
+        },
+        {
+            "input": "to the banana to     ",
+            "output": "2"
+        },
+        {
+            "input": "Hello World banana fly Hello",
+            "output": "5"
+        },
+        {
+            "input": "fly me",
+            "output": "2"
+        },
+        {
+            "input": "World",
+            "output": "5"
+        },
+        {
+            "input": "the Hello  ",
+            "output": "5"
+        },
+        {
+            "input": "moon World the",
+            "output": "3"
+        },
+        {
+            "input": "fly the",
+            "output": "3"
+        },
+        {
+            "input": "moon apple banana Hello  ",
+            "output": "5"
+        },
+        {
+            "input": "apple to ",
+            "output": "2"
+        },
+        {
+            "input": "Hello    ",
+            "output": "5"
+        },
+        {
+            "input": "to to me Hello banana  ",
             "output": "6"
+        },
+        {
+            "input": "banana banana ",
+            "output": "6"
+        },
+        {
+            "input": "banana fly Hello  ",
+            "output": "5"
+        },
+        {
+            "input": "to apple",
+            "output": "5"
+        },
+        {
+            "input": "to to to fly moon ",
+            "output": "4"
+        },
+        {
+            "input": "World ",
+            "output": "5"
+        },
+        {
+            "input": "banana moon fly World",
+            "output": "5"
+        },
+        {
+            "input": "the fly banana fly",
+            "output": "3"
+        },
+        {
+            "input": "World fly fly to me",
+            "output": "2"
+        },
+        {
+            "input": "World apple to    ",
+            "output": "2"
+        },
+        {
+            "input": "World the apple apple me",
+            "output": "2"
+        },
+        {
+            "input": "the banana",
+            "output": "6"
+        },
+        {
+            "input": "apple Hello fly moon World   ",
+            "output": "5"
+        },
+        {
+            "input": "fly",
+            "output": "3"
+        },
+        {
+            "input": "me World to   ",
+            "output": "2"
+        },
+        {
+            "input": "moon banana the to",
+            "output": "2"
+        },
+        {
+            "input": "me apple",
+            "output": "5"
+        },
+        {
+            "input": "Hello me moon",
+            "output": "4"
+        },
+        {
+            "input": "apple banana banana the the",
+            "output": "3"
+        },
+        {
+            "input": "fly  ",
+            "output": "3"
+        },
+        {
+            "input": "the me fly Hello",
+            "output": "5"
+        },
+        {
+            "input": "Hello moon fly World Hello    ",
+            "output": "5"
+        },
+        {
+            "input": "moon fly moon",
+            "output": "4"
+        },
+        {
+            "input": "to to World the banana",
+            "output": "6"
+        },
+        {
+            "input": "apple apple",
+            "output": "5"
+        },
+        {
+            "input": "to fly",
+            "output": "3"
+        },
+        {
+            "input": "the ",
+            "output": "3"
+        },
+        {
+            "input": "World fly me fly",
+            "output": "3"
+        },
+        {
+            "input": "moon Hello World Hello     ",
+            "output": "5"
+        },
+        {
+            "input": "moon",
+            "output": "4"
+        },
+        {
+            "input": "banana banana moon Hello   ",
+            "output": "5"
+        },
+        {
+            "input": "moon World    ",
+            "output": "5"
+        },
+        {
+            "input": "me fly",
+            "output": "3"
+        },
+        {
+            "input": "World banana me World World     ",
+            "output": "5"
+        },
+        {
+            "input": "fly banana ",
+            "output": "6"
+        },
+        {
+            "input": "fly to",
+            "output": "2"
+        },
+        {
+            "input": "fly banana moon   ",
+            "output": "4"
+        },
+        {
+            "input": "banana to me",
+            "output": "2"
+        },
+        {
+            "input": "fly to me     ",
+            "output": "2"
+        },
+        {
+            "input": "to     ",
+            "output": "2"
+        },
+        {
+            "input": "moon moon   ",
+            "output": "4"
+        },
+        {
+            "input": "fly World banana banana ",
+            "output": "6"
+        },
+        {
+            "input": "Hello the World to to  ",
+            "output": "2"
+        },
+        {
+            "input": "apple me me fly ",
+            "output": "3"
+        },
+        {
+            "input": "moon the World World moon",
+            "output": "4"
+        },
+        {
+            "input": "Hello Hello me",
+            "output": "2"
+        },
+        {
+            "input": "me me the me fly ",
+            "output": "3"
+        },
+        {
+            "input": "banana Hello fly me     ",
+            "output": "2"
+        },
+        {
+            "input": "to fly banana moon",
+            "output": "4"
+        },
+        {
+            "input": "the    ",
+            "output": "3"
+        },
+        {
+            "input": "the me moon to",
+            "output": "2"
+        },
+        {
+            "input": "World Hello     ",
+            "output": "5"
+        },
+        {
+            "input": "to the ",
+            "output": "3"
+        },
+        {
+            "input": "moon apple apple Hello banana",
+            "output": "6"
+        },
+        {
+            "input": "banana World to the    ",
+            "output": "3"
+        },
+        {
+            "input": "to Hello the the Hello",
+            "output": "5"
+        },
+        {
+            "input": "Hello me banana Hello Hello  ",
+            "output": "5"
+        },
+        {
+            "input": "the moon to  ",
+            "output": "2"
+        },
+        {
+            "input": "banana the",
+            "output": "3"
+        },
+        {
+            "input": "me banana Hello me to",
+            "output": "2"
+        },
+        {
+            "input": "me me me",
+            "output": "2"
+        },
+        {
+            "input": "banana to fly banana",
+            "output": "6"
+        },
+        {
+            "input": "banana banana banana",
+            "output": "6"
+        },
+        {
+            "input": "to ",
+            "output": "2"
+        },
+        {
+            "input": "World World banana     ",
+            "output": "6"
+        },
+        {
+            "input": "World Hello banana to",
+            "output": "2"
+        },
+        {
+            "input": "me World     ",
+            "output": "5"
+        },
+        {
+            "input": "the apple the me apple ",
+            "output": "5"
+        },
+        {
+            "input": "apple Hello fly",
+            "output": "3"
         },
         {
             "input": "banana     ",
             "output": "6"
         },
         {
-            "input": "to Hello Hello banana World",
-            "output": "5"
-        },
-        {
-            "input": "me moon banana    ",
+            "input": "apple me banana",
             "output": "6"
         },
         {
-            "input": "moon me the World     ",
-            "output": "5"
-        },
-        {
-            "input": "to moon fly fly fly  ",
+            "input": "moon apple banana World the     ",
             "output": "3"
         },
         {
-            "input": "banana the    ",
-            "output": "3"
-        },
-        {
-            "input": "me the ",
-            "output": "3"
-        },
-        {
-            "input": "apple",
-            "output": "5"
-        },
-        {
-            "input": "Hello the apple to Hello    ",
-            "output": "5"
-        },
-        {
-            "input": "to moon ",
-            "output": "4"
-        },
-        {
-            "input": "fly banana to",
-            "output": "2"
-        },
-        {
-            "input": "me banana ",
+            "input": "moon me banana   ",
             "output": "6"
         },
         {
-            "input": "moon moon Hello fly World ",
-            "output": "5"
-        },
-        {
-            "input": "banana the the me",
-            "output": "2"
-        },
-        {
-            "input": "fly apple the  ",
-            "output": "3"
-        },
-        {
-            "input": "fly apple apple Hello moon",
-            "output": "4"
-        },
-        {
-            "input": "fly fly fly fly   ",
-            "output": "3"
-        },
-        {
-            "input": "to banana Hello World World   ",
-            "output": "5"
-        },
-        {
-            "input": "Hello World Hello me to  ",
-            "output": "2"
-        },
-        {
-            "input": "World apple me Hello the",
-            "output": "3"
-        },
-        {
-            "input": "banana apple me to to",
-            "output": "2"
-        },
-        {
-            "input": "the moon Hello    ",
-            "output": "5"
-        },
-        {
-            "input": "me",
-            "output": "2"
-        },
-        {
-            "input": "banana moon apple banana moon",
-            "output": "4"
-        },
-        {
-            "input": "moon moon the moon apple",
-            "output": "5"
-        },
-        {
-            "input": "the to Hello World",
-            "output": "5"
-        },
-        {
-            "input": "the Hello",
-            "output": "5"
-        },
-        {
-            "input": "Hello Hello",
-            "output": "5"
-        },
-        {
-            "input": "fly Hello banana World Hello",
-            "output": "5"
-        },
-        {
-            "input": "moon apple Hello fly",
-            "output": "3"
-        },
-        {
-            "input": "apple to fly World me",
-            "output": "2"
-        },
-        {
-            "input": "the Hello fly",
-            "output": "3"
-        },
-        {
-            "input": "moon   ",
-            "output": "4"
-        },
-        {
-            "input": "fly banana to World me    ",
-            "output": "2"
-        },
-        {
-            "input": "fly    ",
-            "output": "3"
-        },
-        {
-            "input": "Hello apple banana me ",
-            "output": "2"
-        },
-        {
-            "input": "moon apple ",
-            "output": "5"
-        },
-        {
-            "input": "World the apple the fly",
-            "output": "3"
-        },
-        {
-            "input": "me me the to     ",
-            "output": "2"
-        },
-        {
-            "input": "fly World to fly Hello  ",
-            "output": "5"
-        },
-        {
-            "input": "apple to Hello banana apple   ",
-            "output": "5"
-        },
-        {
-            "input": "me to Hello banana   ",
+            "input": "banana    ",
             "output": "6"
         },
         {
-            "input": "banana fly banana",
+            "input": "apple fly the  ",
+            "output": "3"
+        },
+        {
+            "input": "Hello Hello to fly apple  ",
+            "output": "5"
+        },
+        {
+            "input": "moon the banana moon",
+            "output": "4"
+        },
+        {
+            "input": "moon  ",
+            "output": "4"
+        },
+        {
+            "input": "fly   ",
+            "output": "3"
+        },
+        {
+            "input": "banana  ",
             "output": "6"
         },
         {
-            "input": "World banana moon  ",
-            "output": "4"
-        },
-        {
-            "input": "me banana the moon moon",
-            "output": "4"
-        },
-        {
-            "input": "Hello apple apple apple",
-            "output": "5"
-        },
-        {
-            "input": "apple banana the moon Hello",
-            "output": "5"
-        },
-        {
-            "input": "World Hello banana",
+            "input": "moon banana     ",
             "output": "6"
         },
         {
-            "input": "apple moon",
+            "input": "the me moon World    ",
+            "output": "5"
+        },
+        {
+            "input": "fly fly moon     ",
             "output": "4"
         },
         {
-            "input": "me apple ",
-            "output": "5"
-        },
-        {
-            "input": "banana me fly to",
-            "output": "2"
-        },
-        {
-            "input": "moon me the  ",
-            "output": "3"
-        },
-        {
-            "input": "the the",
-            "output": "3"
-        },
-        {
-            "input": "Hello the",
-            "output": "3"
-        },
-        {
-            "input": "moon me banana moon moon",
-            "output": "4"
-        },
-        {
-            "input": "to to",
-            "output": "2"
-        },
-        {
-            "input": "fly to apple moon to     ",
-            "output": "2"
-        },
-        {
-            "input": "the the World ",
-            "output": "5"
-        },
-        {
-            "input": "the Hello to  ",
-            "output": "2"
-        },
-        {
-            "input": "me moon apple Hello World    ",
-            "output": "5"
-        },
-        {
-            "input": "me me banana ",
+            "input": "Hello Hello Hello banana banana ",
             "output": "6"
         },
         {
-            "input": "World moon me",
+            "input": "fly to Hello Hello  ",
+            "output": "5"
+        },
+        {
+            "input": "the moon banana    ",
+            "output": "6"
+        },
+        {
+            "input": "fly me ",
             "output": "2"
         },
         {
-            "input": "me fly World fly",
+            "input": "the fly moon  ",
+            "output": "4"
+        },
+        {
+            "input": "the apple to",
+            "output": "2"
+        },
+        {
+            "input": "World banana me apple",
+            "output": "5"
+        },
+        {
+            "input": "moon apple the banana ",
+            "output": "6"
+        },
+        {
+            "input": "Hello Hello apple the World",
+            "output": "5"
+        },
+        {
+            "input": "World the World World",
+            "output": "5"
+        },
+        {
+            "input": "banana World banana apple",
+            "output": "5"
+        },
+        {
+            "input": "banana the apple World the     ",
             "output": "3"
+        },
+        {
+            "input": "Hello fly banana  ",
+            "output": "6"
+        },
+        {
+            "input": "moon Hello moon apple to   ",
+            "output": "2"
+        },
+        {
+            "input": "to moon moon ",
+            "output": "4"
+        },
+        {
+            "input": "banana   ",
+            "output": "6"
+        },
+        {
+            "input": "World to fly     ",
+            "output": "3"
+        },
+        {
+            "input": "to banana to me",
+            "output": "2"
+        },
+        {
+            "input": "to apple the banana me   ",
+            "output": "2"
+        },
+        {
+            "input": "me     ",
+            "output": "2"
+        },
+        {
+            "input": "the World  ",
+            "output": "5"
+        },
+        {
+            "input": "apple Hello  ",
+            "output": "5"
+        },
+        {
+            "input": "apple World World to    ",
+            "output": "2"
+        },
+        {
+            "input": "the",
+            "output": "3"
+        },
+        {
+            "input": "moon    ",
+            "output": "4"
+        },
+        {
+            "input": "to apple banana the World",
+            "output": "5"
+        },
+        {
+            "input": "to the moon the  ",
+            "output": "3"
+        },
+        {
+            "input": "World the moon ",
+            "output": "4"
+        },
+        {
+            "input": "banana fly banana World",
+            "output": "5"
+        },
+        {
+            "input": "the World to  ",
+            "output": "2"
+        },
+        {
+            "input": "Hello World fly banana  ",
+            "output": "6"
+        },
+        {
+            "input": "to",
+            "output": "2"
+        },
+        {
+            "input": "fly to me World",
+            "output": "5"
+        },
+        {
+            "input": "me to World banana",
+            "output": "6"
+        },
+        {
+            "input": "to apple moon Hello fly",
+            "output": "3"
+        },
+        {
+            "input": "World banana fly Hello  ",
+            "output": "5"
+        },
+        {
+            "input": "the to banana     ",
+            "output": "6"
+        },
+        {
+            "input": "moon apple",
+            "output": "5"
+        },
+        {
+            "input": "apple Hello apple fly banana",
+            "output": "6"
+        },
+        {
+            "input": "Hello Hello to me me",
+            "output": "2"
+        },
+        {
+            "input": "me moon",
+            "output": "4"
+        },
+        {
+            "input": "World banana World   ",
+            "output": "5"
+        },
+        {
+            "input": "apple   ",
+            "output": "5"
+        },
+        {
+            "input": "moon fly me moon Hello",
+            "output": "5"
+        },
+        {
+            "input": "apple World to",
+            "output": "2"
+        },
+        {
+            "input": "me moon the the",
+            "output": "3"
+        },
+        {
+            "input": "fly apple to   ",
+            "output": "2"
+        },
+        {
+            "input": "the banana ",
+            "output": "6"
+        },
+        {
+            "input": "banana me",
+            "output": "2"
+        },
+        {
+            "input": "to banana moon to Hello ",
+            "output": "5"
+        },
+        {
+            "input": "moon Hello the banana",
+            "output": "6"
+        },
+        {
+            "input": "moon fly fly banana banana   ",
+            "output": "6"
         }
     ]
 }

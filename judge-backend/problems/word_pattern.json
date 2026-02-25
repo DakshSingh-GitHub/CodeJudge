@@ -23,499 +23,135 @@
     ],
     "hidden_test_cases": [
         {
-            "input": "dcabacdccb\nbird lion dog fish bird lion dog cat dog bird",
+            "input": "bcbbbcac\nlion fish lion lion dog cat lion bird",
             "output": "No"
         },
         {
-            "input": "bdcabababb\ncat dog lion lion cat lion cat lion cat cat",
-            "output": "No"
-        },
-        {
-            "input": "cdccba\nbird lion bird fish fish cat",
-            "output": "No"
-        },
-        {
-            "input": "b\ndog",
+            "input": "ac\nfish dog",
             "output": "Yes"
         },
         {
-            "input": "dbcccccd\nbird fish dog lion dog cat cat dog",
+            "input": "cc\nlion cat",
             "output": "No"
         },
         {
-            "input": "daddd\nlion fish dog dog fish",
+            "input": "babadccbbd\nlion dog lion dog lion lion lion lion lion lion",
             "output": "No"
         },
         {
-            "input": "bbb\nlion lion lion",
+            "input": "abcccddbc\ndog dog dog fish cat cat fish cat bird",
+            "output": "No"
+        },
+        {
+            "input": "dd\nfish fish",
             "output": "Yes"
         },
         {
-            "input": "aacb\nbird bird bird bird",
+            "input": "addabccabc\nlion cat cat cat cat fish dog fish dog bird",
             "output": "No"
         },
         {
-            "input": "abcdbac\ndog bird fish lion lion dog dog",
+            "input": "bdaadcca\nfish cat dog cat dog lion fish dog",
             "output": "No"
         },
         {
-            "input": "c\nbird",
+            "input": "addbddc\nfish cat lion cat fish lion cat",
+            "output": "No"
+        },
+        {
+            "input": "bdd\nfish lion cat",
+            "output": "No"
+        },
+        {
+            "input": "dcbbd\nlion dog fish cat lion",
+            "output": "No"
+        },
+        {
+            "input": "daab\nbird dog dog lion",
             "output": "Yes"
         },
         {
-            "input": "aaacbc\nbird bird bird dog bird dog",
-            "output": "No"
-        },
-        {
-            "input": "bdaab\ncat fish cat cat cat",
-            "output": "No"
-        },
-        {
-            "input": "cdcabdbb\ndog cat bird dog dog bird dog lion",
-            "output": "No"
-        },
-        {
-            "input": "adadc\nlion lion lion lion cat",
-            "output": "No"
-        },
-        {
-            "input": "dc\nbird cat",
+            "input": "adaa\nlion fish lion lion",
             "output": "Yes"
         },
         {
-            "input": "cbabccbdb\ndog fish cat dog bird bird fish fish cat",
+            "input": "abdaddda\ncat cat lion dog fish dog fish fish",
             "output": "No"
         },
         {
-            "input": "baaaad\nfish lion lion lion dog lion",
-            "output": "No"
-        },
-        {
-            "input": "bbcadc\nfish fish lion fish bird lion",
-            "output": "No"
-        },
-        {
-            "input": "caadd\nfish bird bird dog dog",
+            "input": "dcccbdaa\ndog fish fish fish lion dog bird bird",
             "output": "Yes"
         },
         {
-            "input": "badbcadcd\ncat fish bird lion fish bird lion fish fish",
+            "input": "bdcbcbba\ndog lion lion dog lion dog dog cat",
             "output": "No"
         },
         {
-            "input": "badcac\nbird dog dog lion fish bird",
+            "input": "aadaaac\ndog bird dog bird lion dog fish",
             "output": "No"
         },
         {
-            "input": "acdb\nlion bird fish cat",
+            "input": "bddccdddc\nlion cat dog fish cat cat cat dog bird",
+            "output": "No"
+        },
+        {
+            "input": "baaaadca\ndog fish dog fish lion dog bird bird",
+            "output": "No"
+        },
+        {
+            "input": "ccabaadabc\ndog bird cat lion cat fish lion bird lion dog",
+            "output": "No"
+        },
+        {
+            "input": "ddaacbc\nbird bird lion lion lion bird lion",
+            "output": "No"
+        },
+        {
+            "input": "cbadcaacb\ncat cat bird bird cat bird bird cat cat",
+            "output": "No"
+        },
+        {
+            "input": "b\ncat",
             "output": "Yes"
         },
         {
-            "input": "dcc\ncat fish cat",
+            "input": "bdcaadb\ncat fish lion fish fish fish cat",
             "output": "No"
         },
         {
-            "input": "acbca\nfish dog bird bird bird",
-            "output": "No"
-        },
-        {
-            "input": "adccbcc\nfish bird dog dog dog dog dog",
-            "output": "No"
-        },
-        {
-            "input": "abaddcd\nbird fish bird dog dog lion dog",
+            "input": "cb\ndog bird",
             "output": "Yes"
         },
         {
-            "input": "c\nlion",
+            "input": "bcaccddb\nfish bird bird bird cat lion bird lion",
+            "output": "No"
+        },
+        {
+            "input": "bccbadb\nfish cat cat bird lion dog lion",
+            "output": "No"
+        },
+        {
+            "input": "bbabadca\nbird bird cat dog fish fish bird cat",
+            "output": "No"
+        },
+        {
+            "input": "abdcbc\ncat lion cat cat fish cat",
+            "output": "No"
+        },
+        {
+            "input": "cdcca\nlion dog lion lion bird",
             "output": "Yes"
         },
         {
-            "input": "adccc\ncat dog lion bird fish",
+            "input": "daa\ncat bird cat",
             "output": "No"
         },
         {
-            "input": "aadbcac\ndog dog lion bird fish dog cat",
-            "output": "No"
-        },
-        {
-            "input": "adda\nfish cat cat fish",
+            "input": "babccb\nfish lion fish bird bird fish",
             "output": "Yes"
         },
         {
-            "input": "dccbd\nfish lion bird cat bird",
-            "output": "No"
-        },
-        {
-            "input": "abbdbabbbd\nlion lion fish bird lion cat dog dog lion fish",
-            "output": "No"
-        },
-        {
-            "input": "adc\nlion dog lion",
-            "output": "No"
-        },
-        {
-            "input": "d\nfish",
-            "output": "Yes"
-        },
-        {
-            "input": "dcddc\ncat dog dog fish dog",
-            "output": "No"
-        },
-        {
-            "input": "cacada\nfish bird fish fish dog cat",
-            "output": "No"
-        },
-        {
-            "input": "aaacc\nlion dog cat dog cat",
-            "output": "No"
-        },
-        {
-            "input": "ccccdcab\ncat fish lion dog bird lion lion dog",
-            "output": "No"
-        },
-        {
-            "input": "ab\nbird dog",
-            "output": "Yes"
-        },
-        {
-            "input": "abbcdad\ndog bird bird dog fish cat bird",
-            "output": "No"
-        },
-        {
-            "input": "bacaaad\nlion dog bird dog dog dog bird",
-            "output": "No"
-        },
-        {
-            "input": "aad\nlion fish lion",
-            "output": "No"
-        },
-        {
-            "input": "dba\nlion bird lion",
-            "output": "No"
-        },
-        {
-            "input": "ac\nbird dog",
-            "output": "Yes"
-        },
-        {
-            "input": "daadadca\ncat cat cat cat cat cat lion cat",
-            "output": "No"
-        },
-        {
-            "input": "abdbcdbac\ncat dog dog dog lion dog dog cat lion",
-            "output": "No"
-        },
-        {
-            "input": "cccbcab\nfish fish fish bird fish lion bird",
-            "output": "Yes"
-        },
-        {
-            "input": "abb\nlion cat cat",
-            "output": "Yes"
-        },
-        {
-            "input": "aaddbccc\nbird bird lion lion cat fish fish fish",
-            "output": "Yes"
-        },
-        {
-            "input": "accbaab\nfish fish dog dog fish dog lion",
-            "output": "No"
-        },
-        {
-            "input": "cbdccbb\nlion fish bird lion lion fish fish",
-            "output": "Yes"
-        },
-        {
-            "input": "dacc\nbird dog dog dog",
-            "output": "No"
-        },
-        {
-            "input": "ccacbbbda\nbird bird lion bird lion lion lion cat lion",
-            "output": "No"
-        },
-        {
-            "input": "dbadccca\ndog bird cat dog bird bird bird cat",
-            "output": "No"
-        },
-        {
-            "input": "aa\ndog dog",
-            "output": "Yes"
-        },
-        {
-            "input": "baddcc\ndog cat bird bird lion lion",
-            "output": "Yes"
-        },
-        {
-            "input": "cc\nfish lion",
-            "output": "No"
-        },
-        {
-            "input": "dccbbd\ncat fish fish fish fish cat",
-            "output": "No"
-        },
-        {
-            "input": "cbdbbb\nfish cat bird lion cat bird",
-            "output": "No"
-        },
-        {
-            "input": "dadbdaacdd\nfish dog cat bird fish fish bird dog lion dog",
-            "output": "No"
-        },
-        {
-            "input": "a\nlion",
-            "output": "Yes"
-        },
-        {
-            "input": "da\nbird dog",
-            "output": "Yes"
-        },
-        {
-            "input": "bc\nfish bird",
-            "output": "Yes"
-        },
-        {
-            "input": "aabbcbac\nfish fish cat lion cat dog bird fish",
-            "output": "No"
-        },
-        {
-            "input": "abb\nlion bird cat",
-            "output": "No"
-        },
-        {
-            "input": "bd\nbird cat",
-            "output": "Yes"
-        },
-        {
-            "input": "bbadacddbc\nlion dog lion bird bird dog fish dog dog dog",
-            "output": "No"
-        },
-        {
-            "input": "b\nfish",
-            "output": "Yes"
-        },
-        {
-            "input": "acdaa\nlion lion lion lion lion",
-            "output": "No"
-        },
-        {
-            "input": "dadbcab\ncat fish fish lion cat fish fish",
-            "output": "No"
-        },
-        {
-            "input": "addbccbca\ncat lion lion lion cat cat lion cat cat",
-            "output": "No"
-        },
-        {
-            "input": "ad\nbird lion",
-            "output": "Yes"
-        },
-        {
-            "input": "abbcacbbcb\nbird cat cat fish bird fish cat cat fish cat",
-            "output": "Yes"
-        },
-        {
-            "input": "bab\nlion cat dog",
-            "output": "No"
-        },
-        {
-            "input": "dcccac\nbird fish fish fish fish fish",
-            "output": "No"
-        },
-        {
-            "input": "db\ncat fish",
-            "output": "Yes"
-        },
-        {
-            "input": "cbcbddcdbb\ndog cat dog cat cat bird lion cat fish fish",
-            "output": "No"
-        },
-        {
-            "input": "bd\ndog lion",
-            "output": "Yes"
-        },
-        {
-            "input": "caadcbc\ndog bird fish cat cat bird dog",
-            "output": "No"
-        },
-        {
-            "input": "cdccbbbc\ncat dog fish bird lion dog lion fish",
-            "output": "No"
-        },
-        {
-            "input": "bcbcb\nbird cat bird cat bird",
-            "output": "Yes"
-        },
-        {
-            "input": "bda\ncat bird lion",
-            "output": "Yes"
-        },
-        {
-            "input": "dbbdcc\ndog lion dog fish lion dog",
-            "output": "No"
-        },
-        {
-            "input": "bdb\nlion dog cat",
-            "output": "No"
-        },
-        {
-            "input": "bcbbadcc\nlion dog lion bird cat fish bird fish",
-            "output": "No"
-        },
-        {
-            "input": "dccbaddcb\ncat lion cat bird dog bird fish dog cat",
-            "output": "No"
-        },
-        {
-            "input": "bdbbaddbcd\nlion fish dog cat fish lion cat lion bird fish",
-            "output": "No"
-        },
-        {
-            "input": "adbdcc\nlion lion cat lion cat cat",
-            "output": "No"
-        },
-        {
-            "input": "baa\nlion bird bird",
-            "output": "Yes"
-        },
-        {
-            "input": "dba\ndog fish fish",
-            "output": "No"
-        },
-        {
-            "input": "bdcbcbbcab\nfish lion dog dog dog lion fish cat fish bird",
-            "output": "No"
-        },
-        {
-            "input": "aa\ncat dog",
-            "output": "No"
-        },
-        {
-            "input": "cddccdcdda\nfish lion lion fish fish lion fish lion lion dog",
-            "output": "Yes"
-        },
-        {
-            "input": "dcccacc\ncat lion lion lion fish lion lion",
-            "output": "Yes"
-        },
-        {
-            "input": "addaadbdca\ndog bird bird dog dog bird cat bird fish dog",
-            "output": "Yes"
-        },
-        {
-            "input": "dca\nbird fish dog",
-            "output": "Yes"
-        },
-        {
-            "input": "da\nfish fish",
-            "output": "No"
-        },
-        {
-            "input": "dd\nbird bird",
-            "output": "Yes"
-        },
-        {
-            "input": "dadcaab\ncat cat dog cat cat fish fish",
-            "output": "No"
-        },
-        {
-            "input": "cddda\nlion fish cat lion cat",
-            "output": "No"
-        },
-        {
-            "input": "db\nfish lion",
-            "output": "Yes"
-        },
-        {
-            "input": "bbb\nfish fish fish",
-            "output": "Yes"
-        },
-        {
-            "input": "bcdcb\ncat dog lion cat lion",
-            "output": "No"
-        },
-        {
-            "input": "addcdada\nbird dog dog lion dog bird lion lion",
-            "output": "No"
-        },
-        {
-            "input": "abd\nfish lion dog",
-            "output": "Yes"
-        },
-        {
-            "input": "bdbcdcbcb\ncat dog fish dog bird fish fish dog lion",
-            "output": "No"
-        },
-        {
-            "input": "badcabc\ndog dog fish dog dog dog dog",
-            "output": "No"
-        },
-        {
-            "input": "dbadcabcb\ndog lion bird lion dog lion dog dog fish",
-            "output": "No"
-        },
-        {
-            "input": "bdb\nbird bird bird",
-            "output": "No"
-        },
-        {
-            "input": "ab\nbird lion",
-            "output": "Yes"
-        },
-        {
-            "input": "ccdd\nfish dog lion fish",
-            "output": "No"
-        },
-        {
-            "input": "abbacb\nbird bird fish lion lion cat",
-            "output": "No"
-        },
-        {
-            "input": "abbaba\nlion fish dog fish cat lion",
-            "output": "No"
-        },
-        {
-            "input": "bbdaa\ncat lion dog bird bird",
-            "output": "No"
-        },
-        {
-            "input": "a\nbird",
-            "output": "Yes"
-        },
-        {
-            "input": "acbbbbcaaa\ndog dog bird bird bird bird dog dog dog dog",
-            "output": "No"
-        },
-        {
-            "input": "cdddbbbc\ndog cat cat cat lion lion lion dog",
-            "output": "Yes"
-        },
-        {
-            "input": "cccdcbdb\ndog dog dog bird dog fish bird fish",
-            "output": "Yes"
-        },
-        {
-            "input": "bbbbbdaa\nfish bird dog cat fish dog bird lion",
-            "output": "No"
-        },
-        {
-            "input": "adb\ncat lion dog",
-            "output": "Yes"
-        },
-        {
-            "input": "cddb\nfish bird cat fish",
-            "output": "No"
-        },
-        {
-            "input": "abdbcdddb\nbird dog lion dog cat lion lion lion dog",
-            "output": "Yes"
-        },
-        {
-            "input": "ddd\nlion bird lion",
-            "output": "No"
-        },
-        {
-            "input": "cdba\ncat fish bird dog",
+            "input": "cd\ncat lion",
             "output": "Yes"
         },
         {
@@ -523,143 +159,507 @@
             "output": "Yes"
         },
         {
-            "input": "cbbbaadba\nlion dog dog dog lion lion bird dog lion",
+            "input": "acb\nbird bird lion",
             "output": "No"
         },
         {
-            "input": "dc\nlion dog",
+            "input": "dcdbcdcabb\ncat cat cat fish cat cat cat bird fish fish",
+            "output": "No"
+        },
+        {
+            "input": "dadadac\nfish fish lion lion lion bird fish",
+            "output": "No"
+        },
+        {
+            "input": "bad\ncat fish fish",
+            "output": "No"
+        },
+        {
+            "input": "cbabdbad\nfish fish dog fish lion fish dog lion",
+            "output": "No"
+        },
+        {
+            "input": "acacad\ncat fish cat fish cat dog",
             "output": "Yes"
         },
         {
-            "input": "bcabcb\ndog bird fish fish dog dog",
+            "input": "adadddcaac\ndog dog bird dog dog cat cat fish cat fish",
             "output": "No"
         },
         {
-            "input": "dccabb\nfish fish fish lion fish bird",
+            "input": "aacacbabca\nbird bird cat bird cat fish bird fish cat bird",
+            "output": "Yes"
+        },
+        {
+            "input": "cb\nlion fish",
+            "output": "Yes"
+        },
+        {
+            "input": "ab\nfish fish",
             "output": "No"
+        },
+        {
+            "input": "bbccabc\ndog dog cat cat dog dog cat",
+            "output": "No"
+        },
+        {
+            "input": "aa\ndog lion",
+            "output": "No"
+        },
+        {
+            "input": "abccabaabb\ncat lion lion lion cat lion cat cat lion lion",
+            "output": "No"
+        },
+        {
+            "input": "cdabcabcdd\nlion cat fish lion lion fish lion lion cat cat",
+            "output": "No"
+        },
+        {
+            "input": "cccb\nfish fish fish cat",
+            "output": "Yes"
+        },
+        {
+            "input": "bacdb\ndog bird fish bird dog",
+            "output": "No"
+        },
+        {
+            "input": "da\nfish cat",
+            "output": "Yes"
+        },
+        {
+            "input": "c\nlion",
+            "output": "Yes"
+        },
+        {
+            "input": "dbacac\ndog bird cat dog lion cat",
+            "output": "No"
+        },
+        {
+            "input": "dcadb\ndog dog bird dog dog",
+            "output": "No"
+        },
+        {
+            "input": "bddaddc\nbird lion lion dog lion lion cat",
+            "output": "Yes"
+        },
+        {
+            "input": "addddbadcc\nlion lion lion lion lion cat lion lion dog dog",
+            "output": "No"
+        },
+        {
+            "input": "bbcdb\nbird fish cat fish dog",
+            "output": "No"
+        },
+        {
+            "input": "dd\nbird fish",
+            "output": "No"
+        },
+        {
+            "input": "aabcb\ndog bird bird bird fish",
+            "output": "No"
+        },
+        {
+            "input": "bb\nfish fish",
+            "output": "Yes"
+        },
+        {
+            "input": "dadddcaabb\nfish lion bird bird fish cat bird lion fish cat",
+            "output": "No"
+        },
+        {
+            "input": "bca\ndog bird fish",
+            "output": "Yes"
+        },
+        {
+            "input": "c\ncat",
+            "output": "Yes"
+        },
+        {
+            "input": "adabba\nbird lion cat dog dog lion",
+            "output": "No"
+        },
+        {
+            "input": "ccbabcbd\ncat cat fish bird lion lion fish dog",
+            "output": "No"
+        },
+        {
+            "input": "bab\nlion cat lion",
+            "output": "Yes"
+        },
+        {
+            "input": "aaccbbc\nbird dog lion bird dog dog bird",
+            "output": "No"
+        },
+        {
+            "input": "bdddbb\ncat bird bird bird cat cat",
+            "output": "Yes"
+        },
+        {
+            "input": "bbb\nlion lion lion",
+            "output": "Yes"
+        },
+        {
+            "input": "babaaadcba\ncat fish bird lion fish bird cat fish cat bird",
+            "output": "No"
+        },
+        {
+            "input": "badaaabd\nbird fish dog dog fish bird dog bird",
+            "output": "No"
+        },
+        {
+            "input": "dcabd\ndog cat bird bird lion",
+            "output": "No"
+        },
+        {
+            "input": "dacbdb\nlion lion bird lion cat dog",
+            "output": "No"
+        },
+        {
+            "input": "daab\nbird bird bird fish",
+            "output": "No"
+        },
+        {
+            "input": "ba\nfish dog",
+            "output": "Yes"
+        },
+        {
+            "input": "cdcaadabda\nfish cat fish cat cat cat cat cat cat cat",
+            "output": "No"
+        },
+        {
+            "input": "bdababc\nfish cat cat fish bird lion cat",
+            "output": "No"
+        },
+        {
+            "input": "ddaaab\ndog dog cat cat cat bird",
+            "output": "Yes"
+        },
+        {
+            "input": "dcaddcacab\ndog lion lion fish cat lion cat cat lion cat",
+            "output": "No"
+        },
+        {
+            "input": "dbccd\ndog fish fish fish dog",
+            "output": "No"
+        },
+        {
+            "input": "ac\ncat dog",
+            "output": "Yes"
+        },
+        {
+            "input": "bdabaa\nfish cat fish fish fish fish",
+            "output": "No"
+        },
+        {
+            "input": "cdacbaa\nbird dog fish bird lion fish fish",
+            "output": "Yes"
+        },
+        {
+            "input": "cac\nfish bird fish",
+            "output": "Yes"
+        },
+        {
+            "input": "adabb\ncat dog cat dog dog",
+            "output": "No"
+        },
+        {
+            "input": "cbbdb\nfish lion fish cat dog",
+            "output": "No"
+        },
+        {
+            "input": "ad\nbird dog",
+            "output": "Yes"
+        },
+        {
+            "input": "ba\nbird cat",
+            "output": "Yes"
+        },
+        {
+            "input": "bcdb\nlion lion cat lion",
+            "output": "No"
+        },
+        {
+            "input": "ccdabcaad\ncat cat cat bird dog cat bird bird cat",
+            "output": "No"
+        },
+        {
+            "input": "cdbd\ncat fish dog fish",
+            "output": "Yes"
+        },
+        {
+            "input": "cbacbdca\ncat dog dog bird fish bird lion fish",
+            "output": "No"
+        },
+        {
+            "input": "acacabbbdc\ncat bird dog fish dog fish dog lion cat fish",
+            "output": "No"
+        },
+        {
+            "input": "bcaacbbc\ndog bird fish bird dog lion lion cat",
+            "output": "No"
+        },
+        {
+            "input": "abbadaca\ndog lion lion dog dog dog lion dog",
+            "output": "No"
+        },
+        {
+            "input": "adbbdd\ndog cat bird bird cat cat",
+            "output": "Yes"
+        },
+        {
+            "input": "abdbba\ndog dog bird dog dog dog",
+            "output": "No"
+        },
+        {
+            "input": "ccdca\nlion lion cat lion bird",
+            "output": "Yes"
+        },
+        {
+            "input": "cabc\nbird fish dog bird",
+            "output": "Yes"
+        },
+        {
+            "input": "bcaacbcbbb\nbird dog bird lion cat cat lion bird bird cat",
+            "output": "No"
+        },
+        {
+            "input": "acbaa\nlion fish dog lion lion",
+            "output": "Yes"
+        },
+        {
+            "input": "dcaaaac\ndog bird fish fish fish fish bird",
+            "output": "Yes"
+        },
+        {
+            "input": "bb\ncat cat",
+            "output": "Yes"
+        },
+        {
+            "input": "bccbbbddad\nlion lion dog bird lion cat cat dog cat cat",
+            "output": "No"
+        },
+        {
+            "input": "dbd\nlion dog lion",
+            "output": "Yes"
+        },
+        {
+            "input": "cdbccbba\nlion bird fish lion lion fish fish fish",
+            "output": "No"
+        },
+        {
+            "input": "b\ndog",
+            "output": "Yes"
+        },
+        {
+            "input": "ab\ncat lion",
+            "output": "Yes"
+        },
+        {
+            "input": "cccc\nbird lion bird bird",
+            "output": "No"
+        },
+        {
+            "input": "aacbdccccb\ncat fish lion lion cat bird cat bird cat lion",
+            "output": "No"
+        },
+        {
+            "input": "cdc\ncat bird cat",
+            "output": "Yes"
+        },
+        {
+            "input": "bcbdda\nbird dog bird bird bird bird",
+            "output": "No"
+        },
+        {
+            "input": "dccdadb\nlion lion bird fish lion dog cat",
+            "output": "No"
+        },
+        {
+            "input": "bcdbccab\ndog fish dog dog lion cat dog bird",
+            "output": "No"
+        },
+        {
+            "input": "dbdcdd\nlion dog lion bird lion lion",
+            "output": "Yes"
+        },
+        {
+            "input": "ddbddd\nlion lion bird lion lion lion",
+            "output": "Yes"
+        },
+        {
+            "input": "ddbcd\nfish fish dog lion fish",
+            "output": "Yes"
+        },
+        {
+            "input": "ddabbdcab\nfish lion fish cat cat lion lion fish fish",
+            "output": "No"
+        },
+        {
+            "input": "cc\nbird dog",
+            "output": "No"
+        },
+        {
+            "input": "ababcacd\nbird cat bird cat cat bird cat dog",
+            "output": "No"
+        },
+        {
+            "input": "caccbbacbc\nfish dog fish dog lion dog lion dog cat fish",
+            "output": "No"
+        },
+        {
+            "input": "baddaabcbd\nlion fish lion lion fish fish lion cat lion lion",
+            "output": "No"
+        },
+        {
+            "input": "cdd\ndog bird dog",
+            "output": "No"
+        },
+        {
+            "input": "bdc\ncat fish cat",
+            "output": "No"
+        },
+        {
+            "input": "abcadbdca\nbird dog lion fish lion cat bird bird bird",
+            "output": "No"
+        },
+        {
+            "input": "ddcabadbac\nlion cat lion bird cat dog bird lion lion cat",
+            "output": "No"
+        },
+        {
+            "input": "dbbbcadb\nfish bird bird bird cat lion fish bird",
+            "output": "Yes"
+        },
+        {
+            "input": "d\nbird",
+            "output": "Yes"
+        },
+        {
+            "input": "bdcaabadc\nlion fish lion fish dog cat fish fish lion",
+            "output": "No"
+        },
+        {
+            "input": "abbcbdaddb\nbird dog dog fish dog cat bird cat cat dog",
+            "output": "Yes"
+        },
+        {
+            "input": "cda\nbird fish dog",
+            "output": "Yes"
+        },
+        {
+            "input": "cccb\nfish bird cat cat",
+            "output": "No"
+        },
+        {
+            "input": "accb\nlion fish bird lion",
+            "output": "No"
+        },
+        {
+            "input": "dccdcd\nlion lion bird lion lion fish",
+            "output": "No"
+        },
+        {
+            "input": "cacdc\ncat bird cat fish fish",
+            "output": "No"
+        },
+        {
+            "input": "baccaccad\nbird fish bird bird fish bird bird fish cat",
+            "output": "No"
+        },
+        {
+            "input": "adcabb\nbird cat dog bird dog dog",
+            "output": "No"
+        },
+        {
+            "input": "cad\nbird fish dog",
+            "output": "Yes"
+        },
+        {
+            "input": "ddacbad\ndog dog lion fish lion lion dog",
+            "output": "No"
+        },
+        {
+            "input": "aababbc\ndog dog lion dog lion lion cat",
+            "output": "Yes"
+        },
+        {
+            "input": "dbcadddbc\nfish lion cat dog fish fish fish fish dog",
+            "output": "No"
+        },
+        {
+            "input": "bcc\nlion lion lion",
+            "output": "No"
+        },
+        {
+            "input": "dbc\ncat cat bird",
+            "output": "No"
+        },
+        {
+            "input": "dddbbdcdcd\nfish fish fish bird bird fish fish fish fish fish",
+            "output": "No"
+        },
+        {
+            "input": "dcc\nlion bird dog",
+            "output": "No"
+        },
+        {
+            "input": "bcbbcbd\nbird cat bird bird cat bird dog",
+            "output": "Yes"
+        },
+        {
+            "input": "daadabaca\nbird cat cat bird cat lion cat fish cat",
+            "output": "Yes"
         },
         {
             "input": "ac\nfish cat",
             "output": "Yes"
         },
         {
-            "input": "abbcc\nlion lion lion dog dog",
+            "input": "cdc\nfish lion dog",
             "output": "No"
         },
         {
-            "input": "ddaa\ndog bird bird dog",
+            "input": "cab\ndog bird bird",
             "output": "No"
         },
         {
-            "input": "aacdcdb\nlion lion cat bird cat bird cat",
+            "input": "ccbcdba\nbird bird cat bird dog cat cat",
             "output": "No"
         },
         {
-            "input": "bcbdbb\ncat cat cat bird fish cat",
+            "input": "bb\ndog lion",
             "output": "No"
         },
         {
-            "input": "adddcdcc\nlion cat fish fish dog fish bird bird",
+            "input": "bcdadbacad\ncat cat lion cat bird bird cat bird bird fish",
             "output": "No"
         },
         {
-            "input": "cccbdacadd\ncat cat cat dog cat bird cat bird cat cat",
+            "input": "daadcccbd\nbird cat cat bird cat cat cat lion bird",
             "output": "No"
         },
         {
-            "input": "dcdccbba\ndog dog dog dog dog bird bird bird",
+            "input": "bcadaab\nbird cat bird cat bird bird bird",
             "output": "No"
         },
         {
-            "input": "aaaa\nlion lion lion lion",
+            "input": "bbcbdbbccd\ndog fish fish cat dog bird fish lion bird cat",
+            "output": "No"
+        },
+        {
+            "input": "ac\nbird lion",
             "output": "Yes"
         },
         {
-            "input": "cdb\nfish fish dog",
-            "output": "No"
-        },
-        {
-            "input": "bacdccc\nfish bird bird dog bird bird bird",
-            "output": "No"
-        },
-        {
-            "input": "abdabcaab\nlion cat fish lion cat dog lion lion cat",
+            "input": "aaddddbabd\ncat cat bird bird bird bird lion cat lion bird",
             "output": "Yes"
         },
         {
-            "input": "aacdaadcac\ncat cat lion bird cat cat bird lion cat lion",
-            "output": "Yes"
-        },
-        {
-            "input": "ddaadc\ndog lion fish cat lion bird",
+            "input": "cbabdb\nbird bird dog cat fish fish",
             "output": "No"
         },
         {
-            "input": "cbdcacbaac\nfish dog lion fish dog fish dog dog dog fish",
-            "output": "No"
-        },
-        {
-            "input": "acccccb\ncat bird bird bird bird bird lion",
-            "output": "Yes"
-        },
-        {
-            "input": "ccbdb\ndog dog bird bird lion",
-            "output": "No"
-        },
-        {
-            "input": "ccaaccdbb\ncat dog bird dog lion dog bird bird bird",
-            "output": "No"
-        },
-        {
-            "input": "abbbba\nlion lion lion fish lion lion",
-            "output": "No"
-        },
-        {
-            "input": "cb\nfish cat",
-            "output": "Yes"
-        },
-        {
-            "input": "cbccdcc\ndog dog cat cat lion dog lion",
-            "output": "No"
-        },
-        {
-            "input": "cadb\nbird lion dog dog",
-            "output": "No"
-        },
-        {
-            "input": "dd\nfish bird",
-            "output": "No"
-        },
-        {
-            "input": "bcdcba\nlion fish lion cat dog fish",
-            "output": "No"
-        },
-        {
-            "input": "cacadbb\nbird dog bird dog fish cat cat",
-            "output": "Yes"
-        },
-        {
-            "input": "bd\nfish dog",
-            "output": "Yes"
-        },
-        {
-            "input": "adacbb\nbird lion bird cat dog dog",
-            "output": "Yes"
-        },
-        {
-            "input": "ac\nfish dog",
-            "output": "Yes"
-        },
-        {
-            "input": "adcdbbcbc\ndog lion fish fish fish lion bird lion bird",
-            "output": "No"
-        },
-        {
-            "input": "cda\ndog cat cat",
-            "output": "No"
-        },
-        {
-            "input": "cadddcd\nbird bird cat cat fish lion dog",
+            "input": "ddacbbdacc\nbird bird lion fish bird bird bird lion fish fish",
             "output": "No"
         }
     ]

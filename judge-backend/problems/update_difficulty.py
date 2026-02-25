@@ -1,7 +1,7 @@
 import os
 import json
 
-PROBLEMS_DIR = r"c:\Users\daksh\Documents\GitHub\code-judge\judge-backend-fastapi\problems"
+PROBLEMS_DIR = r"c:\Users\daksh\Documents\GitHub\code-judge\judge-backend\problems"
 
 # Hard problems as per generate_test_cases.py
 HARD_PROBLEMS = {
