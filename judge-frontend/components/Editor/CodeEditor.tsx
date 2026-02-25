@@ -4,6 +4,7 @@ import Editor, { OnMount, useMonaco } from "@monaco-editor/react";
 import { useState, useEffect, useRef, memo } from "react";
 import Toolbar from "./Toolbar";
 import { DEEP_SPACE_THEME, PYTHON_SNIPPETS } from "../../app/lib/editor-config";
+import { anime } from "../../app/lib/anime";
 
 interface CodeEditorProps {
     code: string;
@@ -19,6 +20,7 @@ const CodeEditor = memo(function CodeEditor({
     isDark = false,
 }: CodeEditorProps) {
     const [showMinimap, setShowMinimap] = useState(false);
+    const rootRef = useRef<HTMLDivElement>(null);
     const editorRef = useRef<unknown>(null);
     const [fontSize, setFontSize] = useState(15);
     const monaco = useMonaco();
@@ -31,6 +33,28 @@ const CodeEditor = memo(function CodeEditor({
         window.addEventListener("resize", checkScreenSize);
         return () => window.removeEventListener("resize", checkScreenSize);
     }, []);
+
+    useEffect(() => {
+        if (!rootRef.current) return;
+        anime({
+            targets: rootRef.current,
+            opacity: [0, 1],
+            translateY: [12, 0],
+            scale: [0.99, 1],
+            duration: 460,
+            easing: "easeOutCubic"
+        });
+    }, []);
+
+    useEffect(() => {
+        if (!rootRef.current) return;
+        anime({
+            targets: rootRef.current,
+            opacity: isDisabled ? 0.72 : 1,
+            duration: 220,
+            easing: "easeOutQuad"
+        });
+    }, [isDisabled]);
 
     // Use beforeMount to ensure theme is defined BEFORE the editor is created
     function handleEditorWillMount(monaco: any) {
@@ -73,6 +97,7 @@ const CodeEditor = memo(function CodeEditor({
 
     return (
         <div
+            ref={rootRef}
             className={`h-full w-full rounded-xl overflow-hidden relative flex flex-col bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-800/50 shadow-inner ${isDisabled ? "opacity-60 grayscale" : ""}`}
         >
             {isDisabled && (

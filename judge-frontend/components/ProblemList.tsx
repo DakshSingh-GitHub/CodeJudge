@@ -140,6 +140,20 @@ const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSideb
         }
     }, [isLoading, filteredProblems.length]);
 
+    useEffect(() => {
+        if (!selectedId || !listRef.current) return;
+        const selectedItem = listRef.current.querySelector(`[data-problem-id="${selectedId}"]`);
+        if (!selectedItem) return;
+
+        anime({
+            targets: selectedItem,
+            scale: [0.99, 1.01, 1],
+            translateX: [0, 4, 0],
+            duration: 380,
+            easing: 'easeOutCubic'
+        });
+    }, [selectedId, filteredProblems.length]);
+
     const getDifficultyStyles = (difficulty?: string) => {
         const diff = (difficulty || "medium").toLowerCase();
         switch (diff) {
@@ -229,6 +243,7 @@ const ProblemList = memo(function ProblemList({ onSelect, selectedId, setIsSideb
                                 className="px-3 opacity-0"
                             >
                                 <button
+                                    data-problem-id={problem.id}
                                     onClick={() => {
                                         onSelect(problem.id);
                                         if (window.innerWidth < 1024 && setIsSidebarOpen) {

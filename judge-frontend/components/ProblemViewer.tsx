@@ -9,25 +9,45 @@ interface ProblemViewerProps {
 
 const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProps) {
     const containerRef = useRef<HTMLDivElement>(null);
+    const emptyStateRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (problem && containerRef.current) {
-            // Initial animation for the whole container
             anime({
                 targets: containerRef.current,
                 opacity: [0, 1],
-                duration: 300,
+                duration: 250,
                 easing: 'easeOutQuad'
             });
 
-            // Staggered animation for children
             anime({
-                targets: containerRef.current.children,
-                translateY: [15, 0],
+                targets: containerRef.current.querySelector("[data-pv-title]"),
+                translateY: [12, 0],
                 opacity: [0, 1],
-                delay: stagger(60),
-                duration: 600,
-                easing: 'easeOutQuad'
+                duration: 400,
+                easing: 'easeOutExpo'
+            });
+
+            anime({
+                targets: containerRef.current.querySelectorAll("[data-pv-section]"),
+                translateY: [16, 0],
+                scale: [0.985, 1],
+                opacity: [0, 1],
+                delay: stagger(70),
+                duration: 520,
+                easing: 'easeOutCubic'
+            });
+        }
+    }, [problem]);
+
+    useEffect(() => {
+        if (!problem && emptyStateRef.current) {
+            anime({
+                targets: emptyStateRef.current,
+                translateY: [10, 0],
+                opacity: [0, 1],
+                duration: 420,
+                easing: 'easeOutCubic'
             });
         }
     }, [problem]);
@@ -35,6 +55,7 @@ const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProp
     if (!problem) {
         return (
             <div
+                ref={emptyStateRef}
                 className="flex flex-col items-center justify-center h-full text-center"
             >
                 <h3 className="text-base md:text-lg font-medium text-gray-900 dark:text-gray-50">
@@ -54,12 +75,14 @@ const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProp
             className="space-y-6"
         >
             <h2
+                data-pv-title
                 className="text-xl md:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-gray-50 dark:to-gray-400"
             >
                 {typeof problem.title === 'string' ? problem.title : JSON.stringify(problem.title || "Untitled")}
             </h2>
 
             <div
+                data-pv-section
                 className="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 whitespace-pre-wrap prose-headings:font-bold prose-h2:text-2xl prose-h3:text-xl prose-code:text-indigo-600 dark:prose-code:text-indigo-400 prose-code:bg-indigo-50 dark:prose-code:bg-indigo-900/30 prose-code:px-1 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none"
             >
                 {typeof problem.description === 'string' ? problem.description : JSON.stringify(problem.description)}
@@ -67,6 +90,7 @@ const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProp
 
             {problem.input_format && (
                 <div
+                    data-pv-section
                     className="space-y-2 group"
                 >
                     <h4 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
@@ -80,6 +104,7 @@ const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProp
 
             {problem.output_format && (
                 <div
+                    data-pv-section
                     className="space-y-2 group"
                 >
                     <h4 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-50 group-hover:text-indigo-500 transition-colors">
@@ -93,6 +118,7 @@ const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProp
 
             {problem.sample_test_cases && problem.sample_test_cases.length > 0 && (
                 <div
+                    data-pv-section
                     className="space-y-3"
                 >
                     <h4 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
@@ -125,6 +151,7 @@ const ProblemViewer = memo(function ProblemViewer({ problem }: ProblemViewerProp
 
             {problem.constraints && (
                 <div
+                    data-pv-section
                     className="space-y-2"
                 >
                     <h4 className="text-lg md:text-xl font-semibold text-gray-900 dark:text-gray-50">
