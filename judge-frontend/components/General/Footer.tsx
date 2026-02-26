@@ -18,6 +18,7 @@ export default function Footer() {
                     <Link href="/code-judge" className="text-sm font-bold hover:text-indigo-500 transition-colors">Practice</Link>
                     <Link href="/code-ide" className="text-sm font-bold hover:text-indigo-500 transition-colors">IDE</Link>
                     <Link href="/docs" className="text-sm font-bold hover:text-indigo-500 transition-colors">Documentation</Link>
+                    <Link href="/docs" className="text-sm font-bold hover:text-indigo-500 transition-colors">Meet Developer</Link>
                 </div>
             </div>
         </footer>
