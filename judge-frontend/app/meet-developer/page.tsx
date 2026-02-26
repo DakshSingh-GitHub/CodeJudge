@@ -24,7 +24,7 @@ export default function MeetDeveloper() {
         {
             title: "Full-Stack Developer",
             description:
-                "Experienced in React, Next.js, Java, Python, and scalable system design.",
+                "Hands on React, Next.js, Java, Python, and scalable system design.",
             icon: <Code className="w-6 h-6" />,
         },
         {
@@ -149,7 +149,7 @@ export default function MeetDeveloper() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="flex flex-col justify-center align-center w-[50%] mx-auto mb-20 bg-blue-300/5 p-20 rounded-4xl border-blue-900 border shadow-xl hover:border-blue-600 transition-all duration-300 hover:shadow-blue-800 hover:shadow-[0_0_30px_rgba(30,64,175,0.8)]"
+                className="flex flex-col justify-center align-center w-[50%] mx-auto mb-20 bg-blue-300/5 p-20 rounded-4xl border-violet-900 border shadow-xl hover:border-violet-600 transition-all duration-300 hover:shadow-violet-800 hover:shadow-[0_0_30px_rgba(77,23,154,0.8)]"
             >
                 <motion.h1
                     variants={itemVariants}
