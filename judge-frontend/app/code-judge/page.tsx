@@ -325,6 +325,22 @@ export default function Home() {
         };
     }, [isMobile]);
 
+    useEffect(() => {
+        const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+            const reason = event.reason as { msg?: string; message?: string; type?: string } | undefined;
+            const type = (reason?.type || "").toLowerCase();
+            const msg = (reason?.msg || reason?.message || "").toLowerCase();
+            if (type.includes("cancel") || msg.includes("manually canceled")) {
+                event.preventDefault();
+            }
+        };
+
+        window.addEventListener("unhandledrejection", handleUnhandledRejection);
+        return () => {
+            window.removeEventListener("unhandledrejection", handleUnhandledRejection);
+        };
+    }, []);
+
     const passedCount = Number(result?.summary?.passed ?? 0);
     const totalCount = Number(result?.summary?.total ?? 0);
     const progressPercent = totalCount > 0
@@ -332,7 +348,7 @@ export default function Home() {
         : 0;
 
     const problemDescriptionPanel = (
-        <div className={`h-full min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"}`}>
+        <div className={`h-full min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"}`}>
             <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
                 <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-50">
                     Problem
@@ -347,7 +363,7 @@ export default function Home() {
     );
 
     const editorAndSubmissionsPanel = (
-        <div className={`h-full min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab === "problem" ? "hidden" : "flex"}`}>
+        <div className={`h-full min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab === "problem" ? "hidden" : "flex"}`}>
             {/* Tabs Header - Modern Minimal Tabs */}
             <div className={`flex items-center justify-between px-5 py-2 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md ${isMobile ? "hidden" : "flex"}`}>
                 <div className="flex items-center gap-4">
@@ -391,7 +407,7 @@ export default function Home() {
             <div className="flex-1 min-h-0 p-4 pb-28 md:pb-4 flex flex-col gap-4">
                 {/* Editor and Result Area - Kept mounted to avoid state loss and 'Canceled' errors */}
                 <div className={`flex-1 min-h-0 flex flex-col gap-4 ${(activeTab === "editor" && !isMobile) || (isMobile && mobileTab === "code") ? "flex" : "hidden"}`}>
-                    <div className={`${isMobile ? "h-87.5" : "flex-1"} min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner`}>
+                    <div className="flex-1 min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner">
                         <CodeEditor
                             code={code}
                             setCode={setCode}
@@ -601,11 +617,15 @@ export default function Home() {
                             <div
                                 ref={mainContentRef}
                                 data-content-area
-                                className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col lg:flex-row gap-4 transition-all duration-400 ease-[0.4,0,0.2,1]"
+                                className="flex-1 min-h-0 overflow-hidden flex flex-col gap-4 transition-all duration-400 ease-[0.4,0,0.2,1]"
                                 style={{ transition: isResizing ? 'none' : undefined }}
                             >
-                                <div className="flex-1 min-w-0 h-full">{problemDescriptionPanel}</div>
-                                <div className="flex-1 min-w-0 h-full">{editorAndSubmissionsPanel}</div>
+                                <div className={`${mobileTab === "problem" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
+                                    {problemDescriptionPanel}
+                                </div>
+                                <div className={`${mobileTab !== "problem" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
+                                    {editorAndSubmissionsPanel}
+                                </div>
                             </div>
                         </div>
                     ) : (

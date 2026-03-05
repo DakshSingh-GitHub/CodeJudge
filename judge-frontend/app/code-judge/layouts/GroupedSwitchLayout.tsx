@@ -19,7 +19,7 @@ export default function GroupedSwitchLayout({
 
     useEffect(() => {
         if (!introRef.current) return;
-        anime({
+        const animation = anime({
             targets: introRef.current.querySelectorAll("[data-layout-panel]"),
             opacity: [0, 1],
             translateY: [16, 0],
@@ -28,6 +28,14 @@ export default function GroupedSwitchLayout({
             delay: (_el: Element, index: number) => index * 60,
             easing: "easeOutCubic"
         });
+
+        const maybeThenable = animation as unknown as { catch?: (onRejected: () => void) => void };
+        maybeThenable.catch?.(() => undefined);
+
+        return () => {
+            const maybeCancelable = animation as { cancel?: () => void };
+            maybeCancelable.cancel?.();
+        };
     }, []);
 
     useEffect(() => {
