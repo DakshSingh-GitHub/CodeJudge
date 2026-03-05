@@ -6,7 +6,11 @@ import { getProblemById, submitCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
 import { Problem } from "../lib/types";
 import { useAppContext } from "../lib/context";
-import { FileText, Code, History, Check, X } from "lucide-react";
+import { FileText, Code, History, Check, X, LayoutGrid, PanelTop } from "lucide-react";
+import { layoutOptions, UiGridLayout } from "./layoutOptions";
+import ClassicLayout from "./layouts/ClassicLayout";
+import StackedLayout from "./layouts/StackedLayout";
+import GroupedSwitchLayout from "./layouts/GroupedSwitchLayout";
 
 import ProblemList from "../../components/ProblemList";
 import ProblemViewer from "../../components/ProblemViewer";
@@ -43,6 +47,8 @@ export default function Home() {
     const [isMobile, setIsMobile] = useState(false);
     const [mobileTab, setMobileTab] = useState<"problem" | "code" | "submissions">("problem");
     const [isMounted, setIsMounted] = useState(false);
+    const [selectedLayout, setSelectedLayout] = useState<UiGridLayout>("classic");
+    const [isLayoutModalOpen, setIsLayoutModalOpen] = useState(false);
 
     const [sidebarWidth, setSidebarWidth] = useState(320);
     const [mainContentWidth, setMainContentWidth] = useState(50); // percentage
@@ -287,12 +293,245 @@ export default function Home() {
         setIsSidebarOpen(false);
     }, [setIsSidebarOpen]);
 
+    useEffect(() => {
+        if (isMobile && isLayoutModalOpen) {
+            setIsLayoutModalOpen(false);
+        }
+    }, [isMobile, isLayoutModalOpen]);
+
     const passedCount = Number(result?.summary?.passed ?? 0);
     const totalCount = Number(result?.summary?.total ?? 0);
     const progressPercent = totalCount > 0
         ? Math.max(0, Math.min(100, (passedCount / totalCount) * 100))
         : 0;
-    
+
+    const problemDescriptionPanel = (
+        <div className={`h-full min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"}`}>
+            <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
+                <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-50">
+                    Problem
+                </h2>
+            </div>
+            <div className="flex-1 overflow-y-auto p-6 pb-28 flex flex-col">
+                <div className="mt-8 flex-1 flex flex-col">
+                    <ProblemViewer problem={problem} />
+                </div>
+            </div>
+        </div>
+    );
+
+    const editorAndSubmissionsPanel = (
+        <div className={`h-full min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab === "problem" ? "hidden" : "flex"}`}>
+            {/* Tabs Header - Modern Minimal Tabs */}
+            <div className={`flex items-center justify-between px-5 py-2 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md ${isMobile ? "hidden" : "flex"}`}>
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-6">
+                        {(["editor", "submissions"] as const).map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setActiveTab(tab)}
+                                className={`relative py-2 text-xs md:text-sm font-medium transition-colors duration-200 ${activeTab === tab
+                                    ? "text-cyan-700 dark:text-cyan-400"
+                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
+                                    }`}
+                            >
+                                {activeTab === tab && (
+                                    <>
+                                        <div
+                                            className="absolute inset-0 -inset-x-3 bg-cyan-500/10 dark:bg-cyan-400/10 rounded-lg blur-sm"
+                                        />
+                                        <div
+                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-cyan-500 to-emerald-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"
+                                        />
+                                    </>
+                                )}
+                                <span className="relative z-10">
+                                    {tab === "editor" ? "Code Editor" : "Past Submissions"}
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+                    {!isMobile && (
+                        <button
+                            onClick={() => setIsLayoutModalOpen(true)}
+                            className="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100/70 dark:hover:bg-gray-800/60 transition-colors duration-200 inline-flex items-center gap-1.5"
+                            title="Select UI grid layout"
+                        >
+                            <LayoutGrid className="w-3.5 h-3.5" />
+                            UI Grid
+                        </button>
+                    )}
+                </div>
+
+                <div className="flex items-center gap-2 text-xs font-medium text-gray-400 dark:text-gray-500">
+                    {activeTab === "editor" ? (
+                        <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Ready</span>
+                    ) : (
+                        <span>{pastSubmissions.length} records</span>
+                    )}
+                </div>
+            </div>
+
+            <div className="flex-1 min-h-0 p-4 pb-28 md:pb-4 flex flex-col gap-4">
+                {/* Editor and Result Area - Kept mounted to avoid state loss and 'Canceled' errors */}
+                <div className={`flex-1 min-h-0 flex flex-col gap-4 ${(activeTab === "editor" && !isMobile) || (isMobile && mobileTab === "code") ? "flex" : "hidden"}`}>
+                    <div className={`${isMobile ? "h-87.5" : "flex-1"} min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner`}>
+                        <CodeEditor
+                            code={code}
+                            setCode={setCode}
+                            isDisabled={
+                                !selectedProblemId || isSubmitting
+                            }
+                            isDark={isDark}
+                        />
+                    </div>
+                    <div className="flex-none h-40 md:h-32 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
+                        <div className="flex flex-row md:flex-col w-full md:w-1/4 gap-2">
+                            <button
+                                onClick={handleSubmit}
+                                disabled={
+                                    isSubmitting || !selectedProblemId
+                                }
+                                className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
+                                                ${isSubmitting
+                                        ? "bg-gray-500 cursor-not-allowed"
+                                        : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
+                                    }
+                                                text-white`}
+                            >
+                                {isSubmitting ? "Judging..." : "Submit"}
+                            </button>
+                            <button
+                                onClick={handleTest}
+                                disabled={
+                                    isSubmitting || !selectedProblemId
+                                }
+                                className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
+                                                ${isSubmitting
+                                        ? "bg-gray-500 cursor-not-allowed"
+                                        : "bg-emerald-600 hover:bg-emerald-700 active:scale-95"
+                                    }
+                                                text-white`}
+                            >
+                                {isSubmitting ? "Testing..." : "Test"}
+                            </button>
+                        </div>
+                        <div className="w-full md:w-3/4 h-full">
+                            <div className="p-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 h-full overflow-y-auto border border-gray-200 dark:border-gray-700 shadow-2xl custom-scrollbar transition-all duration-300">
+                                {!result ? (
+                                    <div
+                                        className="flex flex-col items-center justify-center h-full space-y-2 animate-pulse"
+                                    >
+                                        <span className="text-2xl animate-bounce [animation-timing-function:cubic-bezier(.3,1.5,.7,1)]">😊</span>
+                                        <p className="text-gray-500 dark:text-gray-400 italic text-center text-sm">
+                                            Happy coding! Think carefully before submission.
+                                            <br />
+                                            <span className="text-amber-400 text-xs mt-1">⚠️ Don&apos;t add Prompts to Input ⚠️</span>
+                                        </p>
+                                    </div>
+                                ) : result.error ? (
+                                    <div
+                                        className="flex items-center gap-2 text-red-400"
+                                    >
+                                        <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                        </svg>
+                                        <p className="font-medium">{typeof result.error === 'string' ? result.error : JSON.stringify(result.error)}</p>
+                                    </div>
+                                ) : (
+                                    <div
+                                        ref={verdictRef}
+                                        className="flex flex-col h-full justify-center"
+                                    >
+                                        <div className="space-y-4">
+                                            <div className="flex items-center gap-3">
+                                                <span className="text-xl font-bold text-gray-900 dark:text-gray-100">Verdict:</span>
+                                                <span
+                                                    className={`px-4 py-1.5 rounded-lg text-sm font-black uppercase tracking-wider ${result.final_status === "Accepted"
+                                                        ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20"
+                                                        : "bg-red-500/10 text-red-500 border border-red-500/20"
+                                                        }`}
+                                                >
+                                                    {result.final_status === "Accepted" ? "ACCEPTED" : result.final_status}
+                                                </span>
+                                                {result.final_status === "Accepted" ? (
+                                                    <div
+                                                        className="p-1 bg-emerald-500 rounded-full"
+                                                    >
+                                                        <Check className="w-4 h-4 text-white stroke-[3px]" />
+                                                    </div>
+                                                ) : (
+                                                    <div
+                                                        className="p-1 bg-red-500 rounded-full"
+                                                    >
+                                                        <X className="w-4 h-4 text-white stroke-[3px]" />
+                                                    </div>
+                                                )}
+                                                <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">
+                                                    ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
+                                                </span>
+                                            </div>
+
+                                            <div
+                                                className={`h-1.5 rounded-full transition-all duration-1000 ${result.final_status === "Accepted"
+                                                    ? "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
+                                                    : "bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.4)]"
+                                                    }`}
+                                                style={{ width: `${progressPercent}%` }}
+                                            />
+
+                                            <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">
+                                                Passed {String(result.summary.passed ?? 0)} / {String(result.summary.total ?? 0)} test cases
+                                            </p>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Past Submissions - Kept mounted to avoid state loss */}
+                <div className={`flex-1 overflow-y-auto ${(!isMobile && activeTab === "submissions") || (isMobile && mobileTab === "submissions") ? "block" : "hidden"}`}>
+                    <PastSubmissions
+                        submissions={pastSubmissions}
+                        onLoadCode={(savedCode) => {
+                            setCode(savedCode);
+                            if (isMobile) {
+                                setMobileTab("code");
+                            } else {
+                                setActiveTab("editor");
+                            }
+                        }}
+                        onDelete={handleDeleteSubmission}
+                    />
+                </div>
+            </div>
+        </div>
+    );
+
+    const desktopLayoutProps = {
+        mainContentRef,
+        selectedProblemId,
+        isSidebarOpen,
+        isResizing,
+        sidebarWidth,
+        mainContentWidth,
+        onMouseDownSidebar: handleMouseDownSidebar,
+        onMouseDownMain: handleMouseDownMain,
+        problemList: (
+            <ProblemList
+                onSelect={handleSelect}
+                selectedId={selectedProblemId}
+                setIsSidebarOpen={setIsSidebarOpen}
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+            />
+        ),
+        problemDescription: problemDescriptionPanel,
+        editorPanel: editorAndSubmissionsPanel
+    };
+
     return (
         <div className={`flex-1 flex flex-col min-h-0 bg-[#FAFAFA] dark:bg-[#0B0C15] text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans selection:bg-indigo-500/301`}>
             {/* Ambient Background Glows - Refined for "Premium" feel */}
@@ -319,265 +558,94 @@ export default function Home() {
                 </div>
             ) : (
                 <>
-                    <div
-                        ref={containerRef}
-                        className={`flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4 relative z-10`}
-                    >
-                        {/* Left Sidebar - Problem List */}
+                    {isMobile ? (
                         <div
-                            className={`flex flex-col md:flex-row h-full overflow-hidden shrink-0 transition-all duration-400 ease-[0.4,0,0.2,1] ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-                            style={{
-                                width: !isSidebarOpen ? 0 : (isMobile ? "100%" : sidebarWidth + 20),
-                                height: isMobile ? (!isSidebarOpen ? 0 : "100%") : "100%",
-                                transition: isResizing ? 'none' : undefined
-                            }}
+                            ref={containerRef}
+                            className="flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4 relative z-10"
                         >
-                            <aside
-                                className="h-full overflow-hidden shrink-0 w-full md:pr-4"
-                                style={{ width: isMobile ? "100%" : `${sidebarWidth}px` }}
-                            >
-                                <ProblemList
-                                    onSelect={handleSelect}
-                                    selectedId={selectedProblemId}
-                                    setIsSidebarOpen={setIsSidebarOpen}
-                                    searchQuery={searchQuery}
-                                    setSearchQuery={setSearchQuery}
-                                />
-                            </aside>
-
-                            {/* Draggable Divider - Sidebar */}
                             <div
-                                onMouseDown={handleMouseDownSidebar}
-                                className="hidden md:block w-1.5 bg-transparent hover:bg-indigo-500/30 cursor-col-resize mx-0.5 ml-2 transition-colors duration-200 self-stretch rounded-full"
-                            />
-                        </div>
-
-                        <div
-                            ref={mainContentRef}
-                            data-content-area
-                            className={`flex-1 overflow-y-auto md:overflow-hidden flex flex-col lg:flex-row gap-4 transition-all duration-400 ease-[0.4,0,0.2,1]`}
-                            style={{ transition: isResizing ? 'none' : undefined }}
-                        >
-
-
-                            {/* Problem Selector and Viewer */}
-                            <div
-                                className={`flex-1 min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"
-                                    }`}
+                                className={`flex flex-col md:flex-row h-full overflow-hidden shrink-0 transition-all duration-400 ease-[0.4,0,0.2,1] ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                                 style={{
-                                    flex: isMobile ? "none" : `0 0 calc(${mainContentWidth}% - 1.5rem)`,
-                                    width: isMobile ? "100%" : "auto",
-                                    height: isMobile ? "100%" : "auto",
-                                    minWidth: 0
+                                    width: !isSidebarOpen ? 0 : "100%",
+                                    height: !isSidebarOpen ? 0 : "100%",
+                                    transition: isResizing ? 'none' : undefined
                                 }}
                             >
-                                <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
-                                    <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-50">
-                                        Problem
-                                    </h2>
-                                </div>
-                                <div className="flex-1 overflow-y-auto p-6 pb-28 flex flex-col">
-                                    <div className="mt-8 flex-1 flex flex-col">
-                                        <ProblemViewer problem={problem} />
-                                    </div>
-                                </div>
+                                <aside className="h-full overflow-hidden shrink-0 w-full md:pr-4">
+                                    <ProblemList
+                                        onSelect={handleSelect}
+                                        selectedId={selectedProblemId}
+                                        setIsSidebarOpen={setIsSidebarOpen}
+                                        searchQuery={searchQuery}
+                                        setSearchQuery={setSearchQuery}
+                                    />
+                                </aside>
                             </div>
 
-                            {/* Draggable Divider - Vertical */}
                             <div
-                                onMouseDown={handleMouseDownMain}
-                                className="hidden lg:block w-1.5 bg-transparent hover:bg-indigo-500/30 cursor-col-resize mx-0.5 transition-colors duration-200 self-stretch rounded-full"
-                            />
-
-                            <div
-                                className={`flex-1 min-h-100 md:min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab === "problem" ? "hidden" : "flex"
-                                    }`}
-                                style={{
-                                    flex: isMobile ? "none" : `0 0 calc(${100 - mainContentWidth}% - 1.5rem)`,
-                                    width: isMobile ? "100%" : "auto",
-                                    height: isMobile ? "100%" : "auto",
-                                    minWidth: 0
-                                }}
+                                ref={mainContentRef}
+                                data-content-area
+                                className="flex-1 overflow-y-auto md:overflow-hidden flex flex-col lg:flex-row gap-4 transition-all duration-400 ease-[0.4,0,0.2,1]"
+                                style={{ transition: isResizing ? 'none' : undefined }}
                             >
-                                {/* Tabs Header - Modern Minimal Tabs */}
-                                <div className={`flex items-center justify-between px-5 py-2 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md ${isMobile ? "hidden" : "flex"}`}>
-                                    <div className="flex items-center gap-6">
-                                        {(["editor", "submissions"] as const).map((tab) => (
-                                            <button
-                                                key={tab}
-                                                onClick={() => setActiveTab(tab)}
-                                                className={`relative py-2 text-xs md:text-sm font-medium transition-colors duration-200 ${activeTab === tab
-                                                    ? "text-cyan-700 dark:text-cyan-400"
-                                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
-                                                    }`}
-                                            >
-                                                {activeTab === tab && (
-                                                    <>
-                                                        <div
-                                                            className="absolute inset-0 -inset-x-3 bg-cyan-500/10 dark:bg-cyan-400/10 rounded-lg blur-sm"
-                                                        />
-                                                        <div
-                                                            className="absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-cyan-500 to-emerald-500 shadow-[0_0_8px_rgba(20,184,166,0.5)]"
-                                                        />
-                                                    </>
-                                                )}
-                                                <span className="relative z-10">
-                                                    {tab === "editor" ? "Code Editor" : "Past Submissions"}
-                                                </span>
-                                            </button>
-                                        ))}
-                                    </div>
+                                <div className="flex-1 min-w-0 h-full">{problemDescriptionPanel}</div>
+                                <div className="flex-1 min-w-0 h-full">{editorAndSubmissionsPanel}</div>
+                            </div>
+                        </div>
+                    ) : (
+                        <>
+                            {selectedLayout === "classic" && <ClassicLayout {...desktopLayoutProps} />}
+                            {selectedLayout === "stacked" && <StackedLayout {...desktopLayoutProps} />}
+                            {selectedLayout === "grouped" && <GroupedSwitchLayout {...desktopLayoutProps} />}
+                        </>
+                    )}
 
-                                    {/* Optional Context/Actions could go here */}
-                                    <div className="flex items-center gap-2 text-xs font-medium text-gray-400 dark:text-gray-500">
-                                        {activeTab === "editor" ? (
-                                            <>
-                                                <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Ready</span>
-                                            </>
-                                        ) : (
-                                            <span>{pastSubmissions.length} records</span>
-                                        )}
+                    {isLayoutModalOpen && !isMobile && (
+                        <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+                            <button
+                                onClick={() => setIsLayoutModalOpen(false)}
+                                className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+                                aria-label="Close layout selector"
+                            />
+                            <div className="relative z-10 w-full max-w-md rounded-2xl border border-white/20 dark:border-gray-700/60 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-2xl p-5">
+                                <div className="flex items-center justify-between mb-4">
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50">Select UI Grid</h3>
+                                        <p className="text-sm text-gray-500 dark:text-gray-400">Choose a layout for the Code Judge workspace.</p>
                                     </div>
+                                    <button
+                                        onClick={() => setIsLayoutModalOpen(false)}
+                                        className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                        aria-label="Close"
+                                    >
+                                        <X className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                                    </button>
                                 </div>
-
-                                <div className="flex-1 min-h-0 p-4 pb-28 md:pb-4 flex flex-col gap-4">
-                                    {/* Editor and Result Area - Kept mounted to avoid state loss and 'Canceled' errors */}
-                                    <div className={`flex-1 min-h-0 flex flex-col gap-4 ${(activeTab === "editor" && !isMobile) || (isMobile && mobileTab === "code") ? "flex" : "hidden"}`}>
-                                        <div className={`${isMobile ? "h-87.5" : "flex-1"} min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner`}>
-                                            <CodeEditor
-                                                code={code}
-                                                setCode={setCode}
-                                                isDisabled={
-                                                    !selectedProblemId || isSubmitting
-                                                }
-                                                isDark={isDark}
-                                            />
-                                        </div>
-                                        <div className="flex-none h-40 md:h-32 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
-                                            <div className="flex flex-row md:flex-col w-full md:w-1/4 gap-2">
-                                                <button
-                                                    onClick={handleSubmit}
-                                                    disabled={
-                                                        isSubmitting || !selectedProblemId
-                                                    }
-                                                    className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
-                                                ${isSubmitting
-                                                            ? "bg-gray-500 cursor-not-allowed"
-                                                            : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
-                                                        }
-                                                text-white`}
-                                                >
-                                                    {isSubmitting ? "Judging..." : "Submit"}
-                                                </button>
-                                                <button
-                                                    onClick={handleTest}
-                                                    disabled={
-                                                        isSubmitting || !selectedProblemId
-                                                    }
-                                                    className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
-                                                ${isSubmitting
-                                                            ? "bg-gray-500 cursor-not-allowed"
-                                                            : "bg-emerald-600 hover:bg-emerald-700 active:scale-95"
-                                                        }
-                                                text-white`}
-                                                >
-                                                    {isSubmitting ? "Testing..." : "Test"}
-                                                </button>
-                                            </div>
-                                            <div className="w-full md:w-3/4 h-full">
-                                                <div className="p-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 h-full overflow-y-auto border border-gray-200 dark:border-gray-700 shadow-2xl custom-scrollbar transition-all duration-300">
-                                                    {!result ? (
-                                                        <div
-                                                            className="flex flex-col items-center justify-center h-full space-y-2 animate-pulse"
-                                                        >
-                                                            <span className="text-2xl animate-bounce [animation-timing-function:cubic-bezier(.3,1.5,.7,1)]">😊</span>
-                                                            <p className="text-gray-500 dark:text-gray-400 italic text-center text-sm">
-                                                                Happy coding! Think carefully before submission.
-                                                                <br />
-                                                                <span className="text-amber-400 text-xs mt-1">⚠️ Don&apos;t add Prompts to Input ⚠️</span>
-                                                            </p>
-                                                        </div>
-                                                    ) : result.error ? (
-                                                        <div
-                                                            className="flex items-center gap-2 text-red-400"
-                                                        >
-                                                            <svg className="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                                                            </svg>
-                                                            <p className="font-medium">{typeof result.error === 'string' ? result.error : JSON.stringify(result.error)}</p>
-                                                        </div>
-                                                    ) : (
-                                                        <div
-                                                            ref={verdictRef}
-                                                            className="flex flex-col h-full justify-center"
-                                                        >
-                                                            <div className="space-y-4">
-                                                                <div className="flex items-center gap-3">
-                                                                    <span className="text-xl font-bold text-gray-900 dark:text-gray-100">Verdict:</span>
-                                                                    <span
-                                                                        className={`px-4 py-1.5 rounded-lg text-sm font-black uppercase tracking-wider ${result.final_status === "Accepted"
-                                                                            ? "bg-emerald-500/10 text-emerald-500 border border-emerald-500/20"
-                                                                            : "bg-red-500/10 text-red-500 border border-red-500/20"
-                                                                            }`}
-                                                                    >
-                                                                        {result.final_status === "Accepted" ? "ACCEPTED" : result.final_status}
-                                                                    </span>
-                                                                    {result.final_status === "Accepted" ? (
-                                                                        <div
-                                                                            className="p-1 bg-emerald-500 rounded-full"
-                                                                        >
-                                                                            <Check className="w-4 h-4 text-white stroke-[3px]" />
-                                                                        </div>
-                                                                    ) : (
-                                                                        <div
-                                                                            className="p-1 bg-red-500 rounded-full"
-                                                                        >
-                                                                            <X className="w-4 h-4 text-white stroke-[3px]" />
-                                                                        </div>
-                                                                    )}
-                                                                    <span className="text-gray-500 dark:text-gray-400 text-sm font-medium">
-                                                                        ({result.total_duration ? result.total_duration.toFixed(1) : 0}s)
-                                                                    </span>
-                                                                </div>
-
-                                                                <div
-                                                                    className={`h-1.5 rounded-full transition-all duration-1000 ${result.final_status === "Accepted"
-                                                                        ? "bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
-                                                                        : "bg-red-500 shadow-[0_0_12px_rgba(239,68,68,0.4)]"
-                                                                        }`}
-                                                                    style={{ width: `${progressPercent}%` }}
-                                                                />
-
-                                                                <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">
-                                                                    Passed {String(result.summary.passed ?? 0)} / {String(result.summary.total ?? 0)} test cases
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    )}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Past Submissions - Kept mounted to avoid state loss */}
-                                    <div className={`flex-1 overflow-y-auto ${(!isMobile && activeTab === "submissions") || (isMobile && mobileTab === "submissions") ? "block" : "hidden"}`}>
-                                        <PastSubmissions
-                                            submissions={pastSubmissions}
-                                            onLoadCode={(savedCode) => {
-                                                setCode(savedCode);
-                                                if (isMobile) {
-                                                    setMobileTab("code");
-                                                } else {
-                                                    setActiveTab("editor");
-                                                }
+                                <div className="space-y-3">
+                                    {layoutOptions.map((option) => (
+                                        <button
+                                            key={option.id}
+                                            onClick={() => {
+                                                if (isMobile) return;
+                                                setSelectedLayout(option.id);
+                                                setIsLayoutModalOpen(false);
                                             }}
-                                            onDelete={handleDeleteSubmission}
-                                        />
-                                    </div>
+                                            className={`w-full text-left rounded-xl border px-4 py-3 transition-all duration-200 ${selectedLayout === option.id
+                                                ? "border-cyan-500 bg-cyan-500/10 dark:bg-cyan-400/10"
+                                                : "border-gray-200 dark:border-gray-700 hover:border-cyan-400/60 hover:bg-gray-50 dark:hover:bg-gray-800/60"
+                                                }`}
+                                        >
+                                            <div className="flex items-center justify-between">
+                                                <span className="font-semibold text-sm text-gray-900 dark:text-gray-100">{option.label}</span>
+                                                {selectedLayout === option.id && <PanelTop className="w-4 h-4 text-cyan-500" />}
+                                            </div>
+                                            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">{option.description}</p>
+                                        </button>
+                                    ))}
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    )}
 
 
                     {
