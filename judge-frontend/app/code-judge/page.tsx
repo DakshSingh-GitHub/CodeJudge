@@ -6,7 +6,7 @@ import { getProblemById, submitCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
 import { Problem } from "../lib/types";
 import { useAppContext } from "../lib/context";
-import { FileText, Code, History, Check, X, LayoutGrid, PanelTop } from "lucide-react";
+import { FileText, Code, History, Check, X, PanelTop } from "lucide-react";
 import { layoutOptions, UiGridLayout } from "./layoutOptions";
 import ClassicLayout from "./layouts/ClassicLayout";
 import StackedLayout from "./layouts/StackedLayout";
@@ -18,6 +18,7 @@ import CodeEditor from "../../components/Editor/CodeEditor";
 import PastSubmissions from "../../components/Editor/PastSubmissions";
 
 const DEFAULT_CODE = "#Write your code here";
+const LAYOUT_STORAGE_KEY = "codejudge_ui_grid_layout";
 
 interface SubmissionResult {
     final_status: string;
@@ -299,6 +300,31 @@ export default function Home() {
         }
     }, [isMobile, isLayoutModalOpen]);
 
+    useEffect(() => {
+        const savedLayout = localStorage.getItem(LAYOUT_STORAGE_KEY);
+        if (!savedLayout) return;
+        if (savedLayout === "classic" || savedLayout === "stacked" || savedLayout === "grouped") {
+            setSelectedLayout(savedLayout);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem(LAYOUT_STORAGE_KEY, selectedLayout);
+    }, [selectedLayout]);
+
+    useEffect(() => {
+        const handleOpenLayoutModal = () => {
+            if (!isMobile) {
+                setIsLayoutModalOpen(true);
+            }
+        };
+
+        window.addEventListener("open-ui-grid-modal", handleOpenLayoutModal);
+        return () => {
+            window.removeEventListener("open-ui-grid-modal", handleOpenLayoutModal);
+        };
+    }, [isMobile]);
+
     const passedCount = Number(result?.summary?.passed ?? 0);
     const totalCount = Number(result?.summary?.total ?? 0);
     const progressPercent = totalCount > 0
@@ -351,16 +377,6 @@ export default function Home() {
                             </button>
                         ))}
                     </div>
-                    {!isMobile && (
-                        <button
-                            onClick={() => setIsLayoutModalOpen(true)}
-                            className="px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100/70 dark:hover:bg-gray-800/60 transition-colors duration-200 inline-flex items-center gap-1.5"
-                            title="Select UI grid layout"
-                        >
-                            <LayoutGrid className="w-3.5 h-3.5" />
-                            UI Grid
-                        </button>
-                    )}
                 </div>
 
                 <div className="flex items-center gap-2 text-xs font-medium text-gray-400 dark:text-gray-500">

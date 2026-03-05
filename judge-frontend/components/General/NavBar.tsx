@@ -2,7 +2,7 @@
 
 import React, { memo, useEffect, useRef } from 'react';
 import { anime } from '../../app/lib/anime';
-import { History } from 'lucide-react';
+import { History, LayoutGrid } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import NavDropdown from './NavDropdown';
 import { usePathname } from 'next/navigation';
@@ -20,6 +20,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
     const pathname = usePathname();
     const isCodeIDE = pathname === '/code-ide';
+    const isCodeJudge = pathname === '/code-judge';
     const headerRef = useRef<HTMLElement>(null);
     const navItemsRef = useRef<HTMLDivElement>(null);
 
@@ -67,6 +68,16 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
                             >
                                 <History className="w-5 h-5 group-hover:rotate-[-20deg] transition-transform" />
                             </button>
+                            {isCodeJudge && (
+                                <button
+                                    onClick={() => window.dispatchEvent(new CustomEvent("open-ui-grid-modal"))}
+                                    className="hidden lg:flex items-center gap-2 px-3 py-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900 shadow-sm hover:shadow-md"
+                                    title="Select UI Grid"
+                                >
+                                    <LayoutGrid className="w-4 h-4" />
+                                    <span className="text-xs font-medium">UI Grid</span>
+                                </button>
+                            )}
 
                             <button
                                 onClick={() =>
