@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { anime } from "../lib/anime";
 import { useAppContext } from "../lib/context";
 import { runCode } from "../lib/api";
-import { Play, Terminal, Cpu, AlertCircle, Loader2, MessageSquare, RotateCcw, X, PanelTop } from "lucide-react";
+import { Play, Terminal, Cpu, AlertCircle, Loader2, MessageSquare, RotateCcw, X, PanelTop, Code2 } from "lucide-react";
 
 import CodeEditor from "../../components/Editor/CodeEditor";
 import { ideLayoutOptions, IdeUiLayout } from "./layoutOptions";
@@ -26,11 +26,15 @@ export default function CodeTestPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+    const [mobileTab, setMobileTab] = useState<"code" | "output">("code");
+    const [isMobilePillVisible, setIsMobilePillVisible] = useState(true);
     const [selectedLayout, setSelectedLayout] = useState<IdeUiLayout>("classic");
     const [isLayoutModalOpen, setIsLayoutModalOpen] = useState(false);
 
     const mainContentRef = useRef<HTMLDivElement>(null);
     const outputRef = useRef<HTMLDivElement>(null);
+    const mobileCodeRef = useRef<HTMLDivElement>(null);
+    const mobileOutputRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setIsMounted(true);
@@ -62,6 +66,64 @@ export default function CodeTestPage() {
         window.addEventListener("resize", onResize);
         return () => window.removeEventListener("resize", onResize);
     }, []);
+
+    useEffect(() => {
+        if (!isMobile) {
+            setIsMobilePillVisible(true);
+            return;
+        }
+
+        let scrollStopTimer: ReturnType<typeof setTimeout> | null = null;
+        let ticking = false;
+
+        const handleScroll = () => {
+            if (ticking) return;
+            ticking = true;
+
+            requestAnimationFrame(() => {
+                setIsMobilePillVisible(false);
+                if (scrollStopTimer) {
+                    clearTimeout(scrollStopTimer);
+                }
+                scrollStopTimer = setTimeout(() => {
+                    setIsMobilePillVisible(true);
+                }, 500);
+                ticking = false;
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll, true);
+            if (scrollStopTimer) {
+                clearTimeout(scrollStopTimer);
+            }
+        };
+    }, [isMobile]);
+
+    useEffect(() => {
+        if (!isMobile) return;
+        const target = mobileTab === "code" ? mobileCodeRef.current : mobileOutputRef.current;
+        if (!target) return;
+
+        const animation = anime({
+            targets: target,
+            opacity: [0, 1],
+            translateY: [14, 0],
+            scale: [0.995, 1],
+            duration: 320,
+            easing: "easeOutCubic"
+        });
+
+        const maybeThenable = animation as unknown as { catch?: (onRejected: () => void) => void };
+        maybeThenable.catch?.(() => undefined);
+
+        return () => {
+            const maybeCancelable = animation as { cancel?: () => void };
+            maybeCancelable.cancel?.();
+        };
+    }, [isMobile, mobileTab]);
 
     useEffect(() => {
         if (isMounted) sessionStorage.setItem("code-ide-code", code);
@@ -110,6 +172,9 @@ export default function CodeTestPage() {
 
     const handleRun = async () => {
         if (isLoading) return;
+        if (isMobile) {
+            setMobileTab("output");
+        }
         setIsLoading(true);
         setOutput(null);
         try {
@@ -291,12 +356,12 @@ export default function CodeTestPage() {
     };
 
     return (
-        <div className="flex-1 flex flex-col min-h-0 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 relative overflow-x-hidden overflow-y-auto lg:overflow-hidden font-sans transition-colors duration-200">
+        <div className={`flex-1 flex flex-col min-h-0 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-50 relative overflow-x-hidden ${(isMobile && mobileTab === "output") ? "overflow-y-hidden" : "overflow-y-auto"} lg:overflow-hidden font-sans transition-colors duration-200`}>
             <div className="absolute top-0 right-[-10%] w-125 h-125 bg-indigo-500/10 dark:bg-indigo-500/15 rounded-full blur-[140px] pointer-events-none" />
             <div className="absolute bottom-[-10%] left-[-5%] w-100 h-100 bg-purple-500/10 dark:bg-purple-500/15 rounded-full blur-[120px] pointer-events-none" />
             <div className="absolute top-1/2 left-1/4 w-75 h-75 bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="relative z-10 flex-1 flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 pb-16 md:pb-6 lg:pb-8 xl:pb-12 max-w-450 mx-auto w-full gap-4 md:gap-6 lg:gap-8 min-h-0 lg:h-full">
+            <div className={`relative z-10 flex-1 flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 ${isMobile && mobileTab === "output" ? "pb-16" : "pb-16"} md:pb-16 lg:pb-8 xl:pb-12 max-w-450 mx-auto w-full gap-4 md:gap-6 lg:gap-8 min-h-0 lg:h-full`}>
                 <div className="lg:hidden flex flex-col gap-1 px-2 mb-2">
                     <h1 className="text-2xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-linear-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400">
                         Code <span className="text-indigo-600 dark:text-indigo-400">IDE</span>
@@ -305,10 +370,20 @@ export default function CodeTestPage() {
                 </div>
 
                 {isMobile ? (
-                    <div className="flex-1 flex flex-col gap-6 min-h-0">
-                        <div className="min-h-112.5">{editorPanel}</div>
-                        <div className="h-45">{inputPanel}</div>
-                        <div className="min-h-75">{outputPanel}</div>
+                    <div className="flex-1 flex flex-col gap-4 min-h-0">
+                        <div
+                            ref={mobileCodeRef}
+                            className={`${mobileTab === "code" ? "flex" : "hidden"} flex-1 min-h-0 flex-col gap-3`}
+                        >
+                            <div className="flex-1 min-h-0">{editorPanel}</div>
+                            <div className="h-44 shrink-0">{inputPanel}</div>
+                        </div>
+                        <div
+                            ref={mobileOutputRef}
+                            className={`${mobileTab === "output" ? "flex" : "hidden"} flex-1 min-h-0`}
+                        >
+                            <div className="flex-1 min-h-0">{outputPanel}</div>
+                        </div>
                     </div>
                 ) : (
                     <>
@@ -317,8 +392,40 @@ export default function CodeTestPage() {
                     </>
                 )}
 
-                <div className="lg:hidden h-20 w-full flex-none" />
+                <div className={`lg:hidden w-full flex-none ${isMobile && mobileTab === "code" ? "h-8" : "h-6"}`} />
             </div>
+
+            {isMobile && (
+                <div
+                    className={`fixed bottom-6 left-1/2 z-50 transition-all duration-300 ease-out ${isMobilePillVisible
+                        ? "translate-x-[-50%] translate-y-0 opacity-100"
+                        : "translate-x-[-50%] translate-y-24 opacity-0 pointer-events-none"
+                        }`}
+                >
+                    <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
+                        <button
+                            onClick={() => setMobileTab("code")}
+                            className={`relative px-4 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-18 ${mobileTab === "code"
+                                ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                }`}
+                        >
+                            <Code2 className={`w-5 h-5 ${mobileTab === "code" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                            <span className="text-[10px] font-bold tracking-wide">Code</span>
+                        </button>
+                        <button
+                            onClick={() => setMobileTab("output")}
+                            className={`relative px-4 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-18 ${mobileTab === "output"
+                                ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                }`}
+                        >
+                            <Terminal className={`w-5 h-5 ${mobileTab === "output" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                            <span className="text-[10px] font-bold tracking-wide">Output</span>
+                        </button>
+                    </div>
+                </div>
+            )}
 
             {isLayoutModalOpen && !isMobile && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
