@@ -6,7 +6,7 @@ import { getProblemById, submitCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
 import { Problem } from "../lib/types";
 import { useAppContext } from "../lib/context";
-import { FileText, Code, History, Check, X, PanelTop } from "lucide-react";
+import { FileText, Code, History, Check, X, PanelTop, List } from "lucide-react";
 import { layoutOptions, UiGridLayout } from "./layoutOptions";
 
 import ClassicLayout from "./layouts/ClassicLayout";
@@ -46,7 +46,7 @@ export default function Home() {
     const [searchQuery, setSearchQuery] = useState("");
 
     const [isMobile, setIsMobile] = useState(false);
-    const [mobileTab, setMobileTab] = useState<"problem" | "code" | "submissions">("problem");
+    const [mobileTab, setMobileTab] = useState<"problem" | "description" | "code" | "submissions">("problem");
     const [isMounted, setIsMounted] = useState(false);
     const [selectedLayout, setSelectedLayout] = useState<UiGridLayout>("classic");
     const [isLayoutModalOpen, setIsLayoutModalOpen] = useState(false);
@@ -180,6 +180,10 @@ export default function Home() {
         if (id) {
             sessionStorage.setItem("last_selected_problem_id", id);
         }
+        if (isMobile) {
+            setMobileTab("description");
+            setIsSidebarOpen(false);
+        }
 
         setSearchQuery("");
         if (!id) {
@@ -200,7 +204,7 @@ export default function Home() {
         } catch (error) {
             console.error("Failed to fetch problem", error);
         }
-    }, []);
+    }, [isMobile, setIsSidebarOpen]);
 
     // State restoration on mount
     useEffect(() => {
@@ -289,9 +293,9 @@ export default function Home() {
         }
     }, []);
 
-    const handleMobileTabChange = useCallback((tab: "problem" | "code" | "submissions") => {
+    const handleMobileTabChange = useCallback((tab: "problem" | "description" | "code" | "submissions") => {
         setMobileTab(tab);
-        setIsSidebarOpen(false);
+        setIsSidebarOpen(tab === "problem");
     }, [setIsSidebarOpen]);
 
     useEffect(() => {
@@ -348,7 +352,7 @@ export default function Home() {
         : 0;
 
     const problemDescriptionPanel = (
-        <div className={`h-full min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "problem" ? "hidden" : "flex"}`}>
+        <div className={`h-full min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "description" ? "hidden" : "flex"}`}>
             <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
                 <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-50">
                     Problem
@@ -363,7 +367,7 @@ export default function Home() {
     );
 
     const editorAndSubmissionsPanel = (
-        <div className={`h-full min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab === "problem" ? "hidden" : "flex"}`}>
+        <div className={`h-full min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && (mobileTab === "problem" || mobileTab === "description") ? "hidden" : "flex"}`}>
             {/* Tabs Header - Modern Minimal Tabs */}
             <div className={`flex items-center justify-between px-5 py-2 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40 backdrop-blur-md ${isMobile ? "hidden" : "flex"}`}>
                 <div className="flex items-center gap-4">
@@ -596,10 +600,10 @@ export default function Home() {
                             className="flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4 relative z-10"
                         >
                             <div
-                                className={`flex flex-col md:flex-row h-full overflow-hidden shrink-0 transition-all duration-400 ease-[0.4,0,0.2,1] ${isSidebarOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+                                className={`flex flex-col md:flex-row h-full overflow-hidden shrink-0 transition-all duration-400 ease-[0.4,0,0.2,1] ${isSidebarOpen && mobileTab === "problem" ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                                 style={{
-                                    width: !isSidebarOpen ? 0 : "100%",
-                                    height: !isSidebarOpen ? 0 : "100%",
+                                    width: !isSidebarOpen || mobileTab !== "problem" ? 0 : "100%",
+                                    height: !isSidebarOpen || mobileTab !== "problem" ? 0 : "100%",
                                     transition: isResizing ? 'none' : undefined
                                 }}
                             >
@@ -620,10 +624,10 @@ export default function Home() {
                                 className="flex-1 min-h-0 overflow-hidden flex flex-col gap-4 transition-all duration-400 ease-[0.4,0,0.2,1]"
                                 style={{ transition: isResizing ? 'none' : undefined }}
                             >
-                                <div className={`${mobileTab === "problem" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
+                                <div className={`${mobileTab === "description" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
                                     {problemDescriptionPanel}
                                 </div>
-                                <div className={`${mobileTab !== "problem" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
+                                <div className={`${mobileTab === "code" || mobileTab === "submissions" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
                                     {editorAndSubmissionsPanel}
                                 </div>
                             </div>
@@ -690,17 +694,27 @@ export default function Home() {
                                 <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
                                     <button
                                         onClick={() => handleMobileTabChange("problem")}
-                                        className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "problem"
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "problem"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                             }`}
                                     >
-                                        <FileText className={`w-5 h-5 ${mobileTab === "problem" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                        <List className={`w-5 h-5 ${mobileTab === "problem" ? "stroke-[2.5px]" : "stroke-2"}`} />
                                         <span className="text-[10px] font-bold tracking-wide">Problem</span>
                                     </button>
                                     <button
+                                        onClick={() => handleMobileTabChange("description")}
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "description"
+                                            ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
+                                            : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
+                                            }`}
+                                    >
+                                        <FileText className={`w-5 h-5 ${mobileTab === "description" ? "stroke-[2.5px]" : "stroke-2"}`} />
+                                        <span className="text-[10px] font-bold tracking-wide">Description</span>
+                                    </button>
+                                    <button
                                         onClick={() => handleMobileTabChange("code")}
-                                        className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "code"
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "code"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                             }`}
@@ -710,13 +724,13 @@ export default function Home() {
                                     </button>
                                     <button
                                         onClick={() => handleMobileTabChange("submissions")}
-                                        className={`relative px-5 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-17.5 ${mobileTab === "submissions"
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "submissions"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                             }`}
                                     >
                                         <History className={`w-5 h-5 ${mobileTab === "submissions" ? "stroke-[2.5px]" : "stroke-2"}`} />
-                                        <span className="text-[10px] font-bold tracking-wide">Past</span>
+                                        <span className="text-[9px] font-bold tracking-wide whitespace-nowrap">Past submissions</span>
                                     </button>
                                 </div>
                             </div>

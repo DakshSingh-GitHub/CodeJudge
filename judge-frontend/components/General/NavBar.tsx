@@ -90,7 +90,7 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
                                 onClick={() =>
                                     setIsSidebarOpen(!isSidebarOpen)
                                 }
-                                className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md"
+                                className={`${isCodeJudge ? "hidden lg:flex" : "flex"} items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md`}
                                 title={
                                     isSidebarOpen
                                         ? "Hide sidebar"
