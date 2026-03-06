@@ -47,6 +47,7 @@ export default function Home() {
 
     const [isMobile, setIsMobile] = useState(false);
     const [mobileTab, setMobileTab] = useState<"problem" | "description" | "code" | "submissions">("problem");
+    const [isMobilePillVisible, setIsMobilePillVisible] = useState(true);
     const [isMounted, setIsMounted] = useState(false);
     const [selectedLayout, setSelectedLayout] = useState<UiGridLayout>("classic");
     const [isLayoutModalOpen, setIsLayoutModalOpen] = useState(false);
@@ -61,6 +62,10 @@ export default function Home() {
     const loaderTitleRef = useRef<HTMLDivElement>(null);
     const loaderBarRef = useRef<HTMLDivElement>(null);
     const verdictRef = useRef<HTMLDivElement>(null);
+    const mobileProblemListRef = useRef<HTMLDivElement>(null);
+    const mobileDescriptionRef = useRef<HTMLDivElement>(null);
+    const mobileCodeRef = useRef<HTMLDivElement>(null);
+    const mobileSubmissionsRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!isMounted && loaderTitleRef.current && loaderBarRef.current) {
@@ -299,6 +304,81 @@ export default function Home() {
     }, [setIsSidebarOpen]);
 
     useEffect(() => {
+        if (isMobile) {
+            setIsSidebarOpen(mobileTab === "problem");
+        }
+    }, [isMobile, mobileTab, setIsSidebarOpen]);
+
+    useEffect(() => {
+        if (!isMobile) {
+            setIsMobilePillVisible(true);
+            return;
+        }
+
+        let scrollStopTimer: ReturnType<typeof setTimeout> | null = null;
+        let ticking = false;
+
+        const handleScroll = () => {
+            if (ticking) return;
+            ticking = true;
+
+            requestAnimationFrame(() => {
+                setIsMobilePillVisible(false);
+                if (scrollStopTimer) {
+                    clearTimeout(scrollStopTimer);
+                }
+                scrollStopTimer = setTimeout(() => {
+                    setIsMobilePillVisible(true);
+                }, 1000);
+                ticking = false;
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll, true);
+            if (scrollStopTimer) {
+                clearTimeout(scrollStopTimer);
+            }
+        };
+    }, [isMobile]);
+
+    useEffect(() => {
+        if (!isMobile) return;
+
+        let target: HTMLDivElement | null = null;
+        if (mobileTab === "problem") {
+            target = isSidebarOpen ? mobileProblemListRef.current : null;
+        } else if (mobileTab === "description") {
+            target = mobileDescriptionRef.current;
+        } else if (mobileTab === "code") {
+            target = mobileCodeRef.current;
+        } else if (mobileTab === "submissions") {
+            target = mobileSubmissionsRef.current;
+        }
+
+        if (!target) return;
+
+        const animation = anime({
+            targets: target,
+            opacity: [0, 1],
+            translateY: [14, 0],
+            scale: [0.995, 1],
+            duration: 320,
+            easing: "easeOutCubic"
+        });
+
+        const maybeThenable = animation as unknown as { catch?: (onRejected: () => void) => void };
+        maybeThenable.catch?.(() => undefined);
+
+        return () => {
+            const maybeCancelable = animation as { cancel?: () => void };
+            maybeCancelable.cancel?.();
+        };
+    }, [isMobile, mobileTab, isSidebarOpen]);
+
+    useEffect(() => {
         if (isMobile && isLayoutModalOpen) {
             setIsLayoutModalOpen(false);
         }
@@ -410,7 +490,10 @@ export default function Home() {
 
             <div className="flex-1 min-h-0 p-4 pb-28 md:pb-4 flex flex-col gap-4">
                 {/* Editor and Result Area - Kept mounted to avoid state loss and 'Canceled' errors */}
-                <div className={`flex-1 min-h-0 flex flex-col gap-4 ${(activeTab === "editor" && !isMobile) || (isMobile && mobileTab === "code") ? "flex" : "hidden"}`}>
+                <div
+                    ref={mobileCodeRef}
+                    className={`flex-1 min-h-0 flex flex-col gap-4 ${(activeTab === "editor" && !isMobile) || (isMobile && mobileTab === "code") ? "flex" : "hidden"}`}
+                >
                     <div className="flex-1 min-h-0 w-full rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner">
                         <CodeEditor
                             code={code}
@@ -528,7 +611,10 @@ export default function Home() {
                 </div>
 
                 {/* Past Submissions - Kept mounted to avoid state loss */}
-                <div className={`flex-1 overflow-y-auto ${(!isMobile && activeTab === "submissions") || (isMobile && mobileTab === "submissions") ? "block" : "hidden"}`}>
+                <div
+                    ref={mobileSubmissionsRef}
+                    className={`flex-1 overflow-y-auto ${(!isMobile && activeTab === "submissions") || (isMobile && mobileTab === "submissions") ? "block" : "hidden"}`}
+                >
                     <PastSubmissions
                         submissions={pastSubmissions}
                         onLoadCode={(savedCode) => {
@@ -600,6 +686,7 @@ export default function Home() {
                             className="flex flex-col md:flex-row flex-1 overflow-hidden gap-4 p-4 relative z-10"
                         >
                             <div
+                                ref={mobileProblemListRef}
                                 className={`flex flex-col md:flex-row h-full overflow-hidden shrink-0 transition-all duration-400 ease-[0.4,0,0.2,1] ${isSidebarOpen && mobileTab === "problem" ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
                                 style={{
                                     width: !isSidebarOpen || mobileTab !== "problem" ? 0 : "100%",
@@ -624,7 +711,7 @@ export default function Home() {
                                 className="flex-1 min-h-0 overflow-hidden flex flex-col gap-4 transition-all duration-400 ease-[0.4,0,0.2,1]"
                                 style={{ transition: isResizing ? 'none' : undefined }}
                             >
-                                <div className={`${mobileTab === "description" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
+                                <div ref={mobileDescriptionRef} className={`${mobileTab === "description" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
                                     {problemDescriptionPanel}
                                 </div>
                                 <div className={`${mobileTab === "code" || mobileTab === "submissions" ? "flex-1" : "hidden"} min-h-0 min-w-0`}>
@@ -690,11 +777,16 @@ export default function Home() {
 
                     {
                         isMobile && (
-                            <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
+                            <div
+                                className={`fixed bottom-6 left-1/2 z-50 transition-all duration-300 ease-out ${isMobilePillVisible
+                                    ? "translate-x-[-50%] translate-y-0 opacity-100"
+                                    : "translate-x-[-50%] translate-y-24 opacity-0 pointer-events-none"
+                                    }`}
+                            >
                                 <div className="flex items-center gap-4 p-1.5 rounded-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl shadow-black/10 ring-1 ring-black/5">
                                     <button
                                         onClick={() => handleMobileTabChange("problem")}
-                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "problem"
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-16 ${mobileTab === "problem"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                             }`}
@@ -704,7 +796,7 @@ export default function Home() {
                                     </button>
                                     <button
                                         onClick={() => handleMobileTabChange("description")}
-                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "description"
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-16 ${mobileTab === "description"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                             }`}
@@ -714,7 +806,7 @@ export default function Home() {
                                     </button>
                                     <button
                                         onClick={() => handleMobileTabChange("code")}
-                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "code"
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-16 ${mobileTab === "code"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                             }`}
@@ -724,7 +816,7 @@ export default function Home() {
                                     </button>
                                     <button
                                         onClick={() => handleMobileTabChange("submissions")}
-                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-[4rem] ${mobileTab === "submissions"
+                                        className={`relative px-3 py-2 rounded-full transition-all duration-300 ease-out flex flex-col items-center justify-center gap-0.5 min-w-16 ${mobileTab === "submissions"
                                             ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/25 ring-1 ring-indigo-500/50"
                                             : "text-gray-500 dark:text-gray-400 hover:bg-gray-100/30 dark:hover:bg-gray-800/30"
                                             }`}
