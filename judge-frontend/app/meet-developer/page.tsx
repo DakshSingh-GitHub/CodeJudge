@@ -149,7 +149,7 @@ export default function MeetDeveloper() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="flex flex-col justify-center align-center w-[50%] mx-auto mb-20 bg-blue-300/5 p-20 rounded-4xl border-violet-900 border shadow-xl hover:border-violet-600 transition-all duration-300 hover:shadow-violet-800 hover:shadow-[0_0_30px_rgba(77,23,154,0.8)]"
+                className="flex flex-col justify-center align-center md:w-[50%] w-[90%] mx-auto md:mb-20 bg-blue-300/5 md:p-20 rounded-4xl border-violet-900 border shadow-xl hover:border-violet-600 transition-all duration-300 hover:shadow-violet-800 hover:shadow-[0_0_30px_rgba(77,23,154,0.8)] mb-10 p-10"
             >
                 <motion.h1
                     variants={itemVariants}

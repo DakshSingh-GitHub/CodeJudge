@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
         description: 'A platform for online coding challenges and judge.',
         start_url: '/',
         display: 'standalone',
-        background_color: '#000000',
-        theme_color: '#000000',
+        background_color: '#0B0C15',
+        theme_color: '#0B0C15',
         icons: [
             {
                 src: '/icons/icon-192x192.png',
