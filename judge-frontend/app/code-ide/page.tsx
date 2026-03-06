@@ -14,7 +14,7 @@ import WideIdeLayout from "./layouts/WideIdeLayout";
 const IDE_LAYOUT_STORAGE_KEY = "codeide_ui_grid_layout";
 
 export default function CodeTestPage() {
-    const { isDark } = useAppContext();
+    const { isDark, autoHideMobilePills } = useAppContext();
     const [code, setCode] = useState("# Write your code here to test\nprint('Hello, CodeJudge!')");
     const [input, setInput] = useState("");
     const [output, setOutput] = useState<{
@@ -68,7 +68,7 @@ export default function CodeTestPage() {
     }, []);
 
     useEffect(() => {
-        if (!isMobile) {
+        if (!isMobile || !autoHideMobilePills) {
             setIsMobilePillVisible(true);
             return;
         }
@@ -100,7 +100,7 @@ export default function CodeTestPage() {
                 clearTimeout(scrollStopTimer);
             }
         };
-    }, [isMobile]);
+    }, [isMobile, autoHideMobilePills]);
 
     useEffect(() => {
         if (!isMobile) return;

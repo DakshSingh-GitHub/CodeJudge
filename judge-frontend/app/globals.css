@@ -6,7 +6,8 @@
   /* gray-50 */
   --foreground: #111827;
   /* gray-900 */
-  font-size: 80%;
+  --app-font-scale: 1;
+  font-size: calc(80% * var(--app-font-scale));
 }
 
 @theme inline {
@@ -85,6 +86,15 @@ img,
   html.theme-switching * {
     transition-duration: 0ms !important;
   }
+}
+
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0ms !important;
+  scroll-behavior: auto !important;
 }
 
 /* Custom cursor for light mode */

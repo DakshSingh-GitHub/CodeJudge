@@ -5,11 +5,12 @@ import { usePathname } from 'next/navigation';
 import { useAppContext } from '../../app/lib/context';
 import NavBar from './NavBar';
 import SubmissionsModal from './SubmissionsModal';
-import { History } from 'lucide-react';
+import SettingsModal from './SettingsModal';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
-    const { TITLE, isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme } = useAppContext();
+    const { isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen } = useAppContext();
     const pathname = usePathname();
+    const [isSettingsModalOpen, setIsSettingsModalOpen] = React.useState(false);
     const excludedPaths = ['/', '/docs', '/docs-int', '/admin', '/visuals', '/meet-developer']
     const isHomePage = excludedPaths.includes(pathname);
 
@@ -21,8 +22,7 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
                     setIsSidebarOpen={setIsSidebarOpen}
                     isSubmissionsModalOpen={isSubmissionsModalOpen}
                     setIsSubmissionsModalOpen={setIsSubmissionsModalOpen}
-                    isDark={isDark}
-                    toggleTheme={toggleTheme}
+                    onOpenSettings={() => setIsSettingsModalOpen(true)}
                 />
             )}
             <div className="flex-1 min-h-0 flex flex-col">
@@ -31,6 +31,10 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
             <SubmissionsModal
                 isOpen={isSubmissionsModalOpen}
                 onClose={() => setIsSubmissionsModalOpen(false)}
+            />
+            <SettingsModal
+                isOpen={isSettingsModalOpen}
+                onClose={() => setIsSettingsModalOpen(false)}
             />
         </main>
     );

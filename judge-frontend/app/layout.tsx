@@ -52,9 +52,24 @@ export default function RootLayout({
 }>) {
   const themeScript = `
     (function() {
+      var themeMode = localStorage.getItem('theme_mode');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var shouldUseDark = false;
+
+      if (themeMode === 'dark') {
+        shouldUseDark = true;
+      } else if (themeMode === 'light') {
+        shouldUseDark = false;
+      } else if (themeMode === 'system') {
+        shouldUseDark = prefersDark;
+      } else {
+        shouldUseDark =
+          localStorage.theme === 'dark' ||
+          (!('theme' in localStorage) && prefersDark);
+      }
+
       if (
-        localStorage.theme === 'dark' || 
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        shouldUseDark
       ) {
         document.documentElement.classList.add('dark');
       } else {

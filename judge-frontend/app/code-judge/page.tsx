@@ -33,7 +33,7 @@ interface SubmissionResult {
 
 export default function Home() {
     // State Variable Declarations
-    const { isSidebarOpen, setIsSidebarOpen, TITLE, isDark } = useAppContext();
+    const { isSidebarOpen, setIsSidebarOpen, TITLE, isDark, autoHideMobilePills } = useAppContext();
     const [problem, setProblem] = useState<Problem | null>(null);
     const [selectedProblemId, setSelectedProblemId] = useState<string>("");
     const [code, setCode] = useState(DEFAULT_CODE);
@@ -310,7 +310,7 @@ export default function Home() {
     }, [isMobile, mobileTab, setIsSidebarOpen]);
 
     useEffect(() => {
-        if (!isMobile) {
+        if (!isMobile || !autoHideMobilePills) {
             setIsMobilePillVisible(true);
             return;
         }
@@ -342,7 +342,7 @@ export default function Home() {
                 clearTimeout(scrollStopTimer);
             }
         };
-    }, [isMobile]);
+    }, [isMobile, autoHideMobilePills]);
 
     useEffect(() => {
         if (!isMobile) return;

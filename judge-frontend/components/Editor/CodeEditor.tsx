@@ -5,6 +5,7 @@ import { useState, useEffect, useRef, memo } from "react";
 import Toolbar from "./Toolbar";
 import { DEEP_SPACE_THEME, PYTHON_SNIPPETS } from "../../app/lib/editor-config";
 import { anime } from "../../app/lib/anime";
+import { useAppContext } from "../../app/lib/context";
 
 interface CodeEditorProps {
     code: string;
@@ -22,7 +23,7 @@ const CodeEditor = memo(function CodeEditor({
     const [showMinimap, setShowMinimap] = useState(false);
     const rootRef = useRef<HTMLDivElement>(null);
     const editorRef = useRef<unknown>(null);
-    const [fontSize, setFontSize] = useState(15);
+    const { editorFontSize, setEditorFontSize } = useAppContext();
     const monaco = useMonaco();
 
     useEffect(() => {
@@ -117,7 +118,7 @@ const CodeEditor = memo(function CodeEditor({
                     onMount={handleEditorDidMount}
                     onChange={(value) => setCode(value || "")}
                     options={{
-                        fontSize: fontSize,
+                        fontSize: editorFontSize,
                         minimap: { enabled: showMinimap },
                         scrollBeyondLastLine: false,
                         automaticLayout: true,
@@ -147,7 +148,7 @@ const CodeEditor = memo(function CodeEditor({
                 />
             </div>
             {!isDisabled && (
-                <Toolbar code={code} fontSize={fontSize} setFontSize={setFontSize} />
+                <Toolbar code={code} fontSize={editorFontSize} setFontSize={setEditorFontSize} />
             )}
         </div>
     );

@@ -2,8 +2,7 @@
 
 import React, { memo, useEffect, useRef } from 'react';
 import { anime } from '../../app/lib/anime';
-import { History, LayoutGrid } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import { History, LayoutGrid, Settings } from 'lucide-react';
 import NavDropdown from './NavDropdown';
 import { usePathname } from 'next/navigation';
 
@@ -12,12 +11,11 @@ interface NavBarProps {
     setIsSidebarOpen: (isOpen: boolean) => void;
     isSubmissionsModalOpen: boolean;
     setIsSubmissionsModalOpen: (isOpen: boolean) => void;
-    isDark: boolean;
-    toggleTheme: () => void;
+    onOpenSettings: () => void;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, isDark, toggleTheme }) => {
+const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, isSubmissionsModalOpen, setIsSubmissionsModalOpen, onOpenSettings }) => {
     const pathname = usePathname();
     const isCodeIDE = pathname === '/code-ide';
     const isCodeJudge = pathname === '/code-judge';
@@ -112,7 +110,14 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
 
                     <div className="h-6 w-px bg-gray-100 dark:bg-gray-800 hidden md:block" />
 
-                    <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
+                    <button
+                        onClick={onOpenSettings}
+                        className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-white dark:hover:bg-gray-800 transition-colors duration-200 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900 shadow-sm hover:shadow-md"
+                        title="Open settings"
+                        aria-label="Open settings"
+                    >
+                        <Settings className="w-5 h-5" />
+                    </button>
                 </div>
             </div>
         </header>
