@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { anime } from "../../app/lib/anime";
 import { useAppContext } from "../../app/lib/context";
-import { Moon, Sun, Monitor, Type, PencilRuler, Sparkles, Smartphone, RotateCcw, X } from "lucide-react";
+import { Moon, Sun, Monitor, Type, PencilRuler, Sparkles, Smartphone, Cpu, RotateCcw, X } from "lucide-react";
 
 interface SettingsModalProps {
     isOpen: boolean;
@@ -23,6 +23,8 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
         setEditorFontSize,
         reduceMotion,
         setReduceMotion,
+        hardwareAcceleratedThemeAnimations,
+        setHardwareAcceleratedThemeAnimations,
         autoHideMobilePills,
         setAutoHideMobilePills,
         resetUiSettings
@@ -211,6 +213,21 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                                 checked={reduceMotion}
                                 onChange={(e) => setReduceMotion(e.target.checked)}
                                 className="h-4 w-4 accent-indigo-600"
+                            />
+                        </label>
+                        <label className="flex items-center justify-between rounded-2xl border border-gray-200/80 dark:border-gray-700/70 p-4">
+                            <div className="flex items-start gap-2">
+                                <Cpu className="w-4 h-4 mt-0.5 text-cyan-500" />
+                                <div>
+                                    <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">Hardware Accelerated Theme Animations</p>
+                                    <p className="text-xs text-gray-500 dark:text-gray-400">Uses GPU compositor hints to smooth theme transitions.</p>
+                                </div>
+                            </div>
+                            <input
+                                type="checkbox"
+                                checked={hardwareAcceleratedThemeAnimations}
+                                onChange={(e) => setHardwareAcceleratedThemeAnimations(e.target.checked)}
+                                className="h-4 w-4 accent-cyan-600"
                             />
                         </label>
                         <label className="flex items-center justify-between rounded-2xl border border-gray-200/80 dark:border-gray-700/70 p-4">

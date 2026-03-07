@@ -94,6 +94,14 @@ export default function RootLayout({
       } else {
         document.documentElement.classList.remove('dark');
       }
+
+      var hardwareAccelerationSetting = localStorage.getItem('hardware_accel_theme_animations');
+      var shouldUseHardwareAcceleration = hardwareAccelerationSetting === null || hardwareAccelerationSetting === '1';
+      if (shouldUseHardwareAcceleration) {
+        document.documentElement.classList.add('theme-gpu');
+      } else {
+        document.documentElement.classList.remove('theme-gpu');
+      }
     })();
   `;
 

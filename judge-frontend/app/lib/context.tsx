@@ -20,6 +20,8 @@ interface AppContextType {
   setEditorFontSize: (size: number) => void;
   reduceMotion: boolean;
   setReduceMotion: (enabled: boolean) => void;
+  hardwareAcceleratedThemeAnimations: boolean;
+  setHardwareAcceleratedThemeAnimations: (enabled: boolean) => void;
   autoHideMobilePills: boolean;
   setAutoHideMobilePills: (enabled: boolean) => void;
   resetUiSettings: () => void;
@@ -39,6 +41,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   const [appFontScale, setAppFontScaleState] = useState(1);
   const [editorFontSize, setEditorFontSizeState] = useState(15);
   const [reduceMotion, setReduceMotionState] = useState(false);
+  const [hardwareAcceleratedThemeAnimations, setHardwareAcceleratedThemeAnimationsState] = useState(true);
   const [autoHideMobilePills, setAutoHideMobilePillsState] = useState(true);
   const [mounted, setMounted] = useState(false);
   const themeSwitchTimeoutRef = useRef<number | null>(null);
@@ -65,6 +68,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
       const savedFontScale = Number(localStorage.getItem("app_font_scale") || "1");
       const savedEditorFontSize = Number(localStorage.getItem("editor_font_size") || "15");
       const savedReduceMotion = localStorage.getItem("reduce_motion") === "1";
+      const savedHardwareAcceleration = localStorage.getItem("hardware_accel_theme_animations");
       const savedAutoHidePills = localStorage.getItem("autohide_mobile_pills");
 
       let initialThemeMode: ThemeMode = "system";
@@ -79,6 +83,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
       setAppFontScaleState(Number.isFinite(savedFontScale) && savedFontScale >= 0.85 && savedFontScale <= 1.2 ? savedFontScale : 1);
       setEditorFontSizeState(Number.isFinite(savedEditorFontSize) && savedEditorFontSize >= 12 && savedEditorFontSize <= 22 ? savedEditorFontSize : 15);
       setReduceMotionState(savedReduceMotion);
+      setHardwareAcceleratedThemeAnimationsState(savedHardwareAcceleration === null ? true : savedHardwareAcceleration === "1");
       setAutoHideMobilePillsState(savedAutoHidePills === null ? true : savedAutoHidePills === "1");
     }
   }, []);
@@ -124,6 +129,12 @@ export function AppWrapper({ children }: { children: ReactNode }) {
     document.documentElement.classList.toggle("reduce-motion", reduceMotion);
     localStorage.setItem("reduce_motion", reduceMotion ? "1" : "0");
   }, [reduceMotion, mounted]);
+
+  useEffect(() => {
+    if (!mounted) return;
+    document.documentElement.classList.toggle("theme-gpu", hardwareAcceleratedThemeAnimations);
+    localStorage.setItem("hardware_accel_theme_animations", hardwareAcceleratedThemeAnimations ? "1" : "0");
+  }, [hardwareAcceleratedThemeAnimations, mounted]);
 
   useEffect(() => {
     if (!mounted) return;
@@ -173,6 +184,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
     setAppFontScaleState(1);
     setEditorFontSizeState(15);
     setReduceMotionState(false);
+    setHardwareAcceleratedThemeAnimationsState(true);
     setAutoHideMobilePillsState(true);
   };
 
@@ -192,6 +204,8 @@ export function AppWrapper({ children }: { children: ReactNode }) {
       setEditorFontSize: setEditorFontSizeState,
       reduceMotion,
       setReduceMotion: setReduceMotionState,
+      hardwareAcceleratedThemeAnimations,
+      setHardwareAcceleratedThemeAnimations: setHardwareAcceleratedThemeAnimationsState,
       autoHideMobilePills,
       setAutoHideMobilePills: setAutoHideMobilePillsState,
       resetUiSettings,

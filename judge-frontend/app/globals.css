@@ -76,6 +76,13 @@ html.theme-switching body {
   animation-timing-function: ease-out;
 }
 
+html.theme-gpu::view-transition-old(root),
+html.theme-gpu::view-transition-new(root) {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: opacity, transform;
+}
+
 /* Exclude expensive surfaces from theme transition */
 .no-transition, 
 .no-transition *,
