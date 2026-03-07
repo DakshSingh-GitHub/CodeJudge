@@ -42,6 +42,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   const [autoHideMobilePills, setAutoHideMobilePillsState] = useState(true);
   const [mounted, setMounted] = useState(false);
   const themeSwitchTimeoutRef = useRef<number | null>(null);
+  const supportsViewTransitionRef = useRef(false);
 
   const applyTheme = (mode: ThemeMode) => {
     if (typeof window === 'undefined') return;
@@ -55,6 +56,9 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
+    if (typeof document !== "undefined") {
+      supportsViewTransitionRef.current = typeof (document as Document & { startViewTransition?: () => unknown }).startViewTransition === "function";
+    }
     setMounted(true);
     if (typeof window !== 'undefined') {
       const savedThemeMode = localStorage.getItem("theme_mode");
@@ -129,15 +133,35 @@ export function AppWrapper({ children }: { children: ReactNode }) {
   const setThemeMode = (mode: ThemeMode) => {
     if (typeof window === 'undefined') return;
     const root = document.documentElement;
-    root.classList.add("theme-switching");
     if (themeSwitchTimeoutRef.current !== null) {
       window.clearTimeout(themeSwitchTimeoutRef.current);
-    }
-    setThemeModeState(mode);
-    themeSwitchTimeoutRef.current = window.setTimeout(() => {
-      root.classList.remove("theme-switching");
       themeSwitchTimeoutRef.current = null;
-    }, 220);
+    }
+
+    const shouldAnimate = !reduceMotion;
+    const withThemeSwitchClass = (fn: () => void) => {
+      root.classList.add("theme-switching");
+      fn();
+      themeSwitchTimeoutRef.current = window.setTimeout(() => {
+        root.classList.remove("theme-switching");
+        themeSwitchTimeoutRef.current = null;
+      }, 260);
+    };
+
+    const canUseViewTransition = supportsViewTransitionRef.current && shouldAnimate;
+    if (canUseViewTransition) {
+      const docWithTransition = document as Document & {
+        startViewTransition?: (callback: () => void) => { finished: Promise<void> };
+      };
+      withThemeSwitchClass(() => {
+        docWithTransition.startViewTransition?.(() => {
+          setThemeModeState(mode);
+        });
+      });
+      return;
+    }
+
+    setThemeModeState(mode);
   };
 
   const toggleTheme = () => {

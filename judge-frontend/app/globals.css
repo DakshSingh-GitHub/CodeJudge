@@ -63,12 +63,17 @@ body {
   overflow-x: hidden;
 }
 
-/* Apply short, scoped transitions only during active theme toggle */
+/* Keep fallback transition lightweight to avoid animating the entire DOM tree */
 html.theme-switching,
-html.theme-switching * {
-  transition-property: background-color, color, border-color, fill, stroke;
-  transition-duration: 180ms;
-  transition-timing-function: ease-out;
+html.theme-switching body {
+  transition: background-color 180ms ease-out, color 180ms ease-out;
+}
+
+/* Smooth page-level crossfade for theme toggles (Chrome/Edge/Safari TP) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: ease-out;
 }
 
 /* Exclude expensive surfaces from theme transition */

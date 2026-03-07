@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { anime } from "../../app/lib/anime";
 import { useAppContext } from "../../app/lib/context";
 import { Moon, Sun, Monitor, Type, PencilRuler, Sparkles, Smartphone, RotateCcw, X } from "lucide-react";
@@ -13,6 +13,7 @@ interface SettingsModalProps {
 export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
     const panelRef = useRef<HTMLDivElement>(null);
     const backdropRef = useRef<HTMLButtonElement>(null);
+    const fontScaleRafRef = useRef<number | null>(null);
     const {
         themeMode,
         setThemeMode,
@@ -26,6 +27,12 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
         setAutoHideMobilePills,
         resetUiSettings
     } = useAppContext();
+    const [fontScalePercent, setFontScalePercent] = useState(Math.round(appFontScale * 100));
+
+    useEffect(() => {
+        if (!isOpen) return;
+        setFontScalePercent(Math.round(appFontScale * 100));
+    }, [appFontScale, isOpen]);
 
     useEffect(() => {
         if (!isOpen) return;
@@ -59,6 +66,33 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
         window.addEventListener("keydown", onKeyDown);
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [isOpen, onClose]);
+
+    useEffect(() => {
+        return () => {
+            if (fontScaleRafRef.current !== null) {
+                window.cancelAnimationFrame(fontScaleRafRef.current);
+            }
+        };
+    }, []);
+
+    const applyLiveFontScale = useCallback((percent: number) => {
+        const normalized = Math.min(120, Math.max(85, percent));
+        if (fontScaleRafRef.current !== null) {
+            window.cancelAnimationFrame(fontScaleRafRef.current);
+        }
+        fontScaleRafRef.current = window.requestAnimationFrame(() => {
+            document.documentElement.style.setProperty("--app-font-scale", String(normalized / 100));
+            fontScaleRafRef.current = null;
+        });
+    }, []);
+
+    const commitFontScale = useCallback((percent: number) => {
+        const normalized = Math.min(120, Math.max(85, percent));
+        const nextScale = normalized / 100;
+        if (Math.abs(nextScale - appFontScale) > 0.0001) {
+            setAppFontScale(nextScale);
+        }
+    }, [appFontScale, setAppFontScale]);
 
     if (!isOpen) return null;
 
@@ -127,15 +161,22 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                                 <Type className="w-4 h-4 text-cyan-500" />
                                 <h4 className="text-sm font-semibold text-gray-900 dark:text-gray-100">UI Font Scale</h4>
                             </div>
-                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">{Math.round(appFontScale * 100)}%</span>
+                            <span className="text-xs font-semibold text-gray-500 dark:text-gray-400">{fontScalePercent}%</span>
                         </div>
                         <input
                             type="range"
                             min={85}
                             max={120}
                             step={1}
-                            value={Math.round(appFontScale * 100)}
-                            onChange={(e) => setAppFontScale(Number(e.target.value) / 100)}
+                            value={fontScalePercent}
+                            onChange={(e) => {
+                                const nextPercent = Number(e.target.value);
+                                setFontScalePercent(nextPercent);
+                                applyLiveFontScale(nextPercent);
+                            }}
+                            onPointerUp={() => commitFontScale(fontScalePercent)}
+                            onKeyUp={() => commitFontScale(fontScalePercent)}
+                            onBlur={() => commitFontScale(fontScalePercent)}
                             className="w-full accent-indigo-500"
                         />
                     </section>
