@@ -17,11 +17,11 @@ const Toolbar = memo(({ code, fontSize, setFontSize }: ToolbarProps) => {
 
     const handleTryInCodeIDE = () => {
         sessionStorage.setItem("code-ide-code", code);
-        router.push('/code');
+        router.push('/code-ide');
     };
 
     return (
-        <div className="bg-gray-900 border-t border-gray-800 py-1.5 md:py-2 flex justify-between items-center gap-4 text-gray-300 text-sm px-4 md:px-5 min-h-[44px]">
+        <div className="bg-gray-900 border-t border-gray-800 py-1.5 md:py-2 flex justify-between items-center gap-4 text-gray-300 text-sm px-4 md:px-5 min-h-11">
             <div className="flex items-center gap-3">
                 <motion.button
                     whileHover={{ scale: 1.02, backgroundColor: 'rgba(99, 102, 241, 0.1)' }}
