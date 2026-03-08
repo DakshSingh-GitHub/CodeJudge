@@ -1,21 +1,114 @@
 "use client";
 
-import React, { memo } from 'react';
+import React, { useState, useRef, useEffect, memo } from 'react';
+import { ChevronDown, Check, Code2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
-const LanguageSelector = memo(() => {
+import Link from 'next/link';
+
+interface LanguageSelectorProps {
+  language?: string;
+  setLanguage?: (lang: string) => void;
+}
+
+const LanguageSelector = memo(({ language = "python", setLanguage }: LanguageSelectorProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const languages = [
+    { id: 'python', label: 'Python', icon: '🐍' },
+    ...(setLanguage ? [{ id: 'javascript', label: 'JavaScript', icon: 'js' }] : [])
+  ];
+
+  const currentLang = languages.find(l => l.id === language) || languages[0];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSelect = (id: string) => {
+    if (setLanguage) {
+      setLanguage(id);
+    }
+    setIsOpen(false);
+  };
+
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2" ref={containerRef}>
       <div className="relative">
-        <select
-          id="language-select"
-          className="appearance-none w-20 md:w-24 bg-gray-800/50 border border-gray-700 hover:border-gray-600 pl-2 pr-6 py-1 rounded-md text-[10px] md:text-xs focus:outline-none focus:ring-1 focus:ring-indigo-500/50 text-gray-300 transition-colors cursor-pointer"
-          defaultValue="python"
+        <motion.button
+          whileHover={{ scale: 1.01, backgroundColor: 'rgba(55, 65, 81, 0.7)' }}
+          whileTap={{ scale: 0.98 }}
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-gray-800/40 backdrop-blur-md border border-gray-700/50 transition-all duration-200 min-w-[100px] md:min-w-[120px] hover:border-indigo-500/50 cursor-pointer shadow-lg shadow-black/5"
         >
-          <option value="python" className="bg-gray-900">Python</option>
-        </select>
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-1.5 text-gray-500">
-          <svg className="fill-current h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-        </div>
+          <div className="flex items-center gap-2">
+            <div className="w-5 h-5 rounded flex items-center justify-center bg-indigo-500/10 text-indigo-400 text-[10px] font-bold border border-indigo-500/20">
+              {currentLang.id === 'python' ? 'PY' : 'JS'}
+            </div>
+            <span className="text-[11px] md:text-xs font-semibold text-gray-200 tracking-tight">
+              {currentLang.label}
+            </span>
+          </div>
+          <motion.div
+            animate={{ rotate: isOpen ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ChevronDown className="w-3.5 h-3.5 text-gray-500" />
+          </motion.div>
+        </motion.button>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 0, scale: 0.95 }}
+              animate={{ opacity: 1, y: -10, scale: 1 }}
+              exit={{ opacity: 0, y: 0, scale: 0.95 }}
+              transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+              style={{ zIndex: 9999 }}
+              className="absolute left-0 bottom-full mb-2 w-full min-w-[160px] 
+                bg-gray-900 border border-gray-700/80 
+                rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden py-1"
+            >
+              <div className="px-3 py-1.5 border-b border-gray-800/80 flex items-center gap-2">
+                <Code2 className="w-3.5 h-3.5 text-indigo-400" />
+                <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Select Language</span>
+              </div>
+              {languages.map((lang) => (
+                <button
+                  key={lang.id}
+                  onClick={() => handleSelect(lang.id)}
+                  className={`
+                    w-full flex items-center justify-between px-3 py-2.5 text-xs transition-all duration-150
+                    ${language === lang.id
+                      ? 'bg-indigo-500/10 text-indigo-400 font-bold'
+                      : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'}
+                  `}
+                >
+                  <div className="flex items-center gap-2">
+                    <div className={`w-2 h-2 rounded-full ${language === lang.id ? 'bg-indigo-400 shadow-[0_0_8px_rgba(129,140,248,0.5)]' : 'bg-transparent'}`} />
+                    {lang.label}
+                  </div>
+                  {language === lang.id && <Check className="w-4 h-4" />}
+                </button>
+              ))}
+              {!setLanguage && languages.length === 1 && (
+                <div className="px-3 py-2.5 mt-1 border-t border-gray-800/80 bg-black/20">
+                  <p className="text-[9px] text-gray-500 leading-tight">
+                    JavaScript is available in <br />
+                    <span className="text-indigo-400/80 font-bold">Experiment Mode</span> only.
+                  </p>
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

@@ -1,49 +1,101 @@
 "use client";
 
-import React, { memo } from 'react';
+import React, { useState, useRef, useEffect, memo } from 'react';
 import LanguageSelector from './LanguageSelector';
+import { ChevronDown, Check, Type } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface SettingsProps {
     fontSize: number;
     setFontSize: (size: number) => void;
+    language?: string;
+    setLanguage?: (lang: string) => void;
 }
 
-const Settings = memo(({ fontSize, setFontSize }: SettingsProps) => {
+const Settings = memo(({ fontSize, setFontSize, language, setLanguage }: SettingsProps) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    const fontSizes = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const handleSelect = (size: number) => {
+        setFontSize(size);
+        setIsOpen(false);
+    };
+
     return (
         <div className="flex items-center gap-3">
-            <LanguageSelector />
+            <LanguageSelector language={language} setLanguage={setLanguage} />
             <div className="h-4 w-px bg-gray-700/50" />
-            <div className="flex items-center gap-2">
+
+            <div className="flex items-center gap-2" ref={containerRef}>
                 <div className="relative">
-                    <select
-                        id="font-size"
-                        value={fontSize}
-                        onChange={(e) =>
-                            setFontSize(parseInt(e.target.value, 10))
-                        }
-                        className="appearance-none w-16 md:w-20 bg-gray-800/50 border border-gray-700 hover:border-gray-600 pl-2 pr-6 py-1 rounded-md text-[10px] md:text-xs focus:outline-none focus:ring-1 focus:ring-indigo-500/50 text-gray-300 transition-colors cursor-pointer"
+                    <motion.button
+                        whileHover={{ scale: 1.01, backgroundColor: 'rgba(55, 65, 81, 0.7)' }}
+                        whileTap={{ scale: 0.98 }}
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-gray-800/40 backdrop-blur-md border border-gray-700/50 transition-all duration-200 min-w-[80px] md:min-w-[90px] hover:border-indigo-500/50 cursor-pointer shadow-lg shadow-black/5"
                     >
-                        {[
-                            12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24,
-                        ].map((size) => (
-                            <option
-                                key={size}
-                                value={size}
-                                className="bg-gray-900"
-                            >
-                                {size}px
-                            </option>
-                        ))}
-                    </select>
-                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-1.5 text-gray-500">
-                        <svg
-                            className="fill-current h-3 w-3"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
+                        <span className="text-[11px] md:text-xs font-semibold text-gray-200 tracking-tight">
+                            {fontSize}px
+                        </span>
+                        <motion.div
+                            animate={{ rotate: isOpen ? 180 : 0 }}
+                            transition={{ duration: 0.2 }}
                         >
-                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                        </svg>
-                    </div>
+                            <ChevronDown className="w-3.5 h-3.5 text-gray-500" />
+                        </motion.div>
+                    </motion.button>
+
+                    <AnimatePresence>
+                        {isOpen && (
+                            <motion.div
+                                initial={{ opacity: 0, y: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, y: -10, scale: 1 }}
+                                exit={{ opacity: 0, y: 0, scale: 0.95 }}
+                                transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+                                style={{ zIndex: 9999 }}
+                                className="absolute right-0 bottom-full mb-2 w-full min-w-[120px] 
+                                    bg-gray-900 border border-gray-700/80 
+                                    rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden"
+                            >
+                                <div className="px-3 py-1.5 border-b border-gray-800/80 flex items-center gap-2">
+                                    <Type className="w-3.5 h-3.5 text-indigo-400" />
+                                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Font Size</span>
+                                </div>
+                                <div className="max-h-[220px] overflow-y-auto custom-scrollbar py-1">
+                                    {fontSizes.map((size) => (
+                                        <button
+                                            key={size}
+                                            onClick={() => handleSelect(size)}
+                                            className={`
+                                                w-full flex items-center justify-between px-3 py-2 text-xs transition-all duration-150
+                                                ${fontSize === size
+                                                    ? 'bg-indigo-500/10 text-indigo-400 font-bold'
+                                                    : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'}
+                                            `}
+                                        >
+                                            <div className="flex items-center gap-2">
+                                                <div className={`w-1.5 h-1.5 rounded-full ${fontSize === size ? 'bg-indigo-400' : 'bg-transparent'}`} />
+                                                {size}px
+                                            </div>
+                                            {fontSize === size && <Check className="w-3.5 h-3.5 text-indigo-400" />}
+                                        </button>
+                                    ))}
+                                </div>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
             </div>
         </div>

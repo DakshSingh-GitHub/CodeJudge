@@ -13,6 +13,8 @@ interface CodeEditorProps {
     setCode: (code: string) => void;
     isDisabled?: boolean;
     isDark?: boolean;
+    language?: string;
+    setLanguage?: (lang: string) => void;
 }
 
 const CodeEditor = memo(function CodeEditor({
@@ -20,6 +22,8 @@ const CodeEditor = memo(function CodeEditor({
     setCode,
     isDisabled = false,
     isDark = false,
+    language = "python",
+    setLanguage,
 }: CodeEditorProps) {
     const [showMinimap, setShowMinimap] = useState(false);
     const rootRef = useRef<HTMLDivElement>(null);
@@ -85,6 +89,14 @@ const CodeEditor = memo(function CodeEditor({
                 return { suggestions: suggestions };
             },
         });
+
+        // Register for javascript as well if needed
+        monaco.languages.registerCompletionItemProvider("javascript", {
+            provideCompletionItems: function (model: any, position: any) {
+                // Just keep it simple for JS
+                return { suggestions: [] };
+            }
+        });
     }
 
     // No need for separate useEffect for theme definition
@@ -100,7 +112,7 @@ const CodeEditor = memo(function CodeEditor({
     return (
         <div
             ref={rootRef}
-            className={`h-full w-full rounded-xl overflow-hidden relative flex flex-col bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200/50 dark:border-gray-800/50 shadow-inner ${isDisabled ? "opacity-60 grayscale" : ""}`}
+            className={`h-full w-full rounded-xl overflow-hidden relative flex flex-col bg-white dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/50 shadow-inner ${isDisabled ? "opacity-60 grayscale" : ""}`}
         >
             {isDisabled && (
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-gray-900 bg-opacity-50 cursor-not-allowed">
@@ -112,7 +124,8 @@ const CodeEditor = memo(function CodeEditor({
             <div className="grow h-0">
                 <Editor
                     height="100%"
-                    defaultLanguage="python"
+                    defaultLanguage={language}
+                    language={language}
                     theme={isDark ? "deep-space" : "vs"}
                     value={code}
                     beforeMount={handleEditorWillMount}
@@ -149,7 +162,7 @@ const CodeEditor = memo(function CodeEditor({
                 />
             </div>
             {!isDisabled && (
-                <Toolbar code={code} fontSize={editorFontSize} setFontSize={setEditorFontSize} />
+                <Toolbar code={code} fontSize={editorFontSize} setFontSize={setEditorFontSize} language={language} setLanguage={setLanguage} />
             )}
         </div>
     );

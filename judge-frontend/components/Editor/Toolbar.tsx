@@ -10,9 +10,11 @@ interface ToolbarProps {
     code: string;
     fontSize: number;
     setFontSize: (size: number) => void;
+    language?: string;
+    setLanguage?: (lang: string) => void;
 }
 
-const Toolbar = memo(({ code, fontSize, setFontSize }: ToolbarProps) => {
+const Toolbar = memo(({ code, fontSize, setFontSize, language, setLanguage }: ToolbarProps) => {
     const router = useRouter();
 
     const handleTryInCodeIDE = () => {
@@ -36,7 +38,7 @@ const Toolbar = memo(({ code, fontSize, setFontSize }: ToolbarProps) => {
             </div>
 
             <div className="flex items-center gap-3 md:gap-5">
-                <Settings fontSize={fontSize} setFontSize={setFontSize} />
+                <Settings fontSize={fontSize} setFontSize={setFontSize} language={language} setLanguage={setLanguage} />
             </div>
         </div>
     );

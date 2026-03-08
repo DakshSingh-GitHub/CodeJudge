@@ -2,11 +2,43 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { anime } from "../lib/anime";
-import { getProblemById, submitCode } from "../lib/api";
+import { getProblemById, submitCode, runCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
 import { Problem } from "../lib/types";
 import { useAppContext } from "../lib/context";
-import { FileText, Code, History, Check, X, PanelTop, List } from "lucide-react";
+import { FileText, Code, History, Check, X, PanelTop, List, Info } from "lucide-react";
+
+// Client-side JS execution for experiment
+async function executeJSLocally(code: string, input: string): Promise<any> {
+    const start = performance.now();
+    let stdout = "";
+    let stderr = "";
+
+    // Simple input mock
+    const lines = input.split('\n');
+    let lineIdx = 0;
+    const mockInput = () => lines[lineIdx++] || "";
+
+    const originalLog = console.log;
+    const originalError = console.error;
+
+    console.log = (...args) => { stdout += args.join(' ') + '\n'; };
+    console.error = (...args) => { stderr += args.join(' ') + '\n'; };
+
+    try {
+        // Create an isolated context for execution
+        const fn = new Function('input', 'prompt', code);
+        fn(mockInput, mockInput);
+        const duration = (performance.now() - start) / 1000;
+        return { stdout, stderr, status: "Success", duration };
+    } catch (e: any) {
+        const duration = (performance.now() - start) / 1000;
+        return { stdout, stderr: e.message, status: "Runtime Error", duration };
+    } finally {
+        console.log = originalLog;
+        console.error = originalError;
+    }
+}
 import { layoutOptions, UiGridLayout } from "./layoutOptions";
 
 import ClassicLayout from "./layouts/ClassicLayout";
@@ -37,6 +69,7 @@ export default function Home() {
     const [problem, setProblem] = useState<Problem | null>(null);
     const [selectedProblemId, setSelectedProblemId] = useState<string>("");
     const [code, setCode] = useState(DEFAULT_CODE);
+    const [language, setLanguage] = useState("python");
     const containerRef = useRef<HTMLDivElement>(null);
     const mainContentRef = useRef<HTMLDivElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -176,9 +209,9 @@ export default function Home() {
     // Save code changes
     useEffect(() => {
         if (selectedProblemId) {
-            sessionStorage.setItem(`draft_code_${selectedProblemId}`, code);
+            sessionStorage.setItem(`draft_code_${selectedProblemId}_${language}`, code);
         }
-    }, [code, selectedProblemId]);
+    }, [code, selectedProblemId, language]);
 
     const handleSelect = useCallback(async (id: string) => {
         setSelectedProblemId(id);
@@ -197,8 +230,10 @@ export default function Home() {
             return;
         }
 
-        const savedCode = sessionStorage.getItem(`draft_code_${id}`);
-        setCode(savedCode || DEFAULT_CODE);
+        const savedLanguage = sessionStorage.getItem(`draft_language_${id}`) || "python";
+        setLanguage(savedLanguage);
+        const savedCode = sessionStorage.getItem(`draft_code_${id}_${savedLanguage}`);
+        setCode(savedCode || (savedLanguage === "javascript" ? "// Write your javascript code here" : DEFAULT_CODE));
         setResult(null);
 
         try {
@@ -226,19 +261,53 @@ export default function Home() {
         setResult(null);
 
         try {
-            const data: SubmissionResult = await submitCode(selectedProblemId, code, true);
+            let data: SubmissionResult;
 
-            const sampleCount = problem.sample_test_cases?.length || 0;
-            if (data.test_case_results && data.test_case_results.length > sampleCount && sampleCount > 0) {
-                const sampleResults = data.test_case_results.slice(0, sampleCount);
-                const passedCount = sampleResults.filter(r => r.status === "Accepted").length;
+            if (language === 'javascript') {
+                // LOCAL EXPERIMENTAL EXECUTION
+                const results = [];
+                let passed = 0;
+                const sampleTcs = problem.sample_test_cases || [];
 
-                data.summary = {
-                    passed: passedCount,
-                    total: sampleCount
+                for (let i = 0; i < sampleTcs.length; i++) {
+                    const tc = sampleTcs[i];
+                    const run = await executeJSLocally(code, tc.input);
+                    const actualOut = run.stdout.trim();
+                    const expectedOut = tc.output.trim();
+                    const status = actualOut === expectedOut ? "Accepted" : "Wrong Answer";
+                    if (status === "Accepted") passed++;
+
+                    results.push({
+                        test_case: i + 1,
+                        status,
+                        actual_output: actualOut,
+                        expected_output: expectedOut,
+                        duration: run.duration,
+                        error: run.stderr
+                    });
+                }
+
+                data = {
+                    final_status: passed === sampleTcs.length ? "Accepted" : "Failed",
+                    summary: { passed, total: sampleTcs.length },
+                    test_case_results: results,
+                    total_duration: results.reduce((acc, r) => acc + (r.duration || 0), 0)
                 };
-                data.test_case_results = sampleResults;
-                data.final_status = passedCount === sampleCount ? "Accepted" : "Failed";
+            } else {
+                data = await submitCode(selectedProblemId, code, true);
+
+                const sampleCount = problem.sample_test_cases?.length || 0;
+                if (data.test_case_results && data.test_case_results.length > sampleCount && sampleCount > 0) {
+                    const sampleResults = data.test_case_results.slice(0, sampleCount);
+                    const passedCount = sampleResults.filter(r => r.status === "Accepted").length;
+
+                    data.summary = {
+                        passed: passedCount,
+                        total: sampleCount
+                    };
+                    data.test_case_results = sampleResults;
+                    data.final_status = passedCount === sampleCount ? "Accepted" : "Failed";
+                }
             }
 
             setResult(data);
@@ -252,7 +321,23 @@ export default function Home() {
         } finally {
             setIsSubmitting(false);
         }
-    }, [code, problem, selectedProblemId]);
+    }, [code, problem, selectedProblemId, language]);
+
+    const handleRunLocal = useCallback(async (codeStr: string, inputVal: string) => {
+        setIsSubmitting(true);
+        setResult(null);
+        try {
+            const run = await executeJSLocally(codeStr, inputVal);
+            setResult({
+                stdout: run.stdout,
+                stderr: run.stderr,
+                status: run.status,
+                duration: run.duration
+            } as any);
+        } finally {
+            setIsSubmitting(false);
+        }
+    }, []);
 
     const handleSubmit = useCallback(async () => {
         if (!selectedProblemId || !problem) return;
@@ -261,7 +346,40 @@ export default function Home() {
         setResult(null);
 
         try {
-            const data: SubmissionResult = await submitCode(selectedProblemId, code);
+            let data: SubmissionResult;
+
+            if (language === 'javascript') {
+                // LOCAL EXPERIMENTAL EXECUTION (Submitting hidden cases client-side too for this experiment)
+                const results = [];
+                let passed = 0;
+                const allTcs = [...(problem.sample_test_cases || []), ...(problem.hidden_test_cases || [])];
+
+                for (let i = 0; i < allTcs.length; i++) {
+                    const tc = allTcs[i];
+                    const run = await executeJSLocally(code, tc.input);
+                    const actualOut = run.stdout.trim();
+                    const expectedOut = tc.output.trim();
+                    const status = actualOut === expectedOut ? "Accepted" : "Wrong Answer";
+                    if (status === "Accepted") passed++;
+
+                    results.push({
+                        test_case: i + 1,
+                        status,
+                        duration: run.duration,
+                        error: run.stderr
+                    });
+                }
+
+                data = {
+                    final_status: passed === allTcs.length ? "Accepted" : "Failed",
+                    summary: { passed, total: allTcs.length },
+                    test_case_results: results,
+                    total_duration: results.reduce((acc, r) => acc + (r.duration || 0), 0)
+                };
+            } else {
+                data = await submitCode(selectedProblemId, code);
+            }
+
             setResult(data);
 
             const newSubmission = await saveSubmission({
@@ -431,12 +549,31 @@ export default function Home() {
         ? Math.max(0, Math.min(100, (passedCount / totalCount) * 100))
         : 0;
 
+    const handleLanguageChange = (newLang: string) => {
+        setLanguage(newLang);
+        if (selectedProblemId) {
+            sessionStorage.setItem(`draft_language_${selectedProblemId}`, newLang);
+            const savedCode = sessionStorage.getItem(`draft_code_${selectedProblemId}_${newLang}`);
+            setCode(savedCode || (newLang === "javascript" ? "// Write your javascript code here" : DEFAULT_CODE));
+        } else {
+            setCode(newLang === "javascript" ? "// Write your javascript code here" : DEFAULT_CODE);
+        }
+    };
+
     const problemDescriptionPanel = (
         <div className={`h-full min-h-0 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl rounded-2xl overflow-hidden flex flex-col border border-white/20 dark:border-gray-800/50 ${isMobile && mobileTab !== "description" ? "hidden" : "flex"}`}>
             <div className="flex items-center justify-between border-b border-gray-200 dark:border-gray-700 px-6 py-4">
-                <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-50">
-                    Problem
-                </h2>
+                <div className="flex items-center gap-2">
+                    <h2 className="text-base md:text-lg font-semibold text-gray-900 dark:text-gray-50">
+                        Problem
+                    </h2>
+                    {language === 'javascript' && (
+                        <div className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-[10px] font-black text-amber-500 uppercase tracking-tighter shadow-sm animate-pulse">
+                            <Info className="w-2.5 h-2.5" />
+                            Client-Side Execution (Experimental)
+                        </div>
+                    )}
+                </div>
             </div>
             <div className="flex-1 overflow-y-auto p-6 pb-28 flex flex-col">
                 <div className="mt-8 flex-1 flex flex-col">
@@ -502,38 +639,56 @@ export default function Home() {
                                 !selectedProblemId || isSubmitting
                             }
                             isDark={isDark}
+                            language={language}
+                            setLanguage={handleLanguageChange}
                         />
                     </div>
-                    <div className="flex-none h-40 md:h-32 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
-                        <div className="flex flex-row md:flex-col w-full md:w-1/4 gap-2">
-                            <button
-                                onClick={handleSubmit}
-                                disabled={
-                                    isSubmitting || !selectedProblemId
-                                }
-                                className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
-                                                ${isSubmitting
-                                        ? "bg-gray-500 cursor-not-allowed"
-                                        : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
+                    <div className="flex-none h-48 md:h-32 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
+                        <div className="flex flex-col w-full md:w-1/4 gap-2">
+                            <div className="flex w-full bg-gray-100 dark:bg-gray-800/80 p-1 rounded-xl shadow-inner shrink-0">
+                                <button
+                                    onClick={() => handleLanguageChange("python")}
+                                    className={`flex-1 text-xs font-bold py-1.5 rounded-lg transition-all duration-200 ${language === 'python' ? 'bg-white dark:bg-gray-700 shadow-md text-indigo-600 dark:text-indigo-400' : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+                                >
+                                    Python
+                                </button>
+                                <button
+                                    onClick={() => handleLanguageChange("javascript")}
+                                    className={`flex-1 text-xs font-bold py-1.5 rounded-lg transition-all duration-200 ${language === 'javascript' ? 'bg-white dark:bg-gray-700 shadow-md text-yellow-600 dark:text-yellow-400' : 'text-gray-500 hover:text-gray-700 dark:hover:text-gray-300'}`}
+                                >
+                                    Node.js
+                                </button>
+                            </div>
+                            <div className="flex flex-row md:flex-col w-full gap-2 flex-1">
+                                <button
+                                    onClick={handleSubmit}
+                                    disabled={
+                                        isSubmitting || !selectedProblemId
                                     }
-                                                text-white`}
-                            >
-                                {isSubmitting ? "Judging..." : "Submit"}
-                            </button>
-                            <button
-                                onClick={handleTest}
-                                disabled={
-                                    isSubmitting || !selectedProblemId
-                                }
-                                className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
+                                    className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
                                                 ${isSubmitting
-                                        ? "bg-gray-500 cursor-not-allowed"
-                                        : "bg-emerald-600 hover:bg-emerald-700 active:scale-95"
-                                    }
+                                            ? "bg-gray-500 cursor-not-allowed"
+                                            : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
+                                        }
                                                 text-white`}
-                            >
-                                {isSubmitting ? "Testing..." : "Test"}
-                            </button>
+                                >
+                                    {isSubmitting ? "Judging..." : "Submit"}
+                                </button>
+                                <button
+                                    onClick={handleTest}
+                                    disabled={
+                                        isSubmitting || !selectedProblemId
+                                    }
+                                    className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
+                                                ${isSubmitting
+                                            ? "bg-gray-500 cursor-not-allowed"
+                                            : "bg-emerald-600 hover:bg-emerald-700 active:scale-95"
+                                        }
+                                                text-white`}
+                                >
+                                    {isSubmitting ? "Testing..." : "Test"}
+                                </button>
+                            </div>
                         </div>
                         <div className="w-full md:w-3/4 h-full">
                             <div className="p-3 rounded-xl bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 h-full overflow-y-auto border border-gray-200 dark:border-gray-700 shadow-2xl custom-scrollbar transition-all duration-300">
@@ -653,6 +808,68 @@ export default function Home() {
         problemDescription: problemDescriptionPanel,
         editorPanel: editorAndSubmissionsPanel
     };
+
+    // if (!isAuthenticated) {
+    //     return (
+    //         <div className="flex-1 flex items-center justify-center bg-gray-50 dark:bg-gray-950 p-6">
+    //             <motion.div
+    //                 initial={{ opacity: 0, scale: 0.9 }}
+    //                 animate={{ opacity: 1, scale: 1 }}
+    //                 className="w-full max-w-md p-8 rounded-[2.5rem] bg-white dark:bg-gray-900 shadow-2xl border border-gray-100 dark:border-gray-800"
+    //             >
+    //                 <div className="text-center mb-10">
+    //                     <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-lg shadow-indigo-600/20">
+    //                         <Lock className="w-8 h-8 text-white" />
+    //                     </div>
+    //                     <h1 className="text-2xl md:text-3xl font-black mb-2">Admin Panel</h1>
+    //                     <p className="text-sm md:text-base text-gray-500 dark:text-gray-400 font-medium">Authentication required</p>
+    //                 </div>
+
+    //                 <form onSubmit={handleLogin} className="space-y-6">
+    //                     <div className="space-y-2">
+    //                         <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-4">Username</label>
+    //                         <div className="relative">
+    //                             <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+    //                             <input
+    //                                 type="text"
+    //                                 value={username}
+    //                                 onChange={(e) => setUsername(e.target.value)}
+    //                                 className="w-full pl-14 pr-6 py-4 bg-gray-50 dark:bg-gray-950 rounded-2xl border border-transparent focus:border-indigo-500 focus:bg-white dark:focus:bg-gray-900 transition-all outline-none font-medium"
+    //                                 placeholder="Admin username"
+    //                             />
+    //                         </div>
+    //                     </div>
+
+    //                     <div className="space-y-2">
+    //                         <label className="text-xs font-black uppercase tracking-widest text-gray-400 ml-4">Password</label>
+    //                         <div className="relative">
+    //                             <Key className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+    //                             <input
+    //                                 type="password"
+    //                                 value={password}
+    //                                 onChange={(e) => setPassword(e.target.value)}
+    //                                 className="w-full pl-14 pr-6 py-4 bg-gray-50 dark:bg-gray-950 rounded-2xl border border-transparent focus:border-indigo-500 focus:bg-white dark:focus:bg-gray-900 transition-all outline-none font-medium"
+    //                                 placeholder="••••••••"
+    //                             />
+    //                         </div>
+    //                     </div>
+
+    //                     {error && (
+    //                         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-red-500 text-sm font-bold text-center">{error}</motion.p>
+    //                     )}
+
+    //                     <button
+    //                         type="submit"
+    //                         className="w-full py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 transition-all active:scale-95 flex items-center justify-center gap-2"
+    //                     >
+    //                         <UserCheck className="w-5 h-5" />
+    //                         Access Dashboard
+    //                     </button>
+    //                 </form>
+    //             </motion.div>
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className={`flex-1 flex flex-col min-h-0 bg-[#FAFAFA] dark:bg-[#0B0C15] text-gray-900 dark:text-gray-50 relative overflow-hidden font-sans selection:bg-indigo-500/30`}>

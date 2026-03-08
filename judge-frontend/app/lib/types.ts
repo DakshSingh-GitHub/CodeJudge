@@ -1,4 +1,5 @@
 export interface Problem {
+    [x: string]: never[];
     id: string;
     title: string;
     description: string;

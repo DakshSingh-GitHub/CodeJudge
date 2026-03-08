@@ -15,13 +15,16 @@ def run_single_test_case_sequential(index, tc, code_str, time_limit):
     user_input = tc.get("input", "")
     expected_output = tc.get("output", "")
 
-    with tempfile.NamedTemporaryFile(suffix=".py", delete=False, mode="w") as temp:
+    suffix = ".py"
+    with tempfile.NamedTemporaryFile(suffix=suffix, delete=False, mode="w") as temp:
         temp.write(code_str)
         filename = temp.name
 
+    cmd = ["python", filename]
+
     try:
         result = subprocess.run(
-            ["python", filename],
+            cmd,
             input=user_input,
             capture_output=True,
             text=True,
@@ -72,6 +75,7 @@ def run_single_test_case_sequential(index, tc, code_str, time_limit):
 def run_code_once(code: str, user_input: str, time_limit: int = TIME_LIMIT):
     """Executes code once in isolation and returns stdout, stderr, status, and duration."""
     import tempfile
+    
     # Static analysis security check
     is_valid, warning = validate_code(code)
     if not is_valid:
@@ -111,15 +115,18 @@ builtins.input = custom_input
 # User code follows
 {code}
 """
+    suffix = ".py"
+    cmd = ["python"]
 
-    with tempfile.NamedTemporaryFile(suffix=".py", delete=False, mode="w", encoding="utf-8") as temp:
+    with tempfile.NamedTemporaryFile(suffix=suffix, delete=False, mode="w", encoding="utf-8") as temp:
         temp.write(harness)
         filename = temp.name
 
     start_t = time.time()
     try:
+        cmd.append(filename)
         result = subprocess.run(
-            ["python", filename],
+            cmd,
             input=user_input,
             capture_output=True,
             text=True,
@@ -175,8 +182,9 @@ class JudgeWorker:
         self.start_worker()
 
     def start_worker(self):
+        cmd = ["python", self.worker_script_path]
         self.process = subprocess.Popen(
-            ["python", self.worker_script_path],
+            cmd,
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
@@ -418,7 +426,8 @@ def run_code_multiple(code, test_cases, mode="ALL"):
     # Cap at 8 to avoid memory explosion if many heavy workers
     num_workers = min(num_workers, 8)
     
-    worker_script = os.path.join(os.path.dirname(__file__), "runner_worker.py")
+    worker_script_name = "runner_worker.py"
+    worker_script = os.path.join(os.path.dirname(__file__), worker_script_name)
     
     # Initialize workers
     workers = []  # noqa: F841
