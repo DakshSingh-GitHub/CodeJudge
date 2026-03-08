@@ -1,661 +1,433 @@
 {
     "id": "longest_palindromic_substring",
     "title": "Longest Palindromic Substring",
-    "description": "Given a string s, return the longest palindromic substring in s. If there are multiple, any one of them is acceptable.",
+    "description": "Given a string s, return the longest palindromic substring in s. If there are multiple, returning any of them is accepted (the grader will check its length and palindromic property).",
     "input_format": "A single string s.",
     "output_format": "The longest palindromic substring.",
     "constraints": {
-        "size": "1 <= s.length <= 1000"
+        "s.length": "1 <= s.length <= 1000"
     },
-    "judge_mode": "FIRST_FAIL",
+    "difficulty": "medium",
+    "judge_mode": "str_compare_strip",
     "time_limit": 1,
     "sample_test_cases": [
         {
             "input": "babad",
             "output": "bab"
+        },
+        {
+            "input": "cbbd",
+            "output": "bb"
         }
     ],
     "hidden_test_cases": [
         {
-            "input": "abcaacba",
-            "output": "abcaacba"
+            "input": "ssagsgudpbgesnaldlexyktjnn",
+            "output": "ldl"
         },
         {
-            "input": "aacbcbcc",
-            "output": "cbcbc"
-        },
-        {
-            "input": "cacbbbac",
-            "output": "cac"
-        },
-        {
-            "input": "bbcbccb",
-            "output": "bccb"
-        },
-        {
-            "input": "baabbccba",
-            "output": "baab"
-        },
-        {
-            "input": "babbc",
-            "output": "bab"
-        },
-        {
-            "input": "abcbba",
-            "output": "bcb"
-        },
-        {
-            "input": "bbbbbbc",
-            "output": "bbbbbb"
-        },
-        {
-            "input": "aaaabccac",
-            "output": "aaaa"
-        },
-        {
-            "input": "cccbccb",
-            "output": "ccbcc"
-        },
-        {
-            "input": "bcaccccb",
-            "output": "cccc"
-        },
-        {
-            "input": "bca",
+            "input": "nuksvmcqwghergb",
             "output": "b"
         },
         {
-            "input": "cacc",
-            "output": "cac"
+            "input": "fsyysffkixbxfyfygrqxu",
+            "output": "fsyysf"
         },
         {
-            "input": "baccc",
-            "output": "ccc"
+            "input": "pwtpyllyptwpsizrsohewtxdljzsrrevdkobxnfsalusnvixenyzzrvnmc",
+            "output": "pwtpyllyptwp"
         },
         {
-            "input": "ccbb",
-            "output": "cc"
+            "input": "wcwsqinloralngdcoeoxwqqrltoqhdrybiwmhqa",
+            "output": "oeo"
         },
         {
-            "input": "caaccaab",
-            "output": "aaccaa"
+            "input": "qhaebedfyoqhecgrlmbnsje",
+            "output": "ebe"
         },
         {
-            "input": "abbcccccba",
-            "output": "bcccccb"
+            "input": "rpduxxezwyfhbvbz",
+            "output": "bvb"
         },
         {
-            "input": "cacb",
-            "output": "cac"
+            "input": "xeiprdozzodrpiexhgqaordkslojcbhahrrgqsebfngtywzbvayjwjrzxtzgpsyzho",
+            "output": "xeiprdozzodrpiex"
         },
         {
-            "input": "abbabca",
-            "output": "abba"
+            "input": "mgphaahpgmgnmskzzzkfhslxuvddmjffft",
+            "output": "mgphaahpgm"
         },
         {
-            "input": "caa",
+            "input": "asoikgpdytzgqbcymkprquttvyffbzwizlraapgzt",
             "output": "aa"
         },
         {
-            "input": "abbabc",
-            "output": "abba"
+            "input": "scvczjjzcvcshhqjafanlmc",
+            "output": "scvczjjzcvcs"
         },
         {
-            "input": "baa",
+            "input": "gvdbuzqabiibaqzubdvgymewlpwplikapjrqhkyclotf",
+            "output": "gvdbuzqabiibaqzubdvg"
+        },
+        {
+            "input": "ivszpmlxxlmpzsvignskruiggoyparqtzedndjxrgulkcom",
+            "output": "ivszpmlxxlmpzsvi"
+        },
+        {
+            "input": "mvplfdkwwkdflpvmxpanztlnyqduh",
+            "output": "mvplfdkwwkdflpvm"
+        },
+        {
+            "input": "qvedpaszhcchzsapdevqzrcopbhjuxzzustzqbhsmjq",
+            "output": "qvedpaszhcchzsapdevq"
+        },
+        {
+            "input": "hfnkijaynavumdbhhdcohwbrmwtfwllmxzxvvwjdbzqzvwrq",
+            "output": "zqz"
+        },
+        {
+            "input": "hsssshttcdhalokwsoofjcvfxogtqjix",
+            "output": "hssssh"
+        },
+        {
+            "input": "tnaxeoadlldaoexantpyenxaaudrqjsnqaztkuhklykcomtsvnouse",
+            "output": "tnaxeoadlldaoexant"
+        },
+        {
+            "input": "qjiouabdnllndbauoijqfptijnbylx",
+            "output": "qjiouabdnllndbauoijq"
+        },
+        {
+            "input": "aixidcqfdseqrzvagwdnvmtkmfoqujohk",
+            "output": "ixi"
+        },
+        {
+            "input": "xyhioflgooglfoihyxxgulynxofsuxbtectilguvkbfukirbywd",
+            "output": "xyhioflgooglfoihyx"
+        },
+        {
+            "input": "uhhljjlhhuqxhppndivxmxdcutvbqijlscgzyvxcwdmfq",
+            "output": "uhhljjlhhu"
+        },
+        {
+            "input": "hhubufebmhkexduqdnzdfvppoimpvrtcbrbpux",
+            "output": "brb"
+        },
+        {
+            "input": "uclwlpqbwkkwbqplwlcuidbxqycytybkmmoaievamqd",
+            "output": "uclwlpqbwkkwbqplwlcu"
+        },
+        {
+            "input": "osjfbjscyzizzxiuvuzjhahtszrhfvdarapzfcl",
+            "output": "ara"
+        },
+        {
+            "input": "xatkybcrtqvwbvceijvydgztbtjabpqunbpeajtaxefrnjikm",
+            "output": "tbt"
+        },
+        {
+            "input": "omfdlefblcpqzkoaapqtumrnhjesqvkhbij",
             "output": "aa"
         },
         {
-            "input": "bbbc",
-            "output": "bbb"
+            "input": "patcokqqkoctapxrfytovggflfrqgfofgxi",
+            "output": "patcokqqkoctap"
         },
         {
-            "input": "cbcaabaa",
-            "output": "aabaa"
+            "input": "fhlvtyvjtnntjvytvlhfculyfmvzrwheuretqjzjmqqj",
+            "output": "fhlvtyvjtnntjvytvlhf"
         },
         {
-            "input": "bbbaab",
-            "output": "baab"
+            "input": "alfhgvqxljjlxqvghflagvckvikleztqjjfclxikdehmqkysbcygjvtxghjihlujksern",
+            "output": "alfhgvqxljjlxqvghfla"
         },
         {
-            "input": "cbbcbc",
-            "output": "cbbc"
+            "input": "vcrfehqudwezkhkopvdpzhajlcfz",
+            "output": "khk"
         },
         {
-            "input": "bbbcccab",
-            "output": "bbb"
+            "input": "rcyzigrajnvjytiqxpsnrqyiwzuyeslgquhdryafdpyaqxxke",
+            "output": "xx"
         },
         {
-            "input": "cbc",
-            "output": "cbc"
+            "input": "lxizlnsfovcboepjwzciwoqbhgwecobq",
+            "output": "q"
         },
         {
-            "input": "acacbca",
-            "output": "acbca"
+            "input": "joccojswofljufmadtjpdkxfnvaihidcxhnbdbabwialwmtqvanrynu",
+            "output": "joccoj"
         },
         {
-            "input": "bcabccaaa",
-            "output": "aaa"
+            "input": "tlzdkjechjcbhjgcuqkplajeznyjhd",
+            "output": "d"
         },
         {
-            "input": "bbccaaacca",
-            "output": "ccaaacc"
+            "input": "dqwacejterretjecawqdajbwlrtjazmsqxrbgpbwdzphtemndeumudcaoqrfrpsw",
+            "output": "dqwacejterretjecawqd"
         },
         {
-            "input": "bacbcb",
-            "output": "cbc"
+            "input": "ffkwvrsaxhsrvvxtouiyjglexzdudimihylmkyqfxzqze",
+            "output": "zqz"
         },
         {
-            "input": "aaaaba",
-            "output": "aaaa"
+            "input": "lpixuyyuxiplvsoshqdswcwerjsjgdpcrrohpvdwp",
+            "output": "lpixuyyuxipl"
         },
         {
-            "input": "caaaacba",
-            "output": "caaaac"
+            "input": "gbmiutisasrycndpvxfvsaufwpxt",
+            "output": "sas"
         },
         {
-            "input": "caacccccb",
-            "output": "ccccc"
+            "input": "cvggvcvrwbxewgaufximosvgymeznurgiyyvinhjaf",
+            "output": "cvggvc"
         },
         {
-            "input": "cabcbcab",
-            "output": "bcb"
+            "input": "hiojovvojoihczszjvezxyhagbzchuac",
+            "output": "hiojovvojoih"
         },
         {
-            "input": "acabccacc",
-            "output": "ccacc"
+            "input": "yzchbzkkzbhczybqldktpgadguhumoqehqzxhlqccfueprngjqjebn",
+            "output": "yzchbzkkzbhczy"
         },
         {
-            "input": "baacabb",
-            "output": "aca"
+            "input": "wbllbwlmadfhztmlzmslhmyoim",
+            "output": "wbllbw"
         },
         {
-            "input": "abcb",
-            "output": "bcb"
+            "input": "mfnbcfbppbfcbnfmzoarzsavqpubfaaltidsqftmouqgsuijjws",
+            "output": "mfnbcfbppbfcbnfm"
         },
         {
-            "input": "baabaccabc",
-            "output": "baccab"
+            "input": "zxxdmowpgijhdneoftyy",
+            "output": "yy"
         },
         {
-            "input": "bccc",
-            "output": "ccc"
+            "input": "inhuoyzvccvzyouhnijrtarvheucfknmfelnbkbjlilvxantzameeqdco",
+            "output": "inhuoyzvccvzyouhni"
         },
         {
-            "input": "bcaabaccc",
-            "output": "aba"
-        },
-        {
-            "input": "acbab",
-            "output": "bab"
-        },
-        {
-            "input": "baba",
-            "output": "bab"
-        },
-        {
-            "input": "caccbaaa",
-            "output": "cac"
-        },
-        {
-            "input": "baaaa",
-            "output": "aaaa"
-        },
-        {
-            "input": "abcbbb",
-            "output": "bcb"
-        },
-        {
-            "input": "cabbbcacb",
-            "output": "bcacb"
-        },
-        {
-            "input": "bbac",
-            "output": "bb"
-        },
-        {
-            "input": "bcaba",
-            "output": "aba"
-        },
-        {
-            "input": "bcaacbcc",
-            "output": "bcaacb"
-        },
-        {
-            "input": "abacbbaa",
-            "output": "aba"
-        },
-        {
-            "input": "acaccc",
-            "output": "aca"
-        },
-        {
-            "input": "baaccab",
-            "output": "acca"
-        },
-        {
-            "input": "ccccab",
-            "output": "cccc"
-        },
-        {
-            "input": "acccbbb",
-            "output": "ccc"
-        },
-        {
-            "input": "bacaacbb",
-            "output": "caac"
-        },
-        {
-            "input": "abcaaabaca",
-            "output": "aaa"
-        },
-        {
-            "input": "baacc",
-            "output": "aa"
-        },
-        {
-            "input": "acccbc",
-            "output": "ccc"
-        },
-        {
-            "input": "cbcbaaaa",
-            "output": "aaaa"
-        },
-        {
-            "input": "ccb",
+            "input": "bqwrzoowtmdhyqnxoyzvhxmibrfeqroogvmaccmonlfk",
             "output": "cc"
         },
         {
-            "input": "bacbaccb",
-            "output": "cc"
+            "input": "gkicrhobxbkywelfbisgskiegqslxzpblqffcpogpaa",
+            "output": "sgs"
         },
         {
-            "input": "babcccba",
-            "output": "abcccba"
+            "input": "nxzcczxnfkmftaldekineknueraebiaukjpkcjcelcbdhwmwz",
+            "output": "nxzcczxn"
         },
         {
-            "input": "baaabaccc",
-            "output": "baaab"
+            "input": "tmmyvxbjfsgtokiskroefwnhvzkgvlygktlo",
+            "output": "mm"
         },
         {
-            "input": "cccbabbaab",
-            "output": "abba"
+            "input": "htiuuithkvxvjpkvmdazimsybuyom",
+            "output": "htiuuith"
         },
         {
-            "input": "cbcbab",
-            "output": "cbc"
+            "input": "tfaaftffgzdksbmhsjimxajwmvtlkaxwjiccst",
+            "output": "tfaaft"
         },
         {
-            "input": "caababbcba",
-            "output": "aba"
+            "input": "uylpplyuihuffypznmncapblozxrftgfuszzofrcicrqcdwbkwqqhuienb",
+            "output": "uylpplyu"
         },
         {
-            "input": "acba",
+            "input": "oqrsxolloxsrqoyzkwmbzntqbpqdikjqj",
+            "output": "oqrsxolloxsrqo"
+        },
+        {
+            "input": "umazghuuwafqpgtsecmxvuudtop",
+            "output": "uu"
+        },
+        {
+            "input": "mhpgnngphmzcoimqkhpp",
+            "output": "mhpgnngphm"
+        },
+        {
+            "input": "hnlmuieoebwu",
+            "output": "eoe"
+        },
+        {
+            "input": "fvphhpvfxbbjndhmtzbfeofcdkfgfjsjuhzmunxmxwzjtvpczi",
+            "output": "fvphhpvf"
+        },
+        {
+            "input": "hozivutzfqucdvpciiuxndlmjozjrmt",
+            "output": "ii"
+        },
+        {
+            "input": "djuzkwbtdbbdtbwkzujdbjzojvviniabgigpkwligbxrnbuceuwjxbnfg",
+            "output": "djuzkwbtdbbdtbwkzujd"
+        },
+        {
+            "input": "dwnzfcfcijchymitsyxhoyubaeglpiwftjjznyaspq",
+            "output": "cfc"
+        },
+        {
+            "input": "otpzefiifezptosjxrflixqrwptbvfgswmltvdrfoecachoobgrlwcyyk",
+            "output": "otpzefiifezpto"
+        },
+        {
+            "input": "doynhuwzpqnarhevgzbamzg",
+            "output": "g"
+        },
+        {
+            "input": "zfydqpuovoovoupqdyfzpmskhsltlpoftqfs",
+            "output": "zfydqpuovoovoupqdyfz"
+        },
+        {
+            "input": "ymlrjjrlmywbksxsllscttbmjeecbkmytancnxqlnpgqajvhbdfbou",
+            "output": "ymlrjjrlmy"
+        },
+        {
+            "input": "azvvzablyjvkvrcjhtur",
+            "output": "azvvza"
+        },
+        {
+            "input": "dtnyjhpyjhemiuexdzoa",
             "output": "a"
         },
         {
-            "input": "bacb",
-            "output": "b"
+            "input": "mcufronlbkxfrwctfebvmvqgoadobvfsdrhyragiqnmy",
+            "output": "vmv"
         },
         {
-            "input": "ababba",
-            "output": "abba"
+            "input": "brksevgkqwwkv",
+            "output": "ww"
         },
         {
-            "input": "abbcbc",
-            "output": "bcb"
+            "input": "bbktrrtkbbiplmskwdkqxribahqdd",
+            "output": "bbktrrtkbb"
         },
         {
-            "input": "bccabbbb",
-            "output": "bbbb"
+            "input": "lgchomqqmohcgldvhpwgvmwrsffafluxyplggsmppmncymvcratsqxvl",
+            "output": "lgchomqqmohcgl"
         },
         {
-            "input": "bbcbaaacba",
-            "output": "bcb"
+            "input": "cbilgmdfowowyhkleukpgfncljuhtoagnhmxxcysrqtvr",
+            "output": "wow"
         },
         {
-            "input": "baccbc",
-            "output": "cbc"
+            "input": "juzbyviqrffrqivybzujqonkbalnhhxcfzwcbjaciyrskyozmxjkpxfxdsi",
+            "output": "juzbyviqrffrqivybzuj"
         },
         {
-            "input": "bba",
-            "output": "bb"
+            "input": "ehxubrkngyqrfflyiyronfnvtofevuocubybqmdeinbkzf",
+            "output": "byb"
         },
         {
-            "input": "aaccabc",
-            "output": "acca"
+            "input": "kbjhznprrpnzhjbkxgjmfddryygdnhjaqlhqcwaity",
+            "output": "kbjhznprrpnzhjbk"
         },
         {
-            "input": "bcbc",
-            "output": "bcb"
+            "input": "yyflygojqbvmwjchjcvlkmllrojwxmzshxewmuzkbscjtmgpxq",
+            "output": "ll"
         },
         {
-            "input": "aacababab",
-            "output": "ababa"
+            "input": "zcnfepqebbeqpefnczcdvbdrvfmdawmipmehjtmydkvuxispnnompvv",
+            "output": "zcnfepqebbeqpefncz"
         },
         {
-            "input": "baaabb",
-            "output": "baaab"
+            "input": "uounontnbyvmbumhxokhwoeclstzho",
+            "output": "ntn"
         },
         {
-            "input": "bcbb",
-            "output": "bcb"
+            "input": "xlarmppmralxfysahukwetisvkkknongp",
+            "output": "xlarmppmralx"
         },
         {
-            "input": "cbbbab",
-            "output": "bbb"
+            "input": "zgdbzvmacetanhe",
+            "output": "e"
         },
         {
-            "input": "bcc",
-            "output": "cc"
+            "input": "ovxksejajffhxqjlchabicdiofppdsexvpwfznvip",
+            "output": "jaj"
         },
         {
-            "input": "baab",
-            "output": "baab"
+            "input": "jvtozgnsneymn",
+            "output": "nsn"
         },
         {
-            "input": "aabcb",
-            "output": "bcb"
+            "input": "zuevvsuusvveuzqbrgtqrkoaepjstaqbmfwajghzgcmpshqcelifahluwfvayskp",
+            "output": "zuevvsuusvveuz"
         },
         {
-            "input": "aaacabcac",
-            "output": "aaa"
+            "input": "domemmemodvnfijhcvorpqks",
+            "output": "domemmemod"
         },
         {
-            "input": "acbcaacacb",
-            "output": "acbca"
-        },
-        {
-            "input": "abacc",
-            "output": "aba"
-        },
-        {
-            "input": "bbaa",
-            "output": "bb"
-        },
-        {
-            "input": "bbbacbaaca",
-            "output": "bbb"
-        },
-        {
-            "input": "cbbb",
-            "output": "bbb"
-        },
-        {
-            "input": "aabca",
-            "output": "aa"
-        },
-        {
-            "input": "acabbbbbb",
-            "output": "bbbbbb"
-        },
-        {
-            "input": "bcbaa",
-            "output": "bcb"
-        },
-        {
-            "input": "bcabbaa",
-            "output": "abba"
-        },
-        {
-            "input": "ccacaacabc",
-            "output": "acaaca"
-        },
-        {
-            "input": "aaaccbcaca",
-            "output": "aaa"
-        },
-        {
-            "input": "aaaccac",
-            "output": "acca"
-        },
-        {
-            "input": "bbaacccca",
-            "output": "acccca"
-        },
-        {
-            "input": "ababbbbbca",
-            "output": "bbbbb"
-        },
-        {
-            "input": "ccbccab",
-            "output": "ccbcc"
-        },
-        {
-            "input": "aaabaaacb",
-            "output": "aaabaaa"
-        },
-        {
-            "input": "aaabab",
-            "output": "aaa"
-        },
-        {
-            "input": "abcaa",
-            "output": "aa"
-        },
-        {
-            "input": "cabbbacaa",
-            "output": "cabbbac"
-        },
-        {
-            "input": "bcca",
-            "output": "cc"
-        },
-        {
-            "input": "aaa",
-            "output": "aaa"
-        },
-        {
-            "input": "babbaaab",
-            "output": "baaab"
-        },
-        {
-            "input": "cabca",
-            "output": "c"
-        },
-        {
-            "input": "bcbaab",
-            "output": "baab"
-        },
-        {
-            "input": "caacbaca",
-            "output": "caac"
-        },
-        {
-            "input": "cbcacccc",
-            "output": "cccc"
-        },
-        {
-            "input": "aaabbcab",
-            "output": "aaa"
-        },
-        {
-            "input": "cbbccbcbaa",
-            "output": "cbbc"
-        },
-        {
-            "input": "aabccac",
-            "output": "cac"
-        },
-        {
-            "input": "aabbbab",
-            "output": "abbba"
-        },
-        {
-            "input": "aaaa",
-            "output": "aaaa"
-        },
-        {
-            "input": "ccacabaaa",
-            "output": "cac"
-        },
-        {
-            "input": "bccbbab",
-            "output": "bccb"
-        },
-        {
-            "input": "aaababccc",
-            "output": "aaa"
-        },
-        {
-            "input": "bcbca",
-            "output": "bcb"
-        },
-        {
-            "input": "aaccc",
-            "output": "ccc"
-        },
-        {
-            "input": "bbcbab",
-            "output": "bcb"
-        },
-        {
-            "input": "abccbbab",
-            "output": "bccb"
-        },
-        {
-            "input": "aacacbbbba",
-            "output": "bbbb"
-        },
-        {
-            "input": "bcaababaa",
-            "output": "aababaa"
-        },
-        {
-            "input": "baaccbba",
-            "output": "aa"
-        },
-        {
-            "input": "aaaccacac",
-            "output": "cacac"
-        },
-        {
-            "input": "cbacaacacb",
-            "output": "acaaca"
-        },
-        {
-            "input": "aab",
-            "output": "aa"
-        },
-        {
-            "input": "caacbab",
-            "output": "caac"
-        },
-        {
-            "input": "baaacbbc",
-            "output": "cbbc"
-        },
-        {
-            "input": "ccabbacacb",
-            "output": "cabbac"
-        },
-        {
-            "input": "babbababcb",
-            "output": "babbab"
-        },
-        {
-            "input": "abaccaaac",
-            "output": "caaac"
-        },
-        {
-            "input": "bbabcbac",
-            "output": "abcba"
-        },
-        {
-            "input": "bbc",
-            "output": "bb"
-        },
-        {
-            "input": "bbbbcbcac",
-            "output": "bbbb"
-        },
-        {
-            "input": "ccbbb",
-            "output": "bbb"
-        },
-        {
-            "input": "cab",
-            "output": "c"
-        },
-        {
-            "input": "abccba",
-            "output": "abccba"
-        },
-        {
-            "input": "cbccbcab",
-            "output": "cbccbc"
-        },
-        {
-            "input": "bbcbabaaba",
-            "output": "abaaba"
-        },
-        {
-            "input": "abbbcbbb",
-            "output": "bbbcbbb"
-        },
-        {
-            "input": "cacbaabaa",
-            "output": "aabaa"
-        },
-        {
-            "input": "aaccbbcc",
-            "output": "ccbbcc"
-        },
-        {
-            "input": "cbcc",
-            "output": "cbc"
-        },
-        {
-            "input": "abccacaccc",
-            "output": "ccacacc"
-        },
-        {
-            "input": "aabb",
-            "output": "aa"
-        },
-        {
-            "input": "aabcaba",
-            "output": "aba"
-        },
-        {
-            "input": "cabacbcbab",
-            "output": "cabac"
-        },
-        {
-            "input": "bbcc",
-            "output": "bb"
-        },
-        {
-            "input": "bcbaaca",
-            "output": "bcb"
-        },
-        {
-            "input": "abc",
+            "input": "stoauthydiprocafvkamswa",
             "output": "a"
         },
         {
-            "input": "bac",
+            "input": "tzdnganeiienagndztwtpgrkpxzzqjgzgveohxz",
+            "output": "tzdnganeiienagndzt"
+        },
+        {
+            "input": "ouaocxjibguvoycfirc",
+            "output": "c"
+        },
+        {
+            "input": "nxlngxlnfwgvfsayb",
             "output": "b"
         },
         {
-            "input": "cbbbbaccc",
-            "output": "bbbb"
+            "input": "jejwhppviivpphwjejoixkzzicwygemhmvkqnxbydyqfgdtkargpglzsdwqdowvitzwa",
+            "output": "jejwhppviivpphwjej"
         },
         {
-            "input": "abbc",
-            "output": "bb"
+            "input": "gcgrkvohjjjjhovkrgcgegnxpgzwglkfgedudzhvwfhnec",
+            "output": "gcgrkvohjjjjhovkrgcg"
         },
         {
-            "input": "cccbbacacb",
-            "output": "ccc"
+            "input": "nwwbzwgpcbytjpctlfdiuabgjvewwmdpgibdzekg",
+            "output": "ww"
         },
         {
-            "input": "bbab",
-            "output": "bab"
+            "input": "ounlrtxkhspqvbttyztrpcnaidhgmzjzwkngrgnlsxl",
+            "output": "ngrgn"
         },
         {
-            "input": "aba",
-            "output": "aba"
+            "input": "jvhxctyvzzvytcxhvjsqiwyaxqjnxpqiljyjfxxvbdvmexerwynl",
+            "output": "jvhxctyvzzvytcxhvj"
+        },
+        {
+            "input": "uftzlhimmihlztfuepeycofiabjaecujtkuhaeg",
+            "output": "uftzlhimmihlztfu"
+        },
+        {
+            "input": "wqyhlbbhjsgumojqlbfanflpxhijiidxlbkqumugfi",
+            "output": "umu"
+        },
+        {
+            "input": "hybfnqgmirzcoddspowvklbokgbjswlf",
+            "output": "dd"
+        },
+        {
+            "input": "dzxlycrbmirekmcbwforrpgog",
+            "output": "gog"
+        },
+        {
+            "input": "upvsoomqeaaeqmoosvpuwtuibcxpvjvrfvmyf",
+            "output": "upvsoomqeaaeqmoosvpu"
+        },
+        {
+            "input": "hibzxfmmghpdimuoqeytfyqahovhpqkcyfuhqk",
+            "output": "mm"
+        },
+        {
+            "input": "tunwjjfsjgkpudonchitkqxqvwsugubgr",
+            "output": "ugu"
+        },
+        {
+            "input": "trttrtbxbaujpnbneykkzntpbtfrilimjdgn",
+            "output": "trttrt"
+        },
+        {
+            "input": "ecydiknbgidjjiscx",
+            "output": "jj"
         }
-    ],
-    "difficulty": "medium"
+    ]
 }

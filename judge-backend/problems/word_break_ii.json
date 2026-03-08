@@ -1,1 +1,429 @@
-{}
+{
+    "id": "word_break_ii",
+    "title": "Word Break II",
+    "description": "Given a string s and a dictionary of strings wordDict, add spaces in s to construct a sentence where each word is a valid dictionary word. Return all such possible sentences in any order.",
+    "input_format": "First line: string s. Second line: words separated by space.",
+    "output_format": "All possible space-separated sentences, each on a newline.",
+    "constraints": {
+        "s.length": "1 <= s.length <= 20"
+    },
+    "difficulty": "hard",
+    "judge_mode": "str_compare_strip",
+    "time_limit": 2,
+    "sample_test_cases": [
+        {
+            "input": "catsanddog\ncat cats and sand dog",
+            "output": "cat sand dog\ncats and dog"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "ababaa\na apple ab applepen",
+            "output": "ab ab a a"
+        },
+        {
+            "input": "penpineapple\npen cats dog applepen pineapple",
+            "output": "pen pineapple"
+        },
+        {
+            "input": "ccats\nc cats dog applepen pen pineapple",
+            "output": "c cats"
+        },
+        {
+            "input": "dogdogapplepine\ncats pine applepen apple sand dog pineapple",
+            "output": "dog dog apple pine"
+        },
+        {
+            "input": "applependogapplepen\npineapple dog applepen",
+            "output": "applepen dog applepen"
+        },
+        {
+            "input": "band\npen and sand b",
+            "output": "b and"
+        },
+        {
+            "input": "catsaab\nab applepen sand pine a cats b",
+            "output": "cats a a b\ncats a ab"
+        },
+        {
+            "input": "applepencpen\nb a applepen pen and cat c",
+            "output": "applepen c pen"
+        },
+        {
+            "input": "catscats\ncats pen and c cat apple dog",
+            "output": "cats cats"
+        },
+        {
+            "input": "pineappledogpineapplea\npine dog ab pineapple a",
+            "output": "pineapple dog pineapple a"
+        },
+        {
+            "input": "cappleand\nc and b apple",
+            "output": "c apple and"
+        },
+        {
+            "input": "catcandpen\nc cat apple pen and",
+            "output": "cat c and pen"
+        },
+        {
+            "input": "bdog\napplepen dog b c a pineapple pine",
+            "output": "b dog"
+        },
+        {
+            "input": "catsbbb\ncat cats b",
+            "output": "cats b b b"
+        },
+        {
+            "input": "catpenabcat\nand c a ab applepen pen cat",
+            "output": "cat pen ab cat"
+        },
+        {
+            "input": "andpineabcpineapple\npen and pine c ab pineapple",
+            "output": "and pine ab c pineapple"
+        },
+        {
+            "input": "ccatcatsdog\nsand cats c cat dog",
+            "output": "c cat cats dog"
+        },
+        {
+            "input": "pinepinecatpinecat\npine applepen cat",
+            "output": "pine pine cat pine cat"
+        },
+        {
+            "input": "catab\npen applepen apple a cat ab",
+            "output": "cat ab"
+        },
+        {
+            "input": "pineapplebpineapplea\npineapple a b pen",
+            "output": "pineapple b pineapple a"
+        },
+        {
+            "input": "pineappleab\npine cats ab pineapple dog",
+            "output": "pineapple ab"
+        },
+        {
+            "input": "catcatapplependogcat\ndog cat cats applepen",
+            "output": "cat cat applepen dog cat"
+        },
+        {
+            "input": "dogcat\napple and cats dog pineapple cat",
+            "output": "dog cat"
+        },
+        {
+            "input": "bsandsandpineapple\npineapple ab b and sand",
+            "output": "b sand sand pineapple"
+        },
+        {
+            "input": "applesanddog\napple cats sand dog pen cat",
+            "output": "apple sand dog"
+        },
+        {
+            "input": "catpinecat\ncat pine ab c apple pen dog",
+            "output": "cat pine cat"
+        },
+        {
+            "input": "applepenapple\napple sand applepen",
+            "output": "applepen apple"
+        },
+        {
+            "input": "appleapple\nand ab dog apple a",
+            "output": "apple apple"
+        },
+        {
+            "input": "catapplepenpine\nc cat pine cats applepen",
+            "output": "cat applepen pine"
+        },
+        {
+            "input": "sandbb\nb applepen pen sand",
+            "output": "sand b b"
+        },
+        {
+            "input": "catscats\npineapple ab c and cats applepen",
+            "output": "cats cats"
+        },
+        {
+            "input": "cabdogabc\nab sand dog c",
+            "output": "c ab dog ab c"
+        },
+        {
+            "input": "bandbsand\npen a and b sand c apple",
+            "output": "b and b sand"
+        },
+        {
+            "input": "abpineapplepineapple\nab pineapple apple",
+            "output": "ab pineapple pineapple"
+        },
+        {
+            "input": "catspinepine\ncats sand pine",
+            "output": "cats pine pine"
+        },
+        {
+            "input": "sandpineapple\npineapple sand b c",
+            "output": "sand pineapple"
+        },
+        {
+            "input": "appleapple\napple applepen a pen",
+            "output": "apple apple"
+        },
+        {
+            "input": "applepenapplecatsapplepena\ndog a applepen cats apple",
+            "output": "applepen apple cats applepen a"
+        },
+        {
+            "input": "ababpen\nab b applepen pen",
+            "output": "ab ab pen"
+        },
+        {
+            "input": "babdog\napple c ab dog b",
+            "output": "b ab dog"
+        },
+        {
+            "input": "applea\nand c apple pineapple b a",
+            "output": "apple a"
+        },
+        {
+            "input": "andpineapple\nc pineapple and",
+            "output": "and pineapple"
+        },
+        {
+            "input": "pencatspenpen\nc pine pen cats sand a",
+            "output": "pen cats pen pen"
+        },
+        {
+            "input": "dogabdog\nab pen cat dog applepen",
+            "output": "dog ab dog"
+        },
+        {
+            "input": "bb\nb pen pine",
+            "output": "b b"
+        },
+        {
+            "input": "acatsab\nsand pen cats pineapple ab a",
+            "output": "a cats ab"
+        },
+        {
+            "input": "appleappleappleacat\ncat a pineapple apple dog",
+            "output": "apple apple apple a cat"
+        },
+        {
+            "input": "abpineabcatab\npine ab cat",
+            "output": "ab pine ab cat ab"
+        },
+        {
+            "input": "applepenaapplepensand\na and applepen sand",
+            "output": "applepen a applepen sand"
+        },
+        {
+            "input": "ccappleapplepen\na apple cats c applepen",
+            "output": "c c apple applepen"
+        },
+        {
+            "input": "adogdog\ncat applepen dog a and b",
+            "output": "a dog dog"
+        },
+        {
+            "input": "applepenand\na applepen cats and b apple",
+            "output": "applepen and"
+        },
+        {
+            "input": "pinea\na pine sand and b cats",
+            "output": "pine a"
+        },
+        {
+            "input": "pineappleaappleapplepen\napplepen a b pen and apple pineapple",
+            "output": "pineapple a apple apple pen\npineapple a apple applepen"
+        },
+        {
+            "input": "andsanda\nand sand a dog apple cat",
+            "output": "and sand a"
+        },
+        {
+            "input": "dogcat\nsand and dog pen cat cats applepen",
+            "output": "dog cat"
+        },
+        {
+            "input": "dogb\ndog apple b pine and a",
+            "output": "dog b"
+        },
+        {
+            "input": "aapine\npine ab b a",
+            "output": "a a pine"
+        },
+        {
+            "input": "penapplepineapple\npen and apple pineapple ab b",
+            "output": "pen apple pineapple"
+        },
+        {
+            "input": "catb\nb cat pen pineapple",
+            "output": "cat b"
+        },
+        {
+            "input": "bcats\nb pine cats a cat sand dog",
+            "output": "b cats"
+        },
+        {
+            "input": "penpenpencpen\npen dog cat c ab",
+            "output": "pen pen pen c pen"
+        },
+        {
+            "input": "applepenapplepensand\nsand b pine applepen",
+            "output": "applepen applepen sand"
+        },
+        {
+            "input": "sandsand\npen c cats sand cat dog",
+            "output": "sand sand"
+        },
+        {
+            "input": "sandb\nsand c cat b pine",
+            "output": "sand b"
+        },
+        {
+            "input": "penapplepenapplepencats\npineapple cat dog pen applepen cats sand",
+            "output": "pen applepen applepen cats"
+        },
+        {
+            "input": "appleandapplepineapple\npineapple a apple applepen and",
+            "output": "apple and apple pineapple"
+        },
+        {
+            "input": "applepenapplepen\na cats applepen b",
+            "output": "applepen applepen"
+        },
+        {
+            "input": "abdog\nand ab dog c",
+            "output": "ab dog"
+        },
+        {
+            "input": "bcats\nb cats applepen c dog",
+            "output": "b cats"
+        },
+        {
+            "input": "dogdogsand\nab dog sand",
+            "output": "dog dog sand"
+        },
+        {
+            "input": "anddogdogand\nab and dog pine",
+            "output": "and dog dog and"
+        },
+        {
+            "input": "pineapplecpineapplecpineapple\nc a pen pineapple b",
+            "output": "pineapple c pineapple c pineapple"
+        },
+        {
+            "input": "appleappleab\nab c a pen cats apple applepen",
+            "output": "apple apple ab"
+        },
+        {
+            "input": "sandapplepen\nc applepen dog sand pineapple",
+            "output": "sand applepen"
+        },
+        {
+            "input": "pinepen\napplepen and pine ab pen cats sand",
+            "output": "pine pen"
+        },
+        {
+            "input": "pineapplecatspineapple\ncats pineapple c",
+            "output": "pineapple cats pineapple"
+        },
+        {
+            "input": "sandandpineappleapplepineapple\nsand dog apple pineapple pen and",
+            "output": "sand and pineapple apple pineapple"
+        },
+        {
+            "input": "applepencat\npineapple applepen cat cats sand apple",
+            "output": "applepen cat"
+        },
+        {
+            "input": "dogpinea\na dog pine",
+            "output": "dog pine a"
+        },
+        {
+            "input": "acapple\ncats pineapple apple c a",
+            "output": "a c apple"
+        },
+        {
+            "input": "applesandcats\nsand cats apple b",
+            "output": "apple sand cats"
+        },
+        {
+            "input": "catdogcatcat\ncat sand pen pineapple dog",
+            "output": "cat dog cat cat"
+        },
+        {
+            "input": "sandcatscats\nsand apple cat cats pine dog",
+            "output": "sand cats cats"
+        },
+        {
+            "input": "apineapplepineapplecapplepen\npineapple c applepen a",
+            "output": "a pineapple pineapple c applepen"
+        },
+        {
+            "input": "applepenpinedogab\ndog c applepen pineapple sand ab pine",
+            "output": "applepen pine dog ab"
+        },
+        {
+            "input": "sandcats\nsand dog applepen cats c",
+            "output": "sand cats"
+        },
+        {
+            "input": "applepenpineappledogapplepenpineapple\napple pine dog a c pineapple applepen",
+            "output": "applepen pine apple dog applepen pine apple\napplepen pine apple dog applepen pineapple\napplepen pineapple dog applepen pine apple\napplepen pineapple dog applepen pineapple"
+        },
+        {
+            "input": "acats\ncats pineapple a",
+            "output": "a cats"
+        },
+        {
+            "input": "bsandsand\nsand dog b",
+            "output": "b sand sand"
+        },
+        {
+            "input": "appleabpineapple\nab apple pine",
+            "output": "apple ab pine apple"
+        },
+        {
+            "input": "catscc\npine cat c pineapple cats b apple",
+            "output": "cats c c"
+        },
+        {
+            "input": "catbcappleab\nc pen apple cat b ab",
+            "output": "cat b c apple ab"
+        },
+        {
+            "input": "catapplepena\nand applepen a b cat",
+            "output": "cat applepen a"
+        },
+        {
+            "input": "bpineapple\ncat a b and pineapple dog c",
+            "output": "b pineapple"
+        },
+        {
+            "input": "dogpinepenpinesand\npine pen sand pineapple dog",
+            "output": "dog pine pen pine sand"
+        },
+        {
+            "input": "abcatcat\ncat dog ab",
+            "output": "ab cat cat"
+        },
+        {
+            "input": "aabcatsdog\nab sand a cats pine dog",
+            "output": "a ab cats dog"
+        },
+        {
+            "input": "candapple\napple and c",
+            "output": "c and apple"
+        },
+        {
+            "input": "applecatacat\na pineapple cat apple",
+            "output": "apple cat a cat"
+        },
+        {
+            "input": "pinesand\nsand pine ab",
+            "output": "pine sand"
+        },
+        {
+            "input": "pineappleand\na ab pineapple b cats cat and",
+            "output": "pineapple and"
+        }
+    ]
+}

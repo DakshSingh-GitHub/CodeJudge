@@ -1,14 +1,14 @@
 {
     "id": "letter_combinations_of_a_phone_number",
     "title": "Letter Combinations of a Phone Number",
-    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Return the answer in any order. A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters.",
-    "input_format": "A string containing digits.",
+    "description": "Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. Print them separated by a space.",
+    "input_format": "A single string of digits.",
     "output_format": "Space-separated strings representing the combinations.",
     "constraints": {
-        "digits.length": "0 <= digits.length <= 4",
-        "digits[i]": "2 <= digits[i] <= 9"
+        "digits.length": "0 <= digits.length <= 4"
     },
-    "judge_mode": "FIRST_FAIL",
+    "difficulty": "medium",
+    "judge_mode": "str_compare_strip",
     "time_limit": 1,
     "sample_test_cases": [
         {
@@ -18,12 +18,32 @@
         {
             "input": "",
             "output": ""
+        },
+        {
+            "input": "2",
+            "output": "a b c"
         }
     ],
     "hidden_test_cases": [
         {
-            "input": "2",
-            "output": "a b c"
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "725",
+            "output": "paj pak pal pbj pbk pbl pcj pck pcl qaj qak qal qbj qbk qbl qcj qck qcl raj rak ral rbj rbk rbl rcj rck rcl saj sak sal sbj sbk sbl scj sck scl"
+        },
+        {
+            "input": "54458",
+            "output": "jggjt jggju jggjv jggkt jggku jggkv jgglt jgglu jgglv jghjt jghju jghjv jghkt jghku jghkv jghlt jghlu jghlv jgijt jgiju jgijv jgikt jgiku jgikv jgilt jgilu jgilv jhgjt jhgju jhgjv jhgkt jhgku jhgkv jhglt jhglu jhglv jhhjt jhhju jhhjv jhhkt jhhku jhhkv jhhlt jhhlu jhhlv jhijt jhiju jhijv jhikt jhiku jhikv jhilt jhilu jhilv jigjt jigju jigjv jigkt jigku jigkv jiglt jiglu jiglv jihjt jihju jihjv jihkt jihku jihkv jihlt jihlu jihlv jiijt jiiju jiijv jiikt jiiku jiikv jiilt jiilu jiilv kggjt kggju kggjv kggkt kggku kggkv kgglt kgglu kgglv kghjt kghju kghjv kghkt kghku kghkv kghlt kghlu kghlv kgijt kgiju kgijv kgikt kgiku kgikv kgilt kgilu kgilv khgjt khgju khgjv khgkt khgku khgkv khglt khglu khglv khhjt khhju khhjv khhkt khhku khhkv khhlt khhlu khhlv khijt khiju khijv khikt khiku khikv khilt khilu khilv kigjt kigju kigjv kigkt kigku kigkv kiglt kiglu kiglv kihjt kihju kihjv kihkt kihku kihkv kihlt kihlu kihlv kiijt kiiju kiijv kiikt kiiku kiikv kiilt kiilu kiilv lggjt lggju lggjv lggkt lggku lggkv lgglt lgglu lgglv lghjt lghju lghjv lghkt lghku lghkv lghlt lghlu lghlv lgijt lgiju lgijv lgikt lgiku lgikv lgilt lgilu lgilv lhgjt lhgju lhgjv lhgkt lhgku lhgkv lhglt lhglu lhglv lhhjt lhhju lhhjv lhhkt lhhku lhhkv lhhlt lhhlu lhhlv lhijt lhiju lhijv lhikt lhiku lhikv lhilt lhilu lhilv ligjt ligju ligjv ligkt ligku ligkv liglt liglu liglv lihjt lihju lihjv lihkt lihku lihkv lihlt lihlu lihlv liijt liiju liijv liikt liiku liikv liilt liilu liilv"
+        },
+        {
+            "input": "2845",
+            "output": "atgj atgk atgl athj athk athl atij atik atil augj augk augl auhj auhk auhl auij auik auil avgj avgk avgl avhj avhk avhl avij avik avil btgj btgk btgl bthj bthk bthl btij btik btil bugj bugk bugl buhj buhk buhl buij buik buil bvgj bvgk bvgl bvhj bvhk bvhl bvij bvik bvil ctgj ctgk ctgl cthj cthk cthl ctij ctik ctil cugj cugk cugl cuhj cuhk cuhl cuij cuik cuil cvgj cvgk cvgl cvhj cvhk cvhl cvij cvik cvil"
+        },
+        {
+            "input": "",
+            "output": ""
         },
         {
             "input": "",
@@ -34,633 +54,396 @@
             "output": "m n o"
         },
         {
-            "input": "49",
-            "output": "gw gx gy gz hw hx hy hz iw ix iy iz"
+            "input": "327",
+            "output": "dap daq dar das dbp dbq dbr dbs dcp dcq dcr dcs eap eaq ear eas ebp ebq ebr ebs ecp ecq ecr ecs fap faq far fas fbp fbq fbr fbs fcp fcq fcr fcs"
         },
         {
-            "input": "693",
-            "output": "mwd mwe mwf mxd mxe mxf myd mye myf mzd mze mzf nwd nwe nwf nxd nxe nxf nyd nye nyf nzd nze nzf owd owe owf oxd oxe oxf oyd oye oyf ozd oze ozf"
+            "input": "582",
+            "output": "jta jtb jtc jua jub juc jva jvb jvc kta ktb ktc kua kub kuc kva kvb kvc lta ltb ltc lua lub luc lva lvb lvc"
         },
         {
-            "input": "23",
-            "output": "ad ae af bd be bf cd ce cf"
+            "input": "26",
+            "output": "am an ao bm bn bo cm cn co"
         },
         {
-            "input": "5",
-            "output": "j k l"
+            "input": "674",
+            "output": "mpg mph mpi mqg mqh mqi mrg mrh mri msg msh msi npg nph npi nqg nqh nqi nrg nrh nri nsg nsh nsi opg oph opi oqg oqh oqi org orh ori osg osh osi"
         },
         {
-            "input": "4",
-            "output": "g h i"
-        },
-        {
-            "input": "6652",
-            "output": "mmja mmjb mmjc mmka mmkb mmkc mmla mmlb mmlc mnja mnjb mnjc mnka mnkb mnkc mnla mnlb mnlc moja mojb mojc moka mokb mokc mola molb molc nmja nmjb nmjc nmka nmkb nmkc nmla nmlb nmlc nnja nnjb nnjc nnka nnkb nnkc nnla nnlb nnlc noja nojb nojc noka nokb nokc nola nolb nolc omja omjb omjc omka omkb omkc omla omlb omlc onja onjb onjc onka onkb onkc onla onlb onlc ooja oojb oojc ooka ookb ookc oola oolb oolc"
-        },
-        {
-            "input": "669",
-            "output": "mmw mmx mmy mmz mnw mnx mny mnz mow mox moy moz nmw nmx nmy nmz nnw nnx nny nnz now nox noy noz omw omx omy omz onw onx ony onz oow oox ooy ooz"
-        },
-        {
-            "input": "878",
-            "output": "tpt tpu tpv tqt tqu tqv trt tru trv tst tsu tsv upt upu upv uqt uqu uqv urt uru urv ust usu usv vpt vpu vpv vqt vqu vqv vrt vru vrv vst vsu vsv"
-        },
-        {
-            "input": "539",
-            "output": "jdw jdx jdy jdz jew jex jey jez jfw jfx jfy jfz kdw kdx kdy kdz kew kex key kez kfw kfx kfy kfz ldw ldx ldy ldz lew lex ley lez lfw lfx lfy lfz"
-        },
-        {
-            "input": "5892",
-            "output": "jtwa jtwb jtwc jtxa jtxb jtxc jtya jtyb jtyc jtza jtzb jtzc juwa juwb juwc juxa juxb juxc juya juyb juyc juza juzb juzc jvwa jvwb jvwc jvxa jvxb jvxc jvya jvyb jvyc jvza jvzb jvzc ktwa ktwb ktwc ktxa ktxb ktxc ktya ktyb ktyc ktza ktzb ktzc kuwa kuwb kuwc kuxa kuxb kuxc kuya kuyb kuyc kuza kuzb kuzc kvwa kvwb kvwc kvxa kvxb kvxc kvya kvyb kvyc kvza kvzb kvzc ltwa ltwb ltwc ltxa ltxb ltxc ltya ltyb ltyc ltza ltzb ltzc luwa luwb luwc luxa luxb luxc luya luyb luyc luza luzb luzc lvwa lvwb lvwc lvxa lvxb lvxc lvya lvyb lvyc lvza lvzb lvzc"
-        },
-        {
-            "input": "9",
-            "output": "w x y z"
-        },
-        {
-            "input": "497",
-            "output": "gwp gwq gwr gws gxp gxq gxr gxs gyp gyq gyr gys gzp gzq gzr gzs hwp hwq hwr hws hxp hxq hxr hxs hyp hyq hyr hys hzp hzq hzr hzs iwp iwq iwr iws ixp ixq ixr ixs iyp iyq iyr iys izp izq izr izs"
-        },
-        {
-            "input": "8622",
-            "output": "tmaa tmab tmac tmba tmbb tmbc tmca tmcb tmcc tnaa tnab tnac tnba tnbb tnbc tnca tncb tncc toaa toab toac toba tobb tobc toca tocb tocc umaa umab umac umba umbb umbc umca umcb umcc unaa unab unac unba unbb unbc unca uncb uncc uoaa uoab uoac uoba uobb uobc uoca uocb uocc vmaa vmab vmac vmba vmbb vmbc vmca vmcb vmcc vnaa vnab vnac vnba vnbb vnbc vnca vncb vncc voaa voab voac voba vobb vobc voca vocb vocc"
-        },
-        {
-            "input": "2236",
-            "output": "aadm aadn aado aaem aaen aaeo aafm aafn aafo abdm abdn abdo abem aben abeo abfm abfn abfo acdm acdn acdo acem acen aceo acfm acfn acfo badm badn bado baem baen baeo bafm bafn bafo bbdm bbdn bbdo bbem bben bbeo bbfm bbfn bbfo bcdm bcdn bcdo bcem bcen bceo bcfm bcfn bcfo cadm cadn cado caem caen caeo cafm cafn cafo cbdm cbdn cbdo cbem cben cbeo cbfm cbfn cbfo ccdm ccdn ccdo ccem ccen cceo ccfm ccfn ccfo"
-        },
-        {
-            "input": "6247",
-            "output": "magp magq magr mags mahp mahq mahr mahs maip maiq mair mais mbgp mbgq mbgr mbgs mbhp mbhq mbhr mbhs mbip mbiq mbir mbis mcgp mcgq mcgr mcgs mchp mchq mchr mchs mcip mciq mcir mcis nagp nagq nagr nags nahp nahq nahr nahs naip naiq nair nais nbgp nbgq nbgr nbgs nbhp nbhq nbhr nbhs nbip nbiq nbir nbis ncgp ncgq ncgr ncgs nchp nchq nchr nchs ncip nciq ncir ncis oagp oagq oagr oags oahp oahq oahr oahs oaip oaiq oair oais obgp obgq obgr obgs obhp obhq obhr obhs obip obiq obir obis ocgp ocgq ocgr ocgs ochp ochq ochr ochs ocip ociq ocir ocis"
-        },
-        {
-            "input": "53",
-            "output": "jd je jf kd ke kf ld le lf"
+            "input": "",
+            "output": ""
         },
         {
             "input": "3",
             "output": "d e f"
         },
         {
-            "input": "974",
-            "output": "wpg wph wpi wqg wqh wqi wrg wrh wri wsg wsh wsi xpg xph xpi xqg xqh xqi xrg xrh xri xsg xsh xsi ypg yph ypi yqg yqh yqi yrg yrh yri ysg ysh ysi zpg zph zpi zqg zqh zqi zrg zrh zri zsg zsh zsi"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "8389",
-            "output": "tdtw tdtx tdty tdtz tduw tdux tduy tduz tdvw tdvx tdvy tdvz tetw tetx tety tetz teuw teux teuy teuz tevw tevx tevy tevz tftw tftx tfty tftz tfuw tfux tfuy tfuz tfvw tfvx tfvy tfvz udtw udtx udty udtz uduw udux uduy uduz udvw udvx udvy udvz uetw uetx uety uetz ueuw ueux ueuy ueuz uevw uevx uevy uevz uftw uftx ufty uftz ufuw ufux ufuy ufuz ufvw ufvx ufvy ufvz vdtw vdtx vdty vdtz vduw vdux vduy vduz vdvw vdvx vdvy vdvz vetw vetx vety vetz veuw veux veuy veuz vevw vevx vevy vevz vftw vftx vfty vftz vfuw vfux vfuy vfuz vfvw vfvx vfvy vfvz"
+            "input": "2",
+            "output": "a b c"
         },
         {
-            "input": "97",
-            "output": "wp wq wr ws xp xq xr xs yp yq yr ys zp zq zr zs"
+            "input": "5749",
+            "output": "jpgw jpgx jpgy jpgz jphw jphx jphy jphz jpiw jpix jpiy jpiz jqgw jqgx jqgy jqgz jqhw jqhx jqhy jqhz jqiw jqix jqiy jqiz jrgw jrgx jrgy jrgz jrhw jrhx jrhy jrhz jriw jrix jriy jriz jsgw jsgx jsgy jsgz jshw jshx jshy jshz jsiw jsix jsiy jsiz kpgw kpgx kpgy kpgz kphw kphx kphy kphz kpiw kpix kpiy kpiz kqgw kqgx kqgy kqgz kqhw kqhx kqhy kqhz kqiw kqix kqiy kqiz krgw krgx krgy krgz krhw krhx krhy krhz kriw krix kriy kriz ksgw ksgx ksgy ksgz kshw kshx kshy kshz ksiw ksix ksiy ksiz lpgw lpgx lpgy lpgz lphw lphx lphy lphz lpiw lpix lpiy lpiz lqgw lqgx lqgy lqgz lqhw lqhx lqhy lqhz lqiw lqix lqiy lqiz lrgw lrgx lrgy lrgz lrhw lrhx lrhy lrhz lriw lrix lriy lriz lsgw lsgx lsgy lsgz lshw lshx lshy lshz lsiw lsix lsiy lsiz"
         },
         {
-            "input": "4377",
-            "output": "gdpp gdpq gdpr gdps gdqp gdqq gdqr gdqs gdrp gdrq gdrr gdrs gdsp gdsq gdsr gdss gepp gepq gepr geps geqp geqq geqr geqs gerp gerq gerr gers gesp gesq gesr gess gfpp gfpq gfpr gfps gfqp gfqq gfqr gfqs gfrp gfrq gfrr gfrs gfsp gfsq gfsr gfss hdpp hdpq hdpr hdps hdqp hdqq hdqr hdqs hdrp hdrq hdrr hdrs hdsp hdsq hdsr hdss hepp hepq hepr heps heqp heqq heqr heqs herp herq herr hers hesp hesq hesr hess hfpp hfpq hfpr hfps hfqp hfqq hfqr hfqs hfrp hfrq hfrr hfrs hfsp hfsq hfsr hfss idpp idpq idpr idps idqp idqq idqr idqs idrp idrq idrr idrs idsp idsq idsr idss iepp iepq iepr ieps ieqp ieqq ieqr ieqs ierp ierq ierr iers iesp iesq iesr iess ifpp ifpq ifpr ifps ifqp ifqq ifqr ifqs ifrp ifrq ifrr ifrs ifsp ifsq ifsr ifss"
-        },
-        {
-            "input": "6396",
-            "output": "mdwm mdwn mdwo mdxm mdxn mdxo mdym mdyn mdyo mdzm mdzn mdzo mewm mewn mewo mexm mexn mexo meym meyn meyo mezm mezn mezo mfwm mfwn mfwo mfxm mfxn mfxo mfym mfyn mfyo mfzm mfzn mfzo ndwm ndwn ndwo ndxm ndxn ndxo ndym ndyn ndyo ndzm ndzn ndzo newm newn newo nexm nexn nexo neym neyn neyo nezm nezn nezo nfwm nfwn nfwo nfxm nfxn nfxo nfym nfyn nfyo nfzm nfzn nfzo odwm odwn odwo odxm odxn odxo odym odyn odyo odzm odzn odzo oewm oewn oewo oexm oexn oexo oeym oeyn oeyo oezm oezn oezo ofwm ofwn ofwo ofxm ofxn ofxo ofym ofyn ofyo ofzm ofzn ofzo"
+            "input": "994",
+            "output": "wwg wwh wwi wxg wxh wxi wyg wyh wyi wzg wzh wzi xwg xwh xwi xxg xxh xxi xyg xyh xyi xzg xzh xzi ywg ywh ywi yxg yxh yxi yyg yyh yyi yzg yzh yzi zwg zwh zwi zxg zxh zxi zyg zyh zyi zzg zzh zzi"
         },
         {
             "input": "92",
             "output": "wa wb wc xa xb xc ya yb yc za zb zc"
         },
         {
-            "input": "88",
-            "output": "tt tu tv ut uu uv vt vu vv"
+            "input": "6439",
+            "output": "mgdw mgdx mgdy mgdz mgew mgex mgey mgez mgfw mgfx mgfy mgfz mhdw mhdx mhdy mhdz mhew mhex mhey mhez mhfw mhfx mhfy mhfz midw midx midy midz miew miex miey miez mifw mifx mify mifz ngdw ngdx ngdy ngdz ngew ngex ngey ngez ngfw ngfx ngfy ngfz nhdw nhdx nhdy nhdz nhew nhex nhey nhez nhfw nhfx nhfy nhfz nidw nidx nidy nidz niew niex niey niez nifw nifx nify nifz ogdw ogdx ogdy ogdz ogew ogex ogey ogez ogfw ogfx ogfy ogfz ohdw ohdx ohdy ohdz ohew ohex ohey ohez ohfw ohfx ohfy ohfz oidw oidx oidy oidz oiew oiex oiey oiez oifw oifx oify oifz"
         },
         {
-            "input": "66",
-            "output": "mm mn mo nm nn no om on oo"
+            "input": "4",
+            "output": "g h i"
         },
         {
-            "input": "327",
-            "output": "dap daq dar das dbp dbq dbr dbs dcp dcq dcr dcs eap eaq ear eas ebp ebq ebr ebs ecp ecq ecr ecs fap faq far fas fbp fbq fbr fbs fcp fcq fcr fcs"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "658",
-            "output": "mjt mju mjv mkt mku mkv mlt mlu mlv njt nju njv nkt nku nkv nlt nlu nlv ojt oju ojv okt oku okv olt olu olv"
+            "input": "23",
+            "output": "ad ae af bd be bf cd ce cf"
         },
         {
-            "input": "3649",
-            "output": "dmgw dmgx dmgy dmgz dmhw dmhx dmhy dmhz dmiw dmix dmiy dmiz dngw dngx dngy dngz dnhw dnhx dnhy dnhz dniw dnix dniy dniz dogw dogx dogy dogz dohw dohx dohy dohz doiw doix doiy doiz emgw emgx emgy emgz emhw emhx emhy emhz emiw emix emiy emiz engw engx engy engz enhw enhx enhy enhz eniw enix eniy eniz eogw eogx eogy eogz eohw eohx eohy eohz eoiw eoix eoiy eoiz fmgw fmgx fmgy fmgz fmhw fmhx fmhy fmhz fmiw fmix fmiy fmiz fngw fngx fngy fngz fnhw fnhx fnhy fnhz fniw fnix fniy fniz fogw fogx fogy fogz fohw fohx fohy fohz foiw foix foiy foiz"
+            "input": "9",
+            "output": "w x y z"
         },
         {
-            "input": "68",
-            "output": "mt mu mv nt nu nv ot ou ov"
+            "input": "2",
+            "output": "a b c"
         },
         {
-            "input": "744",
-            "output": "pgg pgh pgi phg phh phi pig pih pii qgg qgh qgi qhg qhh qhi qig qih qii rgg rgh rgi rhg rhh rhi rig rih rii sgg sgh sgi shg shh shi sig sih sii"
-        },
-        {
-            "input": "595",
-            "output": "jwj jwk jwl jxj jxk jxl jyj jyk jyl jzj jzk jzl kwj kwk kwl kxj kxk kxl kyj kyk kyl kzj kzk kzl lwj lwk lwl lxj lxk lxl lyj lyk lyl lzj lzk lzl"
-        },
-        {
-            "input": "3742",
-            "output": "dpga dpgb dpgc dpha dphb dphc dpia dpib dpic dqga dqgb dqgc dqha dqhb dqhc dqia dqib dqic drga drgb drgc drha drhb drhc dria drib dric dsga dsgb dsgc dsha dshb dshc dsia dsib dsic epga epgb epgc epha ephb ephc epia epib epic eqga eqgb eqgc eqha eqhb eqhc eqia eqib eqic erga ergb ergc erha erhb erhc eria erib eric esga esgb esgc esha eshb eshc esia esib esic fpga fpgb fpgc fpha fphb fphc fpia fpib fpic fqga fqgb fqgc fqha fqhb fqhc fqia fqib fqic frga frgb frgc frha frhb frhc fria frib fric fsga fsgb fsgc fsha fshb fshc fsia fsib fsic"
-        },
-        {
-            "input": "5847",
-            "output": "jtgp jtgq jtgr jtgs jthp jthq jthr jths jtip jtiq jtir jtis jugp jugq jugr jugs juhp juhq juhr juhs juip juiq juir juis jvgp jvgq jvgr jvgs jvhp jvhq jvhr jvhs jvip jviq jvir jvis ktgp ktgq ktgr ktgs kthp kthq kthr kths ktip ktiq ktir ktis kugp kugq kugr kugs kuhp kuhq kuhr kuhs kuip kuiq kuir kuis kvgp kvgq kvgr kvgs kvhp kvhq kvhr kvhs kvip kviq kvir kvis ltgp ltgq ltgr ltgs lthp lthq lthr lths ltip ltiq ltir ltis lugp lugq lugr lugs luhp luhq luhr luhs luip luiq luir luis lvgp lvgq lvgr lvgs lvhp lvhq lvhr lvhs lvip lviq lvir lvis"
-        },
-        {
-            "input": "5692",
-            "output": "jmwa jmwb jmwc jmxa jmxb jmxc jmya jmyb jmyc jmza jmzb jmzc jnwa jnwb jnwc jnxa jnxb jnxc jnya jnyb jnyc jnza jnzb jnzc jowa jowb jowc joxa joxb joxc joya joyb joyc joza jozb jozc kmwa kmwb kmwc kmxa kmxb kmxc kmya kmyb kmyc kmza kmzb kmzc knwa knwb knwc knxa knxb knxc knya knyb knyc knza knzb knzc kowa kowb kowc koxa koxb koxc koya koyb koyc koza kozb kozc lmwa lmwb lmwc lmxa lmxb lmxc lmya lmyb lmyc lmza lmzb lmzc lnwa lnwb lnwc lnxa lnxb lnxc lnya lnyb lnyc lnza lnzb lnzc lowa lowb lowc loxa loxb loxc loya loyb loyc loza lozb lozc"
-        },
-        {
-            "input": "79",
-            "output": "pw px py pz qw qx qy qz rw rx ry rz sw sx sy sz"
-        },
-        {
-            "input": "563",
-            "output": "jmd jme jmf jnd jne jnf jod joe jof kmd kme kmf knd kne knf kod koe kof lmd lme lmf lnd lne lnf lod loe lof"
-        },
-        {
-            "input": "58",
-            "output": "jt ju jv kt ku kv lt lu lv"
-        },
-        {
-            "input": "9745",
-            "output": "wpgj wpgk wpgl wphj wphk wphl wpij wpik wpil wqgj wqgk wqgl wqhj wqhk wqhl wqij wqik wqil wrgj wrgk wrgl wrhj wrhk wrhl wrij wrik wril wsgj wsgk wsgl wshj wshk wshl wsij wsik wsil xpgj xpgk xpgl xphj xphk xphl xpij xpik xpil xqgj xqgk xqgl xqhj xqhk xqhl xqij xqik xqil xrgj xrgk xrgl xrhj xrhk xrhl xrij xrik xril xsgj xsgk xsgl xshj xshk xshl xsij xsik xsil ypgj ypgk ypgl yphj yphk yphl ypij ypik ypil yqgj yqgk yqgl yqhj yqhk yqhl yqij yqik yqil yrgj yrgk yrgl yrhj yrhk yrhl yrij yrik yril ysgj ysgk ysgl yshj yshk yshl ysij ysik ysil zpgj zpgk zpgl zphj zphk zphl zpij zpik zpil zqgj zqgk zqgl zqhj zqhk zqhl zqij zqik zqil zrgj zrgk zrgl zrhj zrhk zrhl zrij zrik zril zsgj zsgk zsgl zshj zshk zshl zsij zsik zsil"
-        },
-        {
-            "input": "7",
-            "output": "p q r s"
-        },
-        {
-            "input": "4228",
-            "output": "gaat gaau gaav gabt gabu gabv gact gacu gacv gbat gbau gbav gbbt gbbu gbbv gbct gbcu gbcv gcat gcau gcav gcbt gcbu gcbv gcct gccu gccv haat haau haav habt habu habv hact hacu hacv hbat hbau hbav hbbt hbbu hbbv hbct hbcu hbcv hcat hcau hcav hcbt hcbu hcbv hcct hccu hccv iaat iaau iaav iabt iabu iabv iact iacu iacv ibat ibau ibav ibbt ibbu ibbv ibct ibcu ibcv icat icau icav icbt icbu icbv icct iccu iccv"
-        },
-        {
-            "input": "6953",
-            "output": "mwjd mwje mwjf mwkd mwke mwkf mwld mwle mwlf mxjd mxje mxjf mxkd mxke mxkf mxld mxle mxlf myjd myje myjf mykd myke mykf myld myle mylf mzjd mzje mzjf mzkd mzke mzkf mzld mzle mzlf nwjd nwje nwjf nwkd nwke nwkf nwld nwle nwlf nxjd nxje nxjf nxkd nxke nxkf nxld nxle nxlf nyjd nyje nyjf nykd nyke nykf nyld nyle nylf nzjd nzje nzjf nzkd nzke nzkf nzld nzle nzlf owjd owje owjf owkd owke owkf owld owle owlf oxjd oxje oxjf oxkd oxke oxkf oxld oxle oxlf oyjd oyje oyjf oykd oyke oykf oyld oyle oylf ozjd ozje ozjf ozkd ozke ozkf ozld ozle ozlf"
-        },
-        {
-            "input": "96",
-            "output": "wm wn wo xm xn xo ym yn yo zm zn zo"
-        },
-        {
-            "input": "482",
-            "output": "gta gtb gtc gua gub guc gva gvb gvc hta htb htc hua hub huc hva hvb hvc ita itb itc iua iub iuc iva ivb ivc"
-        },
-        {
-            "input": "4587",
-            "output": "gjtp gjtq gjtr gjts gjup gjuq gjur gjus gjvp gjvq gjvr gjvs gktp gktq gktr gkts gkup gkuq gkur gkus gkvp gkvq gkvr gkvs gltp gltq gltr glts glup gluq glur glus glvp glvq glvr glvs hjtp hjtq hjtr hjts hjup hjuq hjur hjus hjvp hjvq hjvr hjvs hktp hktq hktr hkts hkup hkuq hkur hkus hkvp hkvq hkvr hkvs hltp hltq hltr hlts hlup hluq hlur hlus hlvp hlvq hlvr hlvs ijtp ijtq ijtr ijts ijup ijuq ijur ijus ijvp ijvq ijvr ijvs iktp iktq iktr ikts ikup ikuq ikur ikus ikvp ikvq ikvr ikvs iltp iltq iltr ilts ilup iluq ilur ilus ilvp ilvq ilvr ilvs"
-        },
-        {
-            "input": "7232",
-            "output": "pada padb padc paea paeb paec pafa pafb pafc pbda pbdb pbdc pbea pbeb pbec pbfa pbfb pbfc pcda pcdb pcdc pcea pceb pcec pcfa pcfb pcfc qada qadb qadc qaea qaeb qaec qafa qafb qafc qbda qbdb qbdc qbea qbeb qbec qbfa qbfb qbfc qcda qcdb qcdc qcea qceb qcec qcfa qcfb qcfc rada radb radc raea raeb raec rafa rafb rafc rbda rbdb rbdc rbea rbeb rbec rbfa rbfb rbfc rcda rcdb rcdc rcea rceb rcec rcfa rcfb rcfc sada sadb sadc saea saeb saec safa safb safc sbda sbdb sbdc sbea sbeb sbec sbfa sbfb sbfc scda scdb scdc scea sceb scec scfa scfb scfc"
+            "input": "",
+            "output": ""
         },
         {
             "input": "77",
             "output": "pp pq pr ps qp qq qr qs rp rq rr rs sp sq sr ss"
         },
         {
-            "input": "3498",
-            "output": "dgwt dgwu dgwv dgxt dgxu dgxv dgyt dgyu dgyv dgzt dgzu dgzv dhwt dhwu dhwv dhxt dhxu dhxv dhyt dhyu dhyv dhzt dhzu dhzv diwt diwu diwv dixt dixu dixv diyt diyu diyv dizt dizu dizv egwt egwu egwv egxt egxu egxv egyt egyu egyv egzt egzu egzv ehwt ehwu ehwv ehxt ehxu ehxv ehyt ehyu ehyv ehzt ehzu ehzv eiwt eiwu eiwv eixt eixu eixv eiyt eiyu eiyv eizt eizu eizv fgwt fgwu fgwv fgxt fgxu fgxv fgyt fgyu fgyv fgzt fgzu fgzv fhwt fhwu fhwv fhxt fhxu fhxv fhyt fhyu fhyv fhzt fhzu fhzv fiwt fiwu fiwv fixt fixu fixv fiyt fiyu fiyv fizt fizu fizv"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "629",
-            "output": "maw max may maz mbw mbx mby mbz mcw mcx mcy mcz naw nax nay naz nbw nbx nby nbz ncw ncx ncy ncz oaw oax oay oaz obw obx oby obz ocw ocx ocy ocz"
+            "input": "943",
+            "output": "wgd wge wgf whd whe whf wid wie wif xgd xge xgf xhd xhe xhf xid xie xif ygd yge ygf yhd yhe yhf yid yie yif zgd zge zgf zhd zhe zhf zid zie zif"
         },
         {
-            "input": "78",
-            "output": "pt pu pv qt qu qv rt ru rv st su sv"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "84",
-            "output": "tg th ti ug uh ui vg vh vi"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "3355",
-            "output": "ddjj ddjk ddjl ddkj ddkk ddkl ddlj ddlk ddll dejj dejk dejl dekj dekk dekl delj delk dell dfjj dfjk dfjl dfkj dfkk dfkl dflj dflk dfll edjj edjk edjl edkj edkk edkl edlj edlk edll eejj eejk eejl eekj eekk eekl eelj eelk eell efjj efjk efjl efkj efkk efkl eflj eflk efll fdjj fdjk fdjl fdkj fdkk fdkl fdlj fdlk fdll fejj fejk fejl fekj fekk fekl felj felk fell ffjj ffjk ffjl ffkj ffkk ffkl fflj fflk ffll"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "32",
-            "output": "da db dc ea eb ec fa fb fc"
+            "input": "56",
+            "output": "jm jn jo km kn ko lm ln lo"
         },
         {
-            "input": "55",
-            "output": "jj jk jl kj kk kl lj lk ll"
+            "input": "939",
+            "output": "wdw wdx wdy wdz wew wex wey wez wfw wfx wfy wfz xdw xdx xdy xdz xew xex xey xez xfw xfx xfy xfz ydw ydx ydy ydz yew yex yey yez yfw yfx yfy yfz zdw zdx zdy zdz zew zex zey zez zfw zfx zfy zfz"
         },
         {
-            "input": "5287",
-            "output": "jatp jatq jatr jats jaup jauq jaur jaus javp javq javr javs jbtp jbtq jbtr jbts jbup jbuq jbur jbus jbvp jbvq jbvr jbvs jctp jctq jctr jcts jcup jcuq jcur jcus jcvp jcvq jcvr jcvs katp katq katr kats kaup kauq kaur kaus kavp kavq kavr kavs kbtp kbtq kbtr kbts kbup kbuq kbur kbus kbvp kbvq kbvr kbvs kctp kctq kctr kcts kcup kcuq kcur kcus kcvp kcvq kcvr kcvs latp latq latr lats laup lauq laur laus lavp lavq lavr lavs lbtp lbtq lbtr lbts lbup lbuq lbur lbus lbvp lbvq lbvr lbvs lctp lctq lctr lcts lcup lcuq lcur lcus lcvp lcvq lcvr lcvs"
+            "input": "522",
+            "output": "jaa jab jac jba jbb jbc jca jcb jcc kaa kab kac kba kbb kbc kca kcb kcc laa lab lac lba lbb lbc lca lcb lcc"
         },
         {
-            "input": "7285",
-            "output": "patj patk patl pauj pauk paul pavj pavk pavl pbtj pbtk pbtl pbuj pbuk pbul pbvj pbvk pbvl pctj pctk pctl pcuj pcuk pcul pcvj pcvk pcvl qatj qatk qatl qauj qauk qaul qavj qavk qavl qbtj qbtk qbtl qbuj qbuk qbul qbvj qbvk qbvl qctj qctk qctl qcuj qcuk qcul qcvj qcvk qcvl ratj ratk ratl rauj rauk raul ravj ravk ravl rbtj rbtk rbtl rbuj rbuk rbul rbvj rbvk rbvl rctj rctk rctl rcuj rcuk rcul rcvj rcvk rcvl satj satk satl sauj sauk saul savj savk savl sbtj sbtk sbtl sbuj sbuk sbul sbvj sbvk sbvl sctj sctk sctl scuj scuk scul scvj scvk scvl"
+            "input": "3",
+            "output": "d e f"
         },
         {
-            "input": "22",
-            "output": "aa ab ac ba bb bc ca cb cc"
+            "input": "9",
+            "output": "w x y z"
         },
         {
-            "input": "3348",
-            "output": "ddgt ddgu ddgv ddht ddhu ddhv ddit ddiu ddiv degt degu degv deht dehu dehv deit deiu deiv dfgt dfgu dfgv dfht dfhu dfhv dfit dfiu dfiv edgt edgu edgv edht edhu edhv edit ediu ediv eegt eegu eegv eeht eehu eehv eeit eeiu eeiv efgt efgu efgv efht efhu efhv efit efiu efiv fdgt fdgu fdgv fdht fdhu fdhv fdit fdiu fdiv fegt fegu fegv feht fehu fehv feit feiu feiv ffgt ffgu ffgv ffht ffhu ffhv ffit ffiu ffiv"
+            "input": "9",
+            "output": "w x y z"
         },
         {
-            "input": "83",
-            "output": "td te tf ud ue uf vd ve vf"
-        },
-        {
-            "input": "95",
-            "output": "wj wk wl xj xk xl yj yk yl zj zk zl"
-        },
-        {
-            "input": "44",
-            "output": "gg gh gi hg hh hi ig ih ii"
-        },
-        {
-            "input": "622",
-            "output": "maa mab mac mba mbb mbc mca mcb mcc naa nab nac nba nbb nbc nca ncb ncc oaa oab oac oba obb obc oca ocb occ"
-        },
-        {
-            "input": "354",
-            "output": "djg djh dji dkg dkh dki dlg dlh dli ejg ejh eji ekg ekh eki elg elh eli fjg fjh fji fkg fkh fki flg flh fli"
-        },
-        {
-            "input": "86",
-            "output": "tm tn to um un uo vm vn vo"
-        },
-        {
-            "input": "9673",
-            "output": "wmpd wmpe wmpf wmqd wmqe wmqf wmrd wmre wmrf wmsd wmse wmsf wnpd wnpe wnpf wnqd wnqe wnqf wnrd wnre wnrf wnsd wnse wnsf wopd wope wopf woqd woqe woqf word wore worf wosd wose wosf xmpd xmpe xmpf xmqd xmqe xmqf xmrd xmre xmrf xmsd xmse xmsf xnpd xnpe xnpf xnqd xnqe xnqf xnrd xnre xnrf xnsd xnse xnsf xopd xope xopf xoqd xoqe xoqf xord xore xorf xosd xose xosf ympd ympe ympf ymqd ymqe ymqf ymrd ymre ymrf ymsd ymse ymsf ynpd ynpe ynpf ynqd ynqe ynqf ynrd ynre ynrf ynsd ynse ynsf yopd yope yopf yoqd yoqe yoqf yord yore yorf yosd yose yosf zmpd zmpe zmpf zmqd zmqe zmqf zmrd zmre zmrf zmsd zmse zmsf znpd znpe znpf znqd znqe znqf znrd znre znrf znsd znse znsf zopd zope zopf zoqd zoqe zoqf zord zore zorf zosd zose zosf"
-        },
-        {
-            "input": "4928",
-            "output": "gwat gwau gwav gwbt gwbu gwbv gwct gwcu gwcv gxat gxau gxav gxbt gxbu gxbv gxct gxcu gxcv gyat gyau gyav gybt gybu gybv gyct gycu gycv gzat gzau gzav gzbt gzbu gzbv gzct gzcu gzcv hwat hwau hwav hwbt hwbu hwbv hwct hwcu hwcv hxat hxau hxav hxbt hxbu hxbv hxct hxcu hxcv hyat hyau hyav hybt hybu hybv hyct hycu hycv hzat hzau hzav hzbt hzbu hzbv hzct hzcu hzcv iwat iwau iwav iwbt iwbu iwbv iwct iwcu iwcv ixat ixau ixav ixbt ixbu ixbv ixct ixcu ixcv iyat iyau iyav iybt iybu iybv iyct iycu iycv izat izau izav izbt izbu izbv izct izcu izcv"
-        },
-        {
-            "input": "4985",
-            "output": "gwtj gwtk gwtl gwuj gwuk gwul gwvj gwvk gwvl gxtj gxtk gxtl gxuj gxuk gxul gxvj gxvk gxvl gytj gytk gytl gyuj gyuk gyul gyvj gyvk gyvl gztj gztk gztl gzuj gzuk gzul gzvj gzvk gzvl hwtj hwtk hwtl hwuj hwuk hwul hwvj hwvk hwvl hxtj hxtk hxtl hxuj hxuk hxul hxvj hxvk hxvl hytj hytk hytl hyuj hyuk hyul hyvj hyvk hyvl hztj hztk hztl hzuj hzuk hzul hzvj hzvk hzvl iwtj iwtk iwtl iwuj iwuk iwul iwvj iwvk iwvl ixtj ixtk ixtl ixuj ixuk ixul ixvj ixvk ixvl iytj iytk iytl iyuj iyuk iyul iyvj iyvk iyvl iztj iztk iztl izuj izuk izul izvj izvk izvl"
-        },
-        {
-            "input": "4798",
-            "output": "gpwt gpwu gpwv gpxt gpxu gpxv gpyt gpyu gpyv gpzt gpzu gpzv gqwt gqwu gqwv gqxt gqxu gqxv gqyt gqyu gqyv gqzt gqzu gqzv grwt grwu grwv grxt grxu grxv gryt gryu gryv grzt grzu grzv gswt gswu gswv gsxt gsxu gsxv gsyt gsyu gsyv gszt gszu gszv hpwt hpwu hpwv hpxt hpxu hpxv hpyt hpyu hpyv hpzt hpzu hpzv hqwt hqwu hqwv hqxt hqxu hqxv hqyt hqyu hqyv hqzt hqzu hqzv hrwt hrwu hrwv hrxt hrxu hrxv hryt hryu hryv hrzt hrzu hrzv hswt hswu hswv hsxt hsxu hsxv hsyt hsyu hsyv hszt hszu hszv ipwt ipwu ipwv ipxt ipxu ipxv ipyt ipyu ipyv ipzt ipzu ipzv iqwt iqwu iqwv iqxt iqxu iqxv iqyt iqyu iqyv iqzt iqzu iqzv irwt irwu irwv irxt irxu irxv iryt iryu iryv irzt irzu irzv iswt iswu iswv isxt isxu isxv isyt isyu isyv iszt iszu iszv"
-        },
-        {
-            "input": "9249",
-            "output": "wagw wagx wagy wagz wahw wahx wahy wahz waiw waix waiy waiz wbgw wbgx wbgy wbgz wbhw wbhx wbhy wbhz wbiw wbix wbiy wbiz wcgw wcgx wcgy wcgz wchw wchx wchy wchz wciw wcix wciy wciz xagw xagx xagy xagz xahw xahx xahy xahz xaiw xaix xaiy xaiz xbgw xbgx xbgy xbgz xbhw xbhx xbhy xbhz xbiw xbix xbiy xbiz xcgw xcgx xcgy xcgz xchw xchx xchy xchz xciw xcix xciy xciz yagw yagx yagy yagz yahw yahx yahy yahz yaiw yaix yaiy yaiz ybgw ybgx ybgy ybgz ybhw ybhx ybhy ybhz ybiw ybix ybiy ybiz ycgw ycgx ycgy ycgz ychw ychx ychy ychz yciw ycix yciy yciz zagw zagx zagy zagz zahw zahx zahy zahz zaiw zaix zaiy zaiz zbgw zbgx zbgy zbgz zbhw zbhx zbhy zbhz zbiw zbix zbiy zbiz zcgw zcgx zcgy zcgz zchw zchx zchy zchz zciw zcix zciy zciz"
-        },
-        {
-            "input": "797",
-            "output": "pwp pwq pwr pws pxp pxq pxr pxs pyp pyq pyr pys pzp pzq pzr pzs qwp qwq qwr qws qxp qxq qxr qxs qyp qyq qyr qys qzp qzq qzr qzs rwp rwq rwr rws rxp rxq rxr rxs ryp ryq ryr rys rzp rzq rzr rzs swp swq swr sws sxp sxq sxr sxs syp syq syr sys szp szq szr szs"
-        },
-        {
-            "input": "5888",
-            "output": "jttt jttu jttv jtut jtuu jtuv jtvt jtvu jtvv jutt jutu jutv juut juuu juuv juvt juvu juvv jvtt jvtu jvtv jvut jvuu jvuv jvvt jvvu jvvv kttt kttu kttv ktut ktuu ktuv ktvt ktvu ktvv kutt kutu kutv kuut kuuu kuuv kuvt kuvu kuvv kvtt kvtu kvtv kvut kvuu kvuv kvvt kvvu kvvv lttt lttu lttv ltut ltuu ltuv ltvt ltvu ltvv lutt lutu lutv luut luuu luuv luvt luvu luvv lvtt lvtu lvtv lvut lvuu lvuv lvvt lvvu lvvv"
-        },
-        {
-            "input": "67",
-            "output": "mp mq mr ms np nq nr ns op oq or os"
-        },
-        {
-            "input": "535",
-            "output": "jdj jdk jdl jej jek jel jfj jfk jfl kdj kdk kdl kej kek kel kfj kfk kfl ldj ldk ldl lej lek lel lfj lfk lfl"
-        },
-        {
-            "input": "5649",
-            "output": "jmgw jmgx jmgy jmgz jmhw jmhx jmhy jmhz jmiw jmix jmiy jmiz jngw jngx jngy jngz jnhw jnhx jnhy jnhz jniw jnix jniy jniz jogw jogx jogy jogz johw johx johy johz joiw joix joiy joiz kmgw kmgx kmgy kmgz kmhw kmhx kmhy kmhz kmiw kmix kmiy kmiz kngw kngx kngy kngz knhw knhx knhy knhz kniw knix kniy kniz kogw kogx kogy kogz kohw kohx kohy kohz koiw koix koiy koiz lmgw lmgx lmgy lmgz lmhw lmhx lmhy lmhz lmiw lmix lmiy lmiz lngw lngx lngy lngz lnhw lnhx lnhy lnhz lniw lnix lniy lniz logw logx logy logz lohw lohx lohy lohz loiw loix loiy loiz"
-        },
-        {
-            "input": "89",
-            "output": "tw tx ty tz uw ux uy uz vw vx vy vz"
-        },
-        {
-            "input": "9778",
-            "output": "wppt wppu wppv wpqt wpqu wpqv wprt wpru wprv wpst wpsu wpsv wqpt wqpu wqpv wqqt wqqu wqqv wqrt wqru wqrv wqst wqsu wqsv wrpt wrpu wrpv wrqt wrqu wrqv wrrt wrru wrrv wrst wrsu wrsv wspt wspu wspv wsqt wsqu wsqv wsrt wsru wsrv wsst wssu wssv xppt xppu xppv xpqt xpqu xpqv xprt xpru xprv xpst xpsu xpsv xqpt xqpu xqpv xqqt xqqu xqqv xqrt xqru xqrv xqst xqsu xqsv xrpt xrpu xrpv xrqt xrqu xrqv xrrt xrru xrrv xrst xrsu xrsv xspt xspu xspv xsqt xsqu xsqv xsrt xsru xsrv xsst xssu xssv yppt yppu yppv ypqt ypqu ypqv yprt ypru yprv ypst ypsu ypsv yqpt yqpu yqpv yqqt yqqu yqqv yqrt yqru yqrv yqst yqsu yqsv yrpt yrpu yrpv yrqt yrqu yrqv yrrt yrru yrrv yrst yrsu yrsv yspt yspu yspv ysqt ysqu ysqv ysrt ysru ysrv ysst yssu yssv zppt zppu zppv zpqt zpqu zpqv zprt zpru zprv zpst zpsu zpsv zqpt zqpu zqpv zqqt zqqu zqqv zqrt zqru zqrv zqst zqsu zqsv zrpt zrpu zrpv zrqt zrqu zrqv zrrt zrru zrrv zrst zrsu zrsv zspt zspu zspv zsqt zsqu zsqv zsrt zsru zsrv zsst zssu zssv"
-        },
-        {
-            "input": "348",
-            "output": "dgt dgu dgv dht dhu dhv dit diu div egt egu egv eht ehu ehv eit eiu eiv fgt fgu fgv fht fhu fhv fit fiu fiv"
-        },
-        {
-            "input": "5887",
-            "output": "jttp jttq jttr jtts jtup jtuq jtur jtus jtvp jtvq jtvr jtvs jutp jutq jutr juts juup juuq juur juus juvp juvq juvr juvs jvtp jvtq jvtr jvts jvup jvuq jvur jvus jvvp jvvq jvvr jvvs kttp kttq kttr ktts ktup ktuq ktur ktus ktvp ktvq ktvr ktvs kutp kutq kutr kuts kuup kuuq kuur kuus kuvp kuvq kuvr kuvs kvtp kvtq kvtr kvts kvup kvuq kvur kvus kvvp kvvq kvvr kvvs lttp lttq lttr ltts ltup ltuq ltur ltus ltvp ltvq ltvr ltvs lutp lutq lutr luts luup luuq luur luus luvp luvq luvr luvs lvtp lvtq lvtr lvts lvup lvuq lvur lvus lvvp lvvq lvvr lvvs"
-        },
-        {
-            "input": "853",
-            "output": "tjd tje tjf tkd tke tkf tld tle tlf ujd uje ujf ukd uke ukf uld ule ulf vjd vje vjf vkd vke vkf vld vle vlf"
-        },
-        {
-            "input": "587",
-            "output": "jtp jtq jtr jts jup juq jur jus jvp jvq jvr jvs ktp ktq ktr kts kup kuq kur kus kvp kvq kvr kvs ltp ltq ltr lts lup luq lur lus lvp lvq lvr lvs"
-        },
-        {
-            "input": "6983",
-            "output": "mwtd mwte mwtf mwud mwue mwuf mwvd mwve mwvf mxtd mxte mxtf mxud mxue mxuf mxvd mxve mxvf mytd myte mytf myud myue myuf myvd myve myvf mztd mzte mztf mzud mzue mzuf mzvd mzve mzvf nwtd nwte nwtf nwud nwue nwuf nwvd nwve nwvf nxtd nxte nxtf nxud nxue nxuf nxvd nxve nxvf nytd nyte nytf nyud nyue nyuf nyvd nyve nyvf nztd nzte nztf nzud nzue nzuf nzvd nzve nzvf owtd owte owtf owud owue owuf owvd owve owvf oxtd oxte oxtf oxud oxue oxuf oxvd oxve oxvf oytd oyte oytf oyud oyue oyuf oyvd oyve oyvf oztd ozte oztf ozud ozue ozuf ozvd ozve ozvf"
-        },
-        {
-            "input": "529",
-            "output": "jaw jax jay jaz jbw jbx jby jbz jcw jcx jcy jcz kaw kax kay kaz kbw kbx kby kbz kcw kcx kcy kcz law lax lay laz lbw lbx lby lbz lcw lcx lcy lcz"
-        },
-        {
-            "input": "9399",
-            "output": "wdww wdwx wdwy wdwz wdxw wdxx wdxy wdxz wdyw wdyx wdyy wdyz wdzw wdzx wdzy wdzz weww wewx wewy wewz wexw wexx wexy wexz weyw weyx weyy weyz wezw wezx wezy wezz wfww wfwx wfwy wfwz wfxw wfxx wfxy wfxz wfyw wfyx wfyy wfyz wfzw wfzx wfzy wfzz xdww xdwx xdwy xdwz xdxw xdxx xdxy xdxz xdyw xdyx xdyy xdyz xdzw xdzx xdzy xdzz xeww xewx xewy xewz xexw xexx xexy xexz xeyw xeyx xeyy xeyz xezw xezx xezy xezz xfww xfwx xfwy xfwz xfxw xfxx xfxy xfxz xfyw xfyx xfyy xfyz xfzw xfzx xfzy xfzz ydww ydwx ydwy ydwz ydxw ydxx ydxy ydxz ydyw ydyx ydyy ydyz ydzw ydzx ydzy ydzz yeww yewx yewy yewz yexw yexx yexy yexz yeyw yeyx yeyy yeyz yezw yezx yezy yezz yfww yfwx yfwy yfwz yfxw yfxx yfxy yfxz yfyw yfyx yfyy yfyz yfzw yfzx yfzy yfzz zdww zdwx zdwy zdwz zdxw zdxx zdxy zdxz zdyw zdyx zdyy zdyz zdzw zdzx zdzy zdzz zeww zewx zewy zewz zexw zexx zexy zexz zeyw zeyx zeyy zeyz zezw zezx zezy zezz zfww zfwx zfwy zfwz zfxw zfxx zfxy zfxz zfyw zfyx zfyy zfyz zfzw zfzx zfzy zfzz"
-        },
-        {
-            "input": "2287",
-            "output": "aatp aatq aatr aats aaup aauq aaur aaus aavp aavq aavr aavs abtp abtq abtr abts abup abuq abur abus abvp abvq abvr abvs actp actq actr acts acup acuq acur acus acvp acvq acvr acvs batp batq batr bats baup bauq baur baus bavp bavq bavr bavs bbtp bbtq bbtr bbts bbup bbuq bbur bbus bbvp bbvq bbvr bbvs bctp bctq bctr bcts bcup bcuq bcur bcus bcvp bcvq bcvr bcvs catp catq catr cats caup cauq caur caus cavp cavq cavr cavs cbtp cbtq cbtr cbts cbup cbuq cbur cbus cbvp cbvq cbvr cbvs cctp cctq cctr ccts ccup ccuq ccur ccus ccvp ccvq ccvr ccvs"
-        },
-        {
-            "input": "76",
-            "output": "pm pn po qm qn qo rm rn ro sm sn so"
-        },
-        {
-            "input": "323",
-            "output": "dad dae daf dbd dbe dbf dcd dce dcf ead eae eaf ebd ebe ebf ecd ece ecf fad fae faf fbd fbe fbf fcd fce fcf"
-        },
-        {
-            "input": "3533",
-            "output": "djdd djde djdf djed djee djef djfd djfe djff dkdd dkde dkdf dked dkee dkef dkfd dkfe dkff dldd dlde dldf dled dlee dlef dlfd dlfe dlff ejdd ejde ejdf ejed ejee ejef ejfd ejfe ejff ekdd ekde ekdf eked ekee ekef ekfd ekfe ekff eldd elde eldf eled elee elef elfd elfe elff fjdd fjde fjdf fjed fjee fjef fjfd fjfe fjff fkdd fkde fkdf fked fkee fkef fkfd fkfe fkff fldd flde fldf fled flee flef flfd flfe flff"
-        },
-        {
-            "input": "6674",
-            "output": "mmpg mmph mmpi mmqg mmqh mmqi mmrg mmrh mmri mmsg mmsh mmsi mnpg mnph mnpi mnqg mnqh mnqi mnrg mnrh mnri mnsg mnsh mnsi mopg moph mopi moqg moqh moqi morg morh mori mosg mosh mosi nmpg nmph nmpi nmqg nmqh nmqi nmrg nmrh nmri nmsg nmsh nmsi nnpg nnph nnpi nnqg nnqh nnqi nnrg nnrh nnri nnsg nnsh nnsi nopg noph nopi noqg noqh noqi norg norh nori nosg nosh nosi ompg omph ompi omqg omqh omqi omrg omrh omri omsg omsh omsi onpg onph onpi onqg onqh onqi onrg onrh onri onsg onsh onsi oopg ooph oopi ooqg ooqh ooqi oorg oorh oori oosg oosh oosi"
-        },
-        {
-            "input": "8569",
-            "output": "tjmw tjmx tjmy tjmz tjnw tjnx tjny tjnz tjow tjox tjoy tjoz tkmw tkmx tkmy tkmz tknw tknx tkny tknz tkow tkox tkoy tkoz tlmw tlmx tlmy tlmz tlnw tlnx tlny tlnz tlow tlox tloy tloz ujmw ujmx ujmy ujmz ujnw ujnx ujny ujnz ujow ujox ujoy ujoz ukmw ukmx ukmy ukmz uknw uknx ukny uknz ukow ukox ukoy ukoz ulmw ulmx ulmy ulmz ulnw ulnx ulny ulnz ulow ulox uloy uloz vjmw vjmx vjmy vjmz vjnw vjnx vjny vjnz vjow vjox vjoy vjoz vkmw vkmx vkmy vkmz vknw vknx vkny vknz vkow vkox vkoy vkoz vlmw vlmx vlmy vlmz vlnw vlnx vlny vlnz vlow vlox vloy vloz"
-        },
-        {
-            "input": "333",
-            "output": "ddd dde ddf ded dee def dfd dfe dff edd ede edf eed eee eef efd efe eff fdd fde fdf fed fee fef ffd ffe fff"
-        },
-        {
-            "input": "247",
-            "output": "agp agq agr ags ahp ahq ahr ahs aip aiq air ais bgp bgq bgr bgs bhp bhq bhr bhs bip biq bir bis cgp cgq cgr cgs chp chq chr chs cip ciq cir cis"
-        },
-        {
-            "input": "725",
-            "output": "paj pak pal pbj pbk pbl pcj pck pcl qaj qak qal qbj qbk qbl qcj qck qcl raj rak ral rbj rbk rbl rcj rck rcl saj sak sal sbj sbk sbl scj sck scl"
-        },
-        {
-            "input": "9567",
-            "output": "wjmp wjmq wjmr wjms wjnp wjnq wjnr wjns wjop wjoq wjor wjos wkmp wkmq wkmr wkms wknp wknq wknr wkns wkop wkoq wkor wkos wlmp wlmq wlmr wlms wlnp wlnq wlnr wlns wlop wloq wlor wlos xjmp xjmq xjmr xjms xjnp xjnq xjnr xjns xjop xjoq xjor xjos xkmp xkmq xkmr xkms xknp xknq xknr xkns xkop xkoq xkor xkos xlmp xlmq xlmr xlms xlnp xlnq xlnr xlns xlop xloq xlor xlos yjmp yjmq yjmr yjms yjnp yjnq yjnr yjns yjop yjoq yjor yjos ykmp ykmq ykmr ykms yknp yknq yknr ykns ykop ykoq ykor ykos ylmp ylmq ylmr ylms ylnp ylnq ylnr ylns ylop yloq ylor ylos zjmp zjmq zjmr zjms zjnp zjnq zjnr zjns zjop zjoq zjor zjos zkmp zkmq zkmr zkms zknp zknq zknr zkns zkop zkoq zkor zkos zlmp zlmq zlmr zlms zlnp zlnq zlnr zlns zlop zloq zlor zlos"
-        },
-        {
-            "input": "38",
-            "output": "dt du dv et eu ev ft fu fv"
+            "input": "58466",
+            "output": "jtgmm jtgmn jtgmo jtgnm jtgnn jtgno jtgom jtgon jtgoo jthmm jthmn jthmo jthnm jthnn jthno jthom jthon jthoo jtimm jtimn jtimo jtinm jtinn jtino jtiom jtion jtioo jugmm jugmn jugmo jugnm jugnn jugno jugom jugon jugoo juhmm juhmn juhmo juhnm juhnn juhno juhom juhon juhoo juimm juimn juimo juinm juinn juino juiom juion juioo jvgmm jvgmn jvgmo jvgnm jvgnn jvgno jvgom jvgon jvgoo jvhmm jvhmn jvhmo jvhnm jvhnn jvhno jvhom jvhon jvhoo jvimm jvimn jvimo jvinm jvinn jvino jviom jvion jvioo ktgmm ktgmn ktgmo ktgnm ktgnn ktgno ktgom ktgon ktgoo kthmm kthmn kthmo kthnm kthnn kthno kthom kthon kthoo ktimm ktimn ktimo ktinm ktinn ktino ktiom ktion ktioo kugmm kugmn kugmo kugnm kugnn kugno kugom kugon kugoo kuhmm kuhmn kuhmo kuhnm kuhnn kuhno kuhom kuhon kuhoo kuimm kuimn kuimo kuinm kuinn kuino kuiom kuion kuioo kvgmm kvgmn kvgmo kvgnm kvgnn kvgno kvgom kvgon kvgoo kvhmm kvhmn kvhmo kvhnm kvhnn kvhno kvhom kvhon kvhoo kvimm kvimn kvimo kvinm kvinn kvino kviom kvion kvioo ltgmm ltgmn ltgmo ltgnm ltgnn ltgno ltgom ltgon ltgoo lthmm lthmn lthmo lthnm lthnn lthno lthom lthon lthoo ltimm ltimn ltimo ltinm ltinn ltino ltiom ltion ltioo lugmm lugmn lugmo lugnm lugnn lugno lugom lugon lugoo luhmm luhmn luhmo luhnm luhnn luhno luhom luhon luhoo luimm luimn luimo luinm luinn luino luiom luion luioo lvgmm lvgmn lvgmo lvgnm lvgnn lvgno lvgom lvgon lvgoo lvhmm lvhmn lvhmo lvhnm lvhnn lvhno lvhom lvhon lvhoo lvimm lvimn lvimo lvinm lvinn lvino lviom lvion lvioo"
         },
         {
             "input": "93",
             "output": "wd we wf xd xe xf yd ye yf zd ze zf"
         },
         {
-            "input": "2922",
-            "output": "awaa awab awac awba awbb awbc awca awcb awcc axaa axab axac axba axbb axbc axca axcb axcc ayaa ayab ayac ayba aybb aybc ayca aycb aycc azaa azab azac azba azbb azbc azca azcb azcc bwaa bwab bwac bwba bwbb bwbc bwca bwcb bwcc bxaa bxab bxac bxba bxbb bxbc bxca bxcb bxcc byaa byab byac byba bybb bybc byca bycb bycc bzaa bzab bzac bzba bzbb bzbc bzca bzcb bzcc cwaa cwab cwac cwba cwbb cwbc cwca cwcb cwcc cxaa cxab cxac cxba cxbb cxbc cxca cxcb cxcc cyaa cyab cyac cyba cybb cybc cyca cycb cycc czaa czab czac czba czbb czbc czca czcb czcc"
+            "input": "26355",
+            "output": "amdjj amdjk amdjl amdkj amdkk amdkl amdlj amdlk amdll amejj amejk amejl amekj amekk amekl amelj amelk amell amfjj amfjk amfjl amfkj amfkk amfkl amflj amflk amfll andjj andjk andjl andkj andkk andkl andlj andlk andll anejj anejk anejl anekj anekk anekl anelj anelk anell anfjj anfjk anfjl anfkj anfkk anfkl anflj anflk anfll aodjj aodjk aodjl aodkj aodkk aodkl aodlj aodlk aodll aoejj aoejk aoejl aoekj aoekk aoekl aoelj aoelk aoell aofjj aofjk aofjl aofkj aofkk aofkl aoflj aoflk aofll bmdjj bmdjk bmdjl bmdkj bmdkk bmdkl bmdlj bmdlk bmdll bmejj bmejk bmejl bmekj bmekk bmekl bmelj bmelk bmell bmfjj bmfjk bmfjl bmfkj bmfkk bmfkl bmflj bmflk bmfll bndjj bndjk bndjl bndkj bndkk bndkl bndlj bndlk bndll bnejj bnejk bnejl bnekj bnekk bnekl bnelj bnelk bnell bnfjj bnfjk bnfjl bnfkj bnfkk bnfkl bnflj bnflk bnfll bodjj bodjk bodjl bodkj bodkk bodkl bodlj bodlk bodll boejj boejk boejl boekj boekk boekl boelj boelk boell bofjj bofjk bofjl bofkj bofkk bofkl boflj boflk bofll cmdjj cmdjk cmdjl cmdkj cmdkk cmdkl cmdlj cmdlk cmdll cmejj cmejk cmejl cmekj cmekk cmekl cmelj cmelk cmell cmfjj cmfjk cmfjl cmfkj cmfkk cmfkl cmflj cmflk cmfll cndjj cndjk cndjl cndkj cndkk cndkl cndlj cndlk cndll cnejj cnejk cnejl cnekj cnekk cnekl cnelj cnelk cnell cnfjj cnfjk cnfjl cnfkj cnfkk cnfkl cnflj cnflk cnfll codjj codjk codjl codkj codkk codkl codlj codlk codll coejj coejk coejl coekj coekk coekl coelj coelk coell cofjj cofjk cofjl cofkj cofkk cofkl coflj coflk cofll"
         },
         {
-            "input": "866",
-            "output": "tmm tmn tmo tnm tnn tno tom ton too umm umn umo unm unn uno uom uon uoo vmm vmn vmo vnm vnn vno vom von voo"
+            "input": "5997",
+            "output": "jwwp jwwq jwwr jwws jwxp jwxq jwxr jwxs jwyp jwyq jwyr jwys jwzp jwzq jwzr jwzs jxwp jxwq jxwr jxws jxxp jxxq jxxr jxxs jxyp jxyq jxyr jxys jxzp jxzq jxzr jxzs jywp jywq jywr jyws jyxp jyxq jyxr jyxs jyyp jyyq jyyr jyys jyzp jyzq jyzr jyzs jzwp jzwq jzwr jzws jzxp jzxq jzxr jzxs jzyp jzyq jzyr jzys jzzp jzzq jzzr jzzs kwwp kwwq kwwr kwws kwxp kwxq kwxr kwxs kwyp kwyq kwyr kwys kwzp kwzq kwzr kwzs kxwp kxwq kxwr kxws kxxp kxxq kxxr kxxs kxyp kxyq kxyr kxys kxzp kxzq kxzr kxzs kywp kywq kywr kyws kyxp kyxq kyxr kyxs kyyp kyyq kyyr kyys kyzp kyzq kyzr kyzs kzwp kzwq kzwr kzws kzxp kzxq kzxr kzxs kzyp kzyq kzyr kzys kzzp kzzq kzzr kzzs lwwp lwwq lwwr lwws lwxp lwxq lwxr lwxs lwyp lwyq lwyr lwys lwzp lwzq lwzr lwzs lxwp lxwq lxwr lxws lxxp lxxq lxxr lxxs lxyp lxyq lxyr lxys lxzp lxzq lxzr lxzs lywp lywq lywr lyws lyxp lyxq lyxr lyxs lyyp lyyq lyyr lyys lyzp lyzq lyzr lyzs lzwp lzwq lzwr lzws lzxp lzxq lzxr lzxs lzyp lzyq lzyr lzys lzzp lzzq lzzr lzzs"
         },
         {
-            "input": "33",
-            "output": "dd de df ed ee ef fd fe ff"
+            "input": "665",
+            "output": "mmj mmk mml mnj mnk mnl moj mok mol nmj nmk nml nnj nnk nnl noj nok nol omj omk oml onj onk onl ooj ook ool"
         },
         {
-            "input": "955",
-            "output": "wjj wjk wjl wkj wkk wkl wlj wlk wll xjj xjk xjl xkj xkk xkl xlj xlk xll yjj yjk yjl ykj ykk ykl ylj ylk yll zjj zjk zjl zkj zkk zkl zlj zlk zll"
+            "input": "7",
+            "output": "p q r s"
         },
         {
-            "input": "634",
-            "output": "mdg mdh mdi meg meh mei mfg mfh mfi ndg ndh ndi neg neh nei nfg nfh nfi odg odh odi oeg oeh oei ofg ofh ofi"
+            "input": "95259",
+            "output": "wjajw wjajx wjajy wjajz wjakw wjakx wjaky wjakz wjalw wjalx wjaly wjalz wjbjw wjbjx wjbjy wjbjz wjbkw wjbkx wjbky wjbkz wjblw wjblx wjbly wjblz wjcjw wjcjx wjcjy wjcjz wjckw wjckx wjcky wjckz wjclw wjclx wjcly wjclz wkajw wkajx wkajy wkajz wkakw wkakx wkaky wkakz wkalw wkalx wkaly wkalz wkbjw wkbjx wkbjy wkbjz wkbkw wkbkx wkbky wkbkz wkblw wkblx wkbly wkblz wkcjw wkcjx wkcjy wkcjz wkckw wkckx wkcky wkckz wkclw wkclx wkcly wkclz wlajw wlajx wlajy wlajz wlakw wlakx wlaky wlakz wlalw wlalx wlaly wlalz wlbjw wlbjx wlbjy wlbjz wlbkw wlbkx wlbky wlbkz wlblw wlblx wlbly wlblz wlcjw wlcjx wlcjy wlcjz wlckw wlckx wlcky wlckz wlclw wlclx wlcly wlclz xjajw xjajx xjajy xjajz xjakw xjakx xjaky xjakz xjalw xjalx xjaly xjalz xjbjw xjbjx xjbjy xjbjz xjbkw xjbkx xjbky xjbkz xjblw xjblx xjbly xjblz xjcjw xjcjx xjcjy xjcjz xjckw xjckx xjcky xjckz xjclw xjclx xjcly xjclz xkajw xkajx xkajy xkajz xkakw xkakx xkaky xkakz xkalw xkalx xkaly xkalz xkbjw xkbjx xkbjy xkbjz xkbkw xkbkx xkbky xkbkz xkblw xkblx xkbly xkblz xkcjw xkcjx xkcjy xkcjz xkckw xkckx xkcky xkckz xkclw xkclx xkcly xkclz xlajw xlajx xlajy xlajz xlakw xlakx xlaky xlakz xlalw xlalx xlaly xlalz xlbjw xlbjx xlbjy xlbjz xlbkw xlbkx xlbky xlbkz xlblw xlblx xlbly xlblz xlcjw xlcjx xlcjy xlcjz xlckw xlckx xlcky xlckz xlclw xlclx xlcly xlclz yjajw yjajx yjajy yjajz yjakw yjakx yjaky yjakz yjalw yjalx yjaly yjalz yjbjw yjbjx yjbjy yjbjz yjbkw yjbkx yjbky yjbkz yjblw yjblx yjbly yjblz yjcjw yjcjx yjcjy yjcjz yjckw yjckx yjcky yjckz yjclw yjclx yjcly yjclz ykajw ykajx ykajy ykajz ykakw ykakx ykaky ykakz ykalw ykalx ykaly ykalz ykbjw ykbjx ykbjy ykbjz ykbkw ykbkx ykbky ykbkz ykblw ykblx ykbly ykblz ykcjw ykcjx ykcjy ykcjz ykckw ykckx ykcky ykckz ykclw ykclx ykcly ykclz ylajw ylajx ylajy ylajz ylakw ylakx ylaky ylakz ylalw ylalx ylaly ylalz ylbjw ylbjx ylbjy ylbjz ylbkw ylbkx ylbky ylbkz ylblw ylblx ylbly ylblz ylcjw ylcjx ylcjy ylcjz ylckw ylckx ylcky ylckz ylclw ylclx ylcly ylclz zjajw zjajx zjajy zjajz zjakw zjakx zjaky zjakz zjalw zjalx zjaly zjalz zjbjw zjbjx zjbjy zjbjz zjbkw zjbkx zjbky zjbkz zjblw zjblx zjbly zjblz zjcjw zjcjx zjcjy zjcjz zjckw zjckx zjcky zjckz zjclw zjclx zjcly zjclz zkajw zkajx zkajy zkajz zkakw zkakx zkaky zkakz zkalw zkalx zkaly zkalz zkbjw zkbjx zkbjy zkbjz zkbkw zkbkx zkbky zkbkz zkblw zkblx zkbly zkblz zkcjw zkcjx zkcjy zkcjz zkckw zkckx zkcky zkckz zkclw zkclx zkcly zkclz zlajw zlajx zlajy zlajz zlakw zlakx zlaky zlakz zlalw zlalx zlaly zlalz zlbjw zlbjx zlbjy zlbjz zlbkw zlbkx zlbky zlbkz zlblw zlblx zlbly zlblz zlcjw zlcjx zlcjy zlcjz zlckw zlckx zlcky zlckz zlclw zlclx zlcly zlclz"
         },
         {
-            "input": "29",
-            "output": "aw ax ay az bw bx by bz cw cx cy cz"
+            "input": "95",
+            "output": "wj wk wl xj xk xl yj yk yl zj zk zl"
         },
         {
-            "input": "355",
-            "output": "djj djk djl dkj dkk dkl dlj dlk dll ejj ejk ejl ekj ekk ekl elj elk ell fjj fjk fjl fkj fkk fkl flj flk fll"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "6676",
-            "output": "mmpm mmpn mmpo mmqm mmqn mmqo mmrm mmrn mmro mmsm mmsn mmso mnpm mnpn mnpo mnqm mnqn mnqo mnrm mnrn mnro mnsm mnsn mnso mopm mopn mopo moqm moqn moqo morm morn moro mosm mosn moso nmpm nmpn nmpo nmqm nmqn nmqo nmrm nmrn nmro nmsm nmsn nmso nnpm nnpn nnpo nnqm nnqn nnqo nnrm nnrn nnro nnsm nnsn nnso nopm nopn nopo noqm noqn noqo norm norn noro nosm nosn noso ompm ompn ompo omqm omqn omqo omrm omrn omro omsm omsn omso onpm onpn onpo onqm onqn onqo onrm onrn onro onsm onsn onso oopm oopn oopo ooqm ooqn ooqo oorm oorn ooro oosm oosn ooso"
+            "input": "36",
+            "output": "dm dn do em en eo fm fn fo"
         },
         {
-            "input": "3797",
-            "output": "dpwp dpwq dpwr dpws dpxp dpxq dpxr dpxs dpyp dpyq dpyr dpys dpzp dpzq dpzr dpzs dqwp dqwq dqwr dqws dqxp dqxq dqxr dqxs dqyp dqyq dqyr dqys dqzp dqzq dqzr dqzs drwp drwq drwr drws drxp drxq drxr drxs dryp dryq dryr drys drzp drzq drzr drzs dswp dswq dswr dsws dsxp dsxq dsxr dsxs dsyp dsyq dsyr dsys dszp dszq dszr dszs epwp epwq epwr epws epxp epxq epxr epxs epyp epyq epyr epys epzp epzq epzr epzs eqwp eqwq eqwr eqws eqxp eqxq eqxr eqxs eqyp eqyq eqyr eqys eqzp eqzq eqzr eqzs erwp erwq erwr erws erxp erxq erxr erxs eryp eryq eryr erys erzp erzq erzr erzs eswp eswq eswr esws esxp esxq esxr esxs esyp esyq esyr esys eszp eszq eszr eszs fpwp fpwq fpwr fpws fpxp fpxq fpxr fpxs fpyp fpyq fpyr fpys fpzp fpzq fpzr fpzs fqwp fqwq fqwr fqws fqxp fqxq fqxr fqxs fqyp fqyq fqyr fqys fqzp fqzq fqzr fqzs frwp frwq frwr frws frxp frxq frxr frxs fryp fryq fryr frys frzp frzq frzr frzs fswp fswq fswr fsws fsxp fsxq fsxr fsxs fsyp fsyq fsyr fsys fszp fszq fszr fszs"
+            "input": "",
+            "output": ""
         },
         {
-            "input": "47",
-            "output": "gp gq gr gs hp hq hr hs ip iq ir is"
+            "input": "986",
+            "output": "wtm wtn wto wum wun wuo wvm wvn wvo xtm xtn xto xum xun xuo xvm xvn xvo ytm ytn yto yum yun yuo yvm yvn yvo ztm ztn zto zum zun zuo zvm zvn zvo"
         },
         {
-            "input": "9634",
-            "output": "wmdg wmdh wmdi wmeg wmeh wmei wmfg wmfh wmfi wndg wndh wndi wneg wneh wnei wnfg wnfh wnfi wodg wodh wodi woeg woeh woei wofg wofh wofi xmdg xmdh xmdi xmeg xmeh xmei xmfg xmfh xmfi xndg xndh xndi xneg xneh xnei xnfg xnfh xnfi xodg xodh xodi xoeg xoeh xoei xofg xofh xofi ymdg ymdh ymdi ymeg ymeh ymei ymfg ymfh ymfi yndg yndh yndi yneg yneh ynei ynfg ynfh ynfi yodg yodh yodi yoeg yoeh yoei yofg yofh yofi zmdg zmdh zmdi zmeg zmeh zmei zmfg zmfh zmfi zndg zndh zndi zneg zneh znei znfg znfh znfi zodg zodh zodi zoeg zoeh zoei zofg zofh zofi"
+            "input": "66",
+            "output": "mm mn mo nm nn no om on oo"
         },
         {
-            "input": "773",
-            "output": "ppd ppe ppf pqd pqe pqf prd pre prf psd pse psf qpd qpe qpf qqd qqe qqf qrd qre qrf qsd qse qsf rpd rpe rpf rqd rqe rqf rrd rre rrf rsd rse rsf spd spe spf sqd sqe sqf srd sre srf ssd sse ssf"
+            "input": "2766",
+            "output": "apmm apmn apmo apnm apnn apno apom apon apoo aqmm aqmn aqmo aqnm aqnn aqno aqom aqon aqoo armm armn armo arnm arnn arno arom aron aroo asmm asmn asmo asnm asnn asno asom ason asoo bpmm bpmn bpmo bpnm bpnn bpno bpom bpon bpoo bqmm bqmn bqmo bqnm bqnn bqno bqom bqon bqoo brmm brmn brmo brnm brnn brno brom bron broo bsmm bsmn bsmo bsnm bsnn bsno bsom bson bsoo cpmm cpmn cpmo cpnm cpnn cpno cpom cpon cpoo cqmm cqmn cqmo cqnm cqnn cqno cqom cqon cqoo crmm crmn crmo crnm crnn crno crom cron croo csmm csmn csmo csnm csnn csno csom cson csoo"
         },
         {
-            "input": "73",
-            "output": "pd pe pf qd qe qf rd re rf sd se sf"
+            "input": "9298",
+            "output": "wawt wawu wawv waxt waxu waxv wayt wayu wayv wazt wazu wazv wbwt wbwu wbwv wbxt wbxu wbxv wbyt wbyu wbyv wbzt wbzu wbzv wcwt wcwu wcwv wcxt wcxu wcxv wcyt wcyu wcyv wczt wczu wczv xawt xawu xawv xaxt xaxu xaxv xayt xayu xayv xazt xazu xazv xbwt xbwu xbwv xbxt xbxu xbxv xbyt xbyu xbyv xbzt xbzu xbzv xcwt xcwu xcwv xcxt xcxu xcxv xcyt xcyu xcyv xczt xczu xczv yawt yawu yawv yaxt yaxu yaxv yayt yayu yayv yazt yazu yazv ybwt ybwu ybwv ybxt ybxu ybxv ybyt ybyu ybyv ybzt ybzu ybzv ycwt ycwu ycwv ycxt ycxu ycxv ycyt ycyu ycyv yczt yczu yczv zawt zawu zawv zaxt zaxu zaxv zayt zayu zayv zazt zazu zazv zbwt zbwu zbwv zbxt zbxu zbxv zbyt zbyu zbyv zbzt zbzu zbzv zcwt zcwu zcwv zcxt zcxu zcxv zcyt zcyu zcyv zczt zczu zczv"
         },
         {
-            "input": "385",
-            "output": "dtj dtk dtl duj duk dul dvj dvk dvl etj etk etl euj euk eul evj evk evl ftj ftk ftl fuj fuk ful fvj fvk fvl"
+            "input": "9",
+            "output": "w x y z"
         },
         {
-            "input": "4585",
-            "output": "gjtj gjtk gjtl gjuj gjuk gjul gjvj gjvk gjvl gktj gktk gktl gkuj gkuk gkul gkvj gkvk gkvl gltj gltk gltl gluj gluk glul glvj glvk glvl hjtj hjtk hjtl hjuj hjuk hjul hjvj hjvk hjvl hktj hktk hktl hkuj hkuk hkul hkvj hkvk hkvl hltj hltk hltl hluj hluk hlul hlvj hlvk hlvl ijtj ijtk ijtl ijuj ijuk ijul ijvj ijvk ijvl iktj iktk iktl ikuj ikuk ikul ikvj ikvk ikvl iltj iltk iltl iluj iluk ilul ilvj ilvk ilvl"
+            "input": "888",
+            "output": "ttt ttu ttv tut tuu tuv tvt tvu tvv utt utu utv uut uuu uuv uvt uvu uvv vtt vtu vtv vut vuu vuv vvt vvu vvv"
         },
         {
-            "input": "932",
-            "output": "wda wdb wdc wea web wec wfa wfb wfc xda xdb xdc xea xeb xec xfa xfb xfc yda ydb ydc yea yeb yec yfa yfb yfc zda zdb zdc zea zeb zec zfa zfb zfc"
-        },
-        {
-            "input": "557",
-            "output": "jjp jjq jjr jjs jkp jkq jkr jks jlp jlq jlr jls kjp kjq kjr kjs kkp kkq kkr kks klp klq klr kls ljp ljq ljr ljs lkp lkq lkr lks llp llq llr lls"
-        },
-        {
-            "input": "447",
-            "output": "ggp ggq ggr ggs ghp ghq ghr ghs gip giq gir gis hgp hgq hgr hgs hhp hhq hhr hhs hip hiq hir his igp igq igr igs ihp ihq ihr ihs iip iiq iir iis"
-        },
-        {
-            "input": "8638",
-            "output": "tmdt tmdu tmdv tmet tmeu tmev tmft tmfu tmfv tndt tndu tndv tnet tneu tnev tnft tnfu tnfv todt todu todv toet toeu toev toft tofu tofv umdt umdu umdv umet umeu umev umft umfu umfv undt undu undv unet uneu unev unft unfu unfv uodt uodu uodv uoet uoeu uoev uoft uofu uofv vmdt vmdu vmdv vmet vmeu vmev vmft vmfu vmfv vndt vndu vndv vnet vneu vnev vnft vnfu vnfv vodt vodu vodv voet voeu voev voft vofu vofv"
-        },
-        {
-            "input": "59",
-            "output": "jw jx jy jz kw kx ky kz lw lx ly lz"
-        },
-        {
-            "input": "4468",
-            "output": "ggmt ggmu ggmv ggnt ggnu ggnv ggot ggou ggov ghmt ghmu ghmv ghnt ghnu ghnv ghot ghou ghov gimt gimu gimv gint ginu ginv giot giou giov hgmt hgmu hgmv hgnt hgnu hgnv hgot hgou hgov hhmt hhmu hhmv hhnt hhnu hhnv hhot hhou hhov himt himu himv hint hinu hinv hiot hiou hiov igmt igmu igmv ignt ignu ignv igot igou igov ihmt ihmu ihmv ihnt ihnu ihnv ihot ihou ihov iimt iimu iimv iint iinu iinv iiot iiou iiov"
-        },
-        {
-            "input": "269",
-            "output": "amw amx amy amz anw anx any anz aow aox aoy aoz bmw bmx bmy bmz bnw bnx bny bnz bow box boy boz cmw cmx cmy cmz cnw cnx cny cnz cow cox coy coz"
-        },
-        {
-            "input": "75",
-            "output": "pj pk pl qj qk ql rj rk rl sj sk sl"
-        },
-        {
-            "input": "384",
-            "output": "dtg dth dti dug duh dui dvg dvh dvi etg eth eti eug euh eui evg evh evi ftg fth fti fug fuh fui fvg fvh fvi"
-        },
-        {
-            "input": "537",
-            "output": "jdp jdq jdr jds jep jeq jer jes jfp jfq jfr jfs kdp kdq kdr kds kep keq ker kes kfp kfq kfr kfs ldp ldq ldr lds lep leq ler les lfp lfq lfr lfs"
-        },
-        {
-            "input": "9935",
-            "output": "wwdj wwdk wwdl wwej wwek wwel wwfj wwfk wwfl wxdj wxdk wxdl wxej wxek wxel wxfj wxfk wxfl wydj wydk wydl wyej wyek wyel wyfj wyfk wyfl wzdj wzdk wzdl wzej wzek wzel wzfj wzfk wzfl xwdj xwdk xwdl xwej xwek xwel xwfj xwfk xwfl xxdj xxdk xxdl xxej xxek xxel xxfj xxfk xxfl xydj xydk xydl xyej xyek xyel xyfj xyfk xyfl xzdj xzdk xzdl xzej xzek xzel xzfj xzfk xzfl ywdj ywdk ywdl ywej ywek ywel ywfj ywfk ywfl yxdj yxdk yxdl yxej yxek yxel yxfj yxfk yxfl yydj yydk yydl yyej yyek yyel yyfj yyfk yyfl yzdj yzdk yzdl yzej yzek yzel yzfj yzfk yzfl zwdj zwdk zwdl zwej zwek zwel zwfj zwfk zwfl zxdj zxdk zxdl zxej zxek zxel zxfj zxfk zxfl zydj zydk zydl zyej zyek zyel zyfj zyfk zyfl zzdj zzdk zzdl zzej zzek zzel zzfj zzfk zzfl"
-        },
-        {
-            "input": "7236",
-            "output": "padm padn pado paem paen paeo pafm pafn pafo pbdm pbdn pbdo pbem pben pbeo pbfm pbfn pbfo pcdm pcdn pcdo pcem pcen pceo pcfm pcfn pcfo qadm qadn qado qaem qaen qaeo qafm qafn qafo qbdm qbdn qbdo qbem qben qbeo qbfm qbfn qbfo qcdm qcdn qcdo qcem qcen qceo qcfm qcfn qcfo radm radn rado raem raen raeo rafm rafn rafo rbdm rbdn rbdo rbem rben rbeo rbfm rbfn rbfo rcdm rcdn rcdo rcem rcen rceo rcfm rcfn rcfo sadm sadn sado saem saen saeo safm safn safo sbdm sbdn sbdo sbem sben sbeo sbfm sbfn sbfo scdm scdn scdo scem scen sceo scfm scfn scfo"
-        },
-        {
-            "input": "3648",
-            "output": "dmgt dmgu dmgv dmht dmhu dmhv dmit dmiu dmiv dngt dngu dngv dnht dnhu dnhv dnit dniu dniv dogt dogu dogv doht dohu dohv doit doiu doiv emgt emgu emgv emht emhu emhv emit emiu emiv engt engu engv enht enhu enhv enit eniu eniv eogt eogu eogv eoht eohu eohv eoit eoiu eoiv fmgt fmgu fmgv fmht fmhu fmhv fmit fmiu fmiv fngt fngu fngv fnht fnhu fnhv fnit fniu fniv fogt fogu fogv foht fohu fohv foit foiu foiv"
-        },
-        {
-            "input": "8998",
-            "output": "twwt twwu twwv twxt twxu twxv twyt twyu twyv twzt twzu twzv txwt txwu txwv txxt txxu txxv txyt txyu txyv txzt txzu txzv tywt tywu tywv tyxt tyxu tyxv tyyt tyyu tyyv tyzt tyzu tyzv tzwt tzwu tzwv tzxt tzxu tzxv tzyt tzyu tzyv tzzt tzzu tzzv uwwt uwwu uwwv uwxt uwxu uwxv uwyt uwyu uwyv uwzt uwzu uwzv uxwt uxwu uxwv uxxt uxxu uxxv uxyt uxyu uxyv uxzt uxzu uxzv uywt uywu uywv uyxt uyxu uyxv uyyt uyyu uyyv uyzt uyzu uyzv uzwt uzwu uzwv uzxt uzxu uzxv uzyt uzyu uzyv uzzt uzzu uzzv vwwt vwwu vwwv vwxt vwxu vwxv vwyt vwyu vwyv vwzt vwzu vwzv vxwt vxwu vxwv vxxt vxxu vxxv vxyt vxyu vxyv vxzt vxzu vxzv vywt vywu vywv vyxt vyxu vyxv vyyt vyyu vyyv vyzt vyzu vyzv vzwt vzwu vzwv vzxt vzxu vzxv vzyt vzyu vzyv vzzt vzzu vzzv"
-        },
-        {
-            "input": "792",
-            "output": "pwa pwb pwc pxa pxb pxc pya pyb pyc pza pzb pzc qwa qwb qwc qxa qxb qxc qya qyb qyc qza qzb qzc rwa rwb rwc rxa rxb rxc rya ryb ryc rza rzb rzc swa swb swc sxa sxb sxc sya syb syc sza szb szc"
-        },
-        {
-            "input": "37",
-            "output": "dp dq dr ds ep eq er es fp fq fr fs"
-        },
-        {
-            "input": "429",
-            "output": "gaw gax gay gaz gbw gbx gby gbz gcw gcx gcy gcz haw hax hay haz hbw hbx hby hbz hcw hcx hcy hcz iaw iax iay iaz ibw ibx iby ibz icw icx icy icz"
-        },
-        {
-            "input": "7534",
-            "output": "pjdg pjdh pjdi pjeg pjeh pjei pjfg pjfh pjfi pkdg pkdh pkdi pkeg pkeh pkei pkfg pkfh pkfi pldg pldh pldi pleg pleh plei plfg plfh plfi qjdg qjdh qjdi qjeg qjeh qjei qjfg qjfh qjfi qkdg qkdh qkdi qkeg qkeh qkei qkfg qkfh qkfi qldg qldh qldi qleg qleh qlei qlfg qlfh qlfi rjdg rjdh rjdi rjeg rjeh rjei rjfg rjfh rjfi rkdg rkdh rkdi rkeg rkeh rkei rkfg rkfh rkfi rldg rldh rldi rleg rleh rlei rlfg rlfh rlfi sjdg sjdh sjdi sjeg sjeh sjei sjfg sjfh sjfi skdg skdh skdi skeg skeh skei skfg skfh skfi sldg sldh sldi sleg sleh slei slfg slfh slfi"
-        },
-        {
-            "input": "7868",
-            "output": "ptmt ptmu ptmv ptnt ptnu ptnv ptot ptou ptov pumt pumu pumv punt punu punv puot puou puov pvmt pvmu pvmv pvnt pvnu pvnv pvot pvou pvov qtmt qtmu qtmv qtnt qtnu qtnv qtot qtou qtov qumt qumu qumv qunt qunu qunv quot quou quov qvmt qvmu qvmv qvnt qvnu qvnv qvot qvou qvov rtmt rtmu rtmv rtnt rtnu rtnv rtot rtou rtov rumt rumu rumv runt runu runv ruot ruou ruov rvmt rvmu rvmv rvnt rvnu rvnv rvot rvou rvov stmt stmu stmv stnt stnu stnv stot stou stov sumt sumu sumv sunt sunu sunv suot suou suov svmt svmu svmv svnt svnu svnv svot svou svov"
-        },
-        {
-            "input": "7825",
-            "output": "ptaj ptak ptal ptbj ptbk ptbl ptcj ptck ptcl puaj puak pual pubj pubk publ pucj puck pucl pvaj pvak pval pvbj pvbk pvbl pvcj pvck pvcl qtaj qtak qtal qtbj qtbk qtbl qtcj qtck qtcl quaj quak qual qubj qubk qubl qucj quck qucl qvaj qvak qval qvbj qvbk qvbl qvcj qvck qvcl rtaj rtak rtal rtbj rtbk rtbl rtcj rtck rtcl ruaj ruak rual rubj rubk rubl rucj ruck rucl rvaj rvak rval rvbj rvbk rvbl rvcj rvck rvcl staj stak stal stbj stbk stbl stcj stck stcl suaj suak sual subj subk subl sucj suck sucl svaj svak sval svbj svbk svbl svcj svck svcl"
-        },
-        {
-            "input": "94",
-            "output": "wg wh wi xg xh xi yg yh yi zg zh zi"
-        },
-        {
-            "input": "575",
-            "output": "jpj jpk jpl jqj jqk jql jrj jrk jrl jsj jsk jsl kpj kpk kpl kqj kqk kql krj krk krl ksj ksk ksl lpj lpk lpl lqj lqk lql lrj lrk lrl lsj lsk lsl"
-        },
-        {
-            "input": "64",
-            "output": "mg mh mi ng nh ni og oh oi"
-        },
-        {
-            "input": "43",
-            "output": "gd ge gf hd he hf id ie if"
-        },
-        {
-            "input": "258",
-            "output": "ajt aju ajv akt aku akv alt alu alv bjt bju bjv bkt bku bkv blt blu blv cjt cju cjv ckt cku ckv clt clu clv"
-        },
-        {
-            "input": "946",
-            "output": "wgm wgn wgo whm whn who wim win wio xgm xgn xgo xhm xhn xho xim xin xio ygm ygn ygo yhm yhn yho yim yin yio zgm zgn zgo zhm zhn zho zim zin zio"
+            "input": "49334",
+            "output": "gwddg gwddh gwddi gwdeg gwdeh gwdei gwdfg gwdfh gwdfi gwedg gwedh gwedi gweeg gweeh gweei gwefg gwefh gwefi gwfdg gwfdh gwfdi gwfeg gwfeh gwfei gwffg gwffh gwffi gxddg gxddh gxddi gxdeg gxdeh gxdei gxdfg gxdfh gxdfi gxedg gxedh gxedi gxeeg gxeeh gxeei gxefg gxefh gxefi gxfdg gxfdh gxfdi gxfeg gxfeh gxfei gxffg gxffh gxffi gyddg gyddh gyddi gydeg gydeh gydei gydfg gydfh gydfi gyedg gyedh gyedi gyeeg gyeeh gyeei gyefg gyefh gyefi gyfdg gyfdh gyfdi gyfeg gyfeh gyfei gyffg gyffh gyffi gzddg gzddh gzddi gzdeg gzdeh gzdei gzdfg gzdfh gzdfi gzedg gzedh gzedi gzeeg gzeeh gzeei gzefg gzefh gzefi gzfdg gzfdh gzfdi gzfeg gzfeh gzfei gzffg gzffh gzffi hwddg hwddh hwddi hwdeg hwdeh hwdei hwdfg hwdfh hwdfi hwedg hwedh hwedi hweeg hweeh hweei hwefg hwefh hwefi hwfdg hwfdh hwfdi hwfeg hwfeh hwfei hwffg hwffh hwffi hxddg hxddh hxddi hxdeg hxdeh hxdei hxdfg hxdfh hxdfi hxedg hxedh hxedi hxeeg hxeeh hxeei hxefg hxefh hxefi hxfdg hxfdh hxfdi hxfeg hxfeh hxfei hxffg hxffh hxffi hyddg hyddh hyddi hydeg hydeh hydei hydfg hydfh hydfi hyedg hyedh hyedi hyeeg hyeeh hyeei hyefg hyefh hyefi hyfdg hyfdh hyfdi hyfeg hyfeh hyfei hyffg hyffh hyffi hzddg hzddh hzddi hzdeg hzdeh hzdei hzdfg hzdfh hzdfi hzedg hzedh hzedi hzeeg hzeeh hzeei hzefg hzefh hzefi hzfdg hzfdh hzfdi hzfeg hzfeh hzfei hzffg hzffh hzffi iwddg iwddh iwddi iwdeg iwdeh iwdei iwdfg iwdfh iwdfi iwedg iwedh iwedi iweeg iweeh iweei iwefg iwefh iwefi iwfdg iwfdh iwfdi iwfeg iwfeh iwfei iwffg iwffh iwffi ixddg ixddh ixddi ixdeg ixdeh ixdei ixdfg ixdfh ixdfi ixedg ixedh ixedi ixeeg ixeeh ixeei ixefg ixefh ixefi ixfdg ixfdh ixfdi ixfeg ixfeh ixfei ixffg ixffh ixffi iyddg iyddh iyddi iydeg iydeh iydei iydfg iydfh iydfi iyedg iyedh iyedi iyeeg iyeeh iyeei iyefg iyefh iyefi iyfdg iyfdh iyfdi iyfeg iyfeh iyfei iyffg iyffh iyffi izddg izddh izddi izdeg izdeh izdei izdfg izdfh izdfi izedg izedh izedi izeeg izeeh izeei izefg izefh izefi izfdg izfdh izfdi izfeg izfeh izfei izffg izffh izffi"
         },
         {
             "input": "398",
             "output": "dwt dwu dwv dxt dxu dxv dyt dyu dyv dzt dzu dzv ewt ewu ewv ext exu exv eyt eyu eyv ezt ezu ezv fwt fwu fwv fxt fxu fxv fyt fyu fyv fzt fzu fzv"
         },
         {
-            "input": "3365",
-            "output": "ddmj ddmk ddml ddnj ddnk ddnl ddoj ddok ddol demj demk deml denj denk denl deoj deok deol dfmj dfmk dfml dfnj dfnk dfnl dfoj dfok dfol edmj edmk edml ednj ednk ednl edoj edok edol eemj eemk eeml eenj eenk eenl eeoj eeok eeol efmj efmk efml efnj efnk efnl efoj efok efol fdmj fdmk fdml fdnj fdnk fdnl fdoj fdok fdol femj femk feml fenj fenk fenl feoj feok feol ffmj ffmk ffml ffnj ffnk ffnl ffoj ffok ffol"
+            "input": "85877",
+            "output": "tjtpp tjtpq tjtpr tjtps tjtqp tjtqq tjtqr tjtqs tjtrp tjtrq tjtrr tjtrs tjtsp tjtsq tjtsr tjtss tjupp tjupq tjupr tjups tjuqp tjuqq tjuqr tjuqs tjurp tjurq tjurr tjurs tjusp tjusq tjusr tjuss tjvpp tjvpq tjvpr tjvps tjvqp tjvqq tjvqr tjvqs tjvrp tjvrq tjvrr tjvrs tjvsp tjvsq tjvsr tjvss tktpp tktpq tktpr tktps tktqp tktqq tktqr tktqs tktrp tktrq tktrr tktrs tktsp tktsq tktsr tktss tkupp tkupq tkupr tkups tkuqp tkuqq tkuqr tkuqs tkurp tkurq tkurr tkurs tkusp tkusq tkusr tkuss tkvpp tkvpq tkvpr tkvps tkvqp tkvqq tkvqr tkvqs tkvrp tkvrq tkvrr tkvrs tkvsp tkvsq tkvsr tkvss tltpp tltpq tltpr tltps tltqp tltqq tltqr tltqs tltrp tltrq tltrr tltrs tltsp tltsq tltsr tltss tlupp tlupq tlupr tlups tluqp tluqq tluqr tluqs tlurp tlurq tlurr tlurs tlusp tlusq tlusr tluss tlvpp tlvpq tlvpr tlvps tlvqp tlvqq tlvqr tlvqs tlvrp tlvrq tlvrr tlvrs tlvsp tlvsq tlvsr tlvss ujtpp ujtpq ujtpr ujtps ujtqp ujtqq ujtqr ujtqs ujtrp ujtrq ujtrr ujtrs ujtsp ujtsq ujtsr ujtss ujupp ujupq ujupr ujups ujuqp ujuqq ujuqr ujuqs ujurp ujurq ujurr ujurs ujusp ujusq ujusr ujuss ujvpp ujvpq ujvpr ujvps ujvqp ujvqq ujvqr ujvqs ujvrp ujvrq ujvrr ujvrs ujvsp ujvsq ujvsr ujvss uktpp uktpq uktpr uktps uktqp uktqq uktqr uktqs uktrp uktrq uktrr uktrs uktsp uktsq uktsr uktss ukupp ukupq ukupr ukups ukuqp ukuqq ukuqr ukuqs ukurp ukurq ukurr ukurs ukusp ukusq ukusr ukuss ukvpp ukvpq ukvpr ukvps ukvqp ukvqq ukvqr ukvqs ukvrp ukvrq ukvrr ukvrs ukvsp ukvsq ukvsr ukvss ultpp ultpq ultpr ultps ultqp ultqq ultqr ultqs ultrp ultrq ultrr ultrs ultsp ultsq ultsr ultss ulupp ulupq ulupr ulups uluqp uluqq uluqr uluqs ulurp ulurq ulurr ulurs ulusp ulusq ulusr uluss ulvpp ulvpq ulvpr ulvps ulvqp ulvqq ulvqr ulvqs ulvrp ulvrq ulvrr ulvrs ulvsp ulvsq ulvsr ulvss vjtpp vjtpq vjtpr vjtps vjtqp vjtqq vjtqr vjtqs vjtrp vjtrq vjtrr vjtrs vjtsp vjtsq vjtsr vjtss vjupp vjupq vjupr vjups vjuqp vjuqq vjuqr vjuqs vjurp vjurq vjurr vjurs vjusp vjusq vjusr vjuss vjvpp vjvpq vjvpr vjvps vjvqp vjvqq vjvqr vjvqs vjvrp vjvrq vjvrr vjvrs vjvsp vjvsq vjvsr vjvss vktpp vktpq vktpr vktps vktqp vktqq vktqr vktqs vktrp vktrq vktrr vktrs vktsp vktsq vktsr vktss vkupp vkupq vkupr vkups vkuqp vkuqq vkuqr vkuqs vkurp vkurq vkurr vkurs vkusp vkusq vkusr vkuss vkvpp vkvpq vkvpr vkvps vkvqp vkvqq vkvqr vkvqs vkvrp vkvrq vkvrr vkvrs vkvsp vkvsq vkvsr vkvss vltpp vltpq vltpr vltps vltqp vltqq vltqr vltqs vltrp vltrq vltrr vltrs vltsp vltsq vltsr vltss vlupp vlupq vlupr vlups vluqp vluqq vluqr vluqs vlurp vlurq vlurr vlurs vlusp vlusq vlusr vluss vlvpp vlvpq vlvpr vlvps vlvqp vlvqq vlvqr vlvqs vlvrp vlvrq vlvrr vlvrs vlvsp vlvsq vlvsr vlvss"
         },
         {
-            "input": "268",
-            "output": "amt amu amv ant anu anv aot aou aov bmt bmu bmv bnt bnu bnv bot bou bov cmt cmu cmv cnt cnu cnv cot cou cov"
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "8",
+            "output": "t u v"
+        },
+        {
+            "input": "2",
+            "output": "a b c"
         },
         {
             "input": "85",
             "output": "tj tk tl uj uk ul vj vk vl"
         },
         {
-            "input": "57",
-            "output": "jp jq jr js kp kq kr ks lp lq lr ls"
+            "input": "669",
+            "output": "mmw mmx mmy mmz mnw mnx mny mnz mow mox moy moz nmw nmx nmy nmz nnw nnx nny nnz now nox noy noz omw omx omy omz onw onx ony onz oow oox ooy ooz"
         },
         {
-            "input": "3643",
-            "output": "dmgd dmge dmgf dmhd dmhe dmhf dmid dmie dmif dngd dnge dngf dnhd dnhe dnhf dnid dnie dnif dogd doge dogf dohd dohe dohf doid doie doif emgd emge emgf emhd emhe emhf emid emie emif engd enge engf enhd enhe enhf enid enie enif eogd eoge eogf eohd eohe eohf eoid eoie eoif fmgd fmge fmgf fmhd fmhe fmhf fmid fmie fmif fngd fnge fngf fnhd fnhe fnhf fnid fnie fnif fogd foge fogf fohd fohe fohf foid foie foif"
+            "input": "745",
+            "output": "pgj pgk pgl phj phk phl pij pik pil qgj qgk qgl qhj qhk qhl qij qik qil rgj rgk rgl rhj rhk rhl rij rik ril sgj sgk sgl shj shk shl sij sik sil"
         },
         {
-            "input": "5747",
-            "output": "jpgp jpgq jpgr jpgs jphp jphq jphr jphs jpip jpiq jpir jpis jqgp jqgq jqgr jqgs jqhp jqhq jqhr jqhs jqip jqiq jqir jqis jrgp jrgq jrgr jrgs jrhp jrhq jrhr jrhs jrip jriq jrir jris jsgp jsgq jsgr jsgs jshp jshq jshr jshs jsip jsiq jsir jsis kpgp kpgq kpgr kpgs kphp kphq kphr kphs kpip kpiq kpir kpis kqgp kqgq kqgr kqgs kqhp kqhq kqhr kqhs kqip kqiq kqir kqis krgp krgq krgr krgs krhp krhq krhr krhs krip kriq krir kris ksgp ksgq ksgr ksgs kshp kshq kshr kshs ksip ksiq ksir ksis lpgp lpgq lpgr lpgs lphp lphq lphr lphs lpip lpiq lpir lpis lqgp lqgq lqgr lqgs lqhp lqhq lqhr lqhs lqip lqiq lqir lqis lrgp lrgq lrgr lrgs lrhp lrhq lrhr lrhs lrip lriq lrir lris lsgp lsgq lsgr lsgs lshp lshq lshr lshs lsip lsiq lsir lsis"
+            "input": "94",
+            "output": "wg wh wi xg xh xi yg yh yi zg zh zi"
         },
         {
-            "input": "956",
-            "output": "wjm wjn wjo wkm wkn wko wlm wln wlo xjm xjn xjo xkm xkn xko xlm xln xlo yjm yjn yjo ykm ykn yko ylm yln ylo zjm zjn zjo zkm zkn zko zlm zln zlo"
+            "input": "978",
+            "output": "wpt wpu wpv wqt wqu wqv wrt wru wrv wst wsu wsv xpt xpu xpv xqt xqu xqv xrt xru xrv xst xsu xsv ypt ypu ypv yqt yqu yqv yrt yru yrv yst ysu ysv zpt zpu zpv zqt zqu zqv zrt zru zrv zst zsu zsv"
         },
         {
-            "input": "9762",
-            "output": "wpma wpmb wpmc wpna wpnb wpnc wpoa wpob wpoc wqma wqmb wqmc wqna wqnb wqnc wqoa wqob wqoc wrma wrmb wrmc wrna wrnb wrnc wroa wrob wroc wsma wsmb wsmc wsna wsnb wsnc wsoa wsob wsoc xpma xpmb xpmc xpna xpnb xpnc xpoa xpob xpoc xqma xqmb xqmc xqna xqnb xqnc xqoa xqob xqoc xrma xrmb xrmc xrna xrnb xrnc xroa xrob xroc xsma xsmb xsmc xsna xsnb xsnc xsoa xsob xsoc ypma ypmb ypmc ypna ypnb ypnc ypoa ypob ypoc yqma yqmb yqmc yqna yqnb yqnc yqoa yqob yqoc yrma yrmb yrmc yrna yrnb yrnc yroa yrob yroc ysma ysmb ysmc ysna ysnb ysnc ysoa ysob ysoc zpma zpmb zpmc zpna zpnb zpnc zpoa zpob zpoc zqma zqmb zqmc zqna zqnb zqnc zqoa zqob zqoc zrma zrmb zrmc zrna zrnb zrnc zroa zrob zroc zsma zsmb zsmc zsna zsnb zsnc zsoa zsob zsoc"
+            "input": "4324",
+            "output": "gdag gdah gdai gdbg gdbh gdbi gdcg gdch gdci geag geah geai gebg gebh gebi gecg gech geci gfag gfah gfai gfbg gfbh gfbi gfcg gfch gfci hdag hdah hdai hdbg hdbh hdbi hdcg hdch hdci heag heah heai hebg hebh hebi hecg hech heci hfag hfah hfai hfbg hfbh hfbi hfcg hfch hfci idag idah idai idbg idbh idbi idcg idch idci ieag ieah ieai iebg iebh iebi iecg iech ieci ifag ifah ifai ifbg ifbh ifbi ifcg ifch ifci"
         },
         {
-            "input": "452",
-            "output": "gja gjb gjc gka gkb gkc gla glb glc hja hjb hjc hka hkb hkc hla hlb hlc ija ijb ijc ika ikb ikc ila ilb ilc"
+            "input": "5482",
+            "output": "jgta jgtb jgtc jgua jgub jguc jgva jgvb jgvc jhta jhtb jhtc jhua jhub jhuc jhva jhvb jhvc jita jitb jitc jiua jiub jiuc jiva jivb jivc kgta kgtb kgtc kgua kgub kguc kgva kgvb kgvc khta khtb khtc khua khub khuc khva khvb khvc kita kitb kitc kiua kiub kiuc kiva kivb kivc lgta lgtb lgtc lgua lgub lguc lgva lgvb lgvc lhta lhtb lhtc lhua lhub lhuc lhva lhvb lhvc lita litb litc liua liub liuc liva livb livc"
+        },
+        {
+            "input": "35",
+            "output": "dj dk dl ej ek el fj fk fl"
+        },
+        {
+            "input": "696",
+            "output": "mwm mwn mwo mxm mxn mxo mym myn myo mzm mzn mzo nwm nwn nwo nxm nxn nxo nym nyn nyo nzm nzn nzo owm own owo oxm oxn oxo oym oyn oyo ozm ozn ozo"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "2344",
+            "output": "adgg adgh adgi adhg adhh adhi adig adih adii aegg aegh aegi aehg aehh aehi aeig aeih aeii afgg afgh afgi afhg afhh afhi afig afih afii bdgg bdgh bdgi bdhg bdhh bdhi bdig bdih bdii begg begh begi behg behh behi beig beih beii bfgg bfgh bfgi bfhg bfhh bfhi bfig bfih bfii cdgg cdgh cdgi cdhg cdhh cdhi cdig cdih cdii cegg cegh cegi cehg cehh cehi ceig ceih ceii cfgg cfgh cfgi cfhg cfhh cfhi cfig cfih cfii"
+        },
+        {
+            "input": "3247",
+            "output": "dagp dagq dagr dags dahp dahq dahr dahs daip daiq dair dais dbgp dbgq dbgr dbgs dbhp dbhq dbhr dbhs dbip dbiq dbir dbis dcgp dcgq dcgr dcgs dchp dchq dchr dchs dcip dciq dcir dcis eagp eagq eagr eags eahp eahq eahr eahs eaip eaiq eair eais ebgp ebgq ebgr ebgs ebhp ebhq ebhr ebhs ebip ebiq ebir ebis ecgp ecgq ecgr ecgs echp echq echr echs ecip eciq ecir ecis fagp fagq fagr fags fahp fahq fahr fahs faip faiq fair fais fbgp fbgq fbgr fbgs fbhp fbhq fbhr fbhs fbip fbiq fbir fbis fcgp fcgq fcgr fcgs fchp fchq fchr fchs fcip fciq fcir fcis"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "5",
+            "output": "j k l"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "6",
+            "output": "m n o"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "3527",
+            "output": "djap djaq djar djas djbp djbq djbr djbs djcp djcq djcr djcs dkap dkaq dkar dkas dkbp dkbq dkbr dkbs dkcp dkcq dkcr dkcs dlap dlaq dlar dlas dlbp dlbq dlbr dlbs dlcp dlcq dlcr dlcs ejap ejaq ejar ejas ejbp ejbq ejbr ejbs ejcp ejcq ejcr ejcs ekap ekaq ekar ekas ekbp ekbq ekbr ekbs ekcp ekcq ekcr ekcs elap elaq elar elas elbp elbq elbr elbs elcp elcq elcr elcs fjap fjaq fjar fjas fjbp fjbq fjbr fjbs fjcp fjcq fjcr fjcs fkap fkaq fkar fkas fkbp fkbq fkbr fkbs fkcp fkcq fkcr fkcs flap flaq flar flas flbp flbq flbr flbs flcp flcq flcr flcs"
+        },
+        {
+            "input": "2993",
+            "output": "awwd awwe awwf awxd awxe awxf awyd awye awyf awzd awze awzf axwd axwe axwf axxd axxe axxf axyd axye axyf axzd axze axzf aywd aywe aywf ayxd ayxe ayxf ayyd ayye ayyf ayzd ayze ayzf azwd azwe azwf azxd azxe azxf azyd azye azyf azzd azze azzf bwwd bwwe bwwf bwxd bwxe bwxf bwyd bwye bwyf bwzd bwze bwzf bxwd bxwe bxwf bxxd bxxe bxxf bxyd bxye bxyf bxzd bxze bxzf bywd bywe bywf byxd byxe byxf byyd byye byyf byzd byze byzf bzwd bzwe bzwf bzxd bzxe bzxf bzyd bzye bzyf bzzd bzze bzzf cwwd cwwe cwwf cwxd cwxe cwxf cwyd cwye cwyf cwzd cwze cwzf cxwd cxwe cxwf cxxd cxxe cxxf cxyd cxye cxyf cxzd cxze cxzf cywd cywe cywf cyxd cyxe cyxf cyyd cyye cyyf cyzd cyze cyzf czwd czwe czwf czxd czxe czxf czyd czye czyf czzd czze czzf"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "879",
+            "output": "tpw tpx tpy tpz tqw tqx tqy tqz trw trx try trz tsw tsx tsy tsz upw upx upy upz uqw uqx uqy uqz urw urx ury urz usw usx usy usz vpw vpx vpy vpz vqw vqx vqy vqz vrw vrx vry vrz vsw vsx vsy vsz"
+        },
+        {
+            "input": "84765",
+            "output": "tgpmj tgpmk tgpml tgpnj tgpnk tgpnl tgpoj tgpok tgpol tgqmj tgqmk tgqml tgqnj tgqnk tgqnl tgqoj tgqok tgqol tgrmj tgrmk tgrml tgrnj tgrnk tgrnl tgroj tgrok tgrol tgsmj tgsmk tgsml tgsnj tgsnk tgsnl tgsoj tgsok tgsol thpmj thpmk thpml thpnj thpnk thpnl thpoj thpok thpol thqmj thqmk thqml thqnj thqnk thqnl thqoj thqok thqol thrmj thrmk thrml thrnj thrnk thrnl throj throk throl thsmj thsmk thsml thsnj thsnk thsnl thsoj thsok thsol tipmj tipmk tipml tipnj tipnk tipnl tipoj tipok tipol tiqmj tiqmk tiqml tiqnj tiqnk tiqnl tiqoj tiqok tiqol tirmj tirmk tirml tirnj tirnk tirnl tiroj tirok tirol tismj tismk tisml tisnj tisnk tisnl tisoj tisok tisol ugpmj ugpmk ugpml ugpnj ugpnk ugpnl ugpoj ugpok ugpol ugqmj ugqmk ugqml ugqnj ugqnk ugqnl ugqoj ugqok ugqol ugrmj ugrmk ugrml ugrnj ugrnk ugrnl ugroj ugrok ugrol ugsmj ugsmk ugsml ugsnj ugsnk ugsnl ugsoj ugsok ugsol uhpmj uhpmk uhpml uhpnj uhpnk uhpnl uhpoj uhpok uhpol uhqmj uhqmk uhqml uhqnj uhqnk uhqnl uhqoj uhqok uhqol uhrmj uhrmk uhrml uhrnj uhrnk uhrnl uhroj uhrok uhrol uhsmj uhsmk uhsml uhsnj uhsnk uhsnl uhsoj uhsok uhsol uipmj uipmk uipml uipnj uipnk uipnl uipoj uipok uipol uiqmj uiqmk uiqml uiqnj uiqnk uiqnl uiqoj uiqok uiqol uirmj uirmk uirml uirnj uirnk uirnl uiroj uirok uirol uismj uismk uisml uisnj uisnk uisnl uisoj uisok uisol vgpmj vgpmk vgpml vgpnj vgpnk vgpnl vgpoj vgpok vgpol vgqmj vgqmk vgqml vgqnj vgqnk vgqnl vgqoj vgqok vgqol vgrmj vgrmk vgrml vgrnj vgrnk vgrnl vgroj vgrok vgrol vgsmj vgsmk vgsml vgsnj vgsnk vgsnl vgsoj vgsok vgsol vhpmj vhpmk vhpml vhpnj vhpnk vhpnl vhpoj vhpok vhpol vhqmj vhqmk vhqml vhqnj vhqnk vhqnl vhqoj vhqok vhqol vhrmj vhrmk vhrml vhrnj vhrnk vhrnl vhroj vhrok vhrol vhsmj vhsmk vhsml vhsnj vhsnk vhsnl vhsoj vhsok vhsol vipmj vipmk vipml vipnj vipnk vipnl vipoj vipok vipol viqmj viqmk viqml viqnj viqnk viqnl viqoj viqok viqol virmj virmk virml virnj virnk virnl viroj virok virol vismj vismk visml visnj visnk visnl visoj visok visol"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "682",
+            "output": "mta mtb mtc mua mub muc mva mvb mvc nta ntb ntc nua nub nuc nva nvb nvc ota otb otc oua oub ouc ova ovb ovc"
         },
         {
             "input": "46",
             "output": "gm gn go hm hn ho im in io"
         },
         {
-            "input": "766",
-            "output": "pmm pmn pmo pnm pnn pno pom pon poo qmm qmn qmo qnm qnn qno qom qon qoo rmm rmn rmo rnm rnn rno rom ron roo smm smn smo snm snn sno som son soo"
+            "input": "68775",
+            "output": "mtppj mtppk mtppl mtpqj mtpqk mtpql mtprj mtprk mtprl mtpsj mtpsk mtpsl mtqpj mtqpk mtqpl mtqqj mtqqk mtqql mtqrj mtqrk mtqrl mtqsj mtqsk mtqsl mtrpj mtrpk mtrpl mtrqj mtrqk mtrql mtrrj mtrrk mtrrl mtrsj mtrsk mtrsl mtspj mtspk mtspl mtsqj mtsqk mtsql mtsrj mtsrk mtsrl mtssj mtssk mtssl muppj muppk muppl mupqj mupqk mupql muprj muprk muprl mupsj mupsk mupsl muqpj muqpk muqpl muqqj muqqk muqql muqrj muqrk muqrl muqsj muqsk muqsl murpj murpk murpl murqj murqk murql murrj murrk murrl mursj mursk mursl muspj muspk muspl musqj musqk musql musrj musrk musrl mussj mussk mussl mvppj mvppk mvppl mvpqj mvpqk mvpql mvprj mvprk mvprl mvpsj mvpsk mvpsl mvqpj mvqpk mvqpl mvqqj mvqqk mvqql mvqrj mvqrk mvqrl mvqsj mvqsk mvqsl mvrpj mvrpk mvrpl mvrqj mvrqk mvrql mvrrj mvrrk mvrrl mvrsj mvrsk mvrsl mvspj mvspk mvspl mvsqj mvsqk mvsql mvsrj mvsrk mvsrl mvssj mvssk mvssl ntppj ntppk ntppl ntpqj ntpqk ntpql ntprj ntprk ntprl ntpsj ntpsk ntpsl ntqpj ntqpk ntqpl ntqqj ntqqk ntqql ntqrj ntqrk ntqrl ntqsj ntqsk ntqsl ntrpj ntrpk ntrpl ntrqj ntrqk ntrql ntrrj ntrrk ntrrl ntrsj ntrsk ntrsl ntspj ntspk ntspl ntsqj ntsqk ntsql ntsrj ntsrk ntsrl ntssj ntssk ntssl nuppj nuppk nuppl nupqj nupqk nupql nuprj nuprk nuprl nupsj nupsk nupsl nuqpj nuqpk nuqpl nuqqj nuqqk nuqql nuqrj nuqrk nuqrl nuqsj nuqsk nuqsl nurpj nurpk nurpl nurqj nurqk nurql nurrj nurrk nurrl nursj nursk nursl nuspj nuspk nuspl nusqj nusqk nusql nusrj nusrk nusrl nussj nussk nussl nvppj nvppk nvppl nvpqj nvpqk nvpql nvprj nvprk nvprl nvpsj nvpsk nvpsl nvqpj nvqpk nvqpl nvqqj nvqqk nvqql nvqrj nvqrk nvqrl nvqsj nvqsk nvqsl nvrpj nvrpk nvrpl nvrqj nvrqk nvrql nvrrj nvrrk nvrrl nvrsj nvrsk nvrsl nvspj nvspk nvspl nvsqj nvsqk nvsql nvsrj nvsrk nvsrl nvssj nvssk nvssl otppj otppk otppl otpqj otpqk otpql otprj otprk otprl otpsj otpsk otpsl otqpj otqpk otqpl otqqj otqqk otqql otqrj otqrk otqrl otqsj otqsk otqsl otrpj otrpk otrpl otrqj otrqk otrql otrrj otrrk otrrl otrsj otrsk otrsl otspj otspk otspl otsqj otsqk otsql otsrj otsrk otsrl otssj otssk otssl ouppj ouppk ouppl oupqj oupqk oupql ouprj ouprk ouprl oupsj oupsk oupsl ouqpj ouqpk ouqpl ouqqj ouqqk ouqql ouqrj ouqrk ouqrl ouqsj ouqsk ouqsl ourpj ourpk ourpl ourqj ourqk ourql ourrj ourrk ourrl oursj oursk oursl ouspj ouspk ouspl ousqj ousqk ousql ousrj ousrk ousrl oussj oussk oussl ovppj ovppk ovppl ovpqj ovpqk ovpql ovprj ovprk ovprl ovpsj ovpsk ovpsl ovqpj ovqpk ovqpl ovqqj ovqqk ovqql ovqrj ovqrk ovqrl ovqsj ovqsk ovqsl ovrpj ovrpk ovrpl ovrqj ovrqk ovrql ovrrj ovrrk ovrrl ovrsj ovrsk ovrsl ovspj ovspk ovspl ovsqj ovsqk ovsql ovsrj ovsrk ovsrl ovssj ovssk ovssl"
         },
         {
-            "input": "445",
-            "output": "ggj ggk ggl ghj ghk ghl gij gik gil hgj hgk hgl hhj hhk hhl hij hik hil igj igk igl ihj ihk ihl iij iik iil"
+            "input": "349",
+            "output": "dgw dgx dgy dgz dhw dhx dhy dhz diw dix diy diz egw egx egy egz ehw ehx ehy ehz eiw eix eiy eiz fgw fgx fgy fgz fhw fhx fhy fhz fiw fix fiy fiz"
         },
         {
-            "input": "675",
-            "output": "mpj mpk mpl mqj mqk mql mrj mrk mrl msj msk msl npj npk npl nqj nqk nql nrj nrk nrl nsj nsk nsl opj opk opl oqj oqk oql orj ork orl osj osk osl"
+            "input": "3263",
+            "output": "damd dame damf dand dane danf daod daoe daof dbmd dbme dbmf dbnd dbne dbnf dbod dboe dbof dcmd dcme dcmf dcnd dcne dcnf dcod dcoe dcof eamd eame eamf eand eane eanf eaod eaoe eaof ebmd ebme ebmf ebnd ebne ebnf ebod eboe ebof ecmd ecme ecmf ecnd ecne ecnf ecod ecoe ecof famd fame famf fand fane fanf faod faoe faof fbmd fbme fbmf fbnd fbne fbnf fbod fboe fbof fcmd fcme fcmf fcnd fcne fcnf fcod fcoe fcof"
         },
         {
-            "input": "7439",
-            "output": "pgdw pgdx pgdy pgdz pgew pgex pgey pgez pgfw pgfx pgfy pgfz phdw phdx phdy phdz phew phex phey phez phfw phfx phfy phfz pidw pidx pidy pidz piew piex piey piez pifw pifx pify pifz qgdw qgdx qgdy qgdz qgew qgex qgey qgez qgfw qgfx qgfy qgfz qhdw qhdx qhdy qhdz qhew qhex qhey qhez qhfw qhfx qhfy qhfz qidw qidx qidy qidz qiew qiex qiey qiez qifw qifx qify qifz rgdw rgdx rgdy rgdz rgew rgex rgey rgez rgfw rgfx rgfy rgfz rhdw rhdx rhdy rhdz rhew rhex rhey rhez rhfw rhfx rhfy rhfz ridw ridx ridy ridz riew riex riey riez rifw rifx rify rifz sgdw sgdx sgdy sgdz sgew sgex sgey sgez sgfw sgfx sgfy sgfz shdw shdx shdy shdz shew shex shey shez shfw shfx shfy shfz sidw sidx sidy sidz siew siex siey siez sifw sifx sify sifz"
+            "input": "865",
+            "output": "tmj tmk tml tnj tnk tnl toj tok tol umj umk uml unj unk unl uoj uok uol vmj vmk vml vnj vnk vnl voj vok vol"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "4",
+            "output": "g h i"
+        },
+        {
+            "input": "",
+            "output": ""
+        },
+        {
+            "input": "3349",
+            "output": "ddgw ddgx ddgy ddgz ddhw ddhx ddhy ddhz ddiw ddix ddiy ddiz degw degx degy degz dehw dehx dehy dehz deiw deix deiy deiz dfgw dfgx dfgy dfgz dfhw dfhx dfhy dfhz dfiw dfix dfiy dfiz edgw edgx edgy edgz edhw edhx edhy edhz ediw edix ediy ediz eegw eegx eegy eegz eehw eehx eehy eehz eeiw eeix eeiy eeiz efgw efgx efgy efgz efhw efhx efhy efhz efiw efix efiy efiz fdgw fdgx fdgy fdgz fdhw fdhx fdhy fdhz fdiw fdix fdiy fdiz fegw fegx fegy fegz fehw fehx fehy fehz feiw feix feiy feiz ffgw ffgx ffgy ffgz ffhw ffhx ffhy ffhz ffiw ffix ffiy ffiz"
+        },
+        {
+            "input": "5",
+            "output": "j k l"
         },
         {
             "input": "74",
             "output": "pg ph pi qg qh qi rg rh ri sg sh si"
         },
         {
-            "input": "486",
-            "output": "gtm gtn gto gum gun guo gvm gvn gvo htm htn hto hum hun huo hvm hvn hvo itm itn ito ium iun iuo ivm ivn ivo"
+            "input": "52",
+            "output": "ja jb jc ka kb kc la lb lc"
         },
         {
-            "input": "3785",
-            "output": "dptj dptk dptl dpuj dpuk dpul dpvj dpvk dpvl dqtj dqtk dqtl dquj dquk dqul dqvj dqvk dqvl drtj drtk drtl druj druk drul drvj drvk drvl dstj dstk dstl dsuj dsuk dsul dsvj dsvk dsvl eptj eptk eptl epuj epuk epul epvj epvk epvl eqtj eqtk eqtl equj equk equl eqvj eqvk eqvl ertj ertk ertl eruj eruk erul ervj ervk ervl estj estk estl esuj esuk esul esvj esvk esvl fptj fptk fptl fpuj fpuk fpul fpvj fpvk fpvl fqtj fqtk fqtl fquj fquk fqul fqvj fqvk fqvl frtj frtk frtl fruj fruk frul frvj frvk frvl fstj fstk fstl fsuj fsuk fsul fsvj fsvk fsvl"
+            "input": "25",
+            "output": "aj ak al bj bk bl cj ck cl"
         },
         {
-            "input": "27",
-            "output": "ap aq ar as bp bq br bs cp cq cr cs"
+            "input": "63677",
+            "output": "mdmpp mdmpq mdmpr mdmps mdmqp mdmqq mdmqr mdmqs mdmrp mdmrq mdmrr mdmrs mdmsp mdmsq mdmsr mdmss mdnpp mdnpq mdnpr mdnps mdnqp mdnqq mdnqr mdnqs mdnrp mdnrq mdnrr mdnrs mdnsp mdnsq mdnsr mdnss mdopp mdopq mdopr mdops mdoqp mdoqq mdoqr mdoqs mdorp mdorq mdorr mdors mdosp mdosq mdosr mdoss mempp mempq mempr memps memqp memqq memqr memqs memrp memrq memrr memrs memsp memsq memsr memss menpp menpq menpr menps menqp menqq menqr menqs menrp menrq menrr menrs mensp mensq mensr menss meopp meopq meopr meops meoqp meoqq meoqr meoqs meorp meorq meorr meors meosp meosq meosr meoss mfmpp mfmpq mfmpr mfmps mfmqp mfmqq mfmqr mfmqs mfmrp mfmrq mfmrr mfmrs mfmsp mfmsq mfmsr mfmss mfnpp mfnpq mfnpr mfnps mfnqp mfnqq mfnqr mfnqs mfnrp mfnrq mfnrr mfnrs mfnsp mfnsq mfnsr mfnss mfopp mfopq mfopr mfops mfoqp mfoqq mfoqr mfoqs mforp mforq mforr mfors mfosp mfosq mfosr mfoss ndmpp ndmpq ndmpr ndmps ndmqp ndmqq ndmqr ndmqs ndmrp ndmrq ndmrr ndmrs ndmsp ndmsq ndmsr ndmss ndnpp ndnpq ndnpr ndnps ndnqp ndnqq ndnqr ndnqs ndnrp ndnrq ndnrr ndnrs ndnsp ndnsq ndnsr ndnss ndopp ndopq ndopr ndops ndoqp ndoqq ndoqr ndoqs ndorp ndorq ndorr ndors ndosp ndosq ndosr ndoss nempp nempq nempr nemps nemqp nemqq nemqr nemqs nemrp nemrq nemrr nemrs nemsp nemsq nemsr nemss nenpp nenpq nenpr nenps nenqp nenqq nenqr nenqs nenrp nenrq nenrr nenrs nensp nensq nensr nenss neopp neopq neopr neops neoqp neoqq neoqr neoqs neorp neorq neorr neors neosp neosq neosr neoss nfmpp nfmpq nfmpr nfmps nfmqp nfmqq nfmqr nfmqs nfmrp nfmrq nfmrr nfmrs nfmsp nfmsq nfmsr nfmss nfnpp nfnpq nfnpr nfnps nfnqp nfnqq nfnqr nfnqs nfnrp nfnrq nfnrr nfnrs nfnsp nfnsq nfnsr nfnss nfopp nfopq nfopr nfops nfoqp nfoqq nfoqr nfoqs nforp nforq nforr nfors nfosp nfosq nfosr nfoss odmpp odmpq odmpr odmps odmqp odmqq odmqr odmqs odmrp odmrq odmrr odmrs odmsp odmsq odmsr odmss odnpp odnpq odnpr odnps odnqp odnqq odnqr odnqs odnrp odnrq odnrr odnrs odnsp odnsq odnsr odnss odopp odopq odopr odops odoqp odoqq odoqr odoqs odorp odorq odorr odors odosp odosq odosr odoss oempp oempq oempr oemps oemqp oemqq oemqr oemqs oemrp oemrq oemrr oemrs oemsp oemsq oemsr oemss oenpp oenpq oenpr oenps oenqp oenqq oenqr oenqs oenrp oenrq oenrr oenrs oensp oensq oensr oenss oeopp oeopq oeopr oeops oeoqp oeoqq oeoqr oeoqs oeorp oeorq oeorr oeors oeosp oeosq oeosr oeoss ofmpp ofmpq ofmpr ofmps ofmqp ofmqq ofmqr ofmqs ofmrp ofmrq ofmrr ofmrs ofmsp ofmsq ofmsr ofmss ofnpp ofnpq ofnpr ofnps ofnqp ofnqq ofnqr ofnqs ofnrp ofnrq ofnrr ofnrs ofnsp ofnsq ofnsr ofnss ofopp ofopq ofopr ofops ofoqp ofoqq ofoqr ofoqs oforp oforq oforr ofors ofosp ofosq ofosr ofoss"
         },
         {
-            "input": "34",
-            "output": "dg dh di eg eh ei fg fh fi"
+            "input": "4",
+            "output": "g h i"
         },
         {
-            "input": "9387",
-            "output": "wdtp wdtq wdtr wdts wdup wduq wdur wdus wdvp wdvq wdvr wdvs wetp wetq wetr wets weup weuq weur weus wevp wevq wevr wevs wftp wftq wftr wfts wfup wfuq wfur wfus wfvp wfvq wfvr wfvs xdtp xdtq xdtr xdts xdup xduq xdur xdus xdvp xdvq xdvr xdvs xetp xetq xetr xets xeup xeuq xeur xeus xevp xevq xevr xevs xftp xftq xftr xfts xfup xfuq xfur xfus xfvp xfvq xfvr xfvs ydtp ydtq ydtr ydts ydup yduq ydur ydus ydvp ydvq ydvr ydvs yetp yetq yetr yets yeup yeuq yeur yeus yevp yevq yevr yevs yftp yftq yftr yfts yfup yfuq yfur yfus yfvp yfvq yfvr yfvs zdtp zdtq zdtr zdts zdup zduq zdur zdus zdvp zdvq zdvr zdvs zetp zetq zetr zets zeup zeuq zeur zeus zevp zevq zevr zevs zftp zftq zftr zfts zfup zfuq zfur zfus zfvp zfvq zfvr zfvs"
-        },
-        {
-            "input": "996",
-            "output": "wwm wwn wwo wxm wxn wxo wym wyn wyo wzm wzn wzo xwm xwn xwo xxm xxn xxo xym xyn xyo xzm xzn xzo ywm ywn ywo yxm yxn yxo yym yyn yyo yzm yzn yzo zwm zwn zwo zxm zxn zxo zym zyn zyo zzm zzn zzo"
+            "input": "544",
+            "output": "jgg jgh jgi jhg jhh jhi jig jih jii kgg kgh kgi khg khh khi kig kih kii lgg lgh lgi lhg lhh lhi lig lih lii"
         }
-    ],
-    "difficulty": "medium"
+    ]
 }
