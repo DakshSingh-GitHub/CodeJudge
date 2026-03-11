@@ -1,0 +1,477 @@
+{
+    "id": "check_if_two_string_arrays_are_equivalent",
+    "title": "Check If Two String Arrays are Equivalent",
+    "description": "Given two string arrays word1 and word2, return true if the two arrays represent the same string, and false otherwise.",
+    "input_format": "First line: space-separated strings of word1. Second line: space-separated strings of word2.",
+    "output_format": "'true' or 'false'.",
+    "constraints": {
+        "length": "1 <= word1.length, word2.length <= 10^3"
+    },
+    "difficulty": "easy",
+    "judge_mode": "str_compare_strip",
+    "time_limit": 1,
+    "sample_test_cases": [
+        {
+            "input": "ab c\na bc",
+            "output": "true"
+        },
+        {
+            "input": "a cb\nab c",
+            "output": "false"
+        }
+    ],
+    "hidden_test_cases": [
+        {
+            "input": "j voa smhm\njv o as mhm",
+            "output": "true"
+        },
+        {
+            "input": "tv\ntv",
+            "output": "true"
+        },
+        {
+            "input": "buuz juyqe j gjfqn sbqv zdqv\nbuuz juyq ej gj fqns bqvz dqv",
+            "output": "true"
+        },
+        {
+            "input": "vrigj vi c pt lv f dn iw hijs gx\nx cmmqm s yfk maavo tzioy pke n fgp hg",
+            "output": "false"
+        },
+        {
+            "input": "dzno x lks gq\njexv kbymn faamg ik hj mzcza",
+            "output": "false"
+        },
+        {
+            "input": "cxdn elyj\ncxdn elyj",
+            "output": "true"
+        },
+        {
+            "input": "m u ctgi wx c a unnw jkmtt ghs jel\nmuc tgiwx c aun nw j k mttgh sj e l",
+            "output": "true"
+        },
+        {
+            "input": "duu smycp b xu ir azci c\nmdtwd pabo eeec ghg vowiw wevpf ob kuf ehdy",
+            "output": "false"
+        },
+        {
+            "input": "ntg pyhpk jmlah\nntgpy hp kjm la h",
+            "output": "true"
+        },
+        {
+            "input": "z sbfwy os aosnm rwne z yk nd aelqd\npg wwq nxii imbg jth avhc",
+            "output": "false"
+        },
+        {
+            "input": "lsjrf pszii s w cdvno xx f wg u\no h s nseh qpil pvvyz eihpi tbf jjgt",
+            "output": "false"
+        },
+        {
+            "input": "lyotg a\npujc kdkur t zogx iakxi",
+            "output": "false"
+        },
+        {
+            "input": "lnrjk uf\nbgirh k txg nfvdf xtn k zly ajywi kxnlv iumxf",
+            "output": "false"
+        },
+        {
+            "input": "wgha nanio jl bq i bje opx mwb czyx\nwgha n anio jlbqi bj eo p x mwbcz y x",
+            "output": "true"
+        },
+        {
+            "input": "znc bygfw zckfj mviub yol ktb uucsr wv ronh cpokp\nzncb ygfwz ckfj mviub yolk t buuc sr wv r on hcpo k p",
+            "output": "true"
+        },
+        {
+            "input": "x axqux ge uov sqi epetu tjnx yd qips gdc\npcsks za hqyrm mo v tg kbgg xt",
+            "output": "false"
+        },
+        {
+            "input": "sx pkpz vovca mq\nsxpkp zvo v c amq",
+            "output": "true"
+        },
+        {
+            "input": "o\nmljl y umeua d",
+            "output": "false"
+        },
+        {
+            "input": "aew egji k ak di tfl\naeweg jikak dit fl",
+            "output": "true"
+        },
+        {
+            "input": "c\nzedan bdb",
+            "output": "false"
+        },
+        {
+            "input": "cft b ct mt\ncf t bc t mt",
+            "output": "true"
+        },
+        {
+            "input": "e pqim\nxb e z jhu",
+            "output": "false"
+        },
+        {
+            "input": "qr i wpr uhzmr kj qsu zlfc rqb\nqriw pruh z m r k j qsuzl fcrq b",
+            "output": "true"
+        },
+        {
+            "input": "qeq tgzo f nz uu keka\nlky fz fubf ecz bbqfs",
+            "output": "false"
+        },
+        {
+            "input": "mwbqu\nm wbqu",
+            "output": "true"
+        },
+        {
+            "input": "gcq fnhe lmu ltc\nvqe",
+            "output": "false"
+        },
+        {
+            "input": "dcu l vnh\npylwn bpdkm pitq mohj fi in znzr by i dkkq",
+            "output": "false"
+        },
+        {
+            "input": "tvl\nqmg v eiqz",
+            "output": "false"
+        },
+        {
+            "input": "u n\ncm",
+            "output": "false"
+        },
+        {
+            "input": "f wtdkz tyvcv thrdn at xewvp pqh wotug\nfwt d kztyv cv thrd nat xewv ppqh wo tu g",
+            "output": "true"
+        },
+        {
+            "input": "pr btqe q gwr\nprb t qeqg wr",
+            "output": "true"
+        },
+        {
+            "input": "fjlb g rq l ixmft mcrd q sf i\nfjlbg rq lixm ftmc rdqsf i",
+            "output": "true"
+        },
+        {
+            "input": "p cbcan e j gdczn vb qrs rxx p y\ngguh zzgno lg g tm jfq nby",
+            "output": "false"
+        },
+        {
+            "input": "hbvk tds csh ocrs wxxq yo ixe kklo huacq f\nhbvkt ds cshoc r sw xx qyoi xekk lohu acq f",
+            "output": "true"
+        },
+        {
+            "input": "sdut tb zijz xc\nsdutt bzi jz xc",
+            "output": "true"
+        },
+        {
+            "input": "dyyc bum zsiwt fkhn ye ffdm b n gy\nli",
+            "output": "false"
+        },
+        {
+            "input": "ipg so hra lyc bg rcr ahqye\ni pgsoh raly cbgr c r ahq y e",
+            "output": "true"
+        },
+        {
+            "input": "j kvyi kw ecnot jtf yj njs wzios\njkv y i kw ec not j t fyj n js wzi os",
+            "output": "true"
+        },
+        {
+            "input": "k ep we ogivi catdx ekg\nk epweo givic atd xekg",
+            "output": "true"
+        },
+        {
+            "input": "gzyb pzjj\nxw qwhx bn x mdkv",
+            "output": "false"
+        },
+        {
+            "input": "zfz ib vc tya w\nzfzi bvcty aw",
+            "output": "true"
+        },
+        {
+            "input": "nv cmqeq yrys hs qln svp jynkh\nry wda fceft bnt f olzf wrmv bpie m s",
+            "output": "false"
+        },
+        {
+            "input": "szju phg xn j rdld zwl evfn slpdc f o\nnwg v l y vzb ju uin laoof x hfot",
+            "output": "false"
+        },
+        {
+            "input": "h xjpnv gscx jr gxcjx\njmggl a i ykrx ak twqi mxc hdzq sxtb alszc",
+            "output": "false"
+        },
+        {
+            "input": "vuyv t i npm ug\nr wu d",
+            "output": "false"
+        },
+        {
+            "input": "g bm\ngbm",
+            "output": "true"
+        },
+        {
+            "input": "txow p ug px zrp sp wcexi\ns tmz e",
+            "output": "false"
+        },
+        {
+            "input": "qpfmw h pqljr mob a aryl ix\nqpfm w h pql jrm ob aa ryli x",
+            "output": "true"
+        },
+        {
+            "input": "fpbsk\nydv gvwj ekd yjs",
+            "output": "false"
+        },
+        {
+            "input": "gavpk go dpvo xojs c zxqtd csu yo nece\nzjcb r u vha cbu l",
+            "output": "false"
+        },
+        {
+            "input": "heyk aiig ilky dvom w gn pn tq\nwls duo zq rd c hd",
+            "output": "false"
+        },
+        {
+            "input": "hdnfi vzfp vlv vbapj ngh qkl e zbyh lr\nrdvyj xi o ju zlue wztt hh urad d aqbaa",
+            "output": "false"
+        },
+        {
+            "input": "ouo dnut ba v gv xrmj\nexs uj rbs e j xe",
+            "output": "false"
+        },
+        {
+            "input": "heg ljw a\nxezja a e brci x c zfhpi",
+            "output": "false"
+        },
+        {
+            "input": "jyc\njy c",
+            "output": "true"
+        },
+        {
+            "input": "ww eaj apqsa ey zk asz l\ne dm f hzyob jbtj",
+            "output": "false"
+        },
+        {
+            "input": "cuqa xleha a\nc uqax lehaa",
+            "output": "true"
+        },
+        {
+            "input": "sih gi f jde vvb xbjq\ns ihg i fj devvb xbjq",
+            "output": "true"
+        },
+        {
+            "input": "oebv\ngdd s g ua ozv qeji vxxhb sri sffv j",
+            "output": "false"
+        },
+        {
+            "input": "pyg jz pp szy jr oakb kbvc xa andkz\npy gjz p psz y jro akbkb vcx a a ndkz",
+            "output": "true"
+        },
+        {
+            "input": "lzs usw jae onai\nlzsus wja e ona i",
+            "output": "true"
+        },
+        {
+            "input": "ix alvm azpaz p tk m npao\nz dxkoo",
+            "output": "false"
+        },
+        {
+            "input": "q qkf ars afzol qt\nqq k far safz olq t",
+            "output": "true"
+        },
+        {
+            "input": "ecgo qbnj hh cdlho ehu vsi ip\nkjgej fw csw g cv",
+            "output": "false"
+        },
+        {
+            "input": "hwf ysyt l\nvps wjn liqx br",
+            "output": "false"
+        },
+        {
+            "input": "zqxm ifx sipv hu evov niedn gka j k\nzqxmi fx sipv huevo vnie dngka jk",
+            "output": "true"
+        },
+        {
+            "input": "in on zfp y\nnjol",
+            "output": "false"
+        },
+        {
+            "input": "mprak rec bko weda p\ncsl wl yz w rpt ojotu iy lcoxu hnan",
+            "output": "false"
+        },
+        {
+            "input": "gr\ng r",
+            "output": "true"
+        },
+        {
+            "input": "wn rr h xhixc jh\nwnrrh xhixc j h",
+            "output": "true"
+        },
+        {
+            "input": "x jo tnr y hvbd lnko zh ker\nj at prc d bztod napw fao tqkzn",
+            "output": "false"
+        },
+        {
+            "input": "bvgh t kh hkkqe hbr o vn\nbvgh tk hh kk qehbr ovn",
+            "output": "true"
+        },
+        {
+            "input": "kgqx\nk gqx",
+            "output": "true"
+        },
+        {
+            "input": "qcyr rx afisi wfrnq fz\nqc yrrxa fis iwf rnq fz",
+            "output": "true"
+        },
+        {
+            "input": "csy e sc oq iao\nbs x fypal it ntab",
+            "output": "false"
+        },
+        {
+            "input": "ud d zyof bguzh fof vkus ifsft hywh rcbjg\njshn rd m n",
+            "output": "false"
+        },
+        {
+            "input": "d r bxcl s isf h sp\nlaund wc tzbcu y a ijbg tbot dc cglov hgj",
+            "output": "false"
+        },
+        {
+            "input": "vs ot dxo zae rs os t nfk z wfml\ncfej su ehgp mr uqug eviwm hbs thn fts",
+            "output": "false"
+        },
+        {
+            "input": "jx c\njxc",
+            "output": "true"
+        },
+        {
+            "input": "vzm impy wgzub vj k yaz b fxz utnzb\nzyjk wech kty",
+            "output": "false"
+        },
+        {
+            "input": "pmdhn m qnz ex qqi xvgpd ospk ui m o\npmdh nmqnz exq q ixv gpdos pk uimo",
+            "output": "true"
+        },
+        {
+            "input": "gmt o h\nkye auw",
+            "output": "false"
+        },
+        {
+            "input": "k l\nkl",
+            "output": "true"
+        },
+        {
+            "input": "kfhv ck abv s s\nkfh v ckabv ss",
+            "output": "true"
+        },
+        {
+            "input": "py dl uz ypc ocnkv ty c xyc vx s\nzckk qssd izim uxtk gfuxo",
+            "output": "false"
+        },
+        {
+            "input": "kxgab\nqzn lybsx esahn qvhjx w cea cygp",
+            "output": "false"
+        },
+        {
+            "input": "nfxd e lofpu saf ggg oi agsd n\nooc",
+            "output": "false"
+        },
+        {
+            "input": "uvx thk ojmw hiiaq fl zf equu dv nkfk\nuvxth kojm whi ia qfl zfeq uudvn kfk",
+            "output": "true"
+        },
+        {
+            "input": "reh o ws hydr tc pil ma w\nrehow s hydr tcpil m a w",
+            "output": "true"
+        },
+        {
+            "input": "mwant\nkz afqqo qupdj",
+            "output": "false"
+        },
+        {
+            "input": "p gry h if qsyq tgnik\noqavs ayacx bl kqtcb",
+            "output": "false"
+        },
+        {
+            "input": "rh r ujeo wzq asux qzacy\nr hr ujeo wzqa s ux qzac y",
+            "output": "true"
+        },
+        {
+            "input": "uuld ka drrbo gygho vxeo fc tsp wlc w v\nb",
+            "output": "false"
+        },
+        {
+            "input": "sqhe dv bev gk bxw bunxn tsxgj\neutc jbboh ema",
+            "output": "false"
+        },
+        {
+            "input": "dfwi iuljt lh i o ab sdl qlxf\nm wzwfi nsq uwjg fpnxt",
+            "output": "false"
+        },
+        {
+            "input": "q c hjjc iof fmnfo b\nqc hj j cio ff mn fob",
+            "output": "true"
+        },
+        {
+            "input": "nry hgya lfenu ynlg vgsbc apt yqdmd\nnryhg y alfen uynlg v gsbc apt yqdm d",
+            "output": "true"
+        },
+        {
+            "input": "to fdzh xkif coji\nn huow qz qwmif xafxy hf s uvbm qf",
+            "output": "false"
+        },
+        {
+            "input": "zqick t jri p jafc\nkjvnj vb cxh",
+            "output": "false"
+        },
+        {
+            "input": "qnnqx p\ngzkrs mm xy ij ly pdf rsbi ymgrh",
+            "output": "false"
+        },
+        {
+            "input": "uvr\nuvr",
+            "output": "true"
+        },
+        {
+            "input": "uxtt t obu lzule y jtyx cidd kzd ar\nux t ttobu l zu leyj t yxci ddk zdar",
+            "output": "true"
+        },
+        {
+            "input": "ruwk bfjpm wbq mtj hzul wewzn\nruw kbf j p mwbqm tj hzul wewzn",
+            "output": "true"
+        },
+        {
+            "input": "v qhqx zjha gbt bujtc oz m hpl vohw xaih\nvqhq xzjha gbtb uj tc ozmhp lv oh wx aih",
+            "output": "true"
+        },
+        {
+            "input": "o ikl bkw\noi k lbkw",
+            "output": "true"
+        },
+        {
+            "input": "h chlh jkqqw\nuqv sroh vgtlw rtis oiyt oqsr",
+            "output": "false"
+        },
+        {
+            "input": "bc b xbkr et a whz wqzz vcbta yq\nbcb xb kreta wh z wq zzvcb tayq",
+            "output": "true"
+        },
+        {
+            "input": "jdb vu e zdi gsdto rhxuf\njd bvuez digsd torh x uf",
+            "output": "true"
+        },
+        {
+            "input": "dmk aukrf xolt kxglg pimf rogt qf qwr\nd mka ukrfx oltk xgl gpi mfrog tq fqw r",
+            "output": "true"
+        },
+        {
+            "input": "wc zamdx oqxn nec mdo hwzqc\nwczam dx oq x nnecm dohw z qc",
+            "output": "true"
+        },
+        {
+            "input": "t\nt",
+            "output": "true"
+        },
+        {
+            "input": "uk zn ewuli dw t pu ore\nu kz newu lidw tpuo r e",
+            "output": "true"
+        },
+        {
+            "input": "j rcjcp hy xjt fhm abhs\njr cjcp h y xj tfhma b hs",
+            "output": "true"
+        }
+    ]
+}
