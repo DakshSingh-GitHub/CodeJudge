@@ -1,6 +1,9 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { anime } from "../../lib/anime";
 import type { DesktopLayoutProps } from "./types";
+import { useAppContext } from "../../lib/context";
 
 type LeftPanelTab = "selector" | "description";
 
@@ -16,9 +19,17 @@ export default function GroupedSwitchLayout({
 }: DesktopLayoutProps) {
     const introRef = useRef<HTMLDivElement>(null);
     const [leftPanelTab, setLeftPanelTab] = useState<LeftPanelTab>("selector");
+    const { reduceMotion } = useAppContext();
+    const problemListRef = useRef<HTMLDivElement>(null);
+    const descriptionRef = useRef<HTMLDivElement>(null);
+    
+    // Track if we have already set initial positions to avoid animation on mount
+    const hasSetInitialPositions = useRef(false);
 
     useEffect(() => {
         if (!introRef.current) return;
+        
+        // Initial intro animation
         const animation = anime({
             targets: introRef.current.querySelectorAll("[data-layout-panel]"),
             opacity: [0, 1],
@@ -29,10 +40,12 @@ export default function GroupedSwitchLayout({
             easing: "easeOutCubic"
         });
 
+        // Safe catch for potential promise rejection (if animation is cancelled)
         const maybeThenable = animation as unknown as { catch?: (onRejected: () => void) => void };
         maybeThenable.catch?.(() => undefined);
 
         return () => {
+            // Cancel animation if component unmounts
             const maybeCancelable = animation as { cancel?: () => void };
             maybeCancelable.cancel?.();
         };
@@ -40,9 +53,65 @@ export default function GroupedSwitchLayout({
 
     useEffect(() => {
         if (selectedProblemId) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setLeftPanelTab("description");
         }
     }, [selectedProblemId]);
+
+    useEffect(() => {
+        if (!problemListRef.current || !descriptionRef.current) return;
+
+        // If it's the first render, set positions immediately without animation
+        if (!hasSetInitialPositions.current) {
+            anime({
+                targets: problemListRef.current,
+                translateX: leftPanelTab === 'selector' ? '0%' : '-100%',
+                duration: 0
+            });
+            anime({
+                targets: descriptionRef.current,
+                translateX: leftPanelTab === 'description' ? '0%' : '100%',
+                duration: 0
+            });
+            hasSetInitialPositions.current = true;
+            return;
+        }
+
+        const duration = reduceMotion ? 0 : 400;
+        const easing = 'easeOutExpo';
+
+        if (leftPanelTab === 'description') {
+            // Slide Problems OUT to Left
+            anime({
+                targets: problemListRef.current,
+                translateX: '-100%',
+                duration,
+                easing
+            });
+            // Slide Description IN from Right
+            anime({
+                targets: descriptionRef.current,
+                translateX: '0%',
+                duration,
+                easing
+            });
+        } else {
+            // Slide Problems IN from Left
+            anime({
+                targets: problemListRef.current,
+                translateX: '0%',
+                duration,
+                easing
+            });
+            // Slide Description OUT to Right
+            anime({
+                targets: descriptionRef.current,
+                translateX: '100%',
+                duration,
+                easing
+            });
+        }
+    }, [leftPanelTab, reduceMotion]);
 
     return (
         <div ref={introRef} className="flex-1 overflow-hidden p-4 relative z-10">
@@ -64,12 +133,12 @@ export default function GroupedSwitchLayout({
                     style={{ gridArea: "left" }}
                     className="min-h-0 min-w-0 overflow-hidden rounded-2xl border border-white/20 dark:border-gray-800/50 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl flex flex-col"
                 >
-                    <div className="px-4 py-3 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40">
+                    <div className="px-4 py-3 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40 z-20 relative">
                         <div className="flex w-full rounded-lg p-1 bg-gray-100/70 dark:bg-gray-800/70">
                             <button
                                 onClick={() => setLeftPanelTab("selector")}
                                 className={`flex-1 px-4 py-2.5 rounded-md text-sm font-semibold text-center transition-colors ${leftPanelTab === "selector"
-                                    ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                    ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm"
                                     : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                                     }`}
                             >
@@ -78,7 +147,7 @@ export default function GroupedSwitchLayout({
                             <button
                                 onClick={() => setLeftPanelTab("description")}
                                 className={`flex-1 px-4 py-2.5 rounded-md text-sm font-semibold text-center transition-colors ${leftPanelTab === "description"
-                                    ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                    ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm"
                                     : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                                     }`}
                             >
@@ -87,11 +156,19 @@ export default function GroupedSwitchLayout({
                         </div>
                     </div>
 
-                    <div className="flex-1 min-h-0 overflow-hidden">
-                        <div className={`h-full min-h-0 ${leftPanelTab === "selector" ? "block" : "hidden"}`}>
+                    <div className="flex-1 min-h-0 overflow-hidden relative">
+                        <div 
+                            ref={problemListRef} 
+                            className="absolute inset-0 w-full h-full"
+                            style={{ transform: 'translateX(0%)' }} // Default initial state
+                        >
                             {problemList}
                         </div>
-                        <div className={`h-full min-h-0 ${leftPanelTab === "description" ? "block" : "hidden"}`}>
+                        <div 
+                            ref={descriptionRef} 
+                            className="absolute inset-0 w-full h-full"
+                            style={{ transform: 'translateX(100%)' }} // Default initial state
+                        >
                             {problemDescription}
                         </div>
                     </div>
