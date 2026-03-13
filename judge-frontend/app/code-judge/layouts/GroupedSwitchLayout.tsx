@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { anime } from "../../lib/anime";
 import type { DesktopLayoutProps } from "./types";
 import { useAppContext } from "../../lib/context";
+import { List, FileText } from "lucide-react";
 
 type LeftPanelTab = "selector" | "description";
 
@@ -21,7 +22,7 @@ export default function GroupedSwitchLayout({
     const [leftPanelTab, setLeftPanelTab] = useState<LeftPanelTab>("selector");
     const { reduceMotion } = useAppContext();
 
-    // Initial intro animation using anime.js (kept for complex stagger effect)
+    // Initial intro animation using anime.js
     useEffect(() => {
         if (!introRef.current) return;
         
@@ -51,8 +52,6 @@ export default function GroupedSwitchLayout({
         }
     }, [selectedProblemId]);
 
-    // CSS Transition configuration
-    // We use a bezier curve that mimics easeOutExpo for a premium feel
     const transitionStyle = reduceMotion 
         ? "none" 
         : "transform 400ms cubic-bezier(0.19, 1, 0.22, 1)";
@@ -78,24 +77,40 @@ export default function GroupedSwitchLayout({
                     className="min-h-0 min-w-0 overflow-hidden rounded-2xl border border-white/20 dark:border-gray-800/50 bg-white/80 dark:bg-gray-900/60 backdrop-blur-xl shadow-2xl flex flex-col"
                 >
                     <div className="px-4 py-3 border-b border-gray-100/50 dark:border-gray-800/50 bg-white/40 dark:bg-gray-900/40 z-20 relative">
-                        <div className="flex w-full rounded-lg p-1 bg-gray-100/70 dark:bg-gray-800/70">
+                        {/* Redesigned Selector with Subtle Glow & Modern Scheme */}
+                        <div className="relative flex w-full rounded-xl bg-gray-200/50 dark:bg-black/20 p-1 isolate shadow-inner dark:shadow-black/20 ring-1 ring-black/5 dark:ring-white/5">
+                            {/* Sliding Indicator with Soft Glow */}
+                            <div
+                                className="absolute top-1 bottom-1 left-1 w-[calc(50%-0.25rem)] rounded-lg bg-white dark:bg-gray-800 shadow-sm shadow-black/10 z-0 will-change-transform ring-1 ring-black/5 dark:ring-white/10"
+                                style={{
+                                    transform: `translateX(${leftPanelTab === "selector" ? "0%" : "100%"}) translateZ(0)`,
+                                    transition: reduceMotion ? "none" : "transform 350ms cubic-bezier(0.34, 1.56, 0.64, 1)"
+                                }}
+                            >
+                                {/* Subtle Gradient & Glow Overlay */}
+                                <div className="absolute inset-0 rounded-lg bg-linear-to-b from-white/50 to-transparent dark:from-white/5 dark:to-transparent" />
+                                <div className="absolute inset-0 rounded-lg opacity-0 dark:opacity-100 shadow-[0_0_15px_-3px_rgba(99,102,241,0.15)] transition-opacity duration-300" />
+                            </div>
+                            
                             <button
                                 onClick={() => setLeftPanelTab("selector")}
-                                className={`flex-1 px-4 py-2.5 rounded-md text-sm font-semibold text-center transition-colors ${leftPanelTab === "selector"
-                                    ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm"
-                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                                className={`flex-1 relative z-10 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 rounded-lg group ${leftPanelTab === "selector"
+                                    ? "text-gray-900 dark:text-gray-100"
+                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                                     }`}
                             >
-                                Problems
+                                <List className={`w-4 h-4 transition-transform duration-300 ${leftPanelTab === "selector" ? "scale-110 stroke-[2.5px] text-indigo-500 dark:text-indigo-400" : "group-hover:scale-105"}`} />
+                                <span className="tracking-wide">Problems</span>
                             </button>
                             <button
                                 onClick={() => setLeftPanelTab("description")}
-                                className={`flex-1 px-4 py-2.5 rounded-md text-sm font-semibold text-center transition-colors ${leftPanelTab === "description"
-                                    ? "bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm"
-                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                                className={`flex-1 relative z-10 flex items-center justify-center gap-2 px-4 py-2 text-sm font-semibold transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50 rounded-lg group ${leftPanelTab === "description"
+                                    ? "text-gray-900 dark:text-gray-100"
+                                    : "text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
                                     }`}
                             >
-                                Description
+                                <FileText className={`w-4 h-4 transition-transform duration-300 ${leftPanelTab === "description" ? "scale-110 stroke-[2.5px] text-indigo-500 dark:text-indigo-400" : "group-hover:scale-105"}`} />
+                                <span className="tracking-wide">Description</span>
                             </button>
                         </div>
                     </div>
