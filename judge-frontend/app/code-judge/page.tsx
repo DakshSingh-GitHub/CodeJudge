@@ -4,7 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { anime } from "../lib/anime";
 import { getProblemById, submitCode } from "../lib/api";
 import { saveSubmission, getSubmissionsByProblemId, deleteSubmission, Submission } from "../lib/storage";
-import { Problem } from "../lib/types";
+import { Problem, SubmitResponse } from "../lib/types";
 import { useAppContext } from "../lib/context";
 import { FileText, Code, History, Check, X, PanelTop, List } from "lucide-react";
 import { layoutOptions, UiGridLayout } from "./layoutOptions";
@@ -16,18 +16,12 @@ import ProblemList from "../../components/ProblemList";
 import ProblemViewer from "../../components/ProblemViewer";
 import CodeEditor from "../../components/Editor/CodeEditor";
 import PastSubmissions from "../../components/Editor/PastSubmissions";
+import ResultModal from "./modals/resultModal";
 
 const DEFAULT_CODE = "#Write your code here";
 const LAYOUT_STORAGE_KEY = "codejudge_ui_grid_layout";
 
-interface SubmissionResult {
-    final_status: string;
-    summary: {
-        passed: number;
-        total: number;
-    };
-    total_duration?: number | undefined;
-    test_case_results?: { status: string }[];
+interface SubmissionResult extends SubmitResponse {
     error?: string;
 }
 
@@ -41,6 +35,7 @@ export default function Home() {
     const mainContentRef = useRef<HTMLDivElement>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [result, setResult] = useState<SubmissionResult | null>(null);
+    const [isResultModalOpen, setIsResultModalOpen] = useState(false);
     const [activeTab, setActiveTab] = useState<"editor" | "submissions">("editor");
     const [pastSubmissions, setPastSubmissions] = useState<Submission[]>([]);
     const [searchQuery, setSearchQuery] = useState("");
@@ -226,7 +221,7 @@ export default function Home() {
         setResult(null);
 
         try {
-            const data: SubmissionResult = await submitCode(selectedProblemId, code, true);
+            const data = await submitCode(selectedProblemId, code, true);
 
             const sampleCount = problem.sample_test_cases?.length || 0;
             if (data.test_case_results && data.test_case_results.length > sampleCount && sampleCount > 0) {
@@ -248,7 +243,7 @@ export default function Home() {
                 console.warn('Test request was canceled.');
                 return;
             }
-            setResult({ error: err.message || "Something went wrong", final_status: "Error", summary: { passed: 0, total: 0 } });
+            setResult({ problem_id: selectedProblemId, final_status: "Error", summary: { passed: 0, total: 0 }, test_case_results: [], total_duration: 0, error: err.message || "Something went wrong" });
         } finally {
             setIsSubmitting(false);
         }
@@ -261,7 +256,7 @@ export default function Home() {
         setResult(null);
 
         try {
-            const data: SubmissionResult = await submitCode(selectedProblemId, code);
+            const data = await submitCode(selectedProblemId, code);
             setResult(data);
 
             const newSubmission = await saveSubmission({
@@ -283,7 +278,7 @@ export default function Home() {
                 console.warn('Submission request was canceled.');
                 return;
             }
-            setResult({ error: err.message || "Something went wrong", final_status: "Error", summary: { passed: 0, total: 0 } });
+            setResult({ problem_id: selectedProblemId, final_status: "Error", summary: { passed: 0, total: 0 }, test_case_results: [], total_duration: 0, error: err.message || "Something went wrong" });
         } finally {
             setIsSubmitting(false);
         }
@@ -599,9 +594,17 @@ export default function Home() {
                                                 style={{ width: `${progressPercent}%` }}
                                             />
 
-                                            <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">
-                                                Passed {String(result.summary.passed ?? 0)} / {String(result.summary.total ?? 0)} test cases
-                                            </p>
+                                            <div className="flex items-center justify-between">
+                                                <p className="text-base font-medium text-gray-700 dark:text-gray-200 tracking-tight">
+                                                    Passed {String(result.summary.passed ?? 0)} / {String(result.summary.total ?? 0)} test cases
+                                                </p>
+                                                <button
+                                                    onClick={() => setIsResultModalOpen(true)}
+                                                    className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline"
+                                                >
+                                                    Details
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 )}
@@ -772,6 +775,13 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+                    )}
+
+                    {isResultModalOpen && result && (
+                        <ResultModal
+                            result={result}
+                            onClose={() => setIsResultModalOpen(false)}
+                        />
                     )}
 
                     {/*If you're reading this in another repo… hi thief 👀
