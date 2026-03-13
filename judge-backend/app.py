@@ -56,6 +56,7 @@ class RunResponse(BaseModel):
 class TestCaseResult(BaseModel):
     test_case: int
     status: str
+    input: Optional[str] = None
     actual_output: Optional[str] = None
     expected_output: Optional[str] = None
     error: Optional[str] = None
@@ -220,10 +221,27 @@ def submit(request_data: SubmitRequest):
             visible_results.append(tc_result)
         else:
             # Hide input/output for hidden test cases, but keep status
-            visible_results.append({
+            # UNLESS it failed, per user request
+            res = {
                 "test_case": tc_result["test_case"],
-                "status": tc_result["status"]
-            })
+                "status": tc_result["status"],
+                "duration": tc_result.get("duration")
+            }
+            if tc_result["status"] != "Accepted":
+                res["input"] = tc_result.get("input")
+                # We might want to show error too if it crashed
+                if tc_result.get("error"):
+                    res["error"] = tc_result.get("error")
+                # And actual output if it was a wrong answer
+                if tc_result.get("actual_output"):
+                    res["actual_output"] = tc_result.get("actual_output")
+                
+                # We probably shouldn't show expected output for hidden cases?
+                # User said "the testcase which led to the breaking should also be visible"
+                # Input is definitely "the testcase".
+                # I'll stick to revealing input and actual output/error.
+            
+            visible_results.append(res)
 
     return {
         "problem_id": problem_id,

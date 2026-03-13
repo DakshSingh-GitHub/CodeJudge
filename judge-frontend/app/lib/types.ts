@@ -12,6 +12,27 @@ export interface Problem {
     constraints?: Record<string, unknown> | string;
 }
 
+export interface TestCaseResult {
+    test_case: number;
+    status: string;
+    input?: string;
+    actual_output?: string;
+    expected_output?: string;
+    error?: string;
+    duration?: number;
+}
+
+export interface SubmitResponse {
+    problem_id: string;
+    final_status: string;
+    total_duration: number;
+    summary: {
+        passed: number;
+        total: number;
+    };
+    test_case_results: TestCaseResult[];
+}
+
 export type Permission = 'DOCS_INT' | 'ADMIN_VIEW' | 'ADMIN_EDIT';
 
 export interface User {

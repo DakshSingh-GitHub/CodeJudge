@@ -35,7 +35,8 @@ def run_single_test_case_sequential(index, tc, code_str, time_limit):
             return {
                 "test_case": index,
                 "status": "Runtime Error",
-                "error": result.stderr
+                "error": result.stderr,
+                "input": user_input
             }
 
         actual_output = normalize_output(result.stdout)
@@ -53,20 +54,23 @@ def run_single_test_case_sequential(index, tc, code_str, time_limit):
                 "test_case": index,
                 "status": "Wrong Answer",
                 "actual_output": actual_output,
-                "expected_output": expected_output
+                "expected_output": expected_output,
+                "input": user_input
             }
 
     except subprocess.TimeoutExpired:
         return {
             "test_case": index,
             "status": "Time Limit Exceeded",
-            "error": "Time Limit Exceeded"
+            "error": "Time Limit Exceeded",
+            "input": user_input
         }
     except Exception as e:
         return {
             "test_case": index,
             "status": "Internal Error",
-            "error": str(e)
+            "error": str(e),
+            "input": user_input
         }
     finally:
         if os.path.exists(filename):
@@ -471,7 +475,8 @@ def run_code_multiple(code, test_cases, mode="ALL"):
                 return {
                     "test_case": index,
                     "status": "Internal Error",
-                    "error": "No workers available"
+                    "error": "No workers available",
+                    "input": tc.get("input", "")
                 }
             
             try:
@@ -492,12 +497,15 @@ def run_code_multiple(code, test_cases, mode="ALL"):
                         res["status"] = "Wrong Answer"
                         res["expected_output"] = expected
                 
+                if res["status"] != "Accepted":
+                    res["input"] = tc.get("input", "")
                 return res
             except Exception as e:
                 return {
                     "test_case": index,
                     "status": "Internal Error",
-                    "error": str(e)
+                    "error": str(e),
+                    "input": tc.get("input", "")
                 }
             finally:
                 # Return worker to queue
