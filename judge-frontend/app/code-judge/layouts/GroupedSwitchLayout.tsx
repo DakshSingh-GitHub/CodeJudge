@@ -20,16 +20,11 @@ export default function GroupedSwitchLayout({
     const introRef = useRef<HTMLDivElement>(null);
     const [leftPanelTab, setLeftPanelTab] = useState<LeftPanelTab>("selector");
     const { reduceMotion } = useAppContext();
-    const problemListRef = useRef<HTMLDivElement>(null);
-    const descriptionRef = useRef<HTMLDivElement>(null);
-    
-    // Track if we have already set initial positions to avoid animation on mount
-    const hasSetInitialPositions = useRef(false);
 
+    // Initial intro animation using anime.js (kept for complex stagger effect)
     useEffect(() => {
         if (!introRef.current) return;
         
-        // Initial intro animation
         const animation = anime({
             targets: introRef.current.querySelectorAll("[data-layout-panel]"),
             opacity: [0, 1],
@@ -40,12 +35,10 @@ export default function GroupedSwitchLayout({
             easing: "easeOutCubic"
         });
 
-        // Safe catch for potential promise rejection (if animation is cancelled)
         const maybeThenable = animation as unknown as { catch?: (onRejected: () => void) => void };
         maybeThenable.catch?.(() => undefined);
 
         return () => {
-            // Cancel animation if component unmounts
             const maybeCancelable = animation as { cancel?: () => void };
             maybeCancelable.cancel?.();
         };
@@ -58,66 +51,11 @@ export default function GroupedSwitchLayout({
         }
     }, [selectedProblemId]);
 
-    useEffect(() => {
-        if (!problemListRef.current || !descriptionRef.current) return;
-
-        // If it's the first render, set positions immediately without animation
-        if (!hasSetInitialPositions.current) {
-            anime({
-                targets: problemListRef.current,
-                translateX: leftPanelTab === 'selector' ? '0%' : '-100%',
-                translateZ: 0,
-                duration: 0
-            });
-            anime({
-                targets: descriptionRef.current,
-                translateX: leftPanelTab === 'description' ? '0%' : '100%',
-                translateZ: 0,
-                duration: 0
-            });
-            hasSetInitialPositions.current = true;
-            return;
-        }
-
-        const duration = reduceMotion ? 0 : 400;
-        const easing = 'easeOutExpo';
-
-        if (leftPanelTab === 'description') {
-            // Slide Problems OUT to Left
-            anime({
-                targets: problemListRef.current,
-                translateX: '-100%',
-                translateZ: 0,
-                duration,
-                easing
-            });
-            // Slide Description IN from Right
-            anime({
-                targets: descriptionRef.current,
-                translateX: '0%',
-                translateZ: 0,
-                duration,
-                easing
-            });
-        } else {
-            // Slide Problems IN from Left
-            anime({
-                targets: problemListRef.current,
-                translateX: '0%',
-                translateZ: 0,
-                duration,
-                easing
-            });
-            // Slide Description OUT to Right
-            anime({
-                targets: descriptionRef.current,
-                translateX: '100%',
-                translateZ: 0,
-                duration,
-                easing
-            });
-        }
-    }, [leftPanelTab, reduceMotion]);
+    // CSS Transition configuration
+    // We use a bezier curve that mimics easeOutExpo for a premium feel
+    const transitionStyle = reduceMotion 
+        ? "none" 
+        : "transform 400ms cubic-bezier(0.19, 1, 0.22, 1)";
 
     return (
         <div ref={introRef} className="flex-1 overflow-hidden p-4 relative z-10">
@@ -162,23 +100,21 @@ export default function GroupedSwitchLayout({
                         </div>
                     </div>
 
-                    <div className="flex-1 min-h-0 overflow-hidden relative">
+                    <div className="flex-1 min-h-0 overflow-hidden relative transform-gpu">
                         <div 
-                            ref={problemListRef} 
-                            className="absolute inset-0 w-full h-full"
+                            className="absolute inset-0 w-full h-full will-change-transform"
                             style={{ 
-                                transform: 'translateX(0%) translateZ(0)',
-                                willChange: 'transform' 
+                                transform: leftPanelTab === 'selector' ? 'translateX(0%) translateZ(0)' : 'translateX(-100%) translateZ(0)',
+                                transition: transitionStyle,
                             }}
                         >
                             {problemList}
                         </div>
                         <div 
-                            ref={descriptionRef} 
-                            className="absolute inset-0 w-full h-full"
+                            className="absolute inset-0 w-full h-full will-change-transform"
                             style={{ 
-                                transform: 'translateX(100%) translateZ(0)',
-                                willChange: 'transform'
+                                transform: leftPanelTab === 'description' ? 'translateX(0%) translateZ(0)' : 'translateX(100%) translateZ(0)',
+                                transition: transitionStyle,
                             }}
                         >
                             {problemDescription}
