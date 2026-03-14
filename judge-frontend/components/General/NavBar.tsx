@@ -2,7 +2,7 @@
 
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { anime } from '../../app/lib/anime';
-import { History, LayoutGrid, User, Settings, LogOut, Shield } from 'lucide-react';
+import { History, LayoutGrid, User, Settings, LogOut, Shield, ChevronDown } from 'lucide-react';
 import NavDropdown from './NavDropdown';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -125,15 +125,19 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, i
                     <div className="relative" ref={profileRef}>
                         <button
                             onClick={() => setIsProfileOpen(!isProfileOpen)}
-                            className="flex items-center justify-center p-2.5 rounded-xl bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-white dark:hover:bg-gray-800 transition-all duration-200 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900 shadow-sm hover:shadow-md active:scale-95"
+                            className="flex items-center gap-3 pl-1.5 pr-3 py-1.5 rounded-full bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 transition-all duration-200 border border-gray-100 dark:border-gray-800 hover:border-indigo-100 dark:hover:border-indigo-900 shadow-sm hover:shadow-md active:scale-95 group"
                             title="Profile"
                             aria-label="Profile"
                         >
-                            <User className="w-5 h-5" />
+                            <div className="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center border border-indigo-200 dark:border-indigo-800 shadow-sm overflow-hidden transition-transform group-hover:scale-105">
+                                <User className="w-4.5 h-4.5 text-indigo-600 dark:text-indigo-400" />
+                            </div>
+                            <span className="text-sm font-semibold tracking-tight hidden md:block">Hey, User</span>
+                            <ChevronDown className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${isProfileOpen ? 'rotate-180' : ''}`} />
                         </button>
 
                         {isProfileOpen && (
-                            <div className="absolute right-0 mt-2 w-56 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-50">
+                            <div className="absolute right-0 mt-3 w-56 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                                 <div className="p-2 space-y-1">
                                     <button
                                         onClick={() => { router.push('/'); setIsProfileOpen(false); }}
