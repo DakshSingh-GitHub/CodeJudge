@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Link from 'next/link';
-import { Code, Scale, Zap, Shield, Globe, Cpu, ArrowRight, Github, BookOpen } from 'lucide-react';
+import { Code, Scale, Zap, Shield, Globe, Cpu, ArrowRight, Github, BookOpen, BrainCircuit, Coffee } from 'lucide-react';
 import { useAppContext } from './lib/context';
 import Footer from "@/components/General/Footer";
 
@@ -77,28 +77,28 @@ export default function Home() {
                         CodeJudge — a fast, secure, and intuitive platform designed for developers to sharpen their skills and ace technical interviews.
                     </motion.p>
 
-                    <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                         <Link
                             href="/code-judge"
-                            className="group relative px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-indigo-500/25 hover:bg-indigo-700 transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden"
+                            className="group relative px-8 py-4 bg-indigo-600 text-white rounded-2xl font-bold text-lg shadow-xl shadow-indigo-500/25 hover:bg-indigo-700 transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden w-full sm:w-auto flex justify-center"
                         >
                             <span className="relative z-10 flex items-center gap-2">
                                 Get Started <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </span>
                             <div className="absolute inset-0 bg-linear-to-r from-white/0 via-white/20 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
                         </Link>
-                        <div className="flex flex-row gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                             <Link
                                 href="https://github.com/DakshSingh-GitHub/CodeJudge"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-bold text-lg border border-gray-200 dark:border-gray-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300"
+                                className="flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-bold text-lg border border-gray-200 dark:border-gray-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300 w-full sm:w-auto"
                             >
                                 <Github className="w-5 h-5" /> GitHub
                             </Link>
                             <Link
                                 href="/docs"
-                                className="flex items-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-bold text-lg border border-gray-200 dark:border-gray-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300"
+                                className="flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl font-bold text-lg border border-gray-200 dark:border-gray-800 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all duration-300 w-full sm:w-auto"
                             >
                                 <BookOpen className="w-5 h-5" /> Documentation
                             </Link>
@@ -155,6 +155,52 @@ export default function Home() {
                                 </p>
                                 <div className="mt-auto flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold">
                                     Open IDE <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </Link>
+
+                    <Link href="/code-analysis" className="group">
+                        <motion.div
+                            variants={itemVariants}
+                            className="h-full p-8 rounded-[2.5rem] bg-linear-to-br from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-900 border border-purple-100 dark:border-purple-800/50 hover:border-purple-400 dark:hover:border-purple-400 transition-all duration-500 relative overflow-hidden flex flex-col"
+                        >
+                            <div className="absolute top-0 right-0 p-8 text-purple-200 dark:text-purple-900/40 group-hover:text-purple-400 dark:group-hover:text-purple-700 transition-colors duration-500">
+                                <BrainCircuit className="w-32 h-32 rotate-15 group-hover:scale-110 transition-transform duration-700" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-600/20">
+                                    <BrainCircuit className="w-7 h-7 text-white" />
+                                </div>
+                                <h3 className="text-xl md:text-3xl font-black mb-4">Code Analysis</h3>
+                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-8">
+                                    A platform integrated for the users to analyse their code, Learn how good your code is and Improve them ! (UD)
+                                </p>
+                                <div className="mt-auto flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold">
+                                    Analyse code <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </Link>
+
+                    <Link href="/meet-developer" className="group">
+                        <motion.div
+                            variants={itemVariants}
+                            className="h-full p-8 rounded-[2.5rem] bg-linear-to-br from-indigo-50 to-white dark:from-indigo-900/20 dark:to-gray-900 border border-indigo-100 dark:border-indigo-800/50 hover:border-indigo-400 dark:hover:border-indigo-400 transition-all duration-500 relative overflow-hidden flex flex-col"
+                        >
+                            <div className="absolute top-0 right-0 p-8 text-indigo-200 dark:text-indigo-900/40 group-hover:text-indigo-400 dark:group-hover:text-indigo-700 transition-colors duration-500">
+                                <Coffee className="w-32 h-32 rotate-[-15deg] group-hover:scale-110 transition-transform duration-700" />
+                            </div>
+                            <div className="relative z-10">
+                                <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-600/20">
+                                    <Coffee className="w-7 h-7 text-white" />
+                                </div>
+                                <h3 className="text-xl md:text-3xl font-black mb-4">Meet Developer</h3>
+                                <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-8">
+                                    Let's have a cup of coffee together...:)
+                                </p>
+                                <div className="mt-auto flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold">
+                                    Get to know me.. <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                 </div>
                             </div>
                         </motion.div>

@@ -15,11 +15,17 @@ const DEFAULT_CODE = `def factorial(n):
 # print(factorial(5))
 `;
 
+interface AnalysisResult {
+    static: string;
+    complexity: string;
+    security: string;
+}
+
 export default function CodeAnalysisPage() {
     const { isDark } = useAppContext();
     const [code, setCode] = useState(DEFAULT_CODE);
     const [isLoading, setIsLoading] = useState(false);
-    const [analysisResult, setAnalysisResult] = useState(null);
+    const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
 
     const handleAnalyze = () => {
         setIsLoading(true);
@@ -35,14 +41,14 @@ export default function CodeAnalysisPage() {
     };
 
     return (
-        <div className="min-h-screen w-full bg-gray-50 dark:bg-gray-950 p-4 sm:p-6 lg:p-8 font-sans relative overflow-hidden mb-5">
+        <div className="h-screen w-full flex flex-col bg-gray-50 dark:bg-gray-950 p-4 sm:p-6 lg:p-8 font-sans relative overflow-hidden">
             {/* Ambient Background Glows */}
             <div className="absolute top-[-15%] left-[-15%] w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
             <div className="absolute bottom-[-15%] right-[-15%] w-80 h-80 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[100px] pointer-events-none animate-pulse-slow delay-1000" />
 
-            <div className="max-w-7xl mx-auto z-10">
-                <div className="text-center mb-8 md:mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tighter bg-clip-text text-transparent bg-linear-to-r from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400">
+            <div className="max-w-7xl w-full mx-auto z-10 flex flex-col flex-1 min-h-0">
+                <div className="text-center mb-8 md:mb-12 shrink-0">
+                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tighter bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400">
                         Code Analysis Engine
                     </h1>
                     <p className="text-base text-gray-500 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
@@ -50,11 +56,11 @@ export default function CodeAnalysisPage() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1 min-h-0">
                     {/* Code Editor Panel */}
-                    <div className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/50 p-6 flex flex-col h-150.5 overflow-hidden">
-                        <div className="flex-1 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner">
-                            <CodeEditor code={code} setCode={setCode} isDark={isDark} />
+                    <div className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/50 p-6 flex flex-col">
+                        <div className="flex-1 min-h-0 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-inner">
+                            <CodeEditor code={code} setCode={setCode} isDark={isDark} isDisabled={false} />
                         </div>
                         <button
                             onClick={handleAnalyze}
@@ -73,31 +79,33 @@ export default function CodeAnalysisPage() {
                     </div>
 
                     {/* Analysis Results Panel */}
-                    <div className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/50 p-6 md:p-8">
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+                    <div className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/50 p-6 md:p-8 flex flex-col">
+                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3 shrink-0">
                             <BrainCircuit className="w-7 h-7 text-indigo-500" />
                             Analysis Report
                         </h2>
                         
-                        {isLoading ? (
-                            <div className="space-y-6 animate-pulse">
-                                <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
-                                <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
-                                <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
-                            </div>
-                        ) : analysisResult ? (
-                            <div className="space-y-6">
-                                <AnalysisCard icon={Zap} title="Static Analysis" content={analysisResult.static} color="cyan" />
-                                <AnalysisCard icon={BarChart} title="Complexity Analysis" content={analysisResult.complexity} color="purple" />
-                                <AnalysisCard icon={Shield} title="Security Vulnerabilities" content={analysisResult.security} color="rose" />
-                            </div>
-                        ) : (
-                            <div className="flex flex-col items-center justify-center h-full text-center text-gray-500 dark:text-gray-400">
-                                <BrainCircuit className="w-16 h-16 mb-4 opacity-30" />
-                                <p className="text-lg font-medium">Your analysis report will appear here.</p>
-                                <p className="text-sm">Click "Analyze Code" to get started.</p>
-                            </div>
-                        )}
+                        <div className="flex-1 min-h-0 overflow-y-auto custom-scrollbar pr-2">
+                            {isLoading ? (
+                                <div className="space-y-6 animate-pulse">
+                                    <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
+                                    <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
+                                    <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
+                                </div>
+                            ) : analysisResult ? (
+                                <div className="space-y-6">
+                                    <AnalysisCard icon={Zap} title="Static Analysis" content={analysisResult.static} color="cyan" />
+                                    <AnalysisCard icon={BarChart} title="Complexity Analysis" content={analysisResult.complexity} color="purple" />
+                                    <AnalysisCard icon={Shield} title="Security Vulnerabilities" content={analysisResult.security} color="rose" />
+                                </div>
+                            ) : (
+                                <div className="flex flex-col items-center justify-center h-full text-center text-gray-500 dark:text-gray-400">
+                                    <BrainCircuit className="w-16 h-16 mb-4 opacity-30" />
+                                    <p className="text-lg font-medium">Your analysis report will appear here.</p>
+                                    <p className="text-sm">Click &#34;Analyze Code&#34; to get started.</p>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

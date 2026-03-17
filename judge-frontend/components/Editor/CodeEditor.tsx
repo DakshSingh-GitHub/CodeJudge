@@ -92,6 +92,7 @@ const CodeEditor = memo(function CodeEditor({
 
         // Register for javascript as well if needed
         monaco.languages.registerCompletionItemProvider("javascript", {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             provideCompletionItems: function (model: any, position: any) {
                 // Just keep it simple for JS
                 return { suggestions: [] };
