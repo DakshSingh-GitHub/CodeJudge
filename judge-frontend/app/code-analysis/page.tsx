@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from 'react';
-import { Zap, Shield, BarChart, BrainCircuit } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Zap, Shield, BarChart, BrainCircuit, TriangleAlert, Sparkles } from 'lucide-react';
 import CodeEditor from '../../components/Editor/CodeEditor';
 import { useAppContext } from '../lib/context';
 
@@ -15,10 +15,32 @@ const DEFAULT_CODE = `def factorial(n):
 # print(factorial(5))
 `;
 
+type Severity = 'low' | 'medium' | 'high' | 'critical';
+
+interface AnalysisFinding {
+    title: string;
+    detail: string;
+    severity: Severity;
+    location?: string;
+    suggestion?: string;
+}
+
 interface AnalysisResult {
-    static: string;
-    complexity: string;
-    security: string;
+    summary: string;
+    complexity: {
+        time: string;
+        space: string;
+        explanation: string;
+    };
+    staticAnalysis: {
+        overview: string;
+        findings: AnalysisFinding[];
+    };
+    security: {
+        overview: string;
+        findings: AnalysisFinding[];
+    };
+    suggestions: string[];
 }
 
 export default function CodeAnalysisPage() {
@@ -26,18 +48,49 @@ export default function CodeAnalysisPage() {
     const [code, setCode] = useState(DEFAULT_CODE);
     const [isLoading, setIsLoading] = useState(false);
     const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
-    const handleAnalyze = () => {
+    useEffect(() => {
+        const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+            const reason = event.reason as { msg?: string; message?: string; type?: string } | undefined;
+            const type = (reason?.type || "").toLowerCase();
+            const msg = (reason?.msg || reason?.message || "").toLowerCase();
+            if (type.includes("cancel") || msg.includes("manually canceled")) {
+                event.preventDefault();
+            }
+        };
+
+        window.addEventListener("unhandledrejection", handleUnhandledRejection);
+        return () => {
+            window.removeEventListener("unhandledrejection", handleUnhandledRejection);
+        };
+    }, []);
+
+    const handleAnalyze = async () => {
+        setError(null);
+        setAnalysisResult(null);
         setIsLoading(true);
-        // Mock analysis
-        setTimeout(() => {
-            setAnalysisResult({
-                static: "No syntax errors found. 2 unused variables detected.",
-                complexity: "O(n) - Linear time complexity. Good for most cases.",
-                security: "No critical security vulnerabilities found. Medium-risk issue: Use of recursion may lead to stack overflow with large inputs."
+        try {
+            const response = await fetch("/api/code-analysis", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ code })
             });
+
+            const payload = await response.json();
+
+            if (!response.ok || !payload?.ok || !payload?.analysis) {
+                throw new Error(payload?.error || "Analysis failed.");
+            }
+
+            setAnalysisResult(payload.analysis as AnalysisResult);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : "Analysis failed.");
+        } finally {
             setIsLoading(false);
-        }, 1500);
+        }
     };
 
     return (
@@ -46,16 +99,8 @@ export default function CodeAnalysisPage() {
             <div className="absolute top-[-15%] left-[-15%] w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none animate-pulse-slow" />
             <div className="absolute bottom-[-15%] right-[-15%] w-80 h-80 bg-purple-500/10 dark:bg-purple-500/5 rounded-full blur-[100px] pointer-events-none animate-pulse-slow delay-1000" />
 
-            <div className="max-w-7xl w-full mx-auto z-10 flex flex-col flex-1 min-h-0">
-                <div className="text-center mb-8 md:mb-12 shrink-0">
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tighter bg-clip-text bg-linear-to-r from-indigo-500 to-purple-500 dark:from-indigo-400 dark:to-purple-400">
-                        Code Analysis Engine
-                    </h1>
-                    <p className="text-base text-gray-500 dark:text-gray-400 mt-3 max-w-2xl mx-auto">
-                        Paste your code below to get an in-depth analysis of its performance, complexity, and security.
-                    </p>
-                </div>
-
+            <div className="w-full z-10 flex flex-col flex-1 min-h-0">
+                
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 flex-1 min-h-0">
                     {/* Code Editor Panel */}
                     <div className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/50 p-6 flex flex-col">
@@ -79,8 +124,8 @@ export default function CodeAnalysisPage() {
                     </div>
 
                     {/* Analysis Results Panel */}
-                    <div className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/50 p-6 md:p-8 flex flex-col">
-                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3 shrink-0">
+                    <div className="bg-white/70 dark:bg-gray-900/60 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/20 dark:border-gray-800/50 p-6 md:p-8 flex flex-col min-h-0">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3 shrink-0">
                             <BrainCircuit className="w-7 h-7 text-indigo-500" />
                             Analysis Report
                         </h2>
@@ -92,17 +137,74 @@ export default function CodeAnalysisPage() {
                                     <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
                                     <div className="h-24 bg-gray-200/50 dark:bg-gray-800/50 rounded-xl" />
                                 </div>
+                            ) : error ? (
+                                <div className="rounded-2xl border border-rose-300/50 dark:border-rose-500/30 bg-rose-50/70 dark:bg-rose-900/15 p-5">
+                                    <div className="flex items-start gap-3">
+                                        <TriangleAlert className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
+                                        <div>
+                                            <p className="text-base font-semibold text-rose-800 dark:text-rose-300">Analysis failed</p>
+                                            <p className="text-base text-rose-700 dark:text-rose-200/90 mt-1">{error}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             ) : analysisResult ? (
                                 <div className="space-y-6">
-                                    <AnalysisCard icon={Zap} title="Static Analysis" content={analysisResult.static} color="cyan" />
-                                    <AnalysisCard icon={BarChart} title="Complexity Analysis" content={analysisResult.complexity} color="purple" />
-                                    <AnalysisCard icon={Shield} title="Security Vulnerabilities" content={analysisResult.security} color="rose" />
+                                    <div className="p-5 rounded-2xl border border-indigo-200/50 dark:border-indigo-500/30 bg-indigo-50/60 dark:bg-indigo-900/20">
+                                        <p className="text-base font-semibold text-indigo-700 dark:text-indigo-300 mb-2">Summary</p>
+                                        <p className="text-base text-gray-700 dark:text-gray-200 leading-relaxed">{analysisResult.summary}</p>
+                                    </div>
+
+                                    <div className="p-5 rounded-2xl border border-purple-200/50 dark:border-purple-500/30 bg-purple-50/60 dark:bg-purple-900/20">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <BarChart className="w-5 h-5 text-purple-600 dark:text-purple-400" />
+                                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Complexity Analysis</h3>
+                                        </div>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                                            <MetricPill label="Time" value={analysisResult.complexity.time} />
+                                            <MetricPill label="Space" value={analysisResult.complexity.space} />
+                                        </div>
+                                        <p className="text-base text-gray-700 dark:text-gray-300">{analysisResult.complexity.explanation}</p>
+                                    </div>
+
+                                    <AnalysisSection
+                                        icon={Zap}
+                                        title="Static Analysis"
+                                        overview={analysisResult.staticAnalysis.overview}
+                                        findings={analysisResult.staticAnalysis.findings}
+                                        color="cyan"
+                                    />
+
+                                    <AnalysisSection
+                                        icon={Shield}
+                                        title="Security Vulnerabilities"
+                                        overview={analysisResult.security.overview}
+                                        findings={analysisResult.security.findings}
+                                        color="rose"
+                                    />
+
+                                    <div className="p-5 rounded-2xl border border-emerald-200/50 dark:border-emerald-500/30 bg-emerald-50/60 dark:bg-emerald-900/20">
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <Sparkles className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                                            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">Suggestions</h3>
+                                        </div>
+                                        {analysisResult.suggestions.length > 0 ? (
+                                            <div className="space-y-2">
+                                                {analysisResult.suggestions.map((suggestion, idx) => (
+                                                    <p key={idx} className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
+                                                        {idx + 1}. {suggestion}
+                                                    </p>
+                                                ))}
+                                            </div>
+                                        ) : (
+                                            <p className="text-base text-gray-600 dark:text-gray-300">No additional suggestions.</p>
+                                        )}
+                                    </div>
                                 </div>
                             ) : (
                                 <div className="flex flex-col items-center justify-center h-full text-center text-gray-500 dark:text-gray-400">
                                     <BrainCircuit className="w-16 h-16 mb-4 opacity-30" />
-                                    <p className="text-lg font-medium">Your analysis report will appear here.</p>
-                                    <p className="text-sm">Click &#34;Analyze Code&#34; to get started.</p>
+                                    <p className="text-xl font-medium">Your analysis report will appear here.</p>
+                                    <p className="text-base">Click &#34;Analyze Code&#34; to get started.</p>
                                 </div>
                             )}
                         </div>
@@ -113,29 +215,82 @@ export default function CodeAnalysisPage() {
     );
 }
 
-interface AnalysisCardProps {
-    icon: React.ElementType;
-    title: string;
-    content: string;
-    color: 'cyan' | 'purple' | 'rose';
+
+interface MetricPillProps {
+    label: string;
+    value: string;
 }
 
-function AnalysisCard({ icon: Icon, title, content, color }: AnalysisCardProps) {
+function MetricPill({ label, value }: MetricPillProps) {
+    return (
+        <div className="rounded-xl border border-gray-200/70 dark:border-gray-700/70 bg-white/70 dark:bg-gray-900/40 p-3">
+            <p className="text-sm font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">{label}</p>
+            <p className="text-base font-bold text-gray-800 dark:text-gray-100 mt-1">{value}</p>
+        </div>
+    );
+}
+
+function severityClasses(severity: Severity) {
+    switch (severity) {
+        case "critical":
+            return "bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300";
+        case "high":
+            return "bg-orange-100 text-orange-700 dark:bg-orange-900/40 dark:text-orange-300";
+        case "medium":
+            return "bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300";
+        default:
+            return "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300";
+    }
+}
+
+function AnalysisSection({ icon: Icon, title, overview, findings, color }: AnalysisCardProps) {
     const colorClasses = {
         cyan: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20",
-        purple: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20",
-        rose: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
+        rose: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20"
     };
 
     return (
         <div className={`p-5 rounded-2xl border ${colorClasses[color]}`}>
             <div className="flex items-center gap-3 mb-3">
                 <Icon className={`w-6 h-6 ${colorClasses[color].split(' ')[1]}`} />
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100">{title}</h3>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                {content}
-            </p>
+            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-4">{overview}</p>
+            {findings.length > 0 ? (
+                <div className="space-y-3">
+                    {findings.map((finding, idx) => (
+                        <div key={`${finding.title}-${idx}`} className="rounded-xl border border-gray-200/70 dark:border-gray-700/70 bg-white/70 dark:bg-gray-900/40 p-4">
+                            <div className="flex items-center justify-between gap-3 mb-2">
+                                <p className="text-base font-semibold text-gray-900 dark:text-gray-100">{finding.title}</p>
+                                <span className={`text-xs px-2 py-1 rounded-full font-semibold uppercase ${severityClasses(finding.severity)}`}>
+                                    {finding.severity}
+                                </span>
+                            </div>
+                            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">{finding.detail}</p>
+                            {finding.location ? (
+                                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                                    Location: {finding.location}
+                                </p>
+                            ) : null}
+                            {finding.suggestion ? (
+                                <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                                    Suggestion: {finding.suggestion}
+                                </p>
+                            ) : null}
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <p className="text-base text-gray-600 dark:text-gray-300">No major findings.</p>
+            )}
         </div>
     );
+}
+
+interface AnalysisCardProps {
+    icon: React.ElementType;
+    title: string;
+    overview: string;
+    findings: AnalysisFinding[];
+    color: 'cyan' | 'rose';
 }

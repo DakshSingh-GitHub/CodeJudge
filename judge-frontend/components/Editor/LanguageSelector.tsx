@@ -43,10 +43,10 @@ const LanguageSelector = memo(({ language = "python", setLanguage }: LanguageSel
     <div className="flex items-center gap-2" ref={containerRef}>
       <div className="relative">
         <motion.button
-          whileHover={{ scale: 1.01, backgroundColor: 'rgba(55, 65, 81, 0.7)' }}
+          whileHover={{ scale: 1.01 }}
           whileTap={{ scale: 0.98 }}
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-gray-800/40 backdrop-blur-md border border-gray-700/50 transition-all duration-200 min-w-[100px] md:min-w-[120px] hover:border-indigo-500/50 cursor-pointer shadow-lg shadow-black/5"
+          className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-gray-800/40 backdrop-blur-md border border-gray-700/50 transition-all duration-200 min-w-[100px] md:min-w-[120px] hover:border-indigo-500/50 hover:bg-gray-700/70 cursor-pointer shadow-lg shadow-black/5"
         >
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 rounded flex items-center justify-center bg-indigo-500/10 text-indigo-400 text-[10px] font-bold border border-indigo-500/20">

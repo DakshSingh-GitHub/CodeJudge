@@ -41,10 +41,10 @@ const Settings = memo(({ fontSize, setFontSize, language, setLanguage }: Setting
             <div className="flex items-center gap-2" ref={containerRef}>
                 <div className="relative">
                     <motion.button
-                        whileHover={{ scale: 1.01, backgroundColor: 'rgba(55, 65, 81, 0.7)' }}
+                        whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => setIsOpen(!isOpen)}
-                        className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-gray-800/40 backdrop-blur-md border border-gray-700/50 transition-all duration-200 min-w-[80px] md:min-w-[90px] hover:border-indigo-500/50 cursor-pointer shadow-lg shadow-black/5"
+                        className="flex items-center justify-between gap-2 px-3 py-1.5 rounded-lg bg-gray-800/40 backdrop-blur-md border border-gray-700/50 transition-all duration-200 min-w-[80px] md:min-w-[90px] hover:border-indigo-500/50 hover:bg-gray-700/70 cursor-pointer shadow-lg shadow-black/5"
                     >
                         <span className="text-[11px] md:text-xs font-semibold text-gray-200 tracking-tight">
                             {fontSize}px
