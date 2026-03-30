@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { anime } from '../../app/lib/anime';
 import { useAppContext } from '../../app/lib/context';
-import { CODE_JUDGE_PATH, CODE_JUDGE_MDE_PATH, CODE_IDE_PATH, CODE_IDE_MDE_PATH } from '../../app/lib/paths';
+import { CODE_JUDGE_PATH, CODE_JUDGE_MDE_PATH, CODE_IDE_PATH, CODE_IDE_MDE_PATH, CODE_ANALYSIS_PATH, CODE_ANALYSIS_MDE_PATH } from '../../app/lib/paths';
 
 type RouteItem = {
     name: string;
@@ -18,7 +18,7 @@ export default function NavDropdown() {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
-    const { codeJudgePath, codeIdePath } = useAppContext();
+    const { codeJudgePath, codeIdePath, codeAnalysisPath } = useAppContext();
     const dropdownRef = useRef<HTMLDivElement>(null);
     const menuRef = useRef<HTMLDivElement>(null);
     const arrowRef = useRef<SVGSVGElement>(null);
@@ -38,7 +38,13 @@ export default function NavDropdown() {
             subtext: "Think and Build!",
             aliases: [CODE_IDE_PATH, CODE_IDE_MDE_PATH]
         },
-        { name: "Code Analysis", path: "/code-analysis", icon: "📃", subtext: "Now look at what you did" },
+        {
+            name: "Code Analysis",
+            path: codeAnalysisPath,
+            icon: "📃",
+            subtext: "Now look at what you did",
+            aliases: [CODE_ANALYSIS_PATH, CODE_ANALYSIS_MDE_PATH]
+        },
         { name: "Code Home", path: "/", icon: "👋", subtext: "See you here!" }
     ];
 

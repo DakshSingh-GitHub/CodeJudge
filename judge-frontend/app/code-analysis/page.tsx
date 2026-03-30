@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { Zap, Shield, BarChart, BrainCircuit, TriangleAlert, Sparkles, Lock, User, KeyRound, ChevronDown, Code2 } from 'lucide-react';
 import CodeEditor from '../../components/Editor/CodeEditor';
 import { useAppContext } from '../lib/context';
@@ -55,7 +56,9 @@ const MAX_ANALYSIS_RECORDS = 25;
 const RECORDS_MODAL_ANIMATION_MS = 220;
 
 export default function CodeAnalysisPage() {
-    const { isDark, reduceMotion } = useAppContext();
+    const { isDark, reduceMotion, useNewUi } = useAppContext();
+    const pathname = usePathname();
+    const router = useRouter();
     const [code, setCode] = useState(DEFAULT_CODE);
     const [isLoading, setIsLoading] = useState(false);
     const [analysisResult, setAnalysisResult] = useState<AnalysisResult | null>(null);
@@ -76,6 +79,12 @@ export default function CodeAnalysisPage() {
     const [mobileSwipeDirection, setMobileSwipeDirection] = useState<"left" | "right" | null>(null);
     const codePanelRef = useRef<HTMLDivElement>(null);
     const analysisPanelRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (useNewUi && pathname === "/code-analysis") {
+            router.replace("/code-analysis-mde");
+        }
+    }, [pathname, router, useNewUi]);
 
     useEffect(() => {
         const handleUnhandledRejection = (event: PromiseRejectionEvent) => {

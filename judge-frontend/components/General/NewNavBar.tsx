@@ -20,7 +20,7 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, s
     const isHomeRoute = pathname === '/';
     const isCodeIDE = pathname === '/code-ide' || pathname === '/code-ide-mde';
     const isCodeJudge = isCodeJudgePath(pathname);
-    const isCodeAnalysis = pathname === '/code-analysis';
+    const isCodeAnalysis = pathname === '/code-analysis' || pathname === '/code-analysis-mde';
     const headerRef = useRef<HTMLElement>(null);
     const navItemsRef = useRef<HTMLDivElement>(null);
     const [isProfileOpen, setIsProfileOpen] = useState(false);
