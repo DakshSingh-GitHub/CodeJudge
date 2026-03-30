@@ -226,7 +226,7 @@ export default function Home() {
                                 key={idx}
                                 variants={itemVariants}
                                 whileHover={{ y: -5 }}
-                                className="p-8 rounded-[2rem] bg-slate-900/40 backdrop-blur-xl border border-slate-800/50 transition-all duration-300"
+                                className="p-8 rounded-4xl bg-slate-900/40 backdrop-blur-xl border border-slate-800/50 transition-all duration-300"
                             >
                                 <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 shadow-sm border border-slate-700 text-indigo-400">
                                     {feature.icon}
