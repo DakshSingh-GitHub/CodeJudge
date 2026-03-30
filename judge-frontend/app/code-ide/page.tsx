@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import { anime } from "../lib/anime";
 import { useAppContext } from "../lib/context";
 import { runCode } from "../lib/api";
@@ -14,7 +15,9 @@ import WideIdeLayout from "./layouts/WideIdeLayout";
 const IDE_LAYOUT_STORAGE_KEY = "codeide_ui_grid_layout";
 
 export default function CodeTestPage() {
-    const { isDark, autoHideMobilePills } = useAppContext();
+    const { isDark, autoHideMobilePills, useNewUi } = useAppContext();
+    const pathname = usePathname();
+    const router = useRouter();
     const [code, setCode] = useState("# Write your code here to test\nprint('Hello, CodeJudge!')");
     const [input, setInput] = useState("");
     const [output, setOutput] = useState<{
@@ -35,6 +38,12 @@ export default function CodeTestPage() {
     const outputRef = useRef<HTMLDivElement>(null);
     const mobileCodeRef = useRef<HTMLDivElement>(null);
     const mobileOutputRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (useNewUi && pathname === "/code-ide") {
+            router.replace("/code-ide-mde");
+        }
+    }, [pathname, router, useNewUi]);
 
     useEffect(() => {
         setIsMounted(true);

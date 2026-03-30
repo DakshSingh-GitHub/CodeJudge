@@ -2,7 +2,7 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode, useEffect, useRef } from 'react';
-import { getCodeJudgePath } from './paths';
+import { getCodeJudgePath, getCodeIdePath } from './paths';
 
 type ThemeMode = "light" | "dark" | "system";
 
@@ -28,6 +28,7 @@ interface AppContextType {
   useNewUi: boolean;
   setUseNewUi: (enabled: boolean) => void;
   codeJudgePath: string;
+  codeIdePath: string;
   resetUiSettings: () => void;
   TITLE: string;
 }
@@ -224,6 +225,7 @@ export function AppWrapper({ children }: { children: ReactNode }) {
       useNewUi,
       setUseNewUi: setUseNewUiState,
       codeJudgePath: getCodeJudgePath(useNewUi),
+      codeIdePath: getCodeIdePath(useNewUi),
       resetUiSettings,
       TITLE: "Code Judge"
     }}>
