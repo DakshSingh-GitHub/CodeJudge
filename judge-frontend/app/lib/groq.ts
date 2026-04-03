@@ -109,7 +109,7 @@ ${code.trim()}
 `;
 
     const completion = await groq.chat.completions.create({
-        model: "openai/gpt-oss-20b",
+        model: "qwen/qwen3-32b",
         temperature: 0.2,
         messages: [
             {
@@ -122,3 +122,5 @@ ${code.trim()}
     const content = completion.choices[0]?.message?.content || "";
     return parseAnalysisResult(content);
 }
+
+
