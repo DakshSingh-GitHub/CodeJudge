@@ -18,6 +18,7 @@ import ProblemViewer from "../../../components/ProblemViewer";
 import CodeEditor from "../../../components/Editor/CodeEditor";
 import PastSubmissions from "../../../components/Editor/PastSubmissions";
 import ResultModal from "./modals/resultModal";
+import { useAuth } from "../../lib/auth-context";
 
 const DEFAULT_CODE = "#Write your code here";
 const LAYOUT_STORAGE_KEY = "codejudge_ui_grid_layout";
@@ -29,6 +30,7 @@ interface SubmissionResult extends SubmitResponse {
 export default function Home() {
     // State Variable Declarations
     const { isSidebarOpen, setIsSidebarOpen, TITLE, isDark, autoHideMobilePills, useNewUi } = useAppContext();
+    const { user, isLoading: isAuthLoading } = useAuth();
     const pathname = usePathname();
     const router = useRouter();
     const [problem, setProblem] = useState<Problem | null>(null);
@@ -259,7 +261,7 @@ export default function Home() {
     }, [code, problem, selectedProblemId]);
 
     const handleSubmit = useCallback(async () => {
-        if (!selectedProblemId || !problem) return;
+        if (!user || !selectedProblemId || !problem) return;
 
         setIsSubmitting(true);
         setResult(null);
@@ -291,7 +293,7 @@ export default function Home() {
         } finally {
             setIsSubmitting(false);
         }
-    }, [code, problem, selectedProblemId]);
+    }, [code, problem, selectedProblemId, user]);
 
     const handleDeleteSubmission = useCallback(async (id: string) => {
         try {
@@ -510,20 +512,7 @@ export default function Home() {
                     </div>
                     <div className="flex-none h-40 md:h-32 flex flex-col md:flex-row w-full justify-between items-stretch gap-4 shrink-0">
                         <div className="flex flex-row md:flex-col w-full md:w-1/4 gap-2">
-                            <button
-                                onClick={handleSubmit}
-                                disabled={
-                                    isSubmitting || !selectedProblemId
-                                }
-                                className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
-                                                ${isSubmitting
-                                        ? "bg-gray-500 cursor-not-allowed"
-                                        : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
-                                    }
-                                                text-white`}
-                            >
-                                {isSubmitting ? "Judging..." : "Submit"}
-                            </button>
+                            
                             <button
                                 onClick={handleTest}
                                 disabled={
@@ -537,6 +526,22 @@ export default function Home() {
                                                 text-white`}
                             >
                                 {isSubmitting ? "Testing..." : "Test"}
+                            </button>
+                            <button
+                                onClick={handleSubmit}
+                                disabled={
+                                    isSubmitting || !selectedProblemId || !user || isAuthLoading
+                                }
+                                className={`px-6 py-1.5 rounded-xl font-semibold flex-1 flex justify-center items-center transition-all duration-300 shadow-md hover:shadow-lg text-sm
+                                                ${isSubmitting
+                                        ? "bg-gray-500 cursor-not-allowed"
+                                        : (!user || isAuthLoading)
+                                            ? "bg-gray-400 cursor-not-allowed"
+                                            : "bg-indigo-600 hover:bg-indigo-700 active:scale-95"
+                                    }
+                                                text-white`}
+                            >
+                                {isSubmitting ? "Judging..." : (!user ? "Log in to Submit" : "Submit")}
                             </button>
                         </div>
                         <div className="w-full md:w-3/4 h-full">

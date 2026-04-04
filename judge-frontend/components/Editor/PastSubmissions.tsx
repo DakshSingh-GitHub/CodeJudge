@@ -1,9 +1,13 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Submission } from "../../app/lib/storage";
-import { Trash2, AlertTriangle, X } from "lucide-react";
+import { Trash2, AlertTriangle, X, LogIn, LockKeyhole } from "lucide-react";
 import { useState, memo, useEffect, useRef } from "react";
 import { anime, stagger } from "../../app/lib/anime";
+import { useAuth } from "../../app/lib/auth-context";
+import { useAppContext } from "../../app/lib/context";
 
 interface PastSubmissionsProps {
     submissions: Submission[];
@@ -16,6 +20,9 @@ const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode,
     const listContainerRef = useRef<HTMLDivElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
     const modalOverlayRef = useRef<HTMLDivElement>(null);
+    const { user, isLoading } = useAuth();
+    const { isDark } = useAppContext();
+    const pathname = usePathname();
 
     const handleDeleteClick = (e: React.MouseEvent, id: string) => {
         e.stopPropagation();
@@ -65,10 +72,47 @@ const PastSubmissions = memo(function PastSubmissions({ submissions, onLoadCode,
         }
     }, [deletingId]);
 
+    if (!isLoading && !user) {
+        const loginHref = `/login?next=${encodeURIComponent(pathname)}`;
+        const cardClass = isDark
+            ? "border-slate-300/70 bg-[linear-gradient(180deg,rgba(15,23,42,0.96),rgba(10,15,26,0.92))] shadow-[0_18px_48px_rgba(2,6,23,0.28)]"
+            : "border-gray-200/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(249,250,251,0.92))] shadow-[0_18px_48px_rgba(15,23,42,0.08)]";
+        const iconClass = isDark
+            ? "border-slate-700/70 bg-slate-900/80 text-indigo-300"
+            : "border-indigo-100 bg-indigo-50 text-indigo-600";
+        const titleClass = isDark ? "text-white" : "text-slate-900";
+        const bodyClass = isDark ? "text-slate-400" : "text-slate-600";
+        const buttonClass = isDark
+            ? "bg-[linear-gradient(135deg,#2563eb,#7c3aed)] shadow-lg shadow-indigo-500/25"
+            : "bg-[linear-gradient(135deg,#1d4ed8,#8b5cf6)] shadow-lg shadow-indigo-500/20";
+
+        return (
+            <div className="flex h-full min-h-[320px] items-center justify-center px-4 py-12">
+                <div className={`w-full max-w-md rounded-[2rem] border p-6 text-center ${cardClass}`}>
+                    <div className={`mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl border ${iconClass}`}>
+                        <LockKeyhole className="h-6 w-6" />
+                    </div>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-slate-500">Past submissions</p>
+                    <h3 className={`mt-3 text-2xl font-black tracking-tight ${titleClass}`}>Log in to view history</h3>
+                    <p className={`mt-3 text-sm leading-relaxed ${bodyClass}`}>
+                        Your saved submissions are tied to your account. Sign in to see attempts, reuse code, and keep your history in sync.
+                    </p>
+                    <Link
+                        href={loginHref}
+                        className={`mt-6 inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-semibold text-white transition hover:brightness-110 active:scale-[0.98] ${buttonClass}`}
+                    >
+                        <LogIn className="h-4 w-4" />
+                        Log in
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
     if (submissions.length === 0) {
         return (
-            <div className="h-full flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 space-y-4 py-12">
-                <div className="p-4 rounded-full bg-gray-100 dark:bg-gray-700 font-mono text-2xl">
+            <div className="flex h-full flex-col items-center justify-center space-y-4 py-12 text-gray-500 dark:text-gray-400">
+                <div className="rounded-full bg-gray-100 p-4 font-mono text-2xl dark:bg-gray-700">
                     📁
                 </div>
                 <div className="text-center">

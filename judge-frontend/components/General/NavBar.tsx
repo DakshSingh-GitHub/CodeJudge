@@ -162,6 +162,13 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, s
                                 {isProfileOpen && (
                                     <div className="absolute right-0 mt-3 w-56 rounded-2xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200 z-50">
                                         <div className="p-2 space-y-1">
+                                            <button
+                                                onClick={() => { onOpenSettings(); setIsProfileOpen(false); }}
+                                                className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors group"
+                                            >
+                                                <Settings className="w-4 h-4 text-gray-400 group-hover:text-indigo-500" />
+                                                General settings
+                                            </button>
                                             {user ? (
                                                 <>
                                                     <button
@@ -170,13 +177,6 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, s
                                                     >
                                                         <User className="w-4 h-4 text-gray-400 group-hover:text-indigo-500" />
                                                         Account settings
-                                                    </button>
-                                                    <button
-                                                        onClick={() => { onOpenSettings(); setIsProfileOpen(false); }}
-                                                        className="w-full flex items-center gap-3 px-3 py-2.5 text-sm font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50 rounded-xl transition-colors group"
-                                                    >
-                                                        <Settings className="w-4 h-4 text-gray-400 group-hover:text-indigo-500" />
-                                                        General settings
                                                     </button>
 
                                                     <div className="my-1 h-px bg-gray-100 dark:bg-gray-800 mx-2" />

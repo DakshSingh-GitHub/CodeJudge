@@ -18,6 +18,7 @@ import ProblemViewer from "../../../components/ProblemViewer";
 import CodeEditor from "../../../components/Editor/CodeEditor";
 import PastSubmissions from "../../../components/Editor/PastSubmissions";
 import ResultModal from "./modals/resultModal";
+import { useAuth } from "../../lib/auth-context";
 
 const DEFAULT_CODE = "#Write your code here";
 const LAYOUT_STORAGE_KEY = "codejudge_ui_grid_layout";
@@ -29,6 +30,7 @@ interface SubmissionResult extends SubmitResponse {
 export default function Home() {
     // State Variable Declarations
     const { isSidebarOpen, setIsSidebarOpen, TITLE, isDark, autoHideMobilePills, useNewUi } = useAppContext();
+    const { user, isLoading: isAuthLoading } = useAuth();
     const pathname = usePathname();
     const router = useRouter();
     const [problem, setProblem] = useState<Problem | null>(null);
@@ -259,7 +261,7 @@ export default function Home() {
     }, [code, problem, selectedProblemId]);
 
     const handleSubmit = useCallback(async () => {
-        if (!selectedProblemId || !problem) return;
+        if (!user || !selectedProblemId || !problem) return;
 
         setIsSubmitting(true);
         setResult(null);
@@ -291,7 +293,7 @@ export default function Home() {
         } finally {
             setIsSubmitting(false);
         }
-    }, [code, problem, selectedProblemId]);
+    }, [code, problem, selectedProblemId, user]);
 
     const handleDeleteSubmission = useCallback(async (id: string) => {
         try {
@@ -525,16 +527,18 @@ export default function Home() {
                             <button
                                 onClick={handleSubmit}
                                 disabled={
-                                    isSubmitting || !selectedProblemId
+                                    isSubmitting || !selectedProblemId || !user || isAuthLoading
                                 }
                                 className={`px-6 py-3 rounded-[1.25rem] font-semibold uppercase tracking-[0.16em] flex-1 flex justify-center items-center transition-all duration-300 shadow-[0_14px_30px_rgba(2,6,23,0.18)] hover:shadow-[0_18px_36px_rgba(2,6,23,0.24)] text-sm
                                                 ${isSubmitting
                                         ? "bg-slate-400 cursor-not-allowed"
+                                        : (!user || isAuthLoading)
+                                        ? "bg-slate-500/70 cursor-not-allowed"
                                         : "bg-[linear-gradient(135deg,#0f766e,#1d4ed8)] hover:brightness-110 active:scale-[0.98]"
                                     }
                                                 text-white`}
                             >
-                                {isSubmitting ? "Judging..." : "Submit"}
+                                {isSubmitting ? "Judging..." : (!user ? "Log in to Submit" : "Submit")}
                             </button>
                         </div>
                         <div className="w-full md:w-3/4 h-full">

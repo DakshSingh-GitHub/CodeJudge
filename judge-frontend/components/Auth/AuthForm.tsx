@@ -158,7 +158,7 @@ export default function AuthForm({ mode }: { mode: AuthMode }) {
           <div className="mb-8">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/70 px-4 py-2 text-[11px] font-black uppercase tracking-[0.24em] text-slate-300">
               <UserPlus className="h-3.5 w-3.5 text-indigo-400" />
-              Create your new account and Join Us!
+              Join Us!
             </div>
             <h1 className="text-4xl font-black tracking-tight text-white md:text-5xl">{pageTitle}</h1>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400 md:text-base">{pageDescription}</p>

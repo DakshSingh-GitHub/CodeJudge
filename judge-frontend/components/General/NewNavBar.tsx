@@ -158,6 +158,13 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, s
                                 {isProfileOpen && (
                                     <div className="absolute right-0 z-50 mt-3 w-60 overflow-hidden rounded-[1.75rem] border border-slate-700/60 bg-[linear-gradient(180deg,rgba(8,12,20,0.98),rgba(15,23,42,0.92))] shadow-[0_20px_48px_rgba(2,6,23,0.38)] backdrop-blur-3xl animate-in fade-in slide-in-from-top-2 duration-200">
                                         <div className="space-y-1 p-2">
+                                            <button
+                                                onClick={() => { onOpenSettings(); setIsProfileOpen(false); }}
+                                                className="group flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800/80"
+                                            >
+                                                <Settings className="w-4 h-4 text-slate-400 group-hover:text-cyan-200" />
+                                                General settings
+                                            </button>
                                             {user ? (
                                                 <>
                                                     <button
@@ -166,13 +173,6 @@ const NavBar: React.FC<NavBarProps> = memo(({ isSidebarOpen, setIsSidebarOpen, s
                                                     >
                                                         <User className="w-4 h-4 text-slate-400 group-hover:text-cyan-200" />
                                                         Account settings
-                                                    </button>
-                                                    <button
-                                                        onClick={() => { onOpenSettings(); setIsProfileOpen(false); }}
-                                                        className="group flex w-full items-center gap-3 rounded-2xl px-3 py-2.5 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800/80"
-                                                    >
-                                                        <Settings className="w-4 h-4 text-slate-400 group-hover:text-cyan-200" />
-                                                        General settings
                                                     </button>
 
                                                     <div className="mx-2 my-1 h-px bg-slate-600/50" />
